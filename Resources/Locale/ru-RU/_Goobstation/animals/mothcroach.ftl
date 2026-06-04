@@ -1,0 +1,16 @@
+ent-MobMothroachMustard = горчичная таракамоль
+    .desc = Восхитительный результат пересечения мяса с соусом.
+ent-MobMothroachLeopard = леопардовая таракамоль
+    .desc = Восхитительный результат множественных попыток скрещивания насекомых с хищниками.
+ent-MobMothroachCecropia = цекропиевая таракамоль
+    .desc = Восхитительный результат множественных попыток скрещивания рода крапивы с тараканами.
+ent-MobMothroachLunar = лунная таракамоль
+    .desc = Кто-то оставил моль под луной.
+ent-FoodBurgerMustard = таракамольбургер
+    .desc = Последняя лампа, которую она видела, была внутри микроволновки.
+ent-FoodBurgerleopard = { ent-FoodBurgerMustard }
+    .desc = { ent-FoodBurgerMustard.desc }
+ent-FoodBurgerlunar = { ent-FoodBurgerMustard }
+    .desc = { ent-FoodBurgerMustard.desc }
+ent-FoodBurgerCecropia = { ent-FoodBurgerMustard }
+    .desc = { ent-FoodBurgerMustard.desc }

@@ -15,8 +15,8 @@ guide-entry-rules-nrp = Правила НРП
 guide-entry-sm = Суперматерия
 guide-entry-automation = Автоматизация
 guide-entry-plumbing = Трубы
-guide-entry-alcoholic-drinks = Алкоголь
-guide-entry-non-alcoholic-drinks = Безалкоголь
+guide-entry-alcoholic-drinks = Алкогольные напитки
+guide-entry-non-alcoholic-drinks = Безалкогольные напитки
 guide-entry-enchanting = Зачарования
 # Goob SOP
 # - Основные разделы
