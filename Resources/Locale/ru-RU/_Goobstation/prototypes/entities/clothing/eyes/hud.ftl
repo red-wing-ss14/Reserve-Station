@@ -1,0 +1,14 @@
+ent-ShowHealthRelatedIcons = { "" }
+    .desc = { "" }
+ent-ClothingEyesHudChrono = футуристический визор
+    .desc = Визор из будущего, способный отображать практически всё.
+ent-ClothingEyesHudChronoUnremoveable = { ent-ClothingEyesHudChrono }
+    .desc = { ent-ClothingEyesHudChrono.desc }
+    .suffix = Неснимаемый
+ent-ClothingEyesHudDiagnosticMedical = меддиагностический визор
+    .desc = Визор, содержащий как медицинскую, так и диагностическую информацию.
+ent-ClothingEyesHudViro = вирусологический визор
+    .desc = Медицинский визор, оснащенный усовершенствованным сканером заболеваний.
+ent-ClothingEyesHudContractor = визор контрактника
+    .desc = Профессиональный проекционный дисплей Гильдии, разработанный для более эффективного обнаружения гуманоидов и их последующего захвата.
+    .suffix = Синдикат

@@ -1,0 +1,9 @@
+ent-SuitStorageBlueshield = { ent-SuitStorageBase }
+    .desc = { ent-SuitStorageBase.desc }
+    .suffix = ОСЩ
+ent-SuitStorageDetective = { ent-SuitStorageBase }
+    .desc = { ent-SuitStorageBase.desc }
+    .suffix = Детектив
+ent-SuitStorageHardsuitContractor = { ent-SuitStorageBase }
+    .desc = { ent-SuitStorageBase.desc }
+    .suffix = Синдикат, Контрактник

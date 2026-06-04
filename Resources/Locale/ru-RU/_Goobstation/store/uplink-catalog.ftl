@@ -1,32 +1,3 @@
-# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
-# SPDX-FileCopyrightText: 2024 Armok <155400926+ARMOKS@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Ilya246 <ilyukarno@gmail.com>
-# SPDX-FileCopyrightText: 2024 NULL882 <gost6865@yandex.ru>
-# SPDX-FileCopyrightText: 2024 Piras314 <92357316+Piras314@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-# SPDX-FileCopyrightText: 2024 ScyronX <166930367+ScyronX@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Tristan <traynor123123@gmail.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2024 a_person <40855173+a-person5660@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 starch <starchpersonal@gmail.com>
-# SPDX-FileCopyrightText: 2024 yglop <95057024+yglop@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
-# SPDX-FileCopyrightText: 2025 Aineias1 <142914808+Aineias1@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 LuciferMkshelter <154002422+LuciferEOS@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 PunishedJoe <PunishedJoeseph@proton.me>
-# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
-# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Theodore Lukin <66275205+pheenty@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Weide <64257676+Lyacs@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 absurd-shaman <165011607+absurd-shaman@users.noreply.github.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 # Surplus Voidsuits
 
 uplink-hardsuit-syndiemedic-name = Боевой костюм медика Горлекс
@@ -145,6 +116,9 @@ uplink-combat-shotgun-desc = Надёжный помповый дробовик 
 
 uplink-he1sg8-bundle-name = Комплект HE1S-G8
 uplink-he1sg8-bundle-desc = В комплекте 10 разрушительных и 9 гиперзаряженных патронов Gauss-8.
+
+uplink-hushpup-name = Волкодав
+uplink-hushpup-desc = Редкая модификация Силовика, оснащенная громоздким глушителем. Отлично подойдет тем, кто придерживается строгих моральных принципов. Вмещает 5 патронов 12-го калибра.
 
 # Ammo
 
@@ -286,14 +260,17 @@ uplink-autosurgeon-right-mantis-blade-name = Автооперация (прав�
 uplink-autosurgeon-left-mantis-blade-name = Автооперация (левые клинки богомола)
 uplink-autosurgeon-mantis-blade-desc = Модифицирует руку пользователя, добавляя в неё имплант "Клинок богомола", выдвигающийся по желанию. Лучше работает в паре. Требует слишком тонкой настройки, чтобы человек мог её выполнить, поэтому поставляется с одноразовой автооперацией для установки.
 
-uplink-autosurgeon-sandevistan-name = Автооперация (сандевистан)
-uplink-autosurgeon-sandevistan-desc = Заменяет сердце пользователя на сандевистан — синтетический орган, который значительно увеличивает скорость пользователя ценой его выносливости. Требует слишком тонкой настройки, чтобы человек мог её выполнить, поэтому поставляется с одноразовой автооперацией для установки.
-
 uplink-davids-jacket-name = Куртка эджраннера
 uplink-davids-jacket-desc = Куртка для тех, кто особенно заинтересован в улучшении своего тела. Например таких как вы.
 
-uplink-autosurgeon-smartlink-name = Автооперация (смартлинк)
-uplink-autosurgeon-smartlink-desc = Модифицирует ваши руки, добавляя смартлинк, наводя пули при стрельбе из дальнобойного оружия. Требует слишком тонкой настройки для человека, поэтому комплектуется одноразовой автооперацией для установки.
+uplink-autosurgeon-sandevistan-name = Автохирург (Сандевистан)
+uplink-autosurgeon-sandevistan-desc = Заменяет сердце пользователя на "Сандевистан", синтетический орган, который значительно увеличивает скорость работы пользователя за счет его выносливости. Требует слишком тонкой настройки для человека, поставляется с одноразовым автохирургом для установки.
+
+uplink-autosurgeon-statveka-sandevistan-name = Автохирург (статвека Сандевистан)
+uplink-autosurgeon-statveka-sandevistan-desc = Заменяет сердце пользователя на статвеку Сандевистан, синтетический орган, который значительно увеличивает скорость и рефлексы пользователя за счет снижения выносливости. В отличие от обычного аналога, этот, по-видимому, замедляет время рядом с пользователем. В комплекте идет одноразовый автохирург для установки.
+
+uplink-autosurgeon-smartlink-name = Автохирург (смартлинк)
+uplink-autosurgeon-smartlink-desc = Модифицирует ваши руки, добавляя смартлинк, наводя пули при стрельбе из дальнобойного оружия. Требует слишком тонкой настройки для человека, поэтому комплектуется одноразовым автохирургом для установки.
 
 uplink-autosurgeon-recoil-absorbing-name = Автооперация (поглощение отдачи)
 uplink-autosurgeon-recoil-absorbing-desc = Модифицирует ваши руки, добавляя поглощение отдачи, значительно снижая отдачу при стрельбе из дальнобойного оружия. Требует слишком тонкой настройки для человека, комплектуется одноразовой автооперацией для установки.
