@@ -1,0 +1,14 @@
+ent-GrenadeMPAPERS = снаряд МП-ФЛЕШЕТТА (40 мм)
+    .desc = { ent-BaseGrenade.desc }
+ent-GrenadeTeargas = снаряд со слезоточивым газом (40 мм)
+    .desc = { ent-BaseGrenade.desc }
+ent-GrenadeBeanbagShotgun = снаряд с песчаными мешочками (40 мм)
+    .desc = { ent-BaseGrenade.desc }
+ent-GrenadeBirdshot = снаряд с дробью (40 мм)
+    .desc = { ent-BaseGrenade.desc }
+ent-GrenadeSlug = снаряд-пуля (40 мм)
+    .desc = { ent-BaseGrenade.desc }
+ent-Grenade00Buckshot = снаряд с картечью "00" (40 мм)
+    .desc = { ent-BaseGrenade.desc }
+ent-Grenade0000Buckshot = снаряд с картечью "0000" (40 мм)
+    .desc = { ent-BaseGrenade.desc }

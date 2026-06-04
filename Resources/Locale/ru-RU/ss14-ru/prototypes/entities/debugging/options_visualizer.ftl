@@ -1,3 +1,3 @@
-ent-OptionsVisualizerTest = { "" }
-    .suffix = ДЕБАГ
+ent-OptionsVisualizerTest = визуализация меню опций
+    .suffix = DEBUG
     .desc = { "" }
