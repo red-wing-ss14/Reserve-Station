@@ -1,0 +1,21 @@
+ent-WaterVaporTank = паровой баллон
+    .desc = Стандартный цилиндрический газовый баллон для водяного пара. Вмещает 5 Л газа.
+ent-EmergencyWaterVaporTank = аварийный паровой баллон
+    .desc = Лёгкий переносной баллон для чрезвычайных ситуаций. Содержит очень мало водяного пара, предназначен только для выживания. Вмещает 0,66 Л газа.
+ent-ExtendedEmergencyWaterVaporTank = аварийный паровой баллон повышенной ёмкости
+    .desc = Аварийный баллон повышенной ёмкости. Технически рассчитан на длительное использование. Вмещает 1,5 Л газа.
+ent-DoubleEmergencyWaterVaporTank = двойной аварийный паровой баллон
+    .desc = Высококлассный двухбаллонный резервуар аварийного жизнеобеспечения. Вмещает приличное для своих небольших размеров количество водяного пара. Вмещает 2,5 Л газа.
+
+ent-WaterVaporTankFilled = { ent-WaterVaporTank }
+    .desc = { ent-WaterVaporTank.desc }
+    .suffix = Заполненный
+ent-EmergencyWaterVaporTankFilled = { ent-EmergencyWaterVaporTank }
+    .desc = { ent-EmergencyWaterVaporTank.desc }
+    .suffix = { ent-WaterVaporTankFilled.suffix }
+ent-ExtendedEmergencyWaterVaporTankFilled = { ent-ExtendedEmergencyWaterVaporTank }
+    .desc = { ent-ExtendedEmergencyWaterVaporTank.desc }
+    .suffix = { ent-WaterVaporTankFilled.suffix }
+ent-DoubleEmergencyWaterVaporTankFilled = { ent-DoubleEmergencyWaterVaporTank }
+    .desc = { ent-DoubleEmergencyWaterVaporTank.desc }
+    .suffix = { ent-WaterVaporTankFilled.suffix }
