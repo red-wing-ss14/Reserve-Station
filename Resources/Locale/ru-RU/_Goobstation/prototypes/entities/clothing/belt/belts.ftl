@@ -25,3 +25,6 @@ ent-ClothingBeltSecurityWebbingContractor = РПС контрактника
 ent-ClothingBeltSecurityWebbingContractorFilled = { ent-ClothingBeltSecurityWebbingContractor }
     .desc = { ent-ClothingBeltSecurityWebbingContractor.desc }
     .suffix = Синдикат, Заполненный
+ent-ClothingBeltWhipping = ремень для порки
+    .desc = Где ремень, там и путь.
+    .suffix = Адмем
