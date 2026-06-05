@@ -1,0 +1,42 @@
+ent-DebugGenerator = { ent-BaseGenerator }
+    .suffix = DEBUG
+    .desc = { ent-BaseGenerator.desc }
+ent-DebugConsumer = потребитель энергии
+    .suffix = DEBUG
+    .desc = { "" }
+ent-DebugBatteryStorage = аккумулятор энергии
+    .suffix = DEBUG
+    .desc = { "" }
+ent-DebugBatteryDischarger = разрядник энергии
+    .suffix = DEBUG
+    .desc = { "" }
+ent-DebugPowerReceiver = получатель энергии
+    .suffix = DEBUG
+    .desc = { "" }
+
+ent-DebugSMES = { ent-BaseSMES }
+    .suffix = DEBUG
+    .desc = { ent-BaseSMES.desc }
+ent-DebugSMESRecharging = { ent-BaseSMES }
+    .suffix = DEBUG, Автозарядка
+    .desc = { ent-BaseSMES.desc } Самозарядная.
+
+ent-DebugSubstation = { ent-BaseSubstation }
+    .suffix = DEBUG
+    .desc = { ent-BaseSubstation.desc }
+ent-DebugSubstationRecharging = { ent-BaseSubstation }
+    .suffix = DEBUG, Автозарядка
+    .desc = { ent-BaseSubstation.desc } Самозарядная.
+ent-DebugSubstationWall = { ent-SubstationWallBasic }
+    .suffix = DEBUG
+    .desc = { ent-SubstationWallBasic.desc }
+ent-DebugSubstationWallRecharging = { ent-SubstationWallBasic }
+    .suffix = DEBUG, Автозарядка
+    .desc = { ent-SubstationWallBasic.desc } Самозарядная.
+
+ent-DebugAPC = { ent-BaseAPC }
+    .suffix = DEBUG
+    .desc = { ent-BaseAPC.desc }
+ent-DebugAPCRecharging = { ent-BaseAPC }
+    .suffix = DEBUG, Автозарядка
+    .desc = { ent-BaseAPC.desc } Самозарядный.
