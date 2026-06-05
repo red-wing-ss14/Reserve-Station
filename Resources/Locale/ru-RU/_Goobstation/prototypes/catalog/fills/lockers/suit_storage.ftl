@@ -1,6 +1,6 @@
 ent-SuitStorageBlueshield = { ent-SuitStorageBase }
     .desc = { ent-SuitStorageBase.desc }
-    .suffix = ОСЩ
+    .suffix = Офицер Синего Щита
 ent-SuitStorageDetective = { ent-SuitStorageBase }
     .desc = { ent-SuitStorageBase.desc }
     .suffix = Детектив

@@ -1,2 +1,2 @@
-ent-NTRIDCard = ID карта представителя НаноТрейзен
+ent-NTRIDCard = ID карта представителя NanoTrasen
     .desc = { ent-IDCardStandard.desc }
