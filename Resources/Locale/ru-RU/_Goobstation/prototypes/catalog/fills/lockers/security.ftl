@@ -1,3 +1,6 @@
 ent-GunSafeLauncherNonLethal = { ent-GunSafe }
-    .suffix = Гранатомёт ГЛ-06
     .desc = { ent-GunSafeBaseSecure.desc }
+    .suffix = Гранатомёт ГЛ-06
+ent-LockerDetectiveFilledHardsuit = { ent-LockerDetective }
+    .desc = { ent-LockerDetective.desc }
+    .suffix = Заполненный, Скафандр

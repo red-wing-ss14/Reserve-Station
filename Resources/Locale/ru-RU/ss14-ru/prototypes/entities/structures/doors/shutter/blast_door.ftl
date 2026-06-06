@@ -5,3 +5,10 @@ ent-BlastDoorOpen = { ent-BlastDoor }
     .desc = { ent-BlastDoor.desc }
 ent-BlastDoorFrame = каркас гермозатвора
     .desc = { ent-BlastDoor.desc }
+
+ent-BlastDoorCentralCommand = { ent-BlastDoor }
+    .desc = { ent-BlastDoor.desc }
+    .suffix = ЦентКом, Закрыт
+ent-BlastDoorOpenCentralCommand = { ent-BlastDoorCentralCommand }
+    .desc = { ent-BlastDoorCentralCommand.desc }
+    .suffix = Открытый, { ent-BlastDoorCentralCommand.suffix }

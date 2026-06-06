@@ -91,3 +91,5 @@ ent-SpawnCMMobXenoRogueKingSentient = спавнер { ent-CMMobXenoRogueKingSen
 
 ent-SpawnMobHierophant = спавнер { ent-MobHierophant }
     .desc = { ent-MarkerBase.desc }
+ent-SpawnPointShaftMiner = шахтёр
+    .desc = { ent-SpawnPointJobBase.desc }

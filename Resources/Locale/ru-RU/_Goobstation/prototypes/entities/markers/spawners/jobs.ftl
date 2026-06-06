@@ -6,3 +6,7 @@ ent-SpawnPointNanotrasenCareerTrainer = карьерный тренер NanoTras
     .desc = { ent-SpawnPointJobBase.desc }
 ent-SpawnPointRoboticist = робототехник
     .desc = { ent-SpawnPointJobBase.desc }
+ent-SpawnPointRadioHost = радиоведущий
+    .desc = { ent-SpawnPointJobBase.desc }
+ent-SpawnPointVirologist = вирусолог
+    .desc = { ent-SpawnPointJobBase.desc }

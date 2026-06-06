@@ -1,0 +1,55 @@
+ent-MobHumanSecurityBase = офицер СБ
+    .suffix = DEBUG
+    .desc = { "" }
+ent-MobHumanSecurityOfficerSuit = { ent-MobHumanSecurityBase } в скафандре
+    .suffix = DEBUG
+    .desc = { "" }
+ent-MobHumanSecurityOfficerBulletproofArmorHelmet = { ent-MobHumanSecurityBase } в бронежилете
+    .suffix = DEBUG
+    .desc = { "" }
+ent-MobHumanSecurityOfficerRiotArmorHelmet = { ent-MobHumanSecurityBase } в броне подавления беспорядков
+    .suffix = DEBUG
+    .desc = { "" }
+ent-MobHumanSecurityOfficerReflectiveArmorHelmet = { ent-MobHumanSecurityBase } в отражательной броне
+    .suffix = DEBUG
+    .desc = { "" }
+ent-MobHumanSecurityOfficerBasicArmorHelmet = { ent-MobHumanSecurityBase } в броне
+    .suffix = DEBUG
+    .desc = { "" }
+ent-MobHumanSecurityOfficerModSuit = { ent-MobHumanSecurityBase } в модсьюте
+    .suffix = DEBUG
+    .desc = { "" }
+
+ent-MobHumanWarden = смотритель
+    .suffix = DEBUG
+    .desc = { "" }
+ent-MobHumanWardenSuit = { ent-MobHumanWarden } в скафандре
+    .suffix = DEBUG
+    .desc = { "" }
+
+ent-MobHumanBrigmedic = бригмедик
+    .suffix = DEBUG
+    .desc = { "" }
+ent-MobHumanBrigmedicSuit = { ent-MobHumanBrigmedic } в скафандре
+    .suffix = DEBUG
+    .desc = { "" }
+
+ent-MobHumanHos = глава службы безопасности
+    .suffix = DEBUG
+    .desc = { "" }
+ent-MobHumanHoSSuit = { ent-MobHumanHos } в скафандре
+    .suffix = DEBUG
+    .desc = { "" }
+ent-MobHumanHosModSuit = { ent-MobHumanHos } в модсьюте
+    .suffix = DEBUG
+    .desc = { "" }
+
+ent-MobHumanBSOBase = офицер Синего Щита
+    .suffix = DEBUG
+    .desc = { "" }
+ent-MobHumanBSOSuit = { ent-MobHumanBSOBase } в скафандре
+    .suffix = DEBUG
+    .desc = { "" }
+ent-MobHumanBSOModSuit = { ent-MobHumanBSOBase } в модсьюте
+    .suffix = DEBUG
+    .desc = { "" }
