@@ -26,3 +26,7 @@ ent-ClothingOuterArmorHereticFleshCostume = { ent-ClothingOuterArmorHereticCostu
 ent-ClothingOuterArmorHereticBladeCostume = { ent-ClothingOuterArmorHereticCostume }
     .suffix = Лезвие
     .desc = { ent-ClothingOuterArmorHereticCostume.desc }
+ent-ClothingOuterSchemaMonk = монашеские облачения
+    .desc = Знак полного отречения от мира и принятия героизма. Его носят те, кто избрал путь молитвы и борьбы за человеческую душу. В тишине космоса он кажется особенно уместным.
+ent-ClothingOuterBrassArmor = латунная броня
+    .desc = Старые славянские медные доспехи, подобные тем, что носили наши предки.

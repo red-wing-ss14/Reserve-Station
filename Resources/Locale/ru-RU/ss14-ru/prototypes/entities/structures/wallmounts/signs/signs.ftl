@@ -62,6 +62,7 @@ ent-SignAiUpload = знак "загрузка ИИ"
     .desc = Знак, указывающий на присутствие ИИ.
 ent-SignArcade = знак "аркада"
     .desc = Указатель в сторону комнаты с аркадами.
+    .suffix = { ent-ArcadeBase.suffix }
 ent-SignArmory = знак "оружейная"
     .desc = Знак, указывающий на оружейную.
 ent-SignToolStorage = знак "склад инструментов"

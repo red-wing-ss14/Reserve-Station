@@ -1,0 +1,15 @@
+ent-PokerChips = фишки для покера
+    .desc = Специальные фишки для азартных игр.
+    .suffix = 1, Азартные игры
+ent-PokerChips10 = { ent-PokerChips }
+    .desc = { ent-PokerChips.desc }
+    .suffix = 10, Азартные игры
+ent-PokerChips50 = { ent-PokerChips }
+    .desc = { ent-PokerChips.desc }
+    .suffix = 50, Азартные игры
+ent-PokerChips100 = { ent-PokerChips }
+    .desc = { ent-PokerChips.desc }
+    .suffix = 100, Азартные игры
+ent-PokerChips500 = { ent-PokerChips }
+    .desc = { ent-PokerChips.desc }
+    .suffix = 500, Азартные игры
