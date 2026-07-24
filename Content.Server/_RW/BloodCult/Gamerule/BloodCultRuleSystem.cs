@@ -1,4 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Actions;
 using Content.Server.Antag;
@@ -37,10 +37,16 @@ using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
+using Content.Shared._Orion.Antag;
+using Content.Shared._Orion.Antag.Components;
+using Content.Shared._RW.BloodCult.Constructs;
+
 namespace Content.Server._RW.BloodCult.Gamerule;
 
 public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
 {
+    private const string BloodCultGlobalAntagonistId = "globalAntagonistBloodCult";
+
     [Dependency] private readonly IRobustRandom _random = default!;
 
     [Dependency] private readonly ActionsSystem _actions = default!;
@@ -71,6 +77,9 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         SubscribeLocalEvent<BloodCultistComponent, ComponentRemove>(OnCultistComponentRemoved);
         SubscribeLocalEvent<BloodCultistComponent, MobStateChangedEvent>(OnCultistsStateChanged);
         SubscribeLocalEvent<BloodCultistComponent, CloningEvent>(OnClone);
+
+        SubscribeLocalEvent<ConstructComponent, ComponentInit>(OnConstructComponentInit);
+        SubscribeLocalEvent<ConstructComponent, ComponentRemove>(OnConstructComponentRemoved);
 
         SubscribeLocalEvent<BloodCultistRoleComponent, GetBriefingEvent>(OnGetBriefing);
     }
@@ -145,6 +154,12 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         {
             cult.Cultists.Add(cultist);
             UpdateCultStage(cult);
+
+            if (cult.Stage == CultStage.Pentagram)
+            {
+                EnsureComp<PentagramComponent>(cultist);
+                MakeCultistGlobalAntag(cultist);
+            }
         }
     }
 
@@ -163,12 +178,30 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         RemoveCultistAppearance(cultist);
         RemoveObjectiveAndRole(cultist.Owner);
         _language.RemoveLanguage(cultist.Owner, cultist.Comp.CultLanguageId);
+        RemComp<GlobalAntagonistComponent>(cultist.Owner);
 
         if (!TryComp(cultist, out BloodCultSpellsHolderComponent? powersHolder))
             return;
 
         foreach (var power in powersHolder.SelectedSpells)
             _actions.RemoveAction(cultist.Owner, power);
+    }
+
+    private void OnConstructComponentInit(Entity<ConstructComponent> construct, ref ComponentInit args)
+    {
+        var query = QueryActiveRules();
+        while (query.MoveNext(out _, out var cult, out _))
+        {
+            if (cult.Stage == CultStage.Pentagram)
+            {
+                MakeCultistGlobalAntag(construct);
+            }
+        }
+    }
+
+    private void OnConstructComponentRemoved(Entity<ConstructComponent> construct, ref ComponentRemove args)
+    {
+        RemComp<GlobalAntagonistComponent>(construct.Owner);
     }
 
     private void OnCultistsStateChanged(Entity<BloodCultistComponent> cultist, ref MobStateChangedEvent args)
@@ -471,10 +504,25 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
                 break;
             case CultStage.Pentagram:
                 foreach (var cultist in cultRule.Cultists)
+                {
                     EnsureComp<PentagramComponent>(cultist);
+                    MakeCultistGlobalAntag(cultist);
+                }
+
+                foreach (var construct in cultRule.Constructs)
+                {
+                    MakeCultistGlobalAntag(construct);
+                }
 
                 break;
         }
+    }
+
+    private void MakeCultistGlobalAntag(EntityUid uid)
+    {
+        var globalAntag = EnsureComp<GlobalAntagonistComponent>(uid);
+        globalAntag.AntagonistPrototype = BloodCultGlobalAntagonistId;
+        Dirty(uid, globalAntag);
     }
 
     /// <summary>

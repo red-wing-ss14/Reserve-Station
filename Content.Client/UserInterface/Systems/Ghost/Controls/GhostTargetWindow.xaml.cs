@@ -158,7 +158,13 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls
             if (players.Count == 0)
                 return;
 
-            var bigGrid = new GridContainer();
+            // RW start
+            var bigGrid = new BoxContainer
+            {
+                Orientation = BoxContainer.LayoutOrientation.Vertical,
+                HorizontalExpand = true,
+            };
+            // RW end
 
             var header = CreateSectionHeader(text);
             bigGrid.AddChild(header);
@@ -220,7 +226,13 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls
             if (places.Count == 0)
                 return;
 
-            var bigGrid = new GridContainer();
+            // RW start
+            var bigGrid = new BoxContainer
+            {
+                Orientation = BoxContainer.LayoutOrientation.Vertical,
+                HorizontalExpand = true,
+            };
+            // RW end
 
             var header = CreateSectionHeader(text);
             bigGrid.AddChild(header);
@@ -295,7 +307,13 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls
             if (antags.Count == 0)
                 return;
 
-            var bigGrid = new GridContainer();
+            // RW start
+            var bigGrid = new BoxContainer
+            {
+                Orientation = BoxContainer.LayoutOrientation.Vertical,
+                HorizontalExpand = true,
+            };
+            // RW end
 
             var header = CreateSectionHeader(text);
             bigGrid.AddChild(header);
@@ -352,12 +370,16 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls
         {
             if (useStripeBack)
             {
-                var stripe = new StripeBack();
+                var stripe = new StripeBack
+                {
+                    HorizontalExpand = true, // RW
+                };
                 var label = new Label
                 {
                     Text = Loc.GetString(text),
                     StyleClasses = { "LabelBig" },
                     Align = Label.AlignMode.Center,
+                    HorizontalExpand = true, // RW
                 };
                 stripe.AddChild(label);
 
@@ -370,6 +392,7 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls
                     Text = Loc.GetString(text),
                     StyleClasses = { "LabelBig" },
                     Align = Label.AlignMode.Center,
+                    HorizontalExpand = true, // RW
                 };
 
                 return label;

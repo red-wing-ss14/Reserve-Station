@@ -1,0 +1,5 @@
+- type: antagonist
+  id: globalAntagonistBloodCult
+  name: global-antagonist-blood-cult-name
+  description: global-antagonist-blood-cult-description
+  weight: 21

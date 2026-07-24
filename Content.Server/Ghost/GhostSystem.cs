@@ -620,6 +620,11 @@ namespace Content.Server.Ghost
             foreach (var antagonist in EntityQuery<GlobalAntagonistComponent>())
             {
                 var entity = antagonist.Owner;
+                // RW start
+                if (TerminatingOrDeleted(entity))
+                    continue;
+                // RW end
+
                 var prototype = _prototypeManager.Index<AntagonistPrototype>(antagonist.AntagonistPrototype ?? "globalAntagonistUnknown");
 
                 var warp = new GhostWarpGlobalAntagonist(
