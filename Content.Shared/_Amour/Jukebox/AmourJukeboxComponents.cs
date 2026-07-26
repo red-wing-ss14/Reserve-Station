@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Lidgren.Network;
 using Robust.Shared.Containers;
@@ -106,7 +106,7 @@ public sealed class AmourJukeboxSongUploadNetMessage : NetMessage
     public override NetDeliveryMethod DeliveryMethod => NetDeliveryMethod.ReliableUnordered;
     public override MsgGroups MsgGroup => MsgGroups.Command;
 
-    public const int MaxDataLength = 32 * 1024 * 1024;
+    public const int MaxDataLength = 10 * 1024 * 1024;
 
     public ResPath RelativePath { get; set; } = ResPath.Self;
     public byte[] Data { get; set; } = Array.Empty<byte>();

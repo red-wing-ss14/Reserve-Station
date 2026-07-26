@@ -31,7 +31,7 @@ public sealed partial class AmourTapeCreatorMenu : DefaultWindow
 
     private bool _awaitingUploadResponse;
 
-    private const double BytesToMegabytes = 0.000001d;
+    private const double BytesToMegabytes = 1.0d / (1024d * 1024d);
 
     public AmourTapeCreatorMenu(AmourTapeCreatorComponent component)
     {

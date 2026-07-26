@@ -1,13 +1,15 @@
 using System;
 using System.Linq;
 using Content.Server.Popups;
+using Content.Shared._Amour;
 using Content.Shared._Amour.Jukebox;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Tag;
 using Content.Shared.Verbs;
-using Robust.Server.Containers;
+using Robust.Shared.Configuration;
+using Robust.Shared.Containers;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -30,6 +32,7 @@ public sealed class AmourTapeCreatorSystem : EntitySystem
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
 
     private const string TapeCreatorContainerName = "amour_tape_creator_container";
     private const string CoinTag = "AmourTapeRecorderCoin";
@@ -161,9 +164,11 @@ public sealed class AmourTapeCreatorSystem : EntitySystem
             return;
         }
 
-        if (ev.SongBytes.Count > AmourJukeboxSongUploadNetMessage.MaxDataLength)
+        var maxMb = _cfg.GetCVar(AmourCVars.MaxJukeboxSongSizeInMb);
+        var maxBytes = (int) (maxMb * 1024 * 1024);
+        if (ev.SongBytes.Count > maxBytes || ev.SongBytes.Count > AmourJukeboxSongUploadNetMessage.MaxDataLength)
         {
-            SendUploadResponse(args, ev.TapeCreatorUid, false, "Файл слишком большой.");
+            SendUploadResponse(args, ev.TapeCreatorUid, false, $"Файл слишком большой. Лимит: {maxMb} МБ.");
             return;
         }
 
