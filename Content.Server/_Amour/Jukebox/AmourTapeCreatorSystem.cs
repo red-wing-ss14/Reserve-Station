@@ -8,6 +8,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Tag;
 using Content.Shared.Verbs;
+using Robust.Server.Containers;
 using Robust.Shared.Configuration;
 using Robust.Shared.Containers;
 using Robust.Server.GameObjects;
