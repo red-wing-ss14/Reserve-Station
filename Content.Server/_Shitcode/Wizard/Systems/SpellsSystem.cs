@@ -428,7 +428,7 @@ public sealed class SpellsSystem : SharedSpellsSystem
         Timer.Spawn(200,
             () =>
             {
-                var toSpeak = speech == null ? string.Empty : Loc.GetString(speech);
+                var toSpeak = string.IsNullOrEmpty(speech) ? string.Empty : Loc.GetString(speech);
                 SpeakSpell(speaker, caster, toSpeak, school);
             });
     }

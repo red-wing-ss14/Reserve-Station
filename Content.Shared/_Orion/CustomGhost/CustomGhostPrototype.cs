@@ -63,8 +63,8 @@ public sealed partial class CustomGhostPrototype : IPrototype, IInheritingProtot
     [DataField]
     public string? Name { get; private set; }
 
-    public string DisplayName => Loc.GetString(Name ?? $"custom-ghost-{ID.ToLowerInvariant()}-name");
-    public string DisplayDesc => Loc.GetString(Description ?? $"custom-ghost-{ID.ToLowerInvariant()}-desc");
+    public string DisplayName => Loc.GetString(!string.IsNullOrEmpty(Name) ? Name : $"custom-ghost-{ID.ToLowerInvariant()}-name");
+    public string DisplayDesc => Loc.GetString(!string.IsNullOrEmpty(Description) ? Description : $"custom-ghost-{ID.ToLowerInvariant()}-desc");
 
     /// <summary>
     /// If null, the default of "custom-ghost-[id]-desc" will be used.

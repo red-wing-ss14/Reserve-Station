@@ -50,7 +50,7 @@ public sealed class ThrownLightningSystem : EntitySystem
         if (args.User == null)
             return;
 
-        var speech = ent.Comp.Speech == null ? string.Empty : Loc.GetString(ent.Comp.Speech);
+        var speech = string.IsNullOrEmpty(ent.Comp.Speech) ? string.Empty : Loc.GetString(ent.Comp.Speech);
         _spells.SpeakSpell(args.User.Value, args.User.Value, speech, MagicSchool.Conjuration);
     }
 

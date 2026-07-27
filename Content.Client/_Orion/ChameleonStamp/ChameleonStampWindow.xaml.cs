@@ -84,9 +84,9 @@ public sealed partial class ChameleonStampWindow : FancyWindow
         this.StampMetaDataDescription.PlaceHolder = Loc.GetString(stampSpritePrototype.Description);
         this.StampedNameLineEdit.PlaceHolder = Loc.GetString(stampSpriteComponent.StampedName);
 
-        this.StampMetaDataName.Text = Loc.GetString(chameleonStamp.CustomName ?? "");
-        this.StampMetaDataDescription.Text = Loc.GetString(chameleonStamp.CustomDescription ?? "");
-        this.StampedNameLineEdit.Text = Loc.GetString(chameleonStamp.StampedName ?? "");
+        this.StampMetaDataName.Text = string.IsNullOrEmpty(chameleonStamp.CustomName) ? string.Empty : Loc.GetString(chameleonStamp.CustomName);
+        this.StampMetaDataDescription.Text = string.IsNullOrEmpty(chameleonStamp.CustomDescription) ? string.Empty : Loc.GetString(chameleonStamp.CustomDescription);
+        this.StampedNameLineEdit.Text = string.IsNullOrEmpty(chameleonStamp.StampedName) ? string.Empty : Loc.GetString(chameleonStamp.StampedName);
 
         StampColorSelector.Color = chameleonStamp.CustomStampColor.HasValue ? chameleonStamp.CustomStampColor.Value : stampColorComponent.StampedColor;
 
