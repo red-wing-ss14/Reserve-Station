@@ -57,7 +57,15 @@ public sealed partial class MarkingPicker : Control
     public Marking? HairMarking;
     public Marking? FacialHairMarking;
 
-    private readonly HashSet<MarkingCategories> _ignoreCategories = new();
+// RW start
+    private static readonly HashSet<MarkingCategories> DefaultIgnoredCategories = new()
+    {
+        MarkingCategories.UndergarmentTop,
+        MarkingCategories.UndergarmentBottom,
+    };
+// RW end
+
+    private readonly HashSet<MarkingCategories> _ignoreCategories = new(DefaultIgnoredCategories); // RW
 
     public string IgnoreCategories
     {
@@ -65,6 +73,7 @@ public sealed partial class MarkingPicker : Control
         set
         {
             _ignoreCategories.Clear();
+            _ignoreCategories.UnionWith(DefaultIgnoredCategories); // RW
             var split = value.Split(',');
             foreach (var category in split)
             {

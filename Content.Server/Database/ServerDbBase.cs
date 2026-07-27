@@ -291,6 +291,23 @@ namespace Content.Server.Database
                 // Amour edit end
             }
 
+// RW start
+            baseLoadout ??= new RoleLoadout(HumanoidCharacterProfile.BaseLoadoutProtoId);
+
+            for (var i = markings.Count - 1; i >= 0; i--)
+            {
+                var marking = markings[i];
+                if (TryGetUndergarmentLoadout(marking.MarkingId, out var groupId, out var loadoutId))
+                {
+                    if (!baseLoadout.SelectedLoadouts.TryGetValue(groupId, out var selectedList) || selectedList.Count == 0)
+                    {
+                        baseLoadout.SelectedLoadouts[groupId] = new List<Loadout> { new Loadout { Prototype = loadoutId } };
+                    }
+                    markings.RemoveAt(i);
+                }
+            }
+// RW end
+
             var barkVoice = profile.BarkVoice ?? SharedHumanoidAppearanceSystem.DefaultBarkVoice; // Goob Station - Barks
             var voice = profile.Voice ?? string.Empty; // Amour - TTS
             var bodyType = profile.BodyType ?? "HumanNormal"; // Amour port: WD Slim body types
@@ -344,6 +361,47 @@ namespace Content.Server.Database
                 voice // Amour - TTS
             );
         }
+
+// RW start
+        private static readonly ProtoId<LoadoutGroupPrototype> UnderwearGroup = "Underwear";
+        private static readonly ProtoId<LoadoutGroupPrototype> UndershirtGroup = "Undershirt";
+
+        private static bool TryGetUndergarmentLoadout(
+            string markingId,
+            out ProtoId<LoadoutGroupPrototype> groupId,
+            out ProtoId<LoadoutPrototype> loadoutId)
+        {
+            groupId = default;
+            loadoutId = default;
+
+            if (markingId.StartsWith("UndergarmentBottom"))
+            {
+                groupId = UnderwearGroup;
+                loadoutId = markingId switch
+                {
+                    "UndergarmentBottomBriefs" or "UndergarmentBottomBriefsVox" or "UndergarmentBottomBriefsReptilian" => "PantiesBriefs",
+                    "UndergarmentBottomSatin" or "UndergarmentBottomSatinVox" or "UndergarmentBottomSatinReptilian" => "Panties",
+                    _ => "UnderwearBoxerShorts"
+                };
+                return true;
+            }
+
+            if (markingId.StartsWith("UndergarmentTop"))
+            {
+                groupId = UndershirtGroup;
+                loadoutId = markingId switch
+                {
+                    "UndergarmentTopSportsbra" or "UndergarmentTopSportsbraVox" => "BraSport",
+                    "UndergarmentTopBinder" or "UndergarmentTopBinderVox" => "BraBinder",
+                    "UndergarmentTopTanktop" or "UndergarmentTopTanktopVox" => "ShirtTankTop",
+                    _ => "Bra"
+                };
+                return true;
+            }
+
+            return false;
+        }
+// RW end
 
         private static Profile ConvertProfiles(HumanoidCharacterProfile humanoid, int slot, Profile? profile = null)
         {
