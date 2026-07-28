@@ -20,7 +20,7 @@ public sealed partial class CCVars
     ///     Guide Entry Prototype ID to be displayed as the server rules.
     /// </summary>
     public static readonly CVarDef<string> RulesFile =
-        CVarDef.Create("server.rules_file", "NewPlayer", CVar.REPLICATED | CVar.SERVER);  // Reserve edit: Ruleset
+        CVarDef.Create("server.rules_file", "DefaultRulesetReserve", CVar.REPLICATED | CVar.SERVER);  // Reserve edit: Ruleset
 
     /// <summary>
     ///     Guide entry that is displayed by default when a guide is opened.

@@ -5,7 +5,7 @@
   name: guide-entry-newplayer
   text: "/ServerInfo/Guidebook/NewPlayer/NewPlayer.xml"
   children:
-  - ReserveRuleset  # Reserve edit: Ruleset
+  - DefaultRulesetReserve  # Reserve edit: Ruleset
   - Controls
   - CharacterCreation
 
