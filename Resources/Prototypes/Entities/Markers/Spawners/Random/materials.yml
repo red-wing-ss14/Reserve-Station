@@ -5,11 +5,7 @@
   id: LootSpawnerMaterials
   suffix: Construction Materials
   parent: MarkerBase
-  placement:
-    mode: PlaceFree  # Reserve: Better spawners
   components:
-    - type: Transform
-      anchored: false  # Reserve: Better spawners
     - type: Sprite
       layers:
         - state: red
@@ -55,11 +51,7 @@
   suffix: Construction Materials
   id: LootSpawnerMaterialsHighValueConstruction
   parent: MarkerBase
-  placement:
-    mode: PlaceFree  # Reserve: Better spawners
   components:
-    - type: Transform
-      anchored: false  # Reserve: Better spawners
     - type: Sprite
       layers:
         - state: red
@@ -103,11 +95,7 @@
   name: surplus materials spawner
   id: LootSpawnerMaterialsSurplus
   parent: MarkerBase
-  placement:
-    mode: PlaceFree  # Reserve: Better spawners
   components:
-    - type: Transform
-      anchored: false  # Reserve: Better spawners
     - type: Sprite
       layers:
         - state: red
@@ -140,11 +128,7 @@
   name: cable coil spawner
   id: LootSpawnerCableCoil
   parent: MarkerBase
-  placement:
-    mode: PlaceFree  # Reserve: Better spawners
   components:
-    - type: Transform
-      anchored: false  # Reserve: Better spawners
     - type: Sprite
       layers:
         - state: red

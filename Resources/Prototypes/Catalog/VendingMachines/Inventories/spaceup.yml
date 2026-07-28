@@ -5,7 +5,7 @@
   startingInventory:
     DrinkSpaceUpCan: 5
     DrinkSpaceMountainWindCan: 5
-    DrinkBlueSpaceUpCan: 2  # Reserve: Orchid's Barmania - Vendichaos
+    DrinkGrapeCan: 2
     DrinkRootBeerCan: 2
     DrinkIcedTeaCan: 2
     DrinkSolDryCan: 2
@@ -15,4 +15,4 @@
     DrinkSpaceUpBottleFull: 2
     DrinkChangelingStingCan: 2
   emaggedInventory:
-    DrinkBloodCan: 2  # Reserve: Orchid's Barmania - Vendichaos
+    DrinkNukieCan: 2

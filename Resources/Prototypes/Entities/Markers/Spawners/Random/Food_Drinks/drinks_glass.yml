@@ -12,7 +12,6 @@
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Alpaccalypse <21291379+Alpaccalypse@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
-# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -22,16 +21,15 @@
   suffix: Glass
   parent: MarkerBase
   placement:
-    mode: PlaceFree  # Reserve: Orchid's Barmania - Vendichaos
+    mode: AlignTileAny
   components:
-  - type: Transform  # Reserve: Orchid's Barmania - Vendichaos
-    anchored: false
   - type: Sprite
     layers:
       - state: red
       - sprite: Objects/Consumable/Drinks/beerglass.rsi
         state: icon
   - type: RandomSpawner
+  #small item
     prototypes:
       - DrinkAbsintheGlass
       - DrinkAleGlass
@@ -100,7 +98,6 @@
       - DrinkMojito
       - DrinkMonkeyBusinessGlass
       - DrinkNTCahors
-      - DrinkOrchitoGlass  # Reserve Orchito
       - DrinkPainkillerGlass
       - DrinkPatronGlass
       - DrinkPinaColadaGlass
@@ -139,74 +136,9 @@
       - DrinkShakeWhite
       - DrinkTheMartinez
       - DrinkMoonshineGlass
-      # Reserve: Orchid's Barmania - Visual Fixes start
-      # - Missing non-reserve juices
-      - DrinkAppleJuice
-      - DrinkBananaJuice
-      - DrinkBluePumpkinJuice
-      - DrinkBungoJuice
-      - DrinkCherryJuice
-      - DrinkPineappleJuice
-      # - Missing non-reserve sodas
-      - DrinkEnergyDrinkGlass
-      - DrinkLemonLimeCranberryGlass
-      - DrinkLemonLime
-      - DrinkMangoJuice
-      - DrinkSodaGlass
-      - DrinkStarkistGlass
-      # - Missing non-reserve drinks
-      - DrinkCreamOfCoconutGlass
-      - DrinkMilkGoatGlass
-      - DrinkMilkOatGlass
-      - DrinkMilkSoyGlass
-      - DrinkDryRamenGlass
-      - DrinkHotRamenGlass
-      # - Missing non-reserve ingredients
-      - DrinkEggCookedGlass
-      - DrinkOilOliveGlass
-      - DrinkPumpkinFleshGlass
-      - DrinkCornoilGlass
-      - DrinkSoysauceGlass
-      - DrinkSyrupGlass
-      # - Unused non-reserve juices
-      - DrinkLimeJuice
-      - DrinkLemonJuice
-      - DrinkOrangeJuice
-      # - Unused non-reserve drinks
-      - DrinkCoconutWaterGlass
-      - DrinkCoffee
-      - DrinkCream
-      - DrinkEggnog
-      - DrinkGrapeSodaGlass
-      - DrinkGrenadineGlass
-      - DrinkIcedTeaGlass
-      - DrinkIrishCreamGlass
-      - DrinkCoffeeLiqueurGlass
-      - DrinkRootBeerGlass
-      - DrinkCogChampBase
-      - DrinkEmeraldGlass
-      - DrinkGlassWhite
-      - DrinkSolDryGlass
-      - DrinkSnowWhite
-      - DrinkSpaceUpGlass
-      - DrinkSpaceMountainWindGlass
-      - DrinkTeaGlass
-      - DrinkTequilaGlass
-      - DrinkTomatoJuice
-      - DrinkVermouthGlass
-      - DrinkVodkaGlass
-      - DrinkWhiskeyGlass
-      - DrinkCaipirinha
-      - DrinkDaiquiri
-      - DrinkDeathInTheAfternoon
-      - DrinkEmpress75
-      - DrinkEspressoMartini
-      - DrinkMimosa
-      - DrinkMoscowMule
-      - DrinkTheSunAlsoRises
-      # Reserve: Orchid's Barmania - Visual Fixes end
     chance: 0.8
     offset: 0.0
+    #rare
     rarePrototypes:
       - DrinkAcidSpitGlass
       - DrinkAlliesCocktail
@@ -222,33 +154,4 @@
       - DrinkHoochGlass
       - DrinkBeepskySmashGlass
       - DrinkBacchusBlessing
-      # Reserve: Orchid's Barmania - Visual Fixes start
-      # - Missing non-reserve drinks
-      - DrinkPotatoJuice
-      - DrinkChangelingStingGlass
-      - DrinkShamblersJuice
-      - DrinkMilkSpoiledGlass
-      - DrinkMopwataGlass
-      - DrinkPilkGlass
-      # - Missing non-reserve ingredients
-      - DrinkEnzymeGlass
-      - DrinkEggGlass
-      - DrinkVinegarGlass
-      - DrinkOilGlass
-      - DrinkCapsaicinOilGlass
-      - DrinkFrostOilGlass
-      - DrinkVitaminGlass
-      - DrinkLaughinSyrupGlass
-      # - Unused non-reserve drinks
-      - DrinkBloodGlass
-      - DrinkIceGlass
-      - DrinkManhattanProjectGlass
-      - DrinkMayojito
-      - DrinkMimeosa
-      - DrinkNothing
-      - DrinkPoisonBerryJuice
-      - DrinkPoisonWineGlass
-      - DrinkTeapot
-      - DrinkWhiskeySour
-      # Reserve: Orchid's Barmania - Visual Fixes end
     rareChance: 0.05

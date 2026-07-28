@@ -46,7 +46,7 @@
   desc: reagent-desc-milk-choco
   physicalDesc: reagent-physical-desc-opaque
   flavor: chocolate
-  color: "#a67350"  # Reserve: Orchid's Barmania - Vendichaos
+  color: "#664300"
   recognizable: true
   plantMetabolism:
     - !type:PlantAdjustNutrition

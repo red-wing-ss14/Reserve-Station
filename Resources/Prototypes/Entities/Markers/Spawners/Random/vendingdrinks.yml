@@ -25,11 +25,4 @@
       - VendingMachineSovietSoda #Boda
       - VendingMachineSpaceUp
       - VendingMachineStarkist
-      # Reserve: Orchid's Barmania - Vendichaos start
-      - VendingMachineSoups  # Reserve
-      - VendingMachineEnergyDrinks  # Reserve
-      - VendingMachineBottles  # Reserve
-      - VendingMachineIcedDrinks  # Reserve
-      - VendingMachineCartons  # Reserve
-      # Reserve: Orchid's Barmania - Vendichaos end
     chance: 1

@@ -1,17 +1,11 @@
-# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 - type: entity
   id: RandomFoodBreakfast
   name: random food spawner
   suffix: Meal
   parent: MarkerBase
   placement:
-    mode: PlaceFree  # Reserve: Better spawners
+    mode: AlignTileAny
   components:
-  - type: Transform
-    anchored: false  # Reserve: Better spawners
   - type: Sprite
     layers:
       - sprite: Objects/Consumable/Food/breakfast.rsi

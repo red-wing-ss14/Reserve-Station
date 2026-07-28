@@ -64,14 +64,6 @@
   physicalDesc: reagent-physical-desc-chalky
   flavor: bitter
   color: "#009900"
-  # Reserve: Orchid's Barmania - Visual Fixes start
-  metamorphicSprite:
-    sprite: _Reserve/Objects/Consumable/Drinks/enzyme.rsi
-    state: icon_empty
-  metamorphicMaxFillLevels: 5
-  metamorphicFillBaseName: fill-
-  metamorphicChangeColor: false
-  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: Egg
@@ -82,14 +74,6 @@
   flavor: raw-egg
   color: white
   recognizable: true
-  # Reserve: Orchid's Barmania - Visual Fixes start
-  metamorphicSprite:
-    sprite: _Reserve/Objects/Consumable/Drinks/egg.rsi
-    state: icon_empty
-  metamorphicMaxFillLevels: 5
-  metamorphicFillBaseName: fill-
-  metamorphicChangeColor: false
-  # Reserve: Orchid's Barmania - Visual Fixes end
   metabolisms:
     Food:
       effects:
@@ -104,16 +88,8 @@
   desc: reagent-desc-egg
   physicalDesc: reagent-physical-desc-fluffy
   flavor: egg
-  color: "#F8F0DA"  # Reserve: Orchid's Barmania - Vendichaos
+  color: white
   recognizable: true
-  # Reserve: Orchid's Barmania - Visual Fixes start
-  metamorphicSprite:
-    sprite: _Reserve/Objects/Consumable/Drinks/egg_cooked.rsi
-    state: icon_empty
-  metamorphicMaxFillLevels: 3
-  metamorphicFillBaseName: fill-
-  metamorphicChangeColor: false
-  # Reserve: Orchid's Barmania - Visual Fixes end
   metabolisms:
     Food:
       effects:
@@ -161,14 +137,6 @@
   flavor: bitter
   color: tan
   recognizable: true
-  # Reserve: Orchid's Barmania - Visual Fixes start
-  metamorphicSprite:
-    sprite: _Reserve/Objects/Consumable/Drinks/vinegar.rsi
-    state: icon_empty
-  metamorphicMaxFillLevels: 3
-  metamorphicFillBaseName: fill-
-  metamorphicChangeColor: false
-  # Reserve: Orchid's Barmania - Visual Fixes end
   metabolisms:
     Food:
       effects:
@@ -214,14 +182,6 @@
   flavorMinimum: 0.05
   color: olive
   recognizable: true
-  # Reserve: Orchid's Barmania - Visual Fixes start
-  metamorphicSprite:
-    sprite: _Reserve/Objects/Consumable/Drinks/oil_olive.rsi
-    state: icon_empty
-  metamorphicMaxFillLevels: 3
-  metamorphicFillBaseName: fill-
-  metamorphicChangeColor: false
-  # Reserve: Orchid's Barmania - Visual Fixes end
   metabolisms:
     Food:
       effects:
@@ -252,14 +212,6 @@
   # Orion-End
   tileReactions:
   - !type:FlammableTileReaction {}
-  # Reserve: Orchid's Barmania - Visual Fixes start
-  metamorphicSprite:
-    sprite: _Reserve/Objects/Consumable/Drinks/oil.rsi
-    state: icon_empty
-  metamorphicMaxFillLevels: 3
-  metamorphicFillBaseName: fill-
-  metamorphicChangeColor: false
-  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: CapsaicinOil
@@ -273,14 +225,6 @@
   recognizable: true
   meltingPoint: 146
   boilingPoint: 410 # Really high boiling point compared to its melting
-  # Reserve: Orchid's Barmania - Visual Fixes start
-  metamorphicSprite:
-    sprite: _Reserve/Objects/Consumable/Drinks/oil_capsaicin.rsi
-    state: icon_empty
-  metamorphicMaxFillLevels: 3
-  metamorphicFillBaseName: fill-
-  metamorphicChangeColor: false
-  # Reserve: Orchid's Barmania - Visual Fixes end
   metabolisms:
     Food:
       effects:
@@ -387,14 +331,6 @@
   physicalDesc: reagent-physical-desc-oily
   flavor: cold
   color: skyblue
-  # Reserve: Orchid's Barmania - Visual Fixes start
-  metamorphicSprite:
-    sprite: _Reserve/Objects/Consumable/Drinks/oil_frost.rsi
-    state: icon_empty
-  metamorphicMaxFillLevels: 3
-  metamorphicFillBaseName: fill-
-  metamorphicChangeColor: false
-  # Reserve: Orchid's Barmania - Visual Fixes end
   metabolisms:
     Food:
       effects:

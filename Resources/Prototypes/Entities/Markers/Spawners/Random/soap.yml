@@ -48,16 +48,20 @@
   parent: MarkerBase
   id: RandomSoap
   name: random soap spawner
-  placement:
-    mode: PlaceFree  # Reserve: Better spawners
   components:
-  - type: Transform
-    anchored: false  # Reserve: Better spawners
   - type: Sprite
     layers:
       - state: red
       - sprite: Objects/Specific/Janitorial/soap.rsi
         state: soap-4
-  - type: EntityTableSpawner
-    table: !type:NestedSelector
-      tableId: AllSoapsTable
+  - type: RandomSpawner
+    prototypes:
+      - Soap
+      - SoapHomemade
+      - SoapNT
+      - SoapDeluxe
+    chance: 0.95
+    rarePrototypes:
+      - SoapSyndie
+      - SoapOmega
+    rareChance: 0.05

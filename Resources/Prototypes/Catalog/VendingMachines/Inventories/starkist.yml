@@ -4,21 +4,15 @@
   id: StarkistInventory
   startingInventory:
     DrinkStarkistCan: 6
-    # Reserve: Orchid's Barmania - Vendichaos start
-    DrinkCherryBoomCan: 2
-    DrinkBerryBoomCan: 2
-    DrinkBlueBoomCan: 2
+    DrinkGrapeCan: 2
+    DrinkRootBeerCan: 2
+    DrinkIcedTeaCan: 2
     DrinkSolDryCan: 2
     DrinkLemonLimeCan: 2
-    DrinkSodaAccelerateCan: 2
-    # Reserve: Orchid's Barmania - Vendichaos end
+    DrinkLemonLimeCranberryCan: 2
+    DrinkFourteenLokoCan: 2
   contrabandInventory:
     FoodBurgerCarp: 2
     DrinkChangelingStingCan: 2
-    # Reserve: Orchid's Barmania - Vendichaos start
-    DrinkPotatoBoomCan: 2
-    DrinkAnomalyBoomCan: 2
-    DrinkMojitoCan: 2
-    # Reserve: Orchid's Barmania - Vendichaos end
   emaggedInventory:
-    DrinkBloodCan: 2  # Reserve: Orchid's Barmania - Vendichaos
+    DrinkNukieCan: 2

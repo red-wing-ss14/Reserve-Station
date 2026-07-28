@@ -1,4 +1,4 @@
-ent-DrinkCartonBaseFull = carton
+ent-DrinkCartonBaseFull = { ent-DrinkBase }
     .suffix = Full
     .desc = { ent-DrinkBase.desc }
 ent-DrinkCartonBaseLargeFull = { ent-DrinkCartonBaseFull }

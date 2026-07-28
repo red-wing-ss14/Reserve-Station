@@ -6,16 +6,15 @@
   suffix: Whole
   parent: MarkerBase
   placement:
-    mode: PlaceFree  # Reserve: Better spawners
+    mode: AlignTileAny
   components:
-  - type: Transform
-    anchored: false  # Reserve: Better spawners
   - type: Sprite
     layers:
       - state: red
       - sprite: Objects/Consumable/Food/Baked/pie.rsi
         state: plain
   - type: RandomSpawner
+  #small item
     prototypes:
       - FoodBreadVolcanic
       - FoodBreadPlain
@@ -52,6 +51,7 @@
       - FoodBakedBrownieBatch
     chance: 0.8
     offset: 0.0
+    #rare
     rarePrototypes:
       - FoodBreadMeatSpider
       - FoodBreadMimana
