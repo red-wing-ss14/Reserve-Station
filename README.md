@@ -1,18 +1,17 @@
-<img width="2172" height="724" alt="banne2r" src="https://github.com/user-attachments/assets/e3c53414-cd58-48a0-a70e-b9c812f818f0" />
+<p align="center"> <img alt="Space Station 14" width="1280" height="300" src="https://i.imgur.com/yagb8UO.png" /></p>
 
 ---
 
+Reserve Station - это русскоязычный форк [Goob Station](https://github.com/Goob-Station/Goob-Station).
 
-RED WING - это русскоязычный форк [Goob Station](https://github.com/Goob-Station/Goob-Station).
+Space Station 14 - это ремейк SS13, который работает на собственном движке [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), написанном на C#.
+Reserve Station использует форк Robust Toolbox, который называется [REDBOX](https://github.com/red-wing-ss14/redbox).
 
-Space Station 14 - это ремейк SS13, который работает на собственном движке  [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), написанном на C#.
-RED WING использует собственный форк [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), который называется [REDBOX](https://github.com/red-wing-ss14/redbox). REDBOX - это не жесткое ответвление, а скорее небольшое дополнение, которое закрывает некоторые пробелы в серверной логике оригинального движка.
-
-Поскольку это хард-форк, любой код, взятый из другого апстрима, не может быть напрямую замержен сюда, а должен быть перенесен.
+Поскольку это форк хард-форка, любой код, взятый из другого апстрима, не может быть напрямую замержен сюда, а должен быть перенесен.
 
 ## Ссылки
 
-[Discord](https://discord.gg/zxUt6xEmDg) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Основной репозиторий](https://github.com/red-wing-ss14/ss14-core)
+[Дискорд Резерва](https://discord.gg/WXZvqzZ2Fc) | [Дискорд Губов](https://discord.gg/goobstation) | [Дискорд разработки Губа](https://discord.gg/zXk2cyhzPN)
 
 ## Сборка
 
@@ -46,11 +45,8 @@ RED WING использует собственный форк [Robust Toolbox](h
 
 ## Лицензия
 
-Содержимое, добавленное в этот репозиторий после коммита 87c70a89a67d0521a56388e6b1c3f2cb947943e4 (`17 February 2024 23:00:00 UTC`), распространяется по лицензии GNU Affero General Public License версии 3.0, если не указано иное.
-См. [LICENSE-AGPLv3](./LICENSE-AGPLv3.txt).
+Содержимое, добавленное в этот репозиторий после фиксации [8270907bdc509a3fb5ecfecde8cc14e5845ede36](https://github.com/Goob-Station/Goob-Station/commit/8270907bdc509a3fb5ecfecde8cc14e5845ede36), распространяется по лицензии GNU Affero General Public License версии 3.0, если не указано иное. См. LICENSE-AGPLv3.txt. Содержимое, внесённое в этот репозиторий до фиксации [8270907bdc509a3fb5ecfecde8cc14e5845ede36](https://github.com/Goob-Station/Goob-Station/commit/8270907bdc509a3fb5ecfecde8cc14e5845ede36), лицензируется по лицензии MIT, если не указано иное. См. LICENSE.txt.
 
-Содержимое, добавленное в этот репозиторий до коммита 87c70a89a67d0521a56388e6b1c3f2cb947943e4 (`17 February 2024 23:00:00 UTC`) распространяется по лицензии MIT, если не указано иное.
-См. [LICENSE-MIT](./LICENSE-MIT.txt).
+Большинство ассетов лицензировано под [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), если не указано иное. Лицензия и авторские права на ассеты указаны в файле метаданных. [Пример](https://github.com/space-wizards/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
 
-Большинство ресурсов лицензировано под [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), если не указано иное. Лицензия и авторские права на ресурсах указаны в файле метаданных.
-[Example](./Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
+Обратите внимание, что некоторые ассеты лицензированы под некоммерческой [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) или аналогичной некоммерческой лицензией и должны быть удалены, если вы хотите использовать этот проект в коммерческих целях.
