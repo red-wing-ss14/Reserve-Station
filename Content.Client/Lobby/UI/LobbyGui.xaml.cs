@@ -77,7 +77,7 @@ namespace Content.Client.Lobby.UI
 
             LeaveButton.OnPressed += _ => _consoleHost.ExecuteCommand("disconnect");
             OptionsButton.OnPressed += _ => UserInterfaceManager.GetUIController<OptionsUIController>().ToggleWindow();
-            BoostyButton.OnPressed += _ => IoCManager.Resolve<IUriOpener>().OpenUri(new Uri("https://boosty.to/amourreborn")); // amour
+            BoostyButton.OnPressed += _ => IoCManager.Resolve<IUriOpener>().OpenUri(new Uri("https://boosty.to/reserve-station")); // Reserve edit: Boosty
 
             CollapseButton.OnPressed += _ => TogglePanel(false);
             ExpandButton.OnPressed += _ => TogglePanel(true);

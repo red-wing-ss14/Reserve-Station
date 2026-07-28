@@ -37,29 +37,20 @@ jobs:
 
           # Comment to post when marking a PR as stale
           stale-pr-message: |
-            This pull request has been automatically marked as stale because it has not had
-            any activity for 14 days. It will be closed in another 14 days if no further activity occurs.
-            Thank you for your contributions.
+            Этот пулл-реквест был автоматически помечен как старый потому что в нём не было никакой активности уже 14 дней. Он будет автоматически закрыт ещё через 14 дней, если новой активности не появится.
 
-            You can always ask for help on our development [discord](https://discord.gg/RYNBE6fUW2/).
-
-            If you'd like to keep this open, just leave any comment, and the stale label will be removed.
+            Если нужно чтобы он оставался открытым без активности, достаточно оставить любой комментарий, и метка будет убрана.
           # Comment to post when closing a stale PR
           close-pr-message: |
-            This pull request has been automatically closed because there has been no more activity in the 14 days
-            since being marked stale.
+            Этот пулл-реквест был автоматически закрыт, потому что оставался без активности 28 дней.
 
-            Please feel free to reopen or open a new pull request if you'd still like this to be addressed.
-
-            Again, you can always ask for help on our development [discord](https://discord.gg/RYNBE6fUW2).
-
-            Thanks again for your contribution!
+            Если изменения еще актуальны, пулл-реквест можно открыть снова, попросив разработчика, или сделать полностью новый пулл-реквест.
           # Pull Requests with these labels will never be considered stale
 
           # Set to true to ignore PRs in a milestone (defaults to false)
           exempt-all-pr-milestones: true
-          
+
           # Remove stale label from PRs on update (default is true)
           remove-pr-stale-when-updated: true
-          
+
           ascending: true

@@ -1,17 +1,17 @@
-<p align="center"> <img alt="Space Station 14" width="1280" height="300" src="https://i.imgur.com/yagb8UO.png" /></p>
+<p align="center"> <img alt="Reserve Station 14" width="100%" src="https://i.imgur.com/yagb8UO.png" /></p>
+
+<div align="center" style="font-size: 150%;">
+<a href="https://reserve-station.space/">САЙТ</a> | <a href="https://discord.gg/WXZvqzZ2Fc">ДИСКОРД</a> | <a href="https://boosty.to/reserve-station">БУСТИ</a>
+</div>
 
 ---
 
-Reserve Station - это русскоязычный форк [Goob Station](https://github.com/Goob-Station/Goob-Station).
+**Резерв** - это русскоязычный форк [Goob Station](https://github.com/Goob-Station/Goob-Station), который, в свою очередь, является форком Space Station 14.
 
 Space Station 14 - это ремейк SS13, который работает на собственном движке [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), написанном на C#.
 Reserve Station использует форк Robust Toolbox, который называется [REDBOX](https://github.com/red-wing-ss14/redbox).
 
 Поскольку это форк хард-форка, любой код, взятый из другого апстрима, не может быть напрямую замержен сюда, а должен быть перенесен.
-
-## Ссылки
-
-[Дискорд Резерва](https://discord.gg/WXZvqzZ2Fc) | [Дискорд Губов](https://discord.gg/goobstation) | [Дискорд разработки Губа](https://discord.gg/zXk2cyhzPN)
 
 ## Сборка
 
@@ -21,7 +21,7 @@ Reserve Station использует форк Robust Toolbox, который н�
 ### Необходимые зависимости
 
 > - Git
-> - .NET SDK 10.0.101
+> - .NET SDK 10.0.100
 
 ### Windows
 
@@ -45,7 +45,7 @@ Reserve Station использует форк Robust Toolbox, который н�
 
 ## Лицензия
 
-Содержимое, добавленное в этот репозиторий после фиксации [8270907bdc509a3fb5ecfecde8cc14e5845ede36](https://github.com/Goob-Station/Goob-Station/commit/8270907bdc509a3fb5ecfecde8cc14e5845ede36), распространяется по лицензии GNU Affero General Public License версии 3.0, если не указано иное. См. LICENSE-AGPLv3.txt. Содержимое, внесённое в этот репозиторий до фиксации [8270907bdc509a3fb5ecfecde8cc14e5845ede36](https://github.com/Goob-Station/Goob-Station/commit/8270907bdc509a3fb5ecfecde8cc14e5845ede36), лицензируется по лицензии MIT, если не указано иное. См. LICENSE.txt.
+Содержимое, добавленное в этот репозиторий после коммита [8270907bdc509a3fb5ecfecde8cc14e5845ede36](https://github.com/Goob-Station/Goob-Station/commit/8270907bdc509a3fb5ecfecde8cc14e5845ede36), распространяется по лицензии GNU Affero General Public License версии 3.0, если не указано иное. См. LICENSE-AGPLv3.txt. Содержимое, внесённое в этот репозиторий до коммита [8270907bdc509a3fb5ecfecde8cc14e5845ede36](https://github.com/Goob-Station/Goob-Station/commit/8270907bdc509a3fb5ecfecde8cc14e5845ede36), лицензируется по лицензии MIT, если не указано иное. См. LICENSE.txt.
 
 Большинство ассетов лицензировано под [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), если не указано иное. Лицензия и авторские права на ассеты указаны в файле метаданных. [Пример](https://github.com/space-wizards/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
 
