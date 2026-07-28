@@ -22,8 +22,6 @@ guide-entry-space-law-laws-5 = Законы (XX5)
 guide-entry-space-law-laws-6 = Законы (XX6)
 guide-entry-space-law-laws-7 = Законы (XX7)
 
-guide-entry-amour-rules = Правила Сервера Amour
-
 guide-entry-antagonist = Антагонисты
 guide-entry-antagonist-cortical-borer = Кортикальный Паразит
 guide-entry-antagonist-morph = Морф

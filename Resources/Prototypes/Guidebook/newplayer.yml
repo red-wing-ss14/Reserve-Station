@@ -5,7 +5,7 @@
   name: guide-entry-newplayer
   text: "/ServerInfo/Guidebook/NewPlayer/NewPlayer.xml"
   children:
-  - AmourRuleset # Amour
+  - RWRuleset
   - Controls
   - CharacterCreation
 

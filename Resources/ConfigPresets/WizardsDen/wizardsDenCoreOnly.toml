@@ -20,7 +20,7 @@ desc = "Official English Space Station 14 servers. Vanilla, core ruleset."
 panic_bunker.min_overall_minutes = 15
 
 [server]
-rules_file = "CoreRuleset"
+rules_file = "RWRuleset"
 
 [hub]
 tags = "lang:en,region:am_n_e,rp:none"
