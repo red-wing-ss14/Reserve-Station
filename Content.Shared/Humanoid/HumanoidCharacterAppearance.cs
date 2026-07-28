@@ -454,13 +454,6 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
             markingSet.EnsureSexes(sex, markingManager);
         }
 
-// RW start
-        var validatedMarkings = markingSet.GetForwardEnumerator()
-            .Where(m => markingManager.TryGetMarking(m, out var p) &&
-                        p.MarkingCategory is not (MarkingCategories.UndergarmentTop or MarkingCategories.UndergarmentBottom))
-            .ToList();
-// RW end
-
         return new HumanoidCharacterAppearance(
             hairStyleId,
             hairColor,
@@ -468,7 +461,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
             facialHairColor,
             eyeColor,
             skinColor,
-            validatedMarkings)
+            markingSet.GetForwardEnumerator().ToList())
         {
             // Amour start
             HairColor2 = ClampColor(appearance.HairColor2),
