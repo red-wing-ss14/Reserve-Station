@@ -345,14 +345,14 @@
 - type: guideEntry
   id: SpaceLawReserve
   name: guide-entry-space-law
-  text: "/ServerInfo/_Reserve/Guidebook/SpaceLaw/SpaceLaw.xml"
+  text: "/ServerInfo/_Reserve/Guidebook/ServerRules/SpaceLaw/SpaceLaw.xml"
   children:
   - SpaceLawReserveTable
 
 - type: guideEntry
   id: SpaceLawReserveTable
   name: guide-entry-space-law-table
-  text: "/ServerInfo/_Reserve/Guidebook/SpaceLaw/SLCrimeList.xml"
+  text: "/ServerInfo/_Reserve/Guidebook/ServerRules/SpaceLaw/SLCrimeList.xml"
   children:
   - SpaceLawReserveViolationsMinor
   - SpaceLawReserveViolationsCommon
@@ -361,19 +361,19 @@
 - type: guideEntry
   id: SpaceLawReserveViolationsMinor
   name: guide-entry-space-law-violations-minor
-  text: "/ServerInfo/_Reserve/Guidebook/SpaceLaw/CrimesMinor.xml"
+  text: "/ServerInfo/_Reserve/Guidebook/ServerRules/SpaceLaw/CrimesMinor.xml"
   priority: 0
 
 - type: guideEntry
   id: SpaceLawReserveViolationsCommon
   name: guide-entry-space-law-violations-average
-  text: "/ServerInfo/_Reserve/Guidebook/SpaceLaw/CrimesCommon.xml"
+  text: "/ServerInfo/_Reserve/Guidebook/ServerRules/SpaceLaw/CrimesCommon.xml"
   priority: 1
 
 - type: guideEntry
   id: SpaceLawReserveViolationsSerious
   name: guide-entry-space-law-violations-serious
-  text: "/ServerInfo/_Reserve/Guidebook/SpaceLaw/CrimesSerious.xml"
+  text: "/ServerInfo/_Reserve/Guidebook/ServerRules/SpaceLaw/CrimesSerious.xml"
   priority: 2
 
 #Bans
