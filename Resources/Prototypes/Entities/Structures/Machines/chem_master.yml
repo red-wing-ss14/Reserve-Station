@@ -9,15 +9,15 @@
     mode: SnapgridCenter
   components:
   - type: Sprite
-    sprite: _Orion/Structures/Machines/mixer.rsi # Orion-Edit
+    sprite: _RW/Structures/Machines/mixer.rsi # RW-Edit
     snapCardinals: true
     layers:
     - state: mixer_empty
     - state: mixer_screens
       shader: unshaded
       map: ["enum.PowerDeviceVisualLayers.Powered"]
-      visible: false # Orion-Edit: Added for power-based visibility
-    # Orion-Start
+      visible: false # RW-Edit: Added for power-based visibility
+    # RW-Start
     - state: mixer_screens_loaded
       shader: unshaded
       map: ["mixer_screens_loaded"]
@@ -25,24 +25,24 @@
     - state: mixer_empty_screen
       map: ["mixer_empty_screen"]
       visible: true
-    # Orion-End
+    # RW-End
   - type: Icon
-    sprite: _Orion/Structures/Machines/mixer.rsi # Orion-Edit
+    sprite: _RW/Structures/Machines/mixer.rsi # RW-Edit
     state: mixer_empty
   - type: ItemMapper
-    sprite: _Orion/Structures/Machines/mixer.rsi # Orion
+    sprite: _RW/Structures/Machines/mixer.rsi # RW
     containerWhitelist: [beakerSlot]
     mapLayers:
       mixer_loaded:
         whitelist:
           components:
           - FitsInDispenser
-  # Orion-Start
+  # RW-Start
       mixer_screens_loaded:
         whitelist:
           components:
           - FitsInDispenser
-  # Orion-End
+  # RW-End
   - type: ChemMaster
     pillDosageLimit: 20
   - type: Physics
@@ -87,7 +87,7 @@
         enum.PowerDeviceVisualLayers.Powered:
           True: { visible: true }
           False: { visible: false }
-        mixer_empty_screen: # Orion
+        mixer_empty_screen: # RW
           True: { visible: false }
           False: { visible: true }
   - type: WiresPanel

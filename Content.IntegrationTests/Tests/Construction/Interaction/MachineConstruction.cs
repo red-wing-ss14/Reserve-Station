@@ -20,7 +20,7 @@ public sealed class MachineConstruction : InteractionTest
         ClientAssertPrototype(Unfinished, Target);
         await Interact(Wrench, Cable);
         AssertPrototype(MachineFrame);
-        await Interact(ProtolatheBoard, Servo1, Servo1, MatterBin1, MatterBin1, Beaker, Beaker, Screw); // Orion-Edit
+        await Interact(ProtolatheBoard, Servo1, Servo1, MatterBin1, MatterBin1, Beaker, Beaker, Screw); // RW-Edit
         AssertPrototype(Protolathe);
     }
 
@@ -38,8 +38,8 @@ public sealed class MachineConstruction : InteractionTest
             (Steel, 5),
             (Cable, 1),
             (Beaker, 2),
-            (Servo1, 2), // Orion-Edit
-            (MatterBin1, 2), // Orion
+            (Servo1, 2), // RW-Edit
+            (MatterBin1, 2), // RW
             (ProtolatheBoard, 1));
     }
 
@@ -54,7 +54,7 @@ public sealed class MachineConstruction : InteractionTest
         // Change it into an autolathe
         await InteractUsing("AutolatheMachineCircuitboard");
         AssertPrototype(MachineFrame);
-        await Interact(MatterBin1, MatterBin1, MatterBin1, Servo1, Glass, Screw); // Orion-Edit
+        await Interact(MatterBin1, MatterBin1, MatterBin1, Servo1, Glass, Screw); // RW-Edit
         AssertPrototype("Autolathe");
     }
 }

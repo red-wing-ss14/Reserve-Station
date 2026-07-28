@@ -69,7 +69,7 @@
   description: job-description-chaplain
   playTimeTracker: JobChaplain
   requirements:
-    - !type:AnyOfRequirement # Amour edit - Discord OR playtime
+    - !type:AnyOfRequirement # RW edit - Discord OR playtime
       requirements:
         - !type:DiscordLinkRequirement
         - !type:OverallPlaytimeRequirement
@@ -79,10 +79,10 @@
   supervisors: job-supervisors-hop
   guides: [ Chaplain ] # goobstation
   goobcoins: 25 #Goob content
-  # Orion-Start
+  # RW-Start
   salary: 55
   payrollDepartmentAccount: Service
-  # Orion-End
+  # RW-End
   access:
   - Chapel
   - Maintenance

@@ -25,7 +25,7 @@
   - DeviceQuantumSpinInverter
   - DeviceDesynchronizer
   - ClothingBackpackHarmpack
-  # Orion-Start
+  # RW-Start
   - ModularGrenade
   - TrackingImplanter
   - SadTromboneImplanter
@@ -34,7 +34,7 @@
   - SlimeScannerXenobio
   - ExperiScanner
   - ResearchDataDisk
-  # Orion-End
+  # RW-End
 
 - type: latheRecipePack
   id: ScienceClothing
@@ -47,22 +47,22 @@
   - ClothingBackpackSatchelHolding
   - ClothingBackpackDuffelHolding
   - ClothingBackpackMessengerHolding # Frontier
-  # Orion-Start
+  # RW-Start
   - ClothingEyesNightVisionDiagnosticGoggles
-  # Orion-End
+  # RW-End
 
 - type: latheRecipePack
   id: PowerCells
   recipes:
-#  - PowerCellMicroreactor # Orion-Edit: Replaced with PowerCellBluespaceReactor
+#  - PowerCellMicroreactor # RW-Edit: Replaced with PowerCellBluespaceReactor
   - PowerCellHigh
   - PowerCellHyper
-  # Orion-Start
+  # RW-Start
   - PowerCellSuper
   - PowerCellBluespace
   - PowerCellBluespaceReactor
   - PowerCellVortex
-  # Orion-End
+  # RW-End
 
 - type: latheRecipePack
   id: ScienceWeapons
@@ -104,7 +104,7 @@
   - APECircuitboard
   - ArtifactAnalyzerMachineCircuitboard
   - ArtifactCrusherMachineCircuitboard
-  # Orion-Start
+  # RW-Start
   - ResearchAndDevelopmentServerMachineCircuitboard
   - ResearchServerControlConsoleCircuitboard
   - ResearchComputerCircuitboard
@@ -112,7 +112,7 @@
   - ResearchExperimentalDestructiveScannerMachineCircuitboard
   - XenobiologyBountyComputerCircuitboard
   - StationAiUploadCircuitboard
-  # Orion-End
+  # RW-End
 
 - type: latheRecipePack
   id: CameraBoards
@@ -135,10 +135,10 @@
   - HonkerTargetingElectronics
   - HamtrCentralElectronics
   - HamtrPeripheralsElectronics
-  # Orion-Start
+  # RW-Start
   - GygaxCentralElectronics
   - DurandCentralElectronics
-  # Orion-End
+  # RW-End
 
 - type: latheRecipePack
   id: ShuttleBoards

@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Server._Orion.Construction.Systems;
+using Content.Server._RW.Construction.Systems;
 using Content.Server.Construction.Components;
 using Content.Server.Stack;
-using Content.Shared._Orion.Construction.Components;
-using Content.Shared._Orion.Construction.Prototypes;
+using Content.Shared._RW.Construction.Components;
+using Content.Shared._RW.Construction.Prototypes;
 using Content.Shared.Construction.Components;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
@@ -23,7 +23,7 @@ public sealed class MachineFrameSystem : EntitySystem
     [Dependency] private readonly StackSystem _stack = default!;
     [Dependency] private readonly ConstructionSystem _construction = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly PartExchangerSystem _partExchanger = default!; // Orion
+    [Dependency] private readonly PartExchangerSystem _partExchanger = default!; // RW
 
     public override void Initialize()
     {
@@ -57,10 +57,10 @@ public sealed class MachineFrameSystem : EntitySystem
         if (args.Handled)
             return;
 
-        // Orion-Start
+        // RW-Start
         if (_partExchanger.TryStartExchange(uid, args))
             return;
-        // Orion-End
+        // RW-End
 
         if (!component.HasBoard)
         {
@@ -73,22 +73,22 @@ public sealed class MachineFrameSystem : EntitySystem
         // Note that one entity is ALLOWED to satisfy more than one kind of component or tag requirements. This is
         // necessary in order to avoid weird entity-ordering shenanigans in RegenerateProgress().
         if (TryComp<StackComponent>(args.Used, out var stack)
-            && TryInsertStack(uid, args.Used, component, stack)) // Orion
+            && TryInsertStack(uid, args.Used, component, stack)) // RW
         {
-            // Orion-Edit-Start
+            // RW-Edit-Start
             args.Handled = true;
-            // Orion-Edit-End
+            // RW-Edit-End
             return;
         }
 
-        // Orion-Start
+        // RW-Start
         if (TryComp<MachinePartComponent>(args.Used, out var machinePart)
             && TryInsertMachinePart(uid, args.Used, component, machinePart))
         {
             args.Handled = true;
             return;
         }
-        // Orion-End
+        // RW-End
 
         // Handle component requirements
         foreach (var (compName, info) in component.ComponentRequirements)
@@ -156,7 +156,7 @@ public sealed class MachineFrameSystem : EntitySystem
     }
 
     /// <returns>Whether or not the function had any effect. Does not indicate success.</returns>
-    public  bool TryInsertBoard(EntityUid uid, EntityUid used, MachineFrameComponent component) // Orion-Edit: Was private
+    public  bool TryInsertBoard(EntityUid uid, EntityUid used, MachineFrameComponent component) // RW-Edit: Was private
     {
         if (!TryComp<MachineBoardComponent>(used, out var machineBoard))
             return false;
@@ -219,7 +219,7 @@ public sealed class MachineFrameSystem : EntitySystem
         return true;
     }
 
-    // Orion-Start
+    // RW-Start
     private bool TryInsertMachinePart(EntityUid uid, EntityUid used, MachineFrameComponent component, MachinePartComponent machinePart)
     {
         if (!component.PartRequirements.TryGetValue(machinePart.Part, out var requirement))
@@ -253,10 +253,10 @@ public sealed class MachineFrameSystem : EntitySystem
 
         if (!_container.Insert(partToInsert, component.PartContainer))
         {
-            // Orion-Start
+            // RW-Start
             if (partToInsert != used)
                 QueueDel(partToInsert);
-            // Orion-End
+            // RW-End
 
             return false;
         }
@@ -268,7 +268,7 @@ public sealed class MachineFrameSystem : EntitySystem
 
         return true;
     }
-    // Orion-End
+    // RW-End
 
     public bool IsComplete(MachineFrameComponent component)
     {
@@ -281,13 +281,13 @@ public sealed class MachineFrameSystem : EntitySystem
                 return false;
         }
 
-        // Orion-Start
+        // RW-Start
         foreach (var (type, amount) in component.PartRequirements)
         {
             if (component.PartProgress[type] < amount)
                 return false;
         }
-        // Orion-End
+        // RW-End
 
         foreach (var (compName, info) in component.ComponentRequirements)
         {
@@ -304,15 +304,15 @@ public sealed class MachineFrameSystem : EntitySystem
         return true;
     }
 
-    private static void ResetProgressAndRequirements(MachineFrameComponent component, MachineBoardComponent machineBoard) // Orion-Edit: Make private static
+    private static void ResetProgressAndRequirements(MachineFrameComponent component, MachineBoardComponent machineBoard) // RW-Edit: Make private static
     {
         component.MaterialRequirements = new Dictionary<ProtoId<StackPrototype>, int>(machineBoard.StackRequirements);
-        component.PartRequirements = new Dictionary<ProtoId<MachinePartPrototype>, int>(machineBoard.PartRequirements); // Orion
+        component.PartRequirements = new Dictionary<ProtoId<MachinePartPrototype>, int>(machineBoard.PartRequirements); // RW
         component.ComponentRequirements = new Dictionary<string, GenericPartInfo>(machineBoard.ComponentRequirements);
         component.TagRequirements = new Dictionary<ProtoId<TagPrototype>, GenericPartInfo>(machineBoard.TagRequirements);
 
         component.MaterialProgress.Clear();
-        component.PartProgress.Clear(); // Orion
+        component.PartProgress.Clear(); // RW
         component.ComponentProgress.Clear();
         component.TagProgress.Clear();
 
@@ -321,12 +321,12 @@ public sealed class MachineFrameSystem : EntitySystem
             component.MaterialProgress[stackType] = 0;
         }
 
-        // Orion-Start
+        // RW-Start
         foreach (var (partType, _) in component.PartRequirements)
         {
             component.PartProgress[partType] = 0;
         }
-        // Orion-End
+        // RW-End
 
         foreach (var (compName, _) in component.ComponentRequirements)
         {
@@ -345,11 +345,11 @@ public sealed class MachineFrameSystem : EntitySystem
         {
             component.TagRequirements.Clear();
             component.MaterialRequirements.Clear();
-            component.PartRequirements.Clear(); // Orion
+            component.PartRequirements.Clear(); // RW
             component.ComponentRequirements.Clear();
-//            component.TagRequirements.Clear(); // Orion-Edit
+//            component.TagRequirements.Clear(); // RW-Edit
             component.MaterialProgress.Clear();
-            component.PartProgress.Clear(); // Orion
+            component.PartProgress.Clear(); // RW
             component.ComponentProgress.Clear();
             component.TagProgress.Clear();
 
@@ -368,11 +368,11 @@ public sealed class MachineFrameSystem : EntitySystem
         foreach (var part in component.PartContainer.ContainedEntities)
         {
             if (TryComp<StackComponent>(part, out var stack)
-                && component.MaterialRequirements.ContainsKey(stack.StackTypeId)) // Orion
+                && component.MaterialRequirements.ContainsKey(stack.StackTypeId)) // RW
             {
                 var type = stack.StackTypeId;
 
-/* // Orion-Edit
+/* // RW-Edit
                 if (!component.MaterialRequirements.ContainsKey(type))
                     continue;
 */
@@ -385,7 +385,7 @@ public sealed class MachineFrameSystem : EntitySystem
                 continue;
             }
 
-            // Orion-Start
+            // RW-Start
             if (TryComp<MachinePartComponent>(part, out var machinePart))
             {
                 if (!component.PartRequirements.ContainsKey(machinePart.Part))
@@ -400,7 +400,7 @@ public sealed class MachineFrameSystem : EntitySystem
 
                 continue;
             }
-            // Orion-End
+            // RW-End
 
             // I have many regrets.
             foreach (var (compName, _) in component.ComponentRequirements)

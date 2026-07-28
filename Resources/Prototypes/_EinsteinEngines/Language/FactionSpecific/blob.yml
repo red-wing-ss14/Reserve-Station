@@ -5,11 +5,11 @@
     fontId: Monospace # TODO - Make a better font selection instead of copying Silicon.
     boldFontId: MonospaceBold
     color: "#800080"
-  # Orion-Start
+  # RW-Start
   icon:
-    sprite: _Orion/Interface/Chat/language.rsi
+    sprite: _RW/Interface/Chat/language.rsi
     state: slime # TODO: Sprite it
-  # Orion-End
+  # RW-End
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1

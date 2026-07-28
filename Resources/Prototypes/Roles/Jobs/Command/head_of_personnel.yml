@@ -32,10 +32,10 @@
 #  - HeadOfPersonnelSOP
 #  - Writing
   goobcoins: 40 #Goob content
-  # Orion-Start
+  # RW-Start
   salary: 110
   payrollDepartmentAccount: Command
-  # Orion-End
+  # RW-End
   weight: 20
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"

@@ -57,14 +57,14 @@
       - map: [ "enum.HumanoidVisualLayers.LLeg" ]
       - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
       - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
-      - map: [ "underwear" ] # Orion
+      - map: [ "underwear" ] # RW
       - map: [ "undershirt" ]
-      # Orion-End
-      # Orion-Edit-Start: Moved under jumpsuit
+      # RW-End
+      # RW-Edit-Start: Moved under jumpsuit
       - map: ["enum.HumanoidVisualLayers.LFoot"]
       - map: ["enum.HumanoidVisualLayers.RFoot"]
-      # Orion-Edit-End
-      - map: [ "socks" ] # Orion
+      # RW-Edit-End
+      - map: [ "socks" ] # RW
       - map: ["jumpsuit"]
       - map: ["enum.HumanoidVisualLayers.LHand"]
       - map: ["enum.HumanoidVisualLayers.RHand"]
@@ -75,8 +75,8 @@
         visible: false
       - map: [ "id" ]
       - map: [ "gloves" ]
-      - map: [ "wrists" ] # Orion
-      - map: [ "earsright" ] # Orion
+      - map: [ "wrists" ] # RW
+      - map: [ "earsright" ] # RW
       - map: [ "ears" ]
       - map: [ "outerClothing" ]
       - map: [ "eyes" ]
@@ -165,13 +165,13 @@
           32:
             sprite: _DV/Mobs/Species/Harpy/displacement.rsi
             state: jumpsuit
-      # Orion-Start
+      # RW-Start
       underwear:
         sizeMaps:
           32:
             sprite: _DV/Mobs/Species/Harpy/displacement.rsi
             state: jumpsuit
-      # Orion-End
+      # RW-End
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
@@ -183,20 +183,20 @@
               layerKey: dummy
               parameterTexture: displacementMap
               parameterUV: displacementUV
-      # Orion-Start
+      # RW-Start
       underwear:
         sizeMaps:
           32:
             sprite: _DV/Mobs/Species/Harpy/displacement.rsi
             state: jumpsuit
-      # Orion-End
-      # Amour-Start
+      # RW-End
+      # RW-Start
       jumpsuit-body-slim:
         sizeMaps:
           32:
-            sprite: _Amour/Mobs/Species/Harpy/displacement.rsi
+            sprite: _RW/Mobs/Species/Harpy/displacement.rsi
             state: jumpsuit-slim
-      # Amour-End
+      # RW-End
   - type: HarpyVisuals
   - type: Tag
     tags:
@@ -231,13 +231,13 @@
           32:
             sprite: _DV/Mobs/Species/Harpy/displacement.rsi
             state: jumpsuit
-      # Orion-Start
+      # RW-Start
       underwear:
         sizeMaps:
           32:
             sprite: _DV/Mobs/Species/Harpy/displacement.rsi
             state: jumpsuit
-      # Orion-End
+      # RW-End
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
@@ -249,17 +249,17 @@
               layerKey: dummy
               parameterTexture: displacementMap
               parameterUV: displacementUV
-      # Orion-Start
+      # RW-Start
       underwear:
         sizeMaps:
           32:
             sprite: _DV/Mobs/Species/Harpy/displacement.rsi
             state: jumpsuit
-      # Orion-End
+      # RW-End
       jumpsuit-body-slim:
         sizeMaps:
           32:
-            sprite: _Amour/Mobs/Species/Harpy/displacement.rsi
+            sprite: _RW/Mobs/Species/Harpy/displacement.rsi
             state: jumpsuit-slim
   - type: Sprite
     # scale: 0.9, 0.9 # Goobstation: port EE height/width sliders
@@ -272,25 +272,25 @@
       - map: [ "enum.HumanoidVisualLayers.LArm" ]
       - map: [ "enum.HumanoidVisualLayers.RLeg" ]
       - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-#      - map: [ "underpants" ] # Orion-Edit: Removed
-#      - map: [ "undershirt" ] # Orion-Edit: Removed
-#      - map: [ "socks" ] # Orion-Edit: Removed
-      # Orion-Start
+#      - map: [ "underpants" ] # RW-Edit: Removed
+#      - map: [ "undershirt" ] # RW-Edit: Removed
+#      - map: [ "socks" ] # RW-Edit: Removed
+      # RW-Start
       - map: [ "underwear" ]
       - map: [ "undershirt" ]
-      # Orion-End
-      # Orion-Edit-Start: Moved under jumpsuit
+      # RW-End
+      # RW-Edit-Start: Moved under jumpsuit
       - map: ["enum.HumanoidVisualLayers.LFoot"]
       - map: ["enum.HumanoidVisualLayers.RFoot"]
-      # Orion-Edit-End
-      - map: [ "socks" ] # Orion
+      # RW-Edit-End
+      - map: [ "socks" ] # RW
       - map: ["jumpsuit"]
       - map: ["enum.HumanoidVisualLayers.LHand"]
       - map: ["enum.HumanoidVisualLayers.RHand"]
       - map: [ "id" ]
       - map: [ "gloves" ]
-      - map: [ "wrists" ] # Orion
-      - map: [ "earsright" ] # Orion
+      - map: [ "wrists" ] # RW
+      - map: [ "earsright" ] # RW
       - map: [ "ears" ]
       - map: [ "outerClothing" ]
       - map: [ "eyes" ]

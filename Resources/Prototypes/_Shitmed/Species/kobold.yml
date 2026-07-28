@@ -8,20 +8,20 @@
   name: species-name-kobold
   roundStart: false # sad...
   prototype: MobKobold
-  # Amour port: WD Slim body types START
+  # RW port: WD Slim body types START
   bodyTypes:
   - KoboldNormal
-  # Amour port: WD Slim body types END
+  # RW port: WD Slim body types END
   dollPrototype: MobKoboldDummy
   skinColoration: Hues
   defaultSkinTone: "#9a7c5a"
   markingLimits: MobKoboldMarkingLimits
 
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
 - type: bodyType
   id: KoboldNormal
   name: body-normal
-# Amour port: WD Slim body types END
+# RW port: WD Slim body types END
   sprites:
     Special: MobKoboldAnyMarking
     Head: MobKoboldHead

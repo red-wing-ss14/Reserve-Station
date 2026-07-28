@@ -1,4 +1,4 @@
-using Content.Shared._Orion.CustomGhost;
+using Content.Shared._RW.CustomGhost;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Preferences;
 using Robust.Shared.Prototypes;
@@ -20,7 +20,7 @@ namespace Content.Client.Lobby
         void CreateCharacter(ICharacterProfile profile);
         void DeleteCharacter(ICharacterProfile profile);
         void DeleteCharacter(int slot);
-        void SetCustomGhost(ProtoId<CustomGhostPrototype> ghostProto); // Orion
+        void SetCustomGhost(ProtoId<CustomGhostPrototype> ghostProto); // RW
         void UpdateConstructionFavorites(List<ProtoId<ConstructionPrototype>> favorites);
     }
 }

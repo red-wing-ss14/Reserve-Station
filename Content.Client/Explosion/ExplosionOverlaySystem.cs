@@ -30,7 +30,7 @@ public sealed class ExplosionOverlaySystem : EntitySystem
         SubscribeLocalEvent<ExplosionVisualsComponent, ComponentInit>(OnExplosionInit);
         SubscribeLocalEvent<ExplosionVisualsComponent, ComponentRemove>(OnCompRemove);
         SubscribeLocalEvent<ExplosionVisualsComponent, ComponentHandleState>(OnExplosionHandleState);
-        _overlayMan.AddOverlay(new ExplosionOverlay(_appearance, _resCache)); // Orion-Edit
+        _overlayMan.AddOverlay(new ExplosionOverlay(_appearance, _resCache)); // RW-Edit
     }
 
     private void OnExplosionHandleState(EntityUid uid, ExplosionVisualsComponent component, ref ComponentHandleState args)

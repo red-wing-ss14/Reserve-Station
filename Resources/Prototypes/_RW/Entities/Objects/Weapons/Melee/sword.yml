@@ -1,0 +1,50 @@
+- type: entity
+  parent: BaseKnife
+  id: Shinai
+  name: shinai
+  description: A bamboo sword, commonly used in kendo. Made some time after the realization that wooden swords hurt a lot.
+  components:
+  - type: Sprite
+    sprite: _RW/Objects/Weapons/Melee/shinai.rsi
+    state: icon
+  - type: MeleeWeapon
+    attackRate: 1.2
+    range: 1.75
+    bluntStaminaDamageFactor: 2.0
+    damage:
+      types:
+        Blunt: 4
+    soundHit:
+      collection: MetalThud
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2
+  - type: StaminaDamageOnHit
+    damage: 10
+  - type: DisarmMalus
+
+- type: entity
+  parent: BaseKnife
+  id: Wakizashi
+  name: wakizashi
+  description: A short, multi-purpose sword of plasteel construction.
+  components:
+  - type: Sprite
+    sprite: _RW/Objects/Weapons/Melee/wakizashi.rsi
+    state: icon
+  - type: Item
+    size: Normal
+    sprite: _RW/Objects/Weapons/Melee/wakizashi.rsi
+  - type: Execution
+    doAfterDuration: 14.0
+  - type: DisarmMalus
+  - type: MeleeWeapon
+    attackRate: 2
+    damage:
+      types:
+        Slash: 12
+  - type: Tag
+    tags:
+    - Wakizashi

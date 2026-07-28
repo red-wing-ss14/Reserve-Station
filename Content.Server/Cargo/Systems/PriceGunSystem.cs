@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Server._Orion.Economy.Systems;
+using Content.Server._RW.Economy.Systems;
 using Content.Server.Popups;
 using Content.Server.Salvage.JobBoard;
 using Content.Server.Station.Systems;
@@ -20,8 +20,8 @@ public sealed class PriceGunSystem : SharedPriceGunSystem
     [Dependency] private readonly CargoSystem _bountySystem = default!;
     [Dependency] private readonly SalvageJobBoardSystem _salvageJobBoard = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly StationSystem _station = default!; // Orion
-    [Dependency] private readonly MarketSystem _market = default!; // Orion
+    [Dependency] private readonly StationSystem _station = default!; // RW
+    [Dependency] private readonly MarketSystem _market = default!; // RW
 
     protected override bool GetPriceOrBounty(Entity<PriceGunComponent> entity, EntityUid target, EntityUid user)
     {
@@ -40,10 +40,10 @@ public sealed class PriceGunSystem : SharedPriceGunSystem
         {
             var price = _pricingSystem.GetPrice(target);
 
-            // Orion-Start
+            // RW-Start
             if (_station.GetOwningStation(user) is { } station)
                 price = _market.AdjustSellPrice(station, target, price);
-            // Orion-End
+            // RW-End
 
             _popupSystem.PopupEntity(Loc.GetString("price-gun-pricing-result",
                     ("object", Identity.Entity(target, EntityManager)),

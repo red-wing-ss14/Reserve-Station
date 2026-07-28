@@ -5,11 +5,11 @@
   name: species-name-reptilian
   roundStart: true
   prototype: MobReptilian
-  # Amour port: WD Slim body types START
+  # RW port: WD Slim body types START
   bodyTypes:
     - ReptilianNormal
     - ReptilianSlim
-  # Amour port: WD Slim body types END
+  # RW port: WD Slim body types END
   defaultSkinTone: "#34a223"
   markingLimits: MobReptilianMarkingLimits
   dollPrototype: MobReptilianDummy
@@ -17,9 +17,9 @@
   maleFirstNames: NamesReptilianMale
   femaleFirstNames: NamesReptilianFemale
   naming: FirstDashFirst
-  # Orion-Start
+  # RW-Start
   category: Classic
-  description: "/ServerInfo/_Orion/SpeciesDescriptions/Reptilian.xml"
+  description: "/ServerInfo/_RW/SpeciesDescriptions/Reptilian.xml"
   pros:
   - species-reptilian-pro-pain-tolerance
   - species-reptilian-pro-tail-drag
@@ -28,13 +28,13 @@
   - species-reptilian-special-animal-stomach
   cons:
   - species-reptilian-con-cold-sensitivity
-  # Orion-End
+  # RW-End
 
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
 - type: bodyType
   id: ReptilianNormal
   name: body-normal
-# Amour port: WD Slim body types END
+# RW port: WD Slim body types END
   sprites:
     Head: MobReptilianHead
     Face: MobHumanoidAnyMarking # Goob?
@@ -51,12 +51,12 @@
     RArm: MobReptilianRArm
     LHand: MobReptilianLHand
     RHand: MobReptilianRHand
-    # Amour port: WD Slim body types START
+    # RW port: WD Slim body types START
     LLeg: MobReptilianDigiLLeg
     RLeg: MobReptilianDigiRLeg
     LFoot: MobReptilianDigiLFoot
     RFoot: MobReptilianDigiRFoot
-    # Amour port: WD Slim body types END
+    # RW port: WD Slim body types END
 
 - type: markingPoints
   id: MobReptilianMarkingLimits

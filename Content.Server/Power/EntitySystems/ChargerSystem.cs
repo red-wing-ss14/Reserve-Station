@@ -110,7 +110,7 @@
 
 using Content.Server.Power.Components;
 using Content.Shared.PowerCell;
-using Content.Shared._Orion.Construction.Events;
+using Content.Shared._RW.Construction.Events;
 using Content.Shared.Power;
 using Content.Shared.Power.Components;
 using Content.Shared.Power.EntitySystems;
@@ -132,21 +132,21 @@ public sealed class ChargerSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<ChargerComponent, MapInitEvent>(OnMapInit);
-        // Orion-Start
+        // RW-Start
         SubscribeLocalEvent<ChargerComponent, RefreshPartsEvent>(OnPartsRefresh);
         SubscribeLocalEvent<ChargerComponent, UpgradeExamineEvent>(OnUpgradeExamine);
-        // Orion-End
+        // RW-End
     }
 
     private void OnMapInit(EntityUid uid, ChargerComponent component, MapInitEvent args)
     {
-        // Orion-Start
+        // RW-Start
         component.BaseChargeRate = component.ChargeRate;
         component.FinalChargeRate = component.ChargeRate;
-        // Orion-End
+        // RW-End
     }
 
-    // Orion-Start
+    // RW-Start
     private void OnPartsRefresh(EntityUid uid, ChargerComponent component, RefreshPartsEvent args)
     {
         var capTier = args.GetPartRating(component.ChargePart);
@@ -175,5 +175,5 @@ public sealed class ChargerSystem : EntitySystem
 
         args.AddPercentageUpgrade("machine-upgrade-charging-efficiency", efficiency);
     }
-    // Orion-End
+    // RW-End
 }

@@ -208,7 +208,7 @@ public sealed partial class AnomalyComponent : Component
     /// This doesn't include the point bonus for being unstable.
     /// </summary>
     [DataField]
-    public int MaxPointsPerSecond = 40; // Orion-Edit: 70 > 40
+    public int MaxPointsPerSecond = 40; // RW-Edit: 70 > 40
 
     /// <summary>
     /// The multiplier applied to the point value for the

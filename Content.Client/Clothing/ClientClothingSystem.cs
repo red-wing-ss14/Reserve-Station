@@ -5,7 +5,7 @@ using System.Linq;
 using Content.Client.DisplacementMap;
 using Content.Client.Inventory;
 using Content.Goobstation.Common.Clothing;
-using Content.Shared._Amour.Humanoid.Prototypes;
+using Content.Shared._RW.Humanoid.Prototypes;
 using Content.Shared.Clothing;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.EntitySystems;
@@ -50,13 +50,13 @@ public sealed class ClientClothingSystem : ClothingSystem
         {"pocket1", "POCKET1"},
         {"pocket2", "POCKET2"},
         {"suitstorage", "SUITSTORAGE"},
-        // Orion-Start
+        // RW-Start
         {"earsright", "EARSRIGHT"},
         {"underwear", "UNDERWEAR"},
         {"undershirt", "UNDERSHIRT"},
         {"socks", "SOCKS"},
         {"wrists", "WRISTS"},
-        // Orion-End
+        // RW-End
     };
 
     [Dependency] private readonly IResourceCache _cache = default!;
@@ -64,8 +64,8 @@ public sealed class ClientClothingSystem : ClothingSystem
     [Dependency] private readonly DisplacementMapSystem _displacement = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
 
-    [Dependency] private readonly IPrototypeManager _prototype = default!; // Amour port: WD Slim body types
-    [Dependency] private readonly TagSystem _tag = default!; // Amour port: WD Slim body types
+    [Dependency] private readonly IPrototypeManager _prototype = default!; // RW port: WD Slim body types
+    [Dependency] private readonly TagSystem _tag = default!; // RW port: WD Slim body types
 
     public override void Initialize()
     {
@@ -118,14 +118,14 @@ public sealed class ClientClothingSystem : ClothingSystem
 
         List<PrototypeLayerData>? layers = null;
 
-        // Amour port: WD Slim body types START
+        // RW port: WD Slim body types START
         // body type specific
         if (TryComp(args.Equipee, out HumanoidAppearanceComponent? humanoid))
         {
             var bodyTypeName = _prototype.Index<BodyTypePrototype>(humanoid.BodyType).Name;
             item.ClothingVisuals.TryGetValue($"{args.Slot}-{bodyTypeName}", out layers);
         }
-        // Amour port: WD Slim body types END
+        // RW port: WD Slim body types END
 
         // first attempt to get species specific data.
         if (inventory.SpeciesId != null)
@@ -135,7 +135,7 @@ public sealed class ClientClothingSystem : ClothingSystem
         if (layers == null && !item.ClothingVisuals.TryGetValue(args.Slot, out layers))
         {
             // No generic data either. Attempt to generate defaults from the item's RSI & item-prefixes
-            if (!TryGetDefaultVisuals(uid, item, args.Slot, inventory.SpeciesId, args.Equipee, out layers)) // Amour port: WD Slim body types
+            if (!TryGetDefaultVisuals(uid, item, args.Slot, inventory.SpeciesId, args.Equipee, out layers)) // RW port: WD Slim body types
                 return;
         }
 
@@ -163,7 +163,7 @@ public sealed class ClientClothingSystem : ClothingSystem
     ///     Useful for lazily adding clothing sprites without modifying yaml. And for backwards compatibility.
     /// </remarks>
     private bool TryGetDefaultVisuals(EntityUid uid, ClothingComponent clothing, string slot, string? speciesId,
-        EntityUid target, [NotNullWhen(true)] out List<PrototypeLayerData>? layers) // Amour port: WD Slim body types
+        EntityUid target, [NotNullWhen(true)] out List<PrototypeLayerData>? layers) // RW port: WD Slim body types
     {
         layers = null;
 
@@ -190,7 +190,7 @@ public sealed class ClientClothingSystem : ClothingSystem
         if (clothing.EquippedState != null)
             state = $"{clothing.EquippedState}";
 
-        // Amour port: WD Slim body types START
+        // RW port: WD Slim body types START
         // body type specific
         if (TryComp(target, out HumanoidAppearanceComponent? humanoid))
         {
@@ -198,7 +198,7 @@ public sealed class ClientClothingSystem : ClothingSystem
             if (rsi.TryGetState($"{state}-{bodyTypeName}", out _))
                 state = $"{state}-{bodyTypeName}";
         }
-        // Amour port: WD Slim body types END
+        // RW port: WD Slim body types END
 
         // species specific
         if (speciesId != null && rsi.TryGetState($"{state}-{speciesId}", out _))
@@ -319,7 +319,7 @@ public sealed class ClientClothingSystem : ClothingSystem
         // Select displacement maps
         var displacementData = inventory.Displacements.GetValueOrDefault(slot); //Default unsexed map
 
-        // Amour port: WD Slim body types START
+        // RW port: WD Slim body types START
         string? bodyTypeName = null;
         if (TryComp(equipee, out HumanoidAppearanceComponent? humanoid))
         {
@@ -359,7 +359,7 @@ public sealed class ClientClothingSystem : ClothingSystem
                     break;
             }
         }
-        // Amour port: WD Slim body types END
+        // RW port: WD Slim body types END
 
         // add the new layers
         foreach (var (key, layerData) in ev.Layers)
@@ -408,7 +408,7 @@ public sealed class ClientClothingSystem : ClothingSystem
             {
                 //Checking that the state is not tied to the current race. In this case we don't need to use the displacement maps.
                 if (layerData.State is not null && (inventory.SpeciesId is not null && layerData.State.EndsWith(inventory.SpeciesId)
-                    || bodyTypeName is not null && layerData.State.EndsWith(bodyTypeName))) // Amour port: WD Slim body types
+                    || bodyTypeName is not null && layerData.State.EndsWith(bodyTypeName))) // RW port: WD Slim body types
                     continue;
 
                 if (_displacement.TryAddDisplacement(displacementData, (equipee, sprite), index, key, out var displacementKey))

@@ -149,7 +149,7 @@ public sealed partial class AtmosphereSystem
                         HotspotExpose(gridAtmosphere, otherTile, radiatedTemperature, Atmospherics.CellVolume / 4);
                 }
             }
-/* // Orion-Edit: Removed
+/* // RW-Edit: Removed
             else
             {
                 tile.Hotspot.State = (byte) (tile.Hotspot.Volume > Atmospherics.CellVolume * 0.4f ? 2 : 1);
@@ -181,7 +181,7 @@ public sealed partial class AtmosphereSystem
             tile.Hotspot.State = (byte)(tile.Hotspot.Volume > Atmospherics.CellVolume * 0.4f ? 2 : 1);
         }
 
-        // Orion-Start
+        // RW-Start
         switch (tile.Hotspot.Temperature)
         {
             case <= 390.15f:
@@ -206,7 +206,7 @@ public sealed partial class AtmosphereSystem
                 tile.Hotspot.State = 7;
                 break;
         }
-        // Orion-End
+        // RW-End
 
         if (tile.Hotspot.Temperature > tile.MaxFireTemperatureSustained)
             tile.MaxFireTemperatureSustained = tile.Hotspot.Temperature;

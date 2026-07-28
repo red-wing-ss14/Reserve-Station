@@ -36,7 +36,7 @@ public sealed class EmotesUIController : UIController, IOnStateChanged<GameplayS
             [EmoteCategory.Vocal] = ("emote-menu-category-vocal",
                 new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Emotes/vocal.png"))),
 
-/* // Orion-Edit: So dirty
+/* // RW-Edit: So dirty
             [EmoteCategory.Farts] = ("emote-menu-category-farts",
                 new SpriteSpecifier.Texture(new ResPath("/Textures/_Goobstation/Interface/Emotes/fart.png"))), // Goobstation (obviously)
 */

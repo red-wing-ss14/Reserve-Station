@@ -2,7 +2,7 @@
 
 - type: entity
   id: Wristwatch
-  parent: [ ClothingWristsWatchBase, BaseItem ] # Orion-Edit: wrists
+  parent: [ ClothingWristsWatchBase, BaseItem ] # RW-Edit: wrists
   name: wristwatch
   description: A cheap watch for telling time. How much did you waste playing Space Station 14?
   components:
@@ -12,13 +12,13 @@
     - state: wristwatch
     - map: [ "enum.ClockVisualLayers.MinuteHand"]
     - map: [ "enum.ClockVisualLayers.HourHand"]
-#  - type: Clock # Orion-Edit: Parented
+#  - type: Clock # RW-Edit: Parented
   - type: Item
     sprite: Objects/Devices/wristwatch.rsi
     size: Small
   - type: Clothing
     sprite: Objects/Devices/wristwatch.rsi
-#    slots: # Orion-Edit: wrists
+#    slots: # RW-Edit: wrists
 #    - gloves
   - type: Appearance
   - type: Damageable

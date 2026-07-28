@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
-using Content.Server._Amour.Gulag;
+using Content.Server._RW.Gulag;
 using Content.Server._Goobstation.Antag;
 using Content.Server.Administration.Managers;
 using Content.Server.Antag.Components;
@@ -57,7 +57,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
     [Dependency] private readonly LoadoutSystem _loadout = default!;
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly GulagSystem _gulag = default!; // Amour
+    [Dependency] private readonly GulagSystem _gulag = default!; // RW
     [Dependency] private readonly PlayTimeTrackingSystem _playTime = default!;
     [Dependency] private readonly IServerPreferencesManager _pref = default!;
     [Dependency] private readonly RoleSystem _role = default!;
@@ -598,10 +598,10 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         if (session == null)
             return true;
 
-        // Amour start
+        // RW start
         if (_gulag.IsUserGulagged(session.UserId))
             return false;
-        // Amour end
+        // RW end
 
         if (session.Status is SessionStatus.Disconnected or SessionStatus.Zombie)
             return false;

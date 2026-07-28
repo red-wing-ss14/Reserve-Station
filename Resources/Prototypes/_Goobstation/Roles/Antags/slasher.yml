@@ -20,7 +20,7 @@
     raffle:
       settings: default
     requirements:
-      - !type:DiscordLinkRequirement # Amour edit
+      - !type:DiscordLinkRequirement # RW edit
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:

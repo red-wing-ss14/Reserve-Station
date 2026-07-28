@@ -34,8 +34,8 @@
     state: base
   - type: PointLight
     color: "#c9c7c2" # 5000K color temp | Orion-Edit: Changed color/temp
-    energy: 1.5 # Orion-Edit: 0.8 > 1.5
-    radius: 6 # Orion-Edit: 10 > 6
+    energy: 1.5 # RW-Edit: 0.8 > 1.5
+    radius: 6 # RW-Edit: 10 > 6
     softness: 1
     offset: "0, -0.5"
   - type: Damageable
@@ -88,7 +88,7 @@
     key: lights
   - type: Penetratable # Goobstation - Better snipers
     penetrateDamage: 10
-  - type: LightingOverlay # Orion
+  - type: LightingOverlay # RW
   - type: Tag # Goobstation - Prevent RCD from making lights in one tile
     tags:
     - WallLight
@@ -175,9 +175,9 @@
   - type: PoweredLight
     hasLampOnSpawn: LedLightTube
   - type: PointLight
-    radius: 10 # Orion-Edit: 15 > 10
-    energy: 0.7 # Orion-Edit: 1 > 0.7
-    softness: 1 # Orion-Edit: 0.9 > 1
+    radius: 10 # RW-Edit: 15 > 10
+    energy: 0.7 # RW-Edit: 1 > 0.7
+    softness: 1 # RW-Edit: 0.9 > 1
     color: "#EEEEFF"
   - type: DamageOnInteract
     damage:
@@ -192,8 +192,8 @@
   components:
   - type: PointLight
     radius: 10
-    energy: 0.7 # Orion-Edit: 2.5 > 0.7
-    softness: 1 # Orion-Edit: 0.9 > 1
+    energy: 0.7 # RW-Edit: 2.5 > 0.7
+    softness: 1 # RW-Edit: 0.9 > 1
     color: "#EEEEFF"
 
 #Exterior lights
@@ -217,9 +217,9 @@
   suffix: Always Powered, Exterior
   components:
   - type: PointLight
-    radius: 10 # Orion-Edit: 12 > 10
-    energy: 0.7 # Orion-Edit: 4.5 > 0.7
-    softness: 1 # Orion-Edit: 0.5 > 1
+    radius: 10 # RW-Edit: 12 > 10
+    energy: 0.7 # RW-Edit: 4.5 > 0.7
+    softness: 1 # RW-Edit: 0.5 > 1
     color: "#B4FCF0"
 
 #Sodium lights
@@ -233,8 +233,8 @@
     hasLampOnSpawn: SodiumLightTube
   - type: PointLight
     radius: 10
-    energy: 0.7 # Orion-Edit: 2.5 > 0.7
-    softness: 1 # Orion-Edit: 0.9 > 1
+    energy: 0.7 # RW-Edit: 2.5 > 0.7
+    softness: 1 # RW-Edit: 0.9 > 1
     color: "#FFAF38"
   - type: DamageOnInteract
     damage:
@@ -249,8 +249,8 @@
   components:
   - type: PointLight
     radius: 10
-    energy: 0.7 # Orion-Edit: 4 > 0.7
-    softness: 1 # Orion-Edit: 0.5 > 1
+    energy: 0.7 # RW-Edit: 4 > 0.7
+    softness: 1 # RW-Edit: 0.5 > 1
     color: "#FFAF38"
 
 #Small lights
@@ -270,9 +270,9 @@
       sprite: Structures/Wallmounts/Lighting/light_small.rsi
       state: base
     - type: PointLight
-      energy: 0.7 # Orion-Edit: 1.0 > 0.7
-      radius: 4 # Orion-Edit: 6 > 4
-      softness: 1 # Orion-Edit: 1.1 > 1
+      energy: 0.7 # RW-Edit: 1.0 > 0.7
+      radius: 4 # RW-Edit: 6 > 4
+      softness: 1 # RW-Edit: 1.1 > 1
       enabled: true
     - type: Physics
       bodyType: Static
@@ -369,7 +369,7 @@
   - type: PointLight
     enabled: true
     radius: 8
-    energy: 0.7 # Orion-Edit: 1 > 0.7
+    energy: 0.7 # RW-Edit: 1 > 0.7
     softness: 1
     color: "#EEEEFF"
   - type: PoweredLight
@@ -447,8 +447,8 @@
   components:
   - type: PointLight
     enabled: false
-    radius: 3.5 # Orion-Edit: 5 > 3.5
-    energy: 2 # Orion-Edit: 0.6 > 2
+    radius: 3.5 # RW-Edit: 5 > 3.5
+    energy: 2 # RW-Edit: 0.6 > 2
     offset: "0, 0.4"
     color: "#7CFC00"
     mask: /Textures/Effects/LightMasks/double_cone.png
@@ -464,7 +464,7 @@
     startingCharge: 0
   - type: EmergencyLight
   - type: RotatingLight
-    speed: 120 # Orion-Edit: 40 > 120
+    speed: 120 # RW-Edit: 40 > 120
   - type: Sprite
     sprite: Structures/Wallmounts/Lighting/emergency_light.rsi
     layers:

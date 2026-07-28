@@ -1076,11 +1076,11 @@
   name: loadout-group-bso-shoes
   loadouts:
   - JackBoots
-  # Orion-Start
+  # RW-Start
   - JackBootsToeless
   - JackBootsTall
   - JackBootsTallHeels
-  # Orion-End
+  # RW-End
   - BlackCowboyBoots
   - SnowjacksBso
 
@@ -1208,7 +1208,7 @@
   minLimit: 0
   loadouts:
   - Bodycam # Goobstation - Body cameras
-  - SecurityScarfRed # Orion
+  - SecurityScarfRed # RW
   - ClothingNeckCWPSec
   - ClothingNeckMantleVeteranSecurity
 
@@ -1256,11 +1256,11 @@
   maxLimit: 1
   loadouts:
   - CaptainGloves
-  # Orion-Start
+  # RW-Start
   - CaptainWhiteGloves
   - CaptainWhiteHeavyGloves
   - SheriffGloves
-  # Orion-End
+  # RW-End
 
 - type: loadoutGroup
   id: CaptainShoes
@@ -1413,11 +1413,11 @@
   name: loadout-group-hos-shoes
   loadouts:
   - JackBoots
-  # Orion-Start
+  # RW-Start
   - JackBootsToeless
   - JackBootsTall
   - JackBootsTallHeels
-  # Orion-End
+  # RW-End
   - SecurityWinterBoots
   - AdvancedJackBoots
 
@@ -1467,11 +1467,11 @@
   name: loadout-group-brigmedic-head
   minLimit: 0
   loadouts:
-  - SecurityBeret # Orion
+  - SecurityBeret # RW
   - BrigmedicBeret
   - BrigmedicBeretDark
   - CMOMedicalHeadMirror
-#  - SecurityBeret # Orion-Edit
+#  - SecurityBeret # RW-Edit
   - SecurityHat
   - TrooperHat
 

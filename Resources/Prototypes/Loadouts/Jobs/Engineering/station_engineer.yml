@@ -20,7 +20,7 @@
       time: 60h
 
 # Head
-- type: loadout # Orion-Edit: startingGear > loadout
+- type: loadout # RW-Edit: startingGear > loadout
   id: EngineeringBeret
   equipment:
     head: ClothingHeadHatBeretEngineering
@@ -45,8 +45,8 @@
 
 - type: loadout
   id: SeniorEngineerBeret
-  equipment: # Orion
-    head: ClothingHeadHatBeretEngineering # Orion-Edit: Bugfix
+  equipment: # RW
+    head: ClothingHeadHatBeretEngineering # RW-Edit: Bugfix
   effects:
   - !type:GroupLoadoutEffect
     proto: SeniorEngineering

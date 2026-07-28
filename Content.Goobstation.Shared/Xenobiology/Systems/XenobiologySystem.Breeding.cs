@@ -20,7 +20,7 @@ public partial class XenobiologySystem
     [Dependency] private readonly SharedBodySystem _body = default!;
     [Dependency] private readonly StomachSystem _stomach = default!;
 
-    private readonly List<EntityUid> _slimesReadyForMitosis = []; // Orion
+    private readonly List<EntityUid> _slimesReadyForMitosis = []; // RW
 
     private void SubscribeBreeding()
     {
@@ -64,7 +64,7 @@ public partial class XenobiologySystem
     /// </summary>
     private void UpdateMitosis()
     {
-        _slimesReadyForMitosis.Clear(); // Orion
+        _slimesReadyForMitosis.Clear(); // RW
         var query = EntityQueryEnumerator<SlimeComponent, MobGrowthComponent, HungerComponent>();
         while (query.MoveNext(out var uid, out var slime, out var growthComp, out var hungerComp))
         {
@@ -79,7 +79,7 @@ public partial class XenobiologySystem
             if (_hunger.GetHunger(hungerComp) < slime.MitosisHunger)
                 continue;
 
-            // Orion-Start
+            // RW-Start
             _slimesReadyForMitosis.Add(uid);
         }
 
@@ -87,7 +87,7 @@ public partial class XenobiologySystem
         {
             if (!TryComp<SlimeComponent>(uid, out var slime))
                 continue;
-            // Orion-End
+            // RW-End
 
             DoMitosis((uid, slime));
             slime.NextUpdateTime = _gameTiming.CurTime + slime.UpdateInterval;

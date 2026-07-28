@@ -26,7 +26,7 @@
     - yells
     - yelled
     - yelling
-    # Orion-Start
+    # RW-Start
     - кричит
     - кричит.
     - кричит!
@@ -36,7 +36,7 @@
     - визжит
     - визжит.
     - визжит!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Laugh
@@ -63,7 +63,7 @@
     - chortle
     - chortles
     - chortling
-    # Orion-Start
+    # RW-Start
     - смеется
     - смеется.
     - смеется!
@@ -85,7 +85,7 @@
     - ржёт
     - ржёт.
     - ржёт!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Honk
@@ -104,14 +104,14 @@
     - honks
     - honked
     - honking
-    # Orion-Start
+    # RW-Start
     - хонк
     - хонк.
     - хонк!
     - хонкает
     - хонкает.
     - хонкает!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Sigh
@@ -129,7 +129,7 @@
     - sigh
     - sighs
     - sighed
-    # Orion-Start
+    # RW-Start
     - вздыхает
     - вздыхает.
     - вздыхает!
@@ -139,7 +139,7 @@
     - вздохнула
     - вздохнула.
     - вздохнула!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Whistle
@@ -157,14 +157,14 @@
     - whistle
     - whistles
     - whistleblowing
-    # Orion-Start
+    # RW-Start
     - свистит
     - свистит.
     - свистит!
     - свистнул
     - свистнул.
     - свистнул!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Crying
@@ -185,14 +185,14 @@
     - sob
     - sobs
     - sobbing
-    # Orion-Start
+    # RW-Start
     - плачет
     - плачет.
     - плачет!
     - рыдает
     - рыдает.
     - рыдает!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Squish
@@ -211,14 +211,14 @@
     - squish
     - squishing
     - squishes
-    # Orion-Start
+    # RW-Start
     - хлюпает
     - хлюпает.
     - хлюпает!
     - сквишет
     - сквишет.
     - сквишет!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Chitter
@@ -237,14 +237,14 @@
    - chitter
    - chitters
    - chittered
-   # Orion-Start
+   # RW-Start
    - стрекочет
    - стрекочет.
    - стрекочет!
    - стрекотает
    - стрекотает.
    - стрекотает!
-   # Orion-End
+   # RW-End
 
 - type: emote
   id: Squeak
@@ -263,7 +263,7 @@
    - squeak
    - squeaks
    - squeaked
-   # Orion-Start
+   # RW-Start
    - пищит
    - пищит.
    - пищит!
@@ -273,7 +273,7 @@
    - сквикнул
    - сквикнул.
    - сквикнул!
-   # Orion-End
+   # RW-End
 
 - type: emote
   id: Click
@@ -291,7 +291,7 @@
   chatTriggers:
    - click
    - clicks
-   # Orion-Start
+   # RW-Start
    - клац
    - клац.
    - клац!
@@ -304,7 +304,7 @@
    - клацнула
    - клацнула.
    - клацнула!
-   # Orion-End
+   # RW-End
 
 
 # Vulpkanin # Goob, not yet.
@@ -415,7 +415,7 @@
     - claps
     - clapping
     - clapped
-    # Orion-Start
+    # RW-Start
     - хлопает
     - хлопает.
     - хлопает!
@@ -440,7 +440,7 @@
     - апплодирует
     - апплодирует.
     - апплодирует!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: ClapSingle
@@ -480,7 +480,7 @@
     - snaps their fingers
     - snapping fingers
     - snapped fingers
-    # Orion-Start
+    # RW-Start
     - щелкает
     - щелкает.
     - щелкает!
@@ -517,7 +517,7 @@
     - щёлкнула пальцами
     - щёлкнула пальцами.
     - щёлкнула пальцами!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Thump
@@ -543,7 +543,7 @@
     - thumps her tail
     - thumps his tail
     - thumps its tail
-    # Orion-Start
+    # RW-Start
     - стучит хвостом
     - стучит хвостом.
     - стучит хвостом!
@@ -559,7 +559,7 @@
     - стукнула своим хвостом
     - стукнула своим хвостом.
     - стукнула своим хвостом!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Salute
@@ -576,7 +576,7 @@
   chatTriggers:
     - salute
     - salutes
-    # Orion-Start
+    # RW-Start
     - салютует
     - салютует.
     - салютует!
@@ -589,7 +589,7 @@
     - отдала честь
     - отдала честь.
     - отдала честь!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Gasp
@@ -602,11 +602,11 @@
    - gasp
    - gasps
    - gasped
-   # Orion-Start
+   # RW-Start
    - задыхается
    - задыхается.
    - задыхается!
-   # Orion-End
+   # RW-End
 
 - type: emote
   id: DefaultDeathgasp
@@ -652,7 +652,7 @@
     - buzz
     - buzzed
     - buzzes
-    # Orion-Start
+    # RW-Start
     - жужжит
     - жужжит.
     - жужжит!
@@ -662,7 +662,7 @@
     - зажужжала
     - зажужжала.
     - зажужжала!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Weh
@@ -679,14 +679,14 @@
   chatTriggers: # Floof - you can weh now
     - weh
     - wehs
-    # Orion-Start
+    # RW-Start
     - вех
     - вех.
     - вех!
     - вехает
     - вехает.
     - вехает!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Hew
@@ -714,7 +714,7 @@
     - chirps
     - chirped
     - chirping
-    # Orion-Start
+    # RW-Start
     - чирикает
     - чирикает.
     - чирикает!
@@ -724,7 +724,7 @@
     - чирикнула
     - чирикнула.
     - чирикнула!
-    # Orion-End
+    # RW-End
 
 # Machine Emotes
 - type: emote
@@ -744,7 +744,7 @@
     - beeps
     - beeped
     - beeping
-    # Orion-Start
+    # RW-Start
     - бип
     - бип.
     - бип!
@@ -754,7 +754,7 @@
     - бипнул
     - бипнул.
     - бипнул!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Chime
@@ -772,11 +772,11 @@
     - chimes
     - chimed
     - chiming
-    # Orion-Start
+    # RW-Start
     - дзынь
     - дзынь.
     - дзынь!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Buzz-Two
@@ -800,7 +800,7 @@
     - buzzes twice
     - buzzing twice
     - buzzed twice
-    # Orion-Start
+    # RW-Start
     - бипает дважды
     - бипает дважды.
     - бипает дважды!
@@ -822,7 +822,7 @@
     - бип-бип
     - бип-бип.
     - бип-бип!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Ping
@@ -840,11 +840,11 @@
     - pings
     - pinged
     - pinging
-    # Orion-Start
+    # RW-Start
     - пинг
     - пинг.
     - пинг!
     - пингует
     - пингует.
     - пингует!
-    # Orion-End
+    # RW-End

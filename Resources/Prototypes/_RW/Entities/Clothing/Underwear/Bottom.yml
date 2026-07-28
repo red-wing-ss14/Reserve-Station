@@ -1,0 +1,62 @@
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomPantiesWhite
+  name: panties
+  description: Standard Nanotrasen underwear for station female employees. Painted white.
+  components:
+  - type: Sprite
+    sprite: _RW/Clothing/Underwear/Bottom/panties.rsi
+
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomBoxersWhite
+  name: boxers
+  description: Standard Nanotrasen underwear for station employees. Dyed white.
+  components:
+  - type: Sprite
+    sprite: _RW/Clothing/Underwear/Bottom/boxers.rsi
+
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomPantiesBeeKini
+  name: Panties BeeKini
+  description: Bee.
+  components:
+  - type: Sprite
+    sprite: _RW/Clothing/Underwear/Bottom/panties_bee_kini.rsi
+
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomPantiesNeko
+  name: Neko Panties
+  description: Neko.
+  components:
+  - type: Sprite
+    sprite: _RW/Clothing/Underwear/Bottom/panties_neko.rsi
+
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomFishnetLower
+  name: Panties
+  description: Fishnet.
+  components:
+  - type: Sprite
+    sprite: _RW/Clothing/Underwear/Bottom/fishnet_lower.rsi
+
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomPantiesThong
+  name: Panties
+  description: Thong.
+  components:
+  - type: Sprite
+    sprite: _RW/Clothing/Underwear/Bottom/thong.rsi
+
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomPantiesKinky
+  name: Panties
+  description: Kinky.
+  components:
+    - type: Sprite
+      sprite: _RW/Clothing/Underwear/Bottom/panties_kinky.rsi

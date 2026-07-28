@@ -2,7 +2,7 @@
 
 - type: latheRecipe
   id: ClothingBackpackMessengerHolding
-  result: ClothingBackpackMessengerHoldingInert # Orion-Edit: Inert
+  result: ClothingBackpackMessengerHoldingInert # RW-Edit: Inert
   completetime: 5
   materials:
     Steel: 2000

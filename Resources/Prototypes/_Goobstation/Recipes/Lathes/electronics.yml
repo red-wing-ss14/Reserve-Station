@@ -169,7 +169,7 @@
     state: icon
   result: StationRadioCircuitboard
 
-#- type: latheRecipe # Orion-Edit: Reverted
+#- type: latheRecipe # RW-Edit: Reverted
 #  parent: [ BaseElectronicsRecipe, BaseCircuitryRecipeCategory ]
 #  id: CameraElectronics
 #  icon: { sprite: Structures/Wallmounts/camera.rsi, state: cameracase }

@@ -14,7 +14,7 @@
       Normal: 24
       Damaged: 15
       Destroyed: 0
-#  - type: Edible # Orion-Edit: Removed
+#  - type: Edible # RW-Edit: Removed
   - type: Extractable
     grindableSolutionName: organ
   - type: SolutionContainerManager
@@ -108,7 +108,7 @@
   name: eyes
   description: "I see you!"
   components:
-  - type: Edible # Orion
+  - type: Edible # RW
   - type: Sprite
     layers:
       - state: eyeball-l
@@ -133,7 +133,7 @@
   name: stomach
   description: "The diona's equivalent of a stomach, it reeks of asparagus and vinegar."
   components:
-  - type: Edible # Orion
+  - type: Edible # RW
   - type: Sprite
     state: stomach
   - type: SolutionContainerManager
@@ -180,7 +180,7 @@
   name: lungs
   description: "A spongy mess of slimy, leaf-like structures. Capable of breathing both carbon dioxide and oxygen."
   components:
-  - type: Edible # Orion
+  - type: Edible # RW
   - type: Sprite
     state: lungs
   - type: Organ # Shitmed

@@ -55,7 +55,7 @@ public sealed partial class GhostComponent : Component
     /// May not reflect actual time of death if this entity has been paused,
     /// but will give an accurate length of time <i>since</i> death.
     /// </remarks>
-    [DataField, AutoNetworkedField, AutoPausedField] // Orion-Edit: AutoNetworkedField
+    [DataField, AutoNetworkedField, AutoPausedField] // RW-Edit: AutoNetworkedField
     public TimeSpan TimeOfDeath = TimeSpan.Zero;
 
     /// <summary>
@@ -80,10 +80,10 @@ public sealed partial class GhostComponent : Component
     [DataField("canInteract"), AutoNetworkedField]
     public bool CanGhostInteract;
 
-    // Orion-Start
+    // RW-Start
     [DataField, AutoNetworkedField]
     public bool CanGhostOpenUI = true;
-    // Orion-End
+    // RW-End
 
     /// <summary>
     /// Is this ghost player allowed to return to their original body?

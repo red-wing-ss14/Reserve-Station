@@ -215,7 +215,7 @@ namespace Content.Server.GameTicking
                 character = HumanoidCharacterProfile.RandomWithSpecies(speciesId);
             }
 
-            // Orion-Start
+            // RW-Start
             // Ghost system return to round, check for whether the character isn't the same.
             if (lateJoin && !_adminManager.IsAdmin(player) && !CheckGhostReturnToRound(player, character, out var checkAvoid))
             {
@@ -234,7 +234,7 @@ namespace Content.Server.GameTicking
 
                 return;
             }
-            // Orion-End
+            // RW-End
 
             // We raise this event to allow other systems to handle spawning this player themselves. (e.g. late-join wizard, etc)
             var bev = new PlayerBeforeSpawnEvent(player, character, jobId, lateJoin, station);
@@ -429,7 +429,7 @@ namespace Content.Server.GameTicking
             SpawnObserver(player);
         }
 
-        // Orion-Start
+        // RW-Start
         private bool CheckGhostReturnToRound(ICommonSession player, HumanoidCharacterProfile character, out bool checkAvoid)
         {
             checkAvoid = false;
@@ -505,7 +505,7 @@ namespace Content.Server.GameTicking
             var maxLength = Math.Max(n, m);
             return ((maxLength - distance) / (float)maxLength) * 100;
         }
-        // Orion-End
+        // RW-End
 
         /// <summary>
         /// Spawns an observer ghost and attaches the given player to it. If the player does not yet have a mind, the

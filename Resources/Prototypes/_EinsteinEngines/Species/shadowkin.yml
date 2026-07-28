@@ -5,10 +5,10 @@
   name: species-name-shadowkin
   roundStart: true
   prototype: MobShadowkin
-  # Amour port: WD Slim body types START
+  # RW port: WD Slim body types START
   bodyTypes:
     - ShadowkinNormal
-  # Amour port: WD Slim body types END
+  # RW port: WD Slim body types END
   defaultSkinTone: "#FFFFFF"
   markingLimits: MobShadowkinMarkingLimits
   dollPrototype: MobShadowkinDummy
@@ -26,9 +26,9 @@
   sexes:
     - Male
     - Female
-  # Orion-Start
+  # RW-Start
   category: Unusual
-  description: "/ServerInfo/_Orion/SpeciesDescriptions/Shadekin.xml"
+  description: "/ServerInfo/_RW/SpeciesDescriptions/Shadekin.xml"
   pros:
   - species-shadowkin-pro-night-vision
   special:
@@ -37,7 +37,7 @@
   - species-shadowkin-con-fire-vulnerable
   - species-shadowkin-con-blood-recovery
   - species-shadowkin-con-flashbang-vulnerable
-  # Orion-End
+  # RW-End
   # begin Goobstation: port EE height/width sliders
   minHeight: 0.80
   defaultHeight: 0.85
@@ -47,11 +47,11 @@
   maxWidth: 1.15
   # end Goobstation: port EE height/width sliders
 
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
 - type: bodyType
   id: ShadowkinNormal
   name: body-normal
-# Amour port: WD Slim body types END
+# RW port: WD Slim body types END
   sprites:
     Head: MobShadowkinHead
     Snout: MobShadowkinAnyMarkingFollowSkin

@@ -59,7 +59,7 @@
     ClothingUniformJumpskirtCasualRed: 2
     ClothingUniformJumpsuitCasualGreen: 2
     ClothingUniformJumpskirtCasualGreen: 2
-    # Orion-Start
+    # RW-Start
     ClothingUniformJumpsuitTurtleneckBlack: 2
     ClothingUniformJumpsuitTurtleneckBlue: 2
     ClothingUniformJumpsuitTurtleneckAzure: 2
@@ -86,9 +86,9 @@
     ClothingUniformJumpskirtTurtleneckAquamarine: 2
     ClothingUniformJumpskirtTurtleneckPurple: 2
     ClothingUniformJumpskirtTurtleneckPink: 2
-    # Orion-End
+    # RW-End
     # DO NOT ADD MORE, USE UNIFORM DYING
-    # Orion-Start
+    # RW-Start
     ClothingUniformJumpskirtRoll: 2
     ClothingUniformJumpsuitAviator: 2
     ClothingUniformJumpsuitDoom: 2
@@ -99,7 +99,7 @@
     ClothingUniformJumpsuitGreaserJulie: 4
     ClothingUniformJumpsuitGreaserSnakes: 4
     ClothingUniformJumpsuitGreaserSpider: 4
-    # Orion-End
+    # RW-End
     ClothingShoesColorBlack: 8
     ClothingShoesColorBrown: 4
     ClothingShoesColorWhite: 3
@@ -158,16 +158,16 @@
     ClothingNeckPonchoSmallPurple: 3 # Monolith
     ClothingNeckPonchoSmallBlack: 3 # Monolith
     ClothingNeckPonchoSmallWhite: 3 # Monolith
-    # Orion-Start
+    # RW-Start
     ClothingNeckDarkGreyCloak: 2
     ClothingNeckGothicCloak: 2
-    # Orion-End
+    # RW-End
     # DO NOT ADD MORE, USE UNIFORM DYING
   contrabandInventory:
-    # Orion-Start
+    # RW-Start
     ClothingUniformJumpsuitBiker: 1
     ClothingUniformJumpsuitJacket: 1
-    # Orion-End
+    # RW-End
     ClothingMaskNeckGaiter: 2
     ClothingUniformJumpsuitTacticool: 2 # +1 Goobstation
     ClothingUniformJumpskirtTacticool: 2 # +1 Goobstation

@@ -23,16 +23,16 @@
   name: species-name-felinid
   roundStart: true
   prototype: MobFelinid
-  # Amour port: WD Slim body types START
+  # RW port: WD Slim body types START
   bodyTypes:
   - HumanNormal
-  # Amour port: WD Slim body types END
+  # RW port: WD Slim body types END
   markingLimits: MobFelinidMarkingLimits
   dollPrototype: MobFelinidDummy
   skinColoration: HumanToned
-  # Orion-Start
+  # RW-Start
   category: Unusual
-  description: "/ServerInfo/_Orion/SpeciesDescriptions/Felinid.xml"
+  description: "/ServerInfo/_RW/SpeciesDescriptions/Felinid.xml"
   pros:
   - species-felinid-pro-fall-damage
   special:
@@ -41,7 +41,7 @@
   - species-felinid-special-puke-on-grab
   cons:
   - species-felinid-con-stamina
-  # Orion-End
+  # RW-End
 
 - type: markingPoints
   id: MobFelinidMarkingLimits

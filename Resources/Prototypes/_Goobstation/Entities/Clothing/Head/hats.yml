@@ -9,11 +9,11 @@
     coverage:
     - Head
     traumaDeductions:
-      Dismemberment: 0.4 # Orion-Edit: 0.2 > 0.4
-      OrganDamage: 0.5 # Orion-Edit: 0.2 > 0.5
-      BoneDamage: 0.4 # Orion-Edit: 0.2 > 0.4
-      VeinsDamage: 0.2 # Orion-Edit: 0 > 0.2
-      NerveDamage: 0.2 # Orion-Edit: 0 > 0.2
+      Dismemberment: 0.4 # RW-Edit: 0.2 > 0.4
+      OrganDamage: 0.5 # RW-Edit: 0.2 > 0.5
+      BoneDamage: 0.4 # RW-Edit: 0.2 > 0.4
+      VeinsDamage: 0.2 # RW-Edit: 0 > 0.2
+      NerveDamage: 0.2 # RW-Edit: 0 > 0.2
     modifiers:
       coefficients:
         Blunt: 0.7
@@ -37,10 +37,10 @@
       NerveDamage: 0
     modifiers:
       coefficients:
-        Blunt: 0.35 # Orion-Edit: 0.3 > 0.35
-        Slash: 0.35 # Orion-Edit: 0.3 > 0.35
-        Piercing: 0.4 # Orion-Edit: 0.3 > 0.4
-        Heat: 0.5 # Orion-Edit: 0.3 > 0.5
+        Blunt: 0.35 # RW-Edit: 0.3 > 0.35
+        Slash: 0.35 # RW-Edit: 0.3 > 0.35
+        Piercing: 0.4 # RW-Edit: 0.3 > 0.4
+        Heat: 0.5 # RW-Edit: 0.3 > 0.5
         Radiation: 0.75
         Caustic: 0.75
   - type: ExplosionResistance

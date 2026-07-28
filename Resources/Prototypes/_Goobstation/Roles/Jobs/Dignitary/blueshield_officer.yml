@@ -8,13 +8,13 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 54000 # 15 hours # Amour-Edit: Don't change this!
+      time: 54000 # 15 hours # RW-Edit: Don't change this!
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 36000 # 10 hours # Amour-Edit: Don't change this!
+      time: 36000 # 10 hours # RW-Edit: Don't change this!
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 72000 # 20 hours # Amour-Edit: Don't change this!
+      time: 72000 # 20 hours # RW-Edit: Don't change this!
     - !type:DiscordLinkRequirement
     - !type:AgeRequirement
       requiredAge: 21
@@ -22,15 +22,15 @@
       inverted: true
       species:
       - Felinid
-#  guides: # Orion-Edit: Removed because dont have this SOP
+#  guides: # RW-Edit: Removed because dont have this SOP
 #  - BlueshieldOfficerSOP
 #  - Command
 #  - Succession
   goobcoins: 45
-  # Orion-Start
+  # RW-Start
   salary: 120
   payrollDepartmentAccount: Command
-  # Orion-End
+  # RW-End
   weight: 20
   startingGear: BlueshieldOfficerGear
   icon: "JobIconBlueshield"
@@ -60,13 +60,13 @@
       - type: CommandStaff
       - type: Condemned
         soulOwnedNotDevil: true
-      # Orion-Start
+      # RW-Start
       - type: AdditionalLanguage
         speaks:
         - CorporateCodespeak
         understands:
         - CorporateCodespeak
-      # Orion-End
+      # RW-End
 
 - type: startingGear
   id: BlueshieldOfficerGear

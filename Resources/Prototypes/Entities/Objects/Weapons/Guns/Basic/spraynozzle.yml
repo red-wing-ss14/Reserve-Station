@@ -18,7 +18,7 @@
   - type: Gun
     cameraRecoilScalar: 0 #no recoil
     fireRate: 4
-    projectileSpeed: 18 # Orion
+    projectileSpeed: 18 # RW
     selectedMode: FullAuto
     availableModes:
     - FullAuto

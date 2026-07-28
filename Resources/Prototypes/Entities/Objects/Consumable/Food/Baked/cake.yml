@@ -75,10 +75,10 @@
   description: Stains your teeth.
   components:
   - type: Sprite
-    # Orion-Edit-Start
-    sprite: _Orion/Objects/Consumable/Food/cake.rsi
+    # RW-Edit-Start
+    sprite: _RW/Objects/Consumable/Food/cake.rsi
     state: blueberry
-    # Orion-Edit-End
+    # RW-Edit-End
   - type: SliceableFood
     slice: FoodCakeBlueberrySlice
   - type: Tag
@@ -88,9 +88,9 @@
   - type: Item
     inhandVisuals:
       left:
-      - state: blueberry-inhand-left # Orion-Edit
+      - state: blueberry-inhand-left # RW-Edit
       right:
-      - state: blueberry-inhand-right # Orion-Edit
+      - state: blueberry-inhand-right # RW-Edit
 
 - type: entity
   name: blueberry slice
@@ -172,7 +172,7 @@
   description: A favorite desert of a certain wascally wabbit.
   components:
   - type: Sprite
-    sprite: _Orion/Objects/Consumable/Food/cake.rsi # Orion-Edit
+    sprite: _RW/Objects/Consumable/Food/cake.rsi # RW-Edit
     state: carrot
   - type: SliceableFood
     slice: FoodCakeCarrotSlice
@@ -194,9 +194,9 @@
   - type: Item
     inhandVisuals:
       left:
-      - state: carrot-inhand-left # Orion-Edit
+      - state: carrot-inhand-left # RW-Edit
       right:
-      - state: carrot-inhand-right # Orion-Edit
+      - state: carrot-inhand-right # RW-Edit
 
 - type: entity
   name: slice of carrot cake
@@ -339,10 +339,10 @@
   description: A cake with added orange.
   components:
   - type: Sprite
-    # Orion-Edit-Start
-    sprite: _Orion/Objects/Consumable/Food/cake.rsi
+    # RW-Edit-Start
+    sprite: _RW/Objects/Consumable/Food/cake.rsi
     state: orange
-    # Orion-Edit-End
+    # RW-Edit-End
   - type: SliceableFood
     slice: FoodCakeOrangeSlice
   - type: Tag
@@ -352,9 +352,9 @@
   - type: Item
     inhandVisuals:
       left:
-      - state: orange-inhand-left # Orion-Edit
+      - state: orange-inhand-left # RW-Edit
       right:
-      - state: orange-inhand-right # Orion-Edit
+      - state: orange-inhand-right # RW-Edit
 
 - type: entity
   name: slice of orange cake
@@ -390,10 +390,10 @@
   description: A cake with added lime.
   components:
   - type: Sprite
-    # Orion-Edit-Start
-    sprite: _Orion/Objects/Consumable/Food/cake.rsi
+    # RW-Edit-Start
+    sprite: _RW/Objects/Consumable/Food/cake.rsi
     state: lime
-    # Orion-Edit-End
+    # RW-Edit-End
   - type: SliceableFood
     slice: FoodCakeLimeSlice
   - type: Tag
@@ -403,9 +403,9 @@
   - type: Item
     inhandVisuals:
       left:
-      - state: lime-inhand-left # Orion-Edit
+      - state: lime-inhand-left # RW-Edit
       right:
-      - state: lime-inhand-right # Orion-Edit
+      - state: lime-inhand-right # RW-Edit
 
 - type: entity
   name: slice of lime cake
@@ -441,10 +441,10 @@
   description: A cake with added lemon.
   components:
   - type: Sprite
-    # Orion-Edit-Start
-    sprite: _Orion/Objects/Consumable/Food/cake.rsi
+    # RW-Edit-Start
+    sprite: _RW/Objects/Consumable/Food/cake.rsi
     state: lemon
-    # Orion-Edit-End
+    # RW-Edit-End
   - type: SliceableFood
     slice: FoodCakeLemonSlice
   - type: Tag
@@ -454,9 +454,9 @@
   - type: Item
     inhandVisuals:
       left:
-      - state: lemon-inhand-left # Orion-Edit
+      - state: lemon-inhand-left # RW-Edit
       right:
-      - state: lemon-inhand-right # Orion-Edit
+      - state: lemon-inhand-right # RW-Edit
 
 - type: entity
   name: slice of lemon cake
@@ -565,10 +565,10 @@
   description: A cake with added chocolate.
   components:
   - type: Sprite
-    # Orion-Edit-Start
-    sprite: _Orion/Objects/Consumable/Food/cake.rsi
+    # RW-Edit-Start
+    sprite: _RW/Objects/Consumable/Food/cake.rsi
     state: chocolate
-    # Orion-Edit-End
+    # RW-Edit-End
   - type: SliceableFood
     slice: FoodCakeChocolateSlice
   - type: SolutionContainerManager
@@ -579,15 +579,15 @@
         - ReagentId: Nutriment
           Quantity: 20
         - ReagentId: Theobromine
-          Quantity: 8 # Orion-Edit: 5 > 8
+          Quantity: 8 # RW-Edit: 5 > 8
         - ReagentId: Vitamin
           Quantity: 5
   - type: Item
     inhandVisuals:
       left:
-      - state: chocolate-inhand-left # Orion-Edit
+      - state: chocolate-inhand-left # RW-Edit
       right:
-      - state: chocolate-inhand-right # Orion-Edit
+      - state: chocolate-inhand-right # RW-Edit
 
 - type: entity
   name: slice of chocolate cake
@@ -606,7 +606,7 @@
         - ReagentId: Nutriment
           Quantity: 4
         - ReagentId: Theobromine
-          Quantity: 1.6 # Orion-Edit: 1 > 1.6
+          Quantity: 1.6 # RW-Edit: 1 > 1.6
         - ReagentId: Vitamin
           Quantity: 2
   - type: Item
@@ -626,10 +626,10 @@
   description: A cake centred with apple.
   components:
   - type: Sprite
-    # Orion-Edit-Start
-    sprite: _Orion/Objects/Consumable/Food/cake.rsi
+    # RW-Edit-Start
+    sprite: _RW/Objects/Consumable/Food/cake.rsi
     state: apple
-    # Orion-Edit-End
+    # RW-Edit-End
   - type: SliceableFood
     slice: FoodCakeAppleSlice
   - type: Tag
@@ -639,9 +639,9 @@
   - type: Item
     inhandVisuals:
       left:
-      - state: apple-inhand-left # Orion-Edit
+      - state: apple-inhand-left # RW-Edit
       right:
-      - state: apple-inhand-right # Orion-Edit
+      - state: apple-inhand-right # RW-Edit
 
 - type: entity
   name: slice of apple cake
@@ -679,7 +679,7 @@
   description: A cake made of slimes. Probably not electrified.
   components:
   - type: Sprite
-    sprite: _Orion/Objects/Consumable/Food/cake.rsi # Orion-Edit
+    sprite: _RW/Objects/Consumable/Food/cake.rsi # RW-Edit
     state: slime
   - type: SliceableFood
     slice: FoodCakeSlimeSlice
@@ -690,9 +690,9 @@
   - type: Item
     inhandVisuals:
       left:
-      - state: slime-inhand-left # Orion-Edit
+      - state: slime-inhand-left # RW-Edit
       right:
-      - state: slime-inhand-right # Orion-Edit
+      - state: slime-inhand-right # RW-Edit
 
 - type: entity
   name: slice of slime cake
@@ -728,10 +728,10 @@
   description: A hollow cake with real pumpkin.
   components:
   - type: Sprite
-    # Orion-Edit-Start
-    sprite: _Orion/Objects/Consumable/Food/cake.rsi
+    # RW-Edit-Start
+    sprite: _RW/Objects/Consumable/Food/cake.rsi
     state: pumpkin
-    # Orion-Edit-End
+    # RW-Edit-End
   - type: SliceableFood
     slice: FoodCakePumpkinSlice
   - type: SolutionContainerManager
@@ -750,9 +750,9 @@
   - type: Item
     inhandVisuals:
       left:
-      - state: pumpkin-inhand-left # Orion-Edit
+      - state: pumpkin-inhand-left # RW-Edit
       right:
-      - state: pumpkin-inhand-right # Orion-Edit
+      - state: pumpkin-inhand-right # RW-Edit
 
 - type: entity
   name: slice of pumpkin-spice cake
@@ -795,7 +795,7 @@
   description: A cake made of christmas.
   components:
   - type: Sprite
-    sprite: _Orion/Objects/Consumable/Food/cake.rsi # Orion-Edit
+    sprite: _RW/Objects/Consumable/Food/cake.rsi # RW-Edit
     state: christmas
   - type: SliceableFood
     slice: FoodCakeChristmasSlice
@@ -806,9 +806,9 @@
   - type: Item
     inhandVisuals:
       left:
-      - state: christmas-inhand-left # Orion-Edit
+      - state: christmas-inhand-left # RW-Edit
       right:
-      - state: christmas-inhand-right # Orion-Edit
+      - state: christmas-inhand-right # RW-Edit
 
 - type: entity
   name: slice of christmas cake
@@ -839,18 +839,18 @@
   description: Happy Birthday little clown...
   components:
   - type: Sprite
-    # Orion-Edit-Start
-    sprite: _Orion/Objects/Consumable/Food/cake.rsi
+    # RW-Edit-Start
+    sprite: _RW/Objects/Consumable/Food/cake.rsi
     layers:
     - state: birthday
     - state: birthday-light
       shader: unshaded
       map: [ "flame" ]
-    # Orion-Edit-End
+    # RW-Edit-End
   - type: SliceableFood
     slice: FoodCakeBirthdaySlice
   - type: Item
-    # Orion-Edit-Start
+    # RW-Edit-Start
     inhandVisuals:
       left:
       - state: birthday-inhand-left
@@ -866,7 +866,7 @@
     netsync: false
     radius: 1.1
     color: orange
-    # Orion-Edit-End
+    # RW-Edit-End
 
 - type: entity
   name: slice of birthday cake
@@ -940,7 +940,7 @@
   description: A funny cake with a clown face on it.
   components:
   - type: Sprite
-    sprite: _Orion/Objects/Consumable/Food/cake.rsi # Orion-Edit
+    sprite: _RW/Objects/Consumable/Food/cake.rsi # RW-Edit
     state: clown
   - type: SliceableFood
     slice: FoodCakeClownSlice
@@ -956,13 +956,13 @@
         - ReagentId: Sugar
           Quantity: 15
   - type: Item
-    # Orion-Edit-Start
+    # RW-Edit-Start
     inhandVisuals:
       left:
       - state: clown-inhand-left
       right:
       - state: clown-inhand-right
-    # Orion-Edit-End
+    # RW-Edit-End
 
 - type: entity
   name: slice of clown cake
@@ -994,10 +994,10 @@
   description: A spaceman's trumpet frosted cake.
   components:
   - type: Sprite
-    # Orion-Edit-Start
-    sprite: _Orion/Objects/Consumable/Food/cake.rsi
+    # RW-Edit-Start
+    sprite: _RW/Objects/Consumable/Food/cake.rsi
     state: spaceman
-    # Orion-Edit-End
+    # RW-Edit-End
   - type: SliceableFood
     slice: FoodCakeSpacemanSlice
   - type: SolutionContainerManager
@@ -1012,13 +1012,13 @@
         - ReagentId: PolypyryliumOligomers
           Quantity: 15
   - type: Item
-    # Orion-Edit-Start
+    # RW-Edit-Start
     inhandVisuals:
       left:
       - state: spaceman-inhand-left
       right:
       - state: spaceman-inhand-right
-    # Orion-Edit-End
+    # RW-Edit-End
 
 - type: entity
   name: slice of spaceman's cake

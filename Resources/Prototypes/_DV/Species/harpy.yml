@@ -5,17 +5,17 @@
   name: species-name-harpy
   roundStart: true
   prototype: MobHarpy
-  # Amour port: WD Slim body types START
+  # RW port: WD Slim body types START
   bodyTypes:
   - HarpyNormal
   - HarpySlim
-  # Amour port: WD Slim body types END
+  # RW port: WD Slim body types END
   markingLimits: MobHarpyMarkingLimits
   dollPrototype: MobHarpyDummy
   skinColoration: HumanToned
-  # Orion-Start
+  # RW-Start
   category: Unusual
-  description: "/ServerInfo/_Orion/SpeciesDescriptions/Harpy.xml"
+  description: "/ServerInfo/_RW/SpeciesDescriptions/Harpy.xml"
   pros:
   - species-harpy-pro-fly
   - species-harpy-pro-run-speed
@@ -27,7 +27,7 @@
   cons:
   - species-harpy-con-blunt-vulnerable
   - species-harpy-con-weak-pull
-  # Orion-End
+  # RW-End
   # begin Goobstation: port EE height/width sliders
   minHeight: 0.80
   defaultHeight: 0.80
@@ -37,11 +37,11 @@
   maxWidth: 1.2
   # end Goobstation: port EE height/width sliders
 
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
 - type: bodyType
   id: HarpyNormal
   name: body-normal
-# Amour port: WD Slim body types END
+# RW port: WD Slim body types END
   sprites:
     Head: MobHarpyHead
     Hair: MobHumanoidAnyMarking

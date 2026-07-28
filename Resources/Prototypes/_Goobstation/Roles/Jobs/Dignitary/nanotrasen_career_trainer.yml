@@ -12,10 +12,10 @@
   canBeAntag: false
   whitelisted: true # 1984
   setPreference: false # 1984 x2
-  # Orion-Start
+  # RW-Start
   salary: 120
   payrollFromStationBudget: false
-  # Orion-End
+  # RW-End
   accessGroups:
   - AllAccess
   access:
@@ -28,7 +28,7 @@
 #  - !type:AddComponentSpecial # Intentionally not command. I don't want them to ruin rev rounds.
 #    components:
 #    - type: CommandStaff
-  # Orion-Start
+  # RW-Start
   - !type:AddComponentSpecial
     components:
       - type: AdditionalLanguage
@@ -36,7 +36,7 @@
         - CorporateCodespeak
         understands:
         - CorporateCodespeak
-  # Orion-End
+  # RW-End
 
 - type: startingGear
   id: NanotrasenCareerTrainerGear

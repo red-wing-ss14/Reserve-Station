@@ -23,7 +23,7 @@ public sealed partial class NotJobRequirementComponent : Component
     /// IDs of jobs to ban from having this objective.
     /// Used by some downstream forks.
     /// </summary>
-    // Amour edit: support list-based job blacklist syntax in YAML prototypes.
+    // RW edit: support list-based job blacklist syntax in YAML prototypes.
     [DataField]
     public List<ProtoId<JobPrototype>> Jobs = new();
 

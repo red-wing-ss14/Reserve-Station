@@ -22,16 +22,16 @@
   canBeAntag: false
   guides: # goobstation
   - SpaceLaw
-  # Orion-Edit-Start
+  # RW-Edit-Start
   # - SOP-Security-Warden # Disabled until guide is created
   # - SOP-Security # Disabled until guide is created
-  # Orion-Edit-End
+  # RW-Edit-End
   - KravMaga
   goobcoins: 35 #Goob content
-  # Orion-Start
+  # RW-Start
   salary: 90
   payrollDepartmentAccount: Security
-  # Orion-End
+  # RW-End
   access:
   - Security
   - Brig
@@ -55,12 +55,12 @@
     eyes: ClothingEyesGlassesSecurity # Goobstation | Orion-Edit - OP
     id: WardenPDA
     ears: ClothingHeadsetAltWarden # Goobstation
-    pocket1: WeaponDisabler # Orion-Edit: PistolMk58 > Disabler
+    pocket1: WeaponDisabler # RW-Edit: PistolMk58 > Disabler
   storage:
     back:
     - Flash
-#    - MagazinePistol # Orion-Edit: Now in loadout
-#    - ClothingMaskGasSecurity # Goobstation # Orion-Edit: Now in BoxSurvival
+#    - MagazinePistol # RW-Edit: Now in loadout
+#    - ClothingMaskGasSecurity # Goobstation # RW-Edit: Now in BoxSurvival
 
 - type: chameleonOutfit
   id: WardenChameleonOutfit

@@ -3,7 +3,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Goobstation.Common.Pirates;
-using Content.Server._Orion.Economy.Components;
+using Content.Server._RW.Economy.Components;
 using Content.Server.Access.Systems;
 using Content.Server.Cargo.Components;
 using Content.Server.Station.Components;
@@ -38,16 +38,16 @@ namespace Content.Server.Cargo.Systems
         [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
         [Dependency] private readonly EmagSystem _emag = default!;
         [Dependency] private readonly IGameTiming _timing = default!;
-        // Orion-Start
+        // RW-Start
         [Dependency] private readonly IdCardSystem _idCard = default!;
         [Dependency] private readonly EntityStorageSystem _entityStorage = default!;
         [Dependency] private readonly StorageSystem _storage = default!;
-        // Orion-End
+        // RW-End
 
-        // Orion-Start
+        // RW-Start
         private ISawmill _sawmill = default!;
         private const double PrivatePurchaseMarkup = 1.10;
-        // Orion-End
+        // RW-End
 
         private void InitializeConsole()
         {
@@ -62,7 +62,7 @@ namespace Content.Server.Cargo.Systems
 
         private void OnInteractUsingCash(EntityUid uid, CargoOrderConsoleComponent component, ref InteractUsingEvent args)
         {
-            // Orion-Edit-Start
+            // RW-Edit-Start
             if (!TryComp<CashComponent>(args.Used, out var cash))
                 return;
 
@@ -74,15 +74,15 @@ namespace Content.Server.Cargo.Systems
                 return;
 
             var amount = (int) Math.Min(total, int.MaxValue);
-            // Orion-Edit-End
+            // RW-Edit-End
 
-            var stationUid = _station.GetOwningStation(uid); // Orion-Edit
+            var stationUid = _station.GetOwningStation(uid); // RW-Edit
 
             if (!TryComp(stationUid, out StationBankAccountComponent? bank))
                 return;
 
             _audio.PlayPvs(ApproveSound, uid);
-            UpdateBankAccount((stationUid.Value, bank), amount, component.Account); // Orion-Edit
+            UpdateBankAccount((stationUid.Value, bank), amount, component.Account); // RW-Edit
             QueueDel(args.Used);
             args.Handled = true;
         }
@@ -107,7 +107,7 @@ namespace Content.Server.Cargo.Systems
                 return;
 
             var orderId = GenerateOrderId(orderDatabase);
-            var data = new CargoOrderData(orderId, product.Product, product.Name, product.Cost + (slip.SecuredDelivery ? ent.Comp.SecureOrderCost : 0), slip.OrderQuantity, slip.Requester, slip.DeliveryDestination, slip.Note, slip.Account, product.Cooldown, slip.SecuredDelivery); // Orion-Edit
+            var data = new CargoOrderData(orderId, product.Product, product.Name, product.Cost + (slip.SecuredDelivery ? ent.Comp.SecureOrderCost : 0), slip.OrderQuantity, slip.Requester, slip.DeliveryDestination, slip.Note, slip.Account, product.Cooldown, slip.SecuredDelivery); // RW-Edit
 
             if (!TryAddOrder(stationUid.Value, ent.Comp.Account, data, orderDatabase))
             {
@@ -119,7 +119,7 @@ namespace Content.Server.Cargo.Systems
             _audio.PlayPvs(ent.Comp.ScanSound, ent);
             _adminLogger.Add(LogType.Action,
                 LogImpact.Low,
-                $"{ToPrettyString(args.User):user} inserted order slip [orderId:{data.OrderId}, quantity:{data.OrderQuantity}, product:{data.ProductId}, requester:{data.Requester}, deliveryDestination: {data.DeliveryDestination}, note:{data.Note}] "); // Orion-Edit
+                $"{ToPrettyString(args.User):user} inserted order slip [orderId:{data.OrderId}, quantity:{data.OrderQuantity}, product:{data.ProductId}, requester:{data.Requester}, deliveryDestination: {data.DeliveryDestination}, note:{data.Note}] "); // RW-Edit
             QueueDel(args.Used);
             args.Handled = true;
         }
@@ -150,10 +150,10 @@ namespace Content.Server.Cargo.Systems
             if (_emag.CheckFlag(ent, EmagType.Interaction))
                 return;
 
-            // Orion-Start
+            // RW-Start
             ent.Comp.EditableRequesterName = true;
             Dirty(ent);
-            // Orion-End
+            // RW-End
 
             args.Handled = true;
         }
@@ -163,7 +163,7 @@ namespace Content.Server.Cargo.Systems
             var stationQuery = EntityQueryEnumerator<StationBankAccountComponent>();
             while (stationQuery.MoveNext(out var uid, out var bank))
             {
-                // Orion-Edit-Start
+                // RW-Edit-Start
                 while (Timing.CurTime >= bank.NextIncomeTime)
                 {
                     bank.NextIncomeTime += bank.IncomeDelay;
@@ -195,13 +195,13 @@ namespace Content.Server.Cargo.Systems
                         { account, 1.0 },
                     });
                 }
-                // Orion-Edit-End
+                // RW-Edit-End
             }
         }
 
         #region Interface
 
-        // Orion-Start
+        // RW-Start
         private static int GetOrderBaseCost(CargoOrderData order)
         {
             return order.Price * order.OrderQuantity;
@@ -215,7 +215,7 @@ namespace Content.Server.Cargo.Systems
 
             return (int) Math.Round(baseCost * PrivatePurchaseMarkup, MidpointRounding.AwayFromZero);
         }
-        // Orion-End
+        // RW-End
 
         private void OnApproveOrderMessage(EntityUid uid, CargoOrderConsoleComponent component, CargoConsoleApproveOrderMessage args)
         {
@@ -294,12 +294,12 @@ namespace Content.Server.Cargo.Systems
                 PlayDenySound(uid, component);
             }
 
-            var baseCost = GetOrderBaseCost(order); // Orion
-            var finalCost = GetOrderFinalCost(order); // Orion-Edit: was cost
+            var baseCost = GetOrderBaseCost(order); // RW
+            var finalCost = GetOrderFinalCost(order); // RW-Edit: was cost
             var accountBalance = GetBalanceFromAccount((station.Value, bank), order.Account);
-            Entity<StationAccountComponent>? privateAccount = null; // Orion
+            Entity<StationAccountComponent>? privateAccount = null; // RW
 
-            // Orion-Edit-Start
+            // RW-Edit-Start
             if (order.PaidPrivately)
             {
                 if (string.IsNullOrWhiteSpace(order.PrivateBuyerAccountId) || !_bank.TryFindAccountById(order.PrivateBuyerAccountId, out var buyerAccount))
@@ -323,7 +323,7 @@ namespace Content.Server.Cargo.Systems
                 PlayDenySound(uid, component);
                 return;
             }
-            // Orion-Edit-End
+            // RW-Edit-End
 
             // GoobStation - cooldown on Cargo Orders (specifically gamba)
             if (order.Cooldown > 0)
@@ -360,14 +360,14 @@ namespace Content.Server.Cargo.Systems
                 }
             }
 
-            // Orion-Start
+            // RW-Start
             if (order.PaidPrivately && (privateAccount == null || !_bank.Withdraw(privateAccount.Value, finalCost, "cargo-private-purchase", reasonData: $"order:{order.OrderId}|product:{order.ProductId}")))
             {
                 ConsolePopup(args.Actor, Loc.GetString("cargo-console-payment-failed"));
                 PlayDenySound(uid, component);
                 return;
             }
-            // Orion-End
+            // RW-End
 
             // GoobStation - cooldown on Cargo Orders (specifically gamba)
             if (order.Cooldown > 0)
@@ -388,7 +388,7 @@ namespace Content.Server.Cargo.Systems
                     ("productName", Loc.GetString(order.ProductName)),
                     ("orderAmount", order.OrderQuantity),
                     ("approver", order.Approver ?? string.Empty),
-                    ("cost", finalCost)); // Orion-Edit
+                    ("cost", finalCost)); // RW-Edit
                 _radio.SendRadioMessage(uid, message, account.RadioChannel, uid, escapeMarkup: false);
                 if (CargoOrderConsoleComponent.BaseAnnouncementChannel != account.RadioChannel)
                     _radio.SendRadioMessage(uid, message, CargoOrderConsoleComponent.BaseAnnouncementChannel, uid, escapeMarkup: false);
@@ -399,9 +399,9 @@ namespace Content.Server.Cargo.Systems
             // Log order approval
             _adminLogger.Add(LogType.Action,
                 LogImpact.Low,
-                $"{ToPrettyString(player):user} approved order [orderId:{order.OrderId}, quantity:{order.OrderQuantity}, product:{order.ProductId}, requester:{order.Requester}, deliveryDestination: {order.DeliveryDestination}, note:{order.Note}] on account {order.Account} with balance at {accountBalance}"); // Orion-Edit
+                $"{ToPrettyString(player):user} approved order [orderId:{order.OrderId}, quantity:{order.OrderQuantity}, product:{order.ProductId}, requester:{order.Requester}, deliveryDestination: {order.DeliveryDestination}, note:{order.Note}] on account {order.Account} with balance at {accountBalance}"); // RW-Edit
 
-            // Orion-Start
+            // RW-Start
             if (order.PaidPrivately)
             {
                 var fee = finalCost - baseCost;
@@ -414,10 +414,10 @@ namespace Content.Server.Cargo.Systems
             {
                 UpdateBankAccount((station.Value, bank), -finalCost, order.Account);
             }
-            // Orion-End
+            // RW-End
 
             orderDatabase.Orders[component.Account].Remove(order);
-//            UpdateBankAccount((station.Value, bank), -cost, order.Account); // Orion-Edit
+//            UpdateBankAccount((station.Value, bank), -cost, order.Account); // RW-Edit
             UpdateOrders(station.Value);
         }
 
@@ -437,25 +437,25 @@ namespace Content.Server.Cargo.Systems
                 var freePads = GetFreeCargoPallets(trade, tradePads);
                 if (freePads.Count >= order.OrderQuantity) //check if the station has enough free pallets
                 {
-                    // Orion-Start
+                    // RW-Start
                     EntityUid? previousCrate = null;
                     List<string>? excessItems = null;
-                    // Orion-End
+                    // RW-End
 
                     foreach (var pad in freePads)
                     {
                         var coordinates = new EntityCoordinates(trade, pad.Transform.LocalPosition);
 
-                        // Orion-Start
+                        // RW-Start
                         if (previousCrate is not null
                             && TryComp<EntityStorageComponent>(previousCrate, out var entityStorage)
                             && entityStorage.Contents.Count >= entityStorage.Capacity)
                         {
                             previousCrate = null;
                         }
-                        // Orion-End
+                        // RW-End
 
-                        // Orion-Edit-Start
+                        // RW-Edit-Start
                         if (!FulfillOrder(order,
                                 account,
                                 coordinates,
@@ -471,7 +471,7 @@ namespace Content.Server.Cargo.Systems
                         order.NumDispatched++;
                         if (order.OrderQuantity <= order.NumDispatched) //Spawn a crate on free pellets until the order is fulfilled.
                             break;
-                        // Orion-Edit-End
+                        // RW-Edit-End
                     }
                 }
 
@@ -506,7 +506,7 @@ namespace Content.Server.Cargo.Systems
             RemoveOrder(station.Value, component.Account, args.OrderId, orderDatabase);
         }
 
-        private void OnAddOrderMessageSlipPrinter(EntityUid uid, CargoOrderConsoleComponent component, CargoConsoleAddOrderMessage args, CargoProductPrototype product, string requester) // Orion-Edit: requester
+        private void OnAddOrderMessageSlipPrinter(EntityUid uid, CargoOrderConsoleComponent component, CargoConsoleAddOrderMessage args, CargoProductPrototype product, string requester) // RW-Edit: requester
         {
             if (!_protoMan.Resolve(component.Account, out var account))
                 return;
@@ -526,22 +526,22 @@ namespace Content.Server.Cargo.Systems
                 ("description", product.Description),
                 ("unit", product.Cost),
                 ("amount", args.Amount),
-                // Orion-Edit-Start
+                // RW-Edit-Start
                 ("cost", product.Cost * args.Amount + (args.SecuredDelivery ? component.SecureOrderCost : 0)),
                 ("orderer", requester),
                 ("destination", args.DeliveryDestination ?? Loc.GetString("cargo-console-paper-delivery-destination-default")),
                 ("note", args.Note ?? Loc.GetString("cargo-console-paper-note-default"))));
-                // Orion-Edit-End
+                // RW-Edit-End
             _paperSystem.SetContent((label, paper), msg.ToMarkup());
 
             var slip = EnsureComp<CargoSlipComponent>(label);
             slip.Product = product.ID;
-            // Orion-Edit-Start
+            // RW-Edit-Start
             slip.Requester = requester;
             slip.DeliveryDestination = args.DeliveryDestination;
             slip.Note = args.Note;
             slip.SecuredDelivery = args.SecuredDelivery;
-            // Orion-Edit-End
+            // RW-Edit-End
             slip.OrderQuantity = args.Amount;
             slip.Account = component.Account;
         }
@@ -571,7 +571,7 @@ namespace Content.Server.Cargo.Systems
             if (!GetAvailableProducts((uid, component)).Contains(args.CargoProductId))
                 return;
 
-            // Orion-Start
+            // RW-Start
             if (args.SecuredDelivery)
                 args.SecuredDelivery = CanBeSecuredDelivery((uid, component), _protoMan.Index<CargoProductPrototype>(args.CargoProductId));
 
@@ -580,17 +580,17 @@ namespace Content.Server.Cargo.Systems
                 requester = args.Requester;
             else
                 requester = GenerateRequesterName((uid, component), args.Actor);
-            // Orion-End
+            // RW-End
 
             if (component.Mode == CargoOrderConsoleMode.PrintSlip)
             {
-                OnAddOrderMessageSlipPrinter(uid, component, args, product, requester); // Orion-Edit: requester
+                OnAddOrderMessageSlipPrinter(uid, component, args, product, requester); // RW-Edit: requester
                 return;
             }
 
             var targetAccount = component.Mode == CargoOrderConsoleMode.SendToPrimary ? bank.PrimaryAccount : component.Account;
 
-            // Orion-Start
+            // RW-Start
             string? privateBuyerAccountId = null;
             string? privateBuyerName = null;
             if (args.PayPrivately)
@@ -619,14 +619,14 @@ namespace Content.Server.Cargo.Systems
                 privateBuyerAccountId = idCard.Comp.BankAccountId;
                 privateBuyerName = privateBuyerAccount.Comp.OwnerName;
             }
-            // Orion-End
+            // RW-End
 
-            var data = GetOrderData(args, product, GenerateOrderId(orderDatabase), component.Account, requester, args.SecuredDelivery ? component.SecureOrderCost : default); // Orion-Edit
+            var data = GetOrderData(args, product, GenerateOrderId(orderDatabase), component.Account, requester, args.SecuredDelivery ? component.SecureOrderCost : default); // RW-Edit
 
-            // Orion-Start
+            // RW-Start
             if (privateBuyerAccountId != null && privateBuyerName != null)
                 data.SetPrivateBuyerData(privateBuyerAccountId, privateBuyerName);
-            // Orion-End
+            // RW-End
 
             if (!TryAddOrder(stationUid.Value, targetAccount, data, orderDatabase))
             {
@@ -637,7 +637,7 @@ namespace Content.Server.Cargo.Systems
             // Log order addition
             _adminLogger.Add(LogType.Action,
                 LogImpact.Low,
-                $"{ToPrettyString(player):user} added order [orderId:{data.OrderId}, quantity:{data.OrderQuantity}, product:{data.ProductId}, requester:{data.Requester}, deliveryDestination: {data.DeliveryDestination}, note:{data.Note}]"); // Orion-Edit
+                $"{ToPrettyString(player):user} added order [orderId:{data.OrderId}, quantity:{data.OrderQuantity}, product:{data.ProductId}, requester:{data.Requester}, deliveryDestination: {data.DeliveryDestination}, note:{data.Note}]"); // RW-Edit
 
         }
 
@@ -704,10 +704,10 @@ namespace Content.Server.Cargo.Systems
             }
         }
 
-        private static CargoOrderData GetOrderData(CargoConsoleAddOrderMessage args, CargoProductPrototype cargoProduct, int id, ProtoId<CargoAccountPrototype> account, string requester, int extraPrice = 0) // Orion-Edit
+        private static CargoOrderData GetOrderData(CargoConsoleAddOrderMessage args, CargoProductPrototype cargoProduct, int id, ProtoId<CargoAccountPrototype> account, string requester, int extraPrice = 0) // RW-Edit
         {
             // GoobStation - cooldown on Cargo Orders (specifically gamba)
-            return new CargoOrderData(id, cargoProduct.Product, cargoProduct.Name, cargoProduct.Cost + extraPrice, args.Amount, requester, args.DeliveryDestination, args.Note, account, cargoProduct.Cooldown, args.SecuredDelivery); // Orion-Edit
+            return new CargoOrderData(id, cargoProduct.Product, cargoProduct.Name, cargoProduct.Cost + extraPrice, args.Amount, requester, args.DeliveryDestination, args.Note, account, cargoProduct.Cooldown, args.SecuredDelivery); // RW-Edit
         }
 
         public int GetOutstandingOrderCount(Entity<StationCargoOrderDatabaseComponent> station, ProtoId<CargoAccountPrototype> account)
@@ -765,20 +765,20 @@ namespace Content.Server.Cargo.Systems
             int cost,
             int qty,
             string sender,
-            string? deliveryDestination, // Orion
-            string? note, // Orion
+            string? deliveryDestination, // RW
+            string? note, // RW
             string dest,
             StationCargoOrderDatabaseComponent component,
             ProtoId<CargoAccountPrototype> account,
             Entity<StationDataComponent> stationData,
-            bool securedDelivery = false // Orion
+            bool securedDelivery = false // RW
         )
         {
             DebugTools.Assert(_protoMan.HasIndex<EntityPrototype>(spawnId));
             // Make an order
             var id = GenerateOrderId(component);
             // GoobStation - cooldown on Cargo Orders (specifically gamba)
-            var order = new CargoOrderData(id, spawnId, name, cost, qty, sender, deliveryDestination, note, account, 0, securedDelivery); // Orion-Edit
+            var order = new CargoOrderData(id, spawnId, name, cost, qty, sender, deliveryDestination, note, account, 0, securedDelivery); // RW-Edit
 
             // Approve it now
             order.SetApproverData(dest, sender);
@@ -787,7 +787,7 @@ namespace Content.Server.Cargo.Systems
             // Log order addition
             _adminLogger.Add(LogType.Action,
                 LogImpact.Low,
-                    $"AddAndApproveOrder {note} added order [orderId:{order.OrderId}, quantity:{order.OrderQuantity}, product:{order.ProductId}, requester:{order.Requester}, deliveryDestination:{order.DeliveryDestination}]"); // Orion-Edit
+                    $"AddAndApproveOrder {note} added order [orderId:{order.OrderId}, quantity:{order.OrderQuantity}, product:{order.ProductId}, requester:{order.Requester}, deliveryDestination:{order.DeliveryDestination}]"); // RW-Edit
 
             // Add it to the list
             return TryAddOrder(dbUid, account, order, component) && TryFulfillOrder(stationData, account, order, component).HasValue;
@@ -860,9 +860,9 @@ namespace Content.Server.Cargo.Systems
         /// <summary>
         /// Fulfills the specified cargo order and spawns paper attached to it.
         /// </summary>
-        private bool FulfillOrder(CargoOrderData order, ProtoId<CargoAccountPrototype> account, EntityCoordinates spawn, string? paperProto, out EntityUid? nextCrate, out List<string>? excessItemsOut, EntityUid? previousCrate = null, List<string>? excessItemsIn = null) // Orion-Edit
+        private bool FulfillOrder(CargoOrderData order, ProtoId<CargoAccountPrototype> account, EntityCoordinates spawn, string? paperProto, out EntityUid? nextCrate, out List<string>? excessItemsOut, EntityUid? previousCrate = null, List<string>? excessItemsIn = null) // RW-Edit
         {
-            // Orion-Edit-Start
+            // RW-Edit-Start
             EntityUid? item;
             nextCrate = null;
             excessItemsOut = null;
@@ -910,7 +910,7 @@ namespace Content.Server.Cargo.Systems
                 var spawns = EntitySpawnCollection.GetSpawns(storageFill.Contents, _random);
                 foreach (var contentItem in spawns)
                 {
-                    if (crateEntityStorage.Contents.Count >= crateEntityStorage.Capacity || spawns.Count > crateEntityStorage.Capacity) // Orion-Edit
+                    if (crateEntityStorage.Contents.Count >= crateEntityStorage.Capacity || spawns.Count > crateEntityStorage.Capacity) // RW-Edit
                         doExcessFill = true;
 
                     if (doExcessFill)
@@ -954,23 +954,23 @@ namespace Content.Server.Cargo.Systems
                     ("note", string.IsNullOrWhiteSpace(order.Note) ? Loc.GetString("cargo-console-paper-note-default") : order.Note), // CorvaxGoob-CargoFeatures
                     ("account", Loc.GetString(accountProto.Name)),
                     ("accountcode", Loc.GetString(accountProto.Code)),
-                    ("approver", string.IsNullOrWhiteSpace(order.Approver) ? Loc.GetString("cargo-console-paper-approver-default") : order.Approver), // Orion-Edit
-                    ("privateBuyerLine", order.PaidPrivately ? Loc.GetString("cargo-console-paper-private-buyer", ("buyer", order.PrivateBuyerName ?? string.Empty)) : string.Empty))); // Orion
+                    ("approver", string.IsNullOrWhiteSpace(order.Approver) ? Loc.GetString("cargo-console-paper-approver-default") : order.Approver), // RW-Edit
+                    ("privateBuyerLine", order.PaidPrivately ? Loc.GetString("cargo-console-paper-private-buyer", ("buyer", order.PrivateBuyerName ?? string.Empty)) : string.Empty))); // RW
 
             // attempt to attach the label to the item
             if (TryComp<PaperLabelComponent>(item, out var label))
                 _slots.TryInsert(item.Value, label.LabelSlot, printed, null);
 
             return true;
-            // Orion-Edit-End
+            // RW-Edit-End
         }
 
-        // Orion-Start
+        // RW-Start
         private bool FulfillOrder(CargoOrderData order, ProtoId<CargoAccountPrototype> account, EntityCoordinates spawn, string? paperProto)
         {
             return FulfillOrder(order, account, spawn, paperProto, out _, out _);
         }
-        // Orion-End
+        // RW-End
 
         public List<ProtoId<CargoProductPrototype>> GetAvailableProducts(Entity<CargoOrderConsoleComponent> ent)
         {

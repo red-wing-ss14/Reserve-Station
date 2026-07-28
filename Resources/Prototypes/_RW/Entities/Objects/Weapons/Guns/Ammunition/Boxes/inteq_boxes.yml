@@ -1,0 +1,84 @@
+# BASE
+
+- type: entity
+  parent: [ BaseItem, BaseMajorContraband ]
+  id: BaseMagazineBoxInteQ
+  name: ammunition box
+  abstract: true
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    capacity: 80
+  - type: Item
+    size: Normal
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _RW/Objects/Storage/inteq_ammobox.rsi
+    layers:
+      - state: icon
+  - type: Appearance
+
+# AMMO
+
+- type: entity
+  parent: BaseMagazineBoxInteQ
+  id: MagazineBoxPistolInteQ
+  name: ammunition box (9mm auto)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistol
+    whitelist:
+      tags:
+      - CartridgePistol
+  - type: Sprite
+    layers:
+      - state: icon
+      - state: 9
+
+- type: entity
+  parent: BaseMagazineBoxInteQ
+  id: MagazineBoxLightRifleInteQ
+  name: ammunition box (5.45mm rifle)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeLightRifle
+    whitelist:
+      tags:
+      - CartridgeLightRifle
+  - type: Sprite
+    layers:
+      - state: icon
+      - state: 545
+
+- type: entity
+  parent: BaseMagazineBoxInteQ
+  id: MagazineBoxRifle762InteQ
+  name: ammunition box (7.62mm rifle)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeRifle762
+    whitelist:
+      tags:
+      - CartridgeRifle762
+  - type: Sprite
+    layers:
+      - state: icon
+      - state: 762
+
+- type: entity
+  parent: BaseMagazineBoxInteQ
+  id: MagazineBoxShotgunInteQ
+  name: ammunition box (.50 pellet)
+  components:
+  - type: BallisticAmmoProvider
+    proto: ShellShotgun
+    capacity: 32
+    whitelist:
+      tags:
+      - ShellShotgun
+  - type: Sprite
+    layers:
+      - state: icon
+      - state: 50

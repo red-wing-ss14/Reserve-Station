@@ -9,12 +9,12 @@
 - type: cloningSettings
   id: BaseClone
   components:
-  # Orion-Start
+  # RW-Start
   - MoodTrait
   - Manic
   - Mercurial
   - DeadEmotions
-  # Orion-End
+  # RW-End
   # general
   - DetailExaminable
   - Dna

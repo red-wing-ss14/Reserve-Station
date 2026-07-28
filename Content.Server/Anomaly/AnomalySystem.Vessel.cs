@@ -2,7 +2,7 @@
 
 using Content.Server.Anomaly.Components;
 using Content.Server.Power.EntitySystems;
-using Content.Shared._Orion.Research;
+using Content.Shared._RW.Research;
 using Content.Shared.Anomaly;
 using Content.Shared.Anomaly.Components;
 using Content.Shared.Examine;
@@ -24,7 +24,7 @@ public sealed partial class AnomalySystem
         SubscribeLocalEvent<AnomalyVesselComponent, MapInitEvent>(OnVesselMapInit);
         SubscribeLocalEvent<AnomalyVesselComponent, InteractUsingEvent>(OnVesselInteractUsing);
         SubscribeLocalEvent<AnomalyVesselComponent, ExaminedEvent>(OnExamined);
-        SubscribeLocalEvent<AnomalyVesselComponent, ResearchServerGetPointsPerSecondByTypeEvent>(OnVesselGetPointsPerSecond); // Orion-Edit
+        SubscribeLocalEvent<AnomalyVesselComponent, ResearchServerGetPointsPerSecondByTypeEvent>(OnVesselGetPointsPerSecond); // RW-Edit
         SubscribeLocalEvent<AnomalyShutdownEvent>(OnVesselAnomalyShutdown);
     }
 
@@ -72,24 +72,24 @@ public sealed partial class AnomalySystem
         UpdateVesselAppearance(uid,  component);
         Popup.PopupEntity(Loc.GetString("anomaly-vessel-component-anomaly-assigned"), uid);
 
-        // Orion-Start
+        // RW-Start
         if (_research.TryGetClientServer(uid, out var serverUid, out _))
             _research.LogNetworkEvent(serverUid.Value, "anomaly", Loc.GetString("research-netlog-anomaly-vessel-bound", ("vessel", MetaData(uid).EntityName), ("anomaly", MetaData(anomaly).EntityName)));
-        // Orion-End
+        // RW-End
     }
 
-    private void OnVesselGetPointsPerSecond(EntityUid uid, AnomalyVesselComponent component, ref ResearchServerGetPointsPerSecondByTypeEvent args) // Orion-Edit
+    private void OnVesselGetPointsPerSecond(EntityUid uid, AnomalyVesselComponent component, ref ResearchServerGetPointsPerSecondByTypeEvent args) // RW-Edit
     {
         if (!this.IsPowered(uid, EntityManager) || component.Anomaly is not {} anomaly)
             return;
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         args.Points.Add(new ResearchPointAmount
         {
             Type = "General",
             Amount = (int) (GetAnomalyPointValue(anomaly) * component.PointMultiplier),
         });
-        // Orion-Edit-End
+        // RW-Edit-End
     }
 
     private void OnVesselAnomalyShutdown(ref AnomalyShutdownEvent args)

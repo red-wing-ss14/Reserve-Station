@@ -22,7 +22,7 @@ public sealed partial class CrewMonitoringConsoleComponent : Component
     [DataField("sensorTimeout"), ViewVariables(VVAccess.ReadWrite)]
     public float SensorTimeout = 10f;
 
-    // Orion-Start
+    // RW-Start
     /// <summary>
     /// What departments this monitor can see. If empty, shows all departments.
     /// YAML example: departments: [ Medical, Security ]
@@ -46,7 +46,7 @@ public sealed partial class CrewMonitoringConsoleComponent : Component
     ///     Sound to play when alert is triggered.
     /// </summary>
     [DataField]
-    public SoundSpecifier AlertSound = new SoundPathSpecifier("/Audio/_Orion/Machines/crew_monitoring_alert.ogg");
+    public SoundSpecifier AlertSound = new SoundPathSpecifier("/Audio/_RW/Machines/crew_monitoring_alert.ogg");
 
     [DataField]
     public AudioParams AlertAudioParams = AudioParams.Default.WithVolume(-8f).WithVariation(0.25f);
@@ -90,5 +90,5 @@ public sealed partial class CrewMonitoringConsoleComponent : Component
     {
         Params = AudioParams.Default.WithVolume(8),
     };
-    // Orion-End
+    // RW-End
 }

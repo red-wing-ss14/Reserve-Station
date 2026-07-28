@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
-using Content.Server._Orion.ServerProtection;
+using Content.Server._RW.ServerProtection;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Shared.Administration;
@@ -23,7 +23,7 @@ public sealed class ChangeCvarCommand : IConsoleCommand
     [Dependency] private readonly IConfigurationManager _configurationManager = default!;
     [Dependency] private readonly IAdminLogManager _adminLogManager = default!;
     [Dependency] private readonly CVarControlManager _cVarControlManager = default!;
-    [Dependency] private readonly ServerProtectionAuditManager _toggleAudit = default!; // Orion
+    [Dependency] private readonly ServerProtectionAuditManager _toggleAudit = default!; // RW
 
     /// <summary>
     /// Searches the list of cvars for a cvar that matches the search string.
@@ -182,10 +182,10 @@ public sealed class ChangeCvarCommand : IConsoleCommand
                 }
 
                 var oldValue = _configurationManager.GetCVar<object>(cvar);
-                // Orion-Start
+                // RW-Start
                 if (cvar.StartsWith("protection.", StringComparison.OrdinalIgnoreCase))
                     _toggleAudit.RecordChange(cvar, shell.Player, oldValue, parsed);
-                // Orion-End
+                // RW-End
                 _configurationManager.SetCVar(cvar, parsed);
                 _adminLogManager.Add(LogType.AdminCommands,
                     LogImpact.Extreme,

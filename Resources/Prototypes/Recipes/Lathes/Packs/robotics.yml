@@ -36,13 +36,13 @@
   - ProximitySensor
   - Drone
   - AiRemoteBrain
-  # Orion-Start
+  # RW-Start
   - Intellicard
   - PersonalAI
   - SyndicatePersonalAI
   - ClothingHeadHatCardborg
   - ClothingOuterCardborg
-  # Orion-End
+  # RW-End
 
 - type: latheRecipePack
   id: BorgModules
@@ -52,11 +52,11 @@
   #- BorgModuleAdvancedClowning # Goobstation
   - BorgModuleAdvancedTopical
   - BorgModuleAdvancedMining
-  # Orion-Start
+  # RW-Start
   - BorgModuleRPED
   - BorgModuleMartyr
   - BorgModuleSyndicateWeapon
-  # Orion-End
+  # RW-End
 
 - type: latheRecipePack
   id: MechParts
@@ -84,11 +84,11 @@
     - MechEquipmentGrabber
     - MechEquipmentHorn
     - MechEquipmentGrabberSmall
-    # Orion-Start
+    # RW-Start
     - MechEquipmentHonkerBananaMortar
     - MechEquipmentHonkerMousetrapMortar
     - WeaponMechCombatMissileRack6
     - WeaponMechChainSword
     - WeaponMechCombatTeslaCannon
     - WeaponMechMeleeDrill
-    # Orion-End
+    # RW-End

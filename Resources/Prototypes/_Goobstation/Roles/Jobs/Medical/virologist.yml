@@ -4,7 +4,7 @@
   description: job-description-virologist
   playTimeTracker: JobVirologist
   requirements:
-    - !type:AnyOfRequirement # Amour edit - Discord OR playtime
+    - !type:AnyOfRequirement # RW edit - Discord OR playtime
       requirements:
         - !type:DiscordLinkRequirement
         - !type:DepartmentTimeRequirement
@@ -14,10 +14,10 @@
   icon: "JobIconVirologist"
   supervisors: job-supervisors-cmo
   goobcoins: 20 #Goob content
-  # Orion-Start
+  # RW-Start
   salary: 85
   payrollDepartmentAccount: Medical
-  # Orion-End
+  # RW-End
   guides:
   - MedicalDoctor
   - Medical

@@ -6,7 +6,7 @@
   description: job-description-scientist
   playTimeTracker: JobScientist
   requirements:
-    - !type:AnyOfRequirement # Amour edit - Discord OR playtime
+    - !type:AnyOfRequirement # RW edit - Discord OR playtime
       requirements:
         - !type:DiscordLinkRequirement
         - !type:OverallPlaytimeRequirement
@@ -16,10 +16,10 @@
   supervisors: job-supervisors-rd
   guides: [ Science ] # goobstation
   goobcoins: 20 #Goob content
-  # Orion-Start
+  # RW-Start
   salary: 80
   payrollDepartmentAccount: Science
-  # Orion-End
+  # RW-End
   access:
   - Research
   - Maintenance

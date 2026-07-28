@@ -61,7 +61,7 @@ public sealed partial class FaxMachineComponent : Component
     [DataField]
     public bool ReceiveNukeCodes { get; set; } = false;
 
-    // Orion-Start
+    // RW-Start
     /// <summary>
     /// Should that fax receive station goal info
     /// </summary>
@@ -73,7 +73,7 @@ public sealed partial class FaxMachineComponent : Component
     /// </summary>
     [DataField]
     public bool ReceiveAllStationGoals { get; set; }
-    // Orion-End
+    // RW-End
 
     /// <summary>
     /// Sound to play when fax printing new message

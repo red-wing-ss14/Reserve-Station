@@ -23,13 +23,13 @@
   - type: Cartridge
     programName: notekeeper-program-name
     icon:
-      sprite: _Orion/Interface/Misc/program_icons.rsi # Orion-Edit
-      state: notes # Orion-Edit
-    # Orion-Start
+      sprite: _RW/Interface/Misc/program_icons.rsi # RW-Edit
+      state: notes # RW-Edit
+    # RW-Start
     screenState:
-      sprite: _Orion/Objects/Devices/pda.rsi
+      sprite: _RW/Objects/Devices/pda.rsi
       state: accounting
-    # Orion-End
+    # RW-End
   - type: NotekeeperCartridge
 
 - type: entity
@@ -45,11 +45,11 @@
     icon:
       sprite: Interface/Misc/program_icons.rsi
       state: nano_task
-    # Orion-Start
+    # RW-Start
     screenState:
-      sprite: _Orion/Objects/Devices/pda.rsi
+      sprite: _RW/Objects/Devices/pda.rsi
       state: menu
-    # Orion-End
+    # RW-End
   - type: UIFragment
     ui: !type:NanoTaskUi
   - type: NanoTaskCartridge
@@ -69,11 +69,11 @@
     icon:
       sprite: Interface/Misc/program_icons.rsi
       state: news_read
-    # Orion-Start
+    # RW-Start
     screenState:
-      sprite: _Orion/Objects/Devices/pda.rsi
+      sprite: _RW/Objects/Devices/pda.rsi
       state: comm_monitor
-    # Orion-End
+    # RW-End
   - type: NewsReaderCartridge
 
 - type: entity
@@ -91,11 +91,11 @@
       icon:
         sprite: Interface/Misc/program_icons.rsi
         state: crew_manifest
-      # Orion-Start
+      # RW-Start
       screenState:
-        sprite: _Orion/Objects/Devices/pda.rsi
+        sprite: _RW/Objects/Devices/pda.rsi
         state: crew
-      # Orion-End
+      # RW-End
     - type: CrewManifestCartridge
 
 - type: entity
@@ -111,13 +111,13 @@
     - type: Cartridge
       programName: net-probe-program-name
       icon:
-        sprite: _Orion/Interface/Misc/program_icons.rsi # Orion-Edit
-        state: netprobe # Orion-Edit
-      # Orion-Start
+        sprite: _RW/Interface/Misc/program_icons.rsi # RW-Edit
+        state: netprobe # RW-Edit
+      # RW-Start
       screenState:
-        sprite: _Orion/Objects/Devices/pda.rsi
+        sprite: _RW/Objects/Devices/pda.rsi
         state: signal
-      # Orion-End
+      # RW-End
     - type: NetProbeCartridge
 
 - type: entity
@@ -136,13 +136,13 @@
     - type: Cartridge
       programName: log-probe-program-name
       icon:
-        sprite: _Orion/Interface/Misc/program_icons.rsi # Orion-Edit
-        state: logprobe # Orion-Edit
-      # Orion-Start
+        sprite: _RW/Interface/Misc/program_icons.rsi # RW-Edit
+        state: logprobe # RW-Edit
+      # RW-Start
       screenState:
-        sprite: _Orion/Objects/Devices/pda.rsi
+        sprite: _RW/Objects/Devices/pda.rsi
         state: comm_logs
-      # Orion-End
+      # RW-End
     - type: LogProbeCartridge
     - type: GuideHelp
       guides:
@@ -164,13 +164,13 @@
   - type: Cartridge
     programName: wanted-list-program-name
     icon:
-      sprite: _Orion/Interface/Misc/program_icons.rsi # Orion-Edit
-      state: watchdog # Orion-Edit
-    # Orion-Start
+      sprite: _RW/Interface/Misc/program_icons.rsi # RW-Edit
+      state: watchdog # RW-Edit
+    # RW-Start
     screenState:
-      sprite: _Orion/Objects/Devices/pda.rsi
+      sprite: _RW/Objects/Devices/pda.rsi
       state: bounty
-    # Orion-End
+    # RW-End
   - type: WantedListCartridge
   - type: StealTarget
     stealGroup: WantedListCartridge
@@ -189,13 +189,13 @@
     - type: Cartridge
       programName: med-tek-program-name
       icon:
-        sprite: _Orion/Interface/Misc/program_icons.rsi # Orion-Edit
-        state: medtek # Orion-Edit
-      # Orion-Start
+        sprite: _RW/Interface/Misc/program_icons.rsi # RW-Edit
+        state: medtek # RW-Edit
+      # RW-Start
       screenState:
-        sprite: _Orion/Objects/Devices/pda.rsi
+        sprite: _RW/Objects/Devices/pda.rsi
         state: alert-red
-      # Orion-End
+      # RW-End
     - type: MedTekCartridge
 
 - type: entity
@@ -212,11 +212,11 @@
     - type: Cartridge
       programName: astro-nav-program-name
       icon:
-        sprite: _Orion/Interface/Misc/program_icons.rsi # Orion-Edit
-        state: astronav # Orion-Edit
-      # Orion-Start
+        sprite: _RW/Interface/Misc/program_icons.rsi # RW-Edit
+        state: astronav # RW-Edit
+      # RW-Start
       screenState:
-        sprite: _Orion/Objects/Devices/pda.rsi
+        sprite: _RW/Objects/Devices/pda.rsi
         state: radarntos
-      # Orion-End
+      # RW-End
     - type: AstroNavCartridge

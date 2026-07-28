@@ -91,7 +91,7 @@
       ballistic-ammo: !type:Container
   - type: Gun
     fireRate: 6
-    projectileSpeed: 30 # Orion
+    projectileSpeed: 30 # RW
     selectedMode: FullAuto
     availableModes:
     - FullAuto

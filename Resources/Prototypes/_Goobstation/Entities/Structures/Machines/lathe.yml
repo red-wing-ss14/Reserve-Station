@@ -24,8 +24,8 @@
   - type: Lathe
     idleState: icon
     runningState: icon
-    dynamicPacks: # Orion-Edit: Static > Dynamic
-    - AbductorEngineering # Orion
+    dynamicPacks: # RW-Edit: Static > Dynamic
+    - AbductorEngineering # RW
     - SharedBoardsStatic
     - EngineeringBoardsStatic
     - CircuitFloorsStatic
@@ -41,10 +41,10 @@
     - MiscSignallersStatic
     - NailgunStatic
     - NailsStatic
-    # Orion-Start
+    # RW-Start
     - MegaCells
     - PartsDynamic
-    # Orion-End
+    # RW-End
     - ConstructionBagOfHolding
     - AdvancedTools
     - AtmosTools
@@ -99,7 +99,7 @@
   - type: Lathe
     idleState: icon
     runningState: icon
-    dynamicPacks: # Orion-Edit: Static > Dynamic
+    dynamicPacks: # RW-Edit: Static > Dynamic
     - ToolsStatic
     - SharedBoardsStatic
     - CargoBoardsStatic
@@ -110,9 +110,9 @@
     - MiningToolsStatic
     - MiscSignallersStatic
     - CargoStatic
-    # Orion-Start
+    # RW-Start
     - MegaCells
-    # Orion-End
+    # RW-End
     - AdvancedTools
     - Mining
     - PowerCells
@@ -168,7 +168,7 @@
   - type: Lathe
     idleState: icon
     runningState: icon
-    dynamicPacks: # Orion-Edit: Static > Dynamic
+    dynamicPacks: # RW-Edit: Static > Dynamic
     - SharedBoardsStatic
     - EngineeringBoardsStatic
     - CircuitFloorsStatic
@@ -190,11 +190,11 @@
     - ScienceExplosives # Goobstation - Roundstart Grenade Tech
     - GrenadeTriggersStatic # Goobstation - Roundstart Grenade Tech
     - MiscSignallersStatic
-    # Orion-Start
+    # RW-Start
     - BodyBagsDynamic
     - MegaCells
     - PartsDynamic
-    # Orion-End
+    # RW-End
     - AdvancedTools
     - ScienceEquipment
     - ScienceClothing
@@ -227,10 +227,10 @@
     - Translators
     - TranslatorImplanters
   - type: EmagLatheRecipes
-    # Orion-Start
+    # RW-Start
     emagStaticPacks:
     - BodyBagsSyndicateStatic
-    # Orion-End
+    # RW-End
     emagDynamicPacks:
     - MechBoardsSecurity
     - MechBoardsCargo
@@ -267,7 +267,7 @@
   - type: Lathe
     idleState: icon
     runningState: icon
-    dynamicPacks: # Orion-Edit: Static > Dynamic
+    dynamicPacks: # RW-Edit: Static > Dynamic
     - ServiceBoardsStatic
     - ServiceBoardsStaticGoob
     - MaterialsStatic
@@ -279,10 +279,10 @@
     - ChemistryStatic
     - TapeRecorderStatic
     - CondimentStatic
-    # Orion-Start
+    # RW-Start
     - BasicService
     - Hydroponic
-    # Orion-End
+    # RW-End
     - Janitor
     - Instruments
     - FauxTiles

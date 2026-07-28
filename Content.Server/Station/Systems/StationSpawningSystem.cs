@@ -97,13 +97,13 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         // Need to get the loadout up-front to handle names if we use an entity spawn override.
         var jobLoadout = LoadoutSystem.GetJobPrototype(prototype?.ID);
 
-        // Amour edit start
+        // RW edit start
         if (_prototypeManager.TryIndex(jobLoadout, out RoleLoadoutPrototype? roleProto) && profile != null)
         {
             // Base + per-role overrides.
             loadout = profile.GetEffectiveLoadout(jobLoadout, _actors.GetSession(entity), _prototypeManager);
         }
-        // Amour edit end
+        // RW edit end
 
         // If we're not spawning a humanoid, we're gonna exit early without doing all the humanoid stuff.
         if (prototype?.JobEntity != null)
@@ -134,17 +134,17 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         {
             _humanoidSystem.LoadProfile(entity.Value, profile);
             _metaSystem.SetEntityName(entity.Value, profile.Name);
-/* // Orion-Replace
+/* // RW-Replace
             if (profile.FlavorText != "" && _configurationManager.GetCVar(CCVars.FlavorText))
             {
                 AddComp<DetailExaminableComponent>(entity.Value).Content = profile.FlavorText;
             }
 */
 
-            // Orion-Start
+            // RW-Start
             if (_configurationManager.GetCVar(CCVars.FlavorText))
                 AddComp<DetailExaminableComponent>(entity.Value).SetProfile(profile);
-            // Orion-End
+            // RW-End
         }
 
         if (loadout != null)
@@ -158,12 +158,12 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             EquipStartingGear(entity.Value, startingGear, raiseEvent: false);
         }
 
-        // Amour edit start
+        // RW edit start
         if (loadout != null)
         {
             EquipRoleLoadoutStorage(entity.Value, loadout, roleProto!);
         }
-        // Amour edit end
+        // RW edit end
 
         var gearEquippedEv = new StartingGearEquippedEvent(entity.Value);
         RaiseLocalEvent(entity.Value, ref gearEquippedEv);

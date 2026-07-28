@@ -11,13 +11,13 @@ namespace Content.Client.FlavorText
     public sealed partial class FlavorText : Control
     {
         public Action<string>? OnFlavorTextChanged;
-        // Orion-Start
+        // RW-Start
         public Action<string>? OnCharacterTextChanged;
         public Action<string>? OnGreenTextChanged;
         public Action<string>? OnYellowTextChanged;
         public Action<string>? OnRedTextChanged;
         public Action<int>? OnTabChanged;
-        // Orion-End
+        // RW-End
 
         public FlavorText()
         {
@@ -26,7 +26,7 @@ namespace Content.Client.FlavorText
 
             var loc = IoCManager.Resolve<ILocalizationManager>();
 
-            // Orion-Start
+            // RW-Start
             FlavorTabs.SetTabTitle(0, Loc.GetString("flavor-tab-flavor"));
             FlavorTabs.SetTabTitle(1, Loc.GetString("flavor-tab-character"));
             FlavorTabs.SetTabTitle(2, Loc.GetString("flavor-tab-gyr"));
@@ -54,7 +54,7 @@ namespace Content.Client.FlavorText
             CRedTextInput.OnTextChanged += _ => RedTextChanged();
 
             PreviewTabs.OnTabChanged += FlavorTabChanged;
-            // Orion-End
+            // RW-End
         }
 
         public void FlavorTextChanged()
@@ -89,6 +89,6 @@ namespace Content.Client.FlavorText
         {
             OnTabChanged?.Invoke(tab);
         }
-        // Orion-End
+        // RW-End
     }
 }

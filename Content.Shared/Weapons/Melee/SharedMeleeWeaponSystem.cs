@@ -754,7 +754,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         var resistanceBypass = GetResistanceBypass(meleeUid, user, component);
         var entities = GetEntityList(ev.Entities);
 
-        entities = entities.Where(e => !_tag.HasTag(e, "MeleeHitIgnore")).ToList(); // Orion
+        entities = entities.Where(e => !_tag.HasTag(e, "MeleeHitIgnore")).ToList(); // RW
 
         if (entities.Count == 0)
         {
@@ -823,10 +823,10 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
                 !damageQuery.HasComponent(entity))
                 continue;
 
-            // Orion-Start
+            // RW-Start
             if (_tag.HasTag(entity, "MeleeHitIgnore"))
                 continue;
-            // Orion-End
+            // RW-End
 
             // Goobstation start
             var beforeEvent = new BeforeHarmfulActionEvent(user, HarmfulActionType.Harm);
@@ -953,7 +953,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         for (var i = 0; i < increments; i++)
         {
             var castAngle = new Angle(baseAngle + increment * i);
-            var ray = new CollisionRay(position, castAngle.ToWorldVec(), AttackMask); // Orion | Make CollisionRay var for "var res"
+            var ray = new CollisionRay(position, castAngle.ToWorldVec(), AttackMask); // RW | Make CollisionRay var for "var res"
             var res = _physics.IntersectRay(mapId,
                 ray,
                 range,

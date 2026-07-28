@@ -29,10 +29,10 @@
       params:
         volume: -5
   # Goobstation edit end
-  # Orion-Start
+  # RW-Start
   - type: SlotBlock
     blockList: [ SOCKS ]
-  # Orion-End
+  # RW-End
   - type: Sprite
     state: icon
   - type: Item

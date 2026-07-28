@@ -11,7 +11,7 @@
     - ShellShotgun
   - type: CartridgeAmmo
     soundEject:
-      collection: ShellLand # Orion-Edit
+      collection: ShellLand # RW-Edit
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
     layers:

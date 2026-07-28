@@ -24,7 +24,7 @@
   - type: FishingRod
 
 # Variation of a normal rod
-#- type: entity # Orion-Edit: NC license sprites
+#- type: entity # RW-Edit: NC license sprites
 #  id: FishingRodGoon
 #  suffix: Goon
 #  parent: FishingRod
@@ -59,7 +59,7 @@
     node: makeshiftRod
 
 # Golden rod
-#- type: entity # Orion-Edit: NC license sprites
+#- type: entity # RW-Edit: NC license sprites
 #  id: FishingRodGolden
 #  parent: FishingRod
 #  name: golden fishing rod

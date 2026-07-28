@@ -11,10 +11,10 @@
   name: species-name-ipc
   roundStart: true
   prototype: MobIPC
-  # Amour port: WD Slim body types START
+  # RW port: WD Slim body types START
   bodyTypes:
   - IPCNormal
-  # Amour port: WD Slim body types END
+  # RW port: WD Slim body types END
   markingLimits: MobIPCMarkingLimits
   dollPrototype: MobIPCDummy
   skinColoration: Hues
@@ -28,9 +28,9 @@
   naming: FirstDashLast
   sexes:
   - Unsexed
-  # Orion-Start
+  # RW-Start
   category: Unusual
-  description: "/ServerInfo/_Orion/SpeciesDescriptions/IPC.xml"
+  description: "/ServerInfo/_RW/SpeciesDescriptions/IPC.xml"
   pros:
   - species-ipc-pro-radio-module
   - species-ipc-pro-midi
@@ -40,7 +40,7 @@
   cons:
   - species-ipc-con-uncloneable
   - species-ipc-con-run-speed
-  # Orion-End
+  # RW-End
 
 # The lack of a layer means that
 # this person cannot have round-start anything
@@ -48,11 +48,11 @@
 # be defined as a 'custom base layer'
 # in either the mob's starting marking prototype,
 # or it has to be added in C#.
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
 - type: bodyType
   id: IPCNormal
   name: body-normal
-# Amour port: WD Slim body types END
+# RW port: WD Slim body types END
   sprites:
     Head: MobIPCHead
     Face: MobHumanoidAnyMarking

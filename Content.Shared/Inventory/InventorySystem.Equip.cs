@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Diagnostics.CodeAnalysis;
-using Content.Shared._Orion.Ghost;
+using Content.Shared._RW.Ghost;
 using Content.Shared.Armor;
 using Content.Shared.Clothing.Components;
 using Content.Shared.DoAfter;
@@ -52,7 +52,7 @@ public abstract partial class InventorySystem
         if (!TryGetSlot(uid, args.Container.ID, out var slotDef, inventory: component))
             return;
 
-        // Orion-Start
+        // RW-Start
         var currentSlotBlockComponent = CompOrNull<SlotBlockComponent>(args.Entity);
         if (currentSlotBlockComponent != null)
         {
@@ -74,7 +74,7 @@ public abstract partial class InventorySystem
             component.BlockList.ExceptWith(slotsToUnblock);
             component.HideList.ExceptWith(slotsToUnhide);
         }
-        // Orion-End
+        // RW-End
 
         var unequippedEvent = new DidUnequipEvent(uid, args.Entity, slotDef);
         RaiseLocalEvent(uid, unequippedEvent, true);
@@ -88,7 +88,7 @@ public abstract partial class InventorySystem
         if (!TryGetSlot(uid, args.Container.ID, out var slotDef, inventory: component))
             return;
 
-        // Orion-Start
+        // RW-Start
         var slotBlockComponent = CompOrNull<SlotBlockComponent>(args.Entity);
         if (slotBlockComponent != null)
         {
@@ -100,7 +100,7 @@ public abstract partial class InventorySystem
 
             component.HideList.UnionWith(slotBlockComponent.HideList);
         }
-        // Orion-End
+        // RW-End
 
         var equippedEvent = new DidEquipEvent(uid, args.Entity, slotDef);
         RaiseLocalEvent(uid, equippedEvent, true);
@@ -314,7 +314,7 @@ public abstract partial class InventorySystem
             return false;
         }
 
-        // Orion-Start
+        // RW-Start
         var ignoreInventoryBlockComponent = CompOrNull<IgnoreInventoryBlockComponent>(actor);
         if (ignoreInventoryBlockComponent is not { IgnoreBlock: true })
         {
@@ -324,7 +324,7 @@ public abstract partial class InventorySystem
                 return false;
             }
         }
-        // Orion-End
+        // RW-End
 
         if (_whitelistSystem.IsWhitelistFail(slotDefinition.Whitelist, itemUid) ||
             _whitelistSystem.IsWhitelistPass(slotDefinition.Blacklist, itemUid))
@@ -572,7 +572,7 @@ public abstract partial class InventorySystem
             return false;
         }
 
-        // Orion-Start
+        // RW-Start
         var ignoreInventoryBlockComponent = CompOrNull<IgnoreInventoryBlockComponent>(actor);
         if (ignoreInventoryBlockComponent is not { IgnoreBlock: true })
         {
@@ -582,7 +582,7 @@ public abstract partial class InventorySystem
                 return false;
             }
         }
-        // Orion-End
+        // RW-End
 
         var attemptEvent = new IsUnequippingAttemptEvent(actor, target, itemUid, slotDefinition);
         RaiseLocalEvent(actor, attemptEvent, true);

@@ -167,7 +167,7 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
         if (!_charInfoIsAttach)
             return;
 
-        var (_, job, _, _, _, entityName) = data; // Orion-Edit
+        var (_, job, _, _, _, entityName) = data; // RW-Edit
 
         // Mark this entity's name as our character name for the "UpdateHighlights" function.
         var newHighlights = "@" + entityName;

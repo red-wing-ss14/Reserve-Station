@@ -21,10 +21,10 @@ public sealed partial class CartridgeComponent : Component
     [DataField]
     public SpriteSpecifier? Icon;
 
-    // Orion-Start
+    // RW-Start
     [DataField]
     public SpriteSpecifier? ScreenState;
-    // Orion-End
+    // RW-End
 
     [AutoNetworkedField]
     public InstallationStatus InstallationStatus = InstallationStatus.Cartridge;

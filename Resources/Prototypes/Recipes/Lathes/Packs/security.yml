@@ -21,12 +21,12 @@
   - MagazineBoxMagnumPractice
   - MagazineBoxPistolPractice
   - MagazineBoxRiflePractice
-  - MagazineBoxRifle762Practice # Orion: New 7.62mm
+  - MagazineBoxRifle762Practice # RW: New 7.62mm
   - WeaponDisablerPractice
   - WeaponLaserCarbinePractice
   - MagazineLightRiflePractice
   - MagazineRiflePractice
-  - MagazineRifle762Practice # Orion: New 7.62mm
+  - MagazineRifle762Practice # RW: New 7.62mm
   - MagazinePistolPractice
   - SpeedLoaderMagnumPractice
   - MagazinePistolSubMachineGunPractice
@@ -42,11 +42,11 @@
   - MagazineBoxMagnum
   - MagazineBoxPistol
   - MagazineBoxRifle
-  # Orion-Start: New 7.62mm
+  # RW-Start: New 7.62mm
   - MagazineBoxRifle762
   - MagazineRifle762
   - MagazineRifle762Empty
-  # Orion-End
+  # RW-End
   # - MagazineLightRifle # Goobstation - remove light rifle
   # - MagazineLightRifleEmpty # Goobstation - remove light rifle
   - MagazinePistol
@@ -74,14 +74,14 @@
 - type: latheRecipePack
   id: SecurityEquipment
   recipes:
-  # Orion-Start
+  # RW-Start
   - ClothingEyesNightVisionSecurityGoggles
   - EnergyDomeTurtle
   - SurveillanceWirelessCameraBodySecurity
   - PepperSpray
   - FlashlightSeclite
   - SmokeGrenade
-  # Orion-End
+  # RW-End
   - ClothingBackpackElectropack
   - HoloprojectorSecurity
   - HoloprojectorSecurityAdvanced
@@ -129,12 +129,12 @@
   - MagazineBoxPistolUranium
   - MagazineBoxRifleIncendiary
   - MagazineBoxRifleUranium
-  # Orion-Start: New 7.62mm
+  # RW-Start: New 7.62mm
   - MagazineBoxRifle762Incendiary
   - MagazineBoxRifle762Uranium
   - MagazineRifle762Incendiary
   - MagazineRifle762Uranium
-  # Orion-End
+  # RW-End
   # - MagazineLightRifleIncendiary # Goobstation - remove light rifle
   # - MagazineLightRifleUranium # Goobstation - remove light rifle
   - MagazinePistolIncendiary
@@ -158,9 +158,9 @@
   - WeaponXrayCannon
   - WeaponTemperatureGun # Goobstation
   - Terminus # Goobstation
-  # Orion-Start
+  # RW-Start
   - RiotBulletShield
-  # Orion-End
+  # RW-End
 
 - type: latheRecipePack
   id: SecurityDisablers

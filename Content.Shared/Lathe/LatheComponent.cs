@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared._Orion.Construction.Prototypes;
+using Content.Shared._RW.Construction.Prototypes;
 using Content.Shared.Lathe.Prototypes;
 using Content.Shared.Materials;
 using Content.Shared.Research.Prototypes;
@@ -38,12 +38,12 @@ namespace Content.Shared.Lathe
         [DataField]
         public LinkedList<LatheRecipeBatch> Queue = new();
 
-        // Orion-Start
+        // RW-Start
         [DataField]
         public Queue<Dictionary<ProtoId<MaterialPrototype>, int>> QueuedMaterialRefunds = new();
 
         public Dictionary<ProtoId<MaterialPrototype>, int>? ActiveMaterialRefund;
-        // Orion-End
+        // RW-End
 
         /// <summary>
         /// The sound that plays when the lathe is producing an item, if any
@@ -93,7 +93,7 @@ namespace Content.Shared.Lathe
         [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
         public float MaterialUseMultiplier = 1;
 
-        // Orion-Start
+        // RW-Start
         [DataField, AutoNetworkedField]
         public float FinalTimeMultiplier = 1;
 
@@ -123,7 +123,7 @@ namespace Content.Shared.Lathe
 
         [DataField]
         public int? BaseStorageLimit;
-        // Orion-End
+        // RW-End
 
         #endregion
 
@@ -141,7 +141,7 @@ namespace Content.Shared.Lathe
         public readonly EntityUid Lathe;
         public readonly LatheComponent Comp;
 
-        public readonly bool GetUnavailable; // Orion-Edit: readonly
+        public readonly bool GetUnavailable; // RW-Edit: readonly
 
         public HashSet<ProtoId<LatheRecipePrototype>> Recipes = new();
 

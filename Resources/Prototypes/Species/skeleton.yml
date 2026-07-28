@@ -12,25 +12,25 @@
   name: species-name-skeleton
   roundStart: false
   prototype: MobSkeletonPerson
-  # Amour port: WD Slim body types START
+  # RW port: WD Slim body types START
   bodyTypes:
     - SkeletonNormal
-  # Amour port: WD Slim body types END
+  # RW port: WD Slim body types END
   defaultSkinTone: "#fff9e2"
   markingLimits: MobHumanMarkingLimits
   maleFirstNames: NamesSkeletonFirst
   femaleFirstNames: NamesSkeletonFirst
   dollPrototype: MobSkeletonPersonDummy
   skinColoration: TintedHues
-  # Orion-Start
+  # RW-Start
   category: Special
-  # Orion-End
+  # RW-End
 
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
 - type: bodyType
   id: SkeletonNormal
   name: body-normal
-# Amour port: WD Slim body types END
+# RW port: WD Slim body types END
   sprites:
     Head: MobSkeletonHead
     Chest: MobSkeletonChest

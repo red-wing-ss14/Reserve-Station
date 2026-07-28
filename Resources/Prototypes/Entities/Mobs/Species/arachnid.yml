@@ -95,18 +95,18 @@
       - map: [ "enum.HumanoidVisualLayers.LLeg" ]
       - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
       - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
-      - map: [ "underwear" ] # Orion
-      - map: [ "undershirt" ] # Orion
+      - map: [ "underwear" ] # RW
+      - map: [ "undershirt" ] # RW
       - map: ["jumpsuit"]
       - map: ["enum.HumanoidVisualLayers.LFoot"]
       - map: ["enum.HumanoidVisualLayers.RFoot"]
-      # Orion-Edit-End
-      - map: [ "socks" ] # Orion
+      # RW-Edit-End
+      - map: [ "socks" ] # RW
       - map: ["enum.HumanoidVisualLayers.LHand"]
       - map: ["enum.HumanoidVisualLayers.RHand"]
       - map: [ "enum.HumanoidVisualLayers.Face" ]
       - map: [ "gloves" ]
-      - map: [ "wrists" ] # Orion
+      - map: [ "wrists" ] # RW
       - map: [ "shoes" ]
       - map: [ "id" ]
       - map: [ "outerClothing" ]
@@ -118,7 +118,7 @@
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.Hair" ] # Do these need to be here? (arachnid hair arachnid hair)
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
-      - map: [ "earsright" ] # Orion
+      - map: [ "earsright" ] # RW
       - map: [ "ears" ]
       - map: [ "eyes" ]
       - map: [ "enum.HumanoidVisualLayers.HeadTop" ]

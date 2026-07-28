@@ -44,7 +44,7 @@ public sealed partial class CargoAccountPrototype : IPrototype
     [DataField]
     public EntProtoId AcquisitionSlip;
 
-    // Orion-Start
+    // RW-Start
     [DataField]
     public HashSet<ProtoId<AccessLevelPrototype>> SecureCrateOrderAccess = new();
 
@@ -65,5 +65,5 @@ public sealed partial class CargoAccountPrototype : IPrototype
     /// </summary>
     [DataField]
     public TimeSpan BudgetFundingDelay = TimeSpan.FromMinutes(10);
-    // Orion-End
+    // RW-End
 }

@@ -16,8 +16,8 @@ public sealed partial class AccessibilityTab : Control
 
         Control.AddOptionCheckBox(CCVars.ChatEnableColorName, EnableColorNameCheckBox);
         Control.AddOptionCheckBox(CCVars.AccessibilityColorblindFriendly, ColorblindFriendlyCheckBox);
-        // Amour edit
-        // Control.AddOptionCheckBox(CCVars.CombatIndicator, CombatIndicatorCheckBox); // Orion
+        // RW edit
+        // Control.AddOptionCheckBox(CCVars.CombatIndicator, CombatIndicatorCheckBox); // RW
         Control.AddOptionCheckBox(CCVars.ReducedMotion, ReducedMotionCheckBox);
         Control.AddOptionPercentSlider(CCVars.ScreenShakeIntensity, ScreenShakeIntensitySlider);
         Control.AddOptionPercentSlider(CCVars.ChatWindowOpacity, ChatWindowOpacitySlider);

@@ -335,7 +335,7 @@ public sealed class SurgeryBui : BoundUserInterface
         _window.Steps.Visible = type == ViewType.Steps;
         _window.StepsButton.Disabled = type != ViewType.Steps || _previousSurgeries.Count == 0;
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         _entities.TryGetComponent(_part, out MetaDataComponent? partMeta);
         _entities.TryGetComponent(_surgery?.Ent, out MetaDataComponent? surgeryMeta);
 
@@ -359,7 +359,7 @@ public sealed class SurgeryBui : BoundUserInterface
         {
             _window.Title = Loc.GetString("surgery-ui-window-title");
         }
-        // Orion-Edit-End
+        // RW-Edit-End
     }
 
     private enum ViewType

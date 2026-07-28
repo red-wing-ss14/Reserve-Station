@@ -3,10 +3,10 @@
   name: species-name-chitinid
   roundStart: true
   prototype: MobChitinid
-  # Amour port: WD Slim body types START
+  # RW port: WD Slim body types START
   bodyTypes:
   - ChitinidNormal
-  # Amour port: WD Slim body types END
+  # RW port: WD Slim body types END
   defaultSkinTone: "#ffda93"
   markingLimits: MobChitinidMarkingLimits
   dollPrototype: MobChitinidDummy
@@ -14,9 +14,9 @@
   maleFirstNames: NamesChitinidFirstMale
   femaleFirstNames: NamesChitinidFirstFemale
   naming: First
-  # Orion-Start
+  # RW-Start
   category: Unusual
-  description: "/ServerInfo/_Orion/SpeciesDescriptions/Chitinid.xml"
+  description: "/ServerInfo/_RW/SpeciesDescriptions/Chitinid.xml"
   pros:
   - species-chitinid-pro-radiation-resist
   - species-chitinid-pro-damage-resist
@@ -30,13 +30,13 @@
   - species-chitinid-con-shock-damage
   - species-chitinid-con-syringes
   - species-chitinid-con-hunger
-  # Orion-End
+  # RW-End
 
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
 - type: bodyType
   id: ChitinidNormal
   name: body-normal
-# Amour port: WD Slim body types END
+# RW port: WD Slim body types END
   sprites:
     Head: MobChitinidHead
     Snout: MobHumanoidAnyMarking

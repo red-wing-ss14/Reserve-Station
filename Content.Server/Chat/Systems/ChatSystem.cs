@@ -6,11 +6,11 @@ using System.Text;
 using Content.Goobstation.Common.Chat;
 using Content.Goobstation.Common.Traits;
 using Content.Goobstation.Shared.Loudspeaker.Events;
-using Content.Server._Amour.Gulag; // Amour
+using Content.Server._RW.Gulag; // RW
 using Content.Server._EinsteinEngines.Language;
 using Content.Server._Goobstation.Wizard.Systems;
-using Content.Server._Orion.ServerProtection.Chat;
-using Content.Server._Orion.ServerProtection.Emoting;
+using Content.Server._RW.ServerProtection.Chat;
+using Content.Server._RW.ServerProtection.Emoting;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
@@ -18,7 +18,7 @@ using Content.Server.GameTicking;
 using Content.Server.Speech.EntitySystems;
 using Content.Server.Speech.Prototypes;
 using Content.Server.Station.Systems;
-using Content.Shared._Amour.CCVar; // Amour
+using Content.Shared._RW.CCVar; // RW
 using Content.Shared._EinsteinEngines.Language;
 using Content.Shared._Goobstation.Wizard.Chuuni;
 using Content.Shared._Starlight.CollectiveMind;
@@ -88,15 +88,15 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly ScryingOrbSystem _scrying = default!; // Goobstation Change
     [Dependency] private readonly CollectiveMindUpdateSystem _collectiveMind = default!; // Goobstation - Starlight collective mind port
     [Dependency] private readonly LanguageSystem _language = default!; // Einstein Engines - Language
-    [Dependency] private readonly ChatProtectionSystem _chatProtection = default!; // Orion
-    [Dependency] private readonly EmoteProtectionSystem _emoteProtection = default!; // Orion
+    [Dependency] private readonly ChatProtectionSystem _chatProtection = default!; // RW
+    [Dependency] private readonly EmoteProtectionSystem _emoteProtection = default!; // RW
     [Dependency] private readonly IGameTiming _gameTiming = default!;
 
     public const int VoiceRange = 10; // how far voice goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
     public const int WhisperMuffledRange = 5; // how far whisper goes at all, in world units
-    public const string DefaultAnnouncementSound = "/Audio/_Orion/Announcements/announce.ogg"; // Orion-Edit
-    public const string CentComAnnouncementSound = "/Audio/_Orion/Announcements/centcomm.ogg"; // Orion
+    public const string DefaultAnnouncementSound = "/Audio/_RW/Announcements/announce.ogg"; // RW-Edit
+    public const string CentComAnnouncementSound = "/Audio/_RW/Announcements/centcomm.ogg"; // RW
     public const float DefaultObfuscationFactor = 0.2f; // Percentage of symbols in a whispered message that can be seen even by "far" listeners
     public readonly Color DefaultSpeakColor = Color.White; // Einstein Engines - Language
 
@@ -164,10 +164,10 @@ public sealed partial class ChatSystem : SharedChatSystem
 
     private void OnGameChange(GameRunLevelChangedEvent ev)
     {
-        // Amour start
-        if (_configurationManager.GetCVar(AmourCCVars.OocAutoToggleEnabled))
+        // RW start
+        if (_configurationManager.GetCVar(RwCCVars.OocAutoToggleEnabled))
             return;
-        // Amour end
+        // RW end
 
         switch (ev.New)
         {
@@ -222,10 +222,10 @@ public sealed partial class ChatSystem : SharedChatSystem
     {
         if (HasComp<GhostComponent>(source))
         {
-            // Orion-Start
+            // RW-Start
             if (player != null && _chatProtection.CheckOOCMessage(message, player))
                 return;
-            // Orion-End
+            // RW-End
 
             // Ghosts can only send dead chat messages, so we'll forward it to InGame OOC.
             TrySendInGameOOCMessage(source, message, InGameOOCChatType.Dead, range == ChatTransmitRange.HideChat, shell, player);
@@ -248,15 +248,15 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (!CanSendInGame(message, shell, player))
             return;
 
-        // Amour start
+        // RW start
         if (TryHandleGulagChatMessage(source, player))
             return;
-        // Amour end
+        // RW end
 
-        // Orion-Start
+        // RW-Start
         if (_chatProtection.CheckICMessage(message, source))
             return;
-        // Orion-End
+        // RW-End
 
         ignoreActionBlocker = CheckIgnoreSpeechBlocker(source, ignoreActionBlocker);
 
@@ -315,7 +315,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (language.SpeechOverride.ChatTypeOverride is { } chatTypeOverride)
             desiredType = chatTypeOverride;
 
-        // Orion-Start | Is this being sent direct
+        // RW-Start | Is this being sent direct
         var targetEv = new CheckTargetedSpeechEvent();
         RaiseLocalEvent(source, targetEv);
 
@@ -324,12 +324,12 @@ public sealed partial class ChatSystem : SharedChatSystem
             SendEntityDirect(source, message, range, nameOverride, language, targetEv.Targets);
             return;
         }
-        // Orion-End
+        // RW-End
 
         // This message may have a radio prefix, and should then be whispered to the resolved radio channel
         if (checkRadioPrefix)
         {
-            // Orion-Start
+            // RW-Start
             if (IsRadioPrefixMessage(message) && !CanUseRadio(source))
             {
                 if (TryProcessRadioMessage(source, message, out var fallbackMessage, out _, quiet: true))
@@ -338,9 +338,9 @@ public sealed partial class ChatSystem : SharedChatSystem
                 desiredType = InGameICChatType.Whisper;
                 checkRadioPrefix = false;
             }
-            // Orion-End
+            // RW-End
 
-            if (checkRadioPrefix && TryProcessRadioMessage(source, message, out var modMessage, out var channel)) // Orion-Edit
+            if (checkRadioPrefix && TryProcessRadioMessage(source, message, out var modMessage, out var channel)) // RW-Edit
             {
                 SendEntityWhisper(source, modMessage, range, channel, nameOverride, language, hideLog, ignoreActionBlocker, colorOverride); // Goob edit & Einstein Engines - Language
                 return;
@@ -364,10 +364,10 @@ public sealed partial class ChatSystem : SharedChatSystem
             }
         }
 
-        // Orion-Start
+        // RW-Start
         if (desiredType == InGameICChatType.Speak && _mobStateSystem.IsSoftCritical(source))
             desiredType = InGameICChatType.Whisper;
-        // Orion-End
+        // RW-End
 
         // RW start
         if (desiredType == InGameICChatType.Speak)
@@ -392,7 +392,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         }
     }
 
-    // Orion-Start
+    // RW-Start
     private bool IsRadioPrefixMessage(string message)
     {
         return message.StartsWith(RadioCommonPrefix) ||
@@ -495,7 +495,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         return true;
     }
-    // Orion-End
+    // RW-End
 
     /// <inheritdoc />
     public override void TrySendInGameOOCMessage(
@@ -518,17 +518,17 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (player?.AttachedEntity is not { Valid: true } entity || source != entity)
             return;
 
-        // Amour start
+        // RW start
         if (TryHandleGulagChatMessage(source, player))
             return;
-        // Amour end
+        // RW end
 
-        // Orion-Start
+        // RW-Start
         if (_chatProtection.CheckOOCMessage(message, player))
             return;
-        // Orion-End
+        // RW-End
 
-        message = SanitizeInGameOOCMessage(message, player); // Orion-Edit: player
+        message = SanitizeInGameOOCMessage(message, player); // RW-Edit: player
 
         var sendType = type;
         // If dead player LOOC is disabled, unless you are an admin with Moderator perms, send dead messages to dead chat
@@ -578,7 +578,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         _chatManager.ChatMessageToAll(ChatChannel.Radio, message, wrappedMessage, default, false, true, colorOverride);
         if (playSound)
         {
-            if (sender == Loc.GetString("admin-announce-announcer-default")) announcementSound = new SoundPathSpecifier(CentComAnnouncementSound); // Orion | Support custom alert sound from admin panel
+            if (sender == Loc.GetString("admin-announce-announcer-default")) announcementSound = new SoundPathSpecifier(CentComAnnouncementSound); // RW | Support custom alert sound from admin panel
             _audio.PlayGlobal(announcementSound ?? new SoundPathSpecifier(DefaultAnnouncementSound), Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f)); // RW
         }
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Global station announcement from {sender}: {message}");
@@ -625,10 +625,10 @@ public sealed partial class ChatSystem : SharedChatSystem
             return;
         }
 
-        // Orion-Start
+        // RW-Start
         if (_chatProtection.CheckICMessage(message, source))
             return;
-        // Orion-End
+        // RW-End
 
         if (!TryComp<StationDataComponent>(station, out var stationDataComp)) return;
 
@@ -771,10 +771,10 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (message.Length == 0)
             return;
 
-        // Orion-Start
+        // RW-Start
         if (_chatProtection.CheckICMessage(message, source))
             return;
-        // Orion-End
+        // RW-End
 
         var speech = GetSpeechVerb(source, message);
 
@@ -873,16 +873,16 @@ public sealed partial class ChatSystem : SharedChatSystem
         Color? colorOverride = null // Goobstation
         )
     {
-        // Orion-Start
+        // RW-Start
         var allowSoftCritWhisper = false;
         if (!ignoreActionBlocker && _mobStateSystem.IsSoftCritical(source) && !HasComp<AllowNextCritSpeechComponent>(source))
         {
             allowSoftCritWhisper = true;
             EnsureComp<AllowNextCritSpeechComponent>(source);
         }
-        // Orion-End
+        // RW-End
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         if (!_actionBlocker.CanSpeak(source) && !ignoreActionBlocker)
         {
             if (allowSoftCritWhisper)
@@ -890,7 +890,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
             return;
         }
-        // Orion-Edit-End
+        // RW-Edit-End
 
         // Goob edit start
         var message = FormattedMessage.RemoveMarkupOrThrow(originalMessage);
@@ -900,10 +900,10 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (message.Length == 0)
             return;
 
-        // Orion-Start
+        // RW-Start
         if (_chatProtection.CheckICMessage(message, source))
             return;
-        // Orion-End
+        // RW-End
 
         // get the entity's name by visual identity (if no override provided).
         string nameIdentity = FormattedMessage.EscapeText(nameOverride ?? Identity.Name(source, EntityManager));
@@ -948,7 +948,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             // Goob edit start
             if (TryComp<DeafComponent>(listener, out var modifier) && language.SpeechOverride.RequireSpeech)
                 continue; // blocks anyone with the deaf component from hearing.
-            if (language.SpeechOverride.RequireSight && (HasComp<PermanentBlindnessComponent>(listener) || HasComp<TemporaryBlindnessComponent>(listener))) // Orion-Edit
+            if (language.SpeechOverride.RequireSight && (HasComp<PermanentBlindnessComponent>(listener) || HasComp<TemporaryBlindnessComponent>(listener))) // RW-Edit
                 continue; // block blind people from seeing subtle sign language gestures
             // Goob edit end
 
@@ -1013,7 +1013,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             }
     }
 
-    // Orion-Start
+    // RW-Start
     private void SendEntityDirect(
         EntityUid source,
         string originalMessage,
@@ -1078,7 +1078,7 @@ public sealed partial class ChatSystem : SharedChatSystem
                         $"Direct messaged from {ToPrettyString(source):user}, original: {originalMessage}, transformed: {message}.");
             }
     }
-    // Orion-End
+    // RW-End
 
     // RW start
     private string GetLingGreekLetter(int number)
@@ -1138,7 +1138,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         var ent = Identity.Entity(source, EntityManager);
         string name = FormattedMessage.EscapeText(nameOverride ?? Name(ent));
 
-        _emoteProtection.OnEmoteDetected(source, action, voluntary: true); // Orion
+        _emoteProtection.OnEmoteDetected(source, action, voluntary: true); // RW
 
         // Emotes use Identity.Name, since it doesn't actually involve your voice at all.
         var wrappedMessage = Loc.GetString("chat-manager-entity-me-wrap-message",
@@ -1184,10 +1184,10 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (!_critLoocEnabled && _mobStateSystem.IsCritical(source))
             return;
 
-        // Orion-Start
+        // RW-Start
         if (_chatProtection.CheckOOCMessage(message, player)) // Not IC because can use OOC words.
             return;
-        // Orion-End
+        // RW-End
 
         var wrappedMessage = Loc.GetString("chat-manager-entity-looc-wrap-message",
             ("entityName", name),
@@ -1221,10 +1221,10 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (!_adminManager.IsAdmin(player) && !_DeadchatEnabled) // RMC14 - Check the status of the "rmc.dead_chat_enabled" CCvar before continuing.
             return;
 
-        // Orion-Start
+        // RW-Start
         if (_chatProtection.CheckOOCMessage(message, player)) // Not IC because can use OOC words.
             return;
-        // Orion-End
+        // RW-End
 
         if (_adminManager.IsAdmin(player))
         {
@@ -1376,7 +1376,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         return !_chatManager.MessageCharacterLimit(player, message);
     }
 
-    // Amour start
+    // RW start
     private bool TryHandleGulagChatMessage(EntityUid source, ICommonSession? player)
     {
         if (player == null)
@@ -1386,7 +1386,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         RaiseLocalEvent(source, ev);
         return ev.Cancelled;
     }
-    // Amour end
+    // RW end
 
     // ReSharper disable once InconsistentNaming
     private string SanitizeInGameICMessage(EntityUid source, string message, out string? emoteStr, bool capitalize = true, bool punctuate = false, bool capitalizeTheWordI = true)
@@ -1408,14 +1408,14 @@ public sealed partial class ChatSystem : SharedChatSystem
         return prefix + newMessage;
     }
 
-    private string SanitizeInGameOOCMessage(string message, ICommonSession? session) // Orion-Edit: ICommonSession
+    private string SanitizeInGameOOCMessage(string message, ICommonSession? session) // RW-Edit: ICommonSession
     {
         var newMessage = message.Trim();
 
-        // Orion-Start
+        // RW-Start
         if (_chatProtection.CheckOOCMessage(newMessage, session!))
             return string.Empty;
-        // Orion-End
+        // RW-End
 
         newMessage = FormattedMessage.EscapeText(newMessage);
 
@@ -1690,7 +1690,7 @@ public sealed class CheckIgnoreSpeechBlockerEvent : EntityEventArgs
     }
 }
 
-public sealed class CheckTargetedSpeechEvent : EntityEventArgs // Orion
+public sealed class CheckTargetedSpeechEvent : EntityEventArgs // RW
 {
     public List<InGameICChatType> ChatTypeIgnore = new();
     public List<EntityUid> Targets = new();

@@ -28,7 +28,7 @@
     - PowerCellSmall
     - PowerCellMedium
     - FlashlightLantern
-    - MicroServoStockPart # Orion-Edit: Servo
+    - MicroServoStockPart # RW-Edit: Servo
     - Beaker
     chance: 0.8
     offset: 0.2
@@ -63,13 +63,13 @@
       - id: SheetGlass10
       - id: ToolboxElectricalFilled
       - id: ToolboxMechanicalFilled
-      # Orion-Start
+      # RW-Start
       - id: CapacitorStockPart
       - id: ScanningModuleStockPart
-      - id: MicroServoStockPart # Orion-Edit: Servo
+      - id: MicroServoStockPart # RW-Edit: Servo
       - id: MicroLaserStockPart
       - id: MatterBinStockPart
-      # Orion-End
+      # RW-End
       - id: SlimeScannerXenobio # Goob edit
     # Rare Group
     - !type:GroupSelector

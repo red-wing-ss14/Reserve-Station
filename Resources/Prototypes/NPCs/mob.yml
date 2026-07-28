@@ -26,7 +26,7 @@
 - type: htnCompound
   id: MouseCompound
   branches:
-#    - tasks: # Orion-Edit: Removed
+#    - tasks: # RW-Edit: Removed
 #        - !type:HTNCompoundTask
 #          task: FoodCompound
     # Goobstation - for retaliation; yes, they care about food more
@@ -59,7 +59,7 @@
     - tasks:
         - !type:HTNCompoundTask
           task: InnateRangedCombatCompound
-#    - tasks: # Orion-Edit: Removed
+#    - tasks: # RW-Edit: Removed
 #        - !type:HTNCompoundTask
 #          task: FoodCompound
     - tasks:

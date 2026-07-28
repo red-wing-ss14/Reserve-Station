@@ -5,10 +5,10 @@
   name: species-name-resomi
   roundStart: true
   prototype: MobResomi
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
   bodyTypes:
   - ResomiNormal
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
   defaultSkinTone: "#faf7f7"
   markingLimits: MobResomiMarkingLimits
   dollPrototype: MobResomiDummy
@@ -20,9 +20,9 @@
   - Unsexed
   - Male
   - Female
-  # Orion-Start
+  # RW-Start
   category: Classic
-  description: "/ServerInfo/_Orion/SpeciesDescriptions/Resomi.xml"
+  description: "/ServerInfo/_RW/SpeciesDescriptions/Resomi.xml"
   pros:
   - species-resomi-pro-cold-immunity
   special:
@@ -32,7 +32,7 @@
   - species-resomi-con-blunt-vulnerable
   - species-resomi-con-heat-sensitivity
   - species-resomi-con-weak-pull
-  # Orion-End
+  # RW-End
   # begin Goobstation: port EE height/width sliders
   # resomi sprites look very wrong when too big or too wide
   minHeight: 0.80
@@ -43,11 +43,11 @@
   maxWidth: 1
   # end Goobstation: port EE height/width sliders
 
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
 - type: bodyType
   id: ResomiNormal
   name: body-normal
-# Amour port: WD Slim body types END
+# RW port: WD Slim body types END
   sprites:
     Head: MobResomiHead
     Hair: MobHumanoidAnyMarking

@@ -1,0 +1,94 @@
+- type: entity
+  parent: BaseAntagSpawner
+  id: SpawnPointGhostMorph
+  name: ghost role spawn point
+  suffix: morph
+  categories: [ Spawner ]
+  components:
+  - type: GhostRole
+    name: ghost-role-information-morph-name
+    description: ghost-role-information-morph-description
+    rules: ghost-role-information-morph-rules
+    mindRoles:
+    - MindRoleMorph
+    raffle:
+      settings: default
+    requirements:
+      - !type:DiscordLinkRequirement # RW edit
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _RW/Mobs/Aliens/morph.rsi
+      state: alive
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnPointGhostCorticalBorer
+  name: ghost role spawn point
+  suffix: cortical borer
+  categories: [ Spawner ]
+  components:
+  - type: GhostRole
+    name: cortical-borer-ghostrole-name
+    description: cortical-borer-ghostrole-desc
+    rules: ghost-role-information-antagonist-rules
+    mindRoles:
+    - MindRoleCorticalBorer
+    raffle:
+      settings: default
+    requirements:
+      - !type:DiscordLinkRequirement # RW edit
+  - type: GhostRoleMobSpawner
+    prototype: MobCorticalBorer
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: _RW/Mobs/Aliens/cortical_borer.rsi
+        state: cortical_borer
+
+- type: entity
+  parent: BaseStructure
+  id: SpawnPointSkeletonBartender
+  name: skeleton bartender sleeper
+  suffix: Spawner, Ghost Role
+  categories: [ Spawner ]
+  components:
+  - type: GhostRole
+    name: ghost-role-information-skeleton-bartender-name
+    description: ghost-role-information-skeleton-bartender-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: default
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+  - type: GhostRoleMobSpawner
+    prototype: MobSkeletonBartender
+  - type: Sprite
+    layers:
+    - sprite: _RW/Structures/cryostasis_sleeper.rsi
+      state: sleeper_1
+      map: [ "base" ]
+
+- type: entity
+  parent: BaseStructure
+  id: SpawnPointSkeletonPirate
+  name: skeleton pirate sleeper
+  suffix: Spawner, Ghost Role
+  categories: [ Spawner ]
+  components:
+  - type: GhostRole
+    name: ghost-role-information-skeleton-pirate-bitrunning-name
+    description: ghost-role-information-skeleton-pirate-bitrunning-description
+    rules: ghost-role-information-antagonist-rules
+    raffle:
+      settings: default
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+  - type: GhostRoleMobSpawner
+    prototype: MobSkeletonPirateBitrun
+  - type: Sprite
+    layers:
+    - sprite: _RW/Structures/cryostasis_sleeper.rsi
+      state: sleeper_1
+      map: [ "base" ]

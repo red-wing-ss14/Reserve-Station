@@ -17,7 +17,7 @@
     caste: Queen
   - type: XenomorphQueen
   - type: TailLash
-#    tailDamage: # Orion-Edit: Removed
+#    tailDamage: # RW-Edit: Removed
 #      groups:
 #        Brute: 5
 #    inject:
@@ -57,7 +57,7 @@
       690: 0.6
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
-    baseSprintSpeed: 3.2 # Orion-Edit: 2.5 > 3.2
+    baseSprintSpeed: 3.2 # RW-Edit: 2.5 > 3.2
   - type: MeleeWeapon
     damage:
       groups:
@@ -98,7 +98,7 @@
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
-  - type: GlobalAntagonist # Orion
+  - type: GlobalAntagonist # RW
     antagonistPrototype: globalAntagonistXenomorph
 
 - type: entity

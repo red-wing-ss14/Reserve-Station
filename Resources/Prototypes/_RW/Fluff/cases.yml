@@ -16,6 +16,6 @@
   components:
     - type: ItemSkinCase
       targetPrototype: Stunbaton
-      spriteRsi: _Amour/Fluff/Boosty/contactor_batton.rsi
-      inhandRsi: _Amour/Fluff/Boosty/contactor_batton.rsi
+      spriteRsi: _RW/Fluff/Boosty/contactor_batton.rsi
+      inhandRsi: _RW/Fluff/Boosty/contactor_batton.rsi
       uses: 3

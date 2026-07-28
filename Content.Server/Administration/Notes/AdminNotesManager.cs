@@ -20,7 +20,7 @@ namespace Content.Server.Administration.Notes;
 public sealed class AdminNotesManager : IAdminNotesManager, IPostInjectInit
 {
     [Dependency] private readonly IAdminManager _admins = default!;
-    [Dependency] private readonly IBanManager _bans = default!; // Amour
+    [Dependency] private readonly IBanManager _bans = default!; // RW
     [Dependency] private readonly IServerDbManager _db = default!;
     [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly EuiManager _euis = default!;
@@ -284,7 +284,7 @@ public sealed class AdminNotesManager : IAdminNotesManager, IPostInjectInit
                     throw new ArgumentException("Severity cannot be null for a ban", nameof(severity));
                 await _db.EditBan(noteId, message, severity.Value, expiryTime, editedBy.UserId, editedAt);
                 if (type == NoteType.ServerBan)
-                    await _bans.HandleServerBanChangedAsync(noteId); // Amour
+                    await _bans.HandleServerBanChangedAsync(noteId); // RW
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(type), type, "Unknown note type");

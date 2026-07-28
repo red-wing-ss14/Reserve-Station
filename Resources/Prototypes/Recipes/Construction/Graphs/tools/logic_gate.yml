@@ -48,7 +48,7 @@
         doAfter: 1
     - to: memory_cell
       steps:
-      # Orion-Start
+      # RW-Start
       - machinePart: Servo
         name: construction-graph-tag-servo
         icon:
@@ -61,7 +61,7 @@
           sprite: "Objects/Misc/stock_parts.rsi"
           state: "micro_mani"
         doAfter: 1
-      # Orion-End
+      # RW-End
       - material: Cable
         amount: 2
         doAfter: 1
@@ -128,8 +128,8 @@
         doAfter: 2
       completed:
       - !type:SpawnPrototype
-        prototype: MicroServoStockPart # Orion-Edit: Servo
-        amount: 2 # Orion
+        prototype: MicroServoStockPart # RW-Edit: Servo
+        amount: 2 # RW
       - !type:SpawnPrototype
         prototype: CableApcStack1
         amount: 2

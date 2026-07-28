@@ -8,7 +8,7 @@
 
 - type: bark
   id: Alto
-  name: bark-name-alto # Orion-Edit: Localization
+  name: bark-name-alto # RW-Edit: Localization
   soundCollection:
     collection: AltoBark
 
@@ -22,7 +22,7 @@
 
 - type: bark
   id: Baritone
-  name: bark-name-baritone # Orion-Edit: Localization
+  name: bark-name-baritone # RW-Edit: Localization
   volume: 1
   soundCollection:
     collection: BaritoneBark
@@ -37,7 +37,7 @@
 
 - type: bark
   id: Bass
-  name: bark-name-bass # Orion-Edit: Localization
+  name: bark-name-bass # RW-Edit: Localization
   volume: 2
   soundCollection:
     collection: BassBark
@@ -52,7 +52,7 @@
 
 - type: bark
   id: Tenor
-  name: bark-name-tenor # Orion-Edit: Localization
+  name: bark-name-tenor # RW-Edit: Localization
   volume: 1
   soundCollection:
     collection: TenorBark
@@ -67,11 +67,11 @@
 
 - type: bark
   id: Arachnid
-  name: bark-name-arachnid # Orion-Edit: Localization
+  name: bark-name-arachnid # RW-Edit: Localization
   volume: 1
   soundCollection:
     collection: ArachnidBark
-#  speciesWhitelist: # Orion-Edit: Freedom
+#  speciesWhitelist: # RW-Edit: Freedom
 #    - Arachnid
 
 # lizard
@@ -84,11 +84,11 @@
 
 - type: bark
   id: Lizard
-  name: bark-name-lizard # Orion-Edit: Localization
+  name: bark-name-lizard # RW-Edit: Localization
   volume: 0.4
   soundCollection:
     collection: LizardBark
-#  speciesWhitelist: # Orion-Edit: Freedom
+#  speciesWhitelist: # RW-Edit: Freedom
 #    - Reptilian
 #    - Kobold
 
@@ -102,11 +102,11 @@
 
 - type: bark
   id: Slime
-  name: bark-name-slime # Orion-Edit: Localization
+  name: bark-name-slime # RW-Edit: Localization
   volume: 0.5
   soundCollection:
     collection: SlimeBark
-#  speciesWhitelist: # Orion-Edit: Freedom
+#  speciesWhitelist: # RW-Edit: Freedom
 #    - SlimePerson
 
 # vox
@@ -119,11 +119,11 @@
 
 - type: bark
   id: Vox
-  name: bark-name-vox # Orion-Edit: Localization
+  name: bark-name-vox # RW-Edit: Localization
   volume: 0.5
   soundCollection:
     collection: VoxBark
-#  speciesWhitelist: # Orion-Edit: Freedom
+#  speciesWhitelist: # RW-Edit: Freedom
 #    - Vox
 
 # harpy
@@ -134,11 +134,11 @@
 
 - type: bark
   id: Harpy
-  name: bark-name-harpy # Orion-Edit: Localization
+  name: bark-name-harpy # RW-Edit: Localization
   volume: 1
   soundCollection:
     collection: HarpyBark
-#  speciesWhitelist: # Orion-Edit: Freedom
+#  speciesWhitelist: # RW-Edit: Freedom
 #    - Harpy
 
 # Vulpkanin
@@ -151,11 +151,11 @@
 
 - type: bark
   id: Vulpkanin
-  name: bark-name-vulpkanin # Orion-Edit: Localization
+  name: bark-name-vulpkanin # RW-Edit: Localization
   volume: 1
   soundCollection:
     collection: VulpkaninBark
-#  speciesWhitelist: # Orion-Edit: Freedom
+#  speciesWhitelist: # RW-Edit: Freedom
 #    - Vulpkanin
 
 # Squeak
@@ -166,13 +166,13 @@
 
 - type: bark
   id: Squeak
-  name: bark-name-squeak # Orion-Edit: Localization
+  name: bark-name-squeak # RW-Edit: Localization
   frequency: 0.3
   minPitch: 0.8
   maxPitch: 1.1
   soundCollection:
     collection: SqueakBark
-#  speciesWhitelist: # Orion-Edit: Freedom
+#  speciesWhitelist: # RW-Edit: Freedom
 #    - Rodentia
 
 # MaleAvali
@@ -185,12 +185,12 @@
 
 - type: bark
   id: MaleAvali
-  name: bark-name-male-avali # Orion-Edit: Localization
+  name: bark-name-male-avali # RW-Edit: Localization
   frequency: 0.5
   volume: 0.7
   soundCollection:
     collection: MaleAvaliBark
-#  speciesWhitelist: # Orion-Edit: Freedom
+#  speciesWhitelist: # RW-Edit: Freedom
 #    - Resomi
 
 # FemaleAvali
@@ -203,12 +203,12 @@
 
 - type: bark
   id: FemaleAvali
-  name: bark-name-female-avali # Orion-Edit: Localization
+  name: bark-name-female-avali # RW-Edit: Localization
   volume: 0.7
   frequency: 0.5
   soundCollection:
     collection: FemaleAvaliBark
-#  speciesWhitelist: # Orion-Edit: Freedom
+#  speciesWhitelist: # RW-Edit: Freedom
 #    - Resomi
 
 # Pai
@@ -221,12 +221,12 @@
 
 - type: bark
   id: Pai
-  name: bark-name-pai # Orion-Edit: Localization
+  name: bark-name-pai # RW-Edit: Localization
   volume: 1
   frequency: 0.4
   soundCollection:
     collection: PaiBark
-#  speciesWhitelist: # Orion-Edit: Freedom
+#  speciesWhitelist: # RW-Edit: Freedom
 #    - IPC
 
 # Borg
@@ -239,12 +239,12 @@
 
 - type: bark
   id: Borg
-  name: bark-name-borg # Orion-Edit: Localization
+  name: bark-name-borg # RW-Edit: Localization
   volume: 0.7
   frequency: 0.35
   soundCollection:
     collection: BorgBark
-#  speciesWhitelist: # Orion-Edit: Freedom
+#  speciesWhitelist: # RW-Edit: Freedom
 #    - IPC
 
 # BorgSyndie
@@ -257,7 +257,7 @@
 
 - type: bark
   id: BorgSyndie
-  name: bark-name-borg-syndie # Orion-Edit: Localization
+  name: bark-name-borg-syndie # RW-Edit: Localization
   roundStart: false
   volume: 0.5
   frequency: 0.35
@@ -277,7 +277,7 @@
 
 - type: bark
   id: Durk
-  name: bark-name-durk # Orion-Edit: Localization
+  name: bark-name-durk # RW-Edit: Localization
   volume: 1
   frequency: 0.9
   minPitch: 0.9
@@ -298,7 +298,7 @@
 
 - type: bark
   id: Aviu1
-  name: bark-name-impudent # Orion-Edit: Localization
+  name: bark-name-impudent # RW-Edit: Localization
   frequency: 0.7
   soundCollection:
     collection: Aviu1Bark
@@ -315,7 +315,7 @@
 
 - type: bark
   id: Aviu2
-  name: bark-name-strong # Orion-Edit: Localization
+  name: bark-name-strong # RW-Edit: Localization
   frequency: 0.7
   soundCollection:
     collection: Aviu2Bark
@@ -332,7 +332,7 @@
 
 - type: bark
   id: Aviu3
-  name: bark-name-alien # Orion-Edit: Localization
+  name: bark-name-alien # RW-Edit: Localization
   frequency: 0.7
   soundCollection:
     collection: Aviu3Bark
@@ -349,7 +349,7 @@
 
 - type: bark
   id: Aviu4
-  name: bark-name-ethereal # Orion-Edit: Localization
+  name: bark-name-ethereal # RW-Edit: Localization
   frequency: 0.7
   soundCollection:
     collection: Aviu4Bark

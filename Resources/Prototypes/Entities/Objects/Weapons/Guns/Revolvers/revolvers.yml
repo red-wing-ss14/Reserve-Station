@@ -119,7 +119,7 @@
     chambers: [ True, True, True, True, True, True ]
     ammoSlots: [ null, null, null, null, null, null ]
   - type: StealTarget
-    stealGroup: WeaponRevolverInspector # Amour edit
+    stealGroup: WeaponRevolverInspector # RW edit
 
 - type: entity
   name: Mateba
@@ -128,16 +128,16 @@
   description: A rare and beautiful semi-automatic revolver. Provided only to the Nanotrasen elite, the Mateba sports a unique barrel design that greatly reduces muzzle flip. Many have stared down the barrel of this gun, and even fewer have lived to tell the tale. Loads 7 rounds of .45 Magnum. # Goobstation
   components:
   - type: Sprite
-    sprite: _Orion/Objects/Weapons/Guns/Revolver/mateba/big.rsi # Orion-Edit: New sprites
-  - type: Item # Orion
-    sprite: _Orion/Objects/Weapons/Guns/Revolver/mateba/tiny.rsi
+    sprite: _RW/Objects/Weapons/Guns/Revolver/mateba/big.rsi # RW-Edit: New sprites
+  - type: Item # RW
+    sprite: _RW/Objects/Weapons/Guns/Revolver/mateba/tiny.rsi
     storedOffset: 0,-3
   - type: Clothing
-    sprite: _Orion/Objects/Weapons/Guns/Revolver/mateba/tiny.rsi # Orion-Edit: New sprites
+    sprite: _RW/Objects/Weapons/Guns/Revolver/mateba/tiny.rsi # RW-Edit: New sprites
   - type: Gun
-    fireRate: 3 # Orion-Edit
+    fireRate: 3 # RW-Edit
     soundGunshot:
-      path: /Audio/_Orion/Weapons/Guns/Revolvers/mateba.ogg # Orion-Edit
+      path: /Audio/_RW/Weapons/Guns/Revolvers/mateba.ogg # RW-Edit
   - type: RevolverAmmoProvider
     whitelist:
       tags:
@@ -148,9 +148,9 @@
     chambers: [ True, True, True, True, True, True, True ] # Goobstation - Deathsquad revamp
     ammoSlots: [ null, null, null, null, null, null, null ] # Goobstation - Deathsquad revamp
     soundEject:
-      path: /Audio/_Orion/Weapons/Guns/Revolvers/revolver_unload.ogg # Orion-Edit
+      path: /Audio/_RW/Weapons/Guns/Revolvers/revolver_unload.ogg # RW-Edit
     soundInsert:
-      path: /Audio/_Orion/Weapons/Guns/Revolvers/revolver_load.ogg # Orion-Edit
+      path: /Audio/_RW/Weapons/Guns/Revolvers/revolver_load.ogg # RW-Edit
 
 - type: entity
   parent: WeaponRevolverMateba

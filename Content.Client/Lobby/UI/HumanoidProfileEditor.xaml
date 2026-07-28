@@ -151,7 +151,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                                 <BoxContainer Name="RgbSkinColorContainer" Visible="False" Orientation="Vertical" HorizontalExpand="True"></BoxContainer>
                             </BoxContainer>
                             <!-- Hair -->
-                            <!-- Amour edit start: gradient controls placed right under the main hair color -->
+                            <!-- RW edit start: gradient controls placed right under the main hair color -->
                             <BoxContainer Margin="10" Orientation="Horizontal">
                                 <BoxContainer Orientation="Vertical" HorizontalExpand="True">
                                     <humanoid:SingleMarkingPicker Name="HairStylePicker" Category="Hair" ShowGradient="False" /> <!-- RW -->
@@ -168,7 +168,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                                     </BoxContainer>
                                 </BoxContainer>
                             </BoxContainer>
-                            <!-- Amour edit end -->
+                            <!-- RW edit end -->
                             <!-- Eyes -->
                             <BoxContainer Margin="10" Orientation="Vertical">
                                 <Label Text="{Loc 'humanoid-profile-editor-eyes-label'}" />
@@ -180,7 +180,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                 <BoxContainer Orientation="Vertical">
                     <!-- Jobs -->
                     <OptionButton Name="PreferenceUnavailableButton" />
-                    <!-- Amour edit -->
+                    <!-- RW edit -->
                     <Button Name="BaseLoadoutButton" Text="{Loc loadout-window-base}" Margin="0 5" />
                     <ScrollContainer VerticalExpand="True">
                         <BoxContainer Name="JobList" Orientation="Vertical" />

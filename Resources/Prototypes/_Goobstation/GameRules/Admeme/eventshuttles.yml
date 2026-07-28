@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-# Orion-Edit: Removed ERT shuttle events
+# RW-Edit: Removed ERT shuttle events
 # Use special command: callresponseforce
 
 #Contractor
@@ -50,9 +50,9 @@
         color: Red
         sound: /Audio/Ambience/Antag/traitor_wawa.ogg
       components:
-      - type: GlobalAntagonist # Orion
+      - type: GlobalAntagonist # RW
         antagonistPrototype: globalAntagonistNukeops
-      - type: AdditionalLanguage # Orion
+      - type: AdditionalLanguage # RW
         speaks:
         - Codespeak
         understands:

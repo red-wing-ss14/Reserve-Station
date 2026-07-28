@@ -34,7 +34,7 @@
     tags:
     - Ore
     - Ingot
-  # Orion-Start
+  # RW-Start
   - type: Extractable
     grindableSolutionName: bluespace
   - type: SolutionContainerManager
@@ -61,7 +61,7 @@
     damage:
       types:
         Blunt: 1
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: MaterialBSCrystal
@@ -81,7 +81,7 @@
     stackType: BSCrystalUnprocessed
   - type: UnclaimedOre
     miningPoints: 250
-  # Orion-Start
+  # RW-Start
   - type: Extractable
     grindableSolutionName: bluespace
   - type: SolutionContainerManager
@@ -108,7 +108,7 @@
     damage:
       types:
         Blunt: 1
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: MaterialBSCrystalUnprocessed

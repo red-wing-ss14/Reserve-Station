@@ -59,16 +59,16 @@
     - id: Stunbaton
     - id: Handcuffs
     - id: Handcuffs
-    # Orion-Edit-Start
+    # RW-Edit-Start
 #    - id: HoloprojectorSecurity
 #    - id: RadioHandheldSecurity
 #    - id: WeaponDisabler # Goobstation
-    # Orion-Edit-End
+    # RW-Edit-End
     - id: FlashlightSeclite
     - id: TearGasGrenade
     - id: GrenadeFlashBang
     - id: Flash
-    # Orion-End
+    # RW-End
 
 - type: entity
   id: ClothingBeltSecurityFilled
@@ -139,18 +139,18 @@
       #  amount: 3
       - id: HandheldCrewMonitor
       - id: ParamedHypo
-      # Orion-Start
+      # RW-Start
       - id: SyringeCaseFilledGeneral
       - id: Crowbar
       - id: PillCanisterHyronalin
       - id: PillCanisterDylovene
-      # Orion-End
-      # Orion-Edit-Start: Removed
+      # RW-End
+      # RW-Edit-Start: Removed
 #      - id: CartridgeSaline
 #      - id: CartridgeBicaridine
 #      - id: CartridgeDermaline
 #      - id: CartridgeAtropine # Goobstation - end
-      # Orion-Edit-End
+      # RW-Edit-End
 
 - type: entity
   id: ClothingBeltPlantFilled

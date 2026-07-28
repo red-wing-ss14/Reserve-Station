@@ -225,8 +225,8 @@
     - id: DawInstrumentMachineCircuitboard
     - id: PortableGeneratorPacmanMachineCircuitboard
     - id: PortableGeneratorSuperPacmanMachineCircuitboard
-#    - id: HellfireFreezerMachineCircuitBoard # Orion-Edit: Redundant
-#    - id: HellfireHeaterMachineCircuitBoard # Orion-Edit: Redundant
+#    - id: HellfireFreezerMachineCircuitBoard # RW-Edit: Redundant
+#    - id: HellfireHeaterMachineCircuitBoard # RW-Edit: Redundant
     - id: ReagentGrinderMachineCircuitboard
     - id: ReagentGrinderIndustrialMachineCircuitboard
     - id: BoozeDispenserMachineCircuitboard
@@ -235,7 +235,7 @@
     - id: CryoPodMachineCircuitboard
     - id: PowerCageRechargerCircuitboard
     - id: ShuttleConsoleCircuitboard
-#    - id: TurboItemRechargerCircuitboard # Orion-Edit: Redundant
+#    - id: TurboItemRechargerCircuitboard # RW-Edit: Redundant
 
 - type: entityTable
   id: RandomSatchelTable3
@@ -441,7 +441,7 @@
     - id: SpaceCash100
       weight: 15
     - id: PowerCellHyper
-    - id: PowerCellBluespaceReactor # Orion-Edit: Replaced PowerCellMicroreactor
+    - id: PowerCellBluespaceReactor # RW-Edit: Replaced PowerCellMicroreactor
     - id: PowerCellHigh
 
 - type: entityTable #1x medium

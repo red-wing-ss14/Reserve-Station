@@ -5,7 +5,7 @@
   setPreference: true
   objective: roles-antag-shadowling-description
   requirements:
-    - !type:DiscordLinkRequirement # Amour edit
+    - !type:DiscordLinkRequirement # RW edit
   guides: [ Shadowlings ]
 
 - type: antag

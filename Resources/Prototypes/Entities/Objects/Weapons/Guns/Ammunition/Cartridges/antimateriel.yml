@@ -12,12 +12,12 @@
   - type: CartridgeAmmo
     proto: BulletAntiMateriel
   - type: Sprite
-    sprite: _Orion/Objects/Weapons/Guns/Ammunition/Casings/60_casing.rsi # Orion-Edit: New sprites
+    sprite: _RW/Objects/Weapons/Guns/Ammunition/Casings/60_casing.rsi # RW-Edit: New sprites
     layers:
-    - state: combat # Orion-Edit: New sprites
+    - state: combat # RW-Edit: New sprites
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
-    state: combat # Orion: New sprites
+    state: combat # RW: New sprites
   - type: StaticPrice
     price: 20

@@ -24,18 +24,18 @@ public sealed partial class EnergyReagentCardControl : Control
         PowerCostPerUnit = item.PowerCostPerUnit;
         ColorPanel.PanelOverride = new StyleBoxFlat { BackgroundColor = item.ReagentColor };
         ReagentNameLabel.Text = item.ReagentLabel;
-//        FillLabel.Text = $"{item.PowerCostPerUnit}J/u"; // Orion-Edit
+//        FillLabel.Text = $"{item.PowerCostPerUnit}J/u"; // RW-Edit
 
         MainButton.OnPressed += args => OnPressed?.Invoke(ReagentId);
     }
 
-    // Orion-Start
+    // RW-Start
     public void UpdateCostLabel(int amount)
     {
         var totalCost = PowerCostPerUnit * amount;
         FillLabel.Text = Loc.GetString("energy-reagent-dispenser-window-cost", ("cost", MathF.Round(totalCost, 0)));
     }
-    // Orion-End
+    // RW-End
 
     public void SetDisabled(bool disabled, string tooltip = "")
     {

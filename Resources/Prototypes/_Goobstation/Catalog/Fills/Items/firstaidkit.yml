@@ -50,19 +50,19 @@
     contents:
     - id: PillCanisterBicaridine
     - id: PillCanisterDermaline
-    # Orion-Start
+    # RW-Start
     - id: PillCanisterIbuprofen
     - id: PillCanisterHyronalin
     - id: PillCanisterDylovene
     - id: PillCanisterCharcoal
     - id: PillCanisterDexalin
-    # Orion-End
-    # Orion-Edit-Start: Removed
+    # RW-End
+    # RW-Edit-Start: Removed
 #    - id: PillCanisterTramadol
 #    - id: PillCanisterIron
 #    - id: PillCanisterDexalin
 #    - id: PillCanisterDylovene
-    # Orion-Edit-End
+    # RW-Edit-End
     - id: PillCanisterTricordrazine
 
 - type: entity

@@ -2,11 +2,11 @@
 
 - type: language
   id: Revolutionary
-  # Orion-Start
+  # RW-Start
   icon:
-    sprite: _Orion/Interface/Chat/language.rsi
+    sprite: _RW/Interface/Chat/language.rsi
     state: what # TODO: Sprite it
-  # Orion-End
+  # RW-End
   obfuscation:
     !type:PhraseObfuscation
     proportion: 0.88

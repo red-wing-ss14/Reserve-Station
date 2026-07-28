@@ -328,7 +328,7 @@
   group: Savory
   solids:
     FoodBreadBun: 1
-    MicroServoStockPart: 2 # Orion-Edit
+    MicroServoStockPart: 2 # RW-Edit
     # i would add steel to this recipe but the microwave explodes
 
 - type: microwaveMealRecipe

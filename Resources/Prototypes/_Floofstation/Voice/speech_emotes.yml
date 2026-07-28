@@ -16,14 +16,14 @@
   chatTriggers:
   - yip
   - yips
-  # Orion-Start
+  # RW-Start
   - тяв
   - тяв.
   - тяв!
   - тявкает
   - тявкает.
   - тявкает!
-  # Orion-End
+  # RW-End
 
 - type: emote
   id: Coo
@@ -39,11 +39,11 @@
   chatTriggers:
   - coo
   - coos
-  # Orion-Start
+  # RW-Start
   - воркует
   - воркует.
   - воркует!
   - курлычет
   - курлычет.
   - курлычет!
-  # Orion-End
+  # RW-End

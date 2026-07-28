@@ -19,7 +19,7 @@
       - !type:AdjustReagent
         reagent: Desoxyephedrine
         amount: 0.25
-#  metamorphicSprite: # Orion-Edit: NC license sprites
+#  metamorphicSprite: # RW-Edit: NC license sprites
 #    sprite: _NF/Objects/Consumable/Drinks/ginandsonic.rsi
 #    state: icon_empty
 #  metamorphicMaxFillLevels: 4
@@ -42,7 +42,7 @@
       - !type:AdjustReagent
         reagent: Ethanol
         amount: 0.3
-#  metamorphicSprite: # Orion-Edit: NC license sprites
+#  metamorphicSprite: # RW-Edit: NC license sprites
 #    sprite: _NF/Objects/Consumable/Drinks/goldencat.rsi
 #    state: icon_empty
 #  metamorphicMaxFillLevels: 5
@@ -72,7 +72,7 @@
         intensitySlope: 1
         maxTotalIntensity: 0.1
         probability: 0.1
-#  metamorphicSprite: # Orion-Edit: NC license sprites
+#  metamorphicSprite: # RW-Edit: NC license sprites
 #    sprite: _NF/Objects/Consumable/Drinks/pineappleblast.rsi
 #    state: icon_empty
 #  metamorphicMaxFillLevels: 3
@@ -95,7 +95,7 @@
       - !type:AdjustReagent
         reagent: Ethanol
         amount: 0.4
-#  metamorphicSprite: # Orion-Edit: NC license sprites
+#  metamorphicSprite: # RW-Edit: NC license sprites
 #    sprite: _NF/Objects/Consumable/Drinks/torpedojuice.rsi
 #    state: icon_empty
 #  metamorphicMaxFillLevels: 6
@@ -132,7 +132,7 @@
           min: 35
       - !type:ModifyBloodLevel
         amount: 0.2
-#  metamorphicSprite: # Orion-Edit: NC license sprites
+#  metamorphicSprite: # RW-Edit: NC license sprites
 #    sprite: _NF/Objects/Consumable/Drinks/beesknees.rsi
 #    state: icon_empty
 #  metamorphicMaxFillLevels: 4

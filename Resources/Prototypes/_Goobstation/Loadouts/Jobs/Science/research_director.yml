@@ -34,6 +34,6 @@
   id: ResearchDirectorLabCoatPurple
   equipment:
     outerClothing: ClothingOuterCoatRDPurple
-#  effects: # Orion-Edit: Removed
+#  effects: # RW-Edit: Removed
 #  - !type:GroupLoadoutEffect
 #    proto: MasterRD

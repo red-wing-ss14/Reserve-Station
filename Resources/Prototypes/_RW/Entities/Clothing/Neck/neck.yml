@@ -1,0 +1,167 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: CollarCyan
+  name: cyan collar
+  components:
+    - type: Sprite
+      sprite: _RW/Clothing/Neck/lewd_neck.rsi
+      state: collar_cyan
+    - type: Clothing
+      sprite: _RW/Clothing/Neck/lewd_neck.rsi
+      clothingVisuals:
+        neck:
+        - state: collar_cyan-equipped
+
+- type: entity
+  parent: ClothingNeckBase
+  id: CollarYellow
+  name: yellow collar
+  components:
+    - type: Sprite
+      sprite: _RW/Clothing/Neck/lewd_neck.rsi
+      state: collar_yellow
+    - type: Clothing
+      sprite: _RW/Clothing/Neck/lewd_neck.rsi
+      clothingVisuals:
+        neck:
+        - state: collar_yellow-equipped
+
+- type: entity
+  parent: ClothingNeckBase
+  id: CollarGreen
+  name: green collar
+  components:
+    - type: Sprite
+      sprite: _RW/Clothing/Neck/lewd_neck.rsi
+      state: collar_green
+    - type: Clothing
+      sprite: _RW/Clothing/Neck/lewd_neck.rsi
+      clothingVisuals:
+        neck:
+        - state: collar_green-equipped
+
+- type: entity
+  parent: ClothingNeckBase
+  id: CollarRed
+  name: red collar
+  components:
+    - type: Sprite
+      sprite: _RW/Clothing/Neck/lewd_neck.rsi
+      state: collar_red
+    - type: Clothing
+      sprite: _RW/Clothing/Neck/lewd_neck.rsi
+      clothingVisuals:
+        neck:
+        - state: collar_red-equipped
+
+- type: entity
+  parent: ClothingNeckBase
+  id: CollarLatex
+  name: latex collar
+  components:
+    - type: Sprite
+      sprite: _RW/Clothing/Neck/lewd_neck.rsi
+      state: collar_latex
+    - type: Clothing
+      sprite: _RW/Clothing/Neck/lewd_neck.rsi
+      clothingVisuals:
+        neck:
+        - state: collar_latex-equipped
+
+- type: entity
+  parent: ClothingNeckBase
+  id: CollarOrange
+  name: orange collar
+  components:
+    - type: Sprite
+      sprite: _RW/Clothing/Neck/lewd_neck.rsi
+      state: collar_orange
+    - type: Clothing
+      sprite: _RW/Clothing/Neck/lewd_neck.rsi
+      clothingVisuals:
+        neck:
+        - state: collar_orange-equipped
+
+- type: entity
+  parent: ClothingNeckBase
+  id: CollarWhite
+  name: white collar
+  components:
+    - type: Sprite
+      sprite: _RW/Clothing/Neck/lewd_neck.rsi
+      state: collar_white
+    - type: Clothing
+      sprite: _RW/Clothing/Neck/lewd_neck.rsi
+      clothingVisuals:
+        neck:
+        - state: collar_white-equipped
+
+- type: entity
+  parent: ClothingNeckBase
+  id: CollarPurple
+  name: purple collar
+  components:
+    - type: Sprite
+      sprite: _RW/Clothing/Neck/lewd_neck.rsi
+      state: collar_purple
+    - type: Clothing
+      sprite: _RW/Clothing/Neck/lewd_neck.rsi
+      clothingVisuals:
+        neck:
+        - state: collar_purple-equipped
+
+- type: entity
+  parent: ClothingNeckBase
+  id: CollarBlack
+  name: black collar
+  components:
+    - type: Sprite
+      sprite: _RW/Clothing/Neck/lewd_neck.rsi
+      state: collar_black
+    - type: Clothing
+      sprite: _RW/Clothing/Neck/lewd_neck.rsi
+      clothingVisuals:
+        neck:
+        - state: collar_black-equipped
+
+- type: entity
+  parent: ClothingNeckBase
+  id: CollarTealblack
+  name: tealblack collar
+  components:
+    - type: Sprite
+      sprite: _RW/Clothing/Neck/lewd_neck.rsi
+      state: collar_tealblack
+    - type: Clothing
+      sprite: _RW/Clothing/Neck/lewd_neck.rsi
+      clothingVisuals:
+        neck:
+        - state: collar_tealblack-equipped
+
+- type: entity
+  parent: ClothingNeckBase
+  id: CollarSpike
+  name: spike collar
+  components:
+    - type: Sprite
+      sprite: _RW/Clothing/Neck/lewd_neck.rsi
+      state: collar_spike
+    - type: Clothing
+      sprite: _RW/Clothing/Neck/lewd_neck.rsi
+      clothingVisuals:
+        neck:
+        - state: collar_spike-equipped
+
+- type: entity
+  parent: ClothingNeckBase
+  id: CollarShock
+  name: shock collar
+  components:
+    - type: Sprite
+      sprite: _RW/Clothing/Neck/lewd_neck.rsi
+      state: shockcollar
+    - type: Clothing
+      sprite: _RW/Clothing/Neck/lewd_neck.rsi
+      clothingVisuals:
+        neck:
+        - state: shockcollar-equipped

@@ -5,8 +5,8 @@ using Content.Server.Atmos.Piping.Components;
 using Content.Server.Popups;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
-using Content.Shared._Orion.Construction;
-using Content.Shared._Orion.Construction.Events;
+using Content.Shared._RW.Construction;
+using Content.Shared._RW.Construction.Events;
 using Content.Shared.Atmos.Piping.Portable.Components;
 using Content.Shared.Atmos.Piping.Unary.Components;
 using Content.Shared.Atmos.Visuals;
@@ -39,10 +39,10 @@ public sealed class SpaceHeaterSystem : EntitySystem
         SubscribeLocalEvent<SpaceHeaterComponent, SpaceHeaterChangePowerLevelMessage>(OnPowerLevelChanged);
         SubscribeLocalEvent<SpaceHeaterComponent, SpaceHeaterChangeTemperatureMessage>(OnTemperatureChanged);
         SubscribeLocalEvent<SpaceHeaterComponent, SpaceHeaterToggleMessage>(OnToggle);
-        // Orion-Start
+        // RW-Start
         SubscribeLocalEvent<SpaceHeaterComponent, RefreshPartsEvent>(OnRefreshParts);
         SubscribeLocalEvent<SpaceHeaterComponent, UpgradeExamineEvent>(OnUpgradeExamine);
-        // Orion-End
+        // RW-End
     }
 
     private void OnInit(EntityUid uid, SpaceHeaterComponent spaceHeater, MapInitEvent args)
@@ -203,7 +203,7 @@ public sealed class SpaceHeaterSystem : EntitySystem
         }
     }
 
-    // Orion-Start
+    // RW-Start
     private void OnRefreshParts(EntityUid uid, SpaceHeaterComponent component, RefreshPartsEvent args)
     {
         var capacitor = args.GetPartRating(MachinePartIds.Capacitor);
@@ -229,5 +229,5 @@ public sealed class SpaceHeaterSystem : EntitySystem
         args.AddPercentageUpgrade("machine-upgrade-spaceheater-power", component.PowerConsumption / component.BasePowerConsumption);
         args.AddPercentageUpgrade("machine-upgrade-spaceheater-temp-range", (component.MaxTemperature - component.MinTemperature) / (component.BaseMaxTemperature - component.BaseMinTemperature));
     }
-    // Orion-End
+    // RW-End
 }

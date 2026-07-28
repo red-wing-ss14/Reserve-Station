@@ -209,12 +209,12 @@ namespace Content.Client.Ghost
             GhostVisibility = visibility ?? !GhostVisibility;
         }
 
-        // Orion-Start
+        // RW-Start
         public void ReturnToRound()
         {
             var msg = new GhostReturnToRoundRequest();
             RaiseNetworkEvent(msg);
         }
-        // Orion-End
+        // RW-End
     }
 }

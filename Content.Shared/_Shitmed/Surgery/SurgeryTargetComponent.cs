@@ -16,11 +16,11 @@ public sealed partial class SurgeryTargetComponent : Component
     [DataField]
     public bool SepsisImmune;
 
-    // Orion-Start
+    // RW-Start
     /// <summary>
     /// Self-surgery speed modifier. 1f / 3f = three times slower.
     /// </summary>
     [DataField]
     public float SelfSurgerySpeedModifier = 1f / 3f;
-    // Orion-End
+    // RW-End
 }

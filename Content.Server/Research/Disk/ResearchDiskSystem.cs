@@ -3,7 +3,7 @@
 using System.Linq;
 using Content.Server.Popups;
 using Content.Server.Research.Systems;
-using Content.Shared._Orion.Research;
+using Content.Shared._RW.Research;
 using Content.Shared.Interaction;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
@@ -31,7 +31,7 @@ namespace Content.Server.Research.Disk
             if (!TryComp<ResearchServerComponent>(args.Target, out var server))
                 return;
 
-            // Orion-Edit-Start
+            // RW-Edit-Start
             if (component.PointBalances.Count > 0)
             {
                 foreach (var balance in component.PointBalances)
@@ -43,9 +43,9 @@ namespace Content.Server.Research.Disk
             {
                 _research.ModifyServerPoints(args.Target.Value, component.Points, server);
             }
-            // Orion-Edit-End
+            // RW-Edit-End
 
-            _research.LogNetworkEvent(args.Target.Value, "disk", Loc.GetString("research-netlog-disk-points-applied", ("points", component.Points)), args.User); // Orion
+            _research.LogNetworkEvent(args.Target.Value, "disk", Loc.GetString("research-netlog-disk-points-applied", ("points", component.Points)), args.User); // RW
             _popupSystem.PopupEntity(Loc.GetString("research-disk-inserted", ("points", component.Points)), args.Target.Value, args.User);
             QueueDel(uid);
             args.Handled = true;
@@ -57,13 +57,13 @@ namespace Content.Server.Research.Disk
                 return;
 
             component.Points = _prototype.EnumeratePrototypes<TechnologyPrototype>()
-                // Orion-Edit-Start
+                // RW-Edit-Start
                 .Sum(tech => tech.PointCosts
                     .Where(cost => cost.Type == "General")
                     .Sum(cost => cost.Amount));
-                // Orion-Edit-End
+                // RW-Edit-End
 
-                // Orion-Start
+                // RW-Start
                 component.PointBalances = _prototype.EnumeratePrototypes<TechnologyPrototype>()
                     .SelectMany(tech => tech.PointCosts)
                     .GroupBy(cost => cost.Type)
@@ -73,7 +73,7 @@ namespace Content.Server.Research.Disk
                         Amount = group.Sum(cost => cost.Amount),
                     })
                     .ToList();
-                // Orion-End
+                // RW-End
         }
     }
 }

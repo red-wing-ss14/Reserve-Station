@@ -156,7 +156,7 @@
         - !type:TagCondition
           inverted: true
           tag: Bee
-      - !type:ChemAddMoodlet # Orion
+      - !type:ChemAddMoodlet # RW
         moodPrototype: BuzzochloricBeesEffect
 # Goobstation yowie changes end
 
@@ -196,7 +196,7 @@
   name: reagent-name-razorium
   group: Toxins
   slipData:
-    requiredSlipSpeed: 5 # Orion-Edit: 3.5 > 5
+    requiredSlipSpeed: 5 # RW-Edit: 3.5 > 5
   desc: reagent-desc-razorium
   physicalDesc: reagent-physical-desc-reflective
   flavor: sharp
@@ -333,7 +333,7 @@
   flavor: funny
   color: "#FF4DD2"
   slipData:
-    requiredSlipSpeed: 4.6 # Orion-Edit: 3.5 > 4.6 Light slippery curse
+    requiredSlipSpeed: 4.6 # RW-Edit: 3.5 > 4.6 Light slippery curse
   metabolisms:
     Medicine:
       effects:

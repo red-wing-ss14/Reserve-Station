@@ -15,5 +15,5 @@
       - id: NodeScanner
       - id: NetworkConfigurator
         prob: 0.5
-      - id: InducerScientificBattery # Orion
+      - id: InducerScientificBattery # RW
         prob: 0.2

@@ -166,7 +166,7 @@
       # eating salt on its own kinda sucks, kids
       - !type:SatiateThirst
         factor: -0.5
-      - !type:ChemAddMoodlet # Orion
+      - !type:ChemAddMoodlet # RW
         moodPrototype: SaltyEffect
   tileReactions: # 古布站 - Wraith Start Goobstation
     - !type:EnsureTileReaction

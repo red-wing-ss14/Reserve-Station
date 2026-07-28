@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 
 using Content.Server.Chemistry.EntitySystems;
-using Content.Shared._Orion.Construction.Prototypes;
+using Content.Shared._RW.Construction.Prototypes;
 using Content.Shared.Chemistry;
 using Content.Shared.Containers.ItemSlots;
 using Robust.Shared.Audio;
@@ -25,7 +25,7 @@ namespace Content.Server.Chemistry.Components
         [ViewVariables(VVAccess.ReadWrite)]
         public ReagentDispenserDispenseAmount DispenseAmount = ReagentDispenserDispenseAmount.U10;
 
-        // Orion-Start
+        // RW-Start
         [ViewVariables(VVAccess.ReadWrite)]
         public float BaseRechargeRate = 1f;
 
@@ -43,6 +43,6 @@ namespace Content.Server.Chemistry.Components
 
         [DataField]
         public ProtoId<MachinePartPrototype> MatterBinPart = "MatterBin";
-        // Orion-End
+        // RW-End
     }
 }

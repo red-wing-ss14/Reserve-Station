@@ -2,8 +2,8 @@
 
 using Content.Goobstation.Common.Barks; // Goob Station - Barks
 using Content.Shared.DisplacementMap;
-using Content.Shared._Amour.TTS;
-using Content.Shared._Amour.Humanoid.Prototypes;
+using Content.Shared._RW.TTS;
+using Content.Shared._RW.Humanoid.Prototypes;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Inventory;
@@ -137,13 +137,13 @@ public sealed partial class HumanoidAppearanceComponent : Component
 
     // end Goobstation: port EE height/width sliders
 
-    // Amour port: WD Slim body types START
+    // RW port: WD Slim body types START
     /// <summary>
     ///     Current body type.
     /// </summary>
     [DataField, AutoNetworkedField]
     public ProtoId<BodyTypePrototype> BodyType { get; set; } = SharedHumanoidAppearanceSystem.DefaultBodyType;
-    // Amour port: WD Slim body types END
+    // RW port: WD Slim body types END
 }
 
 [DataDefinition]

@@ -52,7 +52,7 @@ public sealed partial class PowerCellSystem : EntitySystem
             return;
         }
 
-        if (!ent.Comp.AllowMegaCells && HasComp<Content.Shared._Orion.PowerCell.Components.MegaCellComponent>(args.EntityUid))
+        if (!ent.Comp.AllowMegaCells && HasComp<Content.Shared._RW.PowerCell.Components.MegaCellComponent>(args.EntityUid))
             args.Cancel();
     }
 

@@ -34,11 +34,11 @@
     maxFillLevels: 4
     fillBaseName: icon
   - type: Dumpable
-  # Orion-Edit-Start: Removed
+  # RW-Edit-Start: Removed
 #  - type: Clothing
 #    slots: [belt]
 #    sprite: Objects/Specific/Janitorial/trashbag.rsi
-  # Orion-Edit-End
+  # RW-Edit-End
   - type: Item
     size: Normal
   - type: PhysicalComposition #Goobstation - Recycle update
@@ -58,7 +58,7 @@
     heldPrefix: blue
   - type: StorageFillVisualizer
     fillBaseName: blue-icon
-  - type: Storage # Orion
+  - type: Storage # RW
     grid:
     - 0,0,14,5
 

@@ -1,0 +1,53 @@
+<DefaultWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    Title="ZPass - Премиальный доступ для лучших"
+    MinSize="600 415"
+    SetSize="600 415">
+    <BoxContainer Orientation="Vertical" SeparationOverride="4" MinWidth="150">
+        <TextureRect TextureScale="2 2" TexturePath="/Textures/_RW/Interface/pass.png" HorizontalAlignment="Center"/>
+        <BoxContainer Orientation="Vertical">
+            <Label Text="ZPass - это возможность поддержать твой любимый сервер и"/>
+            <Label Text="и получить приятные бонусы к игре."/>
+            <Label Text="Спасибо вам, что выбрали нас!"/>
+            <controls:StripeBack>
+                <Label Text="Преимущества ZPass над обычной игрой на сервере:" HorizontalAlignment="Center" />
+            </controls:StripeBack>
+            <BoxContainer>
+                <Label Text="  ⭐ " FontColorOverride="#ffff00"/>
+                <Label Text="Доступ к эксклюзивному функционалу"/>
+            </BoxContainer>
+            <BoxContainer>
+                <Label Text=" ♔ " FontColorOverride="#ffff00"/>
+                <Label Text="Приоритет при заходе на сервер"/>
+            </BoxContainer>
+            <BoxContainer>
+                <Label Text="  ♿ " FontColorOverride="#ffff00"/>
+                <Label Text="Специальная плашка в Discord"/>
+            </BoxContainer>
+            <BoxContainer>
+                <Label Text="  ☄ " FontColorOverride="#ffff00"/>
+                <Label Text="Удвоенный шанс выпадения роли антагониста"/>
+            </BoxContainer>
+            <BoxContainer>
+                <Label Text="  ⚖ " FontColorOverride="#ffff00"/>
+                <Label Text="Ответственное отношение администрации"/>
+            </BoxContainer>
+            <BoxContainer>
+                <Label Text="  🛠 " FontColorOverride="#ffff00"/>
+                <Label Text="Возможность влиять на разработку игры"/>
+            </BoxContainer>
+            <BoxContainer>
+                <Label Text="  👍 " FontColorOverride="#ffff00"/>
+                <Label Text="И многое другое за символическую плату от 700 руб в месяц!!"/>
+            </BoxContainer>
+        </BoxContainer>
+        <BoxContainer HorizontalAlignment="Center">
+            <Button Name="PurchaseButton" Text="Посмотреть планы"/>
+            <Button Name="PurchasedButton" Text="Спасибо за покупку!" ToolTip="А ты поверил что ли?" Visible="False" Disabled="True" />
+        </BoxContainer>
+            <Label Text="Да куда ты тянешь, блять!?" Margin="4"/>
+            <Label Text="Верни, как было!!!"/>
+            <TextureRect TexturePath="/Textures/_RW/cat-spoon-coder.png" HorizontalAlignment="Center"/>
+    </BoxContainer>
+</DefaultWindow>

@@ -28,22 +28,22 @@
       sprite: Mobs/Customization/masking_helpers.rsi
       state: unisex_full
       visible: false
-    # Orion-Start
+    # RW-Start
     - map: [ "underwear" ]
     - map: [ "undershirt" ]
-    # Orion-End
-    # Orion-Edit-Start: Moved under jumpsuit
+    # RW-End
+    # RW-Edit-Start: Moved under jumpsuit
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
-    # Orion-Edit-End
-    - map: [ "socks" ] # Orion
+    # RW-Edit-End
+    - map: [ "socks" ] # RW
     - map: ["jumpsuit"]
     - map: ["enum.HumanoidVisualLayers.LHand"]
     - map: ["enum.HumanoidVisualLayers.RHand"]
     - map: [ "gloves" ]
-    - map: [ "wrists" ] # Orion
+    - map: [ "wrists" ] # RW
     - map: [ "shoes" ]
-    - map: [ "earsright" ] # Orion
+    - map: [ "earsright" ] # RW
     - map: [ "ears" ]
     - map: [ "innerBelt" ]
     - map: [ "innerNeck" ]
@@ -184,7 +184,7 @@
   - type: TemperatureSpeed
     thresholds:
       243: 0.8
-#  - type: Fart # Orion-Edit: Removed
+#  - type: Fart # RW-Edit: Removed
 #    gasToFart: Plasma
 
 - type: entity

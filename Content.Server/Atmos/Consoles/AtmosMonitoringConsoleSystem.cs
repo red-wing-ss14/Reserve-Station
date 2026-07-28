@@ -134,30 +134,30 @@ public sealed class AtmosMonitoringConsoleSystem : SharedAtmosMonitoringConsoleS
         if (_updateTimer >= UpdateTime)
         {
             _updateTimer -= UpdateTime;
-            var entriesByGrid = new Dictionary<EntityUid, AtmosMonitoringConsoleEntry[]>(); // Orion
+            var entriesByGrid = new Dictionary<EntityUid, AtmosMonitoringConsoleEntry[]>(); // RW
 
             var query = AllEntityQuery<AtmosMonitoringConsoleComponent, TransformComponent>();
             while (query.MoveNext(out var ent, out var entConsole, out var entXform))
             {
-                if (entXform?.GridUid == null || !_userInterfaceSystem.IsUiOpen(ent, AtmosMonitoringConsoleUiKey.Key)) // Orion-Edit
+                if (entXform?.GridUid == null || !_userInterfaceSystem.IsUiOpen(ent, AtmosMonitoringConsoleUiKey.Key)) // RW-Edit
                     continue;
 
-                // Orion-Start
+                // RW-Start
                 if (!entriesByGrid.TryGetValue(entXform.GridUid.Value, out var atmosNetworks))
                 {
                     atmosNetworks = GetAtmosNetworks(entXform.GridUid.Value);
                     entriesByGrid[entXform.GridUid.Value] = atmosNetworks;
                 }
-                // Orion-End
+                // RW-End
 
-                UpdateUIState(ent, atmosNetworks, entConsole, entXform); // Orion-Edit
+                UpdateUIState(ent, atmosNetworks, entConsole, entXform); // RW-Edit
             }
         }
     }
 
     public void UpdateUIState
         (EntityUid uid,
-        AtmosMonitoringConsoleEntry[] atmosNetworks, // Orion
+        AtmosMonitoringConsoleEntry[] atmosNetworks, // RW
         AtmosMonitoringConsoleComponent component,
         TransformComponent xform)
     {
@@ -175,20 +175,20 @@ public sealed class AtmosMonitoringConsoleSystem : SharedAtmosMonitoringConsoleS
         // The grid must have a NavMapComponent to visualize the map in the UI
         EnsureComp<NavMapComponent>(gridUid);
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         // Set the UI state
         _userInterfaceSystem.SetUiState(uid, AtmosMonitoringConsoleUiKey.Key, new AtmosMonitoringConsoleBoundInterfaceState(atmosNetworks));
-        // Orion-Edit-End
-    } // Orion: Also separate
+        // RW-Edit-End
+    } // RW: Also separate
 
-    private AtmosMonitoringConsoleEntry[] GetAtmosNetworks(EntityUid gridUid) // Orion
+    private AtmosMonitoringConsoleEntry[] GetAtmosNetworks(EntityUid gridUid) // RW
     {
         var atmosNetworks = new List<AtmosMonitoringConsoleEntry>();
         var query = AllEntityQuery<GasPipeSensorComponent, TransformComponent>();
 
-        while (query.MoveNext(out var ent, out _, out var entXform)) // Orion-Edit
+        while (query.MoveNext(out var ent, out _, out var entXform)) // RW-Edit
         {
-            if (entXform.GridUid != gridUid || !entXform.Anchored) // Orion-Edit
+            if (entXform.GridUid != gridUid || !entXform.Anchored) // RW-Edit
                 continue;
 
             var entry = CreateAtmosMonitoringConsoleEntry(ent, entXform);
@@ -197,7 +197,7 @@ public sealed class AtmosMonitoringConsoleSystem : SharedAtmosMonitoringConsoleS
                 atmosNetworks.Add(entry.Value);
         }
 
-        return atmosNetworks.ToArray(); // Orion-Edit
+        return atmosNetworks.ToArray(); // RW-Edit
     }
 
     private AtmosMonitoringConsoleEntry? CreateAtmosMonitoringConsoleEntry(EntityUid uid, TransformComponent xform)

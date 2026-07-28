@@ -64,7 +64,7 @@ public sealed class LinkAccountUIController : UIController, IOnSystemChanged<Lin
         gui.CharacterPreview.PatronPerks.Visible = _linkAccount.CanViewPatronPerks();
     }
 
-/* // Orion-Edit: Removed because don't give a fuck about Patron
+/* // RW-Edit: Removed because don't give a fuck about Patron
     private void OnLobbyMessageReceived(SharedRMCDisplayLobbyMessageEvent message)
     {
         if (UIManager.ActiveScreen is not LobbyGui gui)
@@ -335,12 +335,12 @@ public sealed class LinkAccountUIController : UIController, IOnSystemChanged<Lin
 
     public void OnSystemLoaded(LinkAccountSystem system)
     {
-//        system.LobbyMessageReceived += OnLobbyMessageReceived; // Orion-Edit: Removed because don't give a fuck about Patron
+//        system.LobbyMessageReceived += OnLobbyMessageReceived; // RW-Edit: Removed because don't give a fuck about Patron
     }
 
     public void OnSystemUnloaded(LinkAccountSystem system)
     {
-//        system.LobbyMessageReceived -= OnLobbyMessageReceived; // Orion-Edit: Removed because don't give a fuck about Patron
+//        system.LobbyMessageReceived -= OnLobbyMessageReceived; // RW-Edit: Removed because don't give a fuck about Patron
     }
 
     public override void FrameUpdate(FrameEventArgs args)

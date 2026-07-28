@@ -27,7 +27,7 @@ public sealed class DevourSystem : EntitySystem
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!; // Goobstation
-    [Dependency] private readonly SharedDestructibleSystem _destructible = default!; // Orion
+    [Dependency] private readonly SharedDestructibleSystem _destructible = default!; // RW
 
     public override void Initialize()
     {
@@ -74,8 +74,8 @@ public sealed class DevourSystem : EntitySystem
         {
             switch (targetState.CurrentState)
             {
-                case MobState.SoftCritical: // Orion-Edit
-                case MobState.HardCritical: // Orion
+                case MobState.SoftCritical: // RW-Edit
+                case MobState.HardCritical: // RW
                 case MobState.Dead:
 
                     _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, ent.Owner, ent.Comp.DevourTime, new DevourDoAfterEvent(), ent.Owner, target: target, used: ent.Owner)
@@ -93,17 +93,17 @@ public sealed class DevourSystem : EntitySystem
             return;
         }
 
-        // Orion-Start
+        // RW-Start
         if (IsIndestructibleStructure(target))
         {
             _popupSystem.PopupClient(Loc.GetString("devour-action-popup-message-fail-target-indestructible"), ent.Owner, ent.Owner);
             return;
         }
-        // Orion-End
+        // RW-End
 
         _popupSystem.PopupClient(Loc.GetString("devour-action-popup-message-structure"), ent.Owner, ent.Owner);
 
-        // Orion-Start
+        // RW-Start
         var canDevourStructure = new DestructionAttemptEvent();
         RaiseLocalEvent(target, canDevourStructure);
         if (canDevourStructure.Cancelled)
@@ -111,7 +111,7 @@ public sealed class DevourSystem : EntitySystem
             _popupSystem.PopupClient(Loc.GetString("devour-action-popup-message-fail-target-indestructible"), ent.Owner, ent.Owner);
             return;
         }
-        // Orion-End
+        // RW-End
 
         if (ent.Comp.SoundStructureDevour != null)
             _audioSystem.PlayPredicted(ent.Comp.SoundStructureDevour, ent.Owner, ent.Owner, ent.Comp.SoundStructureDevour.Params);
@@ -127,7 +127,7 @@ public sealed class DevourSystem : EntitySystem
         if (args.Handled || args.Cancelled)
             return;
 
-/* // Orion-Edit: Moved down
+/* // RW-Edit: Moved down
         var ichorInjection = new Solution(ent.Comp.Chemical, ent.Comp.HealRate);
 
         // Grant ichor if the devoured thing meets the dragon's food preference
@@ -141,13 +141,13 @@ public sealed class DevourSystem : EntitySystem
         // </Goobstation>
 */
 
-        // Orion-Start
+        // RW-Start
         if (args.Args.Target == null)
             return;
-        // Orion-End
+        // RW-End
 
         // If the devoured thing meets the stomach whitelist criteria, add it to the stomach
-        if (_whitelistSystem.IsWhitelistPass(ent.Comp.StomachStorageWhitelist, args.Args.Target.Value)) // Orion-Edit
+        if (_whitelistSystem.IsWhitelistPass(ent.Comp.StomachStorageWhitelist, args.Args.Target.Value)) // RW-Edit
         {
             _containerSystem.Insert(args.Args.Target.Value, ent.Comp.Stomach);
 
@@ -162,11 +162,11 @@ public sealed class DevourSystem : EntitySystem
         //TODO: Figure out a better way of removing structures via devour that still entails standing still and waiting for a DoAfter. Somehow.
         //If it's not alive, it must be a structure.
         // Delete if the thing isn't in the stomach storage whitelist (or the stomach whitelist is null/empty)
-        else // Orion-Edit
+        else // RW-Edit
         {
-//            PredictedQueueDel(args.Args.Target.Value); // Orion-Edit
+//            PredictedQueueDel(args.Args.Target.Value); // RW-Edit
 
-            // Orion-Start: Protect indestructible from devour
+            // RW-Start: Protect indestructible from devour
             if (IsIndestructibleStructure(args.Args.Target.Value))
             {
                 _popupSystem.PopupClient(Loc.GetString("devour-action-popup-message-fail-target-indestructible"), ent.Owner, ent.Owner);
@@ -178,10 +178,10 @@ public sealed class DevourSystem : EntitySystem
                 _popupSystem.PopupClient(Loc.GetString("devour-action-popup-message-fail-target-indestructible"), ent.Owner, ent.Owner);
                 return;
             }
-            // Orion-End
+            // RW-End
         }
 
-        // Orion-Start
+        // RW-Start
         var ichorInjection = new Solution(ent.Comp.Chemical, ent.Comp.HealRate);
 
         // Grant ichor if the devoured thing meets the dragon's food preference
@@ -192,18 +192,18 @@ public sealed class DevourSystem : EntitySystem
         if (_solution.TryGetSolution(args.Args.Target.Value, "food", out _, out var food))
             _bloodstreamSystem.TryAddToBloodstream(ent.Owner, food);
         // </Goobstation>
-        // Orion-End
+        // RW-End
 
         _audioSystem.PlayPredicted(ent.Comp.SoundDevour, ent.Owner, ent.Owner);
     }
 
-    // Orion-Start
+    // RW-Start
     private bool IsIndestructibleStructure(EntityUid target)
     {
         var prototypeId = MetaData(target).EntityPrototype?.ID;
         return prototypeId != null && prototypeId.Contains("Indestructible", StringComparison.OrdinalIgnoreCase);
     }
-    // Orion-End
+    // RW-End
 
     private void OnGibContents(Entity<DevourerComponent> ent, ref BeingGibbedEvent args)
     {

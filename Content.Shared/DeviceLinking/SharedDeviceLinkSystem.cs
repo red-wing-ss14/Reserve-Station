@@ -103,7 +103,7 @@ public abstract class SharedDeviceLinkSystem : EntitySystem
         {
             if (TryComp(sourceUid, out DeviceLinkSourceComponent? source))
                 RemoveSinkFromSourceInternal(sourceUid, sink, source, sink);
-            else if (!TerminatingOrDeleted(sourceUid)) // Orion-Edit: Random test fail fix
+            else if (!TerminatingOrDeleted(sourceUid)) // RW-Edit: Random test fail fix
                 Log.Error($"Device sink {ToPrettyString(sink)} source list contains invalid entity: {ToPrettyString(sourceUid)}");
         }
     }

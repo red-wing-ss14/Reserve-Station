@@ -1,0 +1,382 @@
+# YouWellLeer
+- type: entity
+  parent: ClothingHeadBase
+  id: LeerCap
+  name: старая фуражка
+  suffix: fluff
+  description: Реплика фуражки времен старого космоса. Согласно некоторым источникам, такую фуражку носили солдаты несколько столетий назад.
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/YouWellLeer/hoscap.rsi
+    - type: Clothing
+      sprite: _RW/Fluff/YouWellLeer/hoscap.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: LeerCloak
+  name: плащ-палатка
+  suffix: fluff
+  description: Плащ, который при необходимости можно оборудовать в палатку, незаменимая вещь на войне.
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/YouWellLeer/hoscloak.rsi
+
+- type: entity
+  parent: ClothingUniformJumpsuitHoS
+  id: LeerJumpsuit
+  name: водолазка ВКФ
+  suffix: fluff
+  description: Комплект прочной одежды со страховочными ремнями.
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/YouWellLeer/hosjumpsuit.rsi
+    - type: Clothing
+      sprite: _RW/Fluff/YouWellLeer/hosjumpsuit.rsi
+
+- type: entity
+  parent: ClothingMaskGas
+  id: LeerMask
+  name: Заслон-1
+  suffix: fluff
+  description: Полумаска из прочных материалов с возможностью подключения ЗСД.
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/YouWellLeer/hosmask.rsi
+    - type: Clothing
+      sprite: _RW/Fluff/YouWellLeer/hosmask.rsi
+
+- type: entity
+  parent: ClothingOuterCoatHoSTrench
+  id: LeerTrench
+  name: Офицерский китель
+  suffix: fluff
+  description: Бронежилет, поверх которого надет парадный китель офицера ВКФ. Погоны, кажется, сорваны.
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/YouWellLeer/hostrench.rsi
+    - type: Clothing
+      sprite: _RW/Fluff/YouWellLeer/hostrench.rsi
+
+# koitorra
+- type: entity
+  parent: ClothingMaskGas
+  id: ClothingMaskGasKoitorra
+  name: бионическая нейрочелюсть
+  suffix: fluff
+  description: "Жесткая и темная. По центру шеи расположен светодиод, обрамлённый металлическими вставками, что плавно двигаются вниз. На краю шеи есть еле видное обозначение модели: 'JawV-02, Роджер Фенелон'."
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/koitorra/koitorra_mask.rsi
+    - type: Item
+      sprite: _RW/Fluff/koitorra/koitorra_mask.rsi
+    - type: Clothing
+      sprite: _RW/Fluff/koitorra/koitorra_mask.rsi
+# thechaotic
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatThechaotic
+  name: Тренч Маллена
+  suffix: fluff
+  description: Сшитый на заказ тренч криминалиста. Пропах никотином насквозь.
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/thechaotic/coat.rsi
+    - type: Clothing
+      sprite: _RW/Fluff/thechaotic/coat.rsi
+    - type: StorageFill
+      contents:
+        - id: SmokingPipeFilledTobacco
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieThechaotic
+  name: багровый галстук
+  description: Свободно завязанный тёмно-красный галстук, показывает что детектив работает не в полную силу.
+  suffix: fluff
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/thechaotic/red_tie.rsi
+    - type: Clothing
+      sprite: _RW/Fluff/thechaotic/red_tie.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingJumpsuitBlackThechaotic
+  name: экстра нуарный костюм
+  description: Когда просто нуарного для полного эффекта не хватает.
+  suffix: fluff
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/thechaotic/black_suit.rsi
+    - type: Clothing
+      sprite: _RW/Fluff/thechaotic/black_suit.rsi
+
+# Vtergot
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitISB
+  name: Офицерская форма ИСБ
+  suffix: fluff
+  description: Старая, но довольно-таки хорошо сохранившаяся форма офицера ИСБ
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/Vtergot/isbform.rsi
+    - type: Clothing
+      sprite: _RW/Fluff/Vtergot/isbform.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakOrder
+  name: Порядок
+  suffix: fluff
+  description: Чисто белый цвет этого плаща ознаменовывает пришествие безопасности и порядка в то место, куда приходит его владелец.
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/Vtergot/order.rsi
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesStrict
+  name: Строгие офицерские перчатки
+  suffix: fluff
+  description: Удерживайте галактику в своих ежовых рукавицах при помощи страха.
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/Vtergot/strictgloves.rsi
+    - type: Clothing
+      sprite: _RW/Fluff/Vtergot/strictgloves.rsi
+    - type: Fiber
+      fiberMaterial: fibers-leather
+    - type: FingerprintMask
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesBootsPeopledav
+  name: Людодавы
+  suffix: fluff
+  description: Давите несогласных!
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/Vtergot/peopledav.rsi
+    - type: Clothing
+      sprite: _RW/Fluff/Vtergot/peopledav.rsi
+
+# Geraldiy
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCapUSSPBlack
+  name: кожаная фуражка СССП
+  description: Довольная старая вещь эпохи СССП.
+  suffix: fluff
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/Geraldiy/ussp_hat.rsi
+    - type: Clothing
+      sprite: _RW/Fluff/Geraldiy/ussp_hat.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatUSSPOvercoatBlack
+  name: бронированная шинель СССП
+  description: Довольная старая вещь эпохи СССП.
+  suffix: fluff
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/Geraldiy/ussp_coat.rsi
+    - type: Clothing
+      sprite: _RW/Fluff/Geraldiy/ussp_coat.rsi
+
+- type: entity
+  parent: ClothingMaskGas
+  id: ClothingMaskGasGeraldiy
+  name: противогаз СССП
+  description: Противогаз времен эпохи СССП. На нем видно много потёртостей, изношены укрепляющие пластины, но он до сих пор служит своему владельцу на протяжении сотен лет.
+  suffix: fluff
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/Geraldiy/ussp_mask.rsi
+    - type: Clothing
+      sprite: _RW/Fluff/Geraldiy/ussp_mask.rsi
+
+- type: entity
+  parent: RubberStampBase
+  id: GeraldiyRubberStamp
+  name: печать древних
+  description: Старая и потёртая печать с логотипом "Древние". На ней почти высохли чернила, но она все ещё может послужить убедительным аргументом в руках нужных людей.
+  suffix: fluff
+  components:
+    - type: Stamp
+      stampedName: stamp-component-stamped-name-geraldiy
+      stampState: "paper_stamp-geraldiy"
+      stampedColor: "#a23e3e"
+    - type: Sprite
+      sprite: _RW/Fluff/Geraldiy/stamp.rsi
+      state: stamp-geraldiy
+
+- type: entity
+  parent: BaseItem
+  id: GeraldiyAncientBlade
+  name: клинок древних
+  description: Большой клинок, заменяющий руку. Состоит из материала, похожего на пласталь. Клинок покрыт экзотическими частицами, непонятными человеческому разуму. Кто в здравом уме пойдет против обладателя этого клинка?..
+  suffix: fluff
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/Geraldiy/blade.rsi
+      state: icon
+    - type: Item
+      sprite: _RW/Fluff/Geraldiy/blade.rsi
+    - type: MeleeWeapon
+      wideAnimationRotation: -135
+      damage:
+        types:
+          Slash: 14
+      soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+    - type: Unremoveable
+      deleteOnDrop: true
+    - type: Sharp
+    - type: DisarmMalus
+
+# svinka
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingSvinkaNeckFluff
+  name: офицерский плащ
+  suffix: fluff
+  description: Офицерский плащ с логотипом NanoTrasen, показывающий преданность своему делу его владельца.
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/svinka/cloak.rsi
+
+# antohag
+- type: entity
+  parent: ClothingMaskGas
+  id: AntohagGasMaskFluff
+  name: Промышленный противогаз утилизатора
+  suffix: fluff
+  description: Плотно прилегающий противогаз, использующийся для защиты от внешних опасностей атмосферы.
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/antohag/hosmask.rsi
+    - type: Clothing
+      sprite: _RW/Fluff/antohag/hosmask.rsi
+
+# Feda_Plevajecki (uses antohag section)
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitAOI
+  name: Униформа АоИ
+  suffix: fluff
+  description: Форма соответствует стандартам современных военных подразделений, предназначенных для боевых действий в засушливых и пустынных условиях.
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/Feda_Plevajecki/sho_form.rsi
+    - type: Clothing
+      sprite: _RW/Fluff/Feda_Plevajecki/sho_form.rsi
+
+# Zerkor_Pomidor
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadTiara
+  name: Аметистовая тиара
+  suffix: fluff
+  description: От данной тиары излучается едва уловимая аура, которая вызывает покалывание в пальцах при касании. На макушке и по краям тиары инкрустированы отполированные кристаллы фиолетового цвета, от которых идёт лёгкое свечение. Пахнет лесной прогулкой.
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/Zerkor_Pomidor/tiara.rsi
+    - type: Clothing
+      sprite: _RW/Fluff/Zerkor_Pomidor/tiara.rsi
+
+# Centurion (Utilizator)
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingCenturionNeckFluff
+  name: Мяукательный плащ
+  suffix: fluff
+  description: мяукает
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/centurion/fluff-coat-cent.rsi
+
+# Serbwo
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingSerbwoNeckFluff
+  name: плащ гильдии
+  suffix: fluff
+  description: Излучает ауру спокойствия и умиротворения!
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/serbwo/admiralcloak.rsi
+
+# McLovin_
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingMcLovin_NeckFluff
+  name: пустотный плащ
+  suffix: fluff
+  description: Плащ, который был создан на мировой кузнице Лавовых земель одним из шахтёров.
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/McLovin_/void_cloak.rsi
+
+# tomato15 (Perchta)
+- type: entity
+  parent: [ClothingUniformBase, BaseSyndicateContraband]
+  id: ClothingUniformJumpsuitTomato15OldSyndicate
+  name: старая униформа
+  suffix: fluff
+  description: На форме заметны давно выцветшие пятна крови, кое-где виднеются заштопанные отверстия и заплатки. Видимо её владелец очень дорожит ей.
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/tomato15/syndicate_red.rsi
+    - type: Clothing
+      sprite: _RW/Fluff/tomato15/syndicate_red.rsi
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackDuffelTomato15MOLLE
+  name: военная поясная сумка
+  suffix: fluff
+  description: Выглядит вместительной. Немного порвана в некоторых местах и заляпана высохшей кровью.
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/tomato15/MOLLEbeltbag.rsi
+
+# bandiKOtik
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingBandiKOtikNeckFluff
+  name: розово-черный плащ в клеточку
+  suffix: fluff
+  description: Стильный плащ с необычным дизайном.
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/bandiKOtik/cloak.rsi
+    - type: Clothing
+      sprite: _RW/Fluff/bandiKOtik/cloak.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingBandiKOtikPurpleNeckFluff
+  name: фиолетово-черный плащ в клеточку
+  suffix: fluff
+  description: Стильный плащ с необычным дизайном.
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/bandiKOtik/purple_cloak.rsi
+    - type: Clothing
+      sprite: _RW/Fluff/bandiKOtik/purple_cloak.rsi
+
+# Zyabr
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterJacketTraumaZyabr
+  name: Куртка "Trauma Team"
+  suffix: fluff
+  description: Высокотехнологичная куртка.
+  components:
+    - type: Sprite
+      sprite: _RW/Fluff/Boosty/jacket.rsi
+    - type: Clothing
+      sprite: _RW/Fluff/Boosty/jacket.rsi

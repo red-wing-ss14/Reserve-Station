@@ -22,7 +22,7 @@ public sealed partial class CCVars
     /// The layout style of the UI
     /// </summary>
     public static readonly CVarDef<string> UILayout =
-        CVarDef.Create("ui.layout", "Separated", CVar.CLIENTONLY | CVar.ARCHIVE); // Orion-Edit
+        CVarDef.Create("ui.layout", "Separated", CVar.CLIENTONLY | CVar.ARCHIVE); // RW-Edit
 
     /// <summary>
     /// The dimensions for the chat window in Default UI mode

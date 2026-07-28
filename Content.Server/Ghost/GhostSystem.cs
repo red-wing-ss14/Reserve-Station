@@ -95,15 +95,15 @@ using Content.Server._Goobstation.Wizard.Systems;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
-using Content.Server._Amour.Gulag;
+using Content.Server._RW.Gulag;
 using Content.Server.Ghost.Components;
 using Content.Server.Mind;
 using Content.Server.Preferences.Managers;
 using Content.Server.Roles.Jobs;
 using Content.Shared._EinsteinEngines.Silicon.Components;
-using Content.Shared._Orion.Antag;
-using Content.Shared._Orion.Antag.Components;
-using Content.Shared._Orion.CustomGhost;
+using Content.Shared._RW.Antag;
+using Content.Shared._RW.Antag.Components;
+using Content.Shared._RW.CustomGhost;
 using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared._White.Xenomorphs.Infection;
@@ -179,7 +179,7 @@ namespace Content.Server.Ghost
         [Dependency] private readonly NameModifierSystem _nameMod = default!;
         [Dependency] private readonly GhostVisibilitySystem _ghostVisibility = default!;
         [Dependency] private readonly SharedBodySystem _bodySystem = default!; // Shitmed Change
-        [Dependency] private readonly IServerPreferencesManager _prefs = default!; // Orion
+        [Dependency] private readonly IServerPreferencesManager _prefs = default!; // RW
         [Dependency] private readonly GulagSystem _gulagSystem = default!; // RW
 
         private EntityQuery<GhostComponent> _ghostQuery;
@@ -322,7 +322,7 @@ namespace Content.Server.Ghost
             _eye.RefreshVisibilityMask(uid);
             var time = _gameTiming.CurTime;
             component.TimeOfDeath = time;
-            Dirty(uid, component); // Orion
+            Dirty(uid, component); // RW
         }
 
         private void OnGhostShutdown(EntityUid uid, GhostComponent component, ComponentShutdown args)
@@ -355,7 +355,7 @@ namespace Content.Server.Ghost
 
         private void OnGhostExamine(EntityUid uid, GhostComponent component, ExaminedEvent args)
         {
-            var timeSinceDeath = _gameTiming.CurTime.Subtract(component.TimeOfDeath); // Orion-Edit: RealTime > CurTime
+            var timeSinceDeath = _gameTiming.CurTime.Subtract(component.TimeOfDeath); // RW-Edit: RealTime > CurTime
             var deathTimeInfo = timeSinceDeath.Minutes > 0
                 ? Loc.GetString("comp-ghost-examine-time-minutes", ("minutes", timeSinceDeath.Minutes))
                 : Loc.GetString("comp-ghost-examine-time-seconds", ("seconds", timeSinceDeath.Seconds));
@@ -393,7 +393,7 @@ namespace Content.Server.Ghost
         private void OnGhostReturnToBodyRequest(GhostReturnToBodyRequest msg, EntitySessionEventArgs args)
         {
             if (args.SenderSession.AttachedEntity is not {Valid: true} attached
-                || !TryComp(attached, out GhostComponent? ghost) // Orion-Edit
+                || !TryComp(attached, out GhostComponent? ghost) // RW-Edit
                 || !ghost.CanReturnToBody
                 || !TryComp(attached, out ActorComponent? actor))
             {
@@ -409,7 +409,7 @@ namespace Content.Server.Ghost
         private void OnGhostWarpsRequest(GhostWarpsRequestEvent msg, EntitySessionEventArgs args)
         {
             if (args.SenderSession.AttachedEntity is not {Valid: true} entity
-                || !HasComp<GhostComponent>(entity)) // Orion-Edit
+                || !HasComp<GhostComponent>(entity)) // RW-Edit
             {
                 Log.Warning($"User {args.SenderSession.Name} sent a {nameof(GhostWarpsRequestEvent)} without being a ghost.");
                 return;
@@ -420,20 +420,20 @@ namespace Content.Server.Ghost
                 return;
             // RW end
 
-            // Orion-Start
+            // RW-Start
             var players = GetPlayerWarps();
             var places = GetLocationWarps();
             var antagonists = GetAntagonistWarps();
 
-            var response = new GhostWarpsResponseEvent(players, places, antagonists); // Orion-Edit
-            // Orion-End
+            var response = new GhostWarpsResponseEvent(players, places, antagonists); // RW-Edit
+            // RW-End
             RaiseNetworkEvent(response, args.SenderSession.Channel);
         }
 
         private void OnGhostWarpToTargetRequest(GhostWarpToTargetRequestEvent msg, EntitySessionEventArgs args)
         {
             if (args.SenderSession.AttachedEntity is not {Valid: true} attached
-                || !TryComp(attached, out GhostComponent? _)) // Orion-Edit
+                || !TryComp(attached, out GhostComponent? _)) // RW-Edit
             {
                 Log.Warning($"User {args.SenderSession.Name} tried to warp to {msg.Target} without being a ghost.");
                 return;
@@ -452,7 +452,7 @@ namespace Content.Server.Ghost
                 return;
             }
 
-//            WarpTo(attached, target); // Orion-Edit: Removed
+//            WarpTo(attached, target); // RW-Edit: Removed
 
             _adminLog.Add(LogType.GhostWarp, $"{ToPrettyString(attached)} ghost warped to {ToPrettyString(target)}");
 
@@ -490,7 +490,7 @@ namespace Content.Server.Ghost
             _followerSystem.StartFollowingEntity(uid, target);
         }
 
-        private void WarpTo(EntityUid uid, EntityUid target) // Orion-Edit
+        private void WarpTo(EntityUid uid, EntityUid target) // RW-Edit
         {
             _adminLog.Add(LogType.GhostWarp, $"{ToPrettyString(uid)} ghost warped to {ToPrettyString(target)}");
 
@@ -507,7 +507,7 @@ namespace Content.Server.Ghost
                 _physics.SetLinearVelocity(uid, Vector2.Zero, body: physics);
         }
 
-        // Orion-Start
+        // RW-Start
         private List<GhostWarpPlace> GetLocationWarps()
         {
             var warps = new List<GhostWarpPlace>();
@@ -521,11 +521,11 @@ namespace Content.Server.Ghost
 
             return warps;
         }
-        // Orion-End
+        // RW-End
 
-        private List<GhostWarpPlayer> GetPlayerWarps() // Orion-Edit: GetLocationWarps > GetPlayerWarps
+        private List<GhostWarpPlayer> GetPlayerWarps() // RW-Edit: GetLocationWarps > GetPlayerWarps
         {
-/* // Orion-Edit: Removed
+/* // RW-Edit: Removed
             var allQuery = AllEntityQuery<WarpPointComponent>();
 
             while (allQuery.MoveNext(out var uid, out var warp))
@@ -534,7 +534,7 @@ namespace Content.Server.Ghost
             }
 */
 
-            // Orion-Start
+            // RW-Start
             var warps = new List<GhostWarpPlayer>();
             foreach (var mindContainer in EntityQuery<MindContainerComponent>())
             {
@@ -585,10 +585,10 @@ namespace Content.Server.Ghost
             }
 
             return warps;
-            // Orion-End
+            // RW-End
         }
 
-        // Orion-Start
+        // RW-Start
         private bool IsShitEntity(string? entityId)
         {
             if (entityId == null)
@@ -640,9 +640,9 @@ namespace Content.Server.Ghost
 
             return warps;
         }
-        // Orion-End
+        // RW-End
 
-/* // Orion-Edit: Removed
+/* // RW-Edit: Removed
         private IEnumerable<GhostWarp> GetPlayerWarps(EntityUid except)
         {
             foreach (var player in _player.Sessions)
@@ -759,25 +759,25 @@ namespace Content.Server.Ghost
             }
 
 //            var ghost = SpawnAtPosition(GameTicker.ObserverPrototypeName, spawnPosition.Value);
-            // Orion-Start
+            // RW-Start
             CustomGhostPrototype? customGhost = null;
             if (mind.Comp.UserId is NetUserId userId && _prefs.GetPreferencesOrNull(userId) is {} prefs)
                 customGhost = _prototypeManager.Index(prefs.CustomGhost);
 
             var ghost = SpawnAtPosition(customGhost?.GhostEntityPrototype ?? GameTicker.ObserverPrototypeName, spawnPosition.Value);
-            // Orion-End
+            // RW-End
             var ghostComponent = Comp<GhostComponent>(ghost);
 
             // Try setting the ghost entity name to either the character name or the player name.
             // If all else fails, it'll default to the default entity prototype name, "observer".
             // However, that should rarely happen.
-/* // Orion-Edit: Removed
+/* // RW-Edit: Removed
             if (!string.IsNullOrWhiteSpace(mind.Comp.CharacterName))
                 _metaData.SetEntityName(ghost, FormattedMessage.EscapeText(mind.Comp.CharacterName)); // Goob Sanitize Text
             else if (mind.Comp.UserId is { } userId && _player.TryGetSessionById(userId, out var session))
                 _metaData.SetEntityName(ghost, FormattedMessage.EscapeText(session.Name)); // Goob Sanitize Text
 */
-            // Orion-Start
+            // RW-Start
             if (mind.Comp.UserId is NetUserId userUid && _player.TryGetSessionById(userUid, out var session))
             {
                 if (!string.IsNullOrWhiteSpace(mind.Comp.CharacterName))
@@ -785,7 +785,7 @@ namespace Content.Server.Ghost
                 else
                     _metaData.SetEntityName(ghost, FormattedMessage.EscapeText(session.Name)); // Goob Sanitize Text
             }
-            // Orion-End
+            // RW-End
 
             if (mind.Comp.TimeOfDeath.HasValue)
             {
@@ -805,7 +805,7 @@ namespace Content.Server.Ghost
             _nameMod.RefreshNameModifiers(ghost);
             return ghost;
 
-            // Orion-Start
+            // RW-Start
             static string? FirstNonNullNonEmpty(params string?[] strings)
             {
                 foreach (var str in strings)
@@ -813,7 +813,7 @@ namespace Content.Server.Ghost
                         return str;
                 return null;
             }
-            // Orion-End
+            // RW-End
         }
 
         public bool OnGhostAttempt(EntityUid mindId, bool canReturnGlobal, bool viaCommand = false, bool forced = false, MindComponent? mind = null)

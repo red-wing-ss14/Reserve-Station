@@ -5,26 +5,26 @@
   name: department-Cargo
   description: department-Cargo-description
   color: "#A46106"
-  # Orion-Start
+  # RW-Start
   weight: -7
   buttonStyle: ButtonColorCargoDepartment
-  # Orion-End
+  # RW-End
   roles:
   - CargoTechnician
   - Quartermaster
   - SalvageSpecialist
   - ShaftMiner # Lavaland Change
-  - Bitrunner # Orion
+  - Bitrunner # RW
 
 - type: department
   id: Civilian
   name: department-Civilian
   description: department-Civilian-description
   color: "#9FED58"
-  # Orion-Start
+  # RW-Start
   weight: -8
   buttonStyle: ButtonColorCivilianDepartment
-  # Orion-End
+  # RW-End
   roles:
   - Bartender
   - Botanist
@@ -48,10 +48,10 @@
   name: department-CentralCommand
   description: department-CentralCommand-description
   color: "#0c344d"
-  # Orion-Start
+  # RW-Start
   weight: -2
   buttonStyle: ButtonColorCentralCommandDepartment
-  # Orion-End
+  # RW-End
   roles:
   - CentralCommandOfficial
   - CBURN
@@ -72,18 +72,18 @@
   - SpecialOperationsOfficer
   - Diplomat
   - GovernmentMan # Goobstation - End
-#  editorHidden: true # Orion-Edit: true > false
-#  weight: 120 # Orion-Edit: Moved
+#  editorHidden: true # RW-Edit: true > false
+#  weight: 120 # RW-Edit: Moved
 
 - type: department
   id: Command
   name: department-Command
   description: department-Command-description
   color: "#334E6D"
-  # Orion-Start
+  # RW-Start
   weight: -1
   buttonStyle: ButtonColorCommandDepartment
-  # Orion-End
+  # RW-End
   roles:
   - Captain
   - ChiefEngineer
@@ -92,11 +92,11 @@
   - HeadOfSecurity
   - ResearchDirector
   - Quartermaster
-  # Orion-Edit-Start: Now it only in (CentralCommand)
+  # RW-Edit-Start: Now it only in (CentralCommand)
 #  - BlueshieldOfficer # Goobstation
 #  - NanotrasenRepresentative # Goobstation
 #  - NanotrasenCareerTrainer # Goobstation
-  # Orion-Edit-End
+  # RW-Edit-End
   - CentralCommandOfficial
   - CBURN
   - ERTLeader
@@ -109,17 +109,17 @@
   - HecuOperative
   - CommandMaid # event-restricted, Goobstation
   primary: false
-#  weight: 100 # Orion-Edit: Moved
+#  weight: 100 # RW-Edit: Moved
 
 - type: department
   id: Engineering
   name: department-Engineering
   description: department-Engineering-description
   color: "#EFB341"
-  # Orion-Start
+  # RW-Start
   weight: -4
   buttonStyle: ButtonColorEngineeringDepartment
-  # Orion-End
+  # RW-End
   roles:
   - AtmosphericTechnician
   - ChiefEngineer
@@ -131,10 +131,10 @@
   name: department-Medical
   description: department-Medical-description
   color: "#52B4E9"
-  # Orion-Start
+  # RW-Start
   weight: -6
   buttonStyle: ButtonColorMedicalDepartment
-  # Orion-End
+  # RW-End
   roles:
   - Chemist
   - ChiefMedicalOfficer
@@ -149,10 +149,10 @@
   name: department-Security
   description: department-Security-description
   color: "#DE3A3A"
-  # Orion-Start
+  # RW-Start
   weight: -3
   buttonStyle: ButtonColorSecurityDepartment
-  # Orion-End
+  # RW-End
   roles:
   - HeadOfSecurity
   - SecurityCadet
@@ -167,10 +167,10 @@
   name: department-Science
   description: department-Science-description
   color: "#D381C9"
-  # Orion-Start
+  # RW-Start
   weight: -5
   buttonStyle: ButtonColorScienceDepartment
-  # Orion-End
+  # RW-End
   roles:
   - ResearchDirector
   - Scientist
@@ -182,10 +182,10 @@
   name: department-Silicon
   description: department-Silicon-description
   color: "#D381C9"
-  # Orion-Start
+  # RW-Start
   weight: -9
   buttonStyle: ButtonColorSiliconDepartment
-  # Orion-End
+  # RW-End
   roles:
   - Borg
   - StationAi
@@ -195,10 +195,10 @@
   name: department-Specific
   description: department-Specific-description
   color: "#9FED58"
-  # Orion-Start
+  # RW-Start
   weight: -42
   buttonStyle: ButtonColorSpecificDepartment
-  # Orion-End
+  # RW-End
   roles:
   - RadioHost # Goobstation
   - Reporter

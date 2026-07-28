@@ -7,7 +7,7 @@
   description: job-description-station-ai
   playTimeTracker: JobStationAi
   requirements:
-    - !type:AnyOfRequirement # Amour edit - Discord OR playtime
+    - !type:AnyOfRequirement # RW edit - Discord OR playtime
       requirements:
         - !type:AllOfRequirement # Discord + 1hr silicon minimum
           requirements:
@@ -32,7 +32,7 @@
   description: job-description-borg
   playTimeTracker: JobBorg
   requirements:
-    - !type:AnyOfRequirement # Amour edit - Discord OR playtime
+    - !type:AnyOfRequirement # RW edit - Discord OR playtime
       requirements:
         - !type:DiscordLinkRequirement
         - !type:OverallPlaytimeRequirement

@@ -121,7 +121,7 @@
 # Neck
 - type: loadout
   id: BlueshieldOfficerOuterBlueshieldMantle
-#  effects: # Orion-Edit: Removed
+#  effects: # RW-Edit: Removed
 #  - !type:GroupLoadoutEffect
 #    proto: SeniorBlueshieldOfficer
   equipment:

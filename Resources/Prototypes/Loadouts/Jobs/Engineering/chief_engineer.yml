@@ -58,8 +58,8 @@
 
 - type: loadout
   id: ChiefEngineerBeret
-  equipment: # Orion
-    head: ClothingHeadHatBeretCEngineer # Orion-Edit: Another beret
+  equipment: # RW
+    head: ClothingHeadHatBeretCEngineer # RW-Edit: Another beret
 
 
 # Neck
@@ -79,7 +79,7 @@
   id: ClothingNeckMantleWhiteCE # Goobstation
   equipment:
     neck: ClothingNeckMantleWhiteCE # Goob edit
-#  effects: # Orion-Edit
+#  effects: # RW-Edit
 #  - !type:GroupLoadoutEffect
 #    proto: MasterCE
   groupBy: "cemantle"
@@ -88,7 +88,7 @@
   id: ClothingNeckMantleOrangeCE # Goobstation
   equipment:
     neck: ClothingNeckMantleOrangeCE # Goob edit
-#  effects: # Orion-Edit
+#  effects: # RW-Edit
 #  - !type:GroupLoadoutEffect
 #    proto: MasterCE
   groupBy: "cemantle"

@@ -75,7 +75,7 @@
       animation: WeaponArcSmash
       damage:
         types:
-          Blunt: 5 # Orion-Edit: 8 > 5
+          Blunt: 5 # RW-Edit: 8 > 5
     - type: DamageStateVisuals
       states:
         Alive:
@@ -102,7 +102,7 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        15: Dead # Orion-Edit 50 > 15
+        15: Dead # RW-Edit 50 > 15
     - type: MovementSpeedModifier
       baseWalkSpeed: 3
       baseSprintSpeed: 4
@@ -113,7 +113,7 @@
     - type: GuideHelp
       guides:
       - Blob
-#    - type: GlobalAntagonist # Orion | Disabled because spam
+#    - type: GlobalAntagonist # RW | Disabled because spam
 #      antagonistPrototype: globalAntagonistBlob
 
 # Blobbernaut
@@ -223,7 +223,7 @@
     - type: GuideHelp
       guides:
       - Blob
-    - type: GlobalAntagonist # Orion
+    - type: GlobalAntagonist # RW
       antagonistPrototype: globalAntagonistBlob
     - type: Bloodstream
       bloodReferenceSolution:
@@ -275,7 +275,7 @@
       mindRoles:
       - MindRoleGhostRoleSoloAntagonist
       requirements:
-        - !type:DiscordLinkRequirement # Amour edit
+        - !type:DiscordLinkRequirement # RW edit
     - type: GhostTakeoverAvailable
     - type: Fixtures
       fixtures:
@@ -308,5 +308,5 @@
       defaultChannel: Blobmind
       channels:
       - Blobmind
-    - type: GlobalAntagonist # Orion
+    - type: GlobalAntagonist # RW
       antagonistPrototype: globalAntagonistBlob

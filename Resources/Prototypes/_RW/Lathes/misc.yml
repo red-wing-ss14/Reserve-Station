@@ -1,0 +1,5 @@
+- type: latheRecipe
+  parent: [ BaseCheapElectronicsRecipe, BaseCircuitryRecipeCategory ]
+  id: DocumentPrinterMachineCircuitboard
+  icon: { sprite: _RW/Structures/Machines/printer.rsi, state: icon }
+  result: DocumentPrinterMachineCircuitboard

@@ -5,7 +5,7 @@ using Content.Server.Chat.Systems;
 using Content.Server.Emp;
 using Content.Server._EinsteinEngines.Language;
 using Content.Shared.Radio.Components;
-using Content.Shared._Orion.Radio;
+using Content.Shared._RW.Radio;
 using Content.Shared.Chat;
 using Content.Shared.Examine;
 using Content.Shared.IdentityManagement;
@@ -27,7 +27,7 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
     [Dependency] private readonly RadioSystem _radio = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!; // Goobstation
-    [Dependency] private readonly InventorySystem _inventory = default!; // Orion
+    [Dependency] private readonly InventorySystem _inventory = default!; // RW
 
     public override void Initialize()
     {
@@ -35,11 +35,11 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
         SubscribeLocalEvent<HeadsetComponent, RadioReceiveEvent>(OnHeadsetReceive);
         SubscribeLocalEvent<HeadsetComponent, EncryptionChannelsChangedEvent>(OnKeysChanged);
 
-//        SubscribeLocalEvent<WearingHeadsetComponent, EntitySpokeEvent>(OnSpeak); // Orion-Edit: Removed
-        // Orion-Start
+//        SubscribeLocalEvent<WearingHeadsetComponent, EntitySpokeEvent>(OnSpeak); // RW-Edit: Removed
+        // RW-Start
         SubscribeLocalEvent<ActorComponent, Content.Server.Chat.Systems.EntitySpokeEvent>(OnEntitySpoke);
         SubscribeLocalEvent<InventoryComponent, ExaminedEvent>(OnInventoryExamined);
-        // Orion-End
+        // RW-End
         SubscribeLocalEvent<HeadsetComponent, RadioReceiveAttemptEvent>(OnHeadsetReceiveAttempt); // Goobstation - Whitelisted radio channel
     }
 
@@ -63,7 +63,7 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
             EnsureComp<ActiveRadioComponent>(uid).Channels = new(keyHolder.Channels);
     }
 
-/* // Orion-Edit: Removed
+/* // RW-Edit: Removed
     private void OnSpeak(EntityUid uid, WearingHeadsetComponent component, EntitySpokeEvent args)
     {
         if (args.Channel != null
@@ -77,7 +77,7 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
     }
 */
 
-    // Orion-Start
+    // RW-Start
     private void OnInventoryExamined(EntityUid uid, InventoryComponent component, ExaminedEvent args)
     {
         if (!_inventory.TryGetSlotEntity(uid, "ears", out var leftEar) ||
@@ -90,30 +90,30 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
         var entityName = Identity.Name(uid, EntityManager, args.Examiner); // RW
         args.PushMarkup(Loc.GetString("examine-headset-double-wearing", ("entityName", entityName)));
     }
-    // Orion-End
+    // RW-End
 
     protected override void OnGotEquipped(EntityUid uid, HeadsetComponent component, GotEquippedEvent args)
     {
         base.OnGotEquipped(uid, component, args);
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         UpdateWearingHeadsetComponent(args.Equipee);
         if (component.IsEquipped)
             UpdateRadioChannels(uid, component);
-        // Orion-Edit-End
+        // RW-Edit-End
     }
 
     protected override void OnGotUnequipped(EntityUid uid, HeadsetComponent component, GotUnequippedEvent args)
     {
         base.OnGotUnequipped(uid, component, args);
-        // Orion-Edit-Start
+        // RW-Edit-Start
         RemCompDeferred<ActiveRadioComponent>(uid);
 
         UpdateWearingHeadsetComponent(args.Equipee);
-        // Orion-Edit-End
+        // RW-Edit-End
     }
 
-    // Orion-Start
+    // RW-Start
     private void UpdateWearingHeadsetComponent(EntityUid wearer)
     {
         EntityUid? newActiveHeadset = null;
@@ -173,17 +173,17 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
             );
         }
     }
-    // Orion-End
+    // RW-End
 
     public void SetEnabled(EntityUid uid, bool value, HeadsetComponent? component = null)
     {
         if (!Resolve(uid, ref component))
             return;
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         component.Enabled = value;
         Dirty(uid, component);
-        // Orion-Edit-End
+        // RW-Edit-End
 
         component.Enabled = value;
         Dirty(uid, component);
@@ -192,30 +192,30 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
         {
             RemCompDeferred<ActiveRadioComponent>(uid);
 
-            // Orion-Edit-Start
+            // RW-Edit-Start
             if (!component.IsEquipped)
                 return;
 
             var parent = Transform(uid).ParentUid;
             UpdateWearingHeadsetComponent(parent);
-            // Orion-Edit-End
+            // RW-Edit-End
         }
         else if (component.IsEquipped)
         {
-            // Orion-Edit-Start
+            // RW-Edit-Start
             var parent = Transform(uid).ParentUid;
             UpdateWearingHeadsetComponent(parent);
             UpdateRadioChannels(uid, component);
-            // Orion-Edit-End
+            // RW-Edit-End
         }
     }
 
-    // Orion-Start: Radio sound
+    // RW-Start: Radio sound
 
     private static readonly SoundSpecifier DefaultOnSound =
-        new SoundPathSpecifier("/Audio/_Orion/Radio/basic.ogg");
+        new SoundPathSpecifier("/Audio/_RW/Radio/basic.ogg");
 
-    // Orion-End
+    // RW-End
     private void OnHeadsetReceive(EntityUid uid, HeadsetComponent component, ref RadioReceiveEvent args)
     {
         // TODO: change this when a code refactor is done
@@ -240,7 +240,7 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
             };
             _netMan.ServerSendMessage(msg, actor.PlayerSession.Channel);
 
-            // Orion-Start
+            // RW-Start
             var sound = args.Channel.OnSendSound ?? DefaultOnSound;
             if (sound is SoundPathSpecifier sps)
             {
@@ -254,7 +254,7 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
             {
                 Log.Warning($"Radio channel {args.Channel.ID} uses SoundCollectionSpecifier, which is not supported for PlayRadioBarkEvent. Falling back to silent playback.");
             }
-            // Orion-End
+            // RW-End
         }
         // Einstein Engines - Language end
     }

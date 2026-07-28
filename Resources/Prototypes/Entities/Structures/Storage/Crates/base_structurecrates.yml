@@ -15,7 +15,7 @@
     state: icon
   - type: Sprite
     noRot: true
-    offset: "0.0,0.25" # Orion
+    offset: "0.0,0.25" # RW
     sprite: Structures/Storage/Crates/generic.rsi
     layers:
     - state: base
@@ -35,7 +35,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.4,-0.4625,0.4,0.2275" # Orion-Edit: Was "-0.4,-0.4,0.4,0.29"
+          bounds: "-0.4,-0.4625,0.4,0.2275" # RW-Edit: Was "-0.4,-0.4,0.4,0.29"
         density: 50
         mask:
         - CrateMask #this is so they can go under plastic flaps

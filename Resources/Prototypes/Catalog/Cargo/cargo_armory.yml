@@ -6,7 +6,7 @@
     sprite: Objects/Weapons/Guns/SMGs/wt550.rsi
     state: icon
   product: CrateArmorySMG
-  cost: 10000 # Amour edit - 3000 > 10000
+  cost: 10000 # RW edit - 3000 > 10000
   category: cargoproduct-category-name-armory
   group: market
 
@@ -26,7 +26,7 @@
     sprite: Clothing/OuterClothing/Armor/riot.rsi
     state: icon
   product: CrateSecurityRiot
-  cost: 10000 # Amour edit - 7500 > 10000
+  cost: 10000 # RW edit - 7500 > 10000
   category: cargoproduct-category-name-armory
   group: market
 
@@ -56,7 +56,7 @@
     sprite: Objects/Weapons/Guns/Battery/laser_gun.rsi
     state: icon
   product: CrateArmoryLaser
-  cost: 8000 # Amour edit - 4800 > 8000
+  cost: 8000 # RW edit - 4800 > 8000
   category: cargoproduct-category-name-armory
   group: market
 
@@ -66,16 +66,16 @@
     sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
     state: icon
   product: CrateArmoryPistols
-  cost: 7000 # Amour edit - 3200 > 7000
+  cost: 7000 # RW edit - 3200 > 7000
   category: cargoproduct-category-name-armory
   group: market
 
 - type: cargoProduct
   id: ArmoryRifle
   icon:
-    sprite: _Orion/Objects/Weapons/Guns/Rifles/lecter/big.rsi # Orion-Edit: New sprites
+    sprite: _RW/Objects/Weapons/Guns/Rifles/lecter/big.rsi # RW-Edit: New sprites
     state: icon
   product: CrateArmoryRifle
-  cost: 12000 # Amour edit - 8000 > 12000
+  cost: 12000 # RW edit - 8000 > 12000
   category: cargoproduct-category-name-armory
   group: market

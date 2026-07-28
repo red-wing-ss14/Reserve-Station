@@ -9,7 +9,7 @@
 # WallSolid: Window
 # Table: null
 
-# Orion-Start
+# RW-Start
 
 InteQLaserShield: EnergyShieldInteQ
 DefaultStationBeaconInteQSizo37: DefaultStationBeaconInteQSizo73
@@ -160,7 +160,7 @@ HellfireFreezerMachineCircuitBoard: ThermomachineFreezerMachineCircuitBoard
 HellfireHeaterMachineCircuitBoard: ThermomachineHeaterMachineCircuitBoard
 LatheUpgradeKitHyper: null
 
-# Orion-End
+# RW-End
 
 # Goobstation - Submarine from DeltaV
 AirlockBoxerGlassLocked: AirlockServiceGlassLocked
@@ -184,7 +184,7 @@ AirlockZookeeperGlassLocked: AirlockServiceGlassLocked
 AirlockZookeeperLocked: AirlockServiceLocked
 AlwaysPoweredLightPostSmallRed: null
 AsteroidAltRock: AsteroidRock
-# Orion-Edit-Start: Returned for mapping
+# RW-Edit-Start: Returned for mapping
 #BenchParkBambooMiddle: null
 #BenchParkLeft: null
 #BenchParkMiddle: null
@@ -203,7 +203,7 @@ AsteroidAltRock: AsteroidRock
 #BenchSteelWhiteLeft: null
 #BenchSteelWhiteMiddle: null
 #BenchSteelWhiteRight: null
-# Orion-Edit-End
+# RW-Edit-End
 BoardGameSpawner: null
 BoxColoredLighttube: BoxLighttube
 BoxEncryptionKeyPrisoner: BoxEncryptionKeyPassenger
@@ -216,7 +216,7 @@ ClothingHeadHatFedoraBlack: null
 ClothingHeadHatFedoraChoc: null
 ClothingHeadHatFezMantis: null
 ClothingHeadPrisonGuard: null
-ClothingUniformMartialGi: ClothingUniformGi # Orion-Edit
+ClothingUniformMartialGi: ClothingUniformGi # RW-Edit
 ClothingUniformTShirtKhakiPants: null
 ComputerShipyard: null
 CourierBag: null
@@ -244,7 +244,7 @@ GunSafeEnergyGunMini: null
 GunSafeVulcanRifle: null
 HatSpawner: null
 KitchenDeepFryer: null
-#KvassTankFull: null # Orion-Edit: Removed
+#KvassTankFull: null # RW-Edit: Removed
 LockerForensicMantisFilled: null
 LunchboxSecurityFilledRandom: null
 MagazineBoxSpecialPractice: null
@@ -254,23 +254,23 @@ PaintingMothBigCatch: null
 PaintingSpoon: null
 PlushieMothMusician: null
 PlushieMothRandom: null
-#PosterContrabandBreadLies: null # Orion-Edit: Removed
+#PosterContrabandBreadLies: null # RW-Edit: Removed
 PosterContrabandGotWood: null
 PosterContrabandSafetyMothSyndie: null
 PosterContrabandSaucerNumberOne: null
-#PosterLegitBarDrinks: null # Orion-Edit: Removed
-#PosterLegitBotanyFood: null # Orion-Edit: Removed
+#PosterLegitBarDrinks: null # RW-Edit: Removed
+#PosterLegitBotanyFood: null # RW-Edit: Removed
 PosterLegitChknDnnr: null
 PosterLegitCornzza: null
 PosterLegitDejaVu: null
 PosterLegitDontPanic: null
-#PosterLegitEatMeat: null # Orion-Edit: Removed
+#PosterLegitEatMeat: null # RW-Edit: Removed
 PosterLegitFuckAround: null
-#PosterLegitHotDonkExplosion: null # Orion-Edit: Removed
+#PosterLegitHotDonkExplosion: null # RW-Edit: Removed
 PosterLegitMedicate: null
 PosterLegitNoTouching: null
-#PosterLegitPieSlice: null # Orion-Edit: Removed
-#PosterLegitPizzaHope: null # Orion-Edit: Removed
+#PosterLegitPieSlice: null # RW-Edit: Removed
+#PosterLegitPizzaHope: null # RW-Edit: Removed
 PosterLegitSafetyMothBoH: null
 PosterLegitSafetyMothFires: null
 PosterLegitSafetyMothGlimmer: null
@@ -291,7 +291,7 @@ Roboisseur: null
 SalvagePartsSpawnerLow: null
 SalvagePartsSpawnerMid: null
 SecBreachingHammer: null
-#Shinai: null # Orion-Edit: Removed
+#Shinai: null # RW-Edit: Removed
 ShockCollar: null
 shuttle_manipulator: null
 SignConspiracyBoard: null
@@ -317,7 +317,7 @@ SpeedLoaderSpecialPractice: null
 SuitStorageCorpsman: null
 SuitStorageParamedic: null
 TableWoodReinforced: TableWood
-#TatamiMat: null # Orion-Edit: Removed
+#TatamiMat: null # RW-Edit: Removed
 ToyRenault: null
 ToySiobhan: null
 VendingMachineBoozeUnlocked: null
@@ -325,7 +325,7 @@ VendingMachineBoxingDrobe: null
 VendingMachineCourierDrobe: null
 VendingMachineMNKDrobe: null
 VendingMachineRepDrobe: null
-#WallPaper: null # Orion-Edit
+#WallPaper: null # RW-Edit
 WarpPointAI: null
 WarpPointArrivals: null
 WarpPointAtmos: null
@@ -493,8 +493,8 @@ SalvagePartsT2Spawner: SalvageLootSpawner
 #SuperCapacitorStockPart: CapacitorStockPart
 #QuadraticCapacitorStockPart: CapacitorStockPart
 #NanoManipulatorStockPart: MicroManipulatorStockPart
-#PicoManipulatorStockPart: MicroManipulatorStockPart # Orion-Edit
-#FemtoManipulatorStockPart: MicroManipulatorStockPart # Orion-Edit
+#PicoManipulatorStockPart: MicroManipulatorStockPart # RW-Edit
+#FemtoManipulatorStockPart: MicroManipulatorStockPart # RW-Edit
 #AdvancedMatterBinStockPart: MatterBinStockPart
 #SuperMatterBinStockPart: MatterBinStockPart
 #BluespaceMatterBinStockPart: MatterBinStockPart
@@ -507,10 +507,10 @@ CrystalSubspaceStockPart: null
 TransmitterSubspaceStockPart: null
 
 # 2024-01-10
-#ClothingHeadHatHoodRad: null # Orion-Edit: Removed
+#ClothingHeadHatHoodRad: null # RW-Edit: Removed
 
 # 2024-01-12
-#SpaceMedipen: null # Orion-Edit: Removed
+#SpaceMedipen: null # RW-Edit: Removed
 
 # 2024-01-18
 ClothingHeadHelmetVoidParamed: null
@@ -554,8 +554,8 @@ ActionVehicleHorn: null
 #CrateFunSyndicateSegway: null Goobstation - Re-add vehicles
 MobTaxiBot: null
 # MobSupplyBot: null
-#SpawnVehicleMotobike: null # Orion-Edit: Removed
-#SpawnVehicleATV: null # Orion-Edit: Removed
+#SpawnVehicleMotobike: null # RW-Edit: Removed
+#SpawnVehicleATV: null # RW-Edit: Removed
 #SpawnVehicleSecway: null Goobstation - Re-add vehicles
 #SpawnVehicleJanicart: null Goobstation - Re-add vehicles
 #VehicleJanicart: null Goobstation - Re-add vehicles
@@ -775,8 +775,8 @@ CentcomPDAFake: null
 CentcomIDCardSyndie: null
 
 # 2024-09-06
-#AntimovCircuitBoard: null # Orion-Edit: Removed
-#OverlordCircuitBoard: null # Orion-Edit: Removed
+#AntimovCircuitBoard: null # RW-Edit: Removed
+#OverlordCircuitBoard: null # RW-Edit: Removed
 
 # 2024-09-08
 HatBase: null
@@ -899,7 +899,7 @@ BorgModuleAdvancedTreatment: null
 FoodCondimentPacketFrostoil: FoodCondimentPacketColdsauce
 
 # 2025-02-05
-#WeaponSubMachineGunVector: null # Orion-Edit: Removed
+#WeaponSubMachineGunVector: null # RW-Edit: Removed
 WeaponSubMachineGunVectorRubber: null
 
 # 2025-02-11
@@ -910,9 +910,9 @@ PosterContrabandLustyExomorph: PosterContrabandLustyXenomorph
 PosterContrabandBustyBackdoorExoBabes6: PosterContrabandBustyBackdoorXenoBabes6
 
 # 2025-02-20
-#MagazineBoxAntiMaterielBig: null # Orion-Edit: Removed
-#MagazineBoxCaselessRifle10x24: null # Orion-Edit: Removed
-#MagazineBoxCaselessRifleBig: null # Orion-Edit: Removed
+#MagazineBoxAntiMaterielBig: null # RW-Edit: Removed
+#MagazineBoxCaselessRifle10x24: null # RW-Edit: Removed
+#MagazineBoxCaselessRifleBig: null # RW-Edit: Removed
 MagazinePistolHighCapacityRubber: null
 
 # 2025-03-09 - Shitmed Woundmed, separating torsos into chest and groin
@@ -943,7 +943,7 @@ ToxinChemistryBottle: ChemistryBottleToxin
 ClothingMaskBlushingMime: ClothingMaskSexyMime
 ClothingMaskBlushingClown: ClothingMaskSexyMime
 MachineMaterialSilo: null
-#CrateMaterialSilo: null # Orion-Edit: Removed
+#CrateMaterialSilo: null # RW-Edit: Removed
 
 # 2025-03-29
 ClothingBackpackDuffelSyndicateRaidBundle: ClothingBackpackSyndicateRaidBundle
@@ -1023,8 +1023,8 @@ SuitStorageBasic: SuitStorageEVA
 ClothingNeckCloakMiner: null
 
 # 2025-05-22
-#MatterBinStockPart: MicroManipulatorStockPart # Orion-Edit
-#CapacitorStockPart: MicroManipulatorStockPart # Orion-Edit
+#MatterBinStockPart: MicroManipulatorStockPart # RW-Edit
+#CapacitorStockPart: MicroManipulatorStockPart # RW-Edit
 
 # 2025-05-26 Turrets
 WeaponEnergyTurretStation: WeaponEnergyTurretSecurity

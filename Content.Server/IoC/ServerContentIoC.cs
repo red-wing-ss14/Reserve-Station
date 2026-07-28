@@ -1,18 +1,18 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server._Goobstation.Antag;
-using Content.Server._Orion.ServerProtection;
-using Content.Server._Orion.ServerProtection.Administration;
-using Content.Server._Orion.ServerProtection.Chat;
-using Content.Server._Orion.ServerProtection.Emoting;
+using Content.Server._RW.ServerProtection;
+using Content.Server._RW.ServerProtection.Administration;
+using Content.Server._RW.ServerProtection.Chat;
+using Content.Server._RW.ServerProtection.Emoting;
 using Content.Server._RMC14.LinkAccount;
-using Content.Server._Amour.Loadouts;
-using Content.Server._Amour.Discord;
-using Content.Shared._Amour.Loadouts.Effects;
-using Content.Server._Amour.Jukebox;
+using Content.Server._RW.Loadouts;
+using Content.Server._RW.Discord;
+using Content.Shared._RW.Loadouts.Effects;
+using Content.Server._RW.Jukebox;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
-using Content.Server._Amour.TTS;
+using Content.Server._RW.TTS;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.Notes;
 using Content.Server.Afk;
@@ -96,16 +96,16 @@ internal static class ServerContentIoC
         deps.Register<LastRolledAntagManager>(); // Goobstation - antag pity
         deps.Register<LinkAccountManager>(); // RMC - Patreon
 
-        deps.Register<ServerAmourJukeboxSongsSyncManager>(); // Amour edit
-        // Amour edit start
+        deps.Register<ServerRwJukeboxSongsSyncManager>(); // RW edit
+        // RW edit start
         deps.Register<IDiscordLinkChecker, DiscordLinkChecker>();
-        deps.Register<Content.Shared._Amour.Discord.ISharedDiscordLinkManager, Content.Server._Amour.Discord.ServerDiscordLinkManager>();
+        deps.Register<Content.Shared._RW.Discord.ISharedDiscordLinkManager, Content.Server._RW.Discord.ServerDiscordLinkManager>();
         deps.Register<IBoostyTierManager, BoostyTierManager>();
-        deps.Register<_Amour.Discord.DiscordOocBridgeService, _Amour.Discord.DiscordOocBridgeService>();
-        deps.Register<Content.Server._Amour.Registry.ClientMetricsManager>();
-        deps.Register<Content.Server._Amour.Chat.SayFloodAutoBanManager>();
-        // Amour edit end
-        // Orion-Start
+        deps.Register<_RW.Discord.DiscordOocBridgeService, _RW.Discord.DiscordOocBridgeService>();
+        deps.Register<Content.Server._RW.Registry.ClientMetricsManager>();
+        deps.Register<Content.Server._RW.Chat.SayFloodAutoBanManager>();
+        // RW edit end
+        // RW-Start
         deps.Register<ServerProtectionAuditManager>();
         deps.Register<ServerProtectionPunishmentSystem>();
         deps.Register<ChatProtectionSystem>();

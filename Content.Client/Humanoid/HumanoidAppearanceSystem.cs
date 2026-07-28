@@ -4,7 +4,7 @@ using System.Numerics;
 using Content.Client.DisplacementMap;
 using Content.Shared.CCVar;
 using Content.Shared.CCVar;
-using Content.Shared._Amour.Humanoid.Prototypes;
+using Content.Shared._RW.Humanoid.Prototypes;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
@@ -27,7 +27,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
     [Dependency] private readonly DisplacementMapSystem _displacement = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
 
-    // Amour edit start
+    // RW edit start
     private const string MarkingGradientShaderId = "AmourMarkingGradient";
  
     private static bool MarkingSupportsGradient(MarkingPrototype marking) =>
@@ -79,7 +79,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         shaderInstance.SetParameter("GradientPosition", Marking.ClampGradientPosition(marking.GradientPosition));
         shaderInstance.SetParameter("GradientBlur", Marking.ClampGradientBlur(marking.GradientBlur));
     }
-    // Amour edit end
+    // RW edit end
 
     public override void Initialize()
     {
@@ -147,8 +147,8 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         component.BaseLayers.Clear();
 
         // add default species layers
-        var bodyTypeProto = _prototypeManager.Index<BodyTypePrototype>(component.BodyType); // Amour port: WD Slim body types
-        foreach (var (key, id) in bodyTypeProto.Sprites) // Amour port: WD Slim body types
+        var bodyTypeProto = _prototypeManager.Index<BodyTypePrototype>(component.BodyType); // RW port: WD Slim body types
+        foreach (var (key, id) in bodyTypeProto.Sprites) // RW port: WD Slim body types
         {
             oldLayers.Remove(key);
             if (!component.CustomBaseLayers.ContainsKey(key))
@@ -209,8 +209,8 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 
         if (proto.MatchSkin && !overrideSkin) // Shitmed Change
         {
-            if (shader == null) // Amour edit
-                sprite.LayerSetShader(layerIndex, null, null); // Amour edit
+            if (shader == null) // RW edit
+                sprite.LayerSetShader(layerIndex, null, null); // RW edit
             layer.Color = component.SkinColor.WithAlpha(proto.LayerAlpha);
         }
 
@@ -283,7 +283,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             : profile.Appearance.HairColor;
         var hair = new Marking(profile.Appearance.HairStyleId,
             new[] { hairColor });
-        // Amour edit start
+        // RW edit start
         if (profile.Appearance.HairUseGradient)
         {
             hair.UseGradient = true;
@@ -291,14 +291,14 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             hair.GradientBlur = HumanoidCharacterAppearance.ClampHairGradientBlur(profile.Appearance.HairGradientBlur);
             hair.SetGradientColor(0, profile.Appearance.HairColor2);
         }
-        // Amour edit end
+        // RW edit end
 
         var facialHairColor = _markingManager.MustMatchSkin(profile.Species, HumanoidVisualLayers.FacialHair, out var facialHairAlpha, _prototypeManager)
             ? profile.Appearance.SkinColor.WithAlpha(facialHairAlpha)
             : profile.Appearance.FacialHairColor;
         var facialHair = new Marking(profile.Appearance.FacialHairStyleId,
             new[] { facialHairColor });
-        // Amour edit start
+        // RW edit start
         if (profile.Appearance.FacialHairUseGradient)
         {
             facialHair.UseGradient = true;
@@ -306,7 +306,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             facialHair.GradientBlur = profile.Appearance.FacialHairGradientBlur;
             facialHair.SetGradientColor(0, profile.Appearance.FacialHairColor2);
         }
-        // Amour edit end
+        // RW edit end
         if (_markingManager.CanBeApplied(profile.Species, profile.Sex, hair, _prototypeManager))
         {
             markings.AddBack(MarkingCategories.Hair, hair);
@@ -344,7 +344,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         humanoid.Sex = profile.Sex;
         humanoid.Gender = profile.Gender;
         humanoid.Age = profile.Age;
-        humanoid.BodyType = profile.BodyType; // Amour port: WD Slim body types
+        humanoid.BodyType = profile.BodyType; // RW port: WD Slim body types
         humanoid.Species = profile.Species;
         humanoid.SkinColor = profile.Appearance.SkinColor;
         humanoid.EyeColor = profile.Appearance.EyeColor;
@@ -375,7 +375,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             {
                 if (_markingManager.TryGetMarking(marking, out var markingPrototype))
                 {
-                    ApplyMarking(markingPrototype, marking, entity); // Amour edit
+                    ApplyMarking(markingPrototype, marking, entity); // RW edit
                     if (markingPrototype.BodyPart == HumanoidVisualLayers.UndergarmentTop)
                         applyUndergarmentTop = false;
                     else if (markingPrototype.BodyPart == HumanoidVisualLayers.UndergarmentBottom)
@@ -432,7 +432,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             _sprite.RemoveLayer(spriteEnt.AsNullable(), layerId, false);
         }
     }
-    // Amour edit start
+    // RW edit start
     private void ApplyMarking(MarkingPrototype markingPrototype,
         Marking marking,
         Entity<HumanoidAppearanceComponent, SpriteComponent> entity)
@@ -491,7 +491,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             }
         }
     }
-    // Amour edit end
+    // RW edit end
 
     private void AddUndergarments(Entity<HumanoidAppearanceComponent, SpriteComponent> entity, bool undergarmentTop, bool undergarmentBottom)
     {
@@ -523,7 +523,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         IReadOnlyList<Color>? colors,
         bool visible,
         Entity<HumanoidAppearanceComponent, SpriteComponent> entity,
-        Marking? marking = null) // Amour edit
+        Marking? marking = null) // RW edit
     {
         var humanoid = entity.Comp1;
         var sprite = entity.Comp2;
@@ -537,7 +537,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
                 continue;
             }
 
-            // Amour edit start
+            // RW edit start
             var bodyPart = markingPrototype.GetBodyPart(j);
             if (!_sprite.LayerMapTryGet((entity.Owner, sprite), bodyPart, out var targetLayer, false))
             {
@@ -548,7 +548,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             var hasSetting = humanoid.BaseLayers.TryGetValue(bodyPart, out var setting);
             layerVisible &= hasSetting && setting is { AllowsMarkings: true };
             var layerOffset = GetBodyPartSpriteOffset(markingPrototype, bodyPart, j);
-            // Amour edit end
+            // RW edit end
             var layerId = $"{markingPrototype.ID}-{rsi.RsiState}";
 
             if (!_sprite.LayerMapTryGet((entity.Owner, sprite), layerId, out var layer, false)) // Goob edit
@@ -560,7 +560,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 
             var hasInfo = humanoid.CustomBaseLayers.TryGetValue(bodyPart, out var info); // Goobstation
 
-            // Amour edit start
+            // RW edit start
             var gradientApplied = false;
             if (MarkingSupportsGradient(markingPrototype) && marking is { UseGradient: true } && colors != null && j < colors.Count)
             {
@@ -611,7 +611,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
                 }
                 continue;
             }
-            // Amour edit end
+            // RW edit end
 
             // Okay so if the marking prototype is modified but we load old marking data this may no longer be valid
             // and we need to check the index is correct.
@@ -635,9 +635,9 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
                 // Goob edit end
             }
 
-            if (humanoid.MarkingsDisplacement.TryGetValue(bodyPart, out var displacementData) && markingPrototype.CanBeDisplaced) // Amour edit
+            if (humanoid.MarkingsDisplacement.TryGetValue(bodyPart, out var displacementData) && markingPrototype.CanBeDisplaced) // RW edit
             {
-                _displacement.TryAddDisplacement(displacementData, (entity.Owner, sprite), targetLayer + layerOffset, layerId, out _); // Amour edit
+                _displacement.TryAddDisplacement(displacementData, (entity.Owner, sprite), targetLayer + layerOffset, layerId, out _); // RW edit
             }
         }
     }
@@ -658,7 +658,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
                 continue;
 
             var index = _sprite.LayerMapReserve((uid, sprite), layer);
-            sprite.LayerSetShader(index, null, null); // Amour edit
+            sprite.LayerSetShader(index, null, null); // RW edit
             sprite[index].Color = skinColor.WithAlpha(spriteInfo.LayerAlpha);
         }
     }
@@ -698,8 +698,8 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         {
             foreach (var marking in markingList)
             {
-                if (_markingManager.TryGetMarking(marking, out var markingPrototype) && markingPrototype.AppliesToBodyPart(layer)) // Amour edit
-                    ApplyMarking(markingPrototype, marking, (ent, ent.Comp, sprite)); // Amour edit
+                if (_markingManager.TryGetMarking(marking, out var markingPrototype) && markingPrototype.AppliesToBodyPart(layer)) // RW edit
+                    ApplyMarking(markingPrototype, marking, (ent, ent.Comp, sprite)); // RW edit
             }
         }
     }

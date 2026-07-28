@@ -60,7 +60,7 @@
   components:
   - type: StorageFill
     contents:
-      # Orion-Start
+      # RW-Start
       - id: ClothingHandsGlovesCatPawsBrown
         prob: 0.005
         orGroup: dressermainloot
@@ -73,8 +73,8 @@
       - id: ClothingHandsGlovesCatPawsWhite
         prob: 0.005
         orGroup: dressermainloot
-      # Orion-End
-#      - id: ClothingNeckLGBTPin # Orion-Edit: Removed
+      # RW-End
+#      - id: ClothingNeckLGBTPin # RW-Edit: Removed
 #        prob: 0.06
 #        orGroup: dressermainloot
       - id: ClothingUniformJumpsuitColorGrey

@@ -17,7 +17,7 @@
   - type: Stack
     count: 100
     stackType: Telecrystal
-  # Orion-Start
+  # RW-Start
     baseLayer: base
     layerStates:
     - telecrystal
@@ -26,7 +26,7 @@
     layerFunction: Threshold
   - type: StackLayerThreshold
     thresholds: [10, 20, 30]
-  # Orion-End
+  # RW-End
   - type: StaticPrice
     price: 0
   - type: StackPrice
@@ -74,11 +74,11 @@
   suffix: Empty
   components:
   - type: Sprite
-    sprite: _Orion/Objects/Devices/syndicate_uplink.rsi # Orion-Edit
+    sprite: _RW/Objects/Devices/syndicate_uplink.rsi # RW-Edit
     layers:
     - state: radio
   - type: Item
-    sprite: _Orion/Objects/Devices/syndicate_uplink.rsi # Orion-Edit
+    sprite: _RW/Objects/Devices/syndicate_uplink.rsi # RW-Edit
     heldPrefix: radio
   - type: UserInterface
     interfaces:

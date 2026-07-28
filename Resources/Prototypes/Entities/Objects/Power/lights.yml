@@ -130,7 +130,7 @@
   - type: LightBulb
     bulb: Bulb
     color: "#e6d8cb" # 4000K color temp | Orion-Edit: Changed color
-    lightEnergy: 0.8 # Orion-Edit: 1.0 > 0.8
+    lightEnergy: 0.8 # RW-Edit: 1.0 > 0.8
     lightRadius: 6
     lightSoftness: 1.1
   - type: Tag
@@ -240,7 +240,7 @@
   components:
   - type: LightBulb
     color: "#dbd1bc" # 5000K color temp | Orion-Edit: Changed color
-    lightEnergy: 1.0 # Orion-Edit: 0.8 > 1.0
+    lightEnergy: 1.0 # RW-Edit: 0.8 > 1.0
     lightRadius: 10
     lightSoftness: 1
     PowerUse: 25

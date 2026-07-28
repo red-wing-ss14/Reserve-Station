@@ -40,14 +40,14 @@
         enum.WiresVisualLayers.MaintenancePanel:
           True: { visible: false }
           False: { visible: true }
-      # Orion-Start
+      # RW-Start
       enum.EdgeConnectionVisuals.ConnectionMask:
         computerLayerBody:
           None: { state: computer, sprite: Structures/Machines/computers.rsi }
-          West: { state: computer_r, sprite: _Orion/Structures/Machines/computers.rsi }
-          East: { state: computer_l, sprite: _Orion/Structures/Machines/computers.rsi }
-          East, West: { state: computer_l_r, sprite: _Orion/Structures/Machines/computers.rsi }
-      # Orion-End
+          West: { state: computer_r, sprite: _RW/Structures/Machines/computers.rsi }
+          East: { state: computer_l, sprite: _RW/Structures/Machines/computers.rsi }
+          East, West: { state: computer_l_r, sprite: _RW/Structures/Machines/computers.rsi }
+      # RW-End
   - type: AtmosAlertsComputer
   - type: ActivatableUI
     singleUser: true
@@ -160,7 +160,7 @@
   - type: ItemSlots
     slots:
       disk_slot:
-#        name: Disk # Orion-Edit: Localization
+#        name: Disk # RW-Edit: Localization
         insertSound:
           path: /Audio/Machines/terminal_insert_disc.ogg
         ejectSound:
@@ -489,7 +489,7 @@
         enum.WiresUiKey.Key:
           type: WiresBoundUserInterface
   - type: CrewMonitoringConsole
-    doAlert: true # Orion
+    doAlert: true # RW
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: CrewMonitor
@@ -534,9 +534,9 @@
     powerLoad: 1000
   - type: Computer
     board: ResearchComputerCircuitboard
-#  - type: AccessReader # Orion-Edit: Removed
+#  - type: AccessReader # RW-Edit: Removed
 #    access: [["Research"]]
-  # Orion-Start
+  # RW-Start
   - type: Speech
     speechSounds: Borg
     speechVerb: Robotic
@@ -544,7 +544,7 @@
     attributes:
       gender: female
       proper: true
-  # Orion-End
+  # RW-End
   - type: PointLight
     radius: 1.5
     energy: 4.0
@@ -973,7 +973,7 @@
     account: Engineering
     announcementChannel: Engineering
     removeLimitAccess: [ "ChiefEngineer" ]
-    mode: PrintSlip # Orion-Edit
+    mode: PrintSlip # RW-Edit
   - type: ActiveRadio
     channels:
     - Engineering
@@ -1006,7 +1006,7 @@
     account: Medical
     announcementChannel: Medical
     removeLimitAccess: [ "ChiefMedicalOfficer" ]
-    mode: PrintSlip # Orion-Edit
+    mode: PrintSlip # RW-Edit
   - type: ActiveRadio
     channels:
     - Medical
@@ -1039,7 +1039,7 @@
     account: Science
     announcementChannel: Science
     removeLimitAccess: [ "ResearchDirector" ]
-    mode: PrintSlip # Orion-Edit
+    mode: PrintSlip # RW-Edit
   - type: ActiveRadio
     channels:
     - Science
@@ -1072,7 +1072,7 @@
     account: Security
     announcementChannel: Security
     removeLimitAccess: [ "HeadOfSecurity" ]
-    mode: PrintSlip # Orion-Edit
+    mode: PrintSlip # RW-Edit
   - type: ActiveRadio
     channels:
     - Security
@@ -1105,7 +1105,7 @@
     account: Service
     announcementChannel: Service
     removeLimitAccess: [ "HeadOfPersonnel" ]
-    mode: PrintSlip # Orion-Edit
+    mode: PrintSlip # RW-Edit
   - type: ActiveRadio
     channels:
     - Service
@@ -1314,14 +1314,14 @@
           enum.WiresVisualLayers.MaintenancePanel:
             True: { visible: false }
             False: { visible: true }
-        # Orion-Start
+        # RW-Start
         enum.EdgeConnectionVisuals.ConnectionMask:
           computerLayerBody:
             None: { state: computer, sprite: Structures/Machines/computers.rsi }
-            West: { state: computer_r, sprite: _Orion/Structures/Machines/computers.rsi }
-            East: { state: computer_l, sprite: _Orion/Structures/Machines/computers.rsi }
-            East, West: { state: computer_l_r, sprite: _Orion/Structures/Machines/computers.rsi }
-        # Orion-End
+            West: { state: computer_r, sprite: _RW/Structures/Machines/computers.rsi }
+            East: { state: computer_l, sprite: _RW/Structures/Machines/computers.rsi }
+            East, West: { state: computer_l_r, sprite: _RW/Structures/Machines/computers.rsi }
+        # RW-End
     - type: SalvageExpeditionConsole
     - type: ActivatableUI
       key: enum.SalvageConsoleUiKey.Expedition

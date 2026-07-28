@@ -16,8 +16,8 @@ namespace Content.Shared.Humanoid
         UndergarmentBottom,
         Face, // EE Plasmeme Port
         Chest,
-//        Underwear, // Orion-Edit: Removed
-//        Undershirt, // Orion-Edit: Removed
+//        Underwear, // RW-Edit: Removed
+//        Undershirt, // RW-Edit: Removed
         Groin,
         Head,
         Snout,

@@ -45,7 +45,7 @@
       collection: MaleDeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/Human/gulp.ogg
-    Hiss: # Orion
+    Hiss: # RW
       collection: ReptilianHisses
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
@@ -141,7 +141,7 @@
       collection: MaleDeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/Human/gulp.ogg ## GOOB CONTENT END
-    Hiss: # Orion
+    Hiss: # RW
       collection: ReptilianHisses
 
 - type: emoteSounds
@@ -172,12 +172,12 @@
     # Floof
     Yip:
       collection: Yip
-#    Hiss: # Orion | Goob... no...
+#    Hiss: # RW | Goob... no...
 #      collection: ReptilianHiss
     # Floof end
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
-    Hiss: # Orion
+    Hiss: # RW
       collection: ReptilianHisses
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
@@ -218,12 +218,12 @@
     # Floof
     Yip:
       collection: Yip
-#    Hiss: # Orion | Goob... no...
+#    Hiss: # RW | Goob... no...
 #      collection: ReptilianHiss
     # Floof end
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
-    Hiss: # Orion
+    Hiss: # RW
       collection: ReptilianHisses
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
@@ -285,7 +285,7 @@
       collection: MaleDeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
-    Hiss: # Orion
+    Hiss: # RW
       collection: ReptilianHisses
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
@@ -341,7 +341,7 @@
       collection: FemaleDeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
-    Hiss: # Orion
+    Hiss: # RW
       collection: ReptilianHisses
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
@@ -443,7 +443,7 @@
       collection: DeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
-    Hiss: # Orion
+    Hiss: # RW
       collection: ReptilianHisses
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
@@ -492,7 +492,7 @@
       path: /Audio/_Goobstation/Voice/surprised.ogg
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
-    Hiss: # Orion
+    Hiss: # RW
       collection: ReptilianHisses
 
 - type: emoteSounds
@@ -538,7 +538,7 @@
       collection: MaleDeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/Human/gulp.ogg
-    Hiss: # Orion
+    Hiss: # RW
       collection: ReptilianHisses
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
@@ -587,7 +587,7 @@
       collection: FemaleDeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/Human/gulp.ogg
-    Hiss: # Orion
+    Hiss: # RW
       collection: ReptilianHisses
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
@@ -626,7 +626,7 @@
       path: /Audio/_Goobstation/Voice/Moth/moth_flap.ogg
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
-    Hiss: # Orion
+    Hiss: # RW
       collection: ReptilianHisses
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
@@ -680,7 +680,7 @@
       path: /Audio/_Goobstation/Voice/Moth/moth_flap.ogg
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
-    Hiss: # Orion
+    Hiss: # RW
       collection: ReptilianHisses
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
@@ -734,7 +734,7 @@
       path: /Audio/_Goobstation/Voice/Moth/moth_flap.ogg
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
-    Hiss: # Orion
+    Hiss: # RW
       collection: ReptilianHisses
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg

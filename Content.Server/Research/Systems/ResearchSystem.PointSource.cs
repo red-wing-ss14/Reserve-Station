@@ -2,8 +2,8 @@
 
 using Content.Server.Power.EntitySystems;
 using Content.Server.Research.Components;
-using Content.Shared._Orion.Research;
-using Content.Shared._Orion.Research.Components;
+using Content.Shared._RW.Research;
+using Content.Shared._RW.Research.Components;
 using Content.Shared.Research.Components;
 
 namespace Content.Server.Research.Systems;
@@ -12,29 +12,29 @@ public sealed partial class ResearchSystem
 {
     private void InitializeSource()
     {
-//        SubscribeLocalEvent<ResearchPointSourceComponent, ResearchServerGetPointsPerSecondEvent>(OnGetPointsPerSecond); // Orion-Edit
-        SubscribeLocalEvent<ResearchPointSourceComponent, ResearchServerGetPointsPerSecondByTypeEvent>(OnGetPointsPerSecondByType); // Orion
+//        SubscribeLocalEvent<ResearchPointSourceComponent, ResearchServerGetPointsPerSecondEvent>(OnGetPointsPerSecond); // RW-Edit
+        SubscribeLocalEvent<ResearchPointSourceComponent, ResearchServerGetPointsPerSecondByTypeEvent>(OnGetPointsPerSecondByType); // RW
     }
 
-/* // Orion-Edit: Use OnGetPointsPerSecondByType
+/* // RW-Edit: Use OnGetPointsPerSecondByType
     private void OnGetPointsPerSecond(Entity<ResearchPointSourceComponent> source, ref ResearchServerGetPointsPerSecondEvent args)
     {
-        // Orion-Start
+        // RW-Start
         if (TryComp<ResearchServerControlStatusComponent>(args.Server, out var status) && !status.GenerationEnabled)
             return;
-        // Orion-End
+        // RW-End
 
         if (CanProduce(source))
             args.Points += source.Comp.PointsPerSecond;
     }
 */
 
-    private bool CanProduce(Entity<ResearchPointSourceComponent> source) // Orion-Edit: Was public
+    private bool CanProduce(Entity<ResearchPointSourceComponent> source) // RW-Edit: Was public
     {
         return source.Comp.Active && this.IsPowered(source, EntityManager);
     }
 
-    // Orion-Start
+    // RW-Start
     private void OnGetPointsPerSecondByType(Entity<ResearchPointSourceComponent> source, ref ResearchServerGetPointsPerSecondByTypeEvent args)
     {
         if (TryComp<ResearchServerControlStatusComponent>(args.Server, out var status) && !status.GenerationEnabled)
@@ -56,5 +56,5 @@ public sealed partial class ResearchSystem
             Amount = source.Comp.PointsPerSecond,
         });
     }
-    // Orion-End
+    // RW-End
 }

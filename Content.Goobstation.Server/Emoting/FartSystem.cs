@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-/* // Orion-Edit: Removed shitass system, go fart yourself.
+/* // RW-Edit: Removed shitass system, go fart yourself.
 using System.Numerics;
 using Content.Goobstation.Shared.Bible;
 using Content.Goobstation.Shared.Emoting;

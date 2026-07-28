@@ -1,5 +1,5 @@
-using Content.Shared._Orion.Construction;
-using Content.Shared._Orion.Construction.Events;
+using Content.Shared._RW.Construction;
+using Content.Shared._RW.Construction.Events;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Atmos.Piping.Unary.Components;
 using Content.Shared.Database;
@@ -20,10 +20,10 @@ public abstract class SharedGasThermoMachineSystem : EntitySystem
 
         SubscribeLocalEvent<GasThermoMachineComponent, GasThermomachineToggleMessage>(OnToggleMessage);
         SubscribeLocalEvent<GasThermoMachineComponent, GasThermomachineChangeTemperatureMessage>(OnChangeTemperature);
-        // Orion-Start
+        // RW-Start
         SubscribeLocalEvent<GasThermoMachineComponent, RefreshPartsEvent>(OnRefreshParts);
         SubscribeLocalEvent<GasThermoMachineComponent, UpgradeExamineEvent>(OnUpgradeExamine);
-        // Orion-End
+        // RW-End
     }
 
     private void OnExamined(EntityUid uid, GasThermoMachineComponent thermoMachine, ExaminedEvent args)
@@ -65,7 +65,7 @@ public abstract class SharedGasThermoMachineSystem : EntitySystem
 
     protected virtual void DirtyUI(EntityUid uid, GasThermoMachineComponent? thermoMachine, UserInterfaceComponent? ui=null) {}
 
-    // Orion-Start
+    // RW-Start
     private void OnRefreshParts(EntityUid uid, GasThermoMachineComponent component, RefreshPartsEvent args)
     {
         var matterTier = args.GetPartRating(MachinePartIds.MatterBin);
@@ -87,5 +87,5 @@ public abstract class SharedGasThermoMachineSystem : EntitySystem
         args.AddPercentageUpgrade("machine-upgrade-thermomachine-heat-capacity", component.HeatCapacity / component.BaseHeatCapacity);
         args.AddPercentageUpgrade("machine-upgrade-thermomachine-temp-range", (component.MaxTemperature - component.MinTemperature) / (component.BaseMaxTemperature - component.BaseMinTemperature));
     }
-    // Orion-End
+    // RW-End
 }

@@ -51,7 +51,7 @@ namespace Content.Shared.CombatMode
         [DataField, AutoNetworkedField]
         public bool ToggleMouseRotator = true;
 
-        // Orion-Start
+        // RW-Start
         /// <summary>
         ///     If true, sets <see cref="MouseRotatorComponent.AngleTolerance"/> to 1 degree and <see cref="MouseRotatorComponent.Simple4DirMode"/>
         ///     to false when the owner enters combatmode. This is currently being tested as of 06.12.24,
@@ -66,11 +66,11 @@ namespace Content.Shared.CombatMode
 
         [DataField]
         public SoundSpecifier? CombatActivationSound = new SoundPathSpecifier
-            ("/Audio/_Orion/Effects/Actions/CombatMode/combatmode-on.ogg");
+            ("/Audio/_RW/Effects/Actions/CombatMode/combatmode-on.ogg");
 
         [DataField]
         public SoundSpecifier? CombatDeactivationSound = new SoundPathSpecifier
-            ("/Audio/_Orion/Effects/Actions/CombatMode/combatmode-off.ogg");
-        // Orion-End
+            ("/Audio/_RW/Effects/Actions/CombatMode/combatmode-off.ogg");
+        // RW-End
     }
 }

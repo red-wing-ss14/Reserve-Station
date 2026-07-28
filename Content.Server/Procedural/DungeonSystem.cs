@@ -73,7 +73,7 @@ public sealed partial class DungeonSystem : SharedDungeonSystem
     {
         base.Update(frameTime);
         _dungeonJobQueue.Process();
-        CleanupCompletedJobs(); // Orion
+        CleanupCompletedJobs(); // RW
     }
 
     private void OnRoundCleanup(RoundRestartCleanupEvent ev)
@@ -81,13 +81,13 @@ public sealed partial class DungeonSystem : SharedDungeonSystem
         foreach (var token in _dungeonJobs.Values)
         {
             token.Cancel();
-            token.Dispose(); // Orion
+            token.Dispose(); // RW
         }
 
         _dungeonJobs.Clear();
     }
 
-    // Orion-Start
+    // RW-Start
     private void CleanupCompletedJobs()
     {
         foreach (var (job, token) in _dungeonJobs.ToArray())
@@ -99,7 +99,7 @@ public sealed partial class DungeonSystem : SharedDungeonSystem
             _dungeonJobs.Remove(job);
         }
     }
-    // Orion-End
+    // RW-End
 
     private void OnRoundStart(RoundStartingEvent ev)
     {
@@ -123,9 +123,9 @@ public sealed partial class DungeonSystem : SharedDungeonSystem
     public override void Shutdown()
     {
         base.Shutdown();
-        // Orion-Edit-Start
+        // RW-Edit-Start
         OnRoundCleanup(new RoundRestartCleanupEvent());
-        // Orion-Edit-End
+        // RW-Edit-End
     }
 
     private void PrototypeReload(PrototypesReloadedEventArgs obj)
@@ -133,10 +133,10 @@ public sealed partial class DungeonSystem : SharedDungeonSystem
         if (!obj.ByType.TryGetValue(typeof(DungeonRoomPrototype), out var rooms))
             return;
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         var preload = _configManager.GetCVar(CCVars.ProcgenPreload);
         var toCreate = new List<DungeonRoomPrototype>();
-        // Orion-Edit-End
+        // RW-Edit-End
 
         foreach (var proto in rooms.Modified.Values)
         {
@@ -153,7 +153,7 @@ public sealed partial class DungeonSystem : SharedDungeonSystem
                 break;
             }
 
-            // Orion-Edit-Start
+            // RW-Edit-Start
             if (preload && !found)
                 toCreate.Add(roomProto);
         }
@@ -162,7 +162,7 @@ public sealed partial class DungeonSystem : SharedDungeonSystem
         {
             GetOrCreateTemplate(roomProto);
         }
-        // Orion-Edit-End
+        // RW-Edit-End
     }
 
     public MapId GetOrCreateTemplate(DungeonRoomPrototype proto)
@@ -224,7 +224,7 @@ public sealed partial class DungeonSystem : SharedDungeonSystem
             coordinates,
             cancelToken.Token);
 
-        _dungeonJobs[job] = cancelToken; // Orion-Edit
+        _dungeonJobs[job] = cancelToken; // RW-Edit
         _dungeonJobQueue.EnqueueJob(job);
     }
 
@@ -257,18 +257,18 @@ public sealed partial class DungeonSystem : SharedDungeonSystem
             null,
             cancelToken.Token);
 
-        _dungeonJobs[job] = cancelToken; // Orion-Edit
-        _dungeonJobQueue.EnqueueJob(job); // Orion
+        _dungeonJobs[job] = cancelToken; // RW-Edit
+        _dungeonJobQueue.EnqueueJob(job); // RW
         await job.AsTask;
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         return job.Exception != null
             ? throw job.Exception
             : job.Result!;
-        // Orion-Edit-End
+        // RW-Edit-End
     }
 
-    public static Angle GetDungeonRotation(int seed) // Orion-Edit: Static
+    public static Angle GetDungeonRotation(int seed) // RW-Edit: Static
     {
         // Mask 0 | 1 for rotation seed
         var dungeonRotationSeed = 3 & seed;

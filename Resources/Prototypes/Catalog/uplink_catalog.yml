@@ -26,7 +26,7 @@
   description: uplink-revolver-python-desc
   productEntity: WeaponRevolverPythonAP
   cost:
-    Telecrystal: 23 # goob - Originally was 65 TC but was not used due to high cost. and the same happened at 40 TC. +2 mags = 30 TC. # Orion-Edit: 20 > 23
+    Telecrystal: 23 # goob - Originally was 65 TC but was not used due to high cost. and the same happened at 40 TC. +2 mags = 30 TC. # RW-Edit: 20 > 23
   categories:
   - UplinkWeaponry
   #Goobstation
@@ -148,7 +148,7 @@
   description: uplink-gloves-north-star-desc
   productEntity: ClothingHandsGlovesNorthStar
   cost:
-    Telecrystal: 34 # goob # Orion-Edit: 40 > 34
+    Telecrystal: 34 # goob # RW-Edit: 40 > 34
   categories:
   - UplinkWeaponry
   #Goobstation
@@ -165,7 +165,7 @@
   description: uplink-disposable-turret-desc
   productEntity: ToolboxElectricalTurretFilled
   cost:
-    Telecrystal: 25 #goob # Orion-Edit: 30 > 25
+    Telecrystal: 25 #goob # RW-Edit: 30 > 25
   categories:
   - UplinkWeaponry
 #Goobstation
@@ -184,7 +184,7 @@
   icon: { sprite: /Textures/Objects/Weapons/Melee/e_shield.rsi, state: eshield-on }
   productEntity: EnergyShield
   cost:
-    Telecrystal: 18 # goob # Orion-Edit: 15 > 18
+    Telecrystal: 18 # goob # RW-Edit: 15 > 18
   categories:
   - UplinkWeaponry
 
@@ -228,7 +228,7 @@
   icon: { sprite: /Textures/Objects/Weapons/Guns/SMGs/c20r.rsi, state: icon }
   productEntity: WeaponSubMachineGunC20r #Goob unbundle update
   cost:
-    Telecrystal: 45 # goob unbunde update # Orion-Edit: 50 > 45
+    Telecrystal: 45 # goob unbunde update # RW-Edit: 50 > 45
   categories:
   - UplinkWeaponry
   #Goobstation
@@ -255,7 +255,7 @@
       tags:
       - ContractorUplink
 
-# Orion-Edit: Removed
+# RW-Edit: Removed
 #- type: listing
 #  id: UplinkBulldog #goob
 #  name: uplink-buldog-name #goob
@@ -606,7 +606,7 @@
   icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_high_capacity_mag.rsi, state: base-icon }
   productEntity: MagazinePistolHighCapacity
   cost:
-    Telecrystal: 1 # goob - Ammo should be cheap. # Orion-Edit: 2 > 1
+    Telecrystal: 1 # goob - Ammo should be cheap. # RW-Edit: 2 > 1
   categories:
   - UplinkAmmo
   #Goobstation
@@ -624,7 +624,7 @@
   icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/smg_mag.rsi, state: red-icon }
   productEntity: MagazinePistolSubMachineGun
   cost:
-    Telecrystal: 4 # goob - Ammo should be cheap. 96 dmg per TC. # Orion-Edit: 5 > 4
+    Telecrystal: 4 # goob - Ammo should be cheap. 96 dmg per TC. # RW-Edit: 5 > 4
   categories:
   - UplinkAmmo
   #Goobstation
@@ -642,7 +642,7 @@
   icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/caseless_pistol_mag.rsi, state: red-icon }
   productEntity: MagazinePistolCaselessRifle
   cost:
-    Telecrystal: 2 # goob # Orion-Edit: 3 > 2
+    Telecrystal: 2 # goob # RW-Edit: 3 > 2
   categories:
   - UplinkAmmo
   #Goobstation
@@ -675,7 +675,7 @@
   id: UplinkMosinAmmo
   name: uplink-mosin-ammo-name
   description: uplink-mosin-ammo-desc
-  productEntity: MagazineBoxRifle762 # Orion-Edit: .30 > 7.62
+  productEntity: MagazineBoxRifle762 # RW-Edit: .30 > 7.62
   cost:
     Telecrystal: 14 # goob
   categories:
@@ -837,17 +837,17 @@
   description: uplink-combat-medipen-desc
   productEntity: CombatMedipen
   cost:
-    Telecrystal: 20 # Amour edit - 12 > 20
+    Telecrystal: 20 # RW edit - 12 > 20
   categories:
   - UplinkChemicals
-  # Orion-Start: Low price for traitors
+  # RW-Start: Low price for traitors
   conditions:
   - !type:StoreWhitelistCondition
     blacklist:
       tags:
       - NukeOpsUplink
       - ContravendUplink
-  # Orion-End
+  # RW-End
 
 
 - type: listing
@@ -873,7 +873,7 @@
   #discountDownTo:
   #  Telecrystal: 3
   cost:
-    Telecrystal: 20 # goob # Orion-Edit: 40 > 20
+    Telecrystal: 20 # goob # RW-Edit: 40 > 20
   categories:
   - UplinkChemicals
 
@@ -1023,7 +1023,7 @@
   description: uplink-bribe-desc
   productEntity: BriefcaseSyndieLobbyingBundleFilled
   cost:
-    Telecrystal: 10 # goob # Orion-Edit: 20 > 10
+    Telecrystal: 10 # goob # RW-Edit: 20 > 10
   categories:
     - UplinkDeception
   conditions: # EE Plasmeme Change: Plasmamen get another listing.
@@ -1048,7 +1048,7 @@
   icon: { sprite: /Textures/Objects/Tools/Decoys/operative_decoy.rsi, state: folded }
   productEntity: ClothingBackpackDuffelSyndicateDecoyKitFilled
   cost:
-    Telecrystal: 15 # goob - total meme item. # Orion-Edit 20 > 15
+    Telecrystal: 15 # goob - total meme item. # RW-Edit 20 > 15
   categories:
   - UplinkDeception
 
@@ -1105,7 +1105,7 @@
   description: uplink-emag-desc
   productEntity: Emag
   cost:
-    Telecrystal: 20 # goob - not quite worth 25 # Orion
+    Telecrystal: 20 # goob - not quite worth 25 # RW
   categories:
   - UplinkDisruption
 
@@ -1127,7 +1127,7 @@
   description: uplink-syndicate-weapon-module-desc
   productEntity: BorgModuleSyndicateWeapon
   cost:
-    Telecrystal: 11 # goob # Orion-Edit: 25 > 11
+    Telecrystal: 11 # goob # RW-Edit: 25 > 11
   categories:
   - UplinkDisruption
   #Goobstation
@@ -1145,7 +1145,7 @@
   productEntity: BorgModuleMartyr
   icon: { sprite: /Textures/Objects/Specific/Robotics/borgmodule.rsi, state: syndicateborgbomb }
   cost:
-    Telecrystal: 11 # goob # Orion-Edit: 20 > 11
+    Telecrystal: 11 # goob # RW-Edit: 20 > 11
   categories:
     - UplinkDisruption
   #Goobstation
@@ -1423,7 +1423,7 @@
   productEntity: ReinforcementRadioSyndicateCyborgAssault
   icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-borg-assault }
   cost:
-    Telecrystal: 305 # goob # Orion-Edit: 375 > 305
+    Telecrystal: 305 # goob # RW-Edit: 375 > 305
   categories:
     - UplinkAllies
   conditions:
@@ -1480,7 +1480,7 @@
   description: uplink-carp-dehydrated-desc
   productEntity: DehydratedSpaceCarp
   cost:
-    Telecrystal: 5 # goob # Orion-Edit: 10 > 5
+    Telecrystal: 5 # goob # RW-Edit: 10 > 5
   categories:
   - UplinkAllies
   #Goobstation
@@ -1499,7 +1499,7 @@
   icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-syndicat }
   productEntity: ReinforcementRadioSyndicateSyndiCat
   cost:
-    Telecrystal: 23 # goob # Orion-Edit: 30 > 23
+    Telecrystal: 23 # goob # RW-Edit: 30 > 23
   categories:
     - UplinkAllies
   #Goobstation
@@ -1539,7 +1539,7 @@
   icon: { sprite: /Textures/Clothing/Back/Backpacks/backpack.rsi, state: icon }
   productEntity: StorageImplanter
   cost:
-    Telecrystal: 33 # goob # Orion-Edit: 40 > 33
+    Telecrystal: 33 # goob # RW-Edit: 40 > 33
   categories:
     - UplinkImplants
   conditions:
@@ -1556,7 +1556,7 @@
   icon: { sprite: /Textures/Actions/Implants/implants.rsi, state: freedom }
   productEntity: FreedomImplanter
   cost:
-    Telecrystal: 12 # goob - not quite worth any more than that # Orion-Edit: 18 > 12
+    Telecrystal: 12 # goob - not quite worth any more than that # RW-Edit: 18 > 12
   categories:
     - UplinkImplants
 
@@ -1568,16 +1568,16 @@
   icon: { sprite: /Textures/Structures/Specific/anomaly.rsi, state: anom4 }
   productEntity: ScramImplanter
   cost:
-    Telecrystal: 20 # goob - can be useful, but does nothing on its own # Orion-Edit: 15 > 20
+    Telecrystal: 20 # goob - can be useful, but does nothing on its own # RW-Edit: 15 > 20
   categories:
     - UplinkImplants
-  # Orion-Start
+  # RW-Start
   conditions:
   - !type:StoreWhitelistCondition
     blacklist:
       tags:
       - NukeOpsUplink
-  # Orion-End
+  # RW-End
 
 
 - type: listing
@@ -1587,7 +1587,7 @@
   icon: { sprite: /Textures/Mobs/Species/Human/parts.rsi, state: full }
   productEntity: DnaScramblerImplanter
   cost:
-    Telecrystal: 13 # goob # Orion-Edit: 25 > 13
+    Telecrystal: 13 # goob # RW-Edit: 25 > 13
   categories:
     - UplinkImplants
 
@@ -1599,7 +1599,7 @@
   icon: { sprite: /Textures/Objects/Magic/magicactions.rsi, state: shield }
   productEntity: EmpImplanter
   cost:
-    Telecrystal: 20 # goob # Orion-Edit: 10 > 20
+    Telecrystal: 20 # goob # RW-Edit: 10 > 20
   categories:
     - UplinkImplants
 
@@ -1690,7 +1690,7 @@
   icon: { sprite: /Textures/Objects/Magic/magicactions.rsi, state: gib }
   productEntity: DeathAcidifierImplanter
   cost:
-    Telecrystal: 10 # goob # goob - traitor suicide implants # Orion-Edit: 20 > 10
+    Telecrystal: 10 # goob # goob - traitor suicide implants # RW-Edit: 20 > 10
   categories:
     - UplinkImplants
   #Goobstation
@@ -1800,7 +1800,7 @@
   description: uplink-holster-desc
   productEntity: ClothingBeltSyndieHolster
   cost:
-    Telecrystal: 2 # goob - holster rework # Orion-Edit: 8 > 2
+    Telecrystal: 2 # goob - holster rework # RW-Edit: 8 > 2
   categories:
   - UplinkWearables
 
@@ -1860,7 +1860,7 @@
   description: uplink-clothing-outer-vest-web-desc
   productEntity: ClothingOuterVestWeb
   cost:
-    Telecrystal: 24 # goob # Orion-Edit: 15 > 24
+    Telecrystal: 24 # goob # RW-Edit: 15 > 24
   categories:
   - UplinkWearables
 
@@ -1871,7 +1871,7 @@
   description: uplink-clothing-outer-vest-web-elite-desc
   productEntity: ClothingOuterVestWebElite
   cost:
-    Telecrystal: 29 # goob # Orion-Edit: 25 > 29
+    Telecrystal: 29 # goob # RW-Edit: 25 > 29
   categories:
   - UplinkWearables
 
@@ -1893,7 +1893,7 @@
   icon: { sprite: /Textures/Clothing/OuterClothing/Suits/eva_syndicate.rsi, state: icon }
   productEntity: ClothingBackpackDuffelSyndicateEVABundle
   cost:
-    Telecrystal: 10 # goob - Meh protection no slowdown. Can definitely take a hit or two extra however. # Orion-Edit: 20 > 10
+    Telecrystal: 10 # goob - Meh protection no slowdown. Can definitely take a hit or two extra however. # RW-Edit: 20 > 10
   categories:
   - UplinkWearables
 
@@ -1941,7 +1941,7 @@
   icon: { sprite: /Textures/Clothing/OuterClothing/Armor/syndie-raid.rsi, state: icon }
   productEntity: ClothingBackpackSyndicateRaidBundle
   cost:
-    Telecrystal: 60 # goob # Orion-Edit: 50 > 60
+    Telecrystal: 60 # goob # RW-Edit: 50 > 60
   categories:
   - UplinkWearables
   conditions:
@@ -2085,7 +2085,7 @@
   description: uplink-cat-ears-desc
   productEntity: ClothingHeadHatCatEars
   cost:
-    Telecrystal: 100 # goob # Orion-Edit: 130 > 100
+    Telecrystal: 100 # goob # RW-Edit: 130 > 100
   categories:
   - UplinkPointless
 

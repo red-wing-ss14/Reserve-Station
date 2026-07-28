@@ -59,7 +59,7 @@
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [Slime, Human]
-  minBoostyTier: 3 # Amour edit
+  minBoostyTier: 3 # RW edit
   coloring:
     default:
       type:
@@ -80,7 +80,7 @@
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [Slime, Human]
-  minBoostyTier: 3 # Amour edit
+  minBoostyTier: 3 # RW edit
   coloring:
     default:
       type:

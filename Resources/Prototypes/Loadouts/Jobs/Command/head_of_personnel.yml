@@ -64,7 +64,7 @@
   id: HoPMantle
   equipment:
     neck: ClothingNeckMantleHOP
-#  effects: # Orion-Edit: Removed
+#  effects: # RW-Edit: Removed
 #  - !type:GroupLoadoutEffect
 #    proto: MasterHoP
 

@@ -7,7 +7,7 @@ namespace Content.Server.Clock;
 
 public sealed class ClockSystem : SharedClockSystem
 {
-/* // Orion-Edit: Removed
+/* // RW-Edit: Removed
     [Dependency] private readonly PvsOverrideSystem _pvsOverride = default!;
     [Dependency] private readonly IRobustRandom _robustRandom = default!;
 */
@@ -17,14 +17,14 @@ public sealed class ClockSystem : SharedClockSystem
     {
         base.Initialize();
 
-/* // Orion-Edit: Removed
+/* // RW-Edit: Removed
         SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
         SubscribeLocalEvent<GlobalTimeManagerComponent, MapInitEvent>(OnMapInit);
 */
         SubscribeLocalEvent<ClockComponent, BreakageEventArgs>(OnBreak);
     }
 
-/* // Orion-Edit: Removed
+/* // RW-Edit: Removed
     private void OnRoundStart(RoundStartingEvent ev)
     {
         var manager = Spawn();

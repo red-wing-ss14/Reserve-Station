@@ -87,10 +87,10 @@
     sprite: _Goobstation/Clothing/Belt/judobelt.rsi
   - type: GrantCorporateJudo
   - type: Storage
-  # Orion-Start
+  # RW-Start
     grid:
     - 0,0,1,1
-  # Orion-End
+  # RW-End
     whitelist:
       tags:
       - CigPack
@@ -173,7 +173,7 @@
   - type: ItemSlots
     slots:
       item:
-        # name: Sabre # Orion-Edit: Localization
+        # name: Sabre # RW-Edit: Localization
         insertVerbText: sheath-insert-verb
         ejectVerbText: sheath-eject-verb
         insertSound: /Audio/Items/sheath.ogg
@@ -222,7 +222,7 @@
   - type: ItemSlots
     slots:
       item:
-        # name: Handgun # Orion-Edit: Localization
+        # name: Handgun # RW-Edit: Localization
         whitelist:
           tags:
           - Sidearm

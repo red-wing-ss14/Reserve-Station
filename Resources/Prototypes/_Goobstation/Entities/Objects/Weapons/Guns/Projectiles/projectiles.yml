@@ -22,7 +22,7 @@
     dropItems: true
   - type: BlurOnCollide
   - type: TimedDespawn
-    lifetime: 0.6 # Orion-Edit: 0.4 > 0.6
+    lifetime: 0.6 # RW-Edit: 0.4 > 0.6
   - type: Ammo
     muzzleFlash: null
   - type: Reflective
@@ -96,9 +96,9 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 45 # Orion-Edit: 35 > 45
-        Structural: 30 # Amour edit: 40 > 30; Orion
-      armorPenetration: 0.4 # Amour edit: 0.5 > 0.4
+        Piercing: 45 # RW-Edit: 35 > 45
+        Structural: 30 # RW edit: 40 > 30; Orion
+      armorPenetration: 0.4 # RW edit: 0.5 > 0.4
     penetrationThreshold: 50
 
 - type: entity
@@ -110,10 +110,10 @@
   - type: Projectile
     damage:
       types:
-        Heat: 5 # Orion-Edit: 1 > 5
+        Heat: 5 # RW-Edit: 1 > 5
         Blunt: 2
-        Piercing: 7 # Orion-Edit: 3 > 7
-        Structural: 20 # Orion
+        Piercing: 7 # RW-Edit: 3 > 7
+        Structural: 20 # RW
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: FireBombWeak # 1.3 firestacks
@@ -354,7 +354,7 @@
         hard: False
   - type: Ammo
   - type: StaminaDamageOnCollide
-    damage: 36 # Amour edit: 33 > 36
+    damage: 36 # RW edit: 33 > 36
   - type: Projectile
     impactEffect: BulletImpactEffectDisabler
     damage:
@@ -371,7 +371,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StaminaDamageOnCollide
-    damage: 24 # Amour edit: 27 > 24
+    damage: 24 # RW edit: 27 > 24
   - type: Projectile
     impactEffect: BulletImpactEffectDisabler
     damage:

@@ -6,7 +6,7 @@
     sprite: Objects/Consumable/Food/Baked/pizza.rsi
     state: margherita-slice
   product: CrateFoodPizza
-  cost: 2400 # Amour edit - 1600 > 2400
+  cost: 2400 # RW edit - 1600 > 2400
   category: cargoproduct-category-name-food
   group: market
 

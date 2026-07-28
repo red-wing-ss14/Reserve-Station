@@ -11,9 +11,9 @@
     sprite: _White/Clothing/Eyes/Goggles/nightvision.rsi
   - type: Clothing
     sprite: _White/Clothing/Eyes/Goggles/nightvision.rsi
-    equippedState: equipped-EYES-off # Orion
-  - type: Appearance # Orion
-  - type: ToggleableVisuals # Orion
+    equippedState: equipped-EYES-off # RW
+  - type: Appearance # RW
+  - type: ToggleableVisuals # RW
     spriteLayer: enum.ToggleableVisuals.Layer
     clothingVisuals:
       eyes:

@@ -33,7 +33,7 @@
   - type: RandomSpawner
     offset: 0
     prototypes:
-      # Orion-Start
+      # RW-Start
       - PosterContrabandInteQRecruitment
       - PosterContrabandInteQWorkship
       - PosterContrabandInteQWorkship2
@@ -44,7 +44,7 @@
       - PosterContrabandLustyXenomorph
       - PosterContrabandBustyBackdoorXenoBabes6
       - PosterContrabandBreadLies
-      # Orion-End
+      # RW-End
       - PosterContrabandFreeTonto
       - PosterContrabandAtmosiaDeclarationIndependence
       - PosterContrabandFunPolice
@@ -112,14 +112,14 @@
       - PosterContrabandGoobChuckler # Goobstation
       - PosterContrabandGoobYakub # Goobstation
       - PosterContrabandGoobRedFOSS # Goobstation
-    chance: 0.99 # Orion-Edit: 1 > 0.99
-    # Orion-Start
+    chance: 0.99 # RW-Edit: 1 > 0.99
+    # RW-Start
     rarePrototypes:
       - FlagCoder
       - FlagSyndicate
       - FlagInteQ
     rareChance: 0.01
-    # Orion-End
+    # RW-End
 
 - type: entity
   parent: MarkerBase
@@ -134,7 +134,7 @@
   - type: RandomSpawner
     offset: 0
     prototypes:
-      # Orion-Start
+      # RW-Start
       - PosterLegitBarDrinks
       - PosterLegitBotanyFood
       - PosterLegitHotDonkExplosion
@@ -155,7 +155,7 @@
       - PosterLegitUnitedEarthGovernment11
       - PosterLegitUnitedEarthGovernment12
       - PosterLegitUnitedEarthGovernment13
-      # Orion-End
+      # RW-End
       - PosterLegitHereForYourSafety
       - PosterLegitNanotrasenLogo
       - PosterLegitCleanliness
@@ -226,8 +226,8 @@
       - PosterLegitTyrone
       - PosterLegitHelio
       - PosterLegitBotanyFear
-    chance: 0.99 # Orion-Edit: 1 > 0.99
-    # Orion-Start
+    chance: 0.99 # RW-Edit: 1 > 0.99
+    # RW-Start
     rarePrototypes:
       - FlagAgurk
       - FlagGermanySolfed
@@ -245,4 +245,4 @@
       - FlagTizira
       - FlagVulp
     rareChance: 0.01
-    # Orion-End
+    # RW-End

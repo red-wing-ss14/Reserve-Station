@@ -16,7 +16,7 @@ public sealed partial class GhostGui : UIWidget
     public event Action? RequestWarpsPressed;
     public event Action? ReturnToBodyPressed;
     public event Action? GhostRolesPressed;
-    public event Action? ReturnToRoundPressed; // Orion
+    public event Action? ReturnToRoundPressed; // RW
     public event Action? ThunderdomePressed; // Goobstation - Thunderdome
     private int _prevNumberRoles;
 
@@ -32,7 +32,7 @@ public sealed partial class GhostGui : UIWidget
         ReturnToBodyButton.OnPressed += _ => ReturnToBodyPressed?.Invoke();
         GhostRolesButton.OnPressed += _ => GhostRolesPressed?.Invoke();
         GhostRolesButton.OnPressed += _ => GhostRolesButton.StyleClasses.Remove(StyleClass.Negative);
-        ReturnToRound.OnPressed += _ => ReturnToRoundPressed?.Invoke(); // Orion
+        ReturnToRound.OnPressed += _ => ReturnToRoundPressed?.Invoke(); // RW
         ThunderdomeButton.OnPressed += _ => ThunderdomePressed?.Invoke(); // Goobstation - Thunderdome
     }
 

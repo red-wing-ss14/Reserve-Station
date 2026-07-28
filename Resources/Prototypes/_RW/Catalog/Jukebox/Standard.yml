@@ -1,0 +1,65 @@
+- type: jukebox
+  id: IReallyWantToStayAtYourHouse
+  name: Rosa Walton - I Really Want to Stay at Your House
+  path:
+    path: /Audio/_RW/Lobby/RosaWalton_IReallyWantToStayAtYourHouse.ogg
+
+- type: jukebox
+  id: SpaceShuttle
+  name: Эдипов Комплекс - Space Shuttle
+  path:
+    path: /Audio/_RW/Lobby/EdipovKompleks_SpaceShuttle.ogg
+
+- type: jukebox
+  id: Duvet
+  name: boa - Duvet
+  path:
+    path: /Audio/_RW/Lobby/boa_Duvet.ogg
+
+- type: jukebox
+  id: LoveIllumination
+  name: Franz Ferdinand - Love Illumination
+  path:
+    path: /Audio/_RW/Lobby/FranzFerdinand_LoveIllumination.ogg
+
+- type: jukebox
+  id: MoyaOborona
+  name: Егор Летов - Моя оборона
+  path:
+    path: /Audio/_RW/Lobby/EgorLetov_MoyaOborona.ogg
+  
+- type: jukebox
+  id: CynthoniOfFlames
+  name: Sewerslvt - Cynthoni of Flames
+  path:
+    path: /Audio/_RW/Lobby/Sewerslvt_CynthoniOfFlames.ogg
+
+- type: jukebox
+  id: BlissfulOverdose
+  name: Sewerslvt - Blissful Overdose
+  path:
+    path: /Audio/_RW/Lobby/Sewerslvt_BlissfulOverdose.ogg
+
+- type: jukebox
+  id: CyberiaLyr1
+  name: Sewerslvt - Cyberia lyr1
+  path:
+    path: /Audio/_RW/Lobby/Sewerslvt_CyberiaLyr1.ogg
+
+- type: jukebox
+  id: JvnkoStillLovesYou
+  name: Sewerslvt - Jvnko Still Loves You
+  path:
+    path: /Audio/_RW/Lobby/Sewerslvt_JvnkoStillLovesYou.ogg
+
+- type: jukebox
+  id: SickTwistedDemented
+  name: Sewerslvt - Sick, Twisted, Demented
+  path:
+    path: /Audio/_RW/Lobby/Sewerslvt_SickTwistedDemented.ogg
+
+- type: jukebox
+  id: Whatever
+  name: Sewerslvt - Whatever
+  path:
+    path: /Audio/_RW/Lobby/Sewerslvt_Whatever.ogg

@@ -310,7 +310,7 @@ public sealed partial class ZombieSystem
         _inventory.TryUnequip(target, "gloves", true, true);
         //Should prevent instances of zombies using comms for information they shouldnt be able to have.
         _inventory.TryUnequip(target, "ears", true, true);
-        _inventory.TryUnequip(target, "earsright", true, true); // Orion
+        _inventory.TryUnequip(target, "earsright", true, true); // RW
 
         //popup
         _popup.PopupEntity(Loc.GetString("zombie-transform", ("target", target)), target, PopupType.LargeCaution);

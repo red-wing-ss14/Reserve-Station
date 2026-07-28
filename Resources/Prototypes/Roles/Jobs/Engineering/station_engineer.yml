@@ -14,10 +14,10 @@
   supervisors: job-supervisors-ce
   guides: [ Engineering ] # goobstation
   goobcoins: 20 #Goob content
-  # Orion-Start
+  # RW-Start
   salary: 80
   payrollDepartmentAccount: Engineering
-  # Orion-End
+  # RW-End
   access:
   - Maintenance
   - Engineering
@@ -32,7 +32,7 @@
 - type: startingGear
   id: StationEngineerGear
   equipment:
-#    eyes: ClothingEyesGlassesMeson # Orion-Edit: In loadout
+#    eyes: ClothingEyesGlassesMeson # RW-Edit: In loadout
     belt: ClothingBeltUtilityEngineering
     ears: ClothingHeadsetEngineering
   #storage:

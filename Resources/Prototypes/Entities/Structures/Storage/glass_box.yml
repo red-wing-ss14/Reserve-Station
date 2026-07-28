@@ -149,7 +149,7 @@
 
 - type: entity
   id: GlassBoxLaserFilled
-  parent: [ GlassBoxLaser, AlertLevelLockCC ] # Orion-Enit: Added AlertLevelLockCC
+  parent: [ GlassBoxLaser, AlertLevelLockCC ] # RW-Enit: Added AlertLevelLockCC
   suffix: AntiqueLaser, Filled
   components:
   - type: ContainerFill

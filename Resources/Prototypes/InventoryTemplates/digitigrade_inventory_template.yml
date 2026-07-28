@@ -39,16 +39,16 @@
       slotTexture: glasses
       slotFlags: EYES
       stripTime: 3
-      uiWindowPos: 2,2 # Orion-Edit
-      strippingWindowPos: 2,1 # Orion-Edit
+      uiWindowPos: 2,2 # RW-Edit
+      strippingWindowPos: 2,1 # RW-Edit
       displayName: Eyes
     - name: ears
       slotTexture: ears
       slotFlags: EARS
       stripTime: 3
-      uiWindowPos: 2,3 # Orion-Edit
-      strippingWindowPos: 2,0 # Orion-Edit
-      displayName: Left Ear # Orion-Edit: Renamed
+      uiWindowPos: 2,3 # RW-Edit
+      strippingWindowPos: 2,0 # RW-Edit
+      displayName: Left Ear # RW-Edit: Renamed
     - name: head
       slotTexture: head
       slotFlags: HEAD
@@ -109,7 +109,7 @@
       uiWindowPos: 3,0
       strippingWindowPos: 0,5
       displayName: Back
-    # Orion-Start
+    # RW-Start
     - name: earsright
       slotTexture: ears_right
       fullTextureName: template_small
@@ -155,4 +155,4 @@
       strippingWindowPos: 3,4
       displayName: Wrists
       stripTime: 3
-    # Orion-End
+    # RW-End

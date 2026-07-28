@@ -5,18 +5,18 @@ namespace Content.Server.Research.Components;
 [RegisterComponent]
 public sealed partial class ResearchPointSourceComponent : Component
 {
-    // Orion-Start
+    // RW-Start
     [DataField]
     public string PointType = "General";
-    // Orion-End
+    // RW-End
 
     [DataField("pointspersecond"), ViewVariables(VVAccess.ReadWrite)]
     public int PointsPerSecond;
 
-    // Orion-Start
+    // RW-Start
     [DataField]
     public string? RequiredInfrastructure;
-    // Orion-End
+    // RW-End
 
     [DataField("active"), ViewVariables(VVAccess.ReadWrite)]
     public bool Active;

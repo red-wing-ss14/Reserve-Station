@@ -172,11 +172,11 @@ public sealed class DamageOverlay : Overlay
             _oldPainLevel = PainLevel;
         }
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         level = State is MobState.SoftCritical or MobState.HardCritical
             ? 1f
             : _oldOxygenLevel;
-        // Orion-Edit-End
+        // RW-Edit-End
 
         if (level > 0f)
         {

@@ -135,7 +135,7 @@
   - type: EntityStorageVisuals
     stateBaseClosed: generic
     stateDoorOpen: generic_open
-    stateDoorClosed: sec_wardrobe_door # Orion-Edit
+    stateDoorClosed: sec_wardrobe_door # RW-Edit
 
 - type: entity
   id: WardrobeAtmospherics
@@ -153,7 +153,7 @@
   parent: WardrobeMixed
   name: custodial closet
   description: It's a storage unit for janitorial clothes and gear.
-  components: # Orion
+  components: # RW
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: generic
@@ -165,7 +165,7 @@
   parent: WardrobeBlack
   name: formal closet
   description: It's a storage unit for formal clothing.
-  components: # Orion
+  components: # RW
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: generic
@@ -177,7 +177,7 @@
   parent: WardrobeBlack
   name: chef's closet
   description: It's a storage unit for foodservice garments and mouse traps.
-  components: # Orion
+  components: # RW
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: generic
@@ -189,7 +189,7 @@
   parent: WardrobeBlack
   name: chaplain's wardrobe
   description: It's a storage unit for Nanotrasen-approved religious attire.
-  components: # Orion
+  components: # RW
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: generic
@@ -201,7 +201,7 @@
   parent: WardrobeBlue
   name: legal closet
   description: It's a storage unit for courtroom apparel and items.
-  components: # Orion
+  components: # RW
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: generic
@@ -212,7 +212,7 @@
   id: WardrobeCargo
   parent: WardrobePrison
   name: cargo wardrobe
-  components: # Orion
+  components: # RW
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: generic
@@ -224,7 +224,7 @@
   parent: WardrobeMixed
   name: salvage wardrobe
   description: Notably not salvaged.
-  components: # Orion
+  components: # RW
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: generic
@@ -235,7 +235,7 @@
   id: WardrobeEngineering
   parent: WardrobeYellow
   name: engineering wardrobe
-  components: # Orion
+  components: # RW
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: generic
@@ -246,7 +246,7 @@
   id: WardrobeMedicalDoctor
   parent: WardrobeWhite
   name: medical doctor's wardrobe
-  components: # Orion
+  components: # RW
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: generic
@@ -257,7 +257,7 @@
   id: WardrobeRobotics
   parent: WardrobeBlack
   name: robotics wardrobe
-  components: # Orion
+  components: # RW
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: generic
@@ -268,7 +268,7 @@
   id: WardrobeChemistry
   parent: WardrobeWhite
   name: chemistry wardrobe
-  components: # Orion
+  components: # RW
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: generic
@@ -279,7 +279,7 @@
   id: WardrobeGenetics
   parent: WardrobeWhite
   name: genetics wardrobe
-  components: # Orion
+  components: # RW
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: generic
@@ -290,7 +290,7 @@
   id: WardrobeVirology
   parent: WardrobeWhite
   name: virology wardrobe
-  components: # Orion
+  components: # RW
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: generic
@@ -301,7 +301,7 @@
   id: WardrobeScience
   parent: WardrobeWhite
   name: science wardrobe
-  components: # Orion
+  components: # RW
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: generic

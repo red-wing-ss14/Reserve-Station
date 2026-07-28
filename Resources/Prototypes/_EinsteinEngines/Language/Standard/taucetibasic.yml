@@ -2,11 +2,11 @@
 # Previously known as GalacticCommon, assume any reference is to this.
 - type: language
   id: TauCetiBasic
-  # Orion-Start
+  # RW-Start
   icon:
-    sprite: _Orion/Interface/Chat/language.rsi
+    sprite: _RW/Interface/Chat/language.rsi
     state: galcom
-  # Orion-End
+  # RW-End
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1

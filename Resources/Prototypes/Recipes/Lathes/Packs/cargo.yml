@@ -25,17 +25,17 @@
   - MineralScannerEmpty
   - AdvancedMineralScannerEmpty
   - OreBagOfHolding
-  # Orion-Start
+  # RW-Start
   - MarkerBeacon
-  # Orion-End
+  # RW-End
 
 - type: latheRecipePack
   id: CargoBoards
   recipes:
-#  - OreProcessorIndustrialMachineCircuitboard # Orion-Edit: Redundant
+#  - OreProcessorIndustrialMachineCircuitboard # RW-Edit: Redundant
   - CargoTelepadMachineCircuitboard
   #- ShuttleGunKineticCircuitboard - Goobstation - Moved to MiningBoards
-  # Orion-Start
+  # RW-Start
   - CargoRequestComputerCircuitboard
   - CargoBountyComputerCircuitboard
   - MaterialSiloMachineCircuitboard
@@ -43,4 +43,4 @@
   - QuantumServerMachineCircuitboard
   - NetpodMachineCircuitboard
   - ByteforgeMachineCircuitboard
-  # Orion-End
+  # RW-End

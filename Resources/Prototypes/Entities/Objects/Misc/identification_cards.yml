@@ -167,14 +167,14 @@
     storedRotation: -90
   - type: Access
   - type: IdCard
-  # Orion-Start
+  # RW-Start
   - type: ActivatableUI
     key: enum.EconomyCardUiKey.Key
   - type: UserInterface
     interfaces:
       enum.EconomyCardUiKey.Key:
         type: EconomyCardBoundUserInterface
-  # Orion-End
+  # RW-End
   - type: StationRecordKeyStorage
   - type: Tag
     tags:
@@ -184,7 +184,7 @@
   - type: StealTarget
     stealGroup: IDCard
   - type: MiningPoints # DeltaV
-  - type: BitrunningPoints # Orion
+  - type: BitrunningPoints # RW
   - type: NanoChatCard # DeltaV
   # Goobstation edit start
   - type: EmitSoundOnPickup
@@ -1076,10 +1076,10 @@
     groups:
     - AllAccess
     - Silicon
-    # Orion-Start
+    # RW-Start
     - InteQ
     - UnitedEarthGovernment
-    # Orion-End
+    # RW-End
     tags:
     - CentralCommand
     - NuclearOperative

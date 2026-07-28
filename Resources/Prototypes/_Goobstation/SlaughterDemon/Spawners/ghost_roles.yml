@@ -12,7 +12,7 @@
     mindRoles:
     - MindRoleGhostRoleSoloAntagonist
     requirements:
-      - !type:DiscordLinkRequirement # Amour edit
+      - !type:DiscordLinkRequirement # RW edit
     raffle:
       settings: default
   - type: Sprite
@@ -31,6 +31,6 @@
     mindRoles:
     - MindRoleGhostRoleSoloAntagonist
     requirements:
-      - !type:DiscordLinkRequirement # Amour edit
+      - !type:DiscordLinkRequirement # RW edit
     raffle:
       settings: default

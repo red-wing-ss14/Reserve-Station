@@ -21,7 +21,7 @@
         amount: -0.1
       - !type:ModifyBloodLevel
         amount: 0.25 #GOOBEND
-      - !type:ChemAddMoodlet # Orion
+      - !type:ChemAddMoodlet # RW
         moodPrototype: TastyEffect
   plantMetabolism:
   - !type:PlantAdjustNutrition
@@ -102,11 +102,11 @@
           reagent: Nutriment
           min: 0.1
         factor: 1
-      - !type:GenericStatusEffect # Orion
+      - !type:GenericStatusEffect # RW
         key: CorticalBorerProtection
         type: Add
         time: 3 # May be too much, needs testing
-      - !type:ChemAddMoodlet # Orion
+      - !type:ChemAddMoodlet # RW
         moodPrototype: SweetenerEffect
   plantMetabolism:
   - !type:PlantAdjustNutrition

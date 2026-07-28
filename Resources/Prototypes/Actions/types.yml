@@ -135,7 +135,7 @@
   name: Break Free
   description: Activating your freedom implant will free you from any hand restraints
   components:
-  - type: LimitedCharges # Orion
+  - type: LimitedCharges # RW
     maxCharges: 6 # Also was 3
   - type: Action
     useDelay: 10 # Goob - useful freedom

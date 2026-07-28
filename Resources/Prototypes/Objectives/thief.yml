@@ -99,18 +99,18 @@
     difficulty: 1.5
 
 - type: entity
-  parent: BaseThiefObjective # Orion-Edit
+  parent: BaseThiefObjective # RW-Edit
   id: TechnologyDiskStealCollectionObjective
   components:
   - type: NotJobRequirement
     jobs: [ Scientist ]
-  # Orion-Start
+  # RW-Start
   - type: ResearchDiskCondition
     minTechnologyCount: 5
     maxTechnologyCount: 15
     objectiveText: objective-condition-research-disk-title
     descriptionText: objective-condition-research-disk-description
-  # Orion-End
+  # RW-End
   - type: Objective
     difficulty: 0.8
 

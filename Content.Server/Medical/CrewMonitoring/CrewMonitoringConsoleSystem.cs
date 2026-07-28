@@ -29,13 +29,13 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
 {
     [Dependency] private readonly PowerCellSystem _cell = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
-    // Orion-Start
+    // RW-Start
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly SharedPointLightSystem _light = default!;
     [Dependency] private readonly ContainerSystem _containerSystem = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
-    // Orion-End
+    // RW-End
 
     public override void Initialize()
     {
@@ -43,10 +43,10 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
         SubscribeLocalEvent<CrewMonitoringConsoleComponent, ComponentRemove>(OnRemove);
         SubscribeLocalEvent<CrewMonitoringConsoleComponent, DeviceNetworkPacketEvent>(OnPacketReceived);
         SubscribeLocalEvent<CrewMonitoringConsoleComponent, BoundUIOpenedEvent>(OnUIOpened);
-        SubscribeLocalEvent<CrewMonitoringConsoleComponent, GotEmaggedEvent>(OnEmagged); // Orion
+        SubscribeLocalEvent<CrewMonitoringConsoleComponent, GotEmaggedEvent>(OnEmagged); // RW
     }
 
-    // Orion-Start
+    // RW-Start
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -149,7 +149,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
 
         return false;
     }
-    // Orion-End
+    // RW-End
 
     private void OnRemove(EntityUid uid, CrewMonitoringConsoleComponent component, ComponentRemove args)
     {
@@ -197,7 +197,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
             EnsureComp<NavMapComponent>(xform.GridUid.Value);
 
         // Update all sensors info
-        // Orion-Start: Filtering by departments
+        // RW-Start: Filtering by departments
         var allSensors = component.ConnectedSensors.Values.ToList();
 
         if (component.Departments.Count > 0)
@@ -254,24 +254,24 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
                 })
                 .ToList();
         }
-        // Orion-End
+        // RW-End
         // GoobStation - Start
         var isCommandOnly = HasComp<CrewMonitorScanningComponent>(uid);
 
-        // Orion-Edit-Start: use allSensors (already department-filtered) instead of ConnectedSensors
+        // RW-Edit-Start: use allSensors (already department-filtered) instead of ConnectedSensors
         var filteredSensors = allSensors
             .Where(s => isCommandOnly
                 ? s.IsCommandTracker
                 : !s.IsCommandTracker)
             .ToList();
         _uiSystem.SetUiState(uid, CrewMonitoringUIKey.Key, new CrewMonitoringState(filteredSensors, effectiveIsEmagged));
-        // Orion-Edit-End
+        // RW-Edit-End
         // GoobStation - End
         //var allSensors = component.ConnectedSensors.Values.ToList();
         //_uiSystem.SetUiState(uid, CrewMonitoringUIKey.Key, new CrewMonitoringState(allSensors));
     }
 
-    // Orion-Start
+    // RW-Start
     private void OnEmagged(EntityUid uid, CrewMonitoringConsoleComponent component, ref GotEmaggedEvent ev)
     {
         var temporaryEmagged = component.EmagExpireTime is { } expireAt && _gameTiming.CurTime < expireAt;
@@ -287,5 +287,5 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
         UpdateUserInterface(uid, component);
         ev.Handled = true;
     }
-    // Orion-End
+    // RW-End
 }

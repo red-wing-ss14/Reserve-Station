@@ -1,0 +1,137 @@
+# Base
+- type: entity
+  parent: [ BaseItem, BaseCentcommContraband ]
+  id: BasePowerpackRifle
+  name: powerpack (.10 rifle)
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _RW/Clothing/Back/Powerpacks/backpack.rsi
+    layers:
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    size: Ginormous
+  - type: Clothing
+    slots:
+    - Back
+    sprite: _RW/Clothing/Back/Powerpacks/backpack.rsi
+    equipDelay: 6
+    unequipDelay: 6
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    capacity: 5000
+  - type: ClothingSpeedModifier
+    sprintModifier: 0.6
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+      item: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      item:
+        priority: 2
+        startingItem: WeaponMinigun100
+        whitelist:
+          tags:
+          - SlotMinigun
+  - type: Tag
+    tags:
+      - PowerpackRifle
+  - type: StaticPrice
+    price: 8000
+  - type: Appearance
+  - type: UseDelay
+    delay: 1.5
+  - type: UseDelayBlockShoot
+
+- type: entity
+  parent: [ BaseItem, BaseCentcommContraband ]
+  id: BasePowerpackEnergy
+  name: powerpack (pulse)
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _RW/Clothing/Back/Powerpacks/powerpackenergy.rsi
+    layers:
+    - state: icon
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    size: Ginormous
+  - type: Clothing
+    slots:
+    - Back
+    sprite: _RW/Clothing/Back/Powerpacks/powerpackenergy.rsi
+    equipDelay: 2.5
+    unequipDelay: 2.5
+  - type: PowerCell
+  - type: Battery
+    maxCharge: 500000
+    startingCharge: 500000
+  - type: BatteryAmmoProvider
+    fireCost: 100
+  - type: ClothingSpeedModifier
+    sprintModifier: 0.8
+  - type: ContainerContainer
+    containers:
+      item: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      item:
+        priority: 2
+        startingItem: WeaponMinigunPulse
+        whitelist:
+          tags:
+          - SlotMinigunEnergy
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: false
+  - type: Appearance
+  - type: Tag
+    tags:
+      - PowerpackEnergy
+  - type: StaticPrice
+    price: 8000
+  - type: UseDelay
+    delay: 0.5
+  - type: UseDelayBlockShoot
+
+# Fills
+- type: entity
+  parent: BasePowerpackRifle
+  id: PowerpackRifle10
+  name: powerpack (.10 rifle)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeMinigun
+    whitelist:
+      tags:
+        - CartridgeHeavyRifle
+
+- type: entity
+  parent: BasePowerpackRifle
+  id: PowerpackRifle15
+  name: powerpack (.15 rifle)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeHeavyMinigun
+    whitelist:
+      tags:
+        - CartridgeHeavyRifle
+
+- type: entity
+  parent: BasePowerpackEnergy
+  id: PowerpackEnergyPulse
+  name: powerpack (pulse)
+  components:
+  - type: BatteryAmmoProvider
+    proto: Pulse

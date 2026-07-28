@@ -11,7 +11,7 @@ namespace Content.Shared.Anomaly.Components;
 /// <summary>
 /// This component exists for a limited time, and after it expires it modifies the entity, greatly reducing its value and changing its visuals
 /// </summary>
-[RegisterComponent, NetworkedComponent, Access(typeof(SharedAnomalyCoreSystem), typeof(SharedAnomalySystem))] // Orion-Edit: Added SharedAnomalySystem
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedAnomalyCoreSystem), typeof(SharedAnomalySystem))] // RW-Edit: Added SharedAnomalySystem
 [AutoGenerateComponentState]
 public sealed partial class AnomalyCoreComponent : Component
 {
@@ -55,7 +55,7 @@ public sealed partial class AnomalyCoreComponent : Component
     [AutoNetworkedField]
     public int Charge = 5;
 
-    // Orion-Start
+    // RW-Start
     /// <summary>
     /// Prototype used when this core becomes inert.
     /// </summary>
@@ -94,5 +94,5 @@ public sealed partial class AnomalyCoreComponent : Component
 
     [DataField]
     public float HazardousFailureChance = 0.65f;
-    // Orion-End
+    // RW-End
 }

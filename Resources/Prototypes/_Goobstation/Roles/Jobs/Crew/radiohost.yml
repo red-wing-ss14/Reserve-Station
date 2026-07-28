@@ -6,10 +6,10 @@
   startingGear: RadioHostGear
   icon: "JobIconRadioHost"
   supervisors: job-supervisors-hop
-  # Orion-Start
+  # RW-Start
   salary: 40
   payrollDepartmentAccount: Service
-  # Orion-End
+  # RW-End
   access:
   - Maintenance
   - Journalism

@@ -4,11 +4,11 @@
 # style of Chat, and is not normally accessible by players.
 - type: language
   id: Universal
-  # Orion-Start
+  # RW-Start
   icon:
-    sprite: _Orion/Interface/Chat/language.rsi
+    sprite: _RW/Interface/Chat/language.rsi
     state: popcorn
-  # Orion-End
+  # RW-End
   obfuscation:
     !type:ReplacementObfuscation
     replacement:
@@ -20,13 +20,13 @@
   id: RobotTalk
   isVisibleLanguage: true
   speech:
-    fontId: RobotoLight # Orion-Edit
-    boldFontId: RobotoBoldCondensed # Orion-Edit
-  # Orion-Start
+    fontId: RobotoLight # RW-Edit
+    boldFontId: RobotoBoldCondensed # RW-Edit
+  # RW-Start
   icon:
-    sprite: _Orion/Interface/Chat/language.rsi
+    sprite: _RW/Interface/Chat/language.rsi
     state: eal
-  # Orion-End
+  # RW-End
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -40,13 +40,13 @@
   id: DroneTalk
   isVisibleLanguage: true
   speech:
-    fontId: RobotoLight # Orion-Edit
-    boldFontId: RobotoBoldCondensed # Orion-Edit
-  # Orion-Start
+    fontId: RobotoLight # RW-Edit
+    boldFontId: RobotoBoldCondensed # RW-Edit
+  # RW-Start
   icon:
-    sprite: _Orion/Interface/Chat/language.rsi
+    sprite: _RW/Interface/Chat/language.rsi
     state: drone
-  # Orion-End
+  # RW-End
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -325,29 +325,29 @@
     - chat-speech-verb-sign-1
     - chat-speech-verb-sign-2
     - chat-speech-verb-sign-3
-  # Orion-Start
+  # RW-Start
   icon:
-    sprite: _Orion/Interface/Chat/language.rsi
+    sprite: _RW/Interface/Chat/language.rsi
     state: ssl
-  # Orion-End
+  # RW-End
   obfuscation:
     !type:ReplacementObfuscation
-    # Orion-Edit-Start: Localization
+    # RW-Edit-Start: Localization
     replacement:
     - что-то
     - непонятное сообщение
     - сигнал
     - сообщение
-    # Orion-Edit-End: Localization
+    # RW-Edit-End: Localization
 
     #Used for Xenoglossy, and anything else with the UniversalLanguageSpeaker component
 - type: language
   id: Psychomantic
-  # Orion-Start
+  # RW-Start
   icon:
-    sprite: _Orion/Interface/Chat/language.rsi
+    sprite: _RW/Interface/Chat/language.rsi
     state: popcorn
-  # Orion-End
+  # RW-End
   speech:
     color: "#C29EFF" # a nice psychic purple, a bit lighter than Ya'ssa
     # fontId: Megrim # Experimental and alien, but still hopefully clean enough to read #* FONTS NOT ALREADY HERE ARE NOT BEING ADDED

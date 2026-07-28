@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.Research;
-using Content.Shared._Orion.Research;
+using Content.Shared._RW.Research;
 using Content.Shared.Research.Prototypes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -40,7 +40,7 @@ namespace Content.Shared.Research.Components
         /// Goobstation field - all researches and their availablities
         /// </summary>
         public Dictionary<string, ResearchAvailability> Researches;
-        // Orion-Start
+        // RW-Start
         public List<ProtoId<TechnologyPrototype>> VisibleTechnologies;
         public List<ProtoId<TechnologyPrototype>> AvailableTechnologies;
         public List<ProtoId<TechnologyPrototype>> ResearchedTechnologies;
@@ -50,9 +50,9 @@ namespace Content.Shared.Research.Components
         public string NetworkId;
         public List<ResearchPointAmount> PointBalances;
         public List<ResearchLogEntry> Logs;
-        // Orion-End
+        // RW-End
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         public ResearchConsoleBoundInterfaceState(
             int points,
             Dictionary<string, ResearchAvailability> researches,
@@ -65,11 +65,11 @@ namespace Content.Shared.Research.Components
             string networkId,
             List<ResearchPointAmount> pointBalances,
             List<ResearchLogEntry> logs) // Goobstation R&D console rework = researches field
-        // Orion-Edit-End
+        // RW-Edit-End
         {
             Points = points;
             Researches = researches;    // Goobstation R&D console rework
-            // Orion-Start
+            // RW-Start
             VisibleTechnologies = visibleTechnologies;
             AvailableTechnologies = availableTechnologies;
             ResearchedTechnologies = researchedTechnologies;
@@ -79,10 +79,10 @@ namespace Content.Shared.Research.Components
             NetworkId = networkId;
             PointBalances = pointBalances;
             Logs = logs;
-            // Orion-End
+            // RW-End
         }
     }
-    // Orion-Start
+    // RW-Start
     [Serializable, NetSerializable]
     public sealed class ResearchConsoleExperimentData
     {
@@ -99,5 +99,5 @@ namespace Content.Shared.Research.Components
             State = state;
         }
     }
-    // Orion-End
+    // RW-End
 }

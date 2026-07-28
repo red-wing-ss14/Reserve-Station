@@ -113,11 +113,11 @@
   - type: Clothing
     slots: [innerclothing]
     femaleMask: UniformTop
-  # Orion-Start
+  # RW-Start
   - type: SlotBlock
     blockList: [ UNDERSHIRT ]
     hideList: [ UNDERWEAR ]
-  # Orion-End
+  # RW-End
   # RW start
   - type: Stainable
     clothingVisuals:
@@ -142,10 +142,10 @@
   parent: UnsensoredClothingUniformBase
   id: ClothingUniformBase
   components:
-  # Orion-Start
+  # RW-Start
   - type: SlotBlock
     blockList: [ UNDERSHIRT, UNDERWEAR ]
-  # Orion-End
+  # RW-End
   - type: SuitSensor
   - type: DeviceNetwork
     deviceNetId: Wireless
@@ -167,11 +167,11 @@
   - type: Clothing
     slots: [innerclothing]
     femaleMask: UniformTop
-  # Orion-Start
+  # RW-Start
   - type: SlotBlock
     blockList: [ UNDERSHIRT ]
     hideList: [ UNDERWEAR ]
-  # Orion-End
+  # RW-End
   - type: Tag
     tags:
     - Skirt

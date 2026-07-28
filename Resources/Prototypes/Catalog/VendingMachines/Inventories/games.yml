@@ -19,7 +19,7 @@
     MysteryFigureBox: 2
     BooksBag: 3
     CardBoxBlack: 3 # GoobStation
-    PokerChipsBox: 1 # Orion
+    PokerChipsBox: 1 # RW
 #    PokerChips100: 6 # GoobStation | Orion-Edit: Duplicate
     BoxPlaysetEvacPod: 1 # RW edit
   contrabandInventory:

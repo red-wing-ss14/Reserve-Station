@@ -21,10 +21,10 @@
   - type: AmmoCounter
   - type: Gun
     minAngle: 2
-    maxAngle: 13 # Orion-Edit: 16 > 13
+    maxAngle: 13 # RW-Edit: 16 > 13
     fireRate: 8
     burstFireRate: 8
-    angleIncrease: 2 # Orion-Edit: 3 > 2
+    angleIncrease: 2 # RW-Edit: 3 > 2
     angleDecay: 16
     selectedMode: FullAuto
     availableModes:
@@ -32,8 +32,8 @@
     - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/smg.ogg
-    soundEmpty: # Orion
-      path: /Audio/_Orion/Weapons/Guns/Rifles/rifle_empty.ogg
+    soundEmpty: # RW
+      path: /Audio/_RW/Weapons/Guns/Rifles/rifle_empty.ogg
     defaultDirection: 1, 0
   - type: ChamberMagazineAmmoProvider
     soundRack:
@@ -41,7 +41,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-#        name: Magazine # Orion-Edit: Localization
+#        name: Magazine # RW-Edit: Localization
         startingItem: MagazinePistolSubMachineGun
         insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
@@ -51,7 +51,7 @@
             - MagazinePistolSubMachineGun
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
-#        name: Chamber # Orion-Edit: Localization
+#        name: Chamber # RW-Edit: Localization
         startingItem: CartridgePistol
         priority: 1
         whitelist:
@@ -112,7 +112,7 @@
   - type: Gun
     fireRate: 10
     soundGunshot:
-      path: /Audio/_Orion/Weapons/Guns/SMGs/mp7.ogg # Orion-Edit: New sounds
+      path: /Audio/_RW/Weapons/Guns/SMGs/mp7.ogg # RW-Edit: New sounds
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -142,8 +142,8 @@
   - type: Gun
 #    minAngle: 21 # Base SMG already has minAngle: 2 maxAngle: 16
 #    maxAngle: 32 # Goob - one-handed C20R - end
-    maxAngle: 11 # Orion
-    angleIncrease: 1.5 # Orion
+    maxAngle: 11 # RW
+    angleIncrease: 1.5 # RW
     shotsPerBurst: 5
     availableModes:
     - Burst
@@ -225,25 +225,25 @@
       unwieldOnUse: false
     - type: GunWieldBonus
       minAngle: -19
-      maxAngle: -19 # Orion-Edit 16 > 19
+      maxAngle: -19 # RW-Edit 16 > 19
     - type: Gun
       minAngle: 21
-      maxAngle: 25 # Orion-Edit: 32 > 25
-      fireRate: 6.5 # Orion-Edit: 6 > 6.5
-      burstFireRate: 20 # Orion-Edit: 18 > 20
+      maxAngle: 25 # RW-Edit: 32 > 25
+      fireRate: 6.5 # RW-Edit: 6 > 6.5
+      burstFireRate: 20 # RW-Edit: 18 > 20
       soundGunshot:
-        path: /Audio/_Orion/Weapons/Guns/SMGs/mp7.ogg # Orion-Edit
+        path: /Audio/_RW/Weapons/Guns/SMGs/mp7.ogg # RW-Edit
       selectedMode: Burst
       availableModes:
       - Burst
       - FullAuto
       - SemiAuto
       shotsPerBurst: 3
-      burstCooldown: 0.35 # Orion-Edit: 0.375 > 0.35
+      burstCooldown: 0.35 # RW-Edit: 0.375 > 0.35
     - type: ItemSlots
       slots:
         gun_magazine:
-#        name: Magazine # Orion-Edit: Localization
+#        name: Magazine # RW-Edit: Localization
           startingItem: MagazinePistolSubMachineGun
           insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
@@ -253,7 +253,7 @@
               - MagazinePistolSubMachineGun
           whitelistFailPopup: gun-magazine-whitelist-fail
         gun_chamber:
-#        name: Chamber # Orion-Edit: Localization
+#        name: Chamber # RW-Edit: Localization
           startingItem: CartridgePistol
           priority: 1
           whitelist:
@@ -289,12 +289,12 @@
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
   - type: Gun # Goobstation - I am the one who nerfs the WT.
-    minAngle: 4 # Orion-Edit: 2 > 4
-    maxAngle: 14 # Orion-Edit: 16 > 14
-    fireRate: 5.5 # Orion-Edit: 5 > 5.5
+    minAngle: 4 # RW-Edit: 2 > 4
+    maxAngle: 14 # RW-Edit: 16 > 14
+    fireRate: 5.5 # RW-Edit: 5 > 5.5
     burstFireRate: 8
-    angleIncrease: 1 # Orion-Edit: 3 > 1
-    angleDecay: 14 # Orion-Edit: 16 > 14
+    angleIncrease: 1 # RW-Edit: 3 > 1
+    angleDecay: 14 # RW-Edit: 16 > 14
     selectedMode: FullAuto
     availableModes:
     - FullAuto
@@ -302,7 +302,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-#        name: Magazine # Orion-Edit: Localization
+#        name: Magazine # RW-Edit: Localization
         startingItem: MagazinePistolSubMachineGunTopMounted
         insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
@@ -312,7 +312,7 @@
             - MagazinePistolSubMachineGunTopMounted
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
-#        name: Chamber # Orion-Edit: Localization
+#        name: Chamber # RW-Edit: Localization
         startingItem: CartridgePistol
         priority: 1
         whitelist:

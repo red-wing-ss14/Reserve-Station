@@ -30,11 +30,11 @@
     soundEmpty:
       path: /Audio/_DV/Weapons/Guns/Empty/dry_fire.ogg
   - type: Battery
-    maxCharge: 5000 # Amour edit: 1500 > 5000
+    maxCharge: 5000 # RW edit: 1500 > 5000
     startingCharge: 1500
   - type: BatteryAmmoProvider
     proto: BulletDisabler
-    fireCost: 100 # Amour edit: 50 > 100
+    fireCost: 100 # RW edit: 50 > 100
   - type: AmmoSelector
     prototypes:
       - BulletDisabler

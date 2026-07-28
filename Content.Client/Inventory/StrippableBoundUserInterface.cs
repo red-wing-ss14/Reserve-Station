@@ -51,10 +51,10 @@ namespace Content.Client.Inventory
         [ViewVariables]
         public const string HiddenPocketEntityId = "StrippingHiddenEntity";
 
-        // Orion-Start
+        // RW-Start
         [ViewVariables]
         public const string BlockedSlotEntityId = "BlockedSlotEntity";
-        // Orion-End
+        // RW-End
 
         [ViewVariables]
         private StrippingMenu? _strippingMenu;
@@ -62,10 +62,10 @@ namespace Content.Client.Inventory
         [ViewVariables]
         private readonly EntityUid _virtualHiddenEntity;
 
-        // Orion-Start
+        // RW-Start
         [ViewVariables]
         private readonly EntityUid _virtualBlockedEntity;
-        // Orion-End
+        // RW-End
 
         /// <summary>
         /// The current amount of added hand buttons.
@@ -88,7 +88,7 @@ namespace Content.Client.Inventory
             _strippable = EntMan.System<StrippableSystem>();
 
             _virtualHiddenEntity = EntMan.SpawnEntity(HiddenPocketEntityId, MapCoordinates.Nullspace);
-            _virtualBlockedEntity = EntMan.SpawnEntity(BlockedSlotEntityId, MapCoordinates.Nullspace); // Orion
+            _virtualBlockedEntity = EntMan.SpawnEntity(BlockedSlotEntityId, MapCoordinates.Nullspace); // RW
         }
 
         protected override void Open()
@@ -109,7 +109,7 @@ namespace Content.Client.Inventory
                 _strippingMenu.OnDirty -= UpdateMenu;
 
             EntMan.DeleteEntity(_virtualHiddenEntity);
-            EntMan.DeleteEntity(_virtualBlockedEntity); // Orion
+            EntMan.DeleteEntity(_virtualBlockedEntity); // RW
             base.Dispose(disposing);
         }
 
@@ -273,7 +273,7 @@ namespace Content.Client.Inventory
             var button = new SlotButton(new SlotData(slotDef, container));
             button.Pressed += SlotPressed;
 
-            // Orion-Start
+            // RW-Start
             var (ignoreBlock, showAllItems) = _strippable.IsInventoryIgnored(_player.LocalEntity);
             if (!ignoreBlock && inv.BlockList.Contains(slotDef.SlotFlags))
             {
@@ -285,7 +285,7 @@ namespace Content.Client.Inventory
             {
                 entity = _virtualBlockedEntity;
             }
-            // Orion-End
+            // RW-End
 
             _strippingMenu!.InventoryContainer.AddChild(button);
 

@@ -26,8 +26,8 @@
 - type: latheRecipePack
   id: UpgradeKits
   recipes:
-#  - LatheUpgradeKitHyper # Orion-Edit: Redundant
-#  - LatheUpgradeKitCryo # Orion-Edit: Redundant
+#  - LatheUpgradeKitHyper # RW-Edit: Redundant
+#  - LatheUpgradeKitCryo # RW-Edit: Redundant
   - AutodocUpgradeKitBluespace
 
 - type: latheRecipePack

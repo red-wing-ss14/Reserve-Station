@@ -20,4 +20,4 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 6 # Orion-Edit: 5 > 6
+        Piercing: 6 # RW-Edit: 5 > 6

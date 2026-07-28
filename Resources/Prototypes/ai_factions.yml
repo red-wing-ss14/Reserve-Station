@@ -3,10 +3,10 @@
 - type: npcFaction
   id: Dragon
   hostile:
-    # Orion-Start
+    # RW-Start
     - InteQ
     - InteQHostile
-    # Orion-End
+    # RW-End
     - NanoTrasen
     - Syndicate
     - Xeno
@@ -27,9 +27,9 @@
 - type: npcFaction
   id: NanoTrasen
   hostile:
-  # Orion-Start
+  # RW-Start
   - InteQHostile
-  # Orion-End
+  # RW-End
   - SimpleHostile
   - Syndicate
   - Xeno
@@ -62,9 +62,9 @@
   - RWSecurityTurret
   # RW end
   hostile:
-  # Orion-Start
+  # RW-Start
   - InteQHostile
-  # Orion-End
+  # RW-End
   - Mouse
   - Balloon # Goob Balloon Edit - Pets can join the fight against the balloons
   - SimpleHostile
@@ -78,10 +78,10 @@
 - type: npcFaction
   id: SimpleHostile
   hostile:
-  # Orion-Start
+  # RW-Start
   - InteQ
   - InteQHostile
-  # Orion-End
+  # RW-End
   - NanoTrasen
   - Syndicate
   - Passive
@@ -108,9 +108,9 @@
 - type: npcFaction
   id: Syndicate
   hostile:
-  # Orion-Start
+  # RW-Start
   - InteQHostile
-  # Orion-End
+  # RW-End
   - NanoTrasen
   - SimpleHostile
   - Xeno
@@ -131,10 +131,10 @@
 - type: npcFaction
   id: Xeno
   hostile:
-  # Orion-Start
+  # RW-Start
   - InteQ
   - InteQHostile
-  # Orion-End
+  # RW-End
   - NanoTrasen
   - Syndicate
   - Passive
@@ -157,10 +157,10 @@
 - type: npcFaction
   id: Zombie
   hostile:
-  # Orion-Start
+  # RW-Start
   - InteQ
   - InteQHostile
-  # Orion-End
+  # RW-End
   - NanoTrasen
   - SimpleNeutral
   - SimpleHostile
@@ -183,10 +183,10 @@
 - type: npcFaction
   id: Revolutionary
   hostile:
-  # Orion-Start
+  # RW-Start
   - InteQ
   - InteQHostile
-  # Orion-End
+  # RW-End
   - NanoTrasen
   - Zombie
   - SimpleHostile
@@ -202,10 +202,10 @@
 - type: npcFaction
   id: AllHostile
   hostile:
-  # Orion-Start
+  # RW-Start
   - InteQ
   - InteQHostile
-  # Orion-End
+  # RW-End
   - NanoTrasen
   - Dragon
   - Mouse
@@ -240,10 +240,10 @@
   id: Xenoborg
   hostile:
   # they have brains
-  # Orion-Start
+  # RW-Start
   - InteQ
   - InteQHostile
-  # Orion-End
+  # RW-End
   - NanoTrasen
   - Syndicate
   - Zombie
@@ -262,10 +262,10 @@
 - type: npcFaction
   id: Wraith # Goobstation
   hostile:
-  # Orion-Start
+  # RW-Start
   - InteQ
   - InteQHostile
-  # Orion-End
+  # RW-End
   - NanoTrasen
   - Syndicate
   - Passive
@@ -290,10 +290,10 @@
 - type: npcFaction
   id: Lavafauna
   hostile:
-  # Orion-Start
+  # RW-Start
   - InteQ
   - InteQHostile
-  # Orion-End
+  # RW-End
   - NanoTrasen
   - Mouse
   - Passive

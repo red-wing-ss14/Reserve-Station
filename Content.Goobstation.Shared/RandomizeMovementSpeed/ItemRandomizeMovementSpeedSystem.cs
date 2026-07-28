@@ -22,32 +22,32 @@ public sealed class ItemRandomizeMovementSpeedSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<ItemRandomizeMovementspeedComponent, GotEquippedHandEvent>(OnGotEquippedHand);
-        // Orion-Start
+        // RW-Start
         SubscribeLocalEvent<ItemRandomizeMovementspeedComponent, GotUnequippedHandEvent>(OnGotUnequippedHand);
         SubscribeLocalEvent<ItemRandomizeMovementspeedComponent, DroppedEvent>(OnDropped);
         SubscribeLocalEvent<ItemRandomizeMovementspeedComponent, ComponentShutdown>(OnComponentShutdown);
-        // Orion-End
+        // RW-End
         SubscribeLocalEvent<ItemRandomizeMovementspeedComponent, HeldRelayedEvent<RefreshMovementSpeedModifiersEvent>>(OnRefreshMovementSpeedModifiers);
     }
 
     private void OnGotEquippedHand(EntityUid uid, ItemRandomizeMovementspeedComponent comp, GotEquippedHandEvent args)
     {
-        // Orion-Start
+        // RW-Start
         if (comp.Whitelist != null && !_whitelist.IsValid(comp.Whitelist, args.User))
             return;
-        // Orion-End
+        // RW-End
 
         comp.User = args.User;
-        // Orion-Start
+        // RW-Start
         comp.CurrentModifier = 1f;
         comp.TargetModifier = _random.NextFloat(comp.Min, comp.Max);
         comp.NextExecutionTime = _timing.CurTime + comp.ExecutionInterval;
         Dirty(uid, comp);
         _movementSpeedModifier.RefreshMovementSpeedModifiers(args.User);
-        // Orion-End
+        // RW-End
     }
 
-    // Orion-Start
+    // RW-Start
     private void OnGotUnequippedHand(EntityUid uid, ItemRandomizeMovementspeedComponent comp, GotUnequippedHandEvent args)
     {
         ClearUser(uid, comp, args.User);
@@ -63,14 +63,14 @@ public sealed class ItemRandomizeMovementSpeedSystem : EntitySystem
         if (comp.User is { } user)
             ClearUser(uid, comp, user);
     }
-    // Orion-End
+    // RW-End
 
     private void OnRefreshMovementSpeedModifiers(EntityUid uid, ItemRandomizeMovementspeedComponent comp, ref HeldRelayedEvent<RefreshMovementSpeedModifiersEvent> args)
     {
-        // Orion-Start
+        // RW-Start
         if (comp.User is not { } user || !CanAffectUser(uid, comp, user))
             return;
-        // Orion-End
+        // RW-End
 
         args.Args.ModifySpeed(comp.CurrentModifier);
     }
@@ -82,7 +82,7 @@ public sealed class ItemRandomizeMovementSpeedSystem : EntitySystem
         var query = EntityQueryEnumerator<ItemRandomizeMovementspeedComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
-            // Orion-Edit-Start
+            // RW-Edit-Start
             if (comp.User is not { } user)
                 continue;
 
@@ -107,11 +107,11 @@ public sealed class ItemRandomizeMovementSpeedSystem : EntitySystem
             comp.TargetModifier = _random.NextFloat(comp.Min, comp.Max);
             comp.NextExecutionTime = _timing.CurTime + comp.ExecutionInterval;
             Dirty(uid, comp);
-            // Orion-Edit-End
+            // RW-Edit-End
         }
     }
 
-    // Orion-Start
+    // RW-Start
     private bool CanAffectUser(EntityUid uid, ItemRandomizeMovementspeedComponent comp, EntityUid user)
     {
         if (!_hands.IsHolding(user, uid))
@@ -128,5 +128,5 @@ public sealed class ItemRandomizeMovementSpeedSystem : EntitySystem
         Dirty(uid, comp);
         _movementSpeedModifier.RefreshMovementSpeedModifiers(user);
     }
-    // Orion-End
+    // RW-End
 }

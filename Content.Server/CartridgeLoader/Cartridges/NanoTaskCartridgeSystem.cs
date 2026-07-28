@@ -64,7 +64,7 @@ public sealed class NanoTaskCartridgeSystem : SharedNanoTaskCartridgeSystem
         UpdateUiState(ent, args.Loader);
     }
 
-/* // Orion-Edit
+/* // RW-Edit
     private void SetupPrintedTask(EntityUid uid, NanoTaskItem item)
     {
         PaperComponent? paper = null;
@@ -121,7 +121,7 @@ public sealed class NanoTaskCartridgeSystem : SharedNanoTaskCartridgeSystem
             case NanoTaskDeleteTask task:
                 ent.Comp.Tasks.RemoveAll(t => t.Id == task.Id);
                 break;
-/* // Orion-Edit
+/* // RW-Edit
             case NanoTaskPrintTask task:
             {
                 if (!task.Item.Validate())

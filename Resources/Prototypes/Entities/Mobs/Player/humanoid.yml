@@ -103,7 +103,7 @@
       - MindRoleGhostRoleFamiliar
       job: DeathSquad
       requirements:
-        - !type:DiscordLinkRequirement # Amour edit
+        - !type:DiscordLinkRequirement # RW edit
     - type: Loadout
       prototypes: [ DeathSquadGear ]
       roleLoadout: [ RoleSurvivalEVA ]
@@ -139,7 +139,7 @@
         settings: short
       job: ERTLeader
       requirements:
-        - !type:DiscordLinkRequirement # Amour edit
+        - !type:DiscordLinkRequirement # RW edit
     - type: Loadout
       prototypes: [ ERTLeaderGear ]
       roleLoadout: [ RoleSurvivalMilitaryDouble ]
@@ -318,7 +318,7 @@
         settings: short
       job: ERTEngineer
       requirements:
-        - !type:DiscordLinkRequirement # Amour edit
+        - !type:DiscordLinkRequirement # RW edit
     - type: RandomMetadata
       nameSegments:
       - NamesMilitaryLast
@@ -571,7 +571,7 @@
       raffle:
         settings: short
       requirements:
-        - !type:DiscordLinkRequirement # Amour edit
+        - !type:DiscordLinkRequirement # RW edit
       job: ERTMedical
     - type: Loadout
       prototypes: [ ERTMedicalGearEVA ]
@@ -614,7 +614,7 @@
 
 - type: randomHumanoidSettings
   id: CBURNAgent
-  parent: [ CentcommHumanoid, BaseResponseForce ] # Orion-Edit: ResponseForce
+  parent: [ CentcommHumanoid, BaseResponseForce ] # RW-Edit: ResponseForce
   components:
     - type: AutoImplant
       implants: [ FreedomImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant ] # Goobstation
@@ -629,7 +629,7 @@
         settings: short
       job: CBURN
       requirements:
-        - !type:DiscordLinkRequirement # Amour edit
+        - !type:DiscordLinkRequirement # RW edit
     - type: RandomMetadata
       nameSegments:
       - NamesMilitaryFirst

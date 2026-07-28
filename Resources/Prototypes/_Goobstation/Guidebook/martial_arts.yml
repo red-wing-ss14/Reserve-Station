@@ -11,7 +11,7 @@
   - Ninjutsu
   - DragonKungFu
   - HellRip
-  - ARB #Amour
+  - ARB #RW
 
 - type: guideEntry
   id: CQC
@@ -53,7 +53,7 @@
   name: guide-entry-dragon-kung-fu
   text: "/ServerInfo/_Goobstation/Guidebook/MartialArts/DragonKungFu.xml"
 
-- type: guideEntry # Amour
+- type: guideEntry # RW
   id: ARB
   name: guide-entry-arb
-  text: "/ServerInfo/_Amour/Guidebook/MartialArts/ARB.xml"
+  text: "/ServerInfo/_RW/Guidebook/MartialArts/ARB.xml"

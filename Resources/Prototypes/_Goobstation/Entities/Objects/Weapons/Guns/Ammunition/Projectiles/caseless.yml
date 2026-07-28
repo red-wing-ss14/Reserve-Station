@@ -9,8 +9,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 17 # Amour edit: 12 > 17
-      armorPenetration: 0.3 # Amour edit: 0.25 > 0.3; It's "semi armor piercing" after all
+        Piercing: 17 # RW edit: 12 > 17
+      armorPenetration: 0.3 # RW edit: 0.25 > 0.3; It's "semi armor piercing" after all
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default

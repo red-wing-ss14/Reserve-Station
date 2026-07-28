@@ -16,10 +16,10 @@
   startingGear: ConquestGear
   supervisors: job-supervisors-null
   canBeAntag: false
-  # Orion-Start
+  # RW-Start
   salary: 200
   payrollFromStationBudget: false
-  # Orion-End
+  # RW-End
   requirements:
   - !type:AgeRequirement
     requiredAge: 21

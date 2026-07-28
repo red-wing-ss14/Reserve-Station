@@ -18,7 +18,7 @@ public abstract class BaseTextureTag
         Vector2 offset,
         string? tooltip)
     {
-        // Amour edit start
+        // RW edit start
         var adjustedOffset = offset + new Vector2(-6, -4);
         var texture = new TooltipTextureRect(tooltip, adjustedOffset);
 
@@ -27,7 +27,7 @@ public abstract class BaseTextureTag
         texture.MaxSize = new Vector2(120, 120);
 
         return texture;
-        // Amour edit end
+        // RW edit end
     }
 
     protected static Control DrawIconEntity(NetEntity netEntity, long spriteSize)

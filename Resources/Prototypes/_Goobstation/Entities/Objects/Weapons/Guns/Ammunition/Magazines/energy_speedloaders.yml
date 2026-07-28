@@ -9,12 +9,12 @@
     sprite: /Textures/_Goobstation/Objects/Weapons/Guns/Ammunition/Magazine/energy_speedloader.rsi
     state: icon-lethal
   - type: Battery
-    maxCharge: 1200 # Amour edit: 600 > 1200
-    startingCharge: 1200 # Amour edit: 600 > 1200
+    maxCharge: 1200 # RW edit: 600 > 1200
+    startingCharge: 1200 # RW edit: 600 > 1200
   - type: BatteryDrinkerSource
     maxAmount: 100
   - type: BatterySelfRecharger
-    autoRechargeRate: 60 # Amour edit: 40 > 60
+    autoRechargeRate: 60 # RW edit: 40 > 60
     autoRechargePauseTime: 12
   - type: AmmoCounter
   - type: Appearance
@@ -30,7 +30,7 @@
   components:
   - type: BatteryAmmoProvider
     proto: BulletEnergyGunMagnum
-    fireCost: 150 # Amour edit: 100 > 150
+    fireCost: 150 # RW edit: 100 > 150
   - type: Tag
     tags:
       - EnergySpeedloader
@@ -46,7 +46,7 @@
     state: icon-disabling
   - type: BatteryAmmoProvider
     proto: BulletEnergyGunDisabler
-    fireCost: 150 # Amour edit: 50 > 150
+    fireCost: 150 # RW edit: 50 > 150
   - type: Tag
     tags:
       - EnergySpeedloader
@@ -59,14 +59,14 @@
   description: A rather volatile powercell utilizing phoron to charge destructive energy pulses over time. Phoron will make us all rich.
   components:
   - type: Battery
-    maxCharge: 1600 # Amour edit: missing > 1600
-    startingCharge: 1600 # Amour edit: missing > 1600
+    maxCharge: 1600 # RW edit: missing > 1600
+    startingCharge: 1600 # RW edit: missing > 1600
   - type: BatterySelfRecharger
-    autoRechargePauseTime: 12 # Amour edit: missing > 12
-    autoRechargeRate: 100 # Amour edit: missing > 100
+    autoRechargePauseTime: 12 # RW edit: missing > 12
+    autoRechargeRate: 100 # RW edit: missing > 100
   - type: BatteryAmmoProvider
     proto: LightPulse
-    fireCost: 200 # Amour edit: 50 > 200
+    fireCost: 200 # RW edit: 50 > 200
   - type: Tag
     tags:
     - EnergySpeedloader

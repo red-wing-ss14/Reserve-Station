@@ -117,9 +117,9 @@
         Slash: 0.6
         Heat: 0.6
         Piercing: 0.6
-        Radiation: 0.25 # Amour edit: 0.6 > 0.25
-        Caustic: 0.25 # Amour edit: 0.4 > 0.25
-        Cold: 0.6 # Amour edit: missing > 0.6
+        Radiation: 0.25 # RW edit: 0.6 > 0.25
+        Caustic: 0.25 # RW edit: 0.4 > 0.25
+        Cold: 0.6 # RW edit: missing > 0.6
   - type: ExplosionResistance
     damageCoefficient: 0.75
   - type: StaminaResistance

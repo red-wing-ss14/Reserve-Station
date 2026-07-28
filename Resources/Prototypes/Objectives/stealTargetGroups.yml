@@ -92,14 +92,14 @@
     sprite: Objects/Weapons/Guns/Battery/energy_magnum.rsi
     state: icon
 
-# Amour start
+# RW start
 - type: stealTargetGroup
   id: WeaponRevolverInspector
   name: steal-target-groups-weapon-revolver-inspector
   sprite:
     sprite: Objects/Weapons/Guns/Revolvers/inspector.rsi
     state: icon
-# Amour end
+# RW end
 
 # Thief Collection
 

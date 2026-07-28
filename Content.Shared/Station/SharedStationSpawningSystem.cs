@@ -63,7 +63,7 @@ public abstract class SharedStationSpawningSystem : EntitySystem
         EquipRoleName(entity, loadout, roleProto);
     }
 
-    // Amour edit start
+    // RW edit start
     public void EquipRoleLoadoutStorage(EntityUid entity, RoleLoadout loadout, RoleLoadoutPrototype roleProto)
     {
         foreach (var group in loadout.SelectedLoadouts.OrderBy(x => roleProto.Groups.FindIndex(e => e == x.Key)))
@@ -106,7 +106,7 @@ public abstract class SharedStationSpawningSystem : EntitySystem
             }
         }
     }
-    // Amour edit end
+    // RW edit end
 
     /// <summary>
     /// Applies the role's name as applicable to the entity.
@@ -134,7 +134,7 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     public void EquipStartingGear(EntityUid entity, LoadoutPrototype loadout, bool raiseEvent = true)
     {
         EquipStartingGear(entity, loadout.StartingGear, raiseEvent);
-        // Amour: Skip storage processing for loadouts - it will be handled later in EquipRoleLoadoutStorage
+        // RW: Skip storage processing for loadouts - it will be handled later in EquipRoleLoadoutStorage
         EquipStartingGear(entity, (IEquipmentLoadout) loadout, raiseEvent, skipStorage: true);
     }
 
@@ -182,10 +182,10 @@ public abstract class SharedStationSpawningSystem : EntitySystem
                 var equipmentStr = startingGear.GetGear(slot.Name);
                 if (!string.IsNullOrEmpty(equipmentStr))
                 {
-                    // Amour edit start
+                    // RW edit start
                     if (InventorySystem.TryGetSlotEntity(entity, slot.Name, out _))
                         continue;
-                    // Amour edit end
+                    // RW edit end
 
                     var equipmentEntity = Spawn(equipmentStr, xform.Coordinates);
                     if (slot.Whitelist != null && !_whitelist.IsWhitelistPass(slot.Whitelist, equipmentEntity)) // Goob Change - Plasmamen

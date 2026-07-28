@@ -772,7 +772,7 @@
       reregister: false
       job: Borg
       requirements: # Goobstation - ghost roles requirements
-      - !type:DiscordLinkRequirement # Amour edit
+      - !type:DiscordLinkRequirement # RW edit
     - type: GhostTakeoverAvailable
 
 - type: entity

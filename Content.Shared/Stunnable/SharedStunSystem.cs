@@ -63,7 +63,7 @@ public abstract partial class SharedStunSystem : EntitySystem
         SubscribeLocalEvent<StunnedComponent, PickupAttemptEvent>(OnAttempt);
         SubscribeLocalEvent<StunnedComponent, IsEquippingAttemptEvent>(OnEquipAttempt);
         SubscribeLocalEvent<StunnedComponent, IsUnequippingAttemptEvent>(OnUnequipAttempt);
-        SubscribeLocalEvent<StunnedStatusEffectComponent, MobStateChangedEvent>(OnMobStateChanged); // Orion-Edit
+        SubscribeLocalEvent<StunnedStatusEffectComponent, MobStateChangedEvent>(OnMobStateChanged); // RW-Edit
 
         // New Status Effect subscriptions
         SubscribeLocalEvent<StunnedStatusEffectComponent, StatusEffectAppliedEvent>(OnStunStatusApplied);
@@ -83,7 +83,7 @@ public abstract partial class SharedStunSystem : EntitySystem
         args.Cancelled = true;
     }
 
-    private void OnMobStateChanged(Entity<StunnedStatusEffectComponent> ent, ref MobStateChangedEvent args) // Orion-Edit: Ent
+    private void OnMobStateChanged(Entity<StunnedStatusEffectComponent> ent, ref MobStateChangedEvent args) // RW-Edit: Ent
     {
         switch (args.NewMobState)
         {
@@ -91,11 +91,11 @@ public abstract partial class SharedStunSystem : EntitySystem
                 {
                     break;
                 }
-            case MobState.SoftCritical: // Orion-Edit
-            case MobState.HardCritical: // Orion
-            case MobState.Dead: // Orion-Edit: Merge duplicates
+            case MobState.SoftCritical: // RW-Edit
+            case MobState.HardCritical: // RW
+            case MobState.Dead: // RW-Edit: Merge duplicates
                 {
-                    _status.TryRemoveStatusEffect(ent, StunId); // Orion-Edit
+                    _status.TryRemoveStatusEffect(ent, StunId); // RW-Edit
                     break;
                 }
             case MobState.Invalid:

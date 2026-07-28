@@ -20,7 +20,7 @@
     Steel: 50
     Plastic: 50
 
-# Orion-Edit: Replaced with Servo
+# RW-Edit: Replaced with Servo
 #- type: latheRecipe
 #  parent: BaseStockPartRecipe
 #  id: MicroManipulatorStockPart

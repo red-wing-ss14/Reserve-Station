@@ -6,10 +6,10 @@
     DrinkSodaWaterCan: 10 #typically hacked product. Default product is "soda"
   contrabandInventory:
     DrinkSodaWaterBottleFull: 2
-    DrinkCoconutWaterGlass: 5 # Orion-Edit
+    DrinkCoconutWaterGlass: 5 # RW-Edit
     DrinkColaCan: 10
-    DrinkColaBottleFull: 2 # Orion-Edit
+    DrinkColaBottleFull: 2 # RW-Edit
     ClothingHeadHatUshanka: 2
   emaggedInventory:
-    DrinkNukieCan: 3 # Orion-Edit
-    WeaponWaterPistolFilledFire: 1 # Orion-Edit
+    DrinkNukieCan: 3 # RW-Edit
+    WeaponWaterPistolFilledFire: 1 # RW-Edit

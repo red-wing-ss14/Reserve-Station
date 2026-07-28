@@ -38,11 +38,11 @@ public sealed partial class AnimatedEmotesSystem : SharedAnimatedEmotesSystem
         SubscribeLocalEvent<AnimatedEmotesComponent, AnimationJumpEmoteEvent>(OnJump);
         SubscribeLocalEvent<AnimatedEmotesComponent, AnimationTweakEmoteEvent>(OnTweak);
         SubscribeLocalEvent<AnimatedEmotesComponent, AnimationFlexEmoteEvent>(OnFlex);
-//        SubscribeNetworkEvent<BibleFartSmiteEvent>(OnBibleSmite); // Orion-Edit
+//        SubscribeNetworkEvent<BibleFartSmiteEvent>(OnBibleSmite); // RW-Edit
         SubscribeLocalEvent<AnimatedEmotesComponent, SpriteOverrideEvent>(OnSpriteOverride);
     }
 
-/* // Orion-Edit: Removed
+/* // RW-Edit: Removed
     public void OnBibleSmite(BibleFartSmiteEvent args)
     {
         EntityUid uid = GetEntity(args.Bible);

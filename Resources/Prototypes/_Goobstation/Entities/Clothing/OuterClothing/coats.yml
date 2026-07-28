@@ -67,13 +67,13 @@
       coefficients:
         Blunt: 0.7
         Slash: 0.7
-        Piercing: 0.5 # Orion-Edit: 0.7 > 0.5
+        Piercing: 0.5 # RW-Edit: 0.7 > 0.5
         Heat: 0.8
   - type: ModifyDelayedKnockdown
-    delayDelta: 3 # Orion-Edit: 1.5 > 3
-    knockdownTimeDelta: -1 # Orion-Edit: -1.5 > -1
+    delayDelta: 3 # RW-Edit: 1.5 > 3
+    knockdownTimeDelta: -1 # RW-Edit: -1.5 > -1
   - type: StaminaResistance
-    damageCoefficient: 0.65 # Orion-Edit: 0.7 > 0.65
+    damageCoefficient: 0.65 # RW-Edit: 0.7 > 0.65
 
 #blue ward coat
 - type: entity

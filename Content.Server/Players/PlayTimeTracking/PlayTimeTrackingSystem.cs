@@ -102,7 +102,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
         if (!TryComp<MobStateComponent>(attached, out var state))
             return false;
 
-        return state.CurrentState is MobState.Alive or MobState.SoftCritical or MobState.HardCritical; // Orion-Edit
+        return state.CurrentState is MobState.Alive or MobState.SoftCritical or MobState.HardCritical; // RW-Edit
     }
 
     public IEnumerable<string> GetTimedRoles(EntityUid mindId)

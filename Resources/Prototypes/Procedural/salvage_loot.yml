@@ -52,7 +52,7 @@
           cost: 2
         - proto: PortableGeneratorSuperPacman
           cost: 3
-        - proto: PowerCellBluespaceReactor # Orion-Edit: Replaced PowerCellAntiqueProto
+        - proto: PowerCellBluespaceReactor # RW-Edit: Replaced PowerCellAntiqueProto
           cost: 5
           prob: 0.5
         - proto: ProtolatheMachineCircuitboard

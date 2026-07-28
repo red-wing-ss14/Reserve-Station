@@ -7,14 +7,14 @@
   isVisibleLanguage: true
   speech:
     color: "#24d1b9" # Goob Edit - Original "#00a3e2dd"
-    fontId: ComicSansMS # Orion-Edit
-    boldFontId: ComicSansMS # Orion-Edit
+    fontId: ComicSansMS # RW-Edit
+    boldFontId: ComicSansMS # RW-Edit
     fontSize: 13 # Goob Edit - Increased by 1 to account for slight font size difference.
-  # Orion-Start
+  # RW-Start
   icon:
-    sprite: _Orion/Interface/Chat/language.rsi
+    sprite: _RW/Interface/Chat/language.rsi
     state: slime
-  # Orion-End
+  # RW-End
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1

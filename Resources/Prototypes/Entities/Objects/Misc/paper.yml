@@ -121,12 +121,12 @@
   - type: Construction
     graph: SpesosCounterfeit
     node: start
-  # Orion-Start
+  # RW-Start
   - type: PhysicalComposition
     materialComposition:
       SheetPaper: 100
   - type: Material
-  # Orion-End
+  # RW-End
   - type: StationAiWhitelist
 
 - type: entity

@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # vocal emotes
-#- type: emote # Orion-Edit: Duplicate
+#- type: emote # RW-Edit: Duplicate
 #  id: Hiss
 #  name: Hiss
 #  category: Vocal
@@ -22,7 +22,7 @@
 
 - type: emote
   id: Meow
-  name: chat-emote-name-catmeow # Orion-Edit: Localization
+  name: chat-emote-name-catmeow # RW-Edit: Localization
   category: Vocal
   icon: _Goobstation/Interface/Emotes/meow.png
   whitelist:
@@ -44,7 +44,7 @@
     - nyas
     - mraow
     - mraows
-    # Orion-Start
+    # RW-Start
     - мяу
     - мяу.
     - мяу!
@@ -60,11 +60,11 @@
     - мрау
     - мрау.
     - мрау!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Mew
-  name: chat-emote-name-mew # Orion-Edit: Localization
+  name: chat-emote-name-mew # RW-Edit: Localization
   category: Vocal
   icon: _Goobstation/Interface/Emotes/mew.png
   whitelist:
@@ -80,7 +80,7 @@
     - mews
     - mewing
     - mewed
-    # Orion-Start
+    # RW-Start
     - мью
     - мью.
     - мью!
@@ -90,11 +90,11 @@
     - мяукнула
     - мяукнула.
     - мяукнула!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Growl
-  name: chat-emote-name-growl # Orion-Edit: Localization
+  name: chat-emote-name-growl # RW-Edit: Localization
   category: Vocal
   icon: _Goobstation/Interface/Emotes/growl.png
   whitelist:
@@ -110,7 +110,7 @@
     - growls
     - growling
     - growled
-    # Orion-Start
+    # RW-Start
     - рычит
     - рычит.
     - рычит!
@@ -120,11 +120,11 @@
     - зарычала
     - зарычала.
     - зарычала!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Purr
-  name: chat-emote-name-purr # Orion-Edit: Localization
+  name: chat-emote-name-purr # RW-Edit: Localization
   category: Vocal
   icon: _Goobstation/Interface/Emotes/purr.png
   whitelist:
@@ -140,7 +140,7 @@
     - purrs
     - purring
     - purred
-    # Orion-Start
+    # RW-Start
     - мурчит
     - мурчит.
     - мурчит!
@@ -153,4 +153,4 @@
     - замурчала
     - замурчала.
     - замурчала!
-    # Orion-End
+    # RW-End

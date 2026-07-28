@@ -22,10 +22,10 @@ public sealed class DeathgaspSystem: EntitySystem
     {
         // don't deathgasp if they arent going straight from crit to dead
         if (component.NeedsCritical // Goobstation
-            // Orion-Edit-Start
+            // RW-Edit-Start
             && (args.OldMobState is not MobState.SoftCritical and not MobState.HardCritical
                 || args.NewMobState != MobState.Dead))
-            // Orion-Edit-End
+            // RW-Edit-End
             return;
 
         Deathgasp(uid, component);

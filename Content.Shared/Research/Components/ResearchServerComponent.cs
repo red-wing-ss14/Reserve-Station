@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared._Orion.Research;
+using Content.Shared._RW.Research;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
@@ -15,7 +15,7 @@ public sealed partial class ResearchServerComponent : Component
     /// </summary>
     [AutoNetworkedField]
     [DataField("serverName"), ViewVariables(VVAccess.ReadWrite)]
-    public string ServerName = "RND-Server"; // Orion-Edit: Fix name
+    public string ServerName = "RND-Server"; // RW-Edit: Fix name
 
     /// <summary>
     /// The amount of points on the server.
@@ -24,7 +24,7 @@ public sealed partial class ResearchServerComponent : Component
     [DataField("points"), ViewVariables(VVAccess.ReadWrite)]
     public int Points;
 
-    // Orion-Start
+    // RW-Start
     /// <summary>
     /// Multi-point balance for research network economy.
     /// </summary>
@@ -52,7 +52,7 @@ public sealed partial class ResearchServerComponent : Component
     [AutoNetworkedField]
     [DataField]
     public List<ResearchLogEntry> Logs = new();
-    // Orion-End
+    // RW-End
 
     /// <summary>
     /// A unique numeric id representing the server
@@ -86,12 +86,12 @@ public sealed partial class ResearchServerComponent : Component
 [ByRefEvent]
 public readonly record struct ResearchServerPointsChangedEvent(EntityUid Server, int Total, int Delta);
 
-// Orion-Start
+// RW-Start
 [ByRefEvent]
 public readonly record struct ResearchServerPointTypeChangedEvent(EntityUid Server, string Type, int Total, int Delta);
-// Orion-End
+// RW-End
 
-/* // Orion-Edit: Use ResearchServerGetPointsPerSecondByTypeEvent
+/* // RW-Edit: Use ResearchServerGetPointsPerSecondByTypeEvent
 /// <summary>
 /// Event raised every second to calculate the amount of points added to the server.
 /// </summary>
@@ -101,7 +101,7 @@ public readonly record struct ResearchServerPointTypeChangedEvent(EntityUid Serv
 public record struct ResearchServerGetPointsPerSecondEvent(EntityUid Server, int Points);
 */
 
-// Orion-Start
+// RW-Start
 /// <summary>
 /// Event raised every second to calculate the amount of points added to the server.
 /// </summary>
@@ -109,4 +109,4 @@ public record struct ResearchServerGetPointsPerSecondEvent(EntityUid Server, int
 /// <param name="Points"></param>
 [ByRefEvent]
 public record struct ResearchServerGetPointsPerSecondByTypeEvent(EntityUid Server, List<ResearchPointAmount> Points);
-// Orion-End
+// RW-End

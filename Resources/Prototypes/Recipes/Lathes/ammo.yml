@@ -100,7 +100,7 @@
   materials:
     Steel: 145
 
-# .30 Rifle # Orion: Now it 5.45mm or .21
+# .30 Rifle # RW: Now it 5.45mm or .21
 - type: latheRecipe
   parent: BaseEmptyAmmoRecipe
   id: MagazineLightRifleEmpty
@@ -113,7 +113,7 @@
   id: MagazineLightRifle
   result: MagazineLightRifle
   materials:
-    Steel: 500 # Orion-Edit: 565 > 500
+    Steel: 500 # RW-Edit: 565 > 500
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -121,14 +121,14 @@
   result: MagazineLightRifleIncendiary
   materials:
     Steel: 25
-    Plastic: 475 # Orion-Edit: 540 > 475
+    Plastic: 475 # RW-Edit: 540 > 475
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
   id: MagazineLightRiflePractice
   result: MagazineLightRiflePractice
   materials:
-    Steel: 175 # Orion-Edit: 205 > 175
+    Steel: 175 # RW-Edit: 205 > 175
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -136,37 +136,37 @@
   result: MagazineLightRifleUranium
   materials:
     Steel: 25
-    Plastic: 325 # Orion-Edit: 360 > 325
-    Uranium: 325 # Orion-Edit: 360 > 325
+    Plastic: 325 # RW-Edit: 360 > 325
+    Uranium: 325 # RW-Edit: 360 > 325
 
 - type: latheRecipe
   parent: BaseAmmoBoxRecipe
   id: MagazineBoxLightRifle
   result: MagazineBoxLightRifle
   materials:
-    Steel: 775 # Orion-Edit: 900 > 775
+    Steel: 775 # RW-Edit: 900 > 775
 
 - type: latheRecipe
   parent: BaseAmmoBoxRecipe
   id: MagazineBoxLightRifleIncendiary
   result: MagazineBoxLightRifleIncendiary
   materials:
-    Plastic: 775 # Orion-Edit: 900 > 775
+    Plastic: 775 # RW-Edit: 900 > 775
 
 - type: latheRecipe
   parent: BaseAmmoBoxRecipe
   id: MagazineBoxLightRiflePractice
   result: MagazineBoxLightRiflePractice
   materials:
-    Steel: 200 # Orion-Edit: 300 > 200
+    Steel: 200 # RW-Edit: 300 > 200
 
 - type: latheRecipe
   parent: BaseAmmoBoxRecipe
   id: MagazineBoxLightRifleUranium
   result: MagazineBoxLightRifleUranium
   materials:
-    Plastic: 550 # Orion-Edit: 600 > 550
-    Uranium: 550 # Orion-Edit: 600 > 550
+    Plastic: 550 # RW-Edit: 600 > 550
+    Uranium: 550 # RW-Edit: 600 > 550
 
 # .35 Auto
 - type: latheRecipe

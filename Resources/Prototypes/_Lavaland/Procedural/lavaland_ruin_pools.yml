@@ -8,9 +8,9 @@
   ruinDistance: 14
   maxDistance: 172
   gridRuins:
-    # Orion-Start
+    # RW-Start
     InteQSizo: 1
-    # Orion-End
+    # RW-End
     SyndicateBase: 1
     HierophantArena: 1
     RougeAI: 1

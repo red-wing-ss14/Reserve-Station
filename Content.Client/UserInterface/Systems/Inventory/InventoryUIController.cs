@@ -44,10 +44,10 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
     private StrippingWindow? _strippingWindow;
     private ItemSlotButtonContainer? _inventoryHotbar;
     private SlotButton? _inventoryButton;
-    // Orion-Start
+    // RW-Start
     private ItemSlotButtonContainer? _extraHotbar;
     private SlotButton? _extraHotbarButton;
-    // Orion-End
+    // RW-End
 
     private SlotControl? _lastHovered;
 
@@ -67,9 +67,9 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         if (UIManager.GetActiveUIWidgetOrNull<InventoryGui>() is { } inventoryGui)
         {
             RegisterInventoryButton(inventoryGui.InventoryButton);
-            // Orion-Start
+            // RW-Start
             RegisterExtraButton(inventoryGui.ExtraButton);
-            // Orion-End
+            // RW-End
         }
     }
 
@@ -96,10 +96,10 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         if (_inventoryHotbar != null)
             _inventoryHotbar.Visible = false;
 
-        // Orion-Start
+        // RW-Start
         if (_extraHotbar != null)
             _extraHotbar.Visible = false;
-        // Orion-End
+        // RW-End
 
         CommandBinds.Unregister<ClientInventorySystem>();
     }
@@ -119,12 +119,12 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         _inventoryHotbar = inventoryHotbar;
     }
 
-    // Orion-Start
+    // RW-Start
     public void RegisterExtraHotbarContainer(ItemSlotButtonContainer extraHotbar)
     {
         _extraHotbar = extraHotbar;
     }
-    // Orion-End
+    // RW-End
 
     public void RegisterInventoryButton(SlotButton? button)
     {
@@ -133,13 +133,13 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
             _inventoryButton.Pressed -= InventoryButtonPressed;
         }
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         if (button == null)
             return;
 
         _inventoryButton = button;
         _inventoryButton.Pressed += InventoryButtonPressed;
-        // Orion-Edit-End
+        // RW-Edit-End
     }
 
     private void InventoryButtonPressed(GUIBoundKeyEventArgs args, SlotControl control)
@@ -158,12 +158,12 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
             if (_inventoryButton != null)
                 _inventoryButton.Visible = false;
 
-            // Orion-Start
+            // RW-Start
             if (_extraHotbarButton != null)
             {
                 _extraHotbarButton.Visible = false;
             }
-            // Orion-End
+            // RW-End
 
             return;
         }
@@ -192,11 +192,11 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         if (_inventoryButton != null)
             _inventoryButton.Visible = clothing.Count != 0;
 
-        // Orion-Start
+        // RW-Start
         var extraHotbarSlots = clientInv.SlotData.Where(p => p.Value.HasExtraSlotGroup).ToList();
         if (_extraHotbarButton != null)
             _extraHotbarButton.Visible = extraHotbarSlots.Count != 0 && _inventoryHotbar.Visible;
-        // Orion-End
+        // RW-End
 
         if (clothing.Count == 0)
             return;
@@ -236,7 +236,7 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         }
     }
 
-    // Orion-Start
+    // RW-Start
     private void UpdateExtraHotbar(InventorySlotsComponent? clientInv)
     {
         if (clientInv == null || _extraHotbar == null)
@@ -321,7 +321,7 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         inventoryGui.ToggleExtraHotbarVisibility();
         UpdateExtraHotbar(_playerInventory);
     }
-    // Orion-End
+    // RW-End
 
     private void UpdateStrippingWindow(InventorySlotsComponent? clientInv)
     {
@@ -371,7 +371,7 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         var shouldBeVisible = !_inventoryHotbar.Visible;
         _inventoryHotbar.Visible = shouldBeVisible;
 
-        // Orion-Start
+        // RW-Start
         if (!shouldBeVisible)
         {
             var inventoryGui = UIManager.GetActiveUIWidgetOrNull<InventoryGui>();
@@ -380,7 +380,7 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
                 inventoryGui.ToggleExtraHotbarVisibility();
             }
         }
-        // Orion-End
+        // RW-End
 
         UpdateInventoryHotbar(_playerInventory);
     }
@@ -537,9 +537,9 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         }
 
         UpdateInventoryHotbar(_playerInventory);
-        // Orion-Start
+        // RW-Start
         UpdateExtraHotbar(_playerInventory);
-        // Orion-End
+        // RW-End
     }
 
     private void UnloadSlots()
@@ -547,7 +547,7 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         if (_inventoryButton != null)
             _inventoryButton.Visible = false;
 
-        // Orion-Start
+        // RW-Start
         if (_extraHotbarButton != null)
             _extraHotbarButton.Visible = false;
 
@@ -555,7 +555,7 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
             _extraHotbar.Visible = false;
 
         _extraHotbar?.ClearButtons();
-        // Orion-End
+        // RW-End
 
         _playerUid = null;
         _playerInventory = null;
@@ -565,9 +565,9 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         }
 
         UpdateInventoryHotbar(null);
-        // Orion-Start
+        // RW-Start
         UpdateExtraHotbar(null);
-        // Orion-End
+        // RW-End
     }
 
     private void SpriteUpdated(SlotSpriteUpdate update)

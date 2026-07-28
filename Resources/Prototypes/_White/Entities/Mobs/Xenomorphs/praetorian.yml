@@ -16,7 +16,7 @@
   - type: Xenomorph
     caste: Praetorian
   - type: TailLash
-#    tailDamage: # Orion-Edit
+#    tailDamage: # RW-Edit
 #      groups:
 #        Brute: 5
 #    inject:
@@ -81,7 +81,7 @@
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
-  - type: GlobalAntagonist # Orion
+  - type: GlobalAntagonist # RW
     antagonistPrototype: globalAntagonistXenomorph
 
 - type: entity

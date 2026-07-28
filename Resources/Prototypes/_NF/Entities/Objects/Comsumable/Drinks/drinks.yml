@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # Alcohol drinks
-#- type: entity # Orion-Edit: NC license sprites
+#- type: entity # RW-Edit: NC license sprites
 #  parent: DrinkGlass
 #  id: DrinkGinAndSonic
 #  suffix: gin and sonic
@@ -16,7 +16,7 @@
 #    sprite: _NF/Objects/Consumable/Drinks/ginandsonic.rsi
 #    state: icon
 
-#- type: entity # Orion-Edit: NC license sprites
+#- type: entity # RW-Edit: NC license sprites
 #  parent: DrinkGlass
 #  id: DrinkGoldenCat
 #  suffix: golden cat
@@ -32,7 +32,7 @@
 #    sprite: _NF/Objects/Consumable/Drinks/goldencat.rsi
 #    state: icon
 
-#- type: entity # Orion-Edit: NC license sprites
+#- type: entity # RW-Edit: NC license sprites
 #  parent: DrinkGlass
 #  id: DrinkPineappleBlast
 #  suffix: pineapple blast
@@ -48,7 +48,7 @@
 #    sprite: _NF/Objects/Consumable/Drinks/pineappleblast.rsi
 #    state: icon
 
-#- type: entity # Orion-Edit: NC license sprites
+#- type: entity # RW-Edit: NC license sprites
 #  parent: DrinkGlass
 #  id: DrinkTorpedoJuice
 #  suffix: torpedo juice
@@ -64,7 +64,7 @@
 #    sprite: _NF/Objects/Consumable/Drinks/torpedojuice.rsi
 #    state: icon
 
-#- type: entity # Orion-Edit: NC license sprites
+#- type: entity # RW-Edit: NC license sprites
 #  parent: DrinkGlass
 #  id: DrinkBeesKnees
 #  suffix: bee's knees

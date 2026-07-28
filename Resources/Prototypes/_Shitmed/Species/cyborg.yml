@@ -5,10 +5,10 @@
   name: species-name-human
   roundStart: false
   prototype: BorgChassisSelectable
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
   bodyTypes:
   - CyborgNormal
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
   defaultSkinTone: "#fff9e2"
   markingLimits: MobHumanMarkingLimits
   maleFirstNames: NamesBorg
@@ -16,11 +16,11 @@
   dollPrototype: BorgChassisSelectable
   skinColoration: TintedHues
 
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
 - type: bodyType
   id: CyborgNormal
   name: body-normal
-# Amour port: WD Slim body types END
+# RW port: WD Slim body types END
   sprites:
     Head: CyborgHead
     Chest: CyborgTorso

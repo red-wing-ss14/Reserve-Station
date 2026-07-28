@@ -1,5 +1,5 @@
-using Content.Shared._Orion.Construction;
-using Content.Shared._Orion.Construction.Events;
+using Content.Shared._RW.Construction;
+using Content.Shared._RW.Construction.Events;
 using Content.Shared.Access.Systems;
 using Content.Shared.Construction.EntitySystems;
 using Content.Shared.Hands.EntitySystems;
@@ -33,10 +33,10 @@ public abstract class SharedSmartFridgeSystem : EntitySystem
         SubscribeLocalEvent<SmartFridgeComponent, InteractUsingEvent>(OnInteractUsing, after: [typeof(AnchorableSystem)]);
         SubscribeLocalEvent<SmartFridgeComponent, EntInsertedIntoContainerMessage>(OnItemInserted);
         SubscribeLocalEvent<SmartFridgeComponent, EntRemovedFromContainerMessage>(OnItemRemoved);
-        // Orion-Start
+        // RW-Start
         SubscribeLocalEvent<SmartFridgeComponent, RefreshPartsEvent>(OnRefreshParts);
         SubscribeLocalEvent<SmartFridgeComponent, UpgradeExamineEvent>(OnUpgradeExamine);
-        // Orion-End
+        // RW-End
         SubscribeLocalEvent<SmartFridgeComponent, AfterAutoHandleStateEvent>((ent, ref _) => UpdateUI(ent));
 
         SubscribeLocalEvent<SmartFridgeComponent, GetVerbsEvent<AlternativeVerb>>(OnGetAltVerb);
@@ -65,10 +65,10 @@ public abstract class SharedSmartFridgeSystem : EntitySystem
             if (!_whitelist.CheckBoth(used, ent.Comp.Blacklist, ent.Comp.Whitelist))
                 continue;
 
-            // Orion-Start
+            // RW-Start
             if (CountContained(ent) >= ent.Comp.Capacity)
                 continue;
-            // Orion-End
+            // RW-End
 
             anyInserted = true;
 
@@ -122,7 +122,7 @@ public abstract class SharedSmartFridgeSystem : EntitySystem
         UpdateUI(ent);
     }
 
-    // Orion-Start
+    // RW-Start
     private static int CountContained(Entity<SmartFridgeComponent> ent)
     {
         var count = 0;
@@ -145,7 +145,7 @@ public abstract class SharedSmartFridgeSystem : EntitySystem
     {
         args.AddPercentageUpgrade("machine-upgrade-smartfridge-capacity", component.Capacity / (float) component.BaseCapacity);
     }
-    // Orion-End
+    // RW-End
 
     private bool Allowed(Entity<SmartFridgeComponent> machine, EntityUid user)
     {

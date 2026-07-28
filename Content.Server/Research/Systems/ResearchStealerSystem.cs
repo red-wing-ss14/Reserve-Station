@@ -32,10 +32,10 @@ public sealed class ResearchStealerSystem : SharedResearchStealerSystem
         var count = _random.Next(comp.MinToSteal, comp.MaxToSteal + 1);
         for (var i = 0; i < count; i++)
         {
-            if (database.ResearchedTechnologies.Count == 0) // Orion-Edit
+            if (database.ResearchedTechnologies.Count == 0) // RW-Edit
                 break;
 
-            var toRemove = _random.Pick(database.ResearchedTechnologies); // Orion-Edit
+            var toRemove = _random.Pick(database.ResearchedTechnologies); // RW-Edit
             if (_research.TryRemoveTechnology((target, database), toRemove))
                 ev.Techs.Add(toRemove);
         }

@@ -21,40 +21,40 @@ public sealed class TemporaryBlindnessSystem : EntitySystem
         SubscribeLocalEvent<TemporaryBlindnessComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<TemporaryBlindnessComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<TemporaryBlindnessComponent, CanSeeAttemptEvent>(OnBlindTrySee);
-        // Orion-Start
+        // RW-Start
         SubscribeLocalEvent<TemporaryBlindnessComponent, StatusEffectAppliedEvent>(OnStatusEffectApplied);
         SubscribeLocalEvent<TemporaryBlindnessComponent, StatusEffectRemovedEvent>(OnStatusEffectRemoved);
         SubscribeLocalEvent<TemporaryBlindnessComponent, StatusEffectRelayedEvent<CanSeeAttemptEvent>>(OnBlindTrySeeRelayed);
-        // Orion-End
+        // RW-End
     }
 
     private void OnStartup(EntityUid uid, TemporaryBlindnessComponent component, ComponentStartup args)
     {
-        // Orion-Edit-Start
+        // RW-Edit-Start
         if (!TryComp<StatusEffectComponent>(uid, out var status) || status.AppliedTo == null)
             return;
 
         _blindableSystem.UpdateIsBlind(status.AppliedTo.Value);
-        // Orion-Edit-End
+        // RW-Edit-End
     }
 
     private void OnShutdown(EntityUid uid, TemporaryBlindnessComponent component, ComponentShutdown args)
     {
-        // Orion-Edit-Start
+        // RW-Edit-Start
         if (!TryComp<StatusEffectComponent>(uid, out var status) || status.AppliedTo == null)
             return;
 
         _blindableSystem.UpdateIsBlind(status.AppliedTo.Value);
-        // Orion-Edit-End
+        // RW-Edit-End
     }
 
-    private static void OnBlindTrySee(EntityUid uid, TemporaryBlindnessComponent component, CanSeeAttemptEvent args) // Orion-Edit: Static
+    private static void OnBlindTrySee(EntityUid uid, TemporaryBlindnessComponent component, CanSeeAttemptEvent args) // RW-Edit: Static
     {
         if (component.LifeStage <= ComponentLifeStage.Running)
             args.Cancel();
     }
 
-    // Orion-Start
+    // RW-Start
     private void OnStatusEffectApplied(Entity<TemporaryBlindnessComponent> ent, ref StatusEffectAppliedEvent args)
     {
         _blindableSystem.UpdateIsBlind(args.Target);
@@ -70,5 +70,5 @@ public sealed class TemporaryBlindnessSystem : EntitySystem
         if (ent.Comp.LifeStage <= ComponentLifeStage.Running)
             args.Args.Cancel();
     }
-    // Orion-End
+    // RW-End
 }

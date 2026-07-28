@@ -2,9 +2,9 @@
 
 using System.Runtime.InteropServices;
 using Content.Goobstation.Common.SurveillanceCamera;
-using Content.Server._Orion.Bitrunning.Components;
+using Content.Server._RW.Bitrunning.Components;
 using Content.Server.DeviceNetwork.Systems;
-using Content.Shared._Orion.Bitrunning.Components;
+using Content.Shared._RW.Bitrunning.Components;
 using Content.Shared.DeviceNetwork;
 using Content.Shared.DeviceNetwork.Events;
 using Content.Shared.Power;
@@ -607,7 +607,7 @@ public sealed class SurveillanceCameraMonitorSystem : EntitySystem
             return;
         }
 
-        // Orion-Start
+        // RW-Start
         var activeCamera = monitor.ActiveCamera;
         if (activeCamera is { } activeCameraUid)
         {
@@ -628,7 +628,7 @@ public sealed class SurveillanceCameraMonitorSystem : EntitySystem
 
             activeCamera = activeForUi;
         }
-        // Orion-End
+        // RW-End
 
         var state = new SurveillanceCameraMonitorUiState(GetNetEntity(activeCamera), // Goobstation | Orion-Edit
             monitor.ActiveCameraAddress, monitor.KnownCameras, monitor.KnownMobileCameras); // Goobstation

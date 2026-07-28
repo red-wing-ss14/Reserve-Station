@@ -586,12 +586,12 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
         {
             // Extra logging for supermatter
             var activator = ToPrettyString(args.OtherEntity);
-            // Orion-Edit-Start
+            // RW-Edit-Start
             var activatorIsMob = HasComp<MobStateComponent>(args.OtherEntity);
             var impact = activatorIsMob
                 ? LogImpact.Extreme
                 : LogImpact.High;
-            // Orion-Edit-End
+            // RW-Edit-End
 
             // Original log entry
             _adminLog.Add(LogType.Supermatter, impact,
@@ -604,7 +604,7 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
             sm.Activated = true;
         }
 
-/* // Orion-Edit
+/* // RW-Edit
         if (TryComp<SupermatterFoodComponent>(target, out var food))
             sm.Power += food.Energy;
         else if (TryComp<ProjectileComponent>(target, out var projectile))
@@ -615,7 +615,7 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
         sm.MatterPower += HasComp<MobStateComponent>(target) ? 200 : 0;
 */
 
-        // Orion-Start
+        // RW-Start
         var isMob = HasComp<MobStateComponent>(target);
         if (!isMob)
         {
@@ -626,7 +626,7 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
             else
                 sm.Power++;
         }
-        // Orion-End
+        // RW-End
 
         if (!HasComp<ProjectileComponent>(target))
         {
@@ -648,7 +648,7 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
         if (!sm.Activated)
             sm.Activated = true;
 
-//        sm.MatterPower += 200; // Orion-Edit
+//        sm.MatterPower += 200; // RW-Edit
 
         EntityManager.SpawnEntity("Ash", Transform(target).Coordinates);
         _audio.PlayPvs(sm.DustSound, uid);

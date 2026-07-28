@@ -6,7 +6,7 @@
   description: job-description-bartender
   playTimeTracker: JobBartender
   requirements:
-    - !type:AnyOfRequirement # Amour edit - Discord OR playtime
+    - !type:AnyOfRequirement # RW edit - Discord OR playtime
       requirements:
         - !type:DiscordLinkRequirement
         - !type:OverallPlaytimeRequirement
@@ -15,13 +15,13 @@
   icon: "JobIconBartender"
   supervisors: job-supervisors-hop
   guides: # goobstation
-#  - Bartender # Orion-Edit: Removed because dont have this SOP
+#  - Bartender # RW-Edit: Removed because dont have this SOP
   - Drinks
   goobcoins: 10 #Goob content
-  # Orion-Start
+  # RW-Start
   salary: 55
   payrollDepartmentAccount: Service
-  # Orion-End
+  # RW-End
   access:
   - Service
   - Maintenance

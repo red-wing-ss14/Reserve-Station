@@ -25,9 +25,9 @@ public sealed partial class PowerCellSlotComponent : Component
     [DataField, AutoNetworkedField]
     public bool FitsInCharger = true;
 
-    // Orion-Start
+    // RW-Start
     [DataField]
     public bool AllowMegaCells;
-    // Orion-End
+    // RW-End
 }
 

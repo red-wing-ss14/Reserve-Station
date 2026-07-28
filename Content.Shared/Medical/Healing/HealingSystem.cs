@@ -585,7 +585,7 @@ public sealed class HealingSystem : EntitySystem
         if (!Resolve(ent, ref ent.Comp1, ref ent.Comp2, false))
             return mod;
 
-        if (!_mobThresholdSystem.TryGetThresholdForState(ent, MobState.SoftCritical, out var amount, ent.Comp2)) // Orion-Edit
+        if (!_mobThresholdSystem.TryGetThresholdForState(ent, MobState.SoftCritical, out var amount, ent.Comp2)) // RW-Edit
             return 1;
 
         var percentDamage = (float)(ent.Comp1.TotalDamage / amount);

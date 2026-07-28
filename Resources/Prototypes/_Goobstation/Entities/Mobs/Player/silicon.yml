@@ -68,5 +68,5 @@
     raffle:
       settings: default
     requirements: # Goobstation - ghost roles requirements
-    - !type:DiscordLinkRequirement # Amour edit
+    - !type:DiscordLinkRequirement # RW edit
   - type: GhostTakeoverAvailable

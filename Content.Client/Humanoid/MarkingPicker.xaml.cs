@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 
 using System.Linq;
-using Content.Shared._Amour.Loadouts.Effects;
+using Content.Shared._RW.Loadouts.Effects;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
@@ -23,7 +23,7 @@ public sealed partial class MarkingPicker : Control
     [Dependency] private readonly MarkingManager _markingManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!; // Amour
+    [Dependency] private readonly IPlayerManager _playerManager = default!; // RW
 
     private readonly SpriteSystem _sprite;
 
@@ -34,13 +34,13 @@ public sealed partial class MarkingPicker : Control
 
     private List<Color> _currentMarkingColors = new();
 
-    // Amour edit start: gradient-mode state for the currently selected marking.
+    // RW edit start: gradient-mode state for the currently selected marking.
     private List<Color> _currentSecondaryColors = new();
     private List<BoxContainer> _currentGradientContainers = new();
     private bool _currentUseGradient;
     private float _currentGradientPosition;
     private float _currentGradientBlur;
-    // Amour edit end
+    // RW edit end
 
     private ItemList.Item? _selectedMarking;
     private ItemList.Item? _selectedUnusedMarking;
@@ -111,7 +111,7 @@ public sealed partial class MarkingPicker : Control
 
         if (!IgnoreSpecies)
         {
-            _currentMarkings.EnsureSpecies(species, skinColor, _markingManager, null); // should be validated server-side but it can't hurt // Amour add null
+            _currentMarkings.EnsureSpecies(species, skinColor, _markingManager, null); // should be validated server-side but it can't hurt // RW add null
         }
 
         _currentSpecies = species;
@@ -129,7 +129,7 @@ public sealed partial class MarkingPicker : Control
 
         if (!IgnoreSpecies)
         {
-            _currentMarkings.EnsureSpecies(species, skinColor, _markingManager, null); // should be validated server-side but it can't hurt // Amour add null
+            _currentMarkings.EnsureSpecies(species, skinColor, _markingManager, null); // should be validated server-side but it can't hurt // RW add null
         }
 
         _currentSpecies = species;
@@ -204,7 +204,7 @@ public sealed partial class MarkingPicker : Control
 
     private string GetMarkingName(MarkingPrototype marking) => Loc.GetString($"marking-{marking.ID}");
 
-    // Amour start
+    // RW start
     private static bool MarkingSupportsGradient(MarkingPrototype marking) =>
         marking.SupportsGradient ||
         marking.MarkingCategory is MarkingCategories.Hair or MarkingCategories.FacialHair;
@@ -215,7 +215,7 @@ public sealed partial class MarkingPicker : Control
 
     private static Color ToSelectorColor(Color color) => new(color.RByte, color.GByte, color.BByte);
 
-    // Amour end
+    // RW end
     private List<string> GetMarkingStateNames(MarkingPrototype marking)
     {
         List<string> result = new();
@@ -254,7 +254,7 @@ public sealed partial class MarkingPicker : Control
             GetMarkingName(m).ToLower().Contains(filter.ToLower())
         ).OrderBy(p => GetMarkingName(p));
 
-        // Amour edit start
+        // RW edit start
         var currentUserName = _playerManager.LocalSession?.Name ?? string.Empty;
         if (currentUserName.StartsWith("localhost@", StringComparison.OrdinalIgnoreCase))
             currentUserName = currentUserName.Substring("localhost@".Length);
@@ -267,7 +267,7 @@ public sealed partial class MarkingPicker : Control
         var playerTier = localSession != null ? tierManager?.GetPlayerTier(localSession) : null;
         var playerTierLevel = playerTier?.TierLevel ?? 0;
         var hasTierManager = tierManager != null && localSession != null;
-        // Amour edit end
+        // RW edit end
         
 
         foreach (var marking in sortedMarkings)
@@ -277,7 +277,7 @@ public sealed partial class MarkingPicker : Control
                 continue;
             }
 
-            // Amour edit start
+            // RW edit start
             if (marking.AllowedUsers != null && marking.AllowedUsers.Count > 0)
             {
                 var isAllowed = marking.AllowedUsers.Any(u =>
@@ -290,7 +290,7 @@ public sealed partial class MarkingPicker : Control
             {
                 continue;
             }
-            // Amour edit end
+            // RW edit end
 
             var item = CMarkingsUnused.AddItem($"{GetMarkingName(marking)}", _sprite.Frame0(marking.Sprites[0]));
             item.Metadata = marking;
@@ -309,7 +309,7 @@ public sealed partial class MarkingPicker : Control
 
         if (!IgnoreSpecies)
         {
-            _currentMarkings.EnsureSpecies(_currentSpecies, null, _markingManager, null); // Amour add null
+            _currentMarkings.EnsureSpecies(_currentSpecies, null, _markingManager, null); // RW add null
         }
 
         // walk backwards through the list for visual purposes
@@ -428,7 +428,7 @@ public sealed partial class MarkingPicker : Control
         var speciesPrototype = _prototypeManager.Index<SpeciesPrototype>(_currentSpecies);
 
         _currentMarkings = new(markingList, speciesPrototype.MarkingPoints, _markingManager, _prototypeManager);
-        _currentMarkings.EnsureSpecies(_currentSpecies, null, _markingManager, null); // Amour add null
+        _currentMarkings.EnsureSpecies(_currentSpecies, null, _markingManager, null); // RW add null
         _currentMarkings.EnsureSexes(_currentSex, _markingManager);
 
         Populate(CMarkingSearch.Text);
@@ -467,7 +467,7 @@ public sealed partial class MarkingPicker : Control
         }
 
         _currentMarkingColors.Clear();
-        // Amour edit start
+        // RW edit start
         _currentSecondaryColors.Clear();
         _currentGradientContainers.Clear();
 
@@ -478,11 +478,11 @@ public sealed partial class MarkingPicker : Control
         _currentUseGradient = supportsGradient && selectedMarking.UseGradient;
         _currentGradientPosition = Marking.ClampGradientPosition(selectedMarking.GradientPosition);
         _currentGradientBlur = Marking.ClampGradientBlur(selectedMarking.GradientBlur);
-        // Amour edit end
+        // RW edit end
 
         CMarkingColors.RemoveAllChildren();
 
-        // Amour edit start
+        // RW edit start
         if (supportsGradient)
         {
             var gradientToggleContainer = new BoxContainer
@@ -515,14 +515,14 @@ public sealed partial class MarkingPicker : Control
             for (var i = 0; i < prototype.Sprites.Count; i++)
                 _currentMarkingColors.Add(currentColor);
 
-            // Amour edit start
+            // RW edit start
             var secondarySource = selectedMarking.SecondaryMarkingColors;
             var secondaryStart = secondarySource is { Count: > 0 }
                 ? ToSelectorColor(secondarySource[0])
                 : currentColor;
             for (var i = 0; i < prototype.Sprites.Count; i++)
                 _currentSecondaryColors.Add(secondaryStart);
-            // Amour edit end
+            // RW edit end
 
             var colorContainer = new BoxContainer
             {
@@ -553,7 +553,7 @@ public sealed partial class MarkingPicker : Control
         }
 
         var stateNames = GetMarkingStateNames(prototype);
-        // Amour edit end
+        // RW edit end
         for (int i = 0; i < prototype.Sprites.Count; i++)
         {
             var colorContainer = new BoxContainer
@@ -573,7 +573,7 @@ public sealed partial class MarkingPicker : Control
             var listing = _currentMarkings.Markings[_selectedMarkingCategory];
 
             var color = listing[listing.Count - 1 - item.ItemIndex].MarkingColors[i];
-            // Amour start
+            // RW start
             /*             var currentColor = new Color(
                 color.RByte,
                 color.GByte,
@@ -581,10 +581,10 @@ public sealed partial class MarkingPicker : Control
             );
             */ 
             var currentColor = ToSelectorColor(color);
-            // Amour end
+            // RW end
             colorSelector.Color = currentColor;
             _currentMarkingColors.Add(currentColor);
-            // Amour edit start
+            // RW edit start
             var secondarySource = selectedMarking.SecondaryMarkingColors;
             var secondaryStart = secondarySource != null && i < secondarySource.Count
                 ? ToSelectorColor(secondarySource[i])
@@ -592,7 +592,7 @@ public sealed partial class MarkingPicker : Control
             while (_currentSecondaryColors.Count <= i)
                 _currentSecondaryColors.Add(secondaryStart);
             _currentSecondaryColors[i] = secondaryStart;
-            // Amour edit end
+            // RW edit end
             var colorIndex = _currentMarkingColors.Count - 1;
 
             Action<Color> colorChanged = _ =>
@@ -611,7 +611,7 @@ public sealed partial class MarkingPicker : Control
         CMarkingColors.Visible = true;
     }
 
-    // Amour edit start
+    // RW edit start
     private void AddGradientEditor(MarkingPrototype prototype, bool usesSharedColorControls, IReadOnlyList<string> stateNames)
     {
         var editor = new BoxContainer
@@ -709,7 +709,7 @@ public sealed partial class MarkingPicker : Control
             };
         }
     }
-    // Amour edit end
+    // RW edit end
 
     private void ColorChanged(int colorIndex)
     {
@@ -722,7 +722,7 @@ public sealed partial class MarkingPicker : Control
         _selectedMarking.IconModulate = _currentMarkingColors[colorIndex];
 
         var marking = new Marking(_currentMarkings.Markings[_selectedMarkingCategory][markingIndex]);
-        // Amour edit start
+        // RW edit start
         if (UsesSharedColorControls(markingPrototype))
         {
             var color = _currentMarkingColors[colorIndex];
@@ -735,13 +735,13 @@ public sealed partial class MarkingPicker : Control
         }
 
         ApplyCurrentGradient(marking);
-        // Amour edit end
+        // RW edit end
         _currentMarkings.Replace(_selectedMarkingCategory, markingIndex, marking);
 
         OnMarkingColorChange?.Invoke(_currentMarkings);
     }
 
-    // Amour edit start: persist gradient toggle and secondary colors into the marking set.
+    // RW edit start: persist gradient toggle and secondary colors into the marking set.
     private void GradientStateChanged()
     {
         if (_selectedMarking is null)
@@ -766,7 +766,7 @@ public sealed partial class MarkingPicker : Control
         for (var i = 0; i < _currentSecondaryColors.Count; i++)
             marking.SetGradientColor(i, _currentSecondaryColors[i]);
     }
-    // Amour edit end
+    // RW edit end
     private void MarkingAdd()
     {
         if (_selectedUnusedMarking is null) return;
@@ -814,14 +814,14 @@ public sealed partial class MarkingPicker : Control
         }
 
         markingObject.Forced = Forced;
-        // Amour edit start: dedicated gradient markings should render as gradients immediately.
+        // RW edit start: dedicated gradient markings should render as gradients immediately.
         if (MarkingSupportsGradient(marking))
         {
             markingObject.UseGradient = true;
             for (var i = 0; i < markingObject.MarkingColors.Count; i++)
                 markingObject.SetGradientColor(i, markingObject.MarkingColors[i]);
         }
-        // Amour edit end
+        // RW edit end
 
         _currentMarkings.AddBack(_selectedMarkingCategory, markingObject);
 

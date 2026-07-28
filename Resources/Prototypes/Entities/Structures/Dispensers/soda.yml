@@ -105,8 +105,8 @@
   id: SodaDispenserEmpty
   name: soda dispenser
   description: A beverage dispenser with a selection of soda and several other common beverages. Has a single fill slot for containers.
-#  suffix: Empty # Orion-Edit: Removed
-  categories: [ HideSpawnMenu ] # Orion-Edit: Migration
+#  suffix: Empty # RW-Edit: Removed
+  categories: [ HideSpawnMenu ] # RW-Edit: Migration
   components:
   - type: Rotatable
   - type: Sprite
@@ -122,7 +122,7 @@
     noRot: false
   - type: Machine
     board: SodaDispenserMachineCircuitboard
-  - type: ContainerContainer # Orion
+  - type: ContainerContainer # RW
     containers:
       machine_board: !type:Container
       machine_parts: !type:Container
@@ -138,9 +138,9 @@
   id: SodaDispenser
   name: soda dispenser
   description: A beverage dispenser with a selection of soda and several other common beverages. Has a single fill slot for containers.
-#  suffix: Filled # Orion-Edit: Removed
+#  suffix: Filled # RW-Edit: Removed
   components:
-  # Orion-Start
+  # RW-Start
   - type: EnergyReagentDispenser
     energyBeakerSlot:
       whitelistFailPopup: reagent-dispenser-component-cannot-put-entity-message
@@ -198,4 +198,4 @@
     batteryRechargeEfficiency: 1.0
   - type: ApcPowerReceiver
     powerLoad: 30
-  # Orion-End
+  # RW-End

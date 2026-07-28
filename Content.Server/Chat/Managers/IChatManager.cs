@@ -21,7 +21,7 @@ namespace Content.Server.Chat.Managers
         void DispatchServerMessage(ICommonSession player, string message, bool suppressLog = false);
 
         void TrySendOOCMessage(ICommonSession player, string message, OOCChatType type);
-        void SetOocEnabledSilently(bool enabled); // Amour
+        void SetOocEnabledSilently(bool enabled); // RW
 
         void SendHookOOC(string sender, string message, bool isDiscordBridge = false);
         void SendHookAdmin(string sender, string message);

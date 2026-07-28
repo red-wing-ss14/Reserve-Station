@@ -14,7 +14,7 @@
       state: icon
     - map: ["computerLayerScreen"]
       state: unshaded
-  - type: GenericVisualizer # Orion
+  - type: GenericVisualizer # RW
     visuals:
       enum.EdgeConnectionVisuals.ConnectionMask:
         computerLayerBody:

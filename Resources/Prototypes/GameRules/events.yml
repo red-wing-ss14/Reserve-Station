@@ -4,10 +4,10 @@
   id: BasicCalmEventsTable
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
-    # Orion-Start
+    # RW-Start
     - id: WisdomCowSpawn
     - id: WormholesSpawn
-    # Orion-End
+    # RW-End
     - id: AnomalySpawn
     - id: BluespaceArtifact
     - id: BluespaceLocker
@@ -21,7 +21,7 @@
     # - id: JobDistributionError RW
     - id: KudzuGrowth
     - id: MassHallucinations
-#    - id: MimicVendorRule # Orion-Edit: Morph better!!!
+#    - id: MimicVendorRule # RW-Edit: Morph better!!!
     - id: MouseMigration
     - id: PowerGridCheck
     - id: RandomSentience
@@ -43,10 +43,10 @@
   id: BasicAntagEventsTable
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
-    # Orion-Start
+    # RW-Start
     - id: MorphInfestation
     - id: CorticalBorerInfestation
-    # Orion-End
+    # RW-End
     - id: ClosetSkeleton
     - id: KingRatMigration
     # - id: RevenantSpawn # Goob
@@ -69,7 +69,7 @@
     - id: LoneAbductorSpawn # Shitmed - Starlight Abductors
     - id: DuoAbductorSpawn # Shitmed - Starlight Abductors
     - id: BingleSpawn #Goobstation - Bingle
-    # Amour commented - id: SlaughterDemonMidround # Goobstation - Slaughter Demon
+    # RW commented - id: SlaughterDemonMidround # Goobstation - Slaughter Demon
     - id: XenomorphsInfestation # WD EDIT
     - id: SlasherSpawn # Goobstation - The Slasher
     - id: SpacePirates # Goobstation - you probably can read whom this rule spawns
@@ -139,11 +139,11 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    minimumPlayers: 10 # Orion
-    reoccurrenceDelay: 15 # Orion
+    minimumPlayers: 10 # RW
+    reoccurrenceDelay: 15 # RW
     startAnnouncementColor: "#18abf5"
     startAudio:
-      path: /Audio/_Orion/Announcements/flux.ogg # Orion-Edit
+      path: /Audio/_RW/Announcements/flux.ogg # RW-Edit
     weight: 8
     duration: 35
     chaos: # Goobstation
@@ -164,10 +164,10 @@
       max:  30
     chaosScore: 40 # Goobstation
   - type: StationEvent
-    reoccurrenceDelay: 10 # Orion
+    reoccurrenceDelay: 10 # RW
     startAnnouncementColor: "#18abf5"
     startAudio:
-      path: /Audio/_Orion/Announcements/blusp_anomalies.ogg # Orion-Edit
+      path: /Audio/_RW/Announcements/blusp_anomalies.ogg # RW-Edit
     weight: 8
     duration: 35
     chaos: # Goobstation
@@ -181,7 +181,7 @@
   components:
   - type: StationEvent
     weight: 2
-    reoccurrenceDelay: 15 # Orion-Edit: 5 > 15
+    reoccurrenceDelay: 15 # RW-Edit: 5 > 15
     earliestStart: 1
     duration: 1
     chaos: # Goobstation
@@ -251,7 +251,7 @@
   - type: StationEvent
     weight: 5
     duration: 1
-    minimumPlayers: 15 # Orion-Edit: 10 > 15
+    minimumPlayers: 15 # RW-Edit: 10 > 15
     eventType: Chaotic # Goobstation
   # Goobstation
   - type: GameRule
@@ -342,7 +342,7 @@
     - TerrorObjective
     - MassArrestObjective
     - NinjaSurviveObjective
-    - NinjaProtectObjective # Orion
+    - NinjaProtectObjective # RW
   - type: AntagSelection
     agentName: ninja-round-end-agent-name
     definitions:
@@ -370,7 +370,7 @@
         - NamesNinjaTitle
         - NamesNinja
         nameFormat: name-format-ninja
-      - type: GlobalAntagonist # Orion
+      - type: GlobalAntagonist # RW
         antagonistPrototype: globalAntagonistNinja
       mindRoles:
       - MindRoleNinja
@@ -501,17 +501,17 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    minimumPlayers: 8 # Orion
+    minimumPlayers: 8 # RW
     startAnnouncement: station-event-gas-leak-start-announcement
     startAudio:
-      path: /Audio/Announcements/gasleak_start.ogg # Orion-Edit
+      path: /Audio/Announcements/gasleak_start.ogg # RW-Edit
     endAnnouncement: station-event-gas-leak-end-announcement
     weight: 4 # RW 8 > 4
     chaos:
       Atmos: 100
       Medical: 50
     eventType: Maintenance # Goobstation
-    endAudio: # Orion
+    endAudio: # RW
       path: /Audio/Announcements/gasleak_end.ogg
       params:
         volume: -4
@@ -568,7 +568,7 @@
     startAnnouncement: station-event-solar-flare-start-announcement
     endAnnouncement: station-event-solar-flare-end-announcement
     startAudio:
-      path: /Audio/_Orion/Announcements/comms_blackout.ogg # Orion-Edit
+      path: /Audio/_RW/Announcements/comms_blackout.ogg # RW-Edit
     duration: 120
     maxDuration: 240
     chaos: # Goobstation
@@ -600,7 +600,7 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-clog-start-announcement
     startAudio:
-      path: /Audio/Announcements/attention.ogg # Orion-Edit
+      path: /Audio/Announcements/attention.ogg # RW-Edit
     earliestStart: 15
     minimumPlayers: 15
     weight: 5
@@ -624,7 +624,7 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
-      path: /Audio/Announcements/attention.ogg # Orion-Edit
+      path: /Audio/Announcements/attention.ogg # RW-Edit
     earliestStart: 20
     minimumPlayers: 15
     weight: 7 # Goobstation - was 5
@@ -754,7 +754,7 @@
       - type: ZombifyOnDeath
       - type: IncurableZombie
       - type: InitialInfected
-      - type: GlobalAntagonist # Orion
+      - type: GlobalAntagonist # RW
         antagonistPrototype: globalAntagonistZombie
       mindRoles:
       - MindRoleInitialInfected
@@ -794,9 +794,9 @@
       roleLoadout:
       - RoleSurvivalNukie
       components:
-      - type: GlobalAntagonist # Orion
+      - type: GlobalAntagonist # RW
         antagonistPrototype: globalAntagonistLoneops
-      - type: AdditionalLanguage # Orion
+      - type: AdditionalLanguage # RW
         speaks:
         - Codespeak
         understands:
@@ -886,14 +886,14 @@
       Friend: 20
       Mess: 30
     eventType: Chaotic # Goobstation
-    startAudio: # Orion
-      path: /Audio/_Orion/Adminbuse/i-storm1.ogg
+    startAudio: # RW
+      path: /Audio/_RW/Adminbuse/i-storm1.ogg
   # Goobstation
   - type: GameRule
     chaosScore: 150
   - type: IonStormRule
 
-#- type: entity # Orion-Edit: Removed
+#- type: entity # RW-Edit: Removed
 #  id: MimicVendorRule
 #  parent: BaseGameRule
 #  components:

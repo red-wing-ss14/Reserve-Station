@@ -125,8 +125,8 @@
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
   - type: ClothingSpeedModifier
-    walkModifier: 0.95 # Amour edit: 0.9 > 0.95
-    sprintModifier: 0.95 # Amour edit: 0.9 > 0.95
+    walkModifier: 0.95 # RW edit: 0.9 > 0.95
+    sprintModifier: 0.95 # RW edit: 0.9 > 0.95
   - type: HeldSpeedModifier
   - type: TemperatureProtection
     heatingCoefficient: 0.1
@@ -144,12 +144,12 @@
     modifiers:
       coefficients:
         Heat: 0.9
-        Radiation: 0.1 # Amour edit: 0.75 > 0.1
-        Caustic: 0.4 # Amour edit: 0.5 > 0.4
-        Blunt: 0.9 # Amour edit: missing > 0.9
-        Slash: 0.9 # Amour edit: missing > 0.9
-        Piercing: 0.9 # Amour edit: missing > 0.9
-        Cold: 0.9 # Amour edit: missing > 0.9
+        Radiation: 0.1 # RW edit: 0.75 > 0.1
+        Caustic: 0.4 # RW edit: 0.5 > 0.4
+        Blunt: 0.9 # RW edit: missing > 0.9
+        Slash: 0.9 # RW edit: missing > 0.9
+        Piercing: 0.9 # RW edit: missing > 0.9
+        Cold: 0.9 # RW edit: missing > 0.9
   - type: GroupExamine
   - type: StealTarget
     stealGroup: ClothingOuterHardsuitVoidParamed

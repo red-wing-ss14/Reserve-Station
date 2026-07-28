@@ -34,7 +34,7 @@
     impactEffect: BulletImpactEffectRedDisabler
     damage:
       types:
-        Heat: 16 # Amour edit: 17 > 16
+        Heat: 16 # RW edit: 17 > 16
     soundHit:
       collection: MeatLaserImpact
 
@@ -109,7 +109,7 @@
         mask:
         - Opaque
   - type: StaminaDamageOnCollide
-    damage: 19 # Amour edit: 32 > 19; Orion-Edit: 20 > 32
+    damage: 19 # RW edit: 32 > 19; Orion-Edit: 20 > 32
   - type: Projectile
     impactEffect: BulletImpactEffectBlueDisabler
     damage:
@@ -192,6 +192,6 @@
     impactEffect: BulletImpactEffectRedDisabler
     damage:
       types:
-        Heat: 15 # Amour edit: 25 > 15
+        Heat: 15 # RW edit: 25 > 15
     soundHit:
       collection: MeatLaserImpact

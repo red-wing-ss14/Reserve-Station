@@ -28,10 +28,10 @@
 #  - Command
 #  - EmergenciesSOP
   goobcoins: 40 #Goob content
-  # Orion-Start
+  # RW-Start
   salary: 120
   payrollDepartmentAccount: Command
-  # Orion-End
+  # RW-End
   access:
   - Maintenance
   - Engineering
@@ -53,7 +53,7 @@
   id: ChiefEngineerGear
   equipment:
     id: CEPDA
-#    eyes: ClothingEyesGlassesMeson # Orion-Edit: In loadout
+#    eyes: ClothingEyesGlassesMeson # RW-Edit: In loadout
     ears: ClothingHeadsetAltEngineering # Goobstation
     belt: ClothingBeltUtilityEngineering
   storage:

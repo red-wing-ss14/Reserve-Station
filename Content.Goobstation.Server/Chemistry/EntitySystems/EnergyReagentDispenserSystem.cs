@@ -17,7 +17,7 @@ using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
-using Content.Shared._Orion.Construction.Events;
+using Content.Shared._RW.Construction.Events;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Power.Components;
 using Content.Server.Chemistry.Components;
@@ -71,11 +71,11 @@ namespace Content.Goobstation.Server.Chemistry.EntitySystems
             SubscribeLocalEvent<EnergyReagentDispenserComponent, InteractUsingEvent>(OnInteractUsing);
             // RW end
 
-            // Orion-Start
+            // RW-Start
             SubscribeLocalEvent<EnergyReagentDispenserComponent, RefreshPartsEvent>(OnPartsRefresh);
             SubscribeLocalEvent<EnergyReagentDispenserComponent, UpgradeExamineEvent>(OnUpgradeExamine);
             SubscribeLocalEvent<EnergyReagentDispenserComponent, GotEmaggedEvent>(OnEmaged);
-            // Orion-End
+            // RW-End
         }
 
         private void SubscribeUpdateUiState<T>(Entity<EnergyReagentDispenserComponent> ent, ref T ev) => UpdateUiState(ent);
@@ -249,8 +249,8 @@ namespace Content.Goobstation.Server.Chemistry.EntitySystems
                 || !_solutionContainerSystem.TryGetFitsInDispenser(outputContainer, out var solution, out var soln))
                 return;
 
-            var refundedPower = soln.Sum(reagent => GetPowerCostForReagent(reagent.Reagent.Prototype, reagent.Quantity.Float(), reagentDispenser.Comp)) // Orion-Edit // RW
-                                * reagentDispenser.Comp.RefundEnergyEfficiency; // Orion
+            var refundedPower = soln.Sum(reagent => GetPowerCostForReagent(reagent.Reagent.Prototype, reagent.Quantity.Float(), reagentDispenser.Comp)) // RW-Edit // RW
+                                * reagentDispenser.Comp.RefundEnergyEfficiency; // RW
             if (refundedPower > 0)
             {
                 _battery.TryGetBatteryComponent(reagentDispenser, out var batteryComponent, out _);
@@ -271,7 +271,7 @@ namespace Content.Goobstation.Server.Chemistry.EntitySystems
         private static float GetPowerCostForReagent(string reagentId, float amount, EnergyReagentDispenserComponent comp)
         {
             return comp.Reagents.TryGetValue(reagentId, out var cost)
-                ? cost * amount * comp.FinalEnergyCostMultiplier // Orion-Edit
+                ? cost * amount * comp.FinalEnergyCostMultiplier // RW-Edit
                 : float.MaxValue;
         }
         // RW end
@@ -282,13 +282,13 @@ namespace Content.Goobstation.Server.Chemistry.EntitySystems
                 SharedEnergyReagentDispenser.OutputSlotName,
                 entity.Comp.EnergyBeakerSlot);
 
-            // Orion-Start
+            // RW-Start
             if (!TryComp<ApcPowerReceiverBatteryComponent>(entity, out var apcBattery))
                 return;
 
             entity.Comp.BaseRechargeRate = apcBattery.BatteryRechargeRate;
             entity.Comp.FinalRechargeRate = apcBattery.BatteryRechargeRate;
-            // Orion-End
+            // RW-End
         }
 
         // RW start
@@ -305,7 +305,7 @@ namespace Content.Goobstation.Server.Chemistry.EntitySystems
         }
         // RW end
 
-        // Orion-Start
+        // RW-Start
         private void OnPartsRefresh(EntityUid uid, EnergyReagentDispenserComponent component, RefreshPartsEvent args)
         {
             var capacitorTier = args.GetPartRating(component.CapacitorPart);
@@ -341,6 +341,6 @@ namespace Content.Goobstation.Server.Chemistry.EntitySystems
             ent.Comp.Emagged = true;
             UpdateUiState(ent);
         }
-        // Orion-End
+        // RW-End
     }
 }

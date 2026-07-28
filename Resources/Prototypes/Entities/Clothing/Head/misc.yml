@@ -223,7 +223,7 @@
   - type: AddAccentClothing
     accent: OwOAccent
   - type: StaticPrice
-    price: 15 # Amour edit: fixed for vending
+    price: 15 # RW edit: fixed for vending
 
 - type: entity
   parent: [ClothingHeadHatCatEars, BaseToggleClothing]

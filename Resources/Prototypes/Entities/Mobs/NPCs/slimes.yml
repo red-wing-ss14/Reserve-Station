@@ -154,7 +154,7 @@
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
-  - type: GlobalAntagonist # Orion
+  - type: GlobalAntagonist # RW
     antagonistPrototype: globalAntagonistSlime
 
 - type: entity

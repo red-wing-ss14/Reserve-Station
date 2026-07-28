@@ -283,7 +283,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [Slime, Human]
-  minBoostyTier: 2 # Amour edit
+  minBoostyTier: 2 # RW edit
   sprites:
   - sprite: _Floof/Mobs/Customization/skyratears.rsi
     state: m_ears_elephant_FRONT
@@ -349,7 +349,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [Slime, Human]
-  minBoostyTier: 3 # Amour edit
+  minBoostyTier: 3 # RW edit
   sprites:
   - sprite: _Floof/Mobs/Customization/skyratears.rsi
     state: m_ears_hammerhead_FRONT_primary
@@ -372,7 +372,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [Slime, Human]
-  minBoostyTier: 3 # Amour edit
+  minBoostyTier: 3 # RW edit
   sprites:
   - sprite: _Floof/Mobs/Customization/skyratears.rsi
     state: m_ears_horn1_FRONT
@@ -408,7 +408,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [Slime, Human]
-  minBoostyTier: 3 # Amour edit
+  minBoostyTier: 3 # RW edit
   sprites:
   - sprite: _Floof/Mobs/Customization/skyratears.rsi
     state: m_ears_lunasune_FRONT_primary
@@ -593,7 +593,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [Slime, Human]
-  minBoostyTier: 2 # Amour edit
+  minBoostyTier: 2 # RW edit
   sprites:
   - sprite: _Floof/Mobs/Customization/skyratears.rsi
     state: m_ears_raccoon_FRONT_primary
@@ -637,7 +637,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [Slime, Human]
-  minBoostyTier: 2 # Amour edit
+  minBoostyTier: 2 # RW edit
   sprites:
   - sprite: _Floof/Mobs/Customization/skyratears.rsi
     state: m_ears_skunk_FRONT_primary

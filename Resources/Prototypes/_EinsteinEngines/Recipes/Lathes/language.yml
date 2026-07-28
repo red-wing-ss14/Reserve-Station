@@ -275,9 +275,9 @@
     Silver: 50
 
 - type: latheRecipe
-  parent: BaseTranslatorImplanter # Orion
+  parent: BaseTranslatorImplanter # RW
   id: GruntishTranslatorImplanter
-  subname: lathe-recipe-GruntishTranslatorImplanter-subname # Orion
+  subname: lathe-recipe-GruntishTranslatorImplanter-subname # RW
   result: GruntishTranslatorImplanter
   completetime: 2
   materials:

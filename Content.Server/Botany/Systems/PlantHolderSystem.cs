@@ -7,8 +7,8 @@ using Content.Server.Hands.Systems;
 using Content.Server.Popups;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Chemistry.EntitySystems;
-using Content.Shared._Orion.Construction.Events;
-using Content.Shared._Orion.Construction;
+using Content.Shared._RW.Construction.Events;
+using Content.Shared._RW.Construction;
 using Content.Shared.Atmos;
 using Content.Shared.Botany;
 using Content.Shared.Burial.Components;
@@ -71,10 +71,10 @@ public sealed class PlantHolderSystem : EntitySystem
         SubscribeLocalEvent<PlantHolderComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<PlantHolderComponent, InteractHandEvent>(OnInteractHand);
         SubscribeLocalEvent<PlantHolderComponent, SolutionTransferredEvent>(OnSolutionTransferred);
-        // Orion-Start
+        // RW-Start
         SubscribeLocalEvent<PlantHolderComponent, RefreshPartsEvent>(OnRefreshParts);
         SubscribeLocalEvent<PlantHolderComponent, UpgradeExamineEvent>(OnUpgradeExamine);
-        // Orion-End
+        // RW-End
     }
 
     public override void Update(float frameTime)
@@ -482,7 +482,7 @@ public sealed class PlantHolderSystem : EntitySystem
         // Nutrient consumption.
         if (component.Seed.NutrientConsumption > 0 && component.NutritionLevel > 0 && _random.Prob(0.75f))
         {
-            component.NutritionLevel -= MathF.Max(0f, component.Seed.NutrientConsumption * HydroponicsSpeedMultiplier * component.NutrientConsumptionMultiplier); // Orion-Edit
+            component.NutritionLevel -= MathF.Max(0f, component.Seed.NutrientConsumption * HydroponicsSpeedMultiplier * component.NutrientConsumptionMultiplier); // RW-Edit
             if (component.DrawWarnings)
                 component.UpdateSpriteAfterUpdate = true;
         }
@@ -702,8 +702,8 @@ public sealed class PlantHolderSystem : EntitySystem
         }
 
         component.MutationLevel = MathHelper.Clamp(component.MutationLevel, 0f, 100f);
-        component.NutritionLevel = MathHelper.Clamp(component.NutritionLevel, 0f, component.MaxNutrition); // Orion-Edit
-        component.WaterLevel = MathHelper.Clamp(component.WaterLevel, 0f, component.MaxWater); // Orion-Edit
+        component.NutritionLevel = MathHelper.Clamp(component.NutritionLevel, 0f, component.MaxNutrition); // RW-Edit
+        component.WaterLevel = MathHelper.Clamp(component.WaterLevel, 0f, component.MaxWater); // RW-Edit
         component.PestLevel = MathHelper.Clamp(component.PestLevel, 0f, 10f);
         component.WeedLevel = MathHelper.Clamp(component.WeedLevel, 0f, 10f);
         component.Toxins = MathHelper.Clamp(component.Toxins, 0f, 100f);
@@ -1006,7 +1006,7 @@ public sealed class PlantHolderSystem : EntitySystem
         Update(uid, component);
     }
 
-    // Orion-Start
+    // RW-Start
     private static void OnRefreshParts(EntityUid uid, PlantHolderComponent component, RefreshPartsEvent args)
     {
         var bin = args.GetPartRating(MachinePartIds.MatterBin);
@@ -1022,5 +1022,5 @@ public sealed class PlantHolderSystem : EntitySystem
         args.AddPercentageUpgrade("machine-upgrade-hydro-nutrition", component.MaxNutrition / component.BaseMaxNutrition);
         args.AddPercentageUpgrade("machine-upgrade-hydro-nutrition-consume", component.NutrientConsumptionMultiplier);
     }
-    // Orion-End
+    // RW-End
 }

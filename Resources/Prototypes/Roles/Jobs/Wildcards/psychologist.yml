@@ -9,14 +9,14 @@
   icon: "JobIconPsychologist"
   supervisors: job-supervisors-cmo
   goobcoins: 15 #Goob content
-  # Orion-Start
+  # RW-Start
   salary: 60
   payrollDepartmentAccount: Medical
-  # Orion-End
+  # RW-End
   access:
   - Medical
   - Maintenance
-#  extendedAccess: # Orion-Edit
+#  extendedAccess: # RW-Edit
 #  - Chemistry
 
 - type: startingGear

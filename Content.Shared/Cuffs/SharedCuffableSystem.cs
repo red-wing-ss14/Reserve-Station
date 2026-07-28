@@ -96,7 +96,7 @@ namespace Content.Shared.Cuffs
             SubscribeLocalEvent<HandcuffComponent, MeleeHitEvent>(OnCuffMeleeHit);
             SubscribeLocalEvent<HandcuffComponent, AddCuffDoAfterEvent>(OnAddCuffDoAfter);
             SubscribeLocalEvent<HandcuffComponent, VirtualItemDeletedEvent>(OnCuffVirtualItemDeleted);
-            SubscribeLocalEvent<CuffableComponent, ExaminedEvent>(OnExamined); // Orion
+            SubscribeLocalEvent<CuffableComponent, ExaminedEvent>(OnExamined); // RW
         }
 
         private void CheckInteract(Entity<CuffableComponent> ent, ref InteractionAttemptEvent args)
@@ -815,13 +815,13 @@ namespace Content.Shared.Cuffs
             cuff.Removing = false;
         }
 
-        // Orion-Start
+        // RW-Start
         private void OnExamined(Entity<CuffableComponent> ent, ref ExaminedEvent args)
         {
             if (!ent.Comp.CanStillInteract)
                 args.PushMarkup(Loc.GetString("examine-handcuffed", ("ent", ent.Owner)));
         }
-        // Orion-End
+        // RW-End
 
         #region ActionBlocker
 

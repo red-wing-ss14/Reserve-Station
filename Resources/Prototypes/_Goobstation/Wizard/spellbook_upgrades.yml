@@ -285,7 +285,7 @@
   - !type:ListingLimitedStockCondition
     stock: 2
 
-#- type: listing # Orion-Edit
+#- type: listing # RW-Edit
 #  id: SpellbookRathenUpgrade
 #  productUpgradeId: SpellbookRathenUpgrade
 #  name: spellbook-upgrade-rathen-name
