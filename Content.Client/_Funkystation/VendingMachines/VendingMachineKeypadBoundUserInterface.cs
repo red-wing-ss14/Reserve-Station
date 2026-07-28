@@ -20,6 +20,9 @@ public sealed class VendingMachineKeypadBoundUserInterface(EntityUid owner, Enum
     [ViewVariables]
     private List<VendingMachineInventoryEntry> _cachedInventory = new();
 
+    [ViewVariables]
+    private int? _balance;
+
     protected override void Open()
     {
         base.Open();
@@ -35,21 +38,51 @@ public sealed class VendingMachineKeypadBoundUserInterface(EntityUid owner, Enum
 
     public void Refresh()
     {
-        var enabled = EntMan.TryGetComponent(Owner, out VendingMachineComponent? bendy) && !bendy.Ejecting;
+        _cachedInventory = GetInventoryWithKnownPrices();
 
-        var system = EntMan.System<VendingMachineSystem>();
-        _cachedInventory = system.GetAllInventory(Owner);
-
-        _menu?.Populate(_cachedInventory, enabled);
+        _menu?.Populate(_cachedInventory, IsEnabled());
     }
 
     public void UpdateAmounts()
     {
-        var enabled = EntMan.TryGetComponent(Owner, out VendingMachineComponent? bendy) && !bendy.Ejecting;
+        _cachedInventory = GetInventoryWithKnownPrices();
 
-        var system = EntMan.System<VendingMachineSystem>();
-        _cachedInventory = system.GetAllInventory(Owner);
-        _menu?.UpdateAmounts(_cachedInventory, enabled);
+        _menu?.UpdateAmounts(_cachedInventory, IsEnabled());
+    }
+
+    protected override void ReceiveMessage(BoundUserInterfaceMessage message)
+    {
+        if (message is not VendingMachineInventoryUpdateMessage update)
+            return;
+
+        _cachedInventory = update.Inventory;
+        _balance = update.Balance;
+
+        _menu?.SetBalance(_balance);
+        _menu?.UpdateAmounts(_cachedInventory, IsEnabled());
+    }
+
+    private List<VendingMachineInventoryEntry> GetInventoryWithKnownPrices()
+    {
+        var inventory = EntMan.System<VendingMachineSystem>()
+            .GetAllInventory(Owner)
+            .Select(entry => new VendingMachineInventoryEntry(entry))
+            .ToList();
+
+        foreach (var entry in inventory)
+        {
+            var known = _cachedInventory.FirstOrDefault(cached => cached.ID == entry.ID && cached.Type == entry.Type);
+
+            if (known != null)
+                entry.DisplayPrice = known.DisplayPrice;
+        }
+
+        return inventory;
+    }
+
+    private bool IsEnabled()
+    {
+        return EntMan.TryGetComponent(Owner, out VendingMachineComponent? bendy) && !bendy.Ejecting;
     }
 
     private void OnAudioPlayed(VendingMachineKeypadSound type, float pitch)

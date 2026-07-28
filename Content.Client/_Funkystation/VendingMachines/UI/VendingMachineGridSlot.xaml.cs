@@ -15,9 +15,12 @@ public sealed partial class VendingMachineGridSlot : PanelContainer
     [Dependency] private IPrototypeManager _protoManager = null!;
     [Dependency] private ILocalizationManager _loc = null!;
 
-    private const float SlotSize = 84f;
+    private const float SlotWidth = 84f;
+    private const float PriceBarHeight = 18f;
+    private const float SlotHeight = 84f + PriceBarHeight;
     private const float ItemSize = 64f;
     private const float BadgeSize = 20f;
+    private const float SoldOverlayHeight = 22f;
     private const float AnimDuration = 0.55f;
     private const float DropDistance = 20f;
     private const float IconScale = 2.5f;
@@ -26,6 +29,11 @@ public sealed partial class VendingMachineGridSlot : PanelContainer
     private float _animElapsed;
     private bool _pendingSoldOut;
 
+    // price tag colors
+    private static readonly Color FreeColor = Color.FromHex("#66ccff");
+    private static readonly Color AffordableColor = Color.FromHex("#8fe08f");
+    private static readonly Color UnaffordableColor = Color.FromHex("#ff6b6b");
+
     // highlighting
     private readonly StyleBoxFlat _normalStyle = new() { BackgroundColor = new Color(30, 30, 40), BorderColor = new Color(90, 90, 105), BorderThickness = new Thickness(1) };
     private readonly StyleBoxFlat _rowMatchStyle = new() { BackgroundColor = new Color(40, 50, 70), BorderColor = new Color(120, 140, 190), BorderThickness = new Thickness(2) };
@@ -33,20 +41,24 @@ public sealed partial class VendingMachineGridSlot : PanelContainer
 
     public bool SoldOut { get; private set; }
 
+    public int Price { get; private set; }
+
     public VendingMachineGridSlot()
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
         MouseFilter = MouseFilterMode.Stop;
 
-        MinSize = SetSize = new Vector2(SlotSize, SlotSize);
+        MinSize = SetSize = new Vector2(SlotWidth, SlotHeight);
 
         PanelOverride = _normalStyle;
 
-        SlotLayout.SetSize = new Vector2(SlotSize, SlotSize);
+        SlotLayout.SetSize = new Vector2(SlotWidth, SlotHeight);
         LayoutContainer.SetPosition(SlotLayout, Vector2.Zero);
 
-        _restingPos = new Vector2((SlotSize - ItemSize) / 2f, (SlotSize - ItemSize) / 2f);
+        // the item sits centered in whatever is left above the price bar
+        var itemAreaHeight = SlotHeight - PriceBarHeight;
+        _restingPos = new Vector2((SlotWidth - ItemSize) / 2f, (itemAreaHeight - ItemSize) / 2f);
         ItemSprite.SetSize = new Vector2(ItemSize, ItemSize);
         ItemSprite.Scale = new Vector2(IconScale, IconScale);
         LayoutContainer.SetPosition(ItemSprite, _restingPos);
@@ -54,13 +66,16 @@ public sealed partial class VendingMachineGridSlot : PanelContainer
         LayoutContainer.SetPosition(CodeLabel, new Vector2(2f, 2f));
 
         AmountBadge.SetSize = new Vector2(BadgeSize, BadgeSize);
-        LayoutContainer.SetPosition(AmountBadge, new Vector2(SlotSize - BadgeSize - 2f, SlotSize - BadgeSize - 2f));
+        LayoutContainer.SetPosition(AmountBadge, new Vector2(SlotWidth - BadgeSize - 2f, 2f));
 
-        SoldOverlay.SetSize = new Vector2(SlotSize, 22f);
-        LayoutContainer.SetPosition(SoldOverlay, new Vector2(0f, (SlotSize - 22f) / 2f));
+        PriceBar.SetSize = new Vector2(SlotWidth, PriceBarHeight);
+        LayoutContainer.SetPosition(PriceBar, new Vector2(0f, SlotHeight - PriceBarHeight));
+
+        SoldOverlay.SetSize = new Vector2(SlotWidth, SoldOverlayHeight);
+        LayoutContainer.SetPosition(SoldOverlay, new Vector2(0f, (itemAreaHeight - SoldOverlayHeight) / 2f));
     }
 
-    public void SetItem(EntProtoId protoId, string code, uint amount, bool soldOut)
+    public void SetItem(EntProtoId protoId, string code, uint amount, bool soldOut, int price, bool affordable)
     {
         CodeLabel.Text = code;
         ItemSprite.SetPrototype(protoId);
@@ -85,7 +100,23 @@ public sealed partial class VendingMachineGridSlot : PanelContainer
                 : $"{tooltipText}\n{proto.Description}";
         }
 
+        SetPrice(price, affordable);
         SetAmount(amount, soldOut);
+    }
+
+    public void SetPrice(int price, bool affordable)
+    {
+        Price = price;
+
+        if (price <= 0)
+        {
+            PriceLabel.Text = Loc.GetString("vending-machine-keypad-price-free");
+            PriceLabel.FontColorOverride = FreeColor;
+            return;
+        }
+
+        PriceLabel.Text = Loc.GetString("vending-machine-keypad-price-value", ("amount", price));
+        PriceLabel.FontColorOverride = affordable ? AffordableColor : UnaffordableColor;
     }
 
     public void SetAmount(uint amount, bool soldOut)

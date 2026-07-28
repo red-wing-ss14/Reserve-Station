@@ -2,7 +2,7 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                       xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
-                      MinSize="680 500">
+                      MinSize="720 500">
 
     <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
 
@@ -42,7 +42,7 @@
 
         <PanelContainer MinWidth="2" StyleClasses="LowDivider" />
 
-        <BoxContainer Orientation="Vertical" MinWidth="200" VerticalExpand="True">
+        <BoxContainer Orientation="Vertical" MinWidth="240" VerticalExpand="True">
 
             <BoxContainer Orientation="Horizontal" Margin="12 12 12 8" HorizontalAlignment="Center" VerticalAlignment="Center">
 
@@ -52,14 +52,32 @@
                 </BoxContainer>
 
                 <controls:StripeBack>
-                    <PanelContainer Name="ScreenBackground" Margin="2" MinWidth="130">
+                    <PanelContainer Name="ScreenBackground" Margin="2" MinWidth="165">
                         <PanelContainer.PanelOverride>
                             <gfx:StyleBoxFlat BackgroundColor="#0a120a" BorderColor="#1a331a" BorderThickness="2" />
                         </PanelContainer.PanelOverride>
 
-                        <BoxContainer Orientation="Vertical" Margin="8 6" HorizontalAlignment="Center">
+                        <BoxContainer Orientation="Vertical" Margin="8 6" HorizontalExpand="True">
                             <Label Text="TARGET" StyleClasses="LabelSubText" FontColorOverride="#1a551a" HorizontalAlignment="Center"/>
                             <Label Name="BufferLabel" HorizontalAlignment="Center" Margin="0 2 0 0" StyleClasses="LabelBig" FontColorOverride="#33ff33" />
+
+                            <PanelContainer Margin="0 6 0 4" MinHeight="1">
+                                <PanelContainer.PanelOverride>
+                                    <gfx:StyleBoxFlat BackgroundColor="#1a331a" />
+                                </PanelContainer.PanelOverride>
+                            </PanelContainer>
+
+                            <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                                <Label Text="{Loc 'vending-machine-keypad-price'}" StyleClasses="LabelSubText" FontColorOverride="#1a551a" />
+                                <Label Name="PriceLabel" StyleClasses="LabelSubText" FontColorOverride="#33ff33"
+                                       HorizontalExpand="True" HorizontalAlignment="Right" />
+                            </BoxContainer>
+
+                            <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                                <Label Text="{Loc 'vending-machine-keypad-credit'}" StyleClasses="LabelSubText" FontColorOverride="#1a551a" />
+                                <Label Name="BalanceLabel" StyleClasses="LabelSubText" FontColorOverride="#33ff33"
+                                       HorizontalExpand="True" HorizontalAlignment="Right" />
+                            </BoxContainer>
                         </BoxContainer>
                     </PanelContainer>
                 </controls:StripeBack>
