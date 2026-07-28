@@ -8,14 +8,11 @@
     DrinkRootBeerCan: 3
     DrinkIcedTeaCan: 3
     DrinkSolDryCan: 3
-    # Reserve: Orchid's Barmania - Vendichaos start
-    DrinkCherryBoomCan: 2
-    DrinkBerryBoomCan: 2
-    DrinkPumpkinBoomCan: 2
-    # Reserve: Orchid's Barmania - Vendichaos end
+    DrinkLemonLimeCan: 3
+    DrinkLemonLimeCranberryCan: 3
+    DrinkFourteenLokoCan: 3
   contrabandInventory:
     DrinkColaBottleFull: 2
     DrinkChangelingStingCan: 3
-    DrinkBlueBoomCan: 2  # Reserve: Orchid's Barmania - Vendichaos
   emaggedInventory:
     DrinkNukieCan: 3

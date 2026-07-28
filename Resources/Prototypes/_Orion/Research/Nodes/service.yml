@@ -150,7 +150,6 @@
   recipeUnlocks:
   - ElectricGrillMachineCircuitboard
   - MicrowaveMachineCircuitboard
-  - SauceDispenserMachineCircuitboard # RW edit
   - FoodBowlBig
   - CandyBowl
   - FoodPlate

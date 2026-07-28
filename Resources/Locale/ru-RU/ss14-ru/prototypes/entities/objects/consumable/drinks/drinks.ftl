@@ -288,6 +288,7 @@ ent-DrinkNuclearColaGlass = { ent-DrinkGlass }
 ent-DrinkOrangeJuice = { ent-DrinkGlass }
     .desc = { ent-DrinkGlass.desc }
     .suffix = Апельсиновый сок
+    .desc = { ent-DrinkGlass.desc }
 ent-DrinkPainkillerGlass = { ent-DrinkGlass }
     .desc = { ent-DrinkGlass.desc }
     .suffix = Обезболивающее

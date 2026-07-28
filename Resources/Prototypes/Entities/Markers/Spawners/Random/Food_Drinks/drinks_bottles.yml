@@ -6,10 +6,8 @@
   suffix: Bottle
   parent: MarkerBase
   placement:
-    mode: PlaceFree  # Reserve: Orchid's Barmania - Vendichaos
+    mode: AlignTileAny
   components:
-  - type: Transform  # Reserve: Orchid's Barmania - Vendichaos
-    anchored: false
   - type: Sprite
     layers:
       - state: red
@@ -56,21 +54,9 @@
     - id: DrinkAleBottleFull
     - id: DrinkAleBottleFullGrowler
     - id: DrinkChampagneBottleFull
-    # Reserve: Orchid's Barmania - Vendichaos start
-    - id: DrinkJuiceBluePumpkinBottleFull
-    - id: DrinkJuiceMultifruitBottleFull
-    - id: DrinkBlueBoomBottleFull
-    - id: DrinkMangoBoomBottleFull
-    - id: DrinkLemonLimeStillBottleFull
-    - id: DrinkSupermaxBottleFull
-    # Reserve: Orchid's Barmania - Vendichaos end
 
 - type: entityTable
   id: RandomRareAlcoholTable
   table: !type:GroupSelector
     children:
     - id: DrinkPoisonWinebottleFull
-    # Reserve: Orchid's Barmania - Vendichaos start
-    - id: DrinkPoisonBoomBottleFull
-    - id: DrinkJuicePumpkinBottleFull
-    # Reserve: Orchid's Barmania - Vendichaos end
