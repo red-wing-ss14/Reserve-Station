@@ -1,0 +1,4 @@
+- type: guideEntry
+  id: RWRuleset
+  name: guide-entry-rw-rules
+  text: /ServerInfo/_RW/Guidebook/Rules/Ruleset.xml

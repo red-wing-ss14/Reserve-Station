@@ -1,0 +1,132 @@
+﻿using Content.Client._Funkystation.VendingMachines.UI;
+using Content.Client.VendingMachines;
+using Content.Shared.Access.Systems;
+using Content.Shared.VendingMachines;
+using JetBrains.Annotations;
+using Robust.Client.Player;
+using Robust.Client.UserInterface;
+using System.Linq;
+using Content.Shared._Funkystation.VendingMachines;
+
+namespace Content.Client._Funkystation.VendingMachines;
+
+[UsedImplicitly]
+public sealed class VendingMachineKeypadBoundUserInterface(EntityUid owner, Enum uiKey)
+    : BoundUserInterface(owner, uiKey), IVendingMachineBoundUi
+{
+    [ViewVariables]
+    private VendingMachineKeypadMenu? _menu;
+
+    [ViewVariables]
+    private List<VendingMachineInventoryEntry> _cachedInventory = new();
+
+    [ViewVariables]
+    private int? _balance;
+
+    protected override void Open()
+    {
+        base.Open();
+
+        _menu = this.CreateWindowCenteredLeft<VendingMachineKeypadMenu>();
+        _menu.VendingMachineOwner = Owner;
+        _menu.User = IoCManager.Resolve<IPlayerManager>().LocalSession?.AttachedEntity;
+        _menu.Title = EntMan.GetComponent<MetaDataComponent>(Owner).EntityName;
+        _menu.OnCodeEntered += OnCodeEntered;
+        _menu.OnAudioPlayed += OnAudioPlayed;
+        Refresh();
+    }
+
+    public void Refresh()
+    {
+        _cachedInventory = GetInventoryWithKnownPrices();
+
+        _menu?.Populate(_cachedInventory, IsEnabled());
+    }
+
+    public void UpdateAmounts()
+    {
+        _cachedInventory = GetInventoryWithKnownPrices();
+
+        _menu?.UpdateAmounts(_cachedInventory, IsEnabled());
+    }
+
+    protected override void ReceiveMessage(BoundUserInterfaceMessage message)
+    {
+        if (message is not VendingMachineInventoryUpdateMessage update)
+            return;
+
+        _cachedInventory = update.Inventory;
+        _balance = update.Balance;
+
+        _menu?.SetBalance(_balance);
+        _menu?.UpdateAmounts(_cachedInventory, IsEnabled());
+    }
+
+    private List<VendingMachineInventoryEntry> GetInventoryWithKnownPrices()
+    {
+        var inventory = EntMan.System<VendingMachineSystem>()
+            .GetAllInventory(Owner)
+            .Select(entry => new VendingMachineInventoryEntry(entry))
+            .ToList();
+
+        foreach (var entry in inventory)
+        {
+            var known = _cachedInventory.FirstOrDefault(cached => cached.ID == entry.ID && cached.Type == entry.Type);
+
+            if (known != null)
+                entry.DisplayPrice = known.DisplayPrice;
+        }
+
+        return inventory;
+    }
+
+    private bool IsEnabled()
+    {
+        return EntMan.TryGetComponent(Owner, out VendingMachineComponent? bendy) && !bendy.Ejecting;
+    }
+
+    private void OnAudioPlayed(VendingMachineKeypadSound type, float pitch)
+    {
+        SendMessage(new VendingMachineKeypadAudioMessage(type, pitch));
+    }
+
+    private bool OnCodeEntered(int slotIndex)
+    {
+        var selectedItem = _cachedInventory.ElementAtOrDefault(slotIndex);
+
+        if (selectedItem == null)
+            return false;
+
+        // check access
+        var playerManager = IoCManager.Resolve<IPlayerManager>();
+        if (playerManager.LocalSession?.AttachedEntity is { } player)
+        {
+            var accessSystem = EntMan.System<AccessReaderSystem>();
+            if (!accessSystem.IsAllowed(player, Owner))
+            {
+                return false;
+            }
+        }
+
+        // optimistic
+        _menu?.PlayVendAnimation(slotIndex);
+
+        SendPredictedMessage(new VendingMachineEjectMessage(selectedItem.Type, selectedItem.ID));
+        return true;
+    }
+
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
+        if (!disposing)
+            return;
+
+        if (_menu == null)
+            return;
+
+        _menu.OnCodeEntered -= OnCodeEntered;
+        _menu.OnAudioPlayed -= OnAudioPlayed;
+        _menu.OnClose -= Close;
+        _menu.Close();
+    }
+}

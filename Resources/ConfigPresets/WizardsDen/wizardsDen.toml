@@ -51,7 +51,7 @@ wiki       = "https://wiki.spacestation14.io"
 appeal     = "https://appeal.ss14.io"
 
 [server]
-rules_file = "StandardRuleset"
+rules_file = "RWRuleset"
 
 [movement]
 mob_pushing = true
