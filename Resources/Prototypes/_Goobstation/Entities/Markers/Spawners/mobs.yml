@@ -69,7 +69,7 @@
   - type: ConditionalSpawner
     prototypes:
     - MobLivingCurse
-
+    
 - type: entity
   name: Fermid Large Spawner
   id: SpawnMobFermidLarge
@@ -81,7 +81,7 @@
   - type: ConditionalSpawner
     prototypes:
     - MobFermidLarge
-
+    
 - type: entity
   name: Fermid Small Spawner
   id: SpawnMobFermidSmall

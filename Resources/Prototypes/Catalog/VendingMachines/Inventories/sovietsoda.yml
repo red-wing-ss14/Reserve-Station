@@ -4,15 +4,12 @@
   id: BodaInventory
   startingInventory:
     DrinkSodaWaterCan: 10 #typically hacked product. Default product is "soda"
-    DrinkWaterBottleFull: 4 # Orion-Edit: More water; Reserve Vendichaos kept
   contrabandInventory:
     DrinkSodaWaterBottleFull: 2
     DrinkCoconutWaterGlass: 5 # Orion-Edit
     DrinkColaCan: 10
     DrinkColaBottleFull: 2 # Orion-Edit
     ClothingHeadHatUshanka: 2
-    DrinkWaterJug: 1  # Reserve: Orchid's Barmania - Vendichaos
   emaggedInventory:
     DrinkNukieCan: 3 # Orion-Edit
     WeaponWaterPistolFilledFire: 1 # Orion-Edit
-    ChemistryBottleHydrogen: 2  # Reserve: Orchid's Barmania - Vendichaos
