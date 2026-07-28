@@ -768,10 +768,6 @@
     - Recyclable
   - type: Sprite
     sprite: Objects/Consumable/Drinks/cola.rsi
-    layers:
-    - state: icon
-      map: ["enum.OpenableVisuals.Layer"]
-    - state: cola
   - type: Item
     sprite: Objects/Consumable/Drinks/cola.rsi
 
@@ -794,8 +790,6 @@
     opened: true
   - type: Sprite
     sprite: Objects/Consumable/Drinks/cola.rsi
-    layers:
-    - state: icon_open
   - type: Item
     sprite: Objects/Consumable/Drinks/cola.rsi
   - type: Tag
