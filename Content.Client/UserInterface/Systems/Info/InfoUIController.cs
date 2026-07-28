@@ -21,7 +21,7 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
     private RulesPopup? _rulesPopup;
     private RulesAndInfoWindow? _infoWindow;
 
-    private static readonly ProtoId<GuideEntryPrototype> DefaultRuleset = "AmourRuleset"; // Amour - Ruleset
+    private static readonly ProtoId<GuideEntryPrototype> DefaultRuleset = "NewPlayer";  // Reserve edit: Ruleset
 
     public ProtoId<GuideEntryPrototype> RulesEntryId = DefaultRuleset;
 
