@@ -16,6 +16,7 @@ public sealed class SayFloodAutoBanManager
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IBanManager _banManager = default!;
     [Dependency] private readonly IPlayerLocator _locator = default!;
+    [Dependency] private readonly ILogManager _logManager = default!;
 
     private const int WindowSeconds = 60;
     private const int LimitPerWindow = 70;
@@ -24,11 +25,12 @@ public sealed class SayFloodAutoBanManager
 
     private readonly Dictionary<NetUserId, Queue<TimeSpan>> _history = new();
     private readonly HashSet<NetUserId> _banned = new();
-    private readonly ISawmill _sawmill = Logger.GetSawmill("say_flood_autoban");
+    private ISawmill _sawmill = default!;
 
     private NetUserId? _banningAdminId;
     public void Initialize()
     {
+        _sawmill = _logManager.GetSawmill("say_flood_autoban");
     }
 
     public void RegisterSayUsage(ICommonSession player)
