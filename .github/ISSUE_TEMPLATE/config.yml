@@ -1,8 +1,8 @@
 # SPDX-License-Identifier: MIT
 
 contact_links:
-  - name: Report a Security Vulnerability
-    url: https://github.com/space-wizards/space-station-14/blob/master/SECURITY.md
+  - name: Сообщить об уязвимости
+    url: https://github.com/red-wing-ss14/Reserve-Station?tab=security-ov-file
     about: Пожалуйста, свяжитесь с нашей администрацией о любых уязвимостях приватно, чтобы избежать дополнительных рисков.
   - name: Предложить изменение
     url: https://discord.gg/WXZvqzZ2Fc

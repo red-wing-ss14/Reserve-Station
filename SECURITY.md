@@ -1,16 +1,9 @@
-<!--
-SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
-SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# Как сообщить о проблеме безопасности
 
-SPDX-License-Identifier: MIT
--->
+О любой уязвимости можно сообщить через **Дискорд**.
 
-# Reporting a security vulnerability
-You can report a security vulnerability through Discord or through email.
+Для этого нужно присоединиться к нашему [серверу](https://discord.gg/WXZvqzZ2Fc) и **в приватных сообщениях** сообщить о проблеме любому участнику с ролью `Мейнтейнер` или `Лидер`.
 
-If you want to send an email, you can contact us at <support@spacestation14.com>.
-If you want to contact us through Discord, you can join [our server](https://discord.gg/MwDDf6t)
-and then **privately** message anyone with the `@Wizard` or `@SS14 Maintainer` role.
+Если кажется, что проблема относится не к данной сборке, а к RedWing в целом - можно присоединится на сервер RedWing и сообщить о проблеме **приватно** участнику с ролью `Lead team`.
 
-In either case, **do not publicly disclose the vulnerability until we explicitly give
-you permission to do so**.
+В любом случае, **не разглашайте уязвимость публично пока мы не дадим вам явно знать что это можно делать**.
