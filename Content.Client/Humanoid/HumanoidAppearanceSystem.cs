@@ -27,9 +27,9 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
     [Dependency] private readonly DisplacementMapSystem _displacement = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
 
-    // RW edit start
-    private const string MarkingGradientShaderId = "RWMarkingGradient";
-
+    // Amour edit start
+    private const string MarkingGradientShaderId = "AmourMarkingGradient";
+ 
     private static bool MarkingSupportsGradient(MarkingPrototype marking) =>
         marking.SupportsGradient ||
         marking.MarkingCategory is MarkingCategories.Hair or MarkingCategories.FacialHair;
@@ -79,7 +79,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         shaderInstance.SetParameter("GradientPosition", Marking.ClampGradientPosition(marking.GradientPosition));
         shaderInstance.SetParameter("GradientBlur", Marking.ClampGradientBlur(marking.GradientBlur));
     }
-    // RW edit end
+    // Amour edit end
 
     public override void Initialize()
     {

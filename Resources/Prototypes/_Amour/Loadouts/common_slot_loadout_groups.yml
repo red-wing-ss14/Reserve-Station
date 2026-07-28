@@ -1,0 +1,102 @@
+
+# HEAD
+- type: loadoutGroup
+  id: AmourPersonalHead
+  name: loadout-group-amour-personal-head
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutPersonalYouWellLeerCap
+  - LoadoutPersonalGeraldiyHat
+  - LoadoutPersonalZerkorTiara
+
+# MASK
+- type: loadoutGroup
+  id: AmourPersonalMask
+  name: loadout-group-amour-personal-mask
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutPersonalKoitorraMask
+  - LoadoutPersonalYouWellLeerMask
+  - LoadoutPersonalGeraldiyMask
+  - LoadoutPersonalAntohagMask
+
+# NECK
+- type: loadoutGroup
+  id: AmourPersonalNeck
+  name: loadout-group-amour-personal-neck
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutPersonalYouWellLeerCloak
+  - LoadoutPersonalThechaoticTie
+  - LoadoutPersonalVtergotCloak
+  - LoadoutPersonalSvinkaCloak
+  - LoadoutPersonalCenturionCloak
+  - LoadoutPersonalSerbwoCloak
+  - LoadoutPersonalMcLovinCloak
+  - LoadoutPersonalBandiKOtikCloak
+  - LoadoutPersonalBandiKOtikPurpleCloak
+
+# JUMPSUIT
+- type: loadoutGroup
+  id: AmourPersonalJumpsuit
+  name: loadout-group-amour-personal-jumpsuit
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutPersonalYouWellLeerJumpsuit
+  - LoadoutPersonalThechaoticJumpsuit
+  - LoadoutPersonalVtergotJumpsuit
+  - LoadoutPersonalFedaJumpsuit
+  - LoadoutPersonalTomato15OldSyndicateUniform
+
+# OUTER
+- type: loadoutGroup
+  id: AmourPersonalOuterClothing
+  name: loadout-group-amour-personal-outer
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutPersonalYouWellLeerTrench
+  - LoadoutPersonalThechaoticCoat
+  - LoadoutPersonalGeraldiyCoat
+  - LoadoutPersonalZyabrTraumaJacket
+
+# GLOVES
+- type: loadoutGroup
+  id: AmourPersonalGloves
+  name: loadout-group-amour-personal-gloves
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutPersonalVtergotGloves
+
+# BACK
+- type: loadoutGroup
+  id: AmourPersonalBack
+  name: loadout-group-amour-personal-back
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutPersonalTomato15MOLLEBag
+
+# SHOES
+- type: loadoutGroup
+  id: AmourPersonalShoes
+  name: loadout-group-amour-personal-shoes
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutPersonalVtergotBoots
+
+# STORAGE (items in backpack)
+- type: loadoutGroup
+  id: AmourPersonalStorage
+  name: loadout-group-amour-personal-storage
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - LoadoutPersonalGeraldiyStamp
+  - LoadoutPersonalGeraldiyBlade

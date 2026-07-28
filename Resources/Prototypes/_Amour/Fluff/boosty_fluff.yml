@@ -1,0 +1,504 @@
+
+#
+# RESIDENT
+#
+
+# Maury
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitColorMaury
+  name: красное худи
+  suffix: Boosty
+  description: Любимая худи Рупи с шортиками.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/hoodie.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/hoodie.rsi
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesMaurySneakers
+  name: кеды
+  suffix: Boosty
+  description: Крутые высокие кеды.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/sneakers.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/sneakers.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckMauryChoker
+  name: кошачий ошейник
+  suffix: Boosty
+  description: Кошачий ошейник с колокольчиком.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/choker.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/choker.rsi
+    - type: FootstepModifier
+      footstepSoundCollection:
+        collection: FootstepJester
+
+# Warete
+- type: entity
+  parent: ClothingUniformBase
+  id: WareteJumpskirt
+  name: репонит
+  suffix: Boosty
+  description: Жаростойкая куртка. С предупреждением о возможной взрывоопасности.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/warete_jumpsuit.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/warete_jumpsuit.rsi
+
+# HSKveez
+- type: entity
+  parent: ClothingNeckBase
+  id: HSKveezKulon
+  name: плазменное сердце
+  suffix: Boosty
+  description: Не взрывай.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/hope.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/hope.rsi
+    - type: PointLight
+      radius: 2
+      energy: 2
+      color: "#ff6bff"
+
+# 2sh0nka
+- type: entity
+  parent: ClothingUnderwearSocksBase
+  id: ClothingUnderwearSocksBlackBoosty
+  name: чёрные чулки
+  suffix: Boosty
+  description: Вау. Они.. чёрные?
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/black.rsi
+
+- type: entity
+  parent: ClothingUnderwearSocksBase
+  id: ClothingUnderwearSocksGrayBoosty
+  name: серые чулки
+  suffix: Boosty
+  description: Вау. Они.. серые?
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/gray.rsi
+
+# 6elblu
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeck6elbluCap
+  name: Плащ NanoTrasen
+  suffix: Boosty
+  description: Плащ NanoTrasen весьма странной окраски.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/white-cloak.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterStorage6elbluOvercoat
+  name: Белая шинель
+  suffix: Boosty
+  description: Очень удобная и приятная на ощупь шинель с меховым воротником.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/white-overcoat.rsi
+
+# Serafim547
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesGlassesMesonBlueBoosty
+  name: Утилизаторные очки
+  suffix: Boosty
+  description: Очки с фиолетовым затемнением.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/meason_blue.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/meason_blue.rsi
+    - type: EyeProtection
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSalvageBoosty
+  name: экспедиторская униформа
+  suffix: Boosty
+  description: Нестандартная форма экспедитора.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/salvage.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/salvage.rsi
+
+# Skrimex
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckSkrimexCapBoosty
+  name: Сердце-переливающий плащ
+  suffix: Boosty
+  description: Плащ, в котором сердце переливается в центре.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/heart-cap.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/heart-cap.rsi
+
+# Deus
+- type: entity
+  parent: ClothingUniformBase
+  id: DeusJumpskirtBoosty
+  name: пионер в юбке
+  suffix: Boosty
+  description: Милый набор одежды.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/deus_jumpsuit.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/deus_jumpsuit.rsi
+
+#
+# CLOWN
+#
+
+# DOOMMAX - Gamma
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitGammaBoosty
+  suffix: Boosty
+  name: Снаряжение отряда «Гамма»
+  description: Довольно старая и потрёпанная форма секретного и элитного отряда.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/imercury_uniform.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/imercury_uniform.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretGammaBoosty
+  suffix: Boosty
+  name: Потрёпанный берет
+  description: Старый, слегка рваный и подгоревший берет лидера отряда «Гамма».
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/hat.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/hat.rsi
+
+# DOOMMAX - Chaplain Schema
+- type: entity
+  parent: ClothingNeckBase
+  id: DommaxChaplainSchemaBoosty
+  name: Великая Схима
+  suffix: Boosty
+  description: Высшая монашеская степень.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/bishop_schema.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/bishop_schema.rsi
+    - type: ToggleableClothing
+      clothingPrototypes:
+        head: ClothingHeadHatChaplainSchemaBoosty
+      requiredSlot:
+        - neck
+    - type: UserInterface
+      interfaces:
+        enum.ToggleClothingUiKey.Key:
+          type: ToggleableClothingBoundUserInterface
+    - type: ContainerContainer
+      containers:
+        toggleable-clothing: !type:Container {}
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatChaplainSchemaBoosty
+  name: Капюшон Великой Схимы
+  suffix: Boosty
+  description: Высшая монашеская степень.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/bishop_schema_hood.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/bishop_schema_hood.rsi
+
+# KnifeCappy
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatSamuraiBoosty
+  name: куртка самурая
+  suffix: Boosty
+  description: Культовая куртка рокера из старых годов.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/samurai_jacket.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/samurai_jacket.rsi
+
+# Medicgaming
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesDealGlassesBoosty
+  name: СделкоДел
+  suffix: Boosty
+  description: Модные розово-жёлтые очки.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/deal_glasses.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/deal_glasses.rsi
+
+# Zilendorie - Commissar Set
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadFurazhkaBoosty
+  name: фуражка комиссара
+  suffix: Boosty
+  description: Фирменная фуражка Имперских комиссаров.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/furazhka.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/furazhka.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformMundirBoosty
+  name: форма комиссара
+  suffix: Boosty
+  description: Стандартная форма Имперского Комиссара.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/mundir.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/mundir.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterShinelBoosty
+  name: шинель комиссара
+  suffix: Boosty
+  description: Парадная шинель Имперского Комиссара.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/shinel.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/shinel.rsi
+
+
+
+- type: entity
+  parent: ClothingShoesSkates
+  id: ClothingShoesSkatesBoosty
+  name: Спортивные ролики
+  suffix: Boosty
+  description: Красно-чёрные спортивные ролики.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/skates.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/skates.rsi
+      clothingVisuals:
+        shoes:
+        - state: equipped-FEET
+          offset: "0, -0.04"
+
+# egoruch17 - Techpriest
+- type: entity
+  parent: ClothingMaskMime
+  id: EgoruchClothingMaskHolyBoosty
+  name: фальшивая аугметика
+  suffix: Boosty
+  description: Встроенный фильтр предаёт вдыхаемому воздуху аромат мира-кузницы.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/mask.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/mask.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: EgoruchClothingOuterMantleBoosty
+  name: ряса техножреца
+  suffix: Boosty
+  description: Идеально подходит, чтобы скрыть слабость своей плоти!
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/mantle.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/mantle.rsi
+
+
+
+- type: entity
+  parent: ClothingEyesBase
+  id: G13ClothingEyesEyepatchBoosty
+  name: белая повязка на глаз
+  suffix: Boosty
+  description: Настолько белая, что заменяет глаз.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/eyepatch.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/eyepatch.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: G13ClothingUniformSuitBoosty
+  name: стильный белый адвокатский костюм
+  suffix: Boosty
+  description: Протестую! Адвокат слишком красив!
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/jumpsuit.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/jumpsuit.rsi
+
+
+
+# Rector6275
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterSuitRectorBoosty
+  name: элитный бирюзовый костюм
+  suffix: Boosty
+  description: Сшит на заказ, пахнет цветами.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/rector_suit.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/rector_suit.rsi
+
+# Pr0fixxx
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltWebbingBoosty
+  name: боевая разгрузка
+  suffix: Boosty
+  description: Разгрузка с вшитым огнетушителем.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/webbing.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/webbing.rsi
+
+# Ritoka
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCloakRitokaBoosty
+  name: Плащ Затворник
+  suffix: Boosty
+  description: От этого плаща исходит зловещая энергия.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/cloak.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/cloak.rsi
+    - type: ToggleableClothing
+      clothingPrototypes:
+        head: ClothingHeadHoodRitokaBoosty
+      requiredSlot:
+        - outerClothing
+    - type: UserInterface
+      interfaces:
+        enum.ToggleClothingUiKey.Key:
+          type: ToggleableClothingBoundUserInterface
+    - type: ContainerContainer
+      containers:
+        toggleable-clothing: !type:Container {}
+        storagebase: !type:Container
+          ents: []
+    - type: PointLight
+      radius: 2
+      energy: 2
+      color: "#99e550"
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHoodRitokaBoosty
+  suffix: Boosty
+  name: капюшон
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/hood.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/hood.rsi
+
+# IMercuryI - Emerald Set
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitEmeraldBoosty
+  suffix: Boosty
+  name: Изумрудная загадка
+  description: Доминирующий черный оттенок с яркими зелеными акцентами.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/imercury_uniform.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/imercury_uniform.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterEmeraldBoosty
+  name: Зеленый Авангард
+  suffix: Boosty
+  description: Изысканный дизайн и обтекаемый силуэт.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/rector_suit.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/rector_suit.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieEmeraldBoosty
+  name: Диагональ
+  suffix: Boosty
+  description: Смелый асимметричный узор.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/tie.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/tie.rsi
+
+#
+# METEOR
+#
+
+# DOOMMAX - Captain
+- type: entity
+  parent: ClothingNeckBase
+  id: DoommaxCapCloakBoosty
+  name: широкая шинель капитана
+  suffix: Boosty
+  description: Широкая капитанская шинель.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/cap_cloak.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/cap_cloak.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: DoommaxCapCapBoosty
+  name: роскошная фуражка капитана
+  suffix: Boosty
+  description: Комично огромная фуражка капитана.
+  components:
+    - type: Sprite
+      sprite: _Amour/Fluff/Boosty/cap_cap.rsi
+    - type: Clothing
+      sprite: _Amour/Fluff/Boosty/cap_cap.rsi

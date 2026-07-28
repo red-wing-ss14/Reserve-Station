@@ -1,0 +1,117 @@
+
+# HEAD
+- type: loadoutGroup
+  id: AmourBoostyHead
+  name: loadout-group-amour-boosty-head
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutBoostyGammaBeret
+  - LoadoutBoostyCommissarCap
+  - LoadoutBoostyCapCap
+
+# MASK
+- type: loadoutGroup
+  id: AmourBoostyMask
+  name: loadout-group-amour-boosty-mask
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutBoostyTechpriestMask
+
+# EYES
+- type: loadoutGroup
+  id: AmourBoostyEyes
+  name: loadout-group-amour-boosty-eyes
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutBoostySerafimGlasses
+  - LoadoutBoostyDealGlasses
+  - LoadoutBoostyWhiteEyepatch
+
+# NECK
+- type: loadoutGroup
+  id: AmourBoostyNeck
+  name: loadout-group-amour-boosty-neck
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutBoostyMauryChoker
+  - LoadoutBoostyHSKveezKulon
+  - LoadoutBoosty6elbluCloak
+  - LoadoutBoostySkrimexCloak
+  - LoadoutBoostyChaplainSchema
+  - LoadoutBoostyEmeraldTie
+  - LoadoutBoostyCapCloak
+
+# JUMPSUIT
+- type: loadoutGroup
+  id: AmourBoostyJumpsuit
+  name: loadout-group-amour-boosty-jumpsuit
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutBoostyMauryHoodie
+  - LoadoutBoostyWareteJumpskirt
+  - LoadoutBoostySerafimSalvage
+  - LoadoutBoostyDeusJumpskirt
+  - LoadoutBoostyGammaUniform
+  - LoadoutBoostyCommissarUniform
+  - LoadoutBoostyWhiteSuit
+  - LoadoutBoostyEmeraldUniform
+
+# OUTER
+- type: loadoutGroup
+  id: AmourBoostyOuterClothing
+  name: loadout-group-amour-boosty-outer
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutBoosty6elbluOvercoat
+  - LoadoutBoostySamuraiJacket
+  - LoadoutBoostyCommissarCoat
+  - LoadoutBoostyTechpriestMantle
+  - LoadoutBoostyTealSuit
+  - LoadoutBoostyRitokaCloak
+  - LoadoutBoostyEmeraldCoat
+
+# BELT
+- type: loadoutGroup
+  id: AmourBoostyBelt
+  name: loadout-group-amour-boosty-belt
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutBoostyWebbing
+
+# SHOES
+- type: loadoutGroup
+  id: AmourBoostyShoes
+  name: loadout-group-amour-boosty-shoes
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutBoostyMaurySneakers
+  - LoadoutBoostySkates
+
+# SOCKS
+- type: loadoutGroup
+  id: AmourBoostySocks
+  name: loadout-group-amour-boosty-socks
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LoadoutBoostySocksBlack
+  - LoadoutBoostySocksGray
+
+# TRINKETS
+- type: loadoutGroup
+  id: AmourBoostyTrinkets
+  name: loadout-group-amour-boosty-trinkets
+  minLimit: 0
+  maxLimit: 3
+  loadouts:
+  - LoadoutBoostyBoombox
+  - LoadoutBoostyTapeRecorder
+  - LoadoutBoostyTape
