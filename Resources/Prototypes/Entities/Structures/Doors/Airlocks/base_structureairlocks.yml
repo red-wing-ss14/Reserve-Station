@@ -90,7 +90,7 @@
     time: 3
   - type: Airlock
     # RW-Start
-    openUnlitVisible: true
+    # openUnlitVisible: true  # Reserve edit - removed due to classic Reserve sprites.
     forceOpenSound:
       path: /Audio/_RW/Machines/airlock_open_force.ogg
     forceCloseSound:
