@@ -7,7 +7,7 @@
   setPreference: true
   objective: roles-antag-changeling-description
   requirements:
-  - !type:DiscordLinkRequirement # Amour edit
+  - !type:DiscordLinkRequirement # RW edit
   - !type:SpeciesRequirement
     inverted: true
     species:

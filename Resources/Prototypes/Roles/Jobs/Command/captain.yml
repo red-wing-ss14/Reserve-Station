@@ -8,21 +8,21 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 7200 # 2 h # Amour-Edit
+      time: 7200 # 2 h # RW-Edit
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 7200 # 2 h # Amour-Edit
+      time: 7200 # 2 h # RW-Edit
     - !type:DepartmentTimeRequirement
       department: Science
       time: 4h
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 14400 # 4 h # Amour-Edit
+      time: 14400 # 4 h # RW-Edit
     - !type:DepartmentTimeRequirement
       department: Command
       time: 28000 # 8 hours
     - !type:DiscordLinkRequirement
-    - !type:AgeRequirement # Amour
+    - !type:AgeRequirement # RW
       requiredAge: 23
       #any MRP using our code might eventually want to use it
     # - !type:SaturationRequirement # MisandryBox - no neon hair on captain
@@ -33,10 +33,10 @@
 #  - StandardProceduresSOP
 #  - CaptainSOP
   goobcoins: 50 #Goob content
-  # Orion-Start
+  # RW-Start
   salary: 140
   payrollDepartmentAccount: Command
-  # Orion-End
+  # RW-End
   weight: 20
   startingGear: CaptainGear
   icon: "JobIconCaptain"
@@ -53,13 +53,13 @@
       - type: CommandStaff
       - type: Condemned # Goobstation - Nanotrasen owns your soul pal.
         soulOwnedNotDevil: true
-      # Orion-Start
+      # RW-Start
       - type: AdditionalLanguage
         speaks:
         - CorporateCodespeak
         understands:
         - CorporateCodespeak
-      # Orion-End
+      # RW-End
 
 - type: startingGear
   id: CaptainGear

@@ -24,10 +24,10 @@ public sealed class WorldControllerSystem : EntitySystem
 
     private ISawmill _sawmill = default!;
 
-    // Orion-Start
+    // RW-Start
     private readonly Dictionary<EntityUid, Dictionary<Vector2i, List<EntityUid>>> _chunksToLoad = new();
     private readonly Stack<List<EntityUid>> _loaderListPool = new();
-    // Orion-End
+    // RW-End
 
     /// <inheritdoc />
     public override void Initialize()
@@ -84,31 +84,31 @@ public sealed class WorldControllerSystem : EntitySystem
         var ev = new WorldChunkUnloadedEvent(uid, chunk.Coordinates);
         RaiseLocalEvent(chunk.Map, ref ev);
         RaiseLocalEvent(uid, ref ev);
-        // Orion-Start
+        // RW-Start
         var oldLoaders = component.Loaders;
         component.Loaders = null;
         ReturnLoaderList(oldLoaders);
-        // Orion-End
+        // RW-End
         //_sawmill.Debug($"Unloaded chunk {ToPrettyString(uid)} at {coords}");
     }
 
     /// <inheritdoc />
     public override void Update(float frameTime)
     {
-        ClearChunkLoadState(); // Orion-Edit
+        ClearChunkLoadState(); // RW-Edit
 
         var controllerEnum = EntityQueryEnumerator<WorldControllerComponent>();
         while (controllerEnum.MoveNext(out var uid, out _))
         {
-            // Orion-Edit-Start
+            // RW-Edit-Start
             if (_chunksToLoad.TryGetValue(uid, out var chunks))
                 chunks.Clear();
             else
                 _chunksToLoad[uid] = new Dictionary<Vector2i, List<EntityUid>>();
-            // Orion-Edit-End
+            // RW-Edit-End
         }
 
-        if (_chunksToLoad.Count == 0) // Orion-Edit
+        if (_chunksToLoad.Count == 0) // RW-Edit
             return; // Just bail early.
 
         var loaderEnum = EntityQueryEnumerator<WorldLoaderComponent, TransformComponent>();
@@ -119,7 +119,7 @@ public sealed class WorldControllerSystem : EntitySystem
             if (mapOrNull is null)
                 continue;
             var map = mapOrNull.Value;
-            if (!_chunksToLoad.ContainsKey(map)) // Orion-Edit
+            if (!_chunksToLoad.ContainsKey(map)) // RW-Edit
                 continue;
 
             var wc = _xformSys.GetWorldPosition(xform);
@@ -127,11 +127,11 @@ public sealed class WorldControllerSystem : EntitySystem
             var chunks = new GridPointsNearEnumerator(coords.Floored(),
                 (int) Math.Ceiling(worldLoader.Radius / (float) WorldGen.ChunkSize) + 1);
 
-            var set = _chunksToLoad[map]; // Orion-Edit
+            var set = _chunksToLoad[map]; // RW-Edit
 
             while (chunks.MoveNext(out var chunk))
             {
-                // Orion-Edit-Start
+                // RW-Edit-Start
                 if (!set.TryGetValue(chunk.Value, out var loaders))
                 {
                     loaders = RentLoaderList();
@@ -139,7 +139,7 @@ public sealed class WorldControllerSystem : EntitySystem
                 }
 
                 loaders.Add(uid);
-                // Orion-Edit-End
+                // RW-Edit-End
             }
         }
 
@@ -157,18 +157,18 @@ public sealed class WorldControllerSystem : EntitySystem
             if (mapOrNull is null)
                 continue;
             var map = mapOrNull.Value;
-            if (!_chunksToLoad.ContainsKey(map)) // Orion-Edit
+            if (!_chunksToLoad.ContainsKey(map)) // RW-Edit
                 continue;
 
             var wc = _xformSys.GetWorldPosition(xform);
             var coords = WorldGen.WorldToChunkCoords(wc);
             var chunks = new GridPointsNearEnumerator(coords.Floored(), PlayerLoadRadius);
 
-            var set = _chunksToLoad[map]; // Orion-Edit
+            var set = _chunksToLoad[map]; // RW-Edit
 
             while (chunks.MoveNext(out var chunk))
             {
-                // Orion-Edit-Start
+                // RW-Edit-Start
                 if (!set.TryGetValue(chunk.Value, out var loaders))
                 {
                     loaders = RentLoaderList();
@@ -176,7 +176,7 @@ public sealed class WorldControllerSystem : EntitySystem
                 }
 
                 loaders.Add(uid);
-                // Orion-Edit-End
+                // RW-Edit-End
             }
         }
 
@@ -188,7 +188,7 @@ public sealed class WorldControllerSystem : EntitySystem
         {
             var coords = chunk.Coordinates;
 
-            if (!_chunksToLoad[chunk.Map].ContainsKey(coords)) // Orion-Edit
+            if (!_chunksToLoad[chunk.Map].ContainsKey(coords)) // RW-Edit
             {
                 RemCompDeferred<LoadedChunkComponent>(uid);
                 chunksUnloaded++;
@@ -198,7 +198,7 @@ public sealed class WorldControllerSystem : EntitySystem
         if (chunksUnloaded > 0)
             _sawmill.Debug($"Queued {chunksUnloaded} chunks for unload.");
 
-        // Orion-Start
+        // RW-Start
         var hasChunksToLoad = false;
         foreach (var chunks in _chunksToLoad.Values)
         {
@@ -208,16 +208,16 @@ public sealed class WorldControllerSystem : EntitySystem
             hasChunksToLoad = true;
             break;
         }
-        // Orion-End
+        // RW-End
 
-        if (!hasChunksToLoad) // Orion-Edit
+        if (!hasChunksToLoad) // RW-Edit
             return;
 
         var startTime = _gameTiming.RealTime;
         var count = 0;
         var loadedQuery = GetEntityQuery<LoadedChunkComponent>();
         var controllerQuery = GetEntityQuery<WorldControllerComponent>();
-        foreach (var (map, chunks) in _chunksToLoad) // Orion-Edit
+        foreach (var (map, chunks) in _chunksToLoad) // RW-Edit
         {
             var controller = controllerQuery.GetComponent(map);
             foreach (var (chunk, loaders) in chunks)
@@ -230,7 +230,7 @@ public sealed class WorldControllerSystem : EntitySystem
                     count += 1;
                 }
 
-                // Orion-Edit-Start
+                // RW-Edit-Start
                 if (c is not null)
                 {
                     if (c.Loaders != null && !ReferenceEquals(c.Loaders, loaders))
@@ -242,7 +242,7 @@ public sealed class WorldControllerSystem : EntitySystem
 
                     c.Loaders = loaders;
                 }
-                // Orion-Edit-End
+                // RW-Edit-End
             }
         }
 
@@ -253,7 +253,7 @@ public sealed class WorldControllerSystem : EntitySystem
         }
     }
 
-    // Orion-Start
+    // RW-Start
     private void ClearChunkLoadState()
     {
         var loadedEnum = EntityQueryEnumerator<LoadedChunkComponent>();
@@ -287,7 +287,7 @@ public sealed class WorldControllerSystem : EntitySystem
         loaders.Clear();
         _loaderListPool.Push(loaders);
     }
-    // Orion-End
+    // RW-End
 
     /// <summary>
     ///     Attempts to get a chunk, creating it if it doesn't exist.

@@ -71,13 +71,13 @@ public sealed partial class SmartFridgeComponent : Component
     [DataField]
     public SoundSpecifier SoundDeny = new SoundCollectionSpecifier("VendingDeny");
 
-    // Orion-Start
+    // RW-Start
     [DataField]
     public int BaseCapacity = 50;
 
     [DataField, AutoNetworkedField]
     public int Capacity = 50;
-    // Orion-End
+    // RW-End
 }
 
 /// <summary>

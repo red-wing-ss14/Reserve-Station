@@ -105,10 +105,10 @@ public sealed partial class ClothingComponent : Component
     [DataField]
     public TimeSpan StripDelay = TimeSpan.Zero;
 
-    // Amour port: WD Slim body types START
+    // RW port: WD Slim body types START
     [DataField]
     public string? ClothingType;
-    // Amour port: WD Slim body types END
+    // RW port: WD Slim body types END
 
     /// <summary>
     ///     A scale applied to all layers.

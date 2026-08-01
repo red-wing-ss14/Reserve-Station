@@ -12,7 +12,7 @@
       state: television
     - map: ["computerLayerScreen"]
       state: detective_television
-  - type: GenericVisualizer # Orion
+  - type: GenericVisualizer # RW
     visuals:
       enum.EdgeConnectionVisuals.ConnectionMask:
         computerLayerBody:

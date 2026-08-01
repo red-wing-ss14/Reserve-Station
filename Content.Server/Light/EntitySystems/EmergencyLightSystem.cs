@@ -27,21 +27,21 @@ public sealed class EmergencyLightSystem : SharedEmergencyLightSystem
     [Dependency] private readonly PointLightSystem _pointLight = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly AudioSystem _audioSystem = default!; // Orion
-    [Dependency] private readonly IGameTiming _timing = default!; // Orion
+    [Dependency] private readonly AudioSystem _audioSystem = default!; // RW
+    [Dependency] private readonly IGameTiming _timing = default!; // RW
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<EmergencyLightComponent, MapInitEvent>(OnMapInit); // Orion
+        SubscribeLocalEvent<EmergencyLightComponent, MapInitEvent>(OnMapInit); // RW
         SubscribeLocalEvent<EmergencyLightComponent, EmergencyLightEvent>(OnEmergencyLightEvent);
         SubscribeLocalEvent<AlertLevelChangedEvent>(OnAlertLevelChanged);
         SubscribeLocalEvent<EmergencyLightComponent, ExaminedEvent>(OnEmergencyExamine);
         SubscribeLocalEvent<EmergencyLightComponent, PowerChangedEvent>(OnEmergencyPower);
     }
 
-    private void OnMapInit(Entity<EmergencyLightComponent> entity, ref MapInitEvent args) => UpdateState(entity); // Orion
+    private void OnMapInit(Entity<EmergencyLightComponent> entity, ref MapInitEvent args) => UpdateState(entity); // RW
 
     private void OnEmergencyPower(Entity<EmergencyLightComponent> entity, ref PowerChangedEvent args)
     {
@@ -92,10 +92,10 @@ public sealed class EmergencyLightSystem : SharedEmergencyLightSystem
         {
             case EmergencyLightState.On:
             case EmergencyLightState.Charging:
-            case EmergencyLightState.Full: // Orion
+            case EmergencyLightState.Full: // RW
                 EnsureComp<ActiveEmergencyLightComponent>(uid);
                 break;
-//            case EmergencyLightState.Full: // Orion-Edit: Moved upper
+//            case EmergencyLightState.Full: // RW-Edit: Moved upper
             case EmergencyLightState.Empty:
                 RemComp<ActiveEmergencyLightComponent>(uid);
                 break;
@@ -144,7 +144,7 @@ public sealed class EmergencyLightSystem : SharedEmergencyLightSystem
         RaiseLocalEvent(uid, new EmergencyLightEvent(state));
     }
 
-    // Orion-Edit-Start
+    // RW-Edit-Start
     public override void Update(float frameTime)
     {
         var query = EntityQueryEnumerator<ActiveEmergencyLightComponent, EmergencyLightComponent, BatteryComponent>();
@@ -189,7 +189,7 @@ public sealed class EmergencyLightSystem : SharedEmergencyLightSystem
 
         emergencyLight.AlarmNextSound = _timing.CurTime.Add(emergencyLight.AlarmInterval);
     }
-    // Orion-Edit-End
+    // RW-Edit-End
 
     /// <summary>
     ///     Updates the light's power drain, battery drain, sprite and actual light state.
@@ -216,17 +216,17 @@ public sealed class EmergencyLightSystem : SharedEmergencyLightSystem
         }
         else if (!receiver.Powered) // If internal battery runs out
         {
-            // Orion-Edit-Start
+            // RW-Edit-Start
             if (!entity.Comp.ForciblyEnabled)
                 TurnOn(entity, Color.Red);
-            // Orion-Edit-End
+            // RW-Edit-End
             SetState(entity.Owner, entity.Comp, EmergencyLightState.On);
         }
         else // Powered and enabled
         {
             TurnOn(entity, details.Color);
             SetState(entity.Owner, entity.Comp, EmergencyLightState.On);
-            UpdateAlarmSound(entity, details); // Orion
+            UpdateAlarmSound(entity, details); // RW
         }
     }
 
@@ -268,7 +268,7 @@ public sealed class EmergencyLightSystem : SharedEmergencyLightSystem
         _ambient.SetAmbience(entity.Owner, true);
     }
 
-    // Orion-Start
+    // RW-Start
     private void UpdateAlarmSound(Entity<EmergencyLightComponent> entity, AlertLevelDetail alertLevel)
     {
         if (alertLevel.AlarmSound == null)
@@ -285,5 +285,5 @@ public sealed class EmergencyLightSystem : SharedEmergencyLightSystem
 
         entity.Comp.AlarmNextSound = _timing.CurTime.Add(entity.Comp.AlarmInterval);
     }
-    // Orion-End
+    // RW-End
 }

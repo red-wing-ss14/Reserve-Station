@@ -43,15 +43,15 @@
     active: False
   - type: AnimatedEmotes
   - type: LanguageSpeaker # Einstein Engines - Language. This component is required to support speech, but it does not define known languages.
-#  - type: Fart # Orion-Edit: Removed
+#  - type: Fart # RW-Edit: Removed
   - type: CollectiveMind # Goobstation - Starlight collective mind port
   - type: SpecialAnimationViewer # Goobstation - Cool Animations!!!!
   - type: Penetratable # Goobstation - Better snipers
     penetrateDamage: 15 # Kill million mices
     damagePenalty: 0.05
   - type: StunVisuals
-  - type: Posing # Orion
-  - type: DirectionalEmoteTarget # Orion
+  - type: Posing # RW
+  - type: DirectionalEmoteTarget # RW
 
 # The progenitor. This should only container the most basic components possible.
 # Only put things on here if every mob *must* have it. This includes ghosts.
@@ -132,13 +132,13 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: SoftCritical # Orion-Edit
-      150: HardCritical # Orion
+      100: SoftCritical # RW-Edit
+      150: HardCritical # RW
       200: Dead
-  - type: CritStateMovement # Orion
+  - type: CritStateMovement # RW
   - type: MobStateActions
     actions:
-      SoftCritical: # Orion-Edit
+      SoftCritical: # RW-Edit
       - ActionCritSuccumb
       - ActionCritFakeDeath
       - ActionCritLastWords

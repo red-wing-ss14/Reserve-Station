@@ -462,15 +462,15 @@
     - Leg
     modifiers:
       coefficients:
-        Blunt: 0.7 # Amour edit: 0.65 > 0.7
-        Slash: 0.7 # Amour edit: 0.55 > 0.7
-        Piercing: 0.9 # Amour edit: 0.75 > 0.9
-        Heat: 0.9 # Amour edit: missing > 0.9
+        Blunt: 0.7 # RW edit: 0.65 > 0.7
+        Slash: 0.7 # RW edit: 0.55 > 0.7
+        Piercing: 0.9 # RW edit: 0.75 > 0.9
+        Heat: 0.9 # RW edit: missing > 0.9
   - type: ModifyDelayedKnockdown # Goobstation
     delayDelta: 2
     knockdownTimeDelta: -2
   - type: StaminaResistance # Goobstation
-    damageCoefficient: 0.9 # Amour edit: 0.7 > 0.9
+    damageCoefficient: 0.9 # RW edit: 0.7 > 0.9
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -506,7 +506,7 @@
     sprite: Clothing/OuterClothing/Coats/syndicate/coatsyndiecaparmored.rsi
 
 - type: entity
-  parent: [ClothingOuterStorageBase, AllowSuitStorageClothing, BaseSecurityContraband] # Goobstation # Amour edit
+  parent: [ClothingOuterStorageBase, AllowSuitStorageClothing, BaseSecurityContraband] # Goobstation # RW edit
   id: ClothingOuterCoatAMG
   name: armored medical gown
   description: The version of the medical gown, with elements of a bulletproof vest, looks strange, but your heart is protected.
@@ -522,12 +522,12 @@
     - Tail
     modifiers:
       coefficients:
-        Blunt: 0.65 # Amour edit: 0.7 > 0.65
-        Slash: 0.65 # Amour edit: 0.7 > 0.65
-        Piercing: 0.65 # Amour edit: 0.4 > 0.65
-        Heat: 0.65 # Amour edit: 0.7 > 0.65
+        Blunt: 0.65 # RW edit: 0.7 > 0.65
+        Slash: 0.65 # RW edit: 0.7 > 0.65
+        Piercing: 0.65 # RW edit: 0.4 > 0.65
+        Heat: 0.65 # RW edit: 0.7 > 0.65
         Caustic: 0.4
-        Cold: 0.75 # Amour edit: missing > 0.75
+        Cold: 0.75 # RW edit: missing > 0.75
   - type: ModifyDelayedKnockdown # Goobstation
     delayDelta: 1.5
     knockdownTimeDelta: -1.5

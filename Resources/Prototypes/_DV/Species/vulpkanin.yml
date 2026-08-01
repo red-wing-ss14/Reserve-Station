@@ -19,10 +19,10 @@
   name: species-name-vulpkanin
   roundStart: true
   prototype: MobVulpkanin
-  # Amour port: WD Slim body types START
+  # RW port: WD Slim body types START
   bodyTypes:
     - VulpkaninNormal
-  # Amour port: WD Slim body types END
+  # RW port: WD Slim body types END
   defaultSkinTone: "#985629"
   markingLimits: MobVulpkaninMarkingLimits
   dollPrototype: MobVulpkaninDummy
@@ -30,22 +30,22 @@
   maleFirstNames: NamesVulpakinMale
   femaleFirstNames: NamesVulpakinFemale
   lastNames: NamesVulpakinLast
-  # Orion-Start
+  # RW-Start
   category: Classic
-  description: "/ServerInfo/_Orion/SpeciesDescriptions/Vulpkanin.xml"
+  description: "/ServerInfo/_RW/SpeciesDescriptions/Vulpkanin.xml"
   pros:
   - species-vulpkanin-pro-unarmed-damage
   special:
   - species-vulpkanin-special-red-green-vision
   cons:
   - species-vulpkanin-con-heat-vulnerable
-  # Orion-End
+  # RW-End
 
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
 - type: bodyType
   id: VulpkaninNormal
   name: body-normal
-# Amour port: WD Slim body types END
+# RW port: WD Slim body types END
   sprites:
     Head: MobVulpkaninHead
     Face: MobHumanoidAnyMarking

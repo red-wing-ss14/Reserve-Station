@@ -42,7 +42,7 @@ namespace Content.Client.VendingMachines
             _menu?.Populate(_cachedInventory, enabled);
         }
 
-        // Orion-Start
+        // RW-Start
         protected override void ReceiveMessage(BoundUserInterfaceMessage message)
         {
             if (message is not VendingMachineInventoryUpdateMessage update)
@@ -53,18 +53,18 @@ namespace Content.Client.VendingMachines
             _menu?.SetBalance(update.Balance);
             _menu?.Populate(_cachedInventory, enabled);
         }
-        // Orion-End
+        // RW-End
 
         public void UpdateAmounts()
         {
             var enabled = EntMan.TryGetComponent(Owner, out VendingMachineComponent? bendy) && !bendy.Ejecting;
 
             var system = EntMan.System<VendingMachineSystem>();
-            // Orion-Start
+            // RW-Start
             var updatedInventory = system.GetAllInventory(Owner);
             ApplyDisplayPrices(updatedInventory);
-            // Orion-End
-            _cachedInventory = updatedInventory; // Orion-Edit
+            // RW-End
+            _cachedInventory = updatedInventory; // RW-Edit
             _menu?.UpdateAmounts(_cachedInventory, enabled);
         }
 
@@ -87,7 +87,7 @@ namespace Content.Client.VendingMachines
             SendPredictedMessage(new VendingMachineEjectMessage(selectedItem.Type, selectedItem.ID));
         }
 
-        // Orion-Start
+        // RW-Start
         private void ApplyDisplayPrices(List<VendingMachineInventoryEntry> updatedInventory)
         {
             foreach (var updated in updatedInventory)
@@ -98,7 +98,7 @@ namespace Content.Client.VendingMachines
                     updated.DisplayPrice = current.DisplayPrice;
             }
         }
-        // Orion-End
+        // RW-End
 
         protected override void Dispose(bool disposing)
         {

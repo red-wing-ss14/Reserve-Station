@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
-using Content.Server._Amour.Gulag;
-using Content.Server._Amour.Ghost.Roles.Components;
+using Content.Server._RW.Gulag;
+using Content.Server._RW.Ghost.Roles.Components;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.EUI;
@@ -52,7 +52,7 @@ public sealed class GhostRoleSystem : EntitySystem
     [Dependency] private readonly IEntityManager _ent = default!;
     [Dependency] private readonly EuiManager _euiManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly GulagSystem _gulag = default!; // Amour
+    [Dependency] private readonly GulagSystem _gulag = default!; // RW
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly FollowerSystem _followerSystem = default!;
@@ -115,9 +115,9 @@ public sealed class GhostRoleSystem : EntitySystem
                         RegisterGhostRole((component, ghostRole));
                     break;
                 }
-            case MobState.SoftCritical: // Orion-Edit
-            case MobState.HardCritical: // Orion
-            case MobState.Dead: // Orion
+            case MobState.SoftCritical: // RW-Edit
+            case MobState.HardCritical: // RW
+            case MobState.Dead: // RW
                 UnregisterGhostRole((component, ghostRole));
                 break;
         }
@@ -469,10 +469,10 @@ public sealed class GhostRoleSystem : EntitySystem
     /// <param name="identifier">ID of the ghost role.</param>
     public void Request(ICommonSession player, uint identifier)
     {
-        // Amour start
+        // RW start
         if (_gulag.IsUserGulagged(player.UserId))
             return;
-        // Amour end
+        // RW end
 
         if (player.AttachedEntity is not { Valid: true } attached ||
             !EntityManager.TryGetComponent<GhostComponent>(attached, out var ghost) || !ghost.CanTakeGhostRoles) // Goobstation
@@ -593,10 +593,10 @@ public sealed class GhostRoleSystem : EntitySystem
     /// <returns>True if takeover was successful, otherwise false.</returns>
     public bool Takeover(ICommonSession player, uint identifier)
     {
-        // Amour start
+        // RW start
         if (_gulag.IsUserGulagged(player.UserId))
             return false;
-        // Amour end
+        // RW end
 
         if (!_ghostRoles.TryGetValue(identifier, out var role))
             return false;

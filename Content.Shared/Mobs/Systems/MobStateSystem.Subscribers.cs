@@ -71,8 +71,8 @@ public partial class MobStateSystem
         switch (ent.Comp.CurrentState)
         {
             case MobState.Dead:
-            case MobState.SoftCritical: // Orion-Edit
-            case MobState.HardCritical: // Orion
+            case MobState.SoftCritical: // RW-Edit
+            case MobState.HardCritical: // RW
                 args.Cancelled = true;
                 break;
         }
@@ -85,8 +85,8 @@ public partial class MobStateSystem
             case MobState.Alive:
                 //unused
                 break;
-            case MobState.SoftCritical: // Orion-Edit
-            case MobState.HardCritical: // Orion
+            case MobState.SoftCritical: // RW-Edit
+            case MobState.HardCritical: // RW
                 _standing.Stand(target);
                 break;
             case MobState.Dead:
@@ -118,14 +118,14 @@ public partial class MobStateSystem
                 _appearance.SetData(target, MobStateVisuals.State, MobState.Alive);
                 break;
             }
-            case MobState.SoftCritical: // Orion-Edit
+            case MobState.SoftCritical: // RW-Edit
             {
                 Down(target);
                 RaiseLocalEvent(target, ref ev); // Goobstation
-                _appearance.SetData(target, MobStateVisuals.State, MobState.SoftCritical); // Orion-Edit
+                _appearance.SetData(target, MobStateVisuals.State, MobState.SoftCritical); // RW-Edit
                 break;
             }
-            // Orion-Start
+            // RW-Start
             case MobState.HardCritical:
             {
                 Down(target);
@@ -133,7 +133,7 @@ public partial class MobStateSystem
                 _appearance.SetData(target, MobStateVisuals.State, MobState.HardCritical);
                 break;
             }
-            // Orion-End
+            // RW-End
             case MobState.Dead:
             {
                 EnsureComp<CollisionWakeComponent>(target);
@@ -167,11 +167,11 @@ public partial class MobStateSystem
         // Incapacitated or dead targets get stripped two or three times as fast. Makes stripping corpses less tedious.
         if (IsDead(target, component))
             args.Multiplier /= 3;
-        // Orion-Start
+        // RW-Start
         else if (IsHardCritical(target, component))
             args.Multiplier /= 3;
-        // Orion-End
-        else if (IsSoftCritical(target, component)) // Orion-Edit
+        // RW-End
+        else if (IsSoftCritical(target, component)) // RW-Edit
             args.Multiplier /= 2;
     }
 
@@ -191,17 +191,17 @@ public partial class MobStateSystem
         switch (component.CurrentState)
         {
             case MobState.Dead:
-            // Orion-Start
+            // RW-Start
             case MobState.HardCritical:
                 args.Cancel();
                 break;
-            // Orion-End
-            // Orion-Edit-Start
+            // RW-End
+            // RW-Edit-Start
             case MobState.SoftCritical:
                 if (args is not UpdateCanMoveEvent)
                     args.Cancel();
                 break;
-            // Orion-Edit-End
+            // RW-Edit-End
         }
     }
 

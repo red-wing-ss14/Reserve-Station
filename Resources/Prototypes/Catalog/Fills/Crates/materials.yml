@@ -97,7 +97,7 @@
 
 - type: entity
   id: CrateMaterialGold
-  parent: CrateGolden # Orion-Edit
+  parent: CrateGolden # RW-Edit
   name: gold crate
   description: 30 bars of gold.
   components:
@@ -108,7 +108,7 @@
 
 - type: entity
   id: CrateMaterialSilver
-  parent: CrateSilver # Orion-Edit
+  parent: CrateSilver # RW-Edit
   name: silver crate
   description: 30 bars of silver.
   components:
@@ -196,7 +196,7 @@
     - id: MaterialSiloMachineCircuitboard
     - id: SheetSteel1
       amount: 5
-    - id: MicroServoStockPart # Orion-Edit: Servo
+    - id: MicroServoStockPart # RW-Edit: Servo
       amount: 4
     - id: CableApcStack1
       amount: 2

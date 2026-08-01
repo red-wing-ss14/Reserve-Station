@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Server._Amour.Gulag.Components;
+using Content.Server._RW.Gulag.Components;
 using Content.Server.Popups;
 using Content.Shared.Administration;
 using Content.Shared.Mind;
@@ -43,14 +43,14 @@ namespace Content.Server.Chat.Commands
 
             var suicideSystem = _e.System<SuicideSystem>();
 
-            // Amour start
+            // RW start
             if (_e.HasComponent<GulagBoundComponent>(victim) ||
                 player.AttachedEntity is { Valid: true } attached && _e.HasComponent<GulagBoundComponent>(attached))
             {
                 shell.WriteLine(Loc.GetString("suicide-command-denied"));
                 return;
             }
-            // Amour end
+            // RW end
 
             if (_e.HasComponent<AdminFrozenComponent>(victim))
             {

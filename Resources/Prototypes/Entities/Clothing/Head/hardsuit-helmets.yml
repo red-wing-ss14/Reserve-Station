@@ -81,7 +81,7 @@
   components:
   - type: Sprite
     sprite: Clothing/Head/Hardsuits/engineering.rsi
-    layers: # Orion
+    layers: # RW
     - state: icon
     - state: icon-unshaded
       shader: unshaded
@@ -89,7 +89,7 @@
       visible: false
       shader: unshaded
       map: [ "light" ]
-  - type: ToggleableVisuals # Orion
+  - type: ToggleableVisuals # RW
     spriteLayer: light
     clothingVisuals:
       head:
@@ -103,7 +103,7 @@
         shader: unshaded
   - type: Clothing
     sprite: Clothing/Head/Hardsuits/engineering.rsi
-    clothingVisuals: # Orion
+    clothingVisuals: # RW
       head:
       - state: equipped-head
       - state: equipped-head-unshaded
@@ -467,7 +467,7 @@
 
 #Chief Engineer's Hardsuit
 - type: entity
-  parent: ClothingHeadHelmetHardsuitEngineering # Orion-Edit
+  parent: ClothingHeadHelmetHardsuitEngineering # RW-Edit
   id: ClothingHeadHelmetHardsuitEngineeringWhite
   name: chief engineer's hardsuit helmet # Goob edit
   description: Special hardsuit helmet, made for the chief engineer of the station. # Goob edit

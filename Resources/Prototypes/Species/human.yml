@@ -5,18 +5,18 @@
   name: species-name-human
   roundStart: true
   prototype: MobHuman
-  # Amour port: WD Slim body types START
+  # RW port: WD Slim body types START
   bodyTypes:
   - HumanNormal
   - HumanSlim
-  # Amour port: WD Slim body types END
+  # RW port: WD Slim body types END
   markingLimits: MobHumanMarkingLimits
   dollPrototype: MobHumanDummy
   skinColoration: HumanToned
-  # Orion-Start
+  # RW-Start
   category: Classic
-  description: "/ServerInfo/_Orion/SpeciesDescriptions/Human.xml"
-  # Orion-End
+  description: "/ServerInfo/_RW/SpeciesDescriptions/Human.xml"
+  # RW-End
   # begin Goobstation: port EE height/width sliders
   minHeight: 0.90
   defaultHeight: 1
@@ -32,11 +32,11 @@
 # be defined as a 'custom base layer'
 # in either the mob's starting marking prototype,
 # or it has to be added in C#.
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
 - type: bodyType
   id: HumanNormal
   name: body-normal
-# Amour port: WD Slim body types END
+# RW port: WD Slim body types END
   sprites:
     Special: MobHumanoidAnyMarking
     Head: MobHumanHead

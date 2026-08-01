@@ -230,7 +230,7 @@ namespace Content.Shared._EinsteinEngines.Contests // Goob Edit
             if (!_doContestSystem
                 || !_doHealthContests
                 || !TryComp<DamageableComponent>(performer, out var damage)
-                || !_mobThreshold.TryGetThresholdForState(performer, Mobs.MobState.SoftCritical, out var threshold)) // Orion-Edit
+                || !_mobThreshold.TryGetThresholdForState(performer, Mobs.MobState.SoftCritical, out var threshold)) // RW-Edit
                 return 1f;
 
             return _allowClampOverride && bypassClamp
@@ -245,8 +245,8 @@ namespace Content.Shared._EinsteinEngines.Contests // Goob Edit
                 || !_doHealthContests
                 || !TryComp<DamageableComponent>(performer, out var perfDamage)
                 || !TryComp<DamageableComponent>(target, out var targetDamage)
-                || !_mobThreshold.TryGetThresholdForState(performer, Mobs.MobState.SoftCritical, out var perfThreshold) // Orion-Edit
-                || !_mobThreshold.TryGetThresholdForState(target, Mobs.MobState.SoftCritical, out var targetThreshold)) // Orion-Edit
+                || !_mobThreshold.TryGetThresholdForState(performer, Mobs.MobState.SoftCritical, out var perfThreshold) // RW-Edit
+                || !_mobThreshold.TryGetThresholdForState(target, Mobs.MobState.SoftCritical, out var targetThreshold)) // RW-Edit
                 return 1f;
 
             return _allowClampOverride && bypassClamp

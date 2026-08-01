@@ -40,7 +40,7 @@
 - type: entity
   parent: BaseMagazineBoxRifle
   id: MagazineBoxRifleBig
-  name: ammunition box (5.56mm rifle) # Orion-Edit: .20 > 5.56mm
+  name: ammunition box (5.56mm rifle) # RW-Edit: .20 > 5.56mm
   components:
   - type: BallisticAmmoProvider
     capacity: 200
@@ -60,7 +60,7 @@
 - type: entity
   parent: BaseMagazineBoxRifle
   id: MagazineBoxRifle
-  name: ammunition box (5.56mm rifle) # Orion-Edit: .20 > 5.56mm
+  name: ammunition box (5.56mm rifle) # RW-Edit: .20 > 5.56mm
   description: A cardboard box of 5.56mm rifle rounds. Intended to hold general-purpose kinetic ammunition.
   components:
   - type: BallisticAmmoProvider
@@ -75,7 +75,7 @@
 - type: entity
   parent: BaseMagazineBoxRifle
   id: MagazineBoxRiflePractice
-  name: ammunition box (5.56mm practice) # Orion-Edit: .20 rifle > 5.56mm
+  name: ammunition box (5.56mm practice) # RW-Edit: .20 rifle > 5.56mm
   description: A cardboard box of 5.56mm rifle rounds. Intended to hold non-harmful chalk ammunition.
   components:
   - type: BallisticAmmoProvider
@@ -91,7 +91,7 @@
 - type: entity
   id: MagazineBoxRifleIncendiary
   parent: BaseMagazineBoxRifle
-  name: ammunition box (5.56mm incendiary) # Orion-Edit: .20 rifle > 5.56mm
+  name: ammunition box (5.56mm incendiary) # RW-Edit: .20 rifle > 5.56mm
   description: A cardboard box of 5.56mm rifle rounds. Intended to hold self-igniting incendiary ammunition.
   components:
   - type: BallisticAmmoProvider
@@ -107,7 +107,7 @@
 - type: entity
   id: MagazineBoxRifleUranium
   parent: BaseMagazineBoxRifle
-  name: ammunition box (5.56mm uranium) # Orion-Edit: .20 rifle > 5.56mm
+  name: ammunition box (5.56mm uranium) # RW-Edit: .20 rifle > 5.56mm
   description: A cardboard box of 5.56mm rifle rounds. Intended to hold exotic uranium-core ammunition.
   components:
   - type: BallisticAmmoProvider

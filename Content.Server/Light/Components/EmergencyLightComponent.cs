@@ -41,7 +41,7 @@ public sealed partial class EmergencyLightComponent : SharedEmergencyLightCompon
         { EmergencyLightState.On, "emergency-light-component-light-state-on" }
     };
 
-    // Orion-Start
+    // RW-Start
     /// <summary>
     ///     Alarm sound that the emergency lights will play
     ///     Overwritten by AlertLevelPrototype on station alert level change
@@ -54,7 +54,7 @@ public sealed partial class EmergencyLightComponent : SharedEmergencyLightCompon
 
     [DataField]
     public TimeSpan AlarmNextSound = TimeSpan.Zero;
-    // Orion-End
+    // RW-End
 }
 
 public enum EmergencyLightState : byte

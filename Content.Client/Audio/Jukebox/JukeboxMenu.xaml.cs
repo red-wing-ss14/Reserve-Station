@@ -28,16 +28,16 @@ public sealed partial class JukeboxMenu : FancyWindow
     /// </summary>
     public event Action<bool>? OnPlayPressed;
     public event Action? OnStopPressed;
-    public event Action? OnLoopToggled; // Orion
+    public event Action? OnLoopToggled; // RW
     public event Action<ProtoId<JukeboxPrototype>>? OnSongSelected;
     public event Action<float>? SetTime;
-    public event Action<float>? SetVolume; // Orion
+    public event Action<float>? SetVolume; // RW
 
     private EntityUid? _audio;
 
     private float _lockTimer;
 
-    private bool _loopState; // Orion
+    private bool _loopState; // RW
 
     public JukeboxMenu()
     {
@@ -65,17 +65,17 @@ public sealed partial class JukeboxMenu : FancyWindow
             OnStopPressed?.Invoke();
         };
 
-        // Orion-Start
+        // RW-Start
         LoopButton.OnPressed += _ =>
         {
             OnLoopToggled?.Invoke();
         };
-        // Orion-Start
+        // RW-Start
 
         PlaybackSlider.OnReleased += PlaybackSliderKeyUp;
-        VolumeSlider.OnReleased += VolumeSliderKeyUp; // Orion
+        VolumeSlider.OnReleased += VolumeSliderKeyUp; // RW
 
-        VolumeSlider.MaxValue = 100f; // Orion
+        VolumeSlider.MaxValue = 100f; // RW
 
         SetPlayPauseButton(_audioSystem.IsPlaying(_audio), force: true);
     }
@@ -96,13 +96,13 @@ public sealed partial class JukeboxMenu : FancyWindow
         _lockTimer = 0.5f;
     }
 
-    // Orion-Start
+    // RW-Start
     private void VolumeSliderKeyUp(Slider args)
     {
         SetVolume?.Invoke(VolumeSlider.Value);
         _lockTimer = 0.5f;
     }
-    // Orion-End
+    // RW-End
 
     /// <summary>
     /// Re-populates the list of jukebox prototypes available.
@@ -115,7 +115,7 @@ public sealed partial class JukeboxMenu : FancyWindow
         {
             MusicList.AddItem(entry.Name, metadata: entry.ID);
         }
-        MusicList.SortItemsByText(); // Orion
+        MusicList.SortItemsByText(); // RW
     }
 
     public void SetPlayPauseButton(bool playing, bool force = false)
@@ -134,7 +134,7 @@ public sealed partial class JukeboxMenu : FancyWindow
         PlayButton.Text = Loc.GetString("jukebox-menu-buttonplay");
     }
 
-    // Orion-Start
+    // RW-Start
     public void SetLoopButton(bool loopEnabled)
     {
         if (_loopState == loopEnabled)
@@ -152,7 +152,7 @@ public sealed partial class JukeboxMenu : FancyWindow
         LoopButton.Text = Loc.GetString("jukebox-menu-button-loop");
         LoopButton.Pressed = false;
     }
-    // Orion-End
+    // RW-End
 
     public void SetSelectedSong(string name, float length)
     {
@@ -161,12 +161,12 @@ public sealed partial class JukeboxMenu : FancyWindow
         PlaybackSlider.SetValueWithoutEvent(0);
     }
 
-    // Orion-Start
+    // RW-Start
     public void SetVolumeSlider(float volume)
     {
         VolumeSlider.Value = volume;
     }
-    // Orion-End
+    // RW-End
 
     protected override void FrameUpdate(FrameEventArgs args)
     {
@@ -178,9 +178,9 @@ public sealed partial class JukeboxMenu : FancyWindow
         }
 
         PlaybackSlider.Disabled = _lockTimer > 0f;
-        VolumeSlider.Disabled = _lockTimer > 0f; // Orion
+        VolumeSlider.Disabled = _lockTimer > 0f; // RW
 
-        // Amour-Edit-Start: Fix PVS error with invalid AudioStream entity reference
+        // RW-Edit-Start: Fix PVS error with invalid AudioStream entity reference
         // Check if audio entity exists before trying to get component
         if (_audio != null && _entManager.EntityExists(_audio.Value) && _entManager.TryGetComponent(_audio, out AudioComponent? audio))
         {
@@ -191,17 +191,17 @@ public sealed partial class JukeboxMenu : FancyWindow
             DurationLabel.Text = $"00:00 / 00:00";
             audio = null;
         }
-        // Amour-Edit-End
+        // RW-Edit-End
 
-        VolumeNumberLabel.Text = $"{VolumeSlider.Value:0.##} %"; // Orion
+        VolumeNumberLabel.Text = $"{VolumeSlider.Value:0.##} %"; // RW
 
         if (PlaybackSlider.Grabbed)
             return;
 
-        if (VolumeSlider.Grabbed) // Orion
+        if (VolumeSlider.Grabbed) // RW
             return;
 
-        if (audio != null) // Amour: _entManager.TryGetComponent(_audio, out audio)) moved to check if audio entity 
+        if (audio != null) // RW: _entManager.TryGetComponent(_audio, out audio)) moved to check if audio entity 
         {
             PlaybackSlider.SetValueWithoutEvent(audio.PlaybackPosition);
         }

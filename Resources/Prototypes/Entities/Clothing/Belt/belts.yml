@@ -390,7 +390,7 @@
   name: EMT belt
   description: Perfect for holding various equipment for medical emergencies.
   components:
-  # Orion-Start
+  # RW-Start
   - type: Storage
     grid:
     - 0,0,8,1
@@ -502,7 +502,7 @@
         whitelist:
           tags:
           - Multitool
-  # Orion-End
+  # RW-End
   - type: Sprite
     sprite: Clothing/Belt/emt.rsi
   - type: Clothing
@@ -728,7 +728,7 @@
   - type: ItemSlots
     slots:
       item:
-        # name: Sabre # Orion-Edit: Localization
+        # name: Sabre # RW-Edit: Localization
         insertVerbText: sheath-insert-verb
         ejectVerbText: sheath-eject-verb
         insertSound: /Audio/Items/sheath.ogg

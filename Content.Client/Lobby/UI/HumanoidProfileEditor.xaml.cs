@@ -3,8 +3,8 @@
 using System.IO;
 using System.Linq;
 using System.Numerics;
-using Content.Client._Orion.Lobby.UI;
-using Content.Client._Orion.RichText;
+using Content.Client._RW.Lobby.UI;
+using Content.Client._RW.RichText;
 using Content.Client.Guidebook;
 using Content.Client.Humanoid;
 using Content.Client.Lobby.UI.Loadouts;
@@ -14,7 +14,7 @@ using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Stylesheets;
 using Content.Client.Sprite;
 using Content.Client.UserInterface.Systems.Guidebook;
-using Content.Shared._Amour.Humanoid.Prototypes;
+using Content.Shared._RW.Humanoid.Prototypes;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing;
 using Content.Shared.GameTicking;
@@ -44,15 +44,15 @@ using Robust.Shared.Utility;
 using Direction = Robust.Shared.Maths.Direction;
 using Content.Goobstation.Common.CCVar; // Goob Station - Barks
 using Content.Goobstation.Common.Barks; // Goob Station - Barks
-using Content.Shared._Amour; // Amour - TTS
-using Content.Shared._Amour.TTS; // Amour - TTS
-using Content.Shared._Orion.RichText;
+using Content.Shared._RW; // RW - TTS
+using Content.Shared._RW.TTS; // RW - TTS
+using Content.Shared._RW.RichText;
 namespace Content.Client.Lobby.UI
 {
     [GenerateTypedNameReferences]
     public sealed partial class HumanoidProfileEditor : BoxContainer
     {
-        [Dependency] private readonly DocumentParsingManager _parsingMan = default!; // Orion
+        [Dependency] private readonly DocumentParsingManager _parsingMan = default!; // RW
         private const int HairGradientBlurMinValue = (int) (HumanoidCharacterAppearance.MinHairGradientBlur * 100f);
 
         private readonly IClientPreferencesManager _preferencesManager;
@@ -79,7 +79,7 @@ namespace Content.Client.Lobby.UI
         private TextEdit? _greenTextEdit;
         private TextEdit? _yellowTextEdit;
         private TextEdit? _redTextEdit;
-        // Orion-End
+        // RW-End
 
         // One at a time.
         private LoadoutWindow? _loadoutWindow;
@@ -114,15 +114,15 @@ namespace Content.Client.Lobby.UI
 
         private List<SpeciesPrototype> _species = new();
 
-        private List<BodyTypePrototype> _bodyTypes = new(); // Amour port: WD Slim body types
+        private List<BodyTypePrototype> _bodyTypes = new(); // RW port: WD Slim body types
 
         private List<(string, RequirementsSelector)> _jobPriorities = new();
 
-        // Amour edit start
+        // RW edit start
         // Loadout buttons per role (jobs / antags). Used to highlight roles whose loadouts differ from base.
         private readonly Dictionary<string, Button> _jobLoadoutButtons = new();
         private readonly Dictionary<string, Button> _antagLoadoutButtons = new();
-        // Amour edit end
+        // RW edit end
 
         private readonly Dictionary<string, BoxContainer> _jobCategories;
 
@@ -138,9 +138,9 @@ namespace Content.Client.Lobby.UI
 
         private ISawmill _sawmill;
 
-        private SpeciesWindow? _speciesWindow;  // Orion
+        private SpeciesWindow? _speciesWindow;  // RW
 
-        private ClothingDisplayMode _clothingDisplayMode = ClothingDisplayMode.ShowAll; // Orion
+        private ClothingDisplayMode _clothingDisplayMode = ClothingDisplayMode.ShowAll; // RW
 
         public HumanoidProfileEditor(
             IClientPreferencesManager preferencesManager,
@@ -237,7 +237,7 @@ namespace Content.Client.Lobby.UI
             };
 
             #endregion
-            // Amour port: WD Slim body types END
+            // RW port: WD Slim body types END
             #region Age
 
             AgeEdit.OnTextChanged += args =>
@@ -276,7 +276,7 @@ namespace Content.Client.Lobby.UI
 
             #endregion
 
-            // Amour - TTS
+            // RW - TTS
             #region TTS
 
             if (configurationManager.GetCVar(WhiteCVars.TtsEnabled))
@@ -298,7 +298,7 @@ namespace Content.Client.Lobby.UI
                 UpdateHeightWidthSliders(); // Goobstation: port EE height/width sliders
             };
 
-            // Orion-Start
+            // RW-Start
             NewSpeciesButton.OnToggled += args =>
             {
                 if (Profile == null)
@@ -335,7 +335,7 @@ namespace Content.Client.Lobby.UI
                     }));
                 _speciesWindow.OpenCenteredLeft();
             };
-            // Orion-End
+            // RW-End
 
             // begin Goobstation: port EE height/width sliders
             #region Height and Width
@@ -483,7 +483,7 @@ namespace Content.Client.Lobby.UI
                 ReloadProfilePreview(); // RW
             };
 
-            // Amour edit start: hair gradient setup.
+            // RW edit start: hair gradient setup.
             var hairGradientPicker = new Robust.Client.UserInterface.Controls.ColorSelectorSliders
             {
                 SelectorType = Robust.Client.UserInterface.Controls.ColorSelectorSliders.ColorSelectorType.Hsv,
@@ -591,7 +591,7 @@ namespace Content.Client.Lobby.UI
 
             _amourHairGradientPicker = hairGradientPicker;
             _amourFacialHairGradientPicker = facialHairGradientPicker;
-            // Amour edit end
+            // RW edit end
 
             #endregion Hair
             #region SpawnPriority
@@ -644,7 +644,7 @@ namespace Content.Client.Lobby.UI
                 SetDirty();
             };
 
-            BaseLoadoutButton.OnPressed += _ => OpenBaseLoadout(); // Amour edit
+            BaseLoadoutButton.OnPressed += _ => OpenBaseLoadout(); // RW edit
 
             _jobCategories = new Dictionary<string, BoxContainer>();
 
@@ -687,14 +687,14 @@ namespace Content.Client.Lobby.UI
 
             #endregion Left
 
-/* // Orion-Edit: Replaced
+/* // RW-Edit: Replaced
             ShowClothes.OnToggled += args =>
             {
                 ReloadPreview();
             };
 */
 
-            // Orion-Start
+            // RW-Start
             _clothingDisplayMode = ClothingDisplayMode.ShowAll;
 
             ClothingDisplayButton.AddItem(Loc.GetString("humanoid-profile-editor-clothing-show-all"), (int)ClothingDisplayMode.ShowAll);
@@ -707,7 +707,7 @@ namespace Content.Client.Lobby.UI
                 _clothingDisplayMode = (ClothingDisplayMode)args.Id;
                 ReloadPreview();
             };
-            // Orion-End
+            // RW-End
 
             SpeciesInfoButton.OnPressed += OnSpeciesInfoButtonPressed;
 
@@ -730,22 +730,22 @@ namespace Content.Client.Lobby.UI
                 TabContainer.SetTabTitle(TabContainer.ChildCount - 1, Loc.GetString("humanoid-profile-editor-flavortext-tab"));
 
                 _flavorTextEdit = _flavorText.CFlavorTextInput;
-                // Orion-Start
+                // RW-Start
                 _characterTextEdit = _flavorText.CCharacterTextInput;
                 _greenTextEdit = _flavorText.CGreenTextInput;
                 _yellowTextEdit = _flavorText.CYellowTextInput;
                 _redTextEdit = _flavorText.CRedTextInput;
 
                 UpdateFlavorPreview();
-                // Orion-End
+                // RW-End
 
                 _flavorText.OnFlavorTextChanged += OnFlavorTextChange;
-                // Orion-Start
+                // RW-Start
                 _flavorText.OnCharacterTextChanged += OnCharacterFlavorTextChange;
                 _flavorText.OnGreenTextChanged += OnGreenFlavorTextChange;
                 _flavorText.OnYellowTextChanged += OnYellowFlavorTextChange;
                 _flavorText.OnRedTextChanged += OnRedFlavorTextChange;
-                // Orion-End
+                // RW-End
             }
             else
             {
@@ -753,30 +753,30 @@ namespace Content.Client.Lobby.UI
                     return;
 
                 _flavorText.OnFlavorTextChanged -= OnFlavorTextChange;
-                // Orion-Start
+                // RW-Start
                 _flavorText.OnCharacterTextChanged -= OnCharacterFlavorTextChange;
                 _flavorText.OnGreenTextChanged -= OnGreenFlavorTextChange;
                 _flavorText.OnYellowTextChanged -= OnYellowFlavorTextChange;
                 _flavorText.OnRedTextChanged -= OnRedFlavorTextChange;
-                // Orion-End
+                // RW-End
 
                 TabContainer.RemoveChild(_flavorText);
                 _flavorText.Dispose();
                 _flavorTextEdit?.Dispose();
 
                 _flavorTextEdit = null;
-                // Orion-Start
+                // RW-Start
                 _characterTextEdit = null;
                 _greenTextEdit = null;
                 _yellowTextEdit = null;
                 _redTextEdit = null;
-                // Orion-End
+                // RW-End
 
                 _flavorText = null;
             }
         }
 
-        // Orion-Start
+        // RW-Start
         private void UpdateFlavorPreview()
         {
             if (_flavorText == null || Profile == null)
@@ -904,7 +904,7 @@ namespace Content.Client.Lobby.UI
             uriOpener.OpenUri(url);
         }
 
-        // Orion-End
+        // RW-End
 
         /// <summary>
         /// Refreshes traits selector
@@ -1048,11 +1048,11 @@ namespace Content.Client.Lobby.UI
                 {
                     SpeciesButton.SelectId(i);
 
-                    // Orion-Start
+                    // RW-Start
                     NewSpeciesButton.Text = name;
                     NewSpeciesButton.Pressed = false;
                     _speciesWindow?.Dispose();
-                    // Orion-End
+                    // RW-End
                 }
             }
 
@@ -1066,7 +1066,7 @@ namespace Content.Client.Lobby.UI
             }
         }
 
-        // Amour edit start
+        // RW edit start
         // Roles excluded from base loadout system (synthetics)
         private static readonly HashSet<string> ExcludedFromBaseLoadoutRoles = new()
         {
@@ -1163,12 +1163,12 @@ namespace Content.Client.Lobby.UI
                 btn.StyleClasses.Remove(StyleClass.Negative);
             }
         }
-        // Amour edit end
+        // RW edit end
 
         public void RefreshAntags()
         {
             AntagList.RemoveAllChildren();
-            _antagLoadoutButtons.Clear(); // Amour edit
+            _antagLoadoutButtons.Clear(); // RW edit
             var items = new[]
             {
                 ("humanoid-profile-editor-antag-preference-yes-button", 0),
@@ -1227,7 +1227,7 @@ namespace Content.Client.Lobby.UI
                     Margin = new Thickness(3f, 0f, 0f, 0f),
                 };
 
-                var antagRoleId = LoadoutSystem.GetAntagPrototype(antag.ID); // Amour edit
+                var antagRoleId = LoadoutSystem.GetAntagPrototype(antag.ID); // RW edit
 
                 // Goob start
                 if (!_prototypeManager.TryIndex<RoleLoadoutPrototype>(antagRoleId, out var roleLoadoutProto))
@@ -1253,11 +1253,11 @@ namespace Content.Client.Lobby.UI
                     };
                 }
 
-                // Amour edit start
+                // RW edit start
                 // Track & highlight role loadout button if this role has per-role overrides.
                 _antagLoadoutButtons[antagRoleId] = loadoutWindowBtn;
                 UpdateRoleLoadoutButtonHighlight(loadoutWindowBtn, antagRoleId);
-                // Amour edit end
+                // RW edit end
 
                 antagContainer.AddChild(loadoutWindowBtn);
                 // Goob end
@@ -1301,13 +1301,13 @@ namespace Content.Client.Lobby.UI
             if (Profile == null || !_prototypeManager.HasIndex(Profile.Species))
                 return;
 
-            PreviewDummy = _controller.LoadProfileEntity(Profile, JobOverride, _clothingDisplayMode); // Orion-Edit: Clothing display mode
+            PreviewDummy = _controller.LoadProfileEntity(Profile, JobOverride, _clothingDisplayMode); // RW-Edit: Clothing display mode
             SpriteView.SetEntity(PreviewDummy);
             _entManager.System<MetaDataSystem>().SetEntityName(PreviewDummy, Profile.Name);
 
-            // Orion-Start
+            // RW-Start
             _flavorText?.TargetPreview.SetEntity(PreviewDummy);
-            // Orion-End
+            // RW-End
 
             // Check and set the dirty flag to enable the save/reset buttons as appropriate.
             SetDirty();
@@ -1335,9 +1335,9 @@ namespace Content.Client.Lobby.UI
 
             UpdateNameEdit();
             UpdateFlavorTextEdit();
-            UpdateFlavorPreview(); // Orion
+            UpdateFlavorPreview(); // RW
             UpdateSexControls();
-            UpdateBodyTypes(); // Amour port: WD Slim body types
+            UpdateBodyTypes(); // RW port: WD Slim body types
             UpdateGenderControls();
             UpdateSkinColor();
             UpdateSpawnPriorityControls();
@@ -1346,7 +1346,7 @@ namespace Content.Client.Lobby.UI
             UpdateSaveButton();
             UpdateMarkings();
             UpdateBarkVoice(); // Goob Station - Barks
-            UpdateTTSVoice(); // Amour - TTS
+            UpdateTTSVoice(); // RW - TTS
             UpdateHairPickers();
             UpdateCMarkingsHair();
             UpdateCMarkingsFacialHair();
@@ -1597,7 +1597,7 @@ namespace Content.Client.Lobby.UI
             UpdateJobPriorities();
         }
 
-        // Amour edit start
+        // RW edit start
         private void OpenBaseLoadout()
         {
             if (Profile == null)
@@ -1682,7 +1682,7 @@ namespace Content.Client.Lobby.UI
             // Effective loadout (base + overrides) shown in UI.
             var effective = Profile.GetEffectiveLoadout(roleId, session, _prototypeManager);
 
-            // Amour edit - hide revert button for synthetics
+            // RW edit - hide revert button for synthetics
             var showRevertToBase = !ExcludedFromBaseLoadoutRoles.Contains(roleId);
             _loadoutWindow = new LoadoutWindow(Profile, effective, roleLoadoutProto, session, collection, showRevertToBase: showRevertToBase)
             {
@@ -1758,7 +1758,7 @@ namespace Content.Client.Lobby.UI
                 overrideLoadout.RemoveLoadout(loadoutGroup, loadoutProto, _prototypeManager);
                 Profile = Profile.WithLoadout(overrideLoadout);
 
-                // Amour end
+                // RW end
                 effective = Profile.GetEffectiveLoadout(roleId, session, _prototypeManager);
                 _loadoutWindow.RefreshLoadouts(effective, session, collection);
                 UpdateRoleLoadoutButtonHighlight(roleId);
@@ -1797,7 +1797,7 @@ namespace Content.Client.Lobby.UI
 
             overrideLoadout.OverriddenGroups.Add(loadoutGroup);
         }
-        // Amour edit end
+        // RW edit end
 
         private void OnFlavorTextChange(string content)
         {
@@ -1807,7 +1807,7 @@ namespace Content.Client.Lobby.UI
             Profile = Profile.WithFlavorText(content);
             SetDirty();
 
-            UpdateFlavorPreview(); // Orion
+            UpdateFlavorPreview(); // RW
         }
 
         private void OnCharacterFlavorTextChange(string content)
@@ -1855,7 +1855,7 @@ namespace Content.Client.Lobby.UI
         }
 
 
-        // Orion-End
+        // RW-End
 
         private void OnMarkingChange(MarkingSet markings)
         {
@@ -1919,7 +1919,7 @@ namespace Content.Client.Lobby.UI
             _loadoutWindow?.Dispose();
             _loadoutWindow = null;
 
-            _ttsVoiceMenu?.Dispose(); // Amour
+            _ttsVoiceMenu?.Dispose(); // RW
             _ttsVoiceMenu = null;
         }
 
@@ -1961,8 +1961,8 @@ namespace Content.Client.Lobby.UI
 
             UpdateGenderControls();
             Markings.SetSex(newSex);
-            UpdateTTSVoice(); //Amour port: WD Slim body types
-            UpdateBodyTypes(); // Amour port: WD Slim body types
+            UpdateTTSVoice(); //RW port: WD Slim body types
+            UpdateBodyTypes(); // RW port: WD Slim body types
             ReloadPreview();
         }
 
@@ -1972,7 +1972,7 @@ namespace Content.Client.Lobby.UI
             ReloadPreview();
             IsDirty = true;
         }
-        // Amour port: WD Slim body types END
+        // RW port: WD Slim body types END
         private void SetGender(Gender newGender)
         {
             Profile = Profile?.WithGender(newGender);
@@ -1990,10 +1990,10 @@ namespace Content.Client.Lobby.UI
             RefreshLoadouts();
             UpdateSexControls(); // update sex for new species
             UpdateSpeciesGuidebookIcon();
-            UpdateBodyTypes(); // Amour port: WD Slim body types
+            UpdateBodyTypes(); // RW port: WD Slim body types
             ReloadPreview();
             UpdateBarkVoice(); // Goob Station - Barks
-            UpdateTTSVoice(); // Amour - TTS
+            UpdateTTSVoice(); // RW - TTS
             // begin Goobstation: port EE height/width sliders
             // Changing species provides inaccurate sliders without these
             UpdateHeightWidthSliders();
@@ -2040,13 +2040,13 @@ namespace Content.Client.Lobby.UI
         }
         // Goob Station - End
 
-        // Amour - TTS Start
+        // RW - TTS Start
         private void SetTTSVoice(TTSVoicePrototype newVoice)
         {
             Profile = Profile?.WithVoice(newVoice);
             IsDirty = true;
         }
-        // Amour - TTS End
+        // RW - TTS End
 
         public bool IsDirty
         {
@@ -2066,7 +2066,7 @@ namespace Content.Client.Lobby.UI
             NameEdit.Text = Profile?.Name ?? "";
         }
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         private void UpdateFlavorTextEdit()
         {
             if (_flavorTextEdit != null)
@@ -2085,14 +2085,14 @@ namespace Content.Client.Lobby.UI
                 _redTextEdit.TextRope = new Rope.Leaf(Profile?.RedFlavorText ?? "");
 
         }
-        // Orion-Edit-End
+        // RW-Edit-End
 
         private void UpdateAgeEdit()
         {
             AgeEdit.Text = Profile?.Age.ToString() ?? "";
         }
 
-        // Amour port: WD Slim body types START
+        // RW port: WD Slim body types START
         private void UpdateBodyTypes()
         {
             if (Profile is null)
@@ -2118,7 +2118,7 @@ namespace Content.Client.Lobby.UI
             CBodyTypesButton.Select(_bodyTypes.FindIndex(x => x.ID == Profile.BodyType));
             IsDirty = true;
         }
-        // Amour port: WD Slim body types END
+        // RW port: WD Slim body types END
 
         /// <summary>
         /// Updates selected job priorities to the profile's.
@@ -2361,7 +2361,7 @@ namespace Content.Client.Lobby.UI
             {
                 return;
             }
-            // Amour start
+            // RW start
             var hairMarking = new List<Marking>();
             if (Profile.Appearance.HairStyleId != HairStyles.DefaultHairStyle)
             {
@@ -2389,7 +2389,7 @@ namespace Content.Client.Lobby.UI
                 }
                 facialHairMarking.Add(marking);
             }
-            // Amour end
+            // RW end
 
             HairStylePicker.UpdateData(
                 hairMarking,
@@ -2399,7 +2399,7 @@ namespace Content.Client.Lobby.UI
                 facialHairMarking,
                 Profile.Species,
                 1);
-            // Amour start
+            // RW start
             HairGradientToggle.Pressed = Profile.Appearance.HairUseGradient;
             HairGradientColorContainer.Visible = Profile.Appearance.HairUseGradient;
             if (_amourHairGradientPicker != null)
@@ -2445,7 +2445,7 @@ namespace Content.Client.Lobby.UI
             container.AddChild(row);
             return slider;
         }
-        // Amour edit end
+        // RW edit end
 
         private void UpdateCMarkingsHair()
         {
@@ -2475,7 +2475,7 @@ namespace Content.Client.Lobby.UI
             if (hairColor != null)
             {
                 Markings.HairMarking = new(Profile.Appearance.HairStyleId, new List<Color>() { hairColor.Value });
-                // Amour edit start: apply gradient to hair marking in preview
+                // RW edit start: apply gradient to hair marking in preview
                 if (Profile.Appearance.HairUseGradient)
                 {
                     Markings.HairMarking.UseGradient = true;
@@ -2483,7 +2483,7 @@ namespace Content.Client.Lobby.UI
                     Markings.HairMarking.GradientBlur = HumanoidCharacterAppearance.ClampHairGradientBlur(Profile.Appearance.HairGradientBlur);
                     Markings.HairMarking.SetGradientColor(0, Profile.Appearance.HairColor2);
                 }
-                // Amour edit end
+                // RW edit end
             }
             else
             {
@@ -2518,7 +2518,7 @@ namespace Content.Client.Lobby.UI
             if (facialHairColor != null)
             {
                 Markings.FacialHairMarking = new(Profile.Appearance.FacialHairStyleId, new List<Color>() { facialHairColor.Value });
-                // Amour edit start: apply gradient to facial hair marking in preview
+                // RW edit start: apply gradient to facial hair marking in preview
                 if (Profile.Appearance.FacialHairUseGradient)
                 {
                     Markings.FacialHairMarking.UseGradient = true;
@@ -2526,7 +2526,7 @@ namespace Content.Client.Lobby.UI
                     Markings.FacialHairMarking.GradientBlur = Profile.Appearance.FacialHairGradientBlur;
                     Markings.FacialHairMarking.SetGradientColor(0, Profile.Appearance.FacialHairColor2);
                 }
-                // Amour edit end
+                // RW edit end
             }
             else
             {
@@ -2661,7 +2661,7 @@ namespace Content.Client.Lobby.UI
             ExportButton.Disabled = false;
         }
 
-        // Orion-Start
+        // RW-Start
         private void OnSkinColorOnValueChangedKeepColor(HumanoidCharacterProfile previous)
         {
             if (Profile is null) return;
@@ -2702,6 +2702,6 @@ namespace Content.Client.Lobby.UI
             var safeContent = SafeMarkup.SanitizeBasic(content);
             label.SetMessage(FormattedMessage.FromMarkupPermissive(safeContent), SafeMarkupTags.Basic);
         }
-        // Orion-End
+        // RW-End
     }
 }

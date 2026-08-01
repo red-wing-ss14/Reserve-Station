@@ -25,13 +25,13 @@
     - Groin
     modifiers:
       coefficients:
-        Blunt: 0.6 # Amour edit: 0.4 > 0.6
-        Slash: 0.6 # Amour edit: 0.4 > 0.6
-        Piercing: 0.3 # Amour edit: 0.2 > 0.3
+        Blunt: 0.6 # RW edit: 0.4 > 0.6
+        Slash: 0.6 # RW edit: 0.4 > 0.6
+        Piercing: 0.3 # RW edit: 0.2 > 0.3
         Heat: 0.8
-        Caustic: 0.75 # Amour edit: missing > 0.75
+        Caustic: 0.75 # RW edit: missing > 0.75
   - type: ExplosionResistance
-    damageCoefficient: 0.6 # Amour edit: 0.9 > 0.6
+    damageCoefficient: 0.6 # RW edit: 0.9 > 0.6
   - type: ModifyDelayedKnockdown # Goobstation
     delayDelta: 2.5
     knockdownTimeDelta: -2.5
@@ -64,13 +64,13 @@
     - Groin
     modifiers:
       coefficients:
-        Blunt: 0.5 # Amour edit: 0.3 > 0.5
-        Slash: 0.5 # Amour edit: 0.3 > 0.5
-        Piercing: 0.6 # Amour edit: 0.55 > 0.6
-        Heat: 0.3 # Amour edit: 0.2 > 0.3
+        Blunt: 0.5 # RW edit: 0.3 > 0.5
+        Slash: 0.5 # RW edit: 0.3 > 0.5
+        Piercing: 0.6 # RW edit: 0.55 > 0.6
+        Heat: 0.3 # RW edit: 0.2 > 0.3
         Radiation: 0.3
-        Caustic: 0.75 # Amour edit: 0.3 > 0.75
-        Cold: 0.75 # Amour edit: missing > 0.75
+        Caustic: 0.75 # RW edit: 0.3 > 0.75
+        Cold: 0.75 # RW edit: missing > 0.75
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: FireProtection
@@ -79,7 +79,7 @@
     delayDelta: 3
     knockdownTimeDelta: -3
   - type: StaminaResistance # Goobstation
-    damageCoefficient: 0.6 # Amour edit: 0.4 > 0.6
+    damageCoefficient: 0.6 # RW edit: 0.4 > 0.6
 
 #Mercenary web vest
 - type: entity
@@ -105,16 +105,16 @@
       coefficients:
         Blunt: 0.55
         Slash: 0.55
-        Piercing: 0.4 # Amour edit: 0.3 > 0.4
-        Heat: 0.4 # Amour edit: 0.8 > 0.4
-        Caustic: 0.75 # Amour edit: missing > 0.75
+        Piercing: 0.4 # RW edit: 0.3 > 0.4
+        Heat: 0.4 # RW edit: 0.8 > 0.4
+        Caustic: 0.75 # RW edit: missing > 0.75
   - type: ExplosionResistance
-    damageCoefficient: 0.55 # Amour edit: 0.9 > 0.55
+    damageCoefficient: 0.55 # RW edit: 0.9 > 0.55
   - type: ModifyDelayedKnockdown # Goobstation
     delayDelta: 2.25
     knockdownTimeDelta: -2.25
   - type: StaminaResistance # Goobstation
-    damageCoefficient: 0.55 # Amour edit: 0.65 > 0.55
+    damageCoefficient: 0.55 # RW edit: 0.65 > 0.55
 
 #Detective's vest
 - type: entity

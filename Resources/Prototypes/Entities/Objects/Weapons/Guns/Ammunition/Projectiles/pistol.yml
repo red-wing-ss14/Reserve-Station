@@ -2,18 +2,18 @@
 
 - type: entity
   id: BulletPistol
-  name: bullet (9mm auto) # Orion-Edit: .35 > 9mm
+  name: bullet (9mm auto) # RW-Edit: .35 > 9mm
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Piercing: 15 # Amour edit: 16 > 15
+        Piercing: 15 # RW edit: 16 > 15
 
 - type: entity
   id: BulletPistolPractice
-  name: bullet (9mm practice) # Orion-Edit: .35 auto > 9mm
+  name: bullet (9mm practice) # RW-Edit: .35 auto > 9mm
   parent: BaseBulletPractice
   categories: [ HideSpawnMenu ]
   components:
@@ -25,24 +25,24 @@
 - type: entity
   parent: BaseBulletIncendiary
   id: BulletPistolIncendiary
-  name: bullet (9mm incendiary) # Orion-Edit: .35 auto > 9mm
+  name: bullet (9mm incendiary) # RW-Edit: .35 auto > 9mm
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
         Blunt: 2
-        Heat: 3 # Amour edit: 4 > 3; Orion-Edit: 2 > 4
-        Piercing: 2 # Amour edit: missing > 2
+        Heat: 3 # RW edit: 4 > 3; Orion-Edit: 2 > 4
+        Piercing: 2 # RW edit: missing > 2
 - type: entity
   parent: BaseBulletUranium
   id: BulletPistolUranium
-  name: bullet (9mm uranium) # Orion-Edit: .35 auto > 9mm
+  name: bullet (9mm uranium) # RW-Edit: .35 auto > 9mm
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Radiation: 1 # Amour edit: 6 > 1
-        Piercing: 12 # Amour edit: 8 > 12; Orion-Edit: 10 > 8
-      armorPenetration: 0.15 # Orion
+        Radiation: 1 # RW edit: 6 > 1
+        Piercing: 12 # RW edit: 8 > 12; Orion-Edit: 10 > 8
+      armorPenetration: 0.15 # RW

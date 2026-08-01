@@ -4,7 +4,7 @@
   abstract: true
   parent: [ BaseCartridge, BaseSecurityContraband ]
   id: BaseCartridgePistol
-  name: cartridge (9mm auto) # Orion-Edit: .35 > 9mm
+  name: cartridge (9mm auto) # RW-Edit: .35 > 9mm
   components:
   - type: Tag
     tags:
@@ -12,17 +12,17 @@
   - type: CartridgeAmmo
     proto: BulletPistol
   - type: Sprite
-    sprite: _Orion/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi # Orion-Edit: New sprites
+    sprite: _RW/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi # RW-Edit: New sprites
     layers:
-      - state: 35combat # Orion-Edit: New sprites
+      - state: 35combat # RW-Edit: New sprites
         map: [ "enum.AmmoVisualLayers.Base" ]
   - type: Appearance
   - type: SpentAmmoVisuals
-    state: 35combat # Orion: New sprites
+    state: 35combat # RW: New sprites
 - type: entity
   parent: BaseCartridgePistol
   id: CartridgePistol
-  name: cartridge (9mm auto) # Orion-Edit: .35 > 9mm
+  name: cartridge (9mm auto) # RW-Edit: .35 > 9mm
   description: Arguably the most popular caliber on the market, used by all manner of pistols and submachine guns. Standard kinetic ammunition is common and useful in most situations.
   components:
   - type: CartridgeAmmo
@@ -30,10 +30,10 @@
 - type: entity
   parent: BaseCartridgePistol
   id: CartridgePistolPractice
-  name: cartridge (9mm practice) # Orion-Edit: .35 auto > 9mm
+  name: cartridge (9mm practice) # RW-Edit: .35 auto > 9mm
   description: Arguably the most popular caliber on the market, used by all manner of pistols and submachine guns. Chalk ammunition is generally non-harmful, used for practice.
   components:
-  - type: SpentAmmoVisuals # Orion: New sprites
+  - type: SpentAmmoVisuals # RW: New sprites
     state: 35training
   - type: CartridgeAmmo
     proto: BulletPistolPractice
@@ -41,53 +41,53 @@
     layers:
       - state: 35training
         map: [ "enum.AmmoVisualLayers.Base" ]
-#      - state: tip  # Orion-Edit: Removed
+#      - state: tip  # RW-Edit: Removed
 #        map: [ "enum.AmmoVisualLayers.Tip" ]
 #        color: "#dbdbdb"
 - type: entity
   parent: BaseCartridgePistol
   id: CartridgePistolIncendiary
-  name: cartridge (9mm incendiary) # Orion-Edit: .35 auto > 9mm
+  name: cartridge (9mm incendiary) # RW-Edit: .35 auto > 9mm
   description: Arguably the most popular caliber on the market, used by all manner of pistols and submachine guns. Incendiary ammunition contains a self-igniting compound that sets the target ablaze.
   components:
-  - type: SpentAmmoVisuals # Orion: New sprites
+  - type: SpentAmmoVisuals # RW: New sprites
     state: 35incendiary
   - type: CartridgeAmmo
     proto: BulletPistolIncendiary
   - type: Sprite
     layers:
-      - state: 35incendiary # Orion-Edit: New sprites
+      - state: 35incendiary # RW-Edit: New sprites
         map: [ "enum.AmmoVisualLayers.Base" ]
-#      - state: tip  # Orion-Edit: Removed
+#      - state: tip  # RW-Edit: Removed
 #        map: [ "enum.AmmoVisualLayers.Tip" ]
 #        color: "#ff6e52"
 - type: entity
   id: CartridgePistolUranium
-  name: cartridge (9mm uranium) # Orion-Edit: .35 auto > 9mm
+  name: cartridge (9mm uranium) # RW-Edit: .35 auto > 9mm
   description: Arguably the most popular caliber on the market, used by all manner of pistols and submachine guns. Uranium core ammunition features a load of fissile material, irradiating the target from the inside.
   parent: BaseCartridgePistol
   components:
-  - type: SpentAmmoVisuals # Orion: New sprites
+  - type: SpentAmmoVisuals # RW: New sprites
     state: 35uranium
   - type: CartridgeAmmo
     proto: BulletPistolUranium
   - type: Sprite
     layers:
-      - state: 35uranium # Orion-Edit: New sprites
+      - state: 35uranium # RW-Edit: New sprites
         map: [ "enum.AmmoVisualLayers.Base" ]
-#      - state: tip  # Orion-Edit: Removed
+#      - state: tip  # RW-Edit: Removed
 #        map: [ "enum.AmmoVisualLayers.Tip" ]
 #        color: "#65fe08"
 - type: entity
   parent: BaseCartridgePistol
   id: CartridgePistolSpent
-  name: cartridge (9mm auto) # Orion-Edit: .35 > 9mm
+  name: cartridge (9mm auto) # RW-Edit: .35 > 9mm
   suffix: spent
   components:
   - type: Sprite
-    sprite: _Orion/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi # Orion-Edit: New sprites
+    sprite: _RW/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi # RW-Edit: New sprites
     layers:
-    - state: 35combat-spent # Orion-Edit: New sprites
+    - state: 35combat-spent # RW-Edit: New sprites
       map: [ "enum.AmmoVisualLayers.Base" ]
   - type: SpentAmmoVisuals
   - type: CartridgeAmmo

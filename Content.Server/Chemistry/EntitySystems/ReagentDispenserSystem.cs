@@ -4,7 +4,7 @@ using System.Linq;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Server.Chemistry.Components;
 using Content.Server.Hands.Systems;
-using Content.Shared._Orion.Construction.Events;
+using Content.Shared._RW.Construction.Events;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Containers.ItemSlots;
@@ -59,10 +59,10 @@ namespace Content.Server.Chemistry.EntitySystems
 
             SubscribeLocalEvent<ReagentDispenserComponent, MapInitEvent>(OnMapInit, before: new[] { typeof(ItemSlotsSystem) });
 
-            // Orion-Start
+            // RW-Start
             SubscribeLocalEvent<ReagentDispenserComponent, RefreshPartsEvent>(OnPartsRefresh);
             SubscribeLocalEvent<ReagentDispenserComponent, UpgradeExamineEvent>(OnUpgradeExamine);
-            // Orion-End
+            // RW-End
         }
 
         private void SubscribeUpdateUiState<T>(Entity<ReagentDispenserComponent> ent, ref T ev)
@@ -243,7 +243,7 @@ namespace Content.Server.Chemistry.EntitySystems
             _itemSlotsSystem.AddItemSlot(ent.Owner, SharedReagentDispenser.OutputSlotName, ent.Comp.BeakerSlot);
         }
 
-        // Orion-Start
+        // RW-Start
         private void OnPartsRefresh(EntityUid uid, ReagentDispenserComponent component, RefreshPartsEvent args)
         {
             var capacitorTier = args.GetPartRating(component.CapacitorPart);
@@ -269,6 +269,6 @@ namespace Content.Server.Chemistry.EntitySystems
             args.AddPercentageUpgrade("machine-upgrade-charging-speed", rechargeMultiplier);
             args.AddPercentageUpgrade("machine-upgrade-energy-cost", costMultiplier);
         }
-        // Orion-End
+        // RW-End
     }
 }

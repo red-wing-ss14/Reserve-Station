@@ -6,7 +6,7 @@
   description: job-description-doctor
   playTimeTracker: JobMedicalDoctor
   requirements:
-    - !type:AnyOfRequirement # Amour edit - Discord OR playtime
+    - !type:AnyOfRequirement # RW edit - Discord OR playtime
       requirements:
         - !type:DiscordLinkRequirement
         - !type:OverallPlaytimeRequirement
@@ -15,14 +15,14 @@
   icon: "JobIconMedicalDoctor"
   supervisors: job-supervisors-cmo
   guides: # goobstation
-#  - MedicalDoctor # Orion-Edit: Removed because dont have this SOP
-#  - Medical # Orion-Edit: Removed because dont have this SOP
+#  - MedicalDoctor # RW-Edit: Removed because dont have this SOP
+#  - Medical # RW-Edit: Removed because dont have this SOP
   - Medicine
   goobcoins: 20 #Goob content
-  # Orion-Start
+  # RW-Start
   salary: 80
   payrollDepartmentAccount: Medical
-  # Orion-End
+  # RW-End
   access:
   - Medical
   - Maintenance

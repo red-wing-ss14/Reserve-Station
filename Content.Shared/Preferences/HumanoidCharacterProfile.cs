@@ -53,7 +53,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
-using Content.Shared._Amour.TTS;
+using Content.Shared._RW.TTS;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
@@ -79,7 +79,7 @@ namespace Content.Shared.Preferences
     [Serializable, NetSerializable]
     public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     {
-        private static readonly Regex RestrictedNameRegex = new(@"[^А-Яа-яёЁA-Za-z0-9' -]", RegexOptions.Compiled); // Orion-Edit
+        private static readonly Regex RestrictedNameRegex = new(@"[^А-Яа-яёЁA-Za-z0-9' -]", RegexOptions.Compiled); // RW-Edit
         private static readonly Regex ICNameCaseRegex = new(@"^(?<word>\w)|\b(?<word>\w)(?=\w*$)");
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Content.Shared.Preferences
         /// </summary>
         public IReadOnlyDictionary<string, RoleLoadout> Loadouts => _loadouts;
 
-        // Amour edit start
+        // RW edit start
         /// <summary>
         /// Prototype ID for the base crew loadout.
         /// </summary>
@@ -121,18 +121,18 @@ namespace Content.Shared.Preferences
         /// Stored separately from per-role overrides.
         /// </summary>
         public RoleLoadout BaseLoadout => _baseLoadout;
-        // Amour edit end
+        // RW edit end
 
         [DataField]
         private Dictionary<string, RoleLoadout> _loadouts = new();
 
-        // Amour edit start
+        // RW edit start
         /// <summary>
         /// Base loadout applied to all crew jobs.
         /// </summary>
         [DataField]
         private RoleLoadout _baseLoadout = new(BaseLoadoutProtoId);
-        // Amour edit end
+        // RW edit end
 
         [DataField]
         public string Name { get; set; } = "John Doe";
@@ -143,7 +143,7 @@ namespace Content.Shared.Preferences
         [DataField]
         public string FlavorText { get; set; } = string.Empty;
 
-        // Orion-Start
+        // RW-Start
         [DataField]
         public string CharacterFlavorText { get; set; } = string.Empty;
 
@@ -156,7 +156,7 @@ namespace Content.Shared.Preferences
         [DataField]
         public string RedFlavorText { get; set; } = string.Empty;
 
-        // Orion-End
+        // RW-End
 
         /// <summary>
         /// Associated <see cref="SpeciesPrototype"/> for this profile.
@@ -167,8 +167,8 @@ namespace Content.Shared.Preferences
         [DataField] // Goob Station - Barks
         public ProtoId<BarkPrototype> BarkVoice { get; set; } = SharedHumanoidAppearanceSystem.DefaultBarkVoice; // Goob Station - Barks
 
-        [DataField] // Amour - TTS
-        public ProtoId<TTSVoicePrototype> Voice { get; set; } = string.Empty; // Amour - TTS
+        [DataField] // RW - TTS
+        public ProtoId<TTSVoicePrototype> Voice { get; set; } = string.Empty; // RW - TTS
 
         [DataField]
         public int Age { get; set; } = 18;
@@ -176,10 +176,10 @@ namespace Content.Shared.Preferences
         [DataField]
         public Sex Sex { get; private set; } = Sex.Male;
 
-        // Amour port: WD Slim body types START
+        // RW port: WD Slim body types START
         [DataField]
         public string BodyType { get; set; } = SharedHumanoidAppearanceSystem.DefaultBodyType;
-        // Amour port: WD Slim body types END
+        // RW port: WD Slim body types END
         [DataField]
         public Gender Gender { get; private set; } = Gender.Male;
 
@@ -232,18 +232,18 @@ namespace Content.Shared.Preferences
         public HumanoidCharacterProfile(
             string name,
             string flavortext,
-            // Orion-Start
+            // RW-Start
             string characterflavortext,
             string greenflavortext,
             string yellowflavortext,
             string redflavortext,
-            // Orion-End
+            // RW-End
             string species,
             float height, // Goobstation: port EE height/width sliders
             float width, // Goobstation: port EE height/width sliders
             int age,
             Sex sex,
-            string bodyType, // Amour port: WD Slim body types
+            string bodyType, // RW port: WD Slim body types
             Gender gender,
             HumanoidCharacterAppearance appearance,
             SpawnPriorityPreference spawnPriority,
@@ -251,25 +251,25 @@ namespace Content.Shared.Preferences
             PreferenceUnavailableMode preferenceUnavailable,
             HashSet<ProtoId<AntagPrototype>> antagPreferences,
             HashSet<ProtoId<TraitPrototype>> traitPreferences,
-            RoleLoadout? baseLoadout, // Amour edit
+            RoleLoadout? baseLoadout, // RW edit
             Dictionary<string, RoleLoadout> loadouts,
             ProtoId<BarkPrototype> barkVoice, // Goob Station - Barks
-            ProtoId<TTSVoicePrototype> voice) // Amour - TTS
+            ProtoId<TTSVoicePrototype> voice) // RW - TTS
         {
             Name = name;
             FlavorText = flavortext;
-            // Orion-Start
+            // RW-Start
             CharacterFlavorText = characterflavortext;
             GreenFlavorText = greenflavortext;
             YellowFlavorText = yellowflavortext;
             RedFlavorText = redflavortext;
-            // Orion-End
+            // RW-End
             Species = species;
             Height = height; // Goobstation: port EE height/width sliders
             Width = width; // Goobstation: port EE height/width sliders
             Age = age;
             Sex = sex;
-            BodyType = bodyType; // Amour port: WD Slim body types
+            BodyType = bodyType; // RW port: WD Slim body types
             Gender = gender;
             Appearance = appearance;
             SpawnPriority = spawnPriority;
@@ -277,10 +277,10 @@ namespace Content.Shared.Preferences
             PreferenceUnavailable = preferenceUnavailable;
             _antagPreferences = antagPreferences;
             _traitPreferences = traitPreferences;
-            _baseLoadout = baseLoadout ?? new RoleLoadout(BaseLoadoutProtoId); // Amour edit
+            _baseLoadout = baseLoadout ?? new RoleLoadout(BaseLoadoutProtoId); // RW edit
             _loadouts = loadouts;
             BarkVoice = barkVoice; // Goob Station - Barks
-            Voice = voice; // Amour - TTS
+            Voice = voice; // RW - TTS
 
             var hasHighPrority = false;
             foreach (var (key, value) in _jobPriorities)
@@ -301,18 +301,18 @@ namespace Content.Shared.Preferences
         public HumanoidCharacterProfile(HumanoidCharacterProfile other)
             : this(other.Name,
                 other.FlavorText,
-                // Orion-Start
+                // RW-Start
                 other.CharacterFlavorText,
                 other.GreenFlavorText,
                 other.YellowFlavorText,
                 other.RedFlavorText,
-                // Orion-End
+                // RW-End
                 other.Species,
                 other.Height, // Goobstation: port EE height/width sliders
                 other.Width, // Goobstation: port EE height/width sliders
                 other.Age,
                 other.Sex,
-                other.BodyType, // Amour port: WD Slim body types
+                other.BodyType, // RW port: WD Slim body types
                 other.Gender,
                 other.Appearance.Clone(),
                 other.SpawnPriority,
@@ -320,10 +320,10 @@ namespace Content.Shared.Preferences
                 other.PreferenceUnavailable,
                 new HashSet<ProtoId<AntagPrototype>>(other.AntagPreferences),
                 new HashSet<ProtoId<TraitPrototype>>(other.TraitPreferences),
-                other.BaseLoadout.Clone(), // Amour edit
-                other.Loadouts.ToDictionary(kvp => kvp.Key, kvp => kvp.Value.Clone()), // Amour edit - deep copy loadouts
+                other.BaseLoadout.Clone(), // RW edit
+                other.Loadouts.ToDictionary(kvp => kvp.Key, kvp => kvp.Value.Clone()), // RW edit - deep copy loadouts
                 other.BarkVoice, // Goob Station - Barks
-                other.Voice) // Amour - TTS
+                other.Voice) // RW - TTS
         {
         }
 
@@ -344,7 +344,7 @@ namespace Content.Shared.Preferences
         public static HumanoidCharacterProfile DefaultWithSpecies(string? species = null)
         {
             species ??= SharedHumanoidAppearanceSystem.DefaultSpecies;
-            // Amour start
+            // RW start
             var bodyType = SharedHumanoidAppearanceSystem.DefaultBodyType;
             var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
             if (prototypeManager.TryIndex<SpeciesPrototype>(species, out var speciesPrototype) &&
@@ -352,12 +352,12 @@ namespace Content.Shared.Preferences
             {
                 bodyType = speciesPrototype.BodyTypes.First();
             }
-            // Amour end
+            // RW end
 
             return new()
             {
                 Species = species,
-                BodyType = bodyType, // Amour port: WD Slim body types
+                BodyType = bodyType, // RW port: WD Slim body types
                 Appearance = HumanoidCharacterAppearance.DefaultWithSpecies(species),
             };
         }
@@ -388,14 +388,14 @@ namespace Content.Shared.Preferences
             var age = 18;
             var height = 1f; // Goobstation: port EE height/width sliders
             var width = 1f; // Goobstation: port EE height/width sliders
-            var bodyType = SharedHumanoidAppearanceSystem.DefaultBodyType; // Amour port: WD Slim body types
+            var bodyType = SharedHumanoidAppearanceSystem.DefaultBodyType; // RW port: WD Slim body types
             if (prototypeManager.TryIndex<SpeciesPrototype>(species, out var speciesPrototype))
             {
                 sex = random.Pick(speciesPrototype.Sexes);
                 age = random.Next(speciesPrototype.MinAge, speciesPrototype.OldAge); // people don't look and keep making 119 year old characters with zero rp, cap it at middle aged
                 height = random.NextFloat(speciesPrototype.MinHeight, speciesPrototype.MaxHeight); // Goobstation: port EE height/width sliders
                 width = random.NextFloat(speciesPrototype.MinWidth, speciesPrototype.MaxWidth); // Goobstation: port EE height/width sliders
-                bodyType = speciesPrototype.BodyTypes.First(); // Amour port: WD Slim body types
+                bodyType = speciesPrototype.BodyTypes.First(); // RW port: WD Slim body types
             }
 
             // Goob Station - Barks Start
@@ -425,7 +425,7 @@ namespace Content.Shared.Preferences
             {
                 Name = name,
                 Sex = sex,
-                BodyType = bodyType, // Amour port: WD Slim body types
+                BodyType = bodyType, // RW port: WD Slim body types
                 Age = age,
                 Gender = gender,
                 Species = species,
@@ -466,7 +466,7 @@ namespace Content.Shared.Preferences
             return new(this) { RedFlavorText = redFlavorText };
         }
 
-        // Orion-End
+        // RW-End
 
         public HumanoidCharacterProfile WithAge(int age)
         {
@@ -478,12 +478,12 @@ namespace Content.Shared.Preferences
             return new(this) { Sex = sex };
         }
 
-        // Amour port: WD Slim body types START
+        // RW port: WD Slim body types START
         public HumanoidCharacterProfile WithBodyType(string bodyType)
         {
             return new HumanoidCharacterProfile(this) { BodyType = bodyType };
         }
-        // Amour port: WD Slim body types END
+        // RW port: WD Slim body types END
         public HumanoidCharacterProfile WithGender(Gender gender)
         {
             return new(this) { Gender = gender };
@@ -522,12 +522,12 @@ namespace Content.Shared.Preferences
         }
         // Goob Station - Barks End
 
-        // Amour - TTS Start
+        // RW - TTS Start
         public HumanoidCharacterProfile WithVoice(TTSVoicePrototype voice)
         {
             return new(this) { Voice = voice };
         }
-        // Amour - TTS End
+        // RW - TTS End
 
         public HumanoidCharacterProfile WithJobPriorities(IEnumerable<KeyValuePair<ProtoId<JobPrototype>, JobPriority>> jobPriorities)
         {
@@ -686,16 +686,16 @@ namespace Content.Shared.Preferences
             if (Name != other.Name) return false;
             if (Age != other.Age) return false;
             if (Sex != other.Sex) return false;
-            if (BodyType != other.BodyType) return false; // Amour port: WD Slim body types
+            if (BodyType != other.BodyType) return false; // RW port: WD Slim body types
             if (Gender != other.Gender) return false;
             if (Species != other.Species) return false;
             if (Height != other.Height) return false; // Goobstation: port EE height/width sliders
             if (Width != other.Width) return false; // Goobstation: port EE height/width sliders
             if (BarkVoice != other.BarkVoice) return false; // Goob Station - Barks
-            if (Voice != other.Voice) return false; // Amour - TTS
+            if (Voice != other.Voice) return false; // RW - TTS
             if (PreferenceUnavailable != other.PreferenceUnavailable) return false;
             if (SpawnPriority != other.SpawnPriority) return false;
-            // Amour edit - use content-based comparison instead of SequenceEqual for dictionaries/sets
+            // RW edit - use content-based comparison instead of SequenceEqual for dictionaries/sets
             if (_jobPriorities.Count != other._jobPriorities.Count ||
                 !_jobPriorities.All(kvp => other._jobPriorities.TryGetValue(kvp.Key, out var val) && val == kvp.Value))
                 return false;
@@ -704,15 +704,15 @@ namespace Content.Shared.Preferences
             if (Loadouts.Count != other.Loadouts.Count ||
                 !Loadouts.All(kvp => other.Loadouts.TryGetValue(kvp.Key, out var val) && kvp.Value.Equals(val)))
                 return false;
-            // Amour edit end
-            if (!BaseLoadout.Equals(other.BaseLoadout)) return false; // Amour edit
+            // RW edit end
+            if (!BaseLoadout.Equals(other.BaseLoadout)) return false; // RW edit
             if (FlavorText != other.FlavorText) return false;
-            // Orion-Start
+            // RW-Start
             if (CharacterFlavorText != other.CharacterFlavorText) return false;
             if (GreenFlavorText != other.GreenFlavorText) return false;
             if (YellowFlavorText != other.YellowFlavorText) return false;
             if (RedFlavorText != other.RedFlavorText) return false;
-            // Orion-End
+            // RW-End
             return Appearance.MemberwiseEquals(other.Appearance);
         }
 
@@ -750,13 +750,13 @@ namespace Content.Shared.Preferences
                 _ => Gender.Epicene // Invalid enum values.
             };
 
-            // Amour port: WD Slim body types START
+            // RW port: WD Slim body types START
             var bodyTypeStr = BodyType;
             if (!speciesPrototype.BodyTypes.Contains(bodyTypeStr))
             {
                 bodyTypeStr = speciesPrototype.BodyTypes.First();
             }
-            // Amour port: WD Slim body types END
+            // RW port: WD Slim body types END
 
             string name;
             var maxNameLength = configManager.GetCVar(CCVars.MaxNameLength);
@@ -796,14 +796,14 @@ namespace Content.Shared.Preferences
             var maxFlavorTextLength = configManager.GetCVar(CCVars.MaxFlavorTextLength);
             if (FlavorText.Length > maxFlavorTextLength)
             {
-                flavortext = FlavorText[..maxFlavorTextLength]; // Orion-Edit: Remove RemoveMarkupOrThrow
+                flavortext = FlavorText[..maxFlavorTextLength]; // RW-Edit: Remove RemoveMarkupOrThrow
             }
             else
             {
-                flavortext = FlavorText; // Orion-Edit: Remove RemoveMarkupOrThrow
+                flavortext = FlavorText; // RW-Edit: Remove RemoveMarkupOrThrow
             }
 
-            // Orion-Start
+            // RW-Start
             string characterDescription;
             var maxCharacterDescriptionLength = configManager.GetCVar(CCVars.CharacterDescriptionLength);
             if (CharacterFlavorText.Length > maxCharacterDescriptionLength)
@@ -849,7 +849,7 @@ namespace Content.Shared.Preferences
             }
 
 
-            // Orion-End
+            // RW-End
 
             // begin Goobstation: port EE height/width sliders
             var height = Height;
@@ -863,9 +863,9 @@ namespace Content.Shared.Preferences
 
             var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex);
 
-            // Amour edit start - validate markings for AllowedUsers and MinBoostyTier
+            // RW edit start - validate markings for AllowedUsers and MinBoostyTier
             ValidateMarkingsForUser(appearance, session, collection);
-            // Amour edit end
+            // RW edit end
 
             var prefsUnavailableMode = PreferenceUnavailable switch
             {
@@ -913,18 +913,18 @@ namespace Content.Shared.Preferences
 
             Name = name;
             FlavorText = flavortext;
-            // Orion-Start
+            // RW-Start
             CharacterFlavorText = characterDescription;
             GreenFlavorText = greenPreferences;
             YellowFlavorText = yellowPreferences;
             RedFlavorText = redPreferences;
-            // Orion-End
+            // RW-End
             Age = age;
             Height = height; // Goobstation: port EE height/width sliders
             Width = width; // Goobstation: port EE height/width sliders
             Sex = sex;
             Gender = gender;
-            BodyType = bodyTypeStr; // Amour port: WD Slim body types
+            BodyType = bodyTypeStr; // RW port: WD Slim body types
             Appearance = appearance;
             SpawnPriority = spawnPriority;
 
@@ -946,11 +946,11 @@ namespace Content.Shared.Preferences
             // Checks prototypes exist for all loadouts and dump / set to default if not.
             var toRemove = new ValueList<string>();
 
-            // Amour edit start
+            // RW edit start
             // Validate base loadout.
             _baseLoadout.Role = BaseLoadoutProtoId;
             _baseLoadout.EnsureValid(this, session, collection);
-            // Amour edit end
+            // RW edit end
 
             foreach (var (roleName, loadouts) in _loadouts)
             {
@@ -972,7 +972,7 @@ namespace Content.Shared.Preferences
             }
         }
 
-        // Amour edit start
+        // RW edit start
         /// <summary>
         /// Validates markings for AllowedUsers and MinBoostyTier restrictions.
         /// Removes markings that the user doesn't have access to.
@@ -988,7 +988,7 @@ namespace Content.Shared.Preferences
 
             // Get Boosty tier (only available on server)
             int playerTierLevel = 0;
-            if (collection.TryResolveType<Content.Shared._Amour.Loadouts.Effects.IBoostyTierManager>(out var tierManager))
+            if (collection.TryResolveType<Content.Shared._RW.Loadouts.Effects.IBoostyTierManager>(out var tierManager))
             {
                 var tierInfo = tierManager.GetPlayerTier(session);
                 playerTierLevel = tierInfo?.IsActive == true ? tierInfo.TierLevel : 0;
@@ -1028,7 +1028,7 @@ namespace Content.Shared.Preferences
                 appearance.Markings.RemoveAt(index);
             }
         }
-        // Amour edit end
+        // RW edit end
 
         /// <summary>
         /// Takes in an IEnumerable of traits and returns a List of the valid traits.
@@ -1106,22 +1106,22 @@ namespace Content.Shared.Preferences
             hashCode.Add(_loadouts);
             hashCode.Add(Name);
             hashCode.Add(FlavorText);
-            // Orion-Start
+            // RW-Start
             hashCode.Add(CharacterFlavorText);
             hashCode.Add(GreenFlavorText);
             hashCode.Add(YellowFlavorText);
             hashCode.Add(RedFlavorText);
-            // Orion-End
+            // RW-End
             hashCode.Add(Species);
             hashCode.Add(Height); // Goobstation: port EE height/width sliders
             hashCode.Add(Width); // Goobstation: port EE height/width sliders
             hashCode.Add(Age);
             hashCode.Add((int) Sex);
-            hashCode.Add(BodyType); // Amour port: WD Slim body types
+            hashCode.Add(BodyType); // RW port: WD Slim body types
             hashCode.Add((int) Gender);
             hashCode.Add(Appearance);
             hashCode.Add(BarkVoice); // Goob Station - Barks
-            hashCode.Add(Voice); // Amour - TTS
+            hashCode.Add(Voice); // RW - TTS
             hashCode.Add((int) SpawnPriority);
             hashCode.Add((int) PreferenceUnavailable);
             return hashCode.ToHashCode();
@@ -1132,12 +1132,12 @@ namespace Content.Shared.Preferences
             _loadouts[loadout.Role.Id] = loadout;
         }
 
-        // Amour edit start
+        // RW edit start
         public void SetBaseLoadout(RoleLoadout loadout)
         {
             _baseLoadout = loadout;
         }
-        // Amour edit end
+        // RW edit end
 
         public HumanoidCharacterProfile WithLoadout(RoleLoadout loadout)
         {
@@ -1158,7 +1158,7 @@ namespace Content.Shared.Preferences
             return profile;
         }
 
-        // Amour edit start
+        // RW edit start
         /// <summary>
         /// Removes the per-role loadout overrides for the specified role.
         /// This makes the role inherit purely from <see cref="BaseLoadout"/> again.
@@ -1186,7 +1186,7 @@ namespace Content.Shared.Preferences
             profile._baseLoadout = loadout.Clone();
             return profile;
         }
-        // Amour edit end
+        // RW edit end
 
         public RoleLoadout GetLoadoutOrDefault(string id, ICommonSession? session, ProtoId<SpeciesPrototype>? species, IEntityManager entManager, IPrototypeManager protoManager)
         {
@@ -1200,7 +1200,7 @@ namespace Content.Shared.Preferences
             return loadout;
         }
 
-        // Amour edit start
+        // RW edit start
         public RoleLoadout GetEffectiveLoadout(string roleId, ICommonSession? session, IPrototypeManager protoManager)
         {
             var effective = new RoleLoadout(roleId);
@@ -1234,9 +1234,9 @@ namespace Content.Shared.Preferences
 
             return effective;
         }
-        // Amour edit end
+        // RW edit end
 
-        // Orion-End
+        // RW-End
 
         public HumanoidCharacterProfile Clone()
         {

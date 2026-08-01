@@ -16,7 +16,7 @@ namespace Content.Shared.Humanoid.Markings
         [DataField("bodyPart", required: true)]
         public HumanoidVisualLayers BodyPart { get; private set; } = default!;
 
-        // Amour edit start
+        // RW edit start
         /// <summary>
         ///     Optional per-sprite body part targets. When specified, each sprite
         ///     is applied over its matching body layer instead of every sprite
@@ -40,7 +40,7 @@ namespace Content.Shared.Humanoid.Markings
 
             return BodyParts != null && BodyParts.Contains(layer);
         }
-        // Amour edit end
+        // RW edit end
 
         [DataField("markingCategory", required: true)]
         public MarkingCategories MarkingCategory { get; private set; } = default!;
@@ -51,7 +51,7 @@ namespace Content.Shared.Humanoid.Markings
         [DataField("sexRestriction")]
         public Sex? SexRestriction { get; private set; }
 
-        // Amour edit start
+        // RW edit start
         /// <summary>
         /// List of usernames that are allowed to use this marking.
         /// If null or empty, the marking is available to everyone.
@@ -65,7 +65,7 @@ namespace Content.Shared.Humanoid.Markings
         /// </summary>
         [DataField("minBoostyTier")]
         public int MinBoostyTier { get; private set; } = 0;
-        // Amour edit end
+        // RW edit end
 
         [DataField("followSkinColor")]
         public bool FollowSkinColor { get; private set; } = false;
@@ -92,7 +92,7 @@ namespace Content.Shared.Humanoid.Markings
         public string? Shader { get; private set; } = null;
         /// Impstation end
 
-        // Amour edit start
+        // RW edit start
         /// <summary>
         ///     If true, this marking can be rendered with a vertical two-color gradient
         ///     and the editor UI will expose a second color picker for it.
@@ -101,7 +101,7 @@ namespace Content.Shared.Humanoid.Markings
         /// </summary>
         [DataField("supportsGradient")]
         public bool SupportsGradient { get; private set; } = false;
-        // Amour edit end
+        // RW edit end
         public Marking AsMarking()
         {
             return new Marking(ID, Sprites.Count);

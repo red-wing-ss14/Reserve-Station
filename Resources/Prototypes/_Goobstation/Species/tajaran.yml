@@ -5,19 +5,19 @@
   name: species-name-tajaran
   roundStart: true
   prototype: MobTajaran
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
   bodyTypes:
   - TajaranNormal
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
   markingLimits: MobTajaranMarkingLimits
   dollPrototype: MobTajaranDummy
-  skinColoration: Hues # Orion-Edit: Was AnimalFur
+  skinColoration: Hues # RW-Edit: Was AnimalFur
   maleFirstNames: NamesTajaranFirst
   femaleFirstNames: NamesTajaranFirst
   lastNames: NamesTajaranLast
-  # Orion-Start
+  # RW-Start
   category: Classic
-  description: "/ServerInfo/_Orion/SpeciesDescriptions/Tajaran.xml"
+  description: "/ServerInfo/_RW/SpeciesDescriptions/Tajaran.xml"
   pros:
   - species-tajaran-pro-cold-resist
   - species-tajaran-pro-fall-damage
@@ -28,7 +28,7 @@
   - species-tajaran-con-physical-vulnerable
   - species-tajaran-con-fire-vulnerable
   - species-tajaran-con-stamina
-  # Orion-End
+  # RW-End
   # begin Goobstation: port EE height/width sliders
   minHeight: 0.85
   defaultHeight: 0.90
@@ -53,7 +53,7 @@
     Tail:
       points: 1
       required: true
-      defaultMarkings: [ TajaranTailFluffy ] # Orion-Edit
+      defaultMarkings: [ TajaranTailFluffy ] # RW-Edit
     HeadTop:
       points: 1
       required: true
@@ -95,11 +95,11 @@
       points: 3
       required: false
 
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
 - type: bodyType
   id: TajaranNormal
   name: body-normal
-# Amour port: WD Slim body types END
+# RW port: WD Slim body types END
   sprites:
     Head: MobTajaranHead
     HeadTop: MobHumanoidAnyMarking
@@ -125,7 +125,7 @@
 - type: humanoidBaseSprite
   id: MobTajaranEyes
   baseSprite:
-    sprite: _Orion/Mobs/Customization/Tajaran/tajaran_eyes.rsi # Orion-Edit
+    sprite: _RW/Mobs/Customization/Tajaran/tajaran_eyes.rsi # RW-Edit
     state: eyes
 
 - type: humanoidBaseSprite

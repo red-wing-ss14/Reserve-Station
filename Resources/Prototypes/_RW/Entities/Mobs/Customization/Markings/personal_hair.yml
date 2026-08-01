@@ -1,0 +1,12 @@
+# Персональные причёски
+
+# Warete
+- type: marking
+  id: DemonHairWarete
+  bodyPart: Hair
+  markingCategory: HeadTop
+  speciesRestriction: [Human]
+  allowedUsers: [Warete]
+  sprites:
+    - sprite: _RW/Mobs/Customization/fluff_parts/warete_hair.rsi
+      state: hair

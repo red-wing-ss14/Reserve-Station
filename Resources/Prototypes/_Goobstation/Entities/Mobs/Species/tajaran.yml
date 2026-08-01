@@ -101,9 +101,9 @@
     animationThreshold: 40 # Goob edit
   - type: TypingIndicator
     proto: felinid
-  # Orion-Start
+  # RW-Start
   - type: Inventory
-#    speciesId: reptilian # Orion-Edit: We don't want to see tails from lizards on suits.
+#    speciesId: reptilian # RW-Edit: We don't want to see tails from lizards on suits.
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
@@ -136,7 +136,7 @@
           32:
             sprite: _White/Mobs/Species/displacement.rsi
             state: shoes
-  # Orion-End
+  # RW-End
   - type: PseudoItem
     storedOffset: 0,17
     shape:
@@ -168,9 +168,9 @@
   components:
   - type: HumanoidAppearance
     species: Tajaran
-  # Orion-Start
+  # RW-Start
   - type: Inventory
-#    speciesId: reptilian # Orion-Edit: We don't want to see tails from lizards on suits.
+#    speciesId: reptilian # RW-Edit: We don't want to see tails from lizards on suits.
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
@@ -203,4 +203,4 @@
           32:
             sprite: _White/Mobs/Species/displacement.rsi
             state: shoes
-  # Orion-End
+  # RW-End

@@ -31,7 +31,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Robust.Shared.Prototypes;
-using Content.Server._Amour.Gulag;
+using Content.Server._RW.Gulag;
 
 namespace Content.Server.Administration.Systems
 {
@@ -51,8 +51,8 @@ namespace Content.Server.Administration.Systems
         [Dependency] private readonly IServerDbManager _dbManager = default!;
         [Dependency] private readonly PlayerRateLimitManager _rateLimit = default!;
         [Dependency] private readonly IServerPreferencesManager _preferencesManager = default!;
-        [Dependency] private readonly IBanManager _banManager = default!; // Orion
-        [Dependency] private readonly GulagSystem _gulag = default!; // Amour
+        [Dependency] private readonly IBanManager _banManager = default!; // RW
+        [Dependency] private readonly GulagSystem _gulag = default!; // RW
 
         [GeneratedRegex(@"^https://(?:(?:canary|ptb)\.)?discord\.com/api/webhooks/(\d+)/((?!.*/).*)$")]
         private static partial Regex DiscordRegex();
@@ -86,13 +86,13 @@ namespace Content.Server.Administration.Systems
         // Should be shorter than DescriptionMax
         private const ushort MessageLengthCap = 3000;
 
-        // Orion-Start
+        // RW-Start
         private readonly TimeSpan _messageCooldown = TimeSpan.FromSeconds(1);
 
         private readonly Dictionary<NetUserId, Queue<(string Text, TimeSpan Timestamp)>> _recentMessages = new();
         private const int MaxRecentMessages = 10;
         private const int SpamCheckMessageCount = 3;
-        // Orion-End
+        // RW-End
 
         // Text to be used to cut off messages that are too long. Should be shorter than MessageLengthCap
         private const string TooLongText = "... **(too long)**";
@@ -673,10 +673,10 @@ namespace Content.Server.Administration.Systems
 
             var senderSession = eventArgs.SenderSession;
 
-            // Amour start
+            // RW start
             if (_gulag.IsUserGulagged(senderSession.UserId))
                 return;
-            // Amour end
+            // RW end
 
             // TODO: Sanitize text?
             // Confirm that this person is actually allowed to send a message here.
@@ -690,7 +690,7 @@ namespace Content.Server.Administration.Systems
                 return;
             }
 
-            // Orion-Start
+            // RW-Start
             var currentTime = _timing.RealTime;
 
             if (IsOnCooldown(message.UserId, currentTime))
@@ -700,7 +700,7 @@ namespace Content.Server.Administration.Systems
                 _banManager.CreateServerBan(senderSession.UserId, senderSession.Name, null, null, null, 10, NoteSeverity.High, "Косинус синус, ебало на минус. Доспамился в ахелп.");
 
             AddToRecentMessages(message.UserId, message.Text, currentTime);
-            // Orion-End
+            // RW-End
 
             if (_rateLimit.CountAction(eventArgs.SenderSession, RateLimitKey) != RateLimitStatus.Allowed)
                 return;
@@ -961,7 +961,7 @@ namespace Content.Server.Administration.Systems
             public bool OnCall;
         }
 
-        // Orion-Start
+        // RW-Start
         private void AddToRecentMessages(NetUserId channelId, string text, TimeSpan timestamp)
         {
             if (!_recentMessages.TryGetValue(channelId, out var userQueue))
@@ -1014,7 +1014,7 @@ namespace Content.Server.Administration.Systems
             }
             return result;
         }
-        // Orion-End
+        // RW-End
     }
 
     public sealed class AHelpMessageParams

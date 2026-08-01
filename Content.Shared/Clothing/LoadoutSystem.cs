@@ -97,7 +97,7 @@ public sealed class LoadoutSystem : EntitySystem
             }
         }
 
-        // Orion-Start: Return first prototype instead of null for multi-item loadouts
+        // RW-Start: Return first prototype instead of null for multi-item loadouts
         // Try inhand first
         if (gear.Inhand.Count > 0 && _protoMan.TryIndex<EntityPrototype>(gear.Inhand[0], out var firstProto))
         {
@@ -118,7 +118,7 @@ public sealed class LoadoutSystem : EntitySystem
                 return firstProto.ID;
             }
         }
-        // Orion-End
+        // RW-End
 
         return null;
     }
@@ -171,7 +171,7 @@ public sealed class LoadoutSystem : EntitySystem
                 break;
             }
         }
-        // Orion-Start: Show first prototype name instead of "unknown" for multi-item loadouts
+        // RW-Start: Show first prototype name instead of "unknown" for multi-item loadouts
         
         // Get first available prototype from inhand
         if (gear.Inhand.Count > 0 && _protoMan.TryIndex<EntityPrototype>(gear.Inhand[0], out var firstProto))
@@ -193,7 +193,7 @@ public sealed class LoadoutSystem : EntitySystem
                 return firstProto.Name;
             }
         }
-        // Orion-End
+        // RW-End
 
         return Loc.GetString($"unknown");
     }

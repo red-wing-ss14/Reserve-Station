@@ -98,7 +98,7 @@
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
   - type: StaticPrice
-    price: 40 # Orion-Edit: 70 > 40
+    price: 40 # RW-Edit: 70 > 40
   - type: Stainable # RW
     clothingVisuals:
       outerClothing:
@@ -251,7 +251,7 @@
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: Clothing
-    clothingType: hardsuit # Amour port: WD Slim body types
+    clothingType: hardsuit # RW port: WD Slim body types
   - type: DamageOnInteractProtection
     damageProtection:
       flatReductions:
@@ -328,7 +328,7 @@
     tags:
     - PlasmamanSafe # EE Plasmeme Change
   - type: Clothing
-    clothingType: hardsuit # Amour port: WD Slim body types
+    clothingType: hardsuit # RW port: WD Slim body types
   - type: StainBlocker # RW
     slots: [INNERCLOTHING, FEET, GLOVES]
   - type: CosmicTransmutable # DeltaV

@@ -37,7 +37,7 @@ namespace Content.Client.Research.UI
             OnServerDeselected?.Invoke();
         }
 
-        // Orion-Start
+        // RW-Start
         private static string FormatServerName(string name)
         {
             const string prefix = "RND-Server";
@@ -49,7 +49,7 @@ namespace Content.Client.Research.UI
                 ? Loc.GetString("research-server-name-base")
                 : Loc.GetString("research-server-name-with-suffix", ("suffix", suffix));
         }
-        // Orion-End
+        // RW-End
 
         public void Populate(int serverCount, string[] serverNames, int[] serverIds, int selectedServerId)
         {
@@ -66,8 +66,8 @@ namespace Content.Client.Research.UI
             for (var i = 0; i < _serverCount; i++)
             {
                 var id = _serverIds[i];
-                var localizedName = FormatServerName(_serverNames[i]); // Orion
-                Servers.AddItem(Loc.GetString("research-client-server-selection-menu-server-entry-text", ("id", id), ("serverName", localizedName))); // Orion-Edit
+                var localizedName = FormatServerName(_serverNames[i]); // RW
+                Servers.AddItem(Loc.GetString("research-client-server-selection-menu-server-entry-text", ("id", id), ("serverName", localizedName))); // RW-Edit
                 if (id == _selectedServerId)
                 {
                     Servers[i].Selected = true;

@@ -23,18 +23,18 @@
   - type: GunRequiresWield
   - type: Gun
     fireRate: 2
-    cameraRecoilScalar: 3 # Orion
+    cameraRecoilScalar: 3 # RW
     selectedMode: FullAuto
     availableModes:
     - FullAuto
     soundGunshot:
-      collection: AutoShotgunShot # Orion-Edit
+      collection: AutoShotgunShot # RW-Edit
     soundEmpty:
-      path: /Audio/_Orion/Weapons/Guns/Shotguns/v51_empty.ogg # Orion-Edit
+      path: /Audio/_RW/Weapons/Guns/Shotguns/v51_empty.ogg # RW-Edit
   - type: ItemSlots
     slots:
       gun_magazine:
-#        name: Magazine # Orion-Edit: Localization
+#        name: Magazine # RW-Edit: Localization
         startingItem: MagazineShotgun
         priority: 2
         whitelist:

@@ -2,11 +2,11 @@
 
 using System.Linq;
 using System.Numerics;
-using Content.Server._Orion.Bitrunning.Components;
+using Content.Server._RW.Bitrunning.Components;
 using Content.Server.Administration.Logs;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Emp;
-using Content.Shared._Orion.Bitrunning.Components;
+using Content.Shared._RW.Bitrunning.Components;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Database;
 using Content.Shared.DeviceNetwork;
@@ -32,7 +32,7 @@ public sealed class SurveillanceCameraSystem : SharedSurveillanceCameraSystem
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!; // Goobstation
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly SharedStationAiSystem _stationAiSystem = default!; // Orion
+    [Dependency] private readonly SharedStationAiSystem _stationAiSystem = default!; // RW
 
 
     // Pings a surveillance camera subnet. All cameras will always respond
@@ -66,7 +66,7 @@ public sealed class SurveillanceCameraSystem : SharedSurveillanceCameraSystem
 
     public const int CameraNameLimit = 32;
 
-    // Orion-Start
+    // RW-Start
     private const float AiViewerActivationRange = 7f;
     private const float VisualRefreshInterval = 1f;
     private float _visualRefreshAccumulator;
@@ -92,7 +92,7 @@ public sealed class SurveillanceCameraSystem : SharedSurveillanceCameraSystem
             UpdateVisuals(uid, camera);
         }
     }
-    // Orion-End
+    // RW-End
 
     public override void Initialize()
     {
@@ -160,7 +160,7 @@ public sealed class SurveillanceCameraSystem : SharedSurveillanceCameraSystem
                     if (TryComp(uid, out TransformComponent? transformComponent))
                     {
                         // Decoupling the bodycam/nopro from the wearer, otherwise we'll just keep seeing the last known owner move around on the map
-                        payload[CameraNetEntity] = (GetNetEntity(uid), GetNetCoordinates(transformComponent.Coordinates)); // Orion-Edit
+                        payload[CameraNetEntity] = (GetNetEntity(uid), GetNetCoordinates(transformComponent.Coordinates)); // RW-Edit
                         payload[CameraMobile] = component.Mobile;
                     }
                     // Goobstation end
@@ -227,7 +227,7 @@ public sealed class SurveillanceCameraSystem : SharedSurveillanceCameraSystem
         UpdateSetupInterface(uid, component);
     }
 
-    // Orion-Start
+    // RW-Start
     public void ConfigureCameraNetwork(EntityUid uid, ProtoId<DeviceFrequencyPrototype> receiveFrequencyId, ProtoId<DeviceFrequencyPrototype>? transmitFrequencyId = null, SurveillanceCameraComponent? camera = null, DeviceNetworkComponent? deviceNet = null)
     {
         if (!Resolve(uid, ref camera, ref deviceNet))
@@ -244,7 +244,7 @@ public sealed class SurveillanceCameraSystem : SharedSurveillanceCameraSystem
         camera.NetworkSet = true;
         Dirty(uid, deviceNet);
     }
-    // Orion-End
+    // RW-End
 
     protected override void OpenSetupInterface(EntityUid uid, EntityUid player, SurveillanceCameraComponent? camera = null)
     {
@@ -300,7 +300,7 @@ public sealed class SurveillanceCameraSystem : SharedSurveillanceCameraSystem
 
         var ev = new SurveillanceCameraDeactivateEvent(camera);
 
-        RemoveActiveViewers(camera, new(component.ActiveViewers.Keys), null, component); // Orion-Edit
+        RemoveActiveViewers(camera, new(component.ActiveViewers.Keys), null, component); // RW-Edit
         component.Active = false;
 
         // Send a targetted event to all monitors.
@@ -349,11 +349,11 @@ public sealed class SurveillanceCameraSystem : SharedSurveillanceCameraSystem
             return;
         }
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         var subscribeTarget = ResolveSubscribeTarget(camera);
         _viewSubscriberSystem.AddViewSubscriber(subscribeTarget, actor.PlayerSession);
         component.ActiveViewers[player] = subscribeTarget;
-        // Orion-Edit-End
+        // RW-Edit-End
 
         if (monitor != null)
         {
@@ -412,14 +412,14 @@ public sealed class SurveillanceCameraSystem : SharedSurveillanceCameraSystem
         if (!Resolve(camera, ref component))
             return;
 
-        // Orion-Start
+        // RW-Start
         var subscribeTarget = ResolveSubscribeTarget(camera);
         if (component.ActiveViewers.TryGetValue(player, out var storedTarget))
             subscribeTarget = storedTarget;
-        // Orion-End
+        // RW-End
 
         if (Resolve(player, ref actor))
-            _viewSubscriberSystem.RemoveViewSubscriber(subscribeTarget, actor.PlayerSession); // Orion-Edit
+            _viewSubscriberSystem.RemoveViewSubscriber(subscribeTarget, actor.PlayerSession); // RW-Edit
 
         component.ActiveViewers.Remove(player);
 
@@ -431,14 +431,14 @@ public sealed class SurveillanceCameraSystem : SharedSurveillanceCameraSystem
         UpdateVisuals(camera, component);
     }
 
-    // Orion-Start
+    // RW-Start
     public void ClearActiveViewers(EntityUid camera, SurveillanceCameraComponent? component = null)
     {
         if (!Resolve(camera, ref component))
             return;
 
-//        var subscribeTarget = ResolveSubscribeTarget(camera); // Orion-Edit
-        foreach (var (viewer, subscribeTarget) in component.ActiveViewers.ToArray()) // Orion-Edit
+//        var subscribeTarget = ResolveSubscribeTarget(camera); // RW-Edit
+        foreach (var (viewer, subscribeTarget) in component.ActiveViewers.ToArray()) // RW-Edit
         {
             if (!TryComp<ActorComponent>(viewer, out var actor))
                 continue;
@@ -460,7 +460,7 @@ public sealed class SurveillanceCameraSystem : SharedSurveillanceCameraSystem
 
         return camera;
     }
-    // Orion-End
+    // RW-End
 
     public void RemoveActiveViewers(EntityUid camera, HashSet<EntityUid> players, EntityUid? monitor = null, SurveillanceCameraComponent? component = null)
     {
@@ -497,14 +497,14 @@ public sealed class SurveillanceCameraSystem : SharedSurveillanceCameraSystem
             key = SurveillanceCameraVisuals.Active;
         }
 
-        if (component.Active && HasActiveAiViewerInRange(uid)) // Orion-Edit
+        if (component.Active && HasActiveAiViewerInRange(uid)) // RW-Edit
         {
             key = SurveillanceCameraVisuals.InUse;
         }
 
         _appearance.SetData(uid, SurveillanceCameraVisualsKey.Key, key, appearance);
     }
-    // Orion-Start
+    // RW-Start
     private void RefreshActiveAiObservers()
     {
         _activeAiObservers.Clear();
@@ -545,7 +545,7 @@ public sealed class SurveillanceCameraSystem : SharedSurveillanceCameraSystem
 
         return false;
     }
-    // Orion-End
+    // RW-End
 }
 
 public sealed class OnSurveillanceCameraViewerAddEvent : EntityEventArgs

@@ -2,8 +2,8 @@
 
 using System.Linq;
 using System.Threading.Tasks;
-using Content.Server._Orion.ServerProtection;
-using Content.Server._Orion.ServerProtection.Administration;
+using Content.Server._RW.ServerProtection;
+using Content.Server._RW.ServerProtection.Administration;
 using Content.Server.Administration.Managers;
 using Content.Server.Database;
 using Content.Server.EUI;
@@ -23,8 +23,8 @@ namespace Content.Server.Administration.UI
         [Dependency] private readonly IServerDbManager _db = default!;
         [Dependency] private readonly IAdminManager _adminManager = default!;
         [Dependency] private readonly ILogManager _logManager = default!;
-        [Dependency] private readonly AdminActionProtectionSystem _adminActionProtection = default!; // Orion
-        [Dependency] private readonly ServerProtectionPunishmentSystem _punishment = default!; // Orion
+        [Dependency] private readonly AdminActionProtectionSystem _adminActionProtection = default!; // RW
+        [Dependency] private readonly ServerProtectionPunishmentSystem _punishment = default!; // RW
 
         private readonly ISawmill _sawmill;
         private bool _isLoading;
@@ -231,9 +231,9 @@ namespace Content.Server.Administration.UI
             await _db.RemoveAdminAsync(ra.UserId);
 
             var record = await _db.GetPlayerRecordByUserId(ra.UserId);
-            var removedName = record?.LastSeenUserName ?? ra.UserId.ToString(); // Orion
-            _sawmill.Info($"{Player} removed admin {removedName}"); // Orion-Edit
-            _adminActionProtection.ReportPermissionRemovalAction(Player.UserId, Player.Name, removedName, "remove-admin"); // Orion
+            var removedName = record?.LastSeenUserName ?? ra.UserId.ToString(); // RW
+            _sawmill.Info($"{Player} removed admin {removedName}"); // RW-Edit
+            _adminActionProtection.ReportPermissionRemovalAction(Player.UserId, Player.Name, removedName, "remove-admin"); // RW
 
             if (_playerManager.TryGetSessionById(ra.UserId, out var player))
             {
@@ -261,7 +261,7 @@ namespace Content.Server.Administration.UI
                 return;
             }
 
-            var permissionReduction = IsPermissionReduction(admin, ua); // Orion
+            var permissionReduction = IsPermissionReduction(admin, ua); // RW
 
             admin.Title = ua.Title;
             admin.AdminRankId = ua.RankId;
@@ -283,10 +283,10 @@ namespace Content.Server.Administration.UI
 
             _sawmill.Info($"{Player} updated admin {name} to {title}/{rankName}/{flags}");
 
-            // Orion-Start
+            // RW-Start
             if (permissionReduction)
                 _adminActionProtection.ReportPermissionRemovalAction(Player.UserId, Player.Name, name, "update-admin-restrict");
-            // Orion-End
+            // RW-End
 
             if (_playerManager.TryGetSessionById(ua.UserId, out var player))
             {
@@ -409,7 +409,7 @@ namespace Content.Server.Administration.UI
                 {
                     // Can't assign a rank with flags you don't have yourself.
                     _sawmill.Warning($"{Player} tried to assign admin rank above their authorization.");
-                    _punishment.SendAdminAlert($"{Player} tried to assign admin rank above their authorization! ⚠️"); // Orion
+                    _punishment.SendAdminAlert($"{Player} tried to assign admin rank above their authorization! ⚠️"); // RW
                     return (true, null);
                 }
             }
@@ -417,7 +417,7 @@ namespace Content.Server.Administration.UI
             return (false, ret);
         }
 
-        // Orion-Start
+        // RW-Start
         private static bool IsPermissionReduction(Admin oldAdmin, UpdateAdmin update)
         {
             var oldPosFlags = AdminFlagsHelper.NamesToFlags(oldAdmin.Flags.Where(f => !f.Negative).Select(f => f.Flag));
@@ -434,7 +434,7 @@ namespace Content.Server.Administration.UI
 
             return removedPositive || addedNegative;
         }
-        // Orion-End
+        // RW-End
 
         private async void LoadFromDb()
         {

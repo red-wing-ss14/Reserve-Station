@@ -7,7 +7,7 @@ using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
-using Content.Shared._Orion.CustomGhost;
+using Content.Shared._RW.CustomGhost;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
 using Content.Shared.Construction.Prototypes;
@@ -46,7 +46,7 @@ namespace Content.Server.Database
 
         Task SaveAdminOOCColorAsync(NetUserId userId, Color color);
 
-        Task SaveGhostTypeAsync(NetUserId userId, ProtoId<CustomGhostPrototype> ghostProto); // Orion
+        Task SaveGhostTypeAsync(NetUserId userId, ProtoId<CustomGhostPrototype> ghostProto); // RW
 
         Task SaveConstructionFavoritesAsync(NetUserId userId, List<ProtoId<ConstructionPrototype>> constructionFavorites);
 
@@ -117,7 +117,7 @@ namespace Content.Server.Database
             DateTimeOffset editedAt);
 
         /// <summary>
-        /// Amour add: Updates a temporary server ban's expiration only if it has not changed since it was read.
+        /// RW add: Updates a temporary server ban's expiration only if it has not changed since it was read.
         /// </summary>
         Task<bool> TryEditServerBanExpiration(
             int id,
@@ -330,7 +330,7 @@ namespace Content.Server.Database
         Task<List<RMCPatron>> GetAllPatrons();
 
         Task SetGhostColor(Guid player, System.Drawing.Color? color);
-        // Amour Boosters
+        // RW Boosters
         Task<int?> GetBoosterColor(Guid player, CancellationToken cancel);
         Task SetBoosterColor(Guid player, int? color);
 
@@ -361,7 +361,7 @@ namespace Content.Server.Database
 
         #endregion
 
-        // Amour edit
+        // RW edit
         #region Amour Client Registry
 
         Task<bool> HasClientRecord(Guid clientId, CancellationToken cancel = default);
@@ -554,13 +554,13 @@ namespace Content.Server.Database
             return RunDbCommand(() => _db.SaveAdminOOCColorAsync(userId, color));
         }
 
-        // Orion-Start
+        // RW-Start
         public Task SaveGhostTypeAsync(NetUserId userId, ProtoId<CustomGhostPrototype> ghostProto)
         {
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.SaveGhostTypeAsync(userId, ghostProto));
         }
-        // Orion-End
+        // RW-End
 
         public Task SaveConstructionFavoritesAsync(NetUserId userId, List<ProtoId<ConstructionPrototype>> constructionFavorites)
         {
@@ -633,7 +633,7 @@ namespace Content.Server.Database
             return RunDbCommand(() => _db.EditBan(id, reason, severity, expiration, editedBy, editedAt));
         }
 
-        // Amour start: Updates a temporary server ban's expiration only if it has not changed since it was read.
+        // RW start: Updates a temporary server ban's expiration only if it has not changed since it was read.
         public Task<bool> TryEditServerBanExpiration(
             int id,
             DateTimeOffset expectedExpiration,
@@ -644,7 +644,7 @@ namespace Content.Server.Database
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.TryEditServerBanExpiration(id, expectedExpiration, expiration, editedBy, editedAt));
         }
-        // Amour end
+        // RW end
 
         public Task UpdateBanExemption(NetUserId userId, ServerBanExemptFlags flags)
         {
@@ -1138,7 +1138,7 @@ namespace Content.Server.Database
             return RunDbCommand(() => _db.SetGhostColor(player, color));
         }
 
-        // Amour Boosters
+        // RW Boosters
         public Task<int?> GetBoosterColor(Guid player, CancellationToken cancel)
         {
             DbReadOpsMetric.Inc();
@@ -1226,7 +1226,7 @@ namespace Content.Server.Database
 
         #endregion
 
-        // Amour edit
+        // RW edit
         public Task<bool> HasClientRecord(Guid clientId, CancellationToken cancel = default)
         {
             DbReadOpsMetric.Inc();

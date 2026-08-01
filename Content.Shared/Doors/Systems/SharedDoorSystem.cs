@@ -238,7 +238,7 @@ public abstract partial class SharedDoorSystem : EntitySystem
     /// </summary>
     private void OnAfterPry(EntityUid uid, DoorComponent door, ref PriedEvent args)
     {
-        // Orion-Start: use force sounds when prying airlocks 
+        // RW-Start: use force sounds when prying airlocks 
         SoundSpecifier? forceOpen = null;
         SoundSpecifier? forceClose = null;
         if (TryComp<AirlockComponent>(uid, out var airlock))
@@ -246,23 +246,23 @@ public abstract partial class SharedDoorSystem : EntitySystem
             forceOpen = airlock.ForceOpenSound;
             forceClose = airlock.ForceCloseSound;
         }
-        // Orion-End
+        // RW-End
 
         if (door.State == DoorState.Closed)
         {   
-            // Orion-Edit-Start
+            // RW-Edit-Start
             _adminLog.Add(LogType.Action, LogImpact.Medium,
                 $"{ToPrettyString(args.User)} pried {ToPrettyString(uid)} open");
             StartOpening(uid, door, args.User, true, forceOpen);
-            // Orion-Edit-End
+            // RW-Edit-End
         }
         else if (door.State == DoorState.Open)
         {   
-            // Orion-Edit-Start
+            // RW-Edit-Start
             _adminLog.Add(LogType.Action, LogImpact.Medium,
                 $"{ToPrettyString(args.User)} pried {ToPrettyString(uid)} closed");
             StartClosing(uid, door, args.User, true, forceClose);
-            // Orion-Edit-End
+            // RW-Edit-End
         }
     }
 
@@ -378,7 +378,7 @@ public abstract partial class SharedDoorSystem : EntitySystem
     /// <param name="user"> The user (if any) opening the door</param>
     /// <param name="predicted">Whether the interaction would have been
     /// predicted. See comments in the PlaySound method on the Server system for details</param>
-    public void StartOpening(EntityUid uid, DoorComponent? door = null, EntityUid? user = null, bool predicted = false, SoundSpecifier? soundOverride = null) // Orion-Edit
+    public void StartOpening(EntityUid uid, DoorComponent? door = null, EntityUid? user = null, bool predicted = false, SoundSpecifier? soundOverride = null) // RW-Edit
     {
         if (!Resolve(uid, ref door))
             return;
@@ -388,11 +388,11 @@ public abstract partial class SharedDoorSystem : EntitySystem
         if (!SetState(uid, DoorState.Opening, door))
             return;
 
-        var sound = soundOverride ?? door.OpenSound; // Orion
+        var sound = soundOverride ?? door.OpenSound; // RW
         if (predicted)
-            Audio.PlayPredicted(sound, uid, user, AudioParams.Default.WithVolume(-5)); // Orion-Edit
+            Audio.PlayPredicted(sound, uid, user, AudioParams.Default.WithVolume(-5)); // RW-Edit
         else if (_net.IsServer)
-            Audio.PlayPvs(sound, uid, AudioParams.Default.WithVolume(-5)); // Orion-Edit
+            Audio.PlayPvs(sound, uid, AudioParams.Default.WithVolume(-5)); // RW-Edit
 
         if (lastState == DoorState.Emagging && TryComp<DoorBoltComponent>(uid, out var doorBoltComponent))
             SetBoltsDown((uid, doorBoltComponent), true, user, true);
@@ -408,7 +408,7 @@ public abstract partial class SharedDoorSystem : EntitySystem
 
         SetCollidable(uid, false, door);
         door.Partial = true;
-        door.NextStateChange = GameTiming.CurTime + door.OpenTimeTwo; // Orion-Edit: fix
+        door.NextStateChange = GameTiming.CurTime + door.OpenTimeTwo; // RW-Edit: fix
         _activeDoors.Add((uid, door));
         Dirty(uid, door);
 
@@ -474,7 +474,7 @@ public abstract partial class SharedDoorSystem : EntitySystem
         return !ev.PerformCollisionCheck || !GetColliding(uid).Any();
     }
 
-    public void StartClosing(EntityUid uid, DoorComponent? door = null, EntityUid? user = null, bool predicted = false, SoundSpecifier? soundOverride = null) // Orion-Edit
+    public void StartClosing(EntityUid uid, DoorComponent? door = null, EntityUid? user = null, bool predicted = false, SoundSpecifier? soundOverride = null) // RW-Edit
     {
         if (!Resolve(uid, ref door))
             return;
@@ -482,11 +482,11 @@ public abstract partial class SharedDoorSystem : EntitySystem
         if (!SetState(uid, DoorState.Closing, door))
             return;
 
-        var sound = soundOverride ?? door.CloseSound; // Orion
+        var sound = soundOverride ?? door.CloseSound; // RW
         if (predicted)
-            Audio.PlayPredicted(sound, uid, user, AudioParams.Default.WithVolume(-5)); // Orion-Edit
+            Audio.PlayPredicted(sound, uid, user, AudioParams.Default.WithVolume(-5)); // RW-Edit
         else if (_net.IsServer)
-            Audio.PlayPvs(sound, uid, AudioParams.Default.WithVolume(-5)); // Orion-Edit
+            Audio.PlayPvs(sound, uid, AudioParams.Default.WithVolume(-5)); // RW-Edit
     }
 
     /// <summary>

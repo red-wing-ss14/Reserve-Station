@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared._Orion.Construction.Prototypes;
+using Content.Shared._RW.Construction.Prototypes;
 using Content.Shared.Construction.Components;
 using Content.Shared.Stacks;
 using Content.Shared.Tag;
@@ -21,10 +21,10 @@ namespace Content.Server.Construction.Components
         [ViewVariables]
         public readonly Dictionary<ProtoId<StackPrototype>, int> MaterialProgress = new();
 
-        // Orion-Start
+        // RW-Start
         [ViewVariables]
         public readonly Dictionary<ProtoId<MachinePartPrototype>, int> PartProgress = new();
-        // Orion-End
+        // RW-End
 
         [ViewVariables]
         public readonly Dictionary<string, int> ComponentProgress = new();
@@ -35,10 +35,10 @@ namespace Content.Server.Construction.Components
         [ViewVariables]
         public Dictionary<ProtoId<StackPrototype>, int> MaterialRequirements = new();
 
-        // Orion-Start
+        // RW-Start
         [ViewVariables]
         public Dictionary<ProtoId<MachinePartPrototype>, int> PartRequirements = new();
-        // Orion-End
+        // RW-End
 
         [ViewVariables]
         public Dictionary<string, GenericPartInfo> ComponentRequirements = new();

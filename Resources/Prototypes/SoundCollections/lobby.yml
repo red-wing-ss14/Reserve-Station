@@ -32,23 +32,23 @@
     - /Audio/Lobby/marhaba.ogg
     - /Audio/Lobby/the_future_soon.ogg
     - /Audio/Lobby/horn.ogg
-    # Orion-Start
-    - /Audio/_Orion/Jukebox/BritishSeaPower/BritishSeaPower_EcstaticVibrations.ogg
-    - /Audio/_Orion/Jukebox/ChrisHadfield/ChrisHadfield_SpaceOddity.ogg
-    - /Audio/_Orion/Jukebox/DavidBowie/DavidBowie_Starman.ogg
-    - /Audio/_Orion/Jukebox/DavidBowie/DavidBowie_TheManWhoSoldTheWorld.ogg
-    - /Audio/_Orion/Jukebox/KarenO/KarenO_Drown.ogg
-    # - /Audio/_Orion/Jukebox/Plamenev/Plamenev_BigLove.ogg # RW: disable song
-    - /Audio/_Orion/Jukebox/SurfCurse/SurfCurse_Freaks.ogg
-    - /Audio/_Orion/Jukebox/TheCaretaker/TheCaretaker_ItsJustBurningMemory.ogg
-    - /Audio/_Orion/Jukebox/TheRareOccasions/TheRareOccasions_Notion.ogg
-    - /Audio/_Orion/Jukebox/Ween/Ween_OceanMan.ogg
-    - /Audio/_Orion/Jukebox/Home/Home_Resonance.ogg
-    - /Audio/_Orion/Jukebox/Kaleida/Kaleida_Think.ogg
-    - /Audio/_Orion/Jukebox/neheart/neheart_snowfall.ogg
-    # Orion-End
-    # Amour start
-    - /Audio/_Amour/Lobby/EdipovKompleks_SpaceShuttle.ogg
-    - /Audio/_Amour/Lobby/boa_Duvet.ogg
-    - /Audio/_Amour/Lobby/FranzFerdinand_LoveIllumination.ogg
-    # Amour end
+    # RW-Start
+    - /Audio/_RW/Jukebox/BritishSeaPower/BritishSeaPower_EcstaticVibrations.ogg
+    - /Audio/_RW/Jukebox/ChrisHadfield/ChrisHadfield_SpaceOddity.ogg
+    - /Audio/_RW/Jukebox/DavidBowie/DavidBowie_Starman.ogg
+    - /Audio/_RW/Jukebox/DavidBowie/DavidBowie_TheManWhoSoldTheWorld.ogg
+    - /Audio/_RW/Jukebox/KarenO/KarenO_Drown.ogg
+    # - /Audio/_RW/Jukebox/Plamenev/Plamenev_BigLove.ogg # RW: disable song
+    - /Audio/_RW/Jukebox/SurfCurse/SurfCurse_Freaks.ogg
+    - /Audio/_RW/Jukebox/TheCaretaker/TheCaretaker_ItsJustBurningMemory.ogg
+    - /Audio/_RW/Jukebox/TheRareOccasions/TheRareOccasions_Notion.ogg
+    - /Audio/_RW/Jukebox/Ween/Ween_OceanMan.ogg
+    - /Audio/_RW/Jukebox/Home/Home_Resonance.ogg
+    - /Audio/_RW/Jukebox/Kaleida/Kaleida_Think.ogg
+    - /Audio/_RW/Jukebox/neheart/neheart_snowfall.ogg
+    # RW-End
+    # RW start
+    - /Audio/_RW/Lobby/EdipovKompleks_SpaceShuttle.ogg
+    - /Audio/_RW/Lobby/boa_Duvet.ogg
+    - /Audio/_RW/Lobby/FranzFerdinand_LoveIllumination.ogg
+    # RW end

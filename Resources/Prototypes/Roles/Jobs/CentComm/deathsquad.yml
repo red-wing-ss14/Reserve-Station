@@ -7,13 +7,13 @@
   playTimeTracker: JobDeathSquad
   setPreference: false
   startingGear: DeathSquadGear
-  icon: "JobIconDeathSquad" # Orion-Edit: Custom icon
+  icon: "JobIconDeathSquad" # RW-Edit: Custom icon
   supervisors: job-supervisors-centcom
   canBeAntag: false
-  # Orion-Start
+  # RW-Start
   salary: 300
   payrollFromStationBudget: false
-  # Orion-End
+  # RW-End
   accessGroups:
   - AllAccess
   access:

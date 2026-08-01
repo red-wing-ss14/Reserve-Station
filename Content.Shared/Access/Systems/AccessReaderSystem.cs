@@ -167,7 +167,7 @@ public sealed class AccessReaderSystem : EntitySystem
         args.Handled = true;
         accessReader.Value.Comp.AccessLists.Clear();
         accessReader.Value.Comp.AccessLog.Clear();
-        Dirty(accessReader.Value); // Orion-Edit: fix door desynchronization
+        Dirty(accessReader.Value); // RW-Edit: fix door desynchronization
     }
 
     private void OnConfigurationAttempt(Entity<AccessReaderComponent> ent, ref AccessReaderConfigurationAttemptEvent args)

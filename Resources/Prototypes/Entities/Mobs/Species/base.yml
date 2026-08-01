@@ -27,14 +27,14 @@
     - map: ["jumpsuit"]
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
-    - map: [ "socks" ] # Orion
+    - map: [ "socks" ] # RW
     - map: ["enum.HumanoidVisualLayers.LHand"]
     - map: ["enum.HumanoidVisualLayers.RHand"]
     - map: ["enum.HumanoidVisualLayers.Face"] #Goob 120 - why did we have face on dummy but not basespecies
     - map: [ "gloves" ]
-    - map: [ "wrists" ] # Orion
+    - map: [ "wrists" ] # RW
     - map: [ "shoes" ]
-    - map: [ "earsright" ] # Orion
+    - map: [ "earsright" ] # RW
     - map: [ "ears" ]
     - map: [ "eyes" ]
     - map: [ "id" ]
@@ -88,8 +88,8 @@
     bounds: -0.5,-0.5,0.5,0.5
   - type: HasJobIcons # Goobstation
   - type: RotationVisuals
-    defaultRotation: -90 # Orion-Edit
-    horizontalRotation: -90 # Orion-Edit
+    defaultRotation: -90 # RW-Edit
+    horizontalRotation: -90 # RW-Edit
   - type: HumanoidAppearance
     species: Human
   - type: TypingIndicator
@@ -256,7 +256,7 @@
   - type: Sprinter # Goobstation
   - type: MindControllable # Goobstation
   - type: VisibleContraband # Goobstation
-  - type: Posing # Orion
+  - type: Posing # RW
   - type: MomentumSteering # Goobstation - No steer
 
 - type: entity
@@ -349,7 +349,7 @@
     - Parasite
   - type: ObraDinnBody # Goobstation
   # </Goobstation>
-  - type: Mood # Orion
+  - type: Mood # RW
 
 - type: entity
   save: false
@@ -382,8 +382,8 @@
     - map: ["jumpsuit"]
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
-    # Orion-Edit-End
-    - map: [ "socks" ] # Orion
+    # RW-Edit-End
+    - map: [ "socks" ] # RW
     - map: ["enum.HumanoidVisualLayers.LHand"]
     - map: ["enum.HumanoidVisualLayers.RHand"]
     - map: ["enum.HumanoidVisualLayers.Handcuffs"]
@@ -393,9 +393,9 @@
       visible: false
     - map: [ "enum.HumanoidVisualLayers.Face" ] # Goob 3370
     - map: [ "gloves" ]
-    - map: [ "wrists" ] # Orion
+    - map: [ "wrists" ] # RW
     - map: [ "shoes" ]
-    - map: [ "earsright" ] # Orion
+    - map: [ "earsright" ] # RW
     - map: [ "ears" ]
     - map: [ "eyes" ]
     - map: [ "id" ]

@@ -9,10 +9,10 @@ namespace Content.Goobstation.UIKit.UserActions.Controls;
 [Virtual]
 public class IconButton : Button
 {
-//    private readonly BoxContainer _mainContainer; // Orion-Edit: Removed
+//    private readonly BoxContainer _mainContainer; // RW-Edit: Removed
 
     public readonly TextureRect Icon;
-    public new readonly RichTextLabel Label; // Orion-Edit: Marked as new
+    public new readonly RichTextLabel Label; // RW-Edit: Marked as new
     //public readonly PanelContainer HighlightRect;
 
     public IconButton(string name)
@@ -21,7 +21,7 @@ public class IconButton : Button
         Margin = new Thickness(1);
         HorizontalAlignment = HAlignment.Left;
 
-        var mainContainer = new BoxContainer // Orion-Edit: Make var
+        var mainContainer = new BoxContainer // RW-Edit: Make var
         {
             Orientation = LayoutOrientation.Horizontal,
             //HorizontalExpand = true,
@@ -58,7 +58,7 @@ public class IconButton : Button
         mainContainer.AddChild(Label);
     }
 
-/*// Orion-Edit: Removed
+/*// RW-Edit: Removed
     protected override void MouseExited()
     {
         base.MouseExited();

@@ -17,7 +17,7 @@
       BorgArm:
         amount: 2
         defaultPrototype: LeftArmBorg
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 4
 
 - type: entity
@@ -37,7 +37,7 @@
       BorgArm:
         amount: 4
         defaultPrototype: LeftArmBorg
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 5
 
 - type: entity
@@ -50,7 +50,7 @@
     prototype: StorageBin
     stackRequirements:
       Steel: 1
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 4
 
 - type: entity
@@ -70,7 +70,7 @@
       BorgArm:
         amount: 1
         defaultPrototype: LeftArmBorg
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 4
 
 - type: entity
@@ -86,7 +86,7 @@
     stackRequirements:
       Steel: 1
       WoodPlank: 3
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 1
 
 - type: entity
@@ -102,7 +102,7 @@
     stackRequirements:
       Plastic: 3
       WoodPlank: 5
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 2
 
 - type: entity
@@ -120,7 +120,7 @@
       Plastic: 10
       Plasma: 5
       CableHV: 4
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 1
 
 - type: entity
@@ -137,7 +137,7 @@
       Steel: 5
       Glass: 5
       Cable: 2
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 3
 
 - type: entity
@@ -152,7 +152,7 @@
     prototype: StationRadioReceiver
     stackRequirements:
       Cable: 2
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 1
 
 - type: entity
@@ -177,7 +177,7 @@
     state: service
   - type: MachineBoard
     prototype: ServiceEnergyChemDispenser
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 3
     tagRequirements:
       GlassBeaker:

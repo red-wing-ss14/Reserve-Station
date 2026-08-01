@@ -14,7 +14,7 @@ using Content.Server.Popups;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Radio.EntitySystems;
 using Content.Server.Stack;
-using Content.Shared._Orion.Construction.Events;
+using Content.Shared._RW.Construction.Events;
 using Content.Shared.Atmos;
 using Content.Shared.Chat;
 using Content.Shared.Chemistry.Components;
@@ -27,7 +27,7 @@ using Content.Shared.Lathe.Prototypes;
 using Content.Shared.Lathe;
 using Content.Shared.Localizations;
 using Content.Shared.Materials;
-using Content.Shared._Orion.DocumentPrinter;
+using Content.Shared._RW.DocumentPrinter;
 using Content.Shared.Power;
 using Content.Shared.ReagentSpeed;
 using Content.Shared.Research.Components;
@@ -76,7 +76,7 @@ namespace Content.Server.Lathe
             SubscribeLocalEvent<LatheComponent, MapInitEvent>(OnMapInit);
             SubscribeLocalEvent<LatheComponent, PowerChangedEvent>(OnPowerChanged);
             SubscribeLocalEvent<LatheComponent, TechnologyDatabaseModifiedEvent>(OnDatabaseModified);
-            SubscribeLocalEvent<LatheComponent, TechnologyDatabaseSynchronizedEvent>(OnDatabaseSynchronized); // Orion
+            SubscribeLocalEvent<LatheComponent, TechnologyDatabaseSynchronizedEvent>(OnDatabaseSynchronized); // RW
             SubscribeLocalEvent<LatheAnnouncingComponent, TechnologyDatabaseModifiedEvent>(OnTechnologyDatabaseModified);
             SubscribeLocalEvent<LatheComponent, ResearchRegistrationChangedEvent>(OnResearchRegistrationChanged);
 
@@ -88,10 +88,10 @@ namespace Content.Server.Lathe
 
             SubscribeLocalEvent<LatheComponent, BeforeActivatableUIOpenEvent>((u, c, _) => UpdateUserInterfaceState(u, c));
             SubscribeLocalEvent<LatheComponent, MaterialAmountChangedEvent>(OnMaterialAmountChanged);
-            // Orion-Start
+            // RW-Start
             SubscribeLocalEvent<LatheComponent, RefreshPartsEvent>(OnPartsRefresh);
             SubscribeLocalEvent<LatheComponent, UpgradeExamineEvent>(OnUpgradeExamine);
-            // Orion-End
+            // RW-End
             SubscribeLocalEvent<TechnologyDatabaseComponent, LatheGetRecipesEvent>(OnGetRecipes);
             SubscribeLocalEvent<EmagLatheRecipesComponent, LatheGetRecipesEvent>(GetEmagLatheRecipes);
             SubscribeLocalEvent<LatheHeatProducingComponent, LatheStartPrintingEvent>(OnHeatStartPrinting);
@@ -194,17 +194,17 @@ namespace Content.Server.Lathe
             if (!CanProduce(uid, recipe, quantity, component))
                 return false;
 
-            var queuedRefund = new Dictionary<ProtoId<MaterialPrototype>, int>(); // Orion
+            var queuedRefund = new Dictionary<ProtoId<MaterialPrototype>, int>(); // RW
             foreach (var (mat, amount) in recipe.Materials)
             {
-                // Orion-Edit-Start
+                // RW-Edit-Start
                 var deductedQuantity = recipe.ApplyMaterialDiscount
                     ? Math.Max(1, (int) Math.Ceiling(amount * component.FinalMaterialMultiplier))
                     : amount;
-                // Orion-Edit-End
-                var adjustedAmount = -deductedQuantity * quantity; // Orion + Goob
+                // RW-Edit-End
+                var adjustedAmount = -deductedQuantity * quantity; // RW + Goob
 
-                // Orion-Edit-Start
+                // RW-Edit-Start
                 if (!_materialStorage.TryChangeMaterialAmount(uid, mat, adjustedAmount))
                 {
                     foreach (var (refundMat, refundAmount) in queuedRefund)
@@ -214,9 +214,9 @@ namespace Content.Server.Lathe
 
                     return false;
                 }
-                // Orion-Edit-End
+                // RW-Edit-End
 
-                queuedRefund[mat] = adjustedAmount; // Orion
+                queuedRefund[mat] = adjustedAmount; // RW
             }
 
             if (component.Queue.Last is { } node && node.ValueRef.Recipe == recipe.ID)
@@ -244,19 +244,19 @@ namespace Content.Server.Lathe
             if (batch.ItemsPrinted >= batch.ItemsRequested || batch.ItemsPrinted < 0) // Rollover sanity check
                 component.Queue.RemoveFirst();
 
-            // Orion-Start
+            // RW-Start
             component.ActiveMaterialRefund = null;
             if (component.QueuedMaterialRefunds.Count > 0)
                 component.ActiveMaterialRefund = component.QueuedMaterialRefunds.Dequeue();
-            // Orion-End
+            // RW-End
 
             var recipe = _proto.Index(batch.Recipe);
 
-            // Orion-Start
+            // RW-Start
             var baseTime = _reagentSpeed.ApplySpeed(uid, recipe.CompleteTime).TotalSeconds;
             var adjustedTime = baseTime * MathF.Pow(MathF.Max(0.1f, component.FinalTimeMultiplier), component.MachinePartEfficiencyExponent);
-            // Orion-End
-            var time = TimeSpan.FromSeconds(Math.Max(0.1f, adjustedTime)); // Orion-Edit
+            // RW-End
+            var time = TimeSpan.FromSeconds(Math.Max(0.1f, adjustedTime)); // RW-Edit
 
             var lathe = EnsureComp<LatheProducingComponent>(uid);
             lathe.StartTime = _timing.CurTime;
@@ -282,7 +282,7 @@ namespace Content.Server.Lathe
             return true;
         }
 
-        private void FinishProducing(EntityUid uid, LatheComponent? comp = null, LatheProducingComponent? prodComp = null) // Orion-Edit: Was public
+        private void FinishProducing(EntityUid uid, LatheComponent? comp = null, LatheProducingComponent? prodComp = null) // RW-Edit: Was public
         {
             if (!Resolve(uid, ref comp, ref prodComp, false))
                 return;
@@ -298,7 +298,7 @@ namespace Content.Server.Lathe
                         || _materialStorage.TryChangeMaterialAmount(uid, composition.MaterialComposition))
                     {
                         var result = Spawn(resultProto, Transform(uid).Coordinates);
-                        // Orion-Start
+                        // RW-Start
                         if (TryComp<DocumentPrinterComponent>(uid, out var printerComponent))
                         {
                             if (printerComponent.Queue.Count > 0 &&
@@ -309,7 +309,7 @@ namespace Content.Server.Lathe
                                 printerComponent.Queue.RemoveAt(0);
                             }
                         }
-                        // Orion-End
+                        // RW-End
                         _stack.TryMergeToContacts(result);
 
                         // <Goobstation> No NTR factorio
@@ -340,7 +340,7 @@ namespace Content.Server.Lathe
                 }
             }
 
-            comp.ActiveMaterialRefund = null; // Orion
+            comp.ActiveMaterialRefund = null; // RW
             comp.CurrentRecipe = null;
             prodComp.StartTime = _timing.CurTime;
 
@@ -369,7 +369,7 @@ namespace Content.Server.Lathe
         /// <summary>
         /// Adds every unlocked recipe from each pack to the recipes list.
         /// </summary>
-        private void AddRecipesFromDynamicPacks(ref LatheGetRecipesEvent args, TechnologyDatabaseComponent database, IEnumerable<ProtoId<LatheRecipePackPrototype>> packs) // Orion-Edit: Was public
+        private void AddRecipesFromDynamicPacks(ref LatheGetRecipesEvent args, TechnologyDatabaseComponent database, IEnumerable<ProtoId<LatheRecipePackPrototype>> packs) // RW-Edit: Was public
         {
             foreach (var id in packs)
             {
@@ -497,7 +497,7 @@ namespace Content.Server.Lathe
             UpdateUserInterfaceState(uid, component);
         }
 
-        // Orion-Start
+        // RW-Start
         private void OnDatabaseSynchronized(EntityUid uid, LatheComponent component, ref TechnologyDatabaseSynchronizedEvent args)
         {
             UpdateUserInterfaceState(uid, component);
@@ -538,7 +538,7 @@ namespace Content.Server.Lathe
             args.AddPercentageUpgrade("lathe-component-upgrade-speed", speedMultiplier, component.TimeMultiplier);
             args.AddPercentageUpgrade("lathe-component-upgrade-material-use", component.FinalMaterialMultiplier, component.MaterialUseMultiplier);
         }
-        // Orion-End
+        // RW-End
 
         protected override bool HasRecipe(EntityUid uid, LatheRecipePrototype recipe, LatheComponent component)
         {
@@ -609,7 +609,7 @@ namespace Content.Server.Lathe
                     }
                 }
 
-                // Orion-Start
+                // RW-Start
                 if (component.ActiveMaterialRefund != null)
                 {
                     var newQueue = new Queue<Dictionary<ProtoId<MaterialPrototype>, int>>();
@@ -620,9 +620,9 @@ namespace Content.Server.Lathe
                     }
                     component.QueuedMaterialRefunds = newQueue;
                 }
-                // Orion-End
+                // RW-End
 
-                component.ActiveMaterialRefund = null; // Orion
+                component.ActiveMaterialRefund = null; // RW
                 component.CurrentRecipe = null;
             }
             RemCompDeferred<LatheProducingComponent>(uid);
@@ -636,7 +636,7 @@ namespace Content.Server.Lathe
         {
             if (_proto.TryIndex(args.ID, out LatheRecipePrototype? recipe))
             {
-                TryComp<DocumentPrinterComponent>(uid, out var printer); // Orion
+                TryComp<DocumentPrinterComponent>(uid, out var printer); // RW
                 if (TryAddToQueue(uid, recipe, args.Quantity, component))
                 {
                     if (printer != null)

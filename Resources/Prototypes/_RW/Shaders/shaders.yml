@@ -17,3 +17,13 @@
   params:
     pixelSize: 32.0
     displacementSize: 127
+
+- type: shader
+  id: LightingOverlay
+  kind: source
+  path: "/Textures/_RW/Shaders/light.swsl"
+
+- type: shader
+  id: SaturationScale
+  kind: source
+  path: "/Textures/_RW/Shaders/saturationscale.swsl"

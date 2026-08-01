@@ -189,7 +189,7 @@ public abstract class SharedAnomalySystem : EntitySystem
     /// <param name="supercritical">Whether or not the anomaly ended via supercritical event</param>
     /// <param name="spawnCore">Create anomaly cores based on the result of completing an anomaly?</param>
     /// <param name="logged">Whether or not the anomaly decaying/going supercritical is logged</param>
-    protected void EndAnomaly(EntityUid uid, AnomalyComponent? component = null, bool supercritical = false, bool spawnCore = true, bool logged = false) // Orion-Edit: Protected
+    protected void EndAnomaly(EntityUid uid, AnomalyComponent? component = null, bool supercritical = false, bool spawnCore = true, bool logged = false) // RW-Edit: Protected
     {
         if (logged)
         {
@@ -212,16 +212,16 @@ public abstract class SharedAnomalySystem : EntitySystem
 
         if (spawnCore)
         {
-            var core = Spawn(component.CorePrototype, Transform(uid).Coordinates); // Orion-Edit
+            var core = Spawn(component.CorePrototype, Transform(uid).Coordinates); // RW-Edit
 
-            // Orion-Start
+            // RW-Start
             if (TryComp<AnomalyCoreComponent>(core, out var coreComp))
             {
                 coreComp.DecayPrototype = component.CoreInertPrototype;
                 coreComp.HazardousAnomalyPrototype = MetaData(uid).EntityPrototype?.ID;
                 Dirty(core, coreComp);
             }
-            // Orion-End
+            // RW-End
 
             _transform.PlaceNextTo(core, uid);
         }
@@ -238,7 +238,7 @@ public abstract class SharedAnomalySystem : EntitySystem
     /// <param name="uid"></param>
     /// <param name="change"></param>
     /// <param name="component"></param>
-    protected void ChangeAnomalyStability(EntityUid uid, float change, AnomalyComponent? component = null) // Orion-Edit: Protected
+    protected void ChangeAnomalyStability(EntityUid uid, float change, AnomalyComponent? component = null) // RW-Edit: Protected
     {
         if (!Resolve(uid, ref component))
             return;
@@ -498,7 +498,7 @@ public abstract class SharedAnomalySystem : EntitySystem
 }
 
 [DataRecord]
-public partial record struct AnomalySpawnSettings() // Orion-Edit: Restore partial
+public partial record struct AnomalySpawnSettings() // RW-Edit: Restore partial
 {
     /// <summary>
     /// should entities block spawning?

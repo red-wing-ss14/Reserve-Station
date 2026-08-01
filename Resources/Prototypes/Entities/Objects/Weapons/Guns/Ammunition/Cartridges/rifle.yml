@@ -4,7 +4,7 @@
   abstract: true
   parent: [ BaseCartridge, BaseSecurityContraband ]
   id: BaseCartridgeRifle
-  name: cartridge (5.56mm rifle) # Orion-Edit: .20 > 5.56mm
+  name: cartridge (5.56mm rifle) # RW-Edit: .20 > 5.56mm
   components:
   - type: Tag
     tags:
@@ -12,18 +12,18 @@
   - type: CartridgeAmmo
     proto: BulletRifle
   - type: Sprite
-    sprite: _Orion/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi # Orion-Edit: New sprites
-    scale: 0.8, 0.8 # Orion
+    sprite: _RW/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi # RW-Edit: New sprites
+    scale: 0.8, 0.8 # RW
     layers:
-    - state: 20combat # Orion-Edit: New sprites
+    - state: 20combat # RW-Edit: New sprites
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
-    state: 20combat # Orion: New sprites
+    state: 20combat # RW: New sprites
 - type: entity
   parent: BaseCartridgeRifle
   id: CartridgeRifle
-  name: cartridge (5.56mm rifle) # Orion-Edit: .20 > 5.56mm
+  name: cartridge (5.56mm rifle) # RW-Edit: .20 > 5.56mm
   description: A modern intermediate cartridge for combat rifles. Standard kinetic ammunition is common and useful in most situations.
   components:
   - type: CartridgeAmmo
@@ -31,51 +31,51 @@
 - type: entity
   parent: BaseCartridgeRifle
   id: CartridgeRiflePractice
-  name: cartridge (5.56mm practice) # Orion-Edit: .20 rifle > 5.56mm
+  name: cartridge (5.56mm practice) # RW-Edit: .20 rifle > 5.56mm
   description: A modern intermediate cartridge for combat rifles. Chalk ammunition is generally non-harmful, used for practice.
   components:
-  - type: SpentAmmoVisuals # Orion: New sprites
+  - type: SpentAmmoVisuals # RW: New sprites
     state: 20training
   - type: CartridgeAmmo
     proto: BulletRiflePractice
   - type: Sprite
     layers:
-      - state: 20training # Orion-Edit: New sprites
+      - state: 20training # RW-Edit: New sprites
         map: [ "enum.AmmoVisualLayers.Base" ]
-#      - state: tip # Orion-Edit: Removed
+#      - state: tip # RW-Edit: Removed
 #        map: [ "enum.AmmoVisualLayers.Tip" ]
 #        color: "#dbdbdb"
 - type: entity
   parent: BaseCartridgeRifle
   id: CartridgeRifleIncendiary
-  name: cartridge (5.56mm incendiary) # Orion-Edit: .20 rifle > 5.56mm
+  name: cartridge (5.56mm incendiary) # RW-Edit: .20 rifle > 5.56mm
   description: A modern intermediate cartridge for combat rifles. Incendiary ammunition contains a self-igniting compound that sets the target ablaze.
   components:
-  - type: SpentAmmoVisuals # Orion: New sprites
+  - type: SpentAmmoVisuals # RW: New sprites
     state: 20incendiary
   - type: CartridgeAmmo
     proto: BulletRifleIncendiary
   - type: Sprite
     layers:
-      - state: 20incendiary # Orion-Edit: New sprites
+      - state: 20incendiary # RW-Edit: New sprites
         map: [ "enum.AmmoVisualLayers.Base" ]
-#      - state: tip # Orion-Edit: Removed
+#      - state: tip # RW-Edit: Removed
 #        map: [ "enum.AmmoVisualLayers.Tip" ]
 #        color: "#ff6e52"
 - type: entity
   parent: BaseCartridgeRifle
   id: CartridgeRifleUranium
-  name: cartridge (5.56mm uranium) # Orion-Edit: .20 rifle > 5.56mm
+  name: cartridge (5.56mm uranium) # RW-Edit: .20 rifle > 5.56mm
   description: A modern intermediate cartridge for combat rifles. Uranium ammunition replaces the lead core of the bullet with fissile material, irradiating the target from the inside.
   components:
-  - type: SpentAmmoVisuals # Orion: New sprites
+  - type: SpentAmmoVisuals # RW: New sprites
     state: 20uranium
   - type: CartridgeAmmo
     proto: BulletRifleUranium
   - type: Sprite
     layers:
-      - state: 20uranium # Orion-Edit: New sprites
+      - state: 20uranium # RW-Edit: New sprites
         map: [ "enum.AmmoVisualLayers.Base" ]
-#      - state: tip # Orion-Edit: Removed
+#      - state: tip # RW-Edit: Removed
 #        map: [ "enum.AmmoVisualLayers.Tip" ]
 #        color: "#65fe08"

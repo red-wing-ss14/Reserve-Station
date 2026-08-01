@@ -28,7 +28,7 @@
     slots:
     - suitStorage
     - Belt
-    - Back # Orion
+    - Back # RW
   - type: Gun
     fireRate: 6
     selectedMode: SemiAuto
@@ -36,16 +36,16 @@
       - SemiAuto
       - FullAuto
     soundGunshot:
-      path: /Audio/_Orion/Weapons/Guns/Pistols/colt.ogg # Orion-Edit
-    soundEmpty: # Orion
-      path: /Audio/_Orion/Weapons/Guns/Pistols/beretta_empty.ogg
+      path: /Audio/_RW/Weapons/Guns/Pistols/colt.ogg # RW-Edit
+    soundEmpty: # RW
+      path: /Audio/_RW/Weapons/Guns/Pistols/beretta_empty.ogg
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/pistol_cock.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
-#        name: Magazine # Orion-Edit: Localization
+#        name: Magazine # RW-Edit: Localization
         startingItem: MagazinePistol
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
@@ -56,7 +56,7 @@
             - MagazinePistolHighCapacity
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
-#        name: Chamber # Orion-Edit: Localization
+#        name: Chamber # RW-Edit: Localization
         startingItem: CartridgePistol
         priority: 1
         whitelist:
@@ -75,9 +75,9 @@
   - type: StaticPrice
     price: 500
   - type: Multishot # Goobstation V
-    missChance: 0.2 # Orion-Edit: 4 > 2
+    missChance: 0.2 # RW-Edit: 4 > 2
     spreadMultiplier: 2
-    spreadAddition: 20 # Orion-Edit: 40 > 20
+    spreadAddition: 20 # RW-Edit: 40 > 20
   - type: RestrictGunshotsByUserTag # Goobstation
     doesntContain:
     - Oni
@@ -117,7 +117,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-#        name: Magazine # Orion-Edit: Localization
+#        name: Magazine # RW-Edit: Localization
         startingItem: MagazinePistol
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
@@ -128,7 +128,7 @@
             - MagazinePistolHighCapacity
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
-#        name: Chamber # Orion-Edit: Localization
+#        name: Chamber # RW-Edit: Localization
         startingItem: CartridgePistol
         priority: 1
         whitelist:
@@ -206,7 +206,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-#        name: Magazine # Orion-Edit: Localization
+#        name: Magazine # RW-Edit: Localization
         startingItem: MagazinePistolCaselessRifle
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
@@ -216,7 +216,7 @@
             - MagazinePistolCaselessRifle
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
-#        name: Chamber # Orion-Edit: Localization
+#        name: Chamber # RW-Edit: Localization
         startingItem: CartridgeCaselessRifle
         priority: 1
         whitelist:
@@ -250,7 +250,7 @@
     fireRate: 5
     availableModes:
     - SemiAuto
-#    soundGunshot: # Orion-Edit: Removed
+#    soundGunshot: # RW-Edit: Removed
 #      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
   - type: StealTarget
     stealGroup: OfficerHandgun
@@ -281,11 +281,11 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/_Orion/Weapons/Guns/Rifles/som_rifle.ogg # Orion-Edit
+      path: /Audio/_RW/Weapons/Guns/Rifles/som_rifle.ogg # RW-Edit
   - type: ItemSlots
     slots:
       gun_magazine:
-#        name: Magazine # Orion-Edit: Localization
+#        name: Magazine # RW-Edit: Localization
         startingItem: MagazineMagnum
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
@@ -295,7 +295,7 @@
             - MagazineMagnum
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
-#        name: Chamber # Orion-Edit: Localization
+#        name: Chamber # RW-Edit: Localization
         startingItem: CartridgeMagnum
         priority: 1
         whitelist:

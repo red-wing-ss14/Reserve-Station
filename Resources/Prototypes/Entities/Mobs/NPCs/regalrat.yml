@@ -154,10 +154,10 @@
       groups:
         Brute: -0.3
         Burn: -0.3
-  - type: GlobalAntagonist # Orion
+  - type: GlobalAntagonist # RW
     antagonistPrototype: globalAntagonistRats
 
-#- type: entity # Orion-Edit: NC license sprites
+#- type: entity # RW-Edit: NC license sprites
 #  id: MobRatKingBuff
 #  parent: MobRatKing
 #  suffix: Buff
@@ -193,7 +193,7 @@
 #  - type: GuideHelp
 #    guides:
 #    - MinorAntagonists
-#  - type: GlobalAntagonist # Orion
+#  - type: GlobalAntagonist # RW
 #    antagonistPrototype: globalAntagonistRats
 
 - type: entity

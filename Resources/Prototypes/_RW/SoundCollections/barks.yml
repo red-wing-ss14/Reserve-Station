@@ -1,0 +1,222 @@
+- type: soundCollection
+  id: AceAttorney
+  files:
+  - /Audio/_RW/Voice/AceAttorney/aa_blip.ogg
+  - /Audio/_RW/Voice/AceAttorney/aa_blip_typewriter.ogg
+  - /Audio/_RW/Voice/AceAttorney/aa_dd_blip.ogg
+  - /Audio/_RW/Voice/AceAttorney/aa_tgaa_blip.ogg
+
+- type: soundCollection
+  id: DontStarveWilson
+  files:
+  - /Audio/_RW/Voice/DontStarve/wilson_bark.ogg
+
+- type: soundCollection
+  id: DontStarveWolfgang
+  files:
+  - /Audio/_RW/Voice/DontStarve/wolfgang_bark.ogg
+
+- type: soundCollection
+  id: DontStarveWoodie
+  files:
+  - /Audio/_RW/Voice/DontStarve/woodie_bark.ogg
+
+- type: soundCollection
+  id: DontStarveWurt
+  files:
+  - /Audio/_RW/Voice/DontStarve/wurt_bark.ogg
+
+- type: soundCollection
+  id: DontStarveWx78
+  files:
+  - /Audio/_RW/Voice/DontStarve/wx78_bark.ogg
+
+- type: soundCollection
+  id: KazooieAhuh
+  files:
+  - /Audio/_RW/Voice/Kazooie/ahuh.ogg
+
+- type: soundCollection
+  id: KazooieBird
+  files:
+  - /Audio/_RW/Voice/Kazooie/birdwhistle.ogg
+  - /Audio/_RW/Voice/Kazooie/birdwhistle2.ogg
+
+- type: soundCollection
+  id: KazooieCaw
+  files:
+  - /Audio/_RW/Voice/Kazooie/caw.ogg
+  - /Audio/_RW/Voice/Kazooie/caw2.ogg
+  - /Audio/_RW/Voice/Kazooie/caw3.ogg
+
+- type: soundCollection
+  id: KazooieCry
+  files:
+  - /Audio/_RW/Voice/Kazooie/cry.ogg
+
+- type: soundCollection
+  id: KazooieWoop
+  files:
+  - /Audio/_RW/Voice/Kazooie/woop.ogg
+
+- type: soundCollection
+  id: KazooieEhh
+  files:
+  - /Audio/_RW/Voice/Kazooie/ehh.ogg
+  - /Audio/_RW/Voice/Kazooie/ehh2.ogg
+  - /Audio/_RW/Voice/Kazooie/ehh3.ogg
+  - /Audio/_RW/Voice/Kazooie/ehh4.ogg
+  - /Audio/_RW/Voice/Kazooie/ehh5.ogg
+
+- type: soundCollection
+  id: KazooieFaucet
+  files:
+  - /Audio/_RW/Voice/Kazooie/faucet.ogg
+  - /Audio/_RW/Voice/Kazooie/faucet2.ogg
+
+- type: soundCollection
+  id: KazooieGrowl
+  files:
+  - /Audio/_RW/Voice/Kazooie/growl.ogg
+  - /Audio/_RW/Voice/Kazooie/growl2.ogg
+
+- type: soundCollection
+  id: KazooieHaha
+  files:
+  - /Audio/_RW/Voice/Kazooie/haha.ogg
+
+- type: soundCollection
+  id: KazooieHoot
+  files:
+  - /Audio/_RW/Voice/Kazooie/hoot.ogg
+
+- type: soundCollection
+  id: KazooieMoan
+  files:
+  - /Audio/_RW/Voice/Kazooie/moan1.ogg
+  - /Audio/_RW/Voice/Kazooie/moan2.ogg
+  - /Audio/_RW/Voice/Kazooie/moan3.ogg
+
+- type: soundCollection
+  id: KazooieRaah
+  files:
+  - /Audio/_RW/Voice/Kazooie/raah1.ogg
+  - /Audio/_RW/Voice/Kazooie/raah2.ogg
+
+- type: soundCollection
+  id: KazooieRibbit
+  files:
+  - /Audio/_RW/Voice/Kazooie/ribbit.ogg
+
+- type: soundCollection
+  id: KazooieSlurp
+  files:
+  - /Audio/_RW/Voice/Kazooie/slurp.ogg
+
+- type: soundCollection
+  id: KazooieTweet
+  files:
+  - /Audio/_RW/Voice/Kazooie/tweet.ogg
+
+- type: soundCollection
+  id: KazooieUhm
+  files:
+  - /Audio/_RW/Voice/Kazooie/uhm.ogg
+
+- type: soundCollection
+  id: KazooieZap
+  files:
+  - /Audio/_RW/Voice/Kazooie/zap.ogg
+
+- type: soundCollection
+  id: UndertaleAlphys
+  files:
+  - /Audio/_RW/Voice/Undertale/voice_alphys.ogg
+
+- type: soundCollection
+  id: UndertaleAsgore
+  files:
+  - /Audio/_RW/Voice/Undertale/voice_asgore.ogg
+
+- type: soundCollection
+  id: UndertaleFlowey
+  files:
+  - /Audio/_RW/Voice/Undertale/voice_flowey_1.ogg
+  - /Audio/_RW/Voice/Undertale/voice_flowey_2.ogg
+
+- type: soundCollection
+  id: UndertaleGaster
+  files:
+  - /Audio/_RW/Voice/Undertale/voice_gaster_1.ogg
+  - /Audio/_RW/Voice/Undertale/voice_gaster_2.ogg
+  - /Audio/_RW/Voice/Undertale/voice_gaster_3.ogg
+  - /Audio/_RW/Voice/Undertale/voice_gaster_4.ogg
+  - /Audio/_RW/Voice/Undertale/voice_gaster_5.ogg
+  - /Audio/_RW/Voice/Undertale/voice_gaster_6.ogg
+  - /Audio/_RW/Voice/Undertale/voice_gaster_7.ogg
+
+- type: soundCollection
+  id: UndertaleMetta
+  files:
+  - /Audio/_RW/Voice/Undertale/voice_metta_1.ogg
+
+- type: soundCollection
+  id: UndertaleMonster
+  files:
+  - /Audio/_RW/Voice/Undertale/voice_monster1.ogg
+  - /Audio/_RW/Voice/Undertale/voice_monster2.ogg
+
+- type: soundCollection
+  id: UndertalePapyrus
+  files:
+  - /Audio/_RW/Voice/Undertale/voice_papyrus.ogg
+
+- type: soundCollection
+  id: UndertaleRalsei
+  files:
+  - /Audio/_RW/Voice/Undertale/voice_ralsei.ogg
+
+- type: soundCollection
+  id: UndertaleSans
+  files:
+  - /Audio/_RW/Voice/Undertale/voice_sans.ogg
+
+- type: soundCollection
+  id: UndertaleSusie
+  files:
+  - /Audio/_RW/Voice/Undertale/voice_susie.ogg
+
+- type: soundCollection
+  id: UndertaleTemmie
+  files:
+  - /Audio/_RW/Voice/Undertale/voice_temmie.ogg
+
+- type: soundCollection
+  id: UndertaleToriel
+  files:
+  - /Audio/_RW/Voice/Undertale/voice_toriel.ogg
+
+- type: soundCollection
+  id: UndertaleUndyne
+  files:
+  - /Audio/_RW/Voice/Undertale/voice_undyne.ogg
+
+- type: soundCollection
+  id: Bleat
+  files:
+  - /Audio/_RW/Voice/bleat.ogg
+
+- type: soundCollection
+  id: MothSqueak
+  files:
+  - /Audio/_RW/Voice/mothsqueak.ogg
+
+- type: soundCollection
+  id: Nomi
+  files:
+  - /Audio/_RW/Voice/nomi.ogg
+
+- type: soundCollection
+  id: Poyo
+  files:
+  - /Audio/_RW/Voice/poyo.ogg

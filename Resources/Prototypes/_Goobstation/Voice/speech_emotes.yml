@@ -3,8 +3,8 @@
 - type: emote
   id: Fart
   name: chat-emote-name-fart
-#  category: Farts # Orion-Edit: Removed
-  available: false # Orion
+#  category: Farts # RW-Edit: Removed
+  available: false # RW
   icon: _Goobstation/Interface/Emotes/fart.png
   whitelist:
     components:
@@ -55,7 +55,7 @@
     - bowel howling
     - bowel howled
     - accelerates climate change
-    # Orion-Start
+    # RW-Start
     - пукает
     - пукает.
     - пукает!
@@ -68,13 +68,13 @@
     - выпускает газы
     - выпускает газы.
     - выпускает газы!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: FartInhale
   name: chat-emote-name-fart-inhale
-#  category: Farts # Orion-Edit: Removed
-  available: false # Orion
+#  category: Farts # RW-Edit: Removed
+  available: false # RW
   icon: _Goobstation/Interface/Emotes/fart-in.png
   whitelist:
     components:
@@ -111,7 +111,7 @@
     - inhales through ass
     - buttreathes in
     - breathes in through butt
-    # Orion-Start
+    # RW-Start
     - вдыхает пук
     - вдыхает пук.
     - вдыхает пук!
@@ -121,13 +121,13 @@
     - втягивает газы
     - втягивает газы.
     - втягивает газы!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: FartSuper
   name: chat-emote-name-fart-super
-#  category: Farts # Orion-Edit: Removed
-  available: false # Orion
+#  category: Farts # RW-Edit: Removed
+  available: false # RW
   icon: _Goobstation/Interface/Emotes/fart-super.png
   whitelist:
     components:
@@ -154,7 +154,7 @@
     - ultra farts
     - ultra farted
     - ultra farting
-    # Orion-Start
+    # RW-Start
     - суперпук
     - суперпук.
     - суперпук!
@@ -164,7 +164,7 @@
     - суперпердеж
     - суперпердеж.
     - суперпердеж!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Flap
@@ -186,14 +186,14 @@
    - flaps her wings
    - flaps their wings
    - flaps its wings
-   # Orion-Start
+   # RW-Start
    - машет крыльями
    - машет крыльями.
    - машет крыльями!
    - хлопает крыльями
    - хлопает крыльями.
    - хлопает крыльями!
-   # Orion-End
+   # RW-End
 
 - type: emote
   id: Trill
@@ -213,7 +213,7 @@
     - trills
     - trilling
     - trilled
-    # Orion-Start
+    # RW-Start
     - издаёт трель
     - издаёт трель.
     - издаёт трель!
@@ -223,7 +223,7 @@
     - трелит
     - трелит.
     - трелит!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Warble
@@ -243,14 +243,14 @@
     - warbles
     - warbling
     - warbled
-    # Orion-Start
+    # RW-Start
     - переливчато поёт
     - переливчато поёт.
     - переливчато поёт!
     - переливчато поет
     - переливчато поет.
     - переливчато поет!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Wurble
@@ -273,14 +273,14 @@
     - wurbles
     - wurbling
     - wurbled
-    # Orion-Start
+    # RW-Start
     - журчит
     - журчит.
     - журчит!
     - урчит переливами
     - урчит переливами.
     - урчит переливами!
-    # Orion-End
+    # RW-End
 
 - type: emote # Mono
   id: Bagawk
@@ -300,14 +300,14 @@
   - bagawks
   - bawk
   - bawks
-  # Orion-Start
+  # RW-Start
   - багаук
   - багаук.
   - багаук!
   - кудахчет
   - кудахчет.
   - кудахчет!
-  # Orion-End
+  # RW-End
 
 - type: emote
   id: Gulp
@@ -324,14 +324,14 @@
   chatTriggers:
     - gulps
     - gulp
-    # Orion-Start
+    # RW-Start
     - глотает
     - глотает.
     - глотает!
     - сглатывает
     - сглатывает.
     - сглатывает!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Surprised
@@ -347,7 +347,7 @@
     - is surprised
     - exclamation marks
     - exclamation mark
-    # Orion-Start
+    # RW-Start
     - удивляется
     - удивляется.
     - удивляется!
@@ -357,4 +357,4 @@
     - выглядит удивленным
     - выглядит удивленным.
     - выглядит удивленным!
-    # Orion-End
+    # RW-End

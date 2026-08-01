@@ -170,7 +170,7 @@ public abstract class SharedSecondSkinSystem : EntitySystem
         if (!TryComp(user, out HumanoidAppearanceComponent? appearance))
             return;
 
-        var spriteSet = _proto.Index(appearance.BodyType); // Amour port: WD Slim body types
+        var spriteSet = _proto.Index(appearance.BodyType); // RW port: WD Slim body types
 
         foreach (var layer in user.Comp.Layers)
         {

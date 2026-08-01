@@ -35,8 +35,8 @@ public sealed partial class FundingAllocationMenu : FancyWindow
     private double _primaryCut;
     private double _lockboxCut;
 
-//    private readonly HashSet<Control> _addedControls = new(); // Orion-Edit
-    // Orion-Start
+//    private readonly HashSet<Control> _addedControls = new(); // RW-Edit
+    // RW-Start
     private readonly HashSet<Control> _distributionControls = new();
     private readonly HashSet<Control> _economyAccountControls = new();
 
@@ -44,7 +44,7 @@ public sealed partial class FundingAllocationMenu : FancyWindow
 
     private EntityUid? _entriesStation;
     private List<ProtoId<CargoAccountPrototype>> _entriesAccounts = new();
-    // Orion-End
+    // RW-End
     private readonly List<SpinBox> _spinBoxes = new();
     private readonly Dictionary<ProtoId<CargoAccountPrototype>, RichTextLabel> _balanceLabels = new();
 
@@ -55,20 +55,20 @@ public sealed partial class FundingAllocationMenu : FancyWindow
 
         _bankQuery = _entityManager.GetEntityQuery<StationBankAccountComponent>();
 
-        // Orion-Start
+        // RW-Start
         TabContainer.SetTabTitle(0, Loc.GetString("cargo-funding-alloc-console-tab-distribution"));
         TabContainer.SetTabTitle(1, Loc.GetString("cargo-funding-alloc-console-tab-economy"));
-        // Orion-End
+        // RW-End
 
         PrimaryCut.ValueChanged += args =>
         {
-            _primaryCut = args.Value / 100.0; // Orion-Edit
+            _primaryCut = args.Value / 100.0; // RW-Edit
             UpdateButtonDisabled();
         };
 
         LockboxCut.ValueChanged += args =>
         {
-            _lockboxCut = 1.0 - args.Value / 100.0; // Orion-Edit
+            _lockboxCut = 1.0 - args.Value / 100.0; // RW-Edit
             UpdateButtonDisabled();
         };
 
@@ -77,7 +77,7 @@ public sealed partial class FundingAllocationMenu : FancyWindow
             if (!_entityManager.TryGetComponent<StationBankAccountComponent>(_station, out var bank))
                 return;
 
-            // Orion-Edit-Start
+            // RW-Edit-Start
             var accounts = EditableAccounts(bank)
                 .OrderBy(p => p.Key)
                 .Select(p => p.Key)
@@ -90,11 +90,11 @@ public sealed partial class FundingAllocationMenu : FancyWindow
             }
 
             OnSavePressed?.Invoke(editedPercents, _primaryCut, _lockboxCut);
-            // Orion-Edit-End
+            // RW-Edit-End
             SaveButton.Disabled = true;
         };
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         _cfg.OnValueChanged(CCVars.AllowPrimaryAccountAllocation,
             enabled =>
             {
@@ -116,7 +116,7 @@ public sealed partial class FundingAllocationMenu : FancyWindow
             RefreshUi();
         },
             true);
-        // Orion-Edit-End
+        // RW-Edit-End
 
         BuildEntries();
     }
@@ -130,7 +130,7 @@ public sealed partial class FundingAllocationMenu : FancyWindow
         }
     }
 
-    // Orion-Start
+    // RW-Start
     private void BuildEconomy(FundingAllocationConsoleBuiState state)
     {
         EconomyAccountsContainer.RemoveAllChildren();
@@ -408,9 +408,9 @@ public sealed partial class FundingAllocationMenu : FancyWindow
         BuildEntries();
         UpdateButtonDisabled();
     }
-    // Orion-End
+    // RW-End
 
-    // Orion-Edit-Start
+    // RW-Edit-Start
     private void BuildEntries()
     {
         if (!_entityManager.TryGetComponent<StationBankAccountComponent>(_station, out var bank))
@@ -493,9 +493,9 @@ public sealed partial class FundingAllocationMenu : FancyWindow
             _distributionControls.UnionWith([accountName, code, balanceLabel, cutSpinBox]);
         }
     }
-    // Orion-Edit-End
+    // RW-Edit-End
 
-    // Orion-Edit-Start
+    // RW-Edit-Start
     private void UpdateButtonDisabled()
     {
         if (!_entityManager.TryGetComponent<StationBankAccountComponent>(_station, out var bank))
@@ -534,22 +534,22 @@ public sealed partial class FundingAllocationMenu : FancyWindow
             ("pos", Math.Sign(diff)),
             ("val", Math.Abs(diff))));
     }
-    // Orion-Edit-End
+    // RW-Edit-End
 
     public void Update(FundingAllocationConsoleBuiState state)
     {
         _station = _entityManager.GetEntity(state.Station);
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         if (ShouldRebuildEntries())
             BuildEntries();
-        // Orion-Edit-End
+        // RW-Edit-End
 
-        BuildEconomy(state); // Orion
+        BuildEconomy(state); // RW
         UpdateButtonDisabled();
     }
 
-    // Orion-Start
+    // RW-Start
     private bool ShouldRebuildEntries()
     {
         if (_station == null || !_entityManager.TryGetComponent<StationBankAccountComponent>(_station, out var bank))
@@ -578,7 +578,7 @@ public sealed partial class FundingAllocationMenu : FancyWindow
 
         return false;
     }
-    // Orion-End
+    // RW-End
 
     protected override void FrameUpdate(FrameEventArgs args)
     {

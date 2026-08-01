@@ -22,7 +22,7 @@
       sprite: Objects/Misc/stock_parts.rsi
     - type: Item
       size: Tiny
-#    - type: Stack # Orion-Edit
+#    - type: Stack # RW-Edit
 #      count: 1
     - type: PhysicalComposition #Goobstation - Recycle update
       materialComposition:
@@ -33,7 +33,7 @@
       tags:
       - ConstructionMaterial
 
-# Orion-Edit: Replaced with Servo
+# RW-Edit: Replaced with Servo
 #- type: entity
 #  id: MicroManipulatorStockPart
 #  name: modular machine part

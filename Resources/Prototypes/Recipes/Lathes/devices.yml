@@ -162,7 +162,7 @@
 
 - type: latheRecipe
   id: ClothingBackpackHolding
-  result: ClothingBackpackHoldingInert # Orion-Edit: Inert
+  result: ClothingBackpackHoldingInert # RW-Edit: Inert
   completetime: 5
   materials:
     Steel: 2000
@@ -173,7 +173,7 @@
 
 - type: latheRecipe
   id: ClothingBackpackSatchelHolding
-  result: ClothingBackpackSatchelHoldingInert # Orion-Edit: Inert
+  result: ClothingBackpackSatchelHoldingInert # RW-Edit: Inert
   completetime: 5
   materials:
     Steel: 2000
@@ -184,7 +184,7 @@
 
 - type: latheRecipe
   id: ClothingBackpackDuffelHolding
-  result: ClothingBackpackDuffelHoldingInert # Orion-Edit: Inert
+  result: ClothingBackpackDuffelHoldingInert # RW-Edit: Inert
   completetime: 5
   materials:
     Steel: 2000

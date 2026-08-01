@@ -99,7 +99,7 @@
     shape:
     - 0,0,1,0
     - 0,1,0,1
-  - type: Storage # Orion
+  - type: Storage # RW
     maxItemSize: Tiny
     grid:
     - 0,0,0,1

@@ -27,12 +27,12 @@
   components:
   - type: Sprite
     sprite: _Goobstation/Objects/Specific/Security/bso_monitor.rsi
-    # Orion-Edit-Start
+    # RW-Edit-Start
     layers:
     - state: scanner
     - state: scanner-light
       shader: unshaded
-    # Orion-Edit-End
+    # RW-Edit-End
   - type: Item
     size: Small
   - type: CrewMonitorScanning

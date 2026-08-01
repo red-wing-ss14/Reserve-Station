@@ -1137,7 +1137,7 @@
 #    requiresSpeech: true
 #    school: Conjuration
 
-#- type: entity # Orion-Edit
+#- type: entity # RW-Edit
 #  parent: BaseAction
 #  id: ActionRathenSpell
 #  name: Rathen's Secret

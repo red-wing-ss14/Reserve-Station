@@ -45,7 +45,7 @@
       - type: NpcFactionMember
         factions:
         - Wizard
-      - type: GlobalAntagonist # Orion
+      - type: GlobalAntagonist # RW
         antagonistPrototype: globalAntagonistWizard
   - type: AntagLoadProfileRule
     speciesOverride: Human
@@ -142,7 +142,7 @@
       - type: NpcFactionMember
         factions:
         - Wizard
-      - type: GlobalAntagonist # Orion
+      - type: GlobalAntagonist # RW
         antagonistPrototype: globalAntagonistWizard
 
 - type: entity

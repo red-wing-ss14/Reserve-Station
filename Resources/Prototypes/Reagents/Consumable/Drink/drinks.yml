@@ -27,7 +27,7 @@
         type: Remove
       - !type:AdjustReagent
         reagent: Theobromine
-        amount: 0.02 # Orion-Edit: 0.05 > 0.02
+        amount: 0.02 # RW-Edit: 0.05 > 0.02
       - !type:Jitter # Goobstation: Coffee causes jitteriness and alters speed
         conditions:
         - !type:ReagentCondition
@@ -80,7 +80,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Theobromine
-        amount: 0.2 # Orion-Edit: 0.05 > 0.2
+        amount: 0.2 # RW-Edit: 0.05 > 0.2
 - type: reagent
   id: Cream
   name: reagent-name-cream
@@ -146,11 +146,11 @@
         effectProto: StatusEffectDrowsiness
         time: 2
         type: Remove
-      # Orion-Start
+      # RW-Start
       - !type:AdjustReagent
         reagent: Theobromine
         amount: 0.01
-      # Orion-End
+      # RW-End
 - type: reagent
   id: GreenTea
   name: reagent-name-green-tea
@@ -173,7 +173,7 @@
       - !type:AdjustReagent
         reagent: Theobromine
         amount: 0.02
-  # Orion-End
+  # RW-End
 - type: reagent
   id: Grenadine
   name: reagent-name-grenadine
@@ -216,11 +216,11 @@
         effectProto: StatusEffectDrowsiness
         time: 2
         type: Remove
-      # Orion-Start
+      # RW-Start
       - !type:AdjustReagent
         reagent: Theobromine
         amount: 0.01
-      # Orion-End
+      # RW-End
 - type: reagent
   id: IcedGreenTea
   name: reagent-name-iced-green-tea
@@ -256,7 +256,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Theobromine
-        amount: 0.01 # Orion-Edit: 0.05 > 0.01
+        amount: 0.01 # RW-Edit: 0.05 > 0.01
 - type: reagent
   id: JuiceBerryPoison
   parent: BaseJuice
@@ -426,7 +426,7 @@
   parent: BaseDrink
   desc: reagent-desc-soda-water
   physicalDesc: reagent-physical-desc-fizzy
-  slipData: # Orion: Light slippery curse
+  slipData: # RW: Light slippery curse
     requiredSlipSpeed: 5
   flavor: fizzy
   color: "#619494"
@@ -455,11 +455,11 @@
         effectProto: StatusEffectDrowsiness
         time: 2
         type: Remove
-      # Orion-Start
+      # RW-Start
       - !type:AdjustReagent
         reagent: Theobromine
         amount: 0.01
-      # Orion-End
+      # RW-End
 - type: reagent
   id: Tea
   name: reagent-name-tea
@@ -482,7 +482,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Theobromine
-        amount: 0.02 # Orion-Edit: 0.05 > 0.02
+        amount: 0.02 # RW-Edit: 0.05 > 0.02
 - type: reagent
   id: TonicWater
   name: reagent-name-tonic-water
@@ -506,10 +506,10 @@
   evaporationSpeed: 0.3
   absorbent: true
   physicalDesc: reagent-physical-desc-translucent
-  # Orion-Start
+  # RW-Start
   slipData:
     requiredSlipSpeed: 4.0
-  # Orion-End
+  # RW-End
   flavor: water
   color: "#75b1f0"
   recognizable: true
@@ -638,7 +638,7 @@
       effects:
       - !type:SatiateThirst
         factor: 4
-#      - !type:AdjustReagent # Orion-Edit: Removed
+#      - !type:AdjustReagent # RW-Edit: Removed
 #        reagent: Theobromine
 #        amount: 0.05
 - type: reagent
@@ -687,7 +687,7 @@
   flavor: sweet
   color: "#485000"
   fizziness: 0.3
-  # Orion-Start
+  # RW-Start
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/rewriter.rsi
     state: icon_empty
@@ -702,7 +702,7 @@
       - !type:AdjustReagent
         reagent: Theobromine
         amount: 0.01
-  # Orion-End
+  # RW-End
 - type: reagent
   id: Mopwata
   name: reagent-name-mopwata

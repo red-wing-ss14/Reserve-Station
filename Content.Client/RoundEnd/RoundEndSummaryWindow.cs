@@ -228,14 +228,14 @@ namespace Content.Client.RoundEnd
                     var totalDamage = playerInfo.DamagePerGroup.Values.Sum(static v => (decimal) v);
                     var severityAdj = totalDamage switch
                     {
-                        // Orion-Edit-Start: Localization
+                        // RW-Edit-Start: Localization
                         >= 1000 => Loc.GetString("summary-death-severity-catastrophic"),
                         >= 750 => Loc.GetString("summary-death-severity-devastating"),
                         >= 500 => Loc.GetString("summary-death-severity-agonizing"),
                         >= 300 => Loc.GetString("summary-death-severity-painful"),
                         >= 200 => Loc.GetString("summary-death-severity-brutal"),
                         _ => Loc.GetString("summary-death-severity-tragic"),
-                        // Orion-Edit-End
+                        // RW-Edit-End
                     };
 
                     var highestDamage = playerInfo.DamagePerGroup
@@ -243,7 +243,7 @@ namespace Content.Client.RoundEnd
                         .First();
                     var typeAdj = highestDamage.Key switch
                     {
-                        // Orion-Edit-Start: Localization
+                        // RW-Edit-Start: Localization
                         "Burn" => Loc.GetString("summary-death-type-fiery"),
                         "Brute" => Loc.GetString("summary-death-type-crushing"),
                         "Toxin" => Loc.GetString("summary-death-type-poisonous"),
@@ -252,10 +252,10 @@ namespace Content.Client.RoundEnd
                         "Metaphysical" => Loc.GetString("summary-death-type-otherworldly"),
                         "Electronic" => Loc.GetString("summary-death-type-shocking"),
                         _ => Loc.GetString("summary-death-type-mysterious"),
-                        // Orion-Edit-End
+                        // RW-Edit-End
                     };
 
-                    // Orion-Edit-Start: Localization
+                    // RW-Edit-Start: Localization
                     if (playerInfo.PlayerNetEntity != null && _entityManager.TryGetEntity(playerInfo.PlayerNetEntity.Value, out _))
                     {
                         deathLabel.SetMarkup(
@@ -271,7 +271,7 @@ namespace Content.Client.RoundEnd
                                 ("severity", severityAdj),
                                 ("type", typeAdj)));
                     }
-                    // Orion-Edit-End
+                    // RW-Edit-End
 
                     var damageTable = new GridContainer
                     {
@@ -313,7 +313,7 @@ namespace Content.Client.RoundEnd
                         };
                         var headerLabel = new Label
                         {
-                            Text = GetDamageTypeName(damage.Key), // Orion-Edit: Localization
+                            Text = GetDamageTypeName(damage.Key), // RW-Edit: Localization
                             FontColorOverride = Color.Gray,
                             HorizontalAlignment = HAlignment.Center,
                             VerticalAlignment = VAlignment.Center,
@@ -374,7 +374,7 @@ namespace Content.Client.RoundEnd
         }
         #endregion
 
-        // Orion-Start
+        // RW-Start
         private string GetDamageTypeName(string damageType)
         {
             return damageType switch
@@ -389,7 +389,7 @@ namespace Content.Client.RoundEnd
                 _ => damageType,
             };
         }
-        // Orion-End
+        // RW-End
     }
 
 }

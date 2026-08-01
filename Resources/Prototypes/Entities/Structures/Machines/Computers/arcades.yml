@@ -25,7 +25,7 @@
     - map: ["enum.WiresVisualLayers.MaintenancePanel"]
       state: panel
       visible: false
-  - type: GenericVisualizer # Orion
+  - type: GenericVisualizer # RW
     visuals:
       enum.EdgeConnectionVisuals.ConnectionMask:
         computerLayerBody:
@@ -122,16 +122,16 @@
     - PlushieRatvar
     - PlushieNar
     - PlushieSnake
-#    - PlushieArachind # Orion-Edit: NC license sprites
+#    - PlushieArachind # RW-Edit: NC license sprites
     - PlushieMoth
     - PlushieHampter
     - PlushiePenguin
-#    - PlushieHuman # Orion-Edit: NC license sprites
+#    - PlushieHuman # RW-Edit: NC license sprites
     - PlushieRouny
     - PlushieBee
     - PlushieSlime
     - PlushieGhost
-#    - PlushieDiona # Orion-Edit: NC license sprites
+#    - PlushieDiona # RW-Edit: NC license sprites
     - PlushieSharkBlue
     - PlushieVox
     - PlushieXeno

@@ -1,12 +1,12 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 # Calcic (Skeletons)
-# Orion-Edit: Removed because there is no RU support
+# RW-Edit: Removed because there is no RU support
 #- type: font
 #  id: LDFComicSans
 #  path: /Fonts/_EinsteinEngines/LDFComicSans/LDFComicSans-Medium.ttf
 
-# Orion-Edit: Removed because there is no RU support
+# RW-Edit: Removed because there is no RU support
 #- type: font
 #  id: LDFComicSansBold
 #  path: /Fonts/_EinsteinEngines/LDFComicSans/LDFComicSans-Bold.ttf

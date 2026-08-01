@@ -5,10 +5,10 @@
   name: species-name-rodentia
   roundStart: true
   prototype: MobRodentia
-  # Amour port: WD Slim body types START
+  # RW port: WD Slim body types START
   bodyTypes:
   - RodentiaNormal
-  # Amour port: WD Slim body types END
+  # RW port: WD Slim body types END
   defaultSkinTone: "#747474"
   markingLimits: MobRodentiaMarkingLimits
   dollPrototype: MobRodentiaDummy
@@ -17,9 +17,9 @@
   femaleFirstNames: NamesRodentiaFemale
   lastNames: NamesRodentiaLast
   naming: LastFirst
-  # Orion-Start
+  # RW-Start
   category: Unusual
-  description: "/ServerInfo/_Orion/SpeciesDescriptions/Rodentia.xml"
+  description: "/ServerInfo/_RW/SpeciesDescriptions/Rodentia.xml"
   pros:
   - species-rodentia-pro-cheek-pouch
   - species-rodentia-pro-hide-under-tables
@@ -30,7 +30,7 @@
   - species-rodentia-con-physical-vulnerable
   - species-rodentia-con-mousetraps
   - species-rodentia-con-hunger-faster
-  # Orion-End
+  # RW-End
   # begin Goobstation: port EE height/width sliders
   sizeRatio: 1.1 # i don't know WHY, but disproportionate rodentia always look weird.
   minHeight: 0.8
@@ -41,11 +41,11 @@
   maxWidth: 1.10
   # end Goobstation: port EE height/width sliders
 
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
 - type: bodyType
   id: RodentiaNormal
   name: body-normal
-# Amour port: WD Slim body types END
+# RW port: WD Slim body types END
   sprites:
     Head: MobRodentiaHead
     Hair: MobHumanoidAnyMarking

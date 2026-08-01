@@ -30,7 +30,7 @@
   id: ResearchDirectorMantle
   equipment:
     neck: ClothingNeckMantleRD
-#  effects: # Orion-Edit: Removed
+#  effects: # RW-Edit: Removed
 #  - !type:GroupLoadoutEffect
 #    proto: MasterRD
 

@@ -1,0 +1,125 @@
+﻿- type: entity
+  parent: BasePartSurgery
+  id: SurgeryChangeSex
+  name: Change sex
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepOpenIncisionScalpel
+    - SurgeryStepClampBleeders
+    - SurgeryStepChangeSex
+  - type: SurgeryPartCondition
+    parts: [ Chest ]
+  - type: SurgeryBodyComponentCondition
+    components:
+    - type: ChangedSex
+    inverse: true
+
+- type: entity
+  parent: BasePartSurgery
+  id: SurgeryUndoChangeSex
+  name: Change sex
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepOpenIncisionScalpel
+    - SurgeryStepClampBleeders
+    - SurgeryStepUndoChangeSex
+  - type: SurgeryPartCondition
+    parts: [ Chest ]
+  - type: SurgeryBodyComponentCondition
+    components:
+    - type: ChangedSex
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryCorticalBorerRemoval
+  name: Remove Cortical Borer
+  description: Removal the Cortical Borer infestation from the body.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Surgery
+    priority: -1
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepClampInternalBleeders
+    - SurgeryStepRemoveCorticalBorer
+  - type: SurgeryCorticalBorerCondition
+  - type: SurgeryPartCondition
+    parts: [ Head ]
+
+- type: entity  
+  parent: SurgeryBase  
+  id: SurgeryPacify  
+  name: Pacify patient  
+  categories: [ HideSpawnMenu ]  
+  components:  
+  - type: Surgery  
+    requirement: SurgeryOpenIncision  
+    steps:  
+    - SurgeryStepPacify  
+    - SurgeryStepCloseIncision  
+  - type: SurgeryOrganCondition  
+    organ:  
+    - type: Brain  
+  - type: SurgeryOrganOnAddCondition  
+    components:  
+      brain:  
+      - type: Pacified  
+    inverse: true  
+  - type: SurgeryPartCondition  
+    parts: [ Head ]
+
+- type: entity  
+  parent: SurgeryBase  
+  id: SurgeryRemovePacification  
+  name: Remove pacification  
+  categories: [ HideSpawnMenu ]  
+  components:  
+  - type: Surgery  
+    requirement: SurgeryOpenIncision  
+    steps:  
+    - SurgeryStepRemovePacification  
+    - SurgeryStepCloseIncision  
+  - type: SurgeryOrganCondition  
+    organ:  
+    - type: Brain  
+  - type: SurgeryOrganOnAddCondition  
+    components:  
+      brain:  
+      - type: Pacified  
+  - type: SurgeryPartCondition  
+    parts: [ Head ]
+
+- type: entity
+  parent: BaseSurgeryRemoveOrgan
+  id: SurgeryRemoveKidneys
+  name: Remove Kidneys
+  components:
+  - type: SurgeryPartCondition
+    parts: [ Groin ]
+  - type: SurgeryOrganSlotCondition
+    organSlot: kidneys
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Kidney
+
+- type: entity
+  parent: BaseSurgeryInsertOrgan
+  id: SurgeryInsertKidneys
+  name: Insert Kidneys
+  components:
+  - type: Surgery
+    steps:
+    - SurgeryStepInsertOrgan
+    - SurgeryStepSealOrganWound
+  - type: SurgeryPartCondition
+    parts: [ Groin ]
+  - type: SurgeryOrganSlotCondition
+    organSlot: kidneys
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Kidney

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-using Content.Shared._Orion.Construction.Steps;
+using Content.Shared._RW.Construction.Steps;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Serialization.Markdown.Mapping;
@@ -12,7 +12,7 @@ namespace Content.Shared.Construction.Steps
     [TypeSerializer]
     public sealed class ConstructionGraphStepTypeSerializer : ITypeReader<ConstructionGraphStep, MappingDataNode>
     {
-        private static Type? GetType(MappingDataNode node) // Orion-Edit: static
+        private static Type? GetType(MappingDataNode node) // RW-Edit: static
         {
             if (node.Has("material"))
             {
@@ -49,10 +49,10 @@ namespace Content.Shared.Construction.Steps
                 return typeof(PartAssemblyConstructionGraphStep);
             }
 
-            // Orion-Start
+            // RW-Start
             if (node.Has("machinePart"))
                 return typeof(MachinePartConstructionGraphStep);
-            // Orion-End
+            // RW-End
 
             return null;
         }

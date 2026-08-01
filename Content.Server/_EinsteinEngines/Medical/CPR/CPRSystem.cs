@@ -125,7 +125,7 @@ public sealed class CPRSystem : EntitySystem
             && TryComp<MobStateComponent>(args.Target, out var state)
             && !HasComp<UnrevivableComponent>(args.Target)
             && _mobThreshold.CheckVitalDamage(args.Target.Value, damageableComponent) < threshold) // GoobStation
-            _mobStateSystem.ChangeMobState(args.Target.Value, MobState.SoftCritical, state, performer); // Orion-Edit
+            _mobStateSystem.ChangeMobState(args.Target.Value, MobState.SoftCritical, state, performer); // RW-Edit
 
         var isAlive = _mobStateSystem.IsAlive(args.Target.Value);
         args.Repeat = !isAlive;

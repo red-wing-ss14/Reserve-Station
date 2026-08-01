@@ -25,9 +25,9 @@
       types:
         Blunt: 25 # yowch
     openSound:
-      path: /Audio/_Orion/Machines/blastdoornew.ogg # Orion-Edit
+      path: /Audio/_RW/Machines/blastdoornew.ogg # RW-Edit
     closeSound:
-      path: /Audio/_Orion/Machines/blastdoornew.ogg # Orion-Edit
+      path: /Audio/_RW/Machines/blastdoornew.ogg # RW-Edit
   - type: Occluder
   - type: Appearance
   - type: RadiationBlocker

@@ -44,7 +44,7 @@
     knockdownTimeDelta: -2
   - type: StaminaResistance # Goobstation
     damageCoefficient: 0.7
-  - type: StaticPrice # Orion
+  - type: StaticPrice # RW
     price: 0
   # RW start
   - type: Tag
@@ -108,20 +108,20 @@
       NerveDamage: 0
     modifiers:
       coefficients:
-        Blunt: 0.4 # Amour edit: 0.35 > 0.4
-        Slash: 0.4 # Amour edit: 0.35 > 0.4
-        Piercing: 0.7 # Amour edit: 0.6 > 0.7
-        Heat: 0.7 # Amour edit: 0.6 > 0.7
-        Caustic: 0.7 # Amour edit: 0.75 > 0.7
-        Cold: 0.8 # Amour edit: missing > 0.8
+        Blunt: 0.4 # RW edit: 0.35 > 0.4
+        Slash: 0.4 # RW edit: 0.35 > 0.4
+        Piercing: 0.7 # RW edit: 0.6 > 0.7
+        Heat: 0.7 # RW edit: 0.6 > 0.7
+        Caustic: 0.7 # RW edit: 0.75 > 0.7
+        Cold: 0.8 # RW edit: missing > 0.8
   - type: ExplosionResistance
-    damageCoefficient: 0.7 # Amour edit: 0.9 > 0.7
+    damageCoefficient: 0.7 # RW edit: 0.9 > 0.7
   - type: GroupExamine
   - type: ModifyDelayedKnockdown # Goobstation
     delayDelta: 2.5
     knockdownTimeDelta: -2.5
   - type: StaminaResistance # Goobstation
-    damageCoefficient: 0.5 # Amour edit: 0.6 > 0.5
+    damageCoefficient: 0.5 # RW edit: 0.6 > 0.5
 
 - type: entity
   parent: ClothingOuterArmorBase
@@ -149,8 +149,8 @@
       coefficients:
         Blunt: 0.8
         Slash: 0.8
-        Piercing: 0.4 # Amour edit: 0.3 > 0.4
-        Heat: 0.9 # Amour edit: 0.8 > 0.9
+        Piercing: 0.4 # RW edit: 0.3 > 0.4
+        Heat: 0.9 # RW edit: 0.8 > 0.9
     # Goob end
   - type: ExplosionResistance
     damageCoefficient: 0.80
@@ -172,12 +172,12 @@
     # Does not give dismemberment deduction because of reflection. yeah do with it somehow
     modifiers:
       coefficients:
-        Blunt: 0.8 # Amour edit: 0.7 > 0.8
-        Slash: 0.8 # Amour edit: 0.7 > 0.8
-        Piercing: 0.9 # Amour edit: 0.7 > 0.9
-        Heat: 0.4 # Amour edit: 0.25 > 0.4
-        Radiation: 0.6 # Amour edit: missing > 0.6
-        Caustic: 0.6 # Amour edit: missing > 0.6
+        Blunt: 0.8 # RW edit: 0.7 > 0.8
+        Slash: 0.8 # RW edit: 0.7 > 0.8
+        Piercing: 0.9 # RW edit: 0.7 > 0.9
+        Heat: 0.4 # RW edit: 0.25 > 0.4
+        Radiation: 0.6 # RW edit: missing > 0.6
+        Caustic: 0.6 # RW edit: missing > 0.6
   - type: Reflect
     reflectProb: 0.8
     # Goob end
@@ -388,17 +388,17 @@
       NerveDamage: 0
     modifiers:
       coefficients:
-        Blunt: 0.35 # Amour edit: 0.3 > 0.35
-        Slash: 0.35 # Amour edit: 0.3 > 0.35
-        Piercing: 0.4 # Amour edit: 0.3 > 0.4
-        Heat: 0.4 # Amour edit: 0.6 > 0.4; Orion-Edit: 0.3 > 0.6
-        Caustic: 0.4 # Amour edit: 0.7 > 0.4; Orion-Edit: 0.3 > 0.7
-        Cold: 0.6 # Amour edit: missing > 0.6
+        Blunt: 0.35 # RW edit: 0.3 > 0.35
+        Slash: 0.35 # RW edit: 0.3 > 0.35
+        Piercing: 0.4 # RW edit: 0.3 > 0.4
+        Heat: 0.4 # RW edit: 0.6 > 0.4; Orion-Edit: 0.3 > 0.6
+        Caustic: 0.4 # RW edit: 0.7 > 0.4; Orion-Edit: 0.3 > 0.7
+        Cold: 0.6 # RW edit: missing > 0.6
     # Goob end
   - type: ExplosionResistance
-    damageCoefficient: 0.4 # Amour edit: 0.35 > 0.4
+    damageCoefficient: 0.4 # RW edit: 0.35 > 0.4
   - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
-    damageCoefficient: 0.5 # Amour edit: 0.4 > 0.5; Goob edit
+    damageCoefficient: 0.5 # RW edit: 0.4 > 0.5; Goob edit
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9
@@ -483,18 +483,18 @@
       NerveDamage: 0
     modifiers:
       coefficients:
-        Blunt: 0.45 # Amour edit: 0.3 > 0.45
-        Slash: 0.45 # Amour edit: 0.3 > 0.45
-        Piercing: 0.5 # Amour edit: 0.4 > 0.5
-        Heat: 0.5 # Amour edit: 0.3 > 0.5
-        Caustic: 0.7 # Amour edit: missing > 0.7
+        Blunt: 0.45 # RW edit: 0.3 > 0.45
+        Slash: 0.45 # RW edit: 0.3 > 0.45
+        Piercing: 0.5 # RW edit: 0.4 > 0.5
+        Heat: 0.5 # RW edit: 0.3 > 0.5
+        Caustic: 0.7 # RW edit: missing > 0.7
     # Goob end
   - type: GroupExamine
   - type: ModifyDelayedKnockdown # Goobstation
     delayDelta: 2.5
     knockdownTimeDelta: -2.5
   - type: StaminaResistance # Goobstation
-    damageCoefficient: 0.5 # Amour edit: 0.3 > 0.5
+    damageCoefficient: 0.5 # RW edit: 0.3 > 0.5
 
 - type: entity
   parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]
@@ -523,19 +523,19 @@
       NerveDamage: 1
     modifiers:
       coefficients:
-        Blunt: 0.3 # Amour edit: 0.2 > 0.3
-        Slash: 0.3 # Amour edit: 0.2 > 0.3
-        Piercing: 0.3 # Amour edit: 0.2 > 0.3
-        Heat: 0.3 # Amour edit: 0.5 > 0.3
-        Radiation: 0.25 # Amour edit: 0 > 0.25
-        Caustic: 0.3 # Amour edit: 0.75 > 0.3
+        Blunt: 0.3 # RW edit: 0.2 > 0.3
+        Slash: 0.3 # RW edit: 0.2 > 0.3
+        Piercing: 0.3 # RW edit: 0.2 > 0.3
+        Heat: 0.3 # RW edit: 0.5 > 0.3
+        Radiation: 0.25 # RW edit: 0 > 0.25
+        Caustic: 0.3 # RW edit: 0.75 > 0.3
   - type: GroupExamine
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: ModifyDelayedKnockdown # Goobstation
     cancel: true
   - type: StaminaResistance # Goobstation
-    damageCoefficient: 0.3 # Amour edit: 0.2 > 0.3
+    damageCoefficient: 0.3 # RW edit: 0.2 > 0.3
 
 - type: entity
   parent: ClothingOuterArmorHeavy
@@ -647,7 +647,7 @@
   - type: ModifyDelayedKnockdown
     cancel: true
   - type: StaminaResistance
-    damageCoefficient: 0.6 # Amour edit: 0.4 > 0.6
+    damageCoefficient: 0.6 # RW edit: 0.4 > 0.6
   - type: HideClothingLayerClothing # Goobstation
     hiddenSlots:
     - jumpsuit
@@ -679,18 +679,18 @@
       NerveDamage: -1
     modifiers:
       coefficients:
-        Blunt: 0.5 # Amour edit: 0.4 > 0.5
-        Slash: 0.5 # Amour edit: 0.7 > 0.5
-        Piercing: 0.7 # Amour edit: 0.25 > 0.7
-        Heat: 0.7 # Amour edit: missing > 0.7
-        Caustic: 0.7 # Amour edit: missing > 0.7
+        Blunt: 0.5 # RW edit: 0.4 > 0.5
+        Slash: 0.5 # RW edit: 0.7 > 0.5
+        Piercing: 0.7 # RW edit: 0.25 > 0.7
+        Heat: 0.7 # RW edit: missing > 0.7
+        Caustic: 0.7 # RW edit: missing > 0.7
     # Goob end
   - type: ClothingSpeedModifier
-    walkModifier: 0.85 # Amour edit: 0.8 > 0.85
-    sprintModifier: 0.85 # Amour edit: 0.8 > 0.85
+    walkModifier: 0.85 # RW edit: 0.8 > 0.85
+    sprintModifier: 0.85 # RW edit: 0.8 > 0.85
   - type: HeldSpeedModifier
   - type: ExplosionResistance
-    damageCoefficient: 0.7 # Amour edit: 0.4 > 0.7
+    damageCoefficient: 0.7 # RW edit: 0.4 > 0.7
   - type: GroupExamine
   - type: Construction
     graph: BoneArmor
@@ -702,7 +702,7 @@
     delayDelta: 2.5
     knockdownTimeDelta: -2.5
   - type: StaminaResistance # Goobstation
-    damageCoefficient: 0.6 # Amour edit: 0.5 > 0.6
+    damageCoefficient: 0.6 # RW edit: 0.5 > 0.6
   - type: HideClothingLayerClothing # Goobstation
     hiddenSlots:
     - jumpsuit
@@ -734,11 +734,11 @@
       NerveDamage: 0
     modifiers:
       coefficients:
-        Blunt: 0.4 # Amour edit: 0.3 > 0.4
-        Slash: 0.4 # Amour edit: 0.3 > 0.4
-        Piercing: 0.5 # Amour edit: 0.4 > 0.5
-        Heat: 0.5 # Amour edit: 0.3 > 0.5
-        Caustic: 0.7 # Amour edit: missing > 0.7
+        Blunt: 0.4 # RW edit: 0.3 > 0.4
+        Slash: 0.4 # RW edit: 0.3 > 0.4
+        Piercing: 0.5 # RW edit: 0.4 > 0.5
+        Heat: 0.5 # RW edit: 0.3 > 0.5
+        Caustic: 0.7 # RW edit: missing > 0.7
     # goob end
   - type: GroupExamine
   - type: ProtectedFromStepTriggers
@@ -748,7 +748,7 @@
     delayDelta: 2.5
     knockdownTimeDelta: -2.5
   - type: StaminaResistance # Goobstation
-    damageCoefficient: 0.5 # Amour edit: 0.6 > 0.5
+    damageCoefficient: 0.5 # RW edit: 0.6 > 0.5
   - type: HideClothingLayerClothing # Goobstation
     hiddenSlots:
     - jumpsuit

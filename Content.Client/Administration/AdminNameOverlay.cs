@@ -155,8 +155,8 @@ internal sealed class AdminNameOverlay : Overlay
             new("SiliconAntagonist"),
             new("FreeAgent"),
             new("SentientAnimal"), // Goobstation
-            new("InteQ"), // Orion
-            new("GhostRole"), // Orion
+            new("InteQ"), // RW
+            new("GhostRole"), // RW
         }.ToFrozenSet();
 
     private readonly string _antagLabelClassic = Loc.GetString("admin-overlay-antag-classic");

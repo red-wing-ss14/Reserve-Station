@@ -1,0 +1,76 @@
+- type: gameMap
+  id: WonderBox
+  mapName: 'WonderBox Station'
+  mapPath: /Maps/_RW/WonderBox.yml
+  minPlayers: 25
+  stations:
+    WonderBoxStation:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} WonderBox Station {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'TG'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency_box.yml
+        - type: StationJobs
+          availableJobs:
+            #service
+            Captain: [ 1, 1 ]
+            NanotrasenRepresentative: [ 1, 1 ]
+            BlueshieldOfficer: [ 1, 1 ]
+            Bartender: [ 4, 2 ]
+            Botanist: [ 4, 3 ]
+            HeadOfPersonnel: [ 1, 1 ]
+            Janitor: [ 5, 4 ]
+            Chef: [ 4, 2 ]
+            Chaplain: [ 2, 1 ]
+            Librarian: [ 3, 2 ]
+            ServiceWorker: [ 7, 5 ]
+            Reporter: [ 3, 2 ]
+            RadioHost: [ 1, 1 ]
+            #engineering
+            ChiefEngineer: [ 1, 1 ]
+            StationEngineer: [ 10, 8 ]
+            AtmosphericTechnician: [ 4, 3 ]
+            TechnicalAssistant: [ 5, 5 ]
+            #medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            MedicalDoctor: [ 7, 5 ]
+            Paramedic: [ 3, 2 ]
+            MedicalIntern: [ 4, 4 ]
+            Chemist: [ 3, 3 ]
+            Virologist: [ 2, 1 ]
+            #science
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 10, 6 ]
+            ResearchAssistant: [ 6, 5 ]
+            #security
+            HeadOfSecurity: [ 1, 1 ]
+            SecurityOfficer: [ 7, 4 ]
+            Warden: [ 1, 1 ]
+            Lawyer: [ 3, 3 ]
+            SecurityCadet: [ 7, 4 ]
+            Detective: [ 1, 1 ]
+            Brigmedic: [ 2, 1 ]
+            #supply
+            CargoTechnician: [ 6, 5 ]
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 7, 4 ]
+            #civilian
+            Passenger: [ -1, -1 ]
+            Clown: [ 2, 1 ]
+            Mime: [ 1, 1 ]
+            Musician: [ 3, 3 ]
+#            Boxer: [ 2, 2 ]
+#            Zookeeper: [ 1, 1 ]
+            #silicon
+            StationAi: [ 1, 1 ]
+            Borg: [ 5, 2 ]
+
+        # For Goob blob
+        - type: StationBlobConfig
+          stageBegin: 40
+          stageCritical: 450
+          stageTheEnd: 900

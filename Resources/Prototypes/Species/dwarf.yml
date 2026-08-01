@@ -5,16 +5,16 @@
   name: species-name-dwarf
   roundStart: true
   prototype: MobDwarf
-  # Amour port: WD Slim body types START
+  # RW port: WD Slim body types START
   bodyTypes:
   - HumanNormal
-  # Amour port: WD Slim body types END
+  # RW port: WD Slim body types END
   markingLimits: MobHumanMarkingLimits
   dollPrototype: MobDwarfDummy
   skinColoration: HumanToned
-  # Orion-Start
+  # RW-Start
   category: Unusual
-  description: "/ServerInfo/_Orion/SpeciesDescriptions/Dwarf.xml"
+  description: "/ServerInfo/_RW/SpeciesDescriptions/Dwarf.xml"
   pros:
   - species-dwarf-pro-ore-sense
   - species-dwarf-pro-ethanol-heal
@@ -23,7 +23,7 @@
   - species-dwarf-special-no-vomit
   cons:
   - species-dwarf-con-frequent-breathe
-  # Orion-End
+  # RW-End
   # begin Goobstation: port EE height/width sliders
   sizeRatio: 1
   minHeight: 0.9

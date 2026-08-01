@@ -3,8 +3,8 @@
 using System.Linq;
 using System.Numerics;
 using Content.Client.UserInterface.Controls;
-using Content.Shared._Orion.Research;
-using Content.Shared._Orion.Research.Prototypes;
+using Content.Shared._RW.Research;
+using Content.Shared._RW.Research.Prototypes;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Research.Components;
@@ -29,13 +29,13 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
     [Dependency] private readonly IEntityManager _entity = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly ILocalizationManager _loc = default!; // Orion
+    [Dependency] private readonly ILocalizationManager _loc = default!; // RW
 
     private readonly ResearchSystem _research;
     private readonly SpriteSystem _sprite;
     private readonly AccessReaderSystem _accessReader;
 
-    private EntityUid Entity; // Orion-Edit: Was public
+    private EntityUid Entity; // RW-Edit: Was public
 
     public ResearchConsoleMenu()
     {
@@ -54,7 +54,7 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
         Entity = entity;
     }
 
-    // Orion-Start
+    // RW-Start
     private string LocalizePointType(string type)
     {
         var key = $"research-point-type-{type.ToLowerInvariant()}";
@@ -80,13 +80,13 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
 
         return $" [color=#8CB6FF]({FormattedMessage.EscapeText(meta.EntityName)})[/color]";
     }
-    // Orion-End
+    // RW-End
 
     public void UpdatePanels(ResearchConsoleBoundInterfaceState state)
     {
         TechnologyCardsContainer.Children.Clear();
 
-        var availableTech = state.AvailableTechnologies.Select(id => _prototype.Index(id)); // Orion-Edit
+        var availableTech = state.AvailableTechnologies.Select(id => _prototype.Index(id)); // RW-Edit
         SyncTechnologyList(AvailableCardsContainer, availableTech);
 
         if (!_entity.TryGetComponent(Entity, out TechnologyDatabaseComponent? database))
@@ -104,12 +104,12 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
         foreach (var techId in database.CurrentTechnologyCards)
         {
             var tech = _prototype.Index<TechnologyPrototype>(techId);
-            var cardControl = new TechnologyCardControl(tech, _prototype, _sprite, _research.GetTechnologyDescription(tech, includeTier: false), state.PointBalances, hasAccess); // Orion-Edit
+            var cardControl = new TechnologyCardControl(tech, _prototype, _sprite, _research.GetTechnologyDescription(tech, includeTier: false), state.PointBalances, hasAccess); // RW-Edit
             cardControl.OnPressed += () => OnTechnologyCardPressed?.Invoke(techId);
             TechnologyCardsContainer.AddChild(cardControl);
         }
 
-        var unlockedTech = state.ResearchedTechnologies.Select(x => _prototype.Index(x)); // Orion-Edit
+        var unlockedTech = state.ResearchedTechnologies.Select(x => _prototype.Index(x)); // RW-Edit
         SyncTechnologyList(UnlockedCardsContainer, unlockedTech);
     }
 
@@ -117,15 +117,15 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
     {
         var amountMsg = new FormattedMessage();
 
-        amountMsg.AddMarkupOrThrow($"{Loc.GetString("research-console-network-label")} [color=white]{(!string.IsNullOrWhiteSpace(state.NetworkId) ? state.NetworkId : Loc.GetString("research-machine-common-none"))}[/color]"); // Orion-Edit
+        amountMsg.AddMarkupOrThrow($"{Loc.GetString("research-console-network-label")} [color=white]{(!string.IsNullOrWhiteSpace(state.NetworkId) ? state.NetworkId : Loc.GetString("research-machine-common-none"))}[/color]"); // RW-Edit
 
-        // Orion-Start
+        // RW-Start
         foreach (var balance in state.PointBalances.Where(p => !string.Equals(p.Type, "General", StringComparison.OrdinalIgnoreCase)))
         {
             amountMsg.PushNewline();
             amountMsg.AddMarkupOrThrow($"[color=lightgreen]{LocalizePointType(balance.Type)}[/color]: {balance.Amount}");
         }
-        // Orion-End
+        // RW-End
 
         ResearchAmountLabel.SetMessage(amountMsg);
 
@@ -182,7 +182,7 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
             TierDisplayContainer.AddChild(control);
         }
 
-        // Orion-Start
+        // RW-Start
         var experimentsMessage = new FormattedMessage();
         foreach (var experiment in state.Experiments)
         {
@@ -227,7 +227,7 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
         }
 
         RecentLogsLabel.SetMessage(logsMessage);
-        // Orion-End
+        // RW-End
     }
 
     /// <summary>
@@ -242,22 +242,22 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
         var currentTechControls = new Dictionary<TechnologyPrototype, Control>();
         foreach (var child in container.Children)
         {
-            if (child is MiniTechnologyCardControl control) // Orion-Edit
+            if (child is MiniTechnologyCardControl control) // RW-Edit
             {
-                currentTechControls.Add(control.Technology, control); // Orion-Edit
+                currentTechControls.Add(control.Technology, control); // RW-Edit
             }
         }
 
         foreach (var tech in technologies)
         {
-            // Orion-Edit-Start
+            // RW-Edit-Start
             if (currentTechControls.Remove(tech))
                 continue;
 
             // Create a card for any technology which doesn't already have one.
             var mini = new MiniTechnologyCardControl(tech, _prototype, _sprite, _research.GetTechnologyDescription(tech));
             container.AddChild(mini);
-            // Orion-Edit-End
+            // RW-Edit-End
         }
 
         // Now, any items left in the dictionary are technologies which were previously

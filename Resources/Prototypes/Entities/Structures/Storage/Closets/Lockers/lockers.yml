@@ -294,8 +294,8 @@
   components:
   - type: Appearance
   - type: EntityStorageVisuals
-    stateBaseClosed: chemical # Orion-Edit
-    stateDoorOpen: chemical_secure_open # Orion-Edit
+    stateBaseClosed: chemical # RW-Edit
+    stateDoorOpen: chemical_secure_open # RW-Edit
     stateDoorClosed: chemical_door
   - type: AccessReader
     access: [ [ "Chemistry" ] ]
@@ -415,7 +415,7 @@
     - entity_storage
   - type: StaticPrice
     price: 660
-  - type: Destructible # Orion
+  - type: Destructible # RW
     thresholds:
     - trigger:
         !type:DamageTrigger
@@ -440,7 +440,7 @@
   suffix: Armory, Locked
   components:
   - type: AccessReader
-    access: [["Security"]] # Orion-Edit: Armory > Security
+    access: [["Security"]] # RW-Edit: Armory > Security
 
 # Genpop Storage
 - type: entity

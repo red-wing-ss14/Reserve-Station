@@ -280,10 +280,10 @@ public sealed class ToggleableClothingSystem : EntitySystem
         if (_timing.ApplyingState)
             return;
 
-        // Orion-Start
+        // RW-Start
         if (TerminatingOrDeleted(toggleable.Owner))
             return;
-        // Orion-End
+        // RW-End
 
         _clothing.SetEquippedPrefix(toggleable, null);
 
@@ -399,10 +399,10 @@ public sealed class ToggleableClothingSystem : EntitySystem
         if (!TryComp(comp.AttachedUid, out ToggleableClothingComponent? toggleableComp))
             return;
 
-        // Orion-Start
+        // RW-Start
         if (TerminatingOrDeleted(comp.AttachedUid))
             return;
-        // Orion-End
+        // RW-End
 
         if (toggleableComp.LifeStage > ComponentLifeStage.Running)
             return;
@@ -437,10 +437,10 @@ public sealed class ToggleableClothingSystem : EntitySystem
         if (!TryComp(comp.AttachedUid, out ToggleableClothingComponent? toggleableComp))
             return;
 
-        // Orion-Start
+        // RW-Start
         if (TerminatingOrDeleted(comp.AttachedUid))
             return;
-        // Orion-End
+        // RW-End
 
         if (LifeStage(attached.Comp.AttachedUid) > EntityLifeStage.MapInitialized) // Goobstation
             return;

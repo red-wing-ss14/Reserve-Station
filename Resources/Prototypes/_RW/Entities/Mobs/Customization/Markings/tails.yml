@@ -1,0 +1,7 @@
+- type: marking
+  id: TajaranTailCommisar
+  bodyPart: Tail
+  markingCategory: Tail
+  sprites:
+    - sprite: _RW/Mobs/Customization/fluff_parts/tail_tajaran_fluff.rsi
+      state: tajaran-tail

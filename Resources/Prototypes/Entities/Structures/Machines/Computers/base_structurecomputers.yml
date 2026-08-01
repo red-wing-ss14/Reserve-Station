@@ -36,7 +36,7 @@
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
   - type: Appearance
-  - type: EdgeConnection # Orion
+  - type: EdgeConnection # RW
     connectionKey: computer-console
     allowedDirections: East, West
   - type: GenericVisualizer
@@ -52,14 +52,14 @@
         enum.WiresVisualLayers.MaintenancePanel:
           True: { visible: false }
           False: { visible: true }
-      # Orion-Start
+      # RW-Start
       enum.EdgeConnectionVisuals.ConnectionMask:
         computerLayerBody:
           None: { state: computer, sprite: Structures/Machines/computers.rsi }
-          West: { state: computer_r, sprite: _Orion/Structures/Machines/computers.rsi }
-          East: { state: computer_l, sprite: _Orion/Structures/Machines/computers.rsi }
-          East, West: { state: computer_l_r, sprite: _Orion/Structures/Machines/computers.rsi }
-      # Orion-End
+          West: { state: computer_r, sprite: _RW/Structures/Machines/computers.rsi }
+          East: { state: computer_l, sprite: _RW/Structures/Machines/computers.rsi }
+          East, West: { state: computer_l_r, sprite: _RW/Structures/Machines/computers.rsi }
+      # RW-End
   - type: LitOnPowered
   - type: PointLight
     radius: 1.5

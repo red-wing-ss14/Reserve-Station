@@ -6,7 +6,7 @@
   - MagazineBoxShotgunHighCaliber
   - MagazineBoxShotgunSlugHighCaliber
   - MagazineBoxShotgunPracticeHighCaliber
-  - MagazineShotgunLeverRifleEmpty # Orion
+  - MagazineShotgunLeverRifleEmpty # RW
 
 - type: latheRecipePack
   id: SecurityEquipmentStaticGoob
@@ -57,7 +57,7 @@
   - WeaponLaserCellSMG
   - WeaponLaserCellSniper
   - ClothingBackpackLMGBattery
-#  - ClothingEyesGlassesSecurityContraDetect # Orion-Edit
+#  - ClothingEyesGlassesSecurityContraDetect # RW-Edit
 
 - type: latheRecipePack
   id: SecurityAmmoGoob

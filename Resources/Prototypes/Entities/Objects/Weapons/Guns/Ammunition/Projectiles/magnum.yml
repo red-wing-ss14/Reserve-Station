@@ -9,7 +9,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 32 # Amour edit: 35 > 32
+        Piercing: 32 # RW edit: 35 > 32
 
 - type: entity
   parent: BaseBulletPractice
@@ -32,8 +32,8 @@
     damage:
       types:
         Blunt: 7
-        Heat: 5 # Amour edit: 10 > 5; Orion-Edit: 7 > 10
-        Piercing: 10 # Amour edit: missing > 10
+        Heat: 5 # RW edit: 10 > 5; Orion-Edit: 7 > 10
+        Piercing: 10 # RW edit: missing > 10
 - type: entity
   parent: BaseBullet # Goobstation edit
   id: BulletMagnumAP
@@ -55,6 +55,6 @@
   - type: Projectile
     damage:
       types: 
-        Radiation: 1 # Amour edit: 10 > 1; Orion-Edit: 15 > 10
-        Piercing: 28 # Amour edit: 20 > 28
-      armorPenetration: 0.5 # Amour edit: 0.25 > 0.5; Orion
+        Radiation: 1 # RW edit: 10 > 1; Orion-Edit: 15 > 10
+        Piercing: 28 # RW edit: 20 > 28
+      armorPenetration: 0.5 # RW edit: 0.25 > 0.5; Orion

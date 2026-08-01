@@ -307,14 +307,14 @@ public sealed partial class GoobCVars
     public static readonly CVarDef<int> GoobcoinShortRoundPenaltyTargetMinutes =
         CVarDef.Create("servercurrency.shortround_penalty_target_minutes", 90, CVar.SERVERONLY);
 
-    // Orion-Start
+    // RW-Start
     /// <summary>
     ///     How much time need to spend in the round before receiving the currency for participating in the round
     ///     It is necessary to close the hole of receiving currency!
     /// </summary>
     public static readonly CVarDef<int> GoobcoinMinimumRoundMinutesForPayout =
         CVarDef.Create("servercurrency.min_round_minutes_for_payout", 15, CVar.SERVERONLY);
-    // Orion-End
+    // RW-End
 
     #endregion
 
@@ -438,7 +438,7 @@ public sealed partial class GoobCVars
     /// Set to true to enable voice barks and disable default speech sounds.
     /// </summary>
     public static readonly CVarDef<bool> BarksEnabled =
-        CVarDef.Create("voice.barks_enabled", true, CVar.SERVER | CVar.REPLICATED | CVar.ARCHIVE); // Orion-Edit: True
+        CVarDef.Create("voice.barks_enabled", true, CVar.SERVER | CVar.REPLICATED | CVar.ARCHIVE); // RW-Edit: True
 
     /// <summary>
     /// Client volume setting for barks.

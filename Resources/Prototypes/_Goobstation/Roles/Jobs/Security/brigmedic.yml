@@ -11,22 +11,22 @@
     time: 18000 # 5 hrs
   - !type:DepartmentTimeRequirement
     department: Security
-    time: 14400 # 4 hrs # Amour-Edit
-  - !type:DiscordLinkRequirement # Amour
+    time: 14400 # 4 hrs # RW-Edit
+  - !type:DiscordLinkRequirement # RW
   startingGear: BrigmedicGear
   icon: "JobIconBrigmedic"
   supervisors: job-supervisors-hos
   canBeAntag: false
   guides:
-  # Amour-Edit-Start
+  # RW-Edit-Start
   # - SOP-Security-Brigmedic # Disabled until guide is created
-  # Amour-Edit-End
+  # RW-Edit-End
   - Medicine
   goobcoins: 35
-  # Orion-Start
+  # RW-Start
   salary: 80
   payrollDepartmentAccount: Security
-  # Orion-End
+  # RW-End
   access: # EE parity, make corpsman able function.
   - Security
   - Brig

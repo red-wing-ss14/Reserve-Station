@@ -72,7 +72,7 @@
       damage:
         types:
           Blunt: 2
-    - type: StaminaDamageOnCollide # Orion
+    - type: StaminaDamageOnCollide # RW
       damage: 4
 
 - type: entity
@@ -127,7 +127,7 @@
     damage:
       types:
         Piercing: 65
-        Structural: 25 # Orion
+        Structural: 25 # RW
 - type: entity
   id: BulletSlugEnsnaring
   name: bullet (8 Gauge ensnaring slug)
@@ -143,7 +143,7 @@
     damage:
       types:
         Piercing: 16 #Low damage, but ensnaring
-        Blunt: 10 # Amour edit: missing > 10
+        Blunt: 10 # RW edit: missing > 10
   - type: Ensnaring
     canThrowTrigger: true
     destroyOnRemove: true
@@ -151,7 +151,7 @@
     freeTime: 3
     sprintSpeed: 0.6
     walkSpeed: 0.6
-    staminaDamage: 30 # Orion-Edit: 10 > 30
+    staminaDamage: 30 # RW-Edit: 10 > 30
 
 - type: entity
   id: BulletSlugEMP
@@ -178,8 +178,8 @@
     damage:
       types:
         Piercing: 12
-        Ion: 20 # Amour edit: missing > 20
-        Blunt: 10 # Amour edit: missing > 10
+        Ion: 20 # RW edit: missing > 20
+        Blunt: 10 # RW edit: missing > 10
 
 - type: entity
   id: BulletSlugFlash
@@ -207,7 +207,7 @@
     damage:
       types:
         Piercing: 20
-        Blunt: 10 # Amour edit: missing > 10
+        Blunt: 10 # RW edit: missing > 10
 
 - type: entity
   id: BulletSlugBeanbagHighCaliber
@@ -246,7 +246,7 @@
     damage:
       types:
         Piercing: 15
-        Blunt: 10 # Amour edit: missing > 10
+        Blunt: 10 # RW edit: missing > 10
 
 # Heavy shotgun
 

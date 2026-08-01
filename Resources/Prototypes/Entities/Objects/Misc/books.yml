@@ -420,11 +420,11 @@
       color: "#87011c"
     - state: icon_law
       color: "#f7d61a"
-  # Amour-Edit-Start
+  # RW-Edit-Start
   # - type: GuideHelp # Disabled until SpaceLaw guide is created
   #   guides:
   #   - SpaceLaw
-  # Amour-Edit-End
+  # RW-Edit-End
 
 - type: entity
   parent: BookBase

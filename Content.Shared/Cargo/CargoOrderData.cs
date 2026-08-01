@@ -58,7 +58,7 @@ namespace Content.Shared.Cargo
         // public int RequesterId;
         public  bool Approved;
 
-        // Orion-Start
+        // RW-Start
         [DataField]
         public string? DeliveryDestination { get; private set; }
 
@@ -74,7 +74,7 @@ namespace Content.Shared.Cargo
         public string? PrivateBuyerName { get; private set; }
 
         public bool PaidPrivately => !string.IsNullOrWhiteSpace(PrivateBuyerAccountId);
-        // Orion-End
+        // RW-End
 
         [DataField]
         public string? Approver;
@@ -86,7 +86,7 @@ namespace Content.Shared.Cargo
         public ProtoId<CargoAccountPrototype> Account;
 
         // GoobStation - (cooldown parameter) cooldown on Cargo Orders (specifically gamba)
-        public CargoOrderData(int orderId, string productId, string productName, int price, int amount, string requester, string? deliveryDestination, string? note, ProtoId<CargoAccountPrototype> account, int cooldown, bool securedDelivery = false) // Orion-Edit
+        public CargoOrderData(int orderId, string productId, string productName, int price, int amount, string requester, string? deliveryDestination, string? note, ProtoId<CargoAccountPrototype> account, int cooldown, bool securedDelivery = false) // RW-Edit
         {
             OrderId = orderId;
             ProductId = productId;
@@ -94,11 +94,11 @@ namespace Content.Shared.Cargo
             Price = price;
             OrderQuantity = amount;
             Requester = requester;
-            // Orion-Start
+            // RW-Start
             DeliveryDestination = deliveryDestination;
             SecuredDelivery = securedDelivery;
             Note = note;
-            // Orion-End
+            // RW-End
             Account = account;
             // GoobStation - (cooldown assignment) cooldown on Cargo Orders (specifically gamba)
             Cooldown = cooldown;
@@ -123,7 +123,7 @@ namespace Content.Shared.Cargo
             Approver = sb.ToString();
         }
 
-        // Orion-Start
+        // RW-Start
         public void SetPrivateBuyerData(string accountId, string buyerName)
         {
             if (string.IsNullOrWhiteSpace(accountId))
@@ -135,6 +135,6 @@ namespace Content.Shared.Cargo
             PrivateBuyerAccountId = accountId;
             PrivateBuyerName = buyerName;
         }
-        // Orion-End
+        // RW-End
     }
 }

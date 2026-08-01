@@ -19,7 +19,7 @@
       slots:
         cell_slot:
           name: power-cell-slot-component-slot-name-default
-          startingItem: PowerCellVortex # Orion-Edit: Replaced PowerCellMicroreactor
+          startingItem: PowerCellVortex # RW-Edit: Replaced PowerCellMicroreactor
           whitelist:
             components:
               - PowerCell

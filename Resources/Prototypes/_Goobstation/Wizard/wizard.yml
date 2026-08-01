@@ -29,7 +29,7 @@
   setPreference: true
   objective: roles-antag-wizard-description
   requirements:
-  - !type:AnyOfRequirement # Amour edit - Discord OR playtime
+  - !type:AnyOfRequirement # RW edit - Discord OR playtime
     requirements:
       - !type:DiscordLinkRequirement
       - !type:OverallPlaytimeRequirement

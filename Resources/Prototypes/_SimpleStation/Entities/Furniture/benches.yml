@@ -7,12 +7,12 @@
   abstract: true
   parent: SeatBase
   description: Multiple seats spanning a single object. Truly a marvel of science.
-  placement: # Orion
+  placement: # RW
     mode: SnapgridCenter
   components:
   - type: Physics
     bodyType: Static
-  - type: Destructible # Orion
+  - type: Destructible # RW
     thresholds:
     - trigger: !type:DamageTrigger
         damage: 50
@@ -247,7 +247,7 @@
   name: sofa
   id: BenchSofaCorner
   suffix: Corner
-  # Orion-Edit-Start: Bugfix
+  # RW-Edit-Start: Bugfix
   parent: BenchSofaMiddle
   components:
   - type: Sprite
@@ -261,7 +261,7 @@
       - !type:DoActsBehavior
         acts:
         - Destruction
-  # Orion-Edit-End
+  # RW-Edit-End
       - !type:PlaySoundBehavior
         sound:
           collection: MetalBreak
@@ -309,7 +309,7 @@
   name: grey sofa
   id: BenchSofaCorpCorner
   suffix: Corner
-  # Orion-Edit-Start: Bugfix
+  # RW-Edit-Start: Bugfix
   parent: BenchSofaCorpMiddle
   components:
   - type: Sprite
@@ -323,7 +323,7 @@
       - !type:DoActsBehavior
         acts:
         - Destruction
-  # Orion-Edit-End
+  # RW-Edit-End
       - !type:PlaySoundBehavior
         sound:
           collection: MetalBreak

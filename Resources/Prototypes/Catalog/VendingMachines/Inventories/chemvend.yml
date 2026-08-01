@@ -35,7 +35,7 @@
 - type: vendingMachineInventory
   id: ChemVendInventorySyndicate
   startingInventory:
-    Jug: 8 # Orion-Edit: 4 > 8
+    Jug: 8 # RW-Edit: 4 > 8
     JugAluminium: 2
     JugCarbon: 4
     JugChlorine: 2 #Goob edit
@@ -57,7 +57,7 @@
     JugSugar: 3
     JugSulfur: 1
     JugWeldingFuel: 1
-    JugPlasma: 1 # Orion-Edit: Vial was replaced with a jug
+    JugPlasma: 1 # RW-Edit: Vial was replaced with a jug
   contrabandInventory:
     DrinkLithiumFlask: 1
     StrangePill: 3

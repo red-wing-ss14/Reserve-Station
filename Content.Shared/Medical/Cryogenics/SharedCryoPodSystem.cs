@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared._Orion.Construction;
-using Content.Shared._Orion.Construction.Events;
+using Content.Shared._RW.Construction;
+using Content.Shared._RW.Construction.Events;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Body.Components;
@@ -76,10 +76,10 @@ public abstract partial class SharedCryoPodSystem : EntitySystem
         SubscribeLocalEvent<CryoPodComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<CryoPodComponent, PowerChangedEvent>(OnPowerChanged);
         SubscribeLocalEvent<CryoPodComponent, ActivatableUIOpenAttemptEvent>(OnActivateUIAttempt);
-        // Orion-Start
+        // RW-Start
         SubscribeLocalEvent<CryoPodComponent, RefreshPartsEvent>(OnRefreshParts);
         SubscribeLocalEvent<CryoPodComponent, UpgradeExamineEvent>(OnUpgradeExamine);
-        // Orion-End
+        // RW-End
 
         _bloodstreamQuery = GetEntityQuery<BloodstreamComponent>();
         _itemSlotsQuery = GetEntityQuery<ItemSlotsComponent>();
@@ -120,10 +120,10 @@ public abstract partial class SharedCryoPodSystem : EntitySystem
             {
                 var solutionToInject = _solutionContainer.SplitSolution(containerSolution.Value, cryoPod.BeakerTransferAmount);
 
-                // Orion-Start
+                // RW-Start
                 if (cryoPod.CoolingEfficiency > 1f)
                     solutionToInject.ScaleSolution(cryoPod.CoolingEfficiency);
-                // Orion-End
+                // RW-End
 
                 _bloodstream.TryAddToBloodstream((patient.Value, bloodstream), solutionToInject);
                 _reactive.DoEntityReaction(patient.Value, solutionToInject, ReactionMethod.Injection);
@@ -336,10 +336,10 @@ public abstract partial class SharedCryoPodSystem : EntitySystem
         if (!args.CanAccess || !args.CanInteract)
             return;
 
-        // Orion-Start
+        // RW-Start
         if (TryComp<GhostComponent>(args.User, out var ghost) && !ghost.CanGhostInteract)
             return;
-        // Orion-End
+        // RW-End
 
         // Eject verb
         if (cryoPodComponent.BodyContainer.ContainedEntity != null)
@@ -377,7 +377,7 @@ public abstract partial class SharedCryoPodSystem : EntitySystem
     [Serializable, NetSerializable]
     public sealed partial class CryoPodDragFinished : SimpleDoAfterEvent;
 
-    // Orion-Start
+    // RW-Start
     private static void OnRefreshParts(EntityUid uid, CryoPodComponent component, RefreshPartsEvent args)
     {
         var matter = args.GetPartRating(MachinePartIds.MatterBin);
@@ -391,5 +391,5 @@ public abstract partial class SharedCryoPodSystem : EntitySystem
         args.AddPercentageUpgrade("machine-upgrade-cryo-transfer", component.BeakerTransferAmount.Float() / component.BaseBeakerTransferAmount.Float());
         args.AddPercentageUpgrade("machine-upgrade-cryo-cooling", component.CoolingEfficiency);
     }
-    // Orion-End
+    // RW-End
 }

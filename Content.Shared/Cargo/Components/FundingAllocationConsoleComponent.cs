@@ -39,20 +39,20 @@ public sealed class SetFundingAllocationBuiMessage : BoundUserInterfaceMessage
 public sealed class FundingAllocationConsoleBuiState : BoundUserInterfaceState
 {
     public NetEntity Station;
-    // Orion-Start
+    // RW-Start
     public List<FundingAllocationEconomyAccountData> EconomyAccounts;
     public List<FundingAllocationTransactionData> Transactions;
-    // Orion-End
+    // RW-End
 
-    public FundingAllocationConsoleBuiState(NetEntity station, List<FundingAllocationEconomyAccountData> economyAccounts, List<FundingAllocationTransactionData> transactions) // Orion-Edit
+    public FundingAllocationConsoleBuiState(NetEntity station, List<FundingAllocationEconomyAccountData> economyAccounts, List<FundingAllocationTransactionData> transactions) // RW-Edit
     {
         Station = station;
-        EconomyAccounts = economyAccounts; // Orion
-        Transactions = transactions; // Orion
+        EconomyAccounts = economyAccounts; // RW
+        Transactions = transactions; // RW
     }
 }
 
-// Orion-Start
+// RW-Start
 [Serializable, NetSerializable]
 public sealed class FundingAllocationEconomyAccountData
 {
@@ -96,7 +96,7 @@ public sealed class FundingAllocationTransactionData
         Counterparty = counterparty;
     }
 }
-// Orion-End
+// RW-End
 
 [Serializable, NetSerializable]
 public enum FundingAllocationConsoleUiKey : byte

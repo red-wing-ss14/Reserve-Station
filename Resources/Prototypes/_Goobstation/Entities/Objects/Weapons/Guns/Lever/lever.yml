@@ -18,7 +18,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-#        name: Magazine # Orion-Edit: Localization
+#        name: Magazine # RW-Edit: Localization
         startingItem: MagazineShotgunLeverRifle
         insertSound: /Audio/Weapons/Guns/MagIn/rifle_load.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
@@ -28,13 +28,13 @@
           - MagazineShotgunLeverRifle
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
-#        name: Chamber # Orion-Edit: Localization
+#        name: Chamber # RW-Edit: Localization
         priority: 1
         whitelist:
           tags:
           - ShellShotgunHeavy
   - type: Gun
-    fireRate: 0.75 # Amour edit: 0.65 > 0.75
+    fireRate: 0.75 # RW edit: 0.65 > 0.75
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/batrifle.ogg
   - type: ChamberMagazineAmmoProvider

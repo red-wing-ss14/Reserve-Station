@@ -12,7 +12,7 @@
       Normal: 13
       Damaged: 6
       Destroyed: 0
-#  - type: Edible # Orion-Edit: Removed
+#  - type: Edible # RW-Edit: Removed
   - type: Sprite
     sprite: Mobs/Species/Human/organs.rsi
   - type: StaticPrice
@@ -48,7 +48,7 @@
   name: animal lungs
   categories: [ HideSpawnMenu ]
   components:
-  - type: Edible # Orion
+  - type: Edible # RW
   - type: Sprite
     layers:
     - state: lung-l
@@ -95,7 +95,7 @@
   name: animal stomach
   categories: [ HideSpawnMenu ]
   components:
-  - type: Edible # Orion
+  - type: Edible # RW
   - type: Sprite
     state: stomach
   - type: Organ
@@ -155,7 +155,7 @@
   name: animal liver
   categories: [ HideSpawnMenu ]
   components:
-  - type: Edible # Orion
+  - type: Edible # RW
   - type: Sprite
     state: liver
   - type: Organ
@@ -187,7 +187,7 @@
   name: animal heart
   categories: [ HideSpawnMenu ]
   components:
-  - type: Edible # Orion
+  - type: Edible # RW
   - type: Sprite
     state: heart-on
   - type: Organ
@@ -221,8 +221,8 @@
   name: animal kidneys
   categories: [ HideSpawnMenu ]
   components:
-  - type: Edible # Orion
-  - type: Kidney # Orion
+  - type: Edible # RW
+  - type: Kidney # RW
   - type: Sprite
     layers:
     - state: kidney-l

@@ -26,7 +26,7 @@ namespace Content.Server.Anomaly.Effects;
 public sealed class AnomalyCoreSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _gameTiming = default!;
-    // Orion-Start
+    // RW-Start
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly ElectrocutionSystem _electrocution = default!;
@@ -35,17 +35,17 @@ public sealed class AnomalyCoreSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutions = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    // Orion-End
+    // RW-End
 
-    private readonly HashSet<EntityUid> _processingInjected = new(); // Orion
+    private readonly HashSet<EntityUid> _processingInjected = new(); // RW
 
     public override void Initialize()
     {
         SubscribeLocalEvent<AnomalyCoreComponent, PriceCalculationEvent>(OnGetPrice);
-        // Orion-Start
+        // RW-Start
         SubscribeLocalEvent<AnomalyCoreComponent, AfterInteractUsingEvent>(OnAfterInteractUsing);
         SubscribeLocalEvent<AnomalyCoreComponent, SolutionContainerChangedEvent>(OnSolutionChanged);
-        // Orion-End
+        // RW-End
     }
 
     private void OnGetPrice(Entity<AnomalyCoreComponent> core, ref PriceCalculationEvent args)
@@ -56,7 +56,7 @@ public sealed class AnomalyCoreSystem : EntitySystem
 
         args.Price = MathHelper.Lerp(core.Comp.EndPrice, core.Comp.StartPrice, lerp);
     }
-    // Orion-Start
+    // RW-Start
     #region Reactivation
     private void OnAfterInteractUsing(Entity<AnomalyCoreComponent> ent, ref AfterInteractUsingEvent args)
     {
@@ -269,5 +269,5 @@ public sealed class AnomalyCoreSystem : EntitySystem
             _popup.PopupEntity(Loc.GetString(message), core, popupType);
     }
     #endregion
-    // Orion-End
+    // RW-End
 }

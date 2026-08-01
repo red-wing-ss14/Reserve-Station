@@ -72,7 +72,7 @@ public sealed partial class CloningPodComponent : Component
     {
         DamageDict = new()
         {
-            { "Cellular", 10}, // Orion-Edit: 20 > 10
+            { "Cellular", 10}, // RW-Edit: 20 > 10
         }
     };
 }

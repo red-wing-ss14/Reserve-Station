@@ -27,7 +27,7 @@ public sealed partial class AccessLevelControl : GridContainer
 
     public void Populate(List<ProtoId<AccessLevelPrototype>> accessLevels, IPrototypeManager prototypeManager)
     {
-        // Orion-Start | Colors from StyleNano.cs
+        // RW-Start | Colors from StyleNano.cs
         var departmentColors = new List<String>
         {
             "ButtonColorCentralCommandDepartment",
@@ -41,7 +41,7 @@ public sealed partial class AccessLevelControl : GridContainer
             "ButtonColorCivilianDepartment"
         };
         var currentColorIndex = 0;
-        // Orion-End
+        // RW-End
 
         foreach (var access in accessLevels)
         {

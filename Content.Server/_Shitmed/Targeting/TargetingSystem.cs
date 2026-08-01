@@ -40,7 +40,7 @@ public sealed class TargetingSystem : SharedTargetingSystem
                 changed = true;
             }
         }
-        else if (args is { OldMobState: MobState.Dead, NewMobState: MobState.Alive or MobState.SoftCritical or MobState.HardCritical }) // Orion-Edit
+        else if (args is { OldMobState: MobState.Dead, NewMobState: MobState.Alive or MobState.SoftCritical or MobState.HardCritical }) // RW-Edit
         {
             component.BodyStatus = _woundSystem.GetWoundableStatesOnBodyPainFeels(uid);
             changed = true;

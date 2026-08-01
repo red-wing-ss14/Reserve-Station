@@ -35,10 +35,10 @@ namespace Content.Client.Cargo.UI
         private readonly EntityQuery<CargoOrderConsoleComponent> _orderConsoleQuery;
         private readonly EntityQuery<StationBankAccountComponent> _bankQuery;
 
-        // Orion-Start
+        // RW-Start
         private TimeSpan _nextAccountsPopulateTime = TimeSpan.Zero;
         private readonly TimeSpan _accountPopulateInterval = TimeSpan.FromSeconds(5);
-        // Orion-End
+        // RW-End
 
         public event Action<ButtonEventArgs>? OnItemSelected;
         public event Action<ButtonEventArgs>? OnOrderApproved;
@@ -248,7 +248,7 @@ namespace Content.Client.Cargo.UI
                             "cargo-console-menu-order-row-title",
                             ("productName", productName),
                             ("orderAmount", order.OrderQuantity),
-                            ("orderPrice", order.PaidPrivately ? (int) Math.Round(order.Price * 1.10, MidpointRounding.AwayFromZero) : order.Price)), // Orion-Edit
+                            ("orderPrice", order.PaidPrivately ? (int) Math.Round(order.Price * 1.10, MidpointRounding.AwayFromZero) : order.Price)), // RW-Edit
                     },
 
                     Stride =
@@ -266,7 +266,7 @@ namespace Content.Client.Cargo.UI
 
                     ProductName =
                     {
-                        // Orion-Edit-Start
+                        // RW-Edit-Start
                         Text = order.PaidPrivately
                             ? Loc.GetString(
                                 "cargo-console-menu-populate-orders-cargo-order-row-product-name-private-text",
@@ -276,10 +276,10 @@ namespace Content.Client.Cargo.UI
                                 ("orderRequester", requester), // Goobstation
                                 ("accountColor", account.Color),
                                 ("account", Loc.GetString(account.Code))),
-                        // Orion-Edit-End
+                        // RW-Edit-End
                     },
 
-                    // Orion-Edit-Start
+                    // RW-Edit-Start
                     DeliveryDestination =
                     {
                         Text = !string.IsNullOrEmpty(order.DeliveryDestination)
@@ -301,21 +301,21 @@ namespace Content.Client.Cargo.UI
                                 "cargo-console-menu-order-row-product-note",
                                 ("note", Loc.GetString("cargo-console-paper-note-default")))
                     },
-                    // Orion-Edit-End
+                    // RW-Edit-End
                 };
 
-                // Orion-Start
+                // RW-Start
                 if (order.PaidPrivately && !string.IsNullOrWhiteSpace(order.PrivateBuyerName))
                 {
                     row.PrivateBuyer.Visible = true;
                     row.PrivateBuyer.Text = Loc.GetString("cargo-console-menu-order-private-buyer", ("buyer", order.PrivateBuyerName));
                 }
-                // Orion-End
+                // RW-End
 
                 row.Cancel.OnPressed += (args) => { OnOrderCanceled?.Invoke(args); };
 
                 // TODO: Disable based on access.
-                row.SetApproveVisible(orderConsole.Mode == CargoOrderConsoleMode.DirectOrder); // Orion-Edit
+                row.SetApproveVisible(orderConsole.Mode == CargoOrderConsoleMode.DirectOrder); // RW-Edit
                 row.Approve.OnPressed += (args) => { OnOrderApproved?.Invoke(args); };
                 Requests.AddChild(row);
             }
@@ -344,7 +344,7 @@ namespace Content.Client.Cargo.UI
             }
         }
 
-        // Orion-Start
+        // RW-Start
         public void PopulateAccounts()
         {
             if (!_entityManager.TryGetComponent<StationBankAccountComponent>(_station, out var bank) ||
@@ -409,7 +409,7 @@ namespace Content.Client.Cargo.UI
 
                 var balanceLabel = new RichTextLabel
                 {
-                    Text = Loc.GetString("cargo-console-menu-points-amount", ("amount", bank.Accounts[account])), // Orion-Edit
+                    Text = Loc.GetString("cargo-console-menu-points-amount", ("amount", bank.Accounts[account])), // RW-Edit
                     HorizontalExpand = true,
                     HorizontalAlignment = HAlignment.Center,
                     Margin = new Thickness(5, 0),
@@ -427,7 +427,7 @@ namespace Content.Client.Cargo.UI
                 EntriesContainer.AddChild(box);
             }
         }
-        // Orion-End
+        // RW-End
 
         public void UpdateStation(EntityUid station)
         {
@@ -456,13 +456,13 @@ namespace Content.Client.Cargo.UI
 
             RightPart.Visible = orderConsole.Mode != CargoOrderConsoleMode.PrintSlip; // Goobstation
 
-            // Orion-Start
+            // RW-Start
             if (_nextAccountsPopulateTime > _timing.CurTime)
                 return;
 
             _nextAccountsPopulateTime = _timing.CurTime + _accountPopulateInterval;
             PopulateAccounts();
-            // Orion-End
+            // RW-End
         }
     }
 }

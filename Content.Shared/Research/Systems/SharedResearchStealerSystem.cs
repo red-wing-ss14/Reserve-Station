@@ -39,7 +39,7 @@ public abstract class SharedResearchStealerSystem : EntitySystem
         args.Handled = true;
 
         // fail fast if theres no techs to steal right now
-        if (database.ResearchedTechnologies.Count == 0) // Orion-Edit
+        if (database.ResearchedTechnologies.Count == 0) // RW-Edit
         {
             _popup.PopupClient(Loc.GetString("ninja-download-fail"), uid, uid);
             return;

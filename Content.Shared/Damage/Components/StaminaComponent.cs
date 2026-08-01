@@ -98,7 +98,7 @@ public sealed partial class StaminaComponent : Component
     /// This is how much stamina damage a mob takes when it forces itself to stand up before modifiers
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float ForceStandStamina = 15f; // Orion-Edit: 10 > 15
+    public float ForceStandStamina = 15f; // RW-Edit: 10 > 15
 
     /// <summary>
     /// What sound should play when we successfully stand up
@@ -109,8 +109,8 @@ public sealed partial class StaminaComponent : Component
     /// <summary>
     /// Thresholds that determine an entity's slowdown as a function of stamina damage, in percentages.
     /// </summary>
-    [DataField, AutoNetworkedField] // Goob edit. No slowdown. todo goobstation refactor sprint shit so it isnt as dependent on stamina its kinda annoying to wrangle both at the same time. // Orion-Edit: Added (AutoNetworkedField)
-    public Dictionary<FixedPoint2, float> StunModifierThresholds = new() { {0, 1f }, { 65, 0.7f }, { 80, 0.55f } }; // Goob edit, 0.7 -> 1, 0.5 -> 1 // Orion-Edit: {60 > 65, 1 > 0.7}, 1 > 0.55
+    [DataField, AutoNetworkedField] // Goob edit. No slowdown. todo goobstation refactor sprint shit so it isnt as dependent on stamina its kinda annoying to wrangle both at the same time. // RW-Edit: Added (AutoNetworkedField)
+    public Dictionary<FixedPoint2, float> StunModifierThresholds = new() { {0, 1f }, { 65, 0.7f }, { 80, 0.55f } }; // Goob edit, 0.7 -> 1, 0.5 -> 1 // RW-Edit: {60 > 65, 1 > 0.7}, 1 > 0.55
 
     #region Animation Data
 

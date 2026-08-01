@@ -8,18 +8,18 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 9000 #2.5 hrs # Amour-Edit
+      time: 9000 #2.5 hrs # RW-Edit
   startingGear: ChemistGear
   icon: "JobIconChemist"
   supervisors: job-supervisors-cmo
   guides: # goobstation
-#  - Chemist # Orion-Edit: Removed because dont have this SOP
+#  - Chemist # RW-Edit: Removed because dont have this SOP
   - Chemicals
   goobcoins: 20 #Goob content
-  # Orion-Start
+  # RW-Start
   salary: 85
   payrollDepartmentAccount: Medical
-  # Orion-End
+  # RW-End
   access:
   - Medical
   - Chemistry

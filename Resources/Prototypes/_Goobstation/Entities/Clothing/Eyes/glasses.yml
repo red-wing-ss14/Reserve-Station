@@ -99,10 +99,10 @@
   description: Sunglasses with a medical hud.
   components:
   - type: Sprite
-    sprite: _Orion/Clothing/Eyes/Glasses/medglasses.rsi # Orion-Edit
+    sprite: _RW/Clothing/Eyes/Glasses/medglasses.rsi # RW-Edit
   - type: Clothing
-    sprite: _Orion/Clothing/Eyes/Glasses/medglasses.rsi # Orion-Edit
-    # Orion-Start
+    sprite: _RW/Clothing/Eyes/Glasses/medglasses.rsi # RW-Edit
+    # RW-Start
     equippedPrefix: glasses
   - type: Item
     heldPrefix: glasses
@@ -113,14 +113,14 @@
       glasses: !type:ItemSwitchState
         verb: glasses
         sprite:
-          sprite: _Orion/Clothing/Eyes/Glasses/medglasses.rsi
+          sprite: _RW/Clothing/Eyes/Glasses/medglasses.rsi
           state: glasses-icon
       visor: !type:ItemSwitchState
         verb: visor
         sprite:
-          sprite: _Orion/Clothing/Eyes/Glasses/medglasses.rsi
+          sprite: _RW/Clothing/Eyes/Glasses/medglasses.rsi
           state: visor-icon
-  # Orion-End
+  # RW-End
   - type: Construction
     graph: GlassesMedHUD
     node: glassesMed

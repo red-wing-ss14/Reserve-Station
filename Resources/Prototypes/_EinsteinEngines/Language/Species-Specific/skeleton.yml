@@ -4,14 +4,14 @@
   id: Calcic
   isVisibleLanguage: true
   speech:
-    fontId: ComicSansMS # Orion-Edit
-    boldFontId: ComicSansMS # Orion-Edit
+    fontId: ComicSansMS # RW-Edit
+    boldFontId: ComicSansMS # RW-Edit
     color: "#e3dac9"
-  # Orion-Start
+  # RW-Start
   icon:
-    sprite: _Orion/Interface/Chat/language.rsi
+    sprite: _RW/Interface/Chat/language.rsi
     state: calcic
-  # Orion-End
+  # RW-End
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1

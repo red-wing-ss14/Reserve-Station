@@ -33,7 +33,7 @@ public abstract class SharedAnimatedEmotesSystem : EntitySystem
         SubscribeLocalEvent<AnimatedEmotesComponent, BeforeEmoteEvent>(OnBeforeEmote);
     }
 
-    private static void OnGetState(Entity<AnimatedEmotesComponent> ent, ref ComponentGetState args) // Orion-Edit: Static
+    private static void OnGetState(Entity<AnimatedEmotesComponent> ent, ref ComponentGetState args) // RW-Edit: Static
     {
         args.State = new AnimatedEmotesComponentState(ent.Comp.Emote);
     }
@@ -100,7 +100,7 @@ public abstract class SharedAnimatedEmotesSystem : EntitySystem
         if (!TryComp<PendingAnimatedEmoteComponent>(uid, out var pending))
             return;
 
-/* // Orion-Edit: Stop matrix
+/* // RW-Edit: Stop matrix
         var immunity = EnsureComp<ProjectileImmunityComponent>(uid);
         immunity.ExpireTime = pending.ExpireTime;
         immunity.DodgeEffect = FlipDodgeEffect;

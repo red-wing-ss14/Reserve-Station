@@ -37,7 +37,7 @@ public sealed partial class AlertLevelDetail
     [DataField("announcement")] public string Announcement { get; private set; } = string.Empty;
 
     /// <summary>
-    /// Orion | Literally filler, because instructions are automatically taken
+    /// RW | Literally filler, because instructions are automatically taken
     /// </summary>
     [DataField] public string Instruction { get; private set; } = string.Empty;
 
@@ -79,7 +79,7 @@ public sealed partial class AlertLevelDetail
     /// </summary>
     [DataField("shuttleTime")] public TimeSpan ShuttleTime { get; private set; } = TimeSpan.FromMinutes(5);
 
-    // Orion-Start
+    // RW-Start
     /// <summary>
     ///     Alarm sound that the emergency lights will play.
     /// </summary>
@@ -91,7 +91,7 @@ public sealed partial class AlertLevelDetail
     /// </summary>
     [DataField]
     public TimeSpan AlarmInterval = TimeSpan.FromSeconds(30);
-    // Orion-End
+    // RW-End
 
     /// <summary>
     /// Goobstation

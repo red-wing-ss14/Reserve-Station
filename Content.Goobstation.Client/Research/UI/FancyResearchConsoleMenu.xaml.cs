@@ -2,13 +2,13 @@
 
 using System.Linq;
 using System.Numerics;
-using Content.Client._Orion.Research.UI;
+using Content.Client._RW.Research.UI;
 using Content.Client.Research;
 using Content.Client.UserInterface.Controls;
 using Content.Goobstation.Common.Research;
 using Content.Goobstation.Shared.Research;
-using Content.Shared._Orion.Research;
-using Content.Shared._Orion.Research.Prototypes;
+using Content.Shared._RW.Research;
+using Content.Shared._RW.Research.Prototypes;
 using Content.Shared.Access.Systems;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
@@ -30,15 +30,15 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
 {
     public Action<string>? OnTechnologyCardPressed;
     public Action? OnServerButtonPressed;
-    // Orion-Start
+    // RW-Start
     private FancyResearchConsoleLogWindow? _journalWindow;
     private ResearchConsoleBoundInterfaceState? _lastState;
-    // Orion-End
+    // RW-End
 
     [Dependency] private readonly IEntityManager _entity = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly ILocalizationManager _loc = default!; // Orion
+    [Dependency] private readonly ILocalizationManager _loc = default!; // RW
 
     private readonly ResearchSystem _research;
     private readonly SpriteSystem _sprite;
@@ -47,13 +47,13 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
     /// <summary>
     /// Console entity
     /// </summary>
-    private EntityUid Entity; // Orion-Edit: Was public
+    private EntityUid Entity; // RW-Edit: Was public
 
     /// <summary>
     /// Currently selected tech
     /// Exsists for better UI refreshing
     /// </summary>
-    private ProtoId<TechnologyPrototype>? _currentTech; // Orion-Edit
+    private ProtoId<TechnologyPrototype>? _currentTech; // RW-Edit
 
     /// <summary>
     /// All technologies and their availablity
@@ -63,7 +63,7 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
     /// <summary>
     /// Cached research points
     /// </summary>
-//    public int Points = 0; // Orion-Edit
+//    public int Points = 0; // RW-Edit
 
     /// <summary>
     /// Is tech currently being dragged
@@ -74,7 +74,7 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
     /// Global position that all tech relates to.
     /// For dragging mostly
     /// </summary>
-    private Vector2 _position = new(45, 250); // Orion-Edit
+    private Vector2 _position = new(45, 250); // RW-Edit
     private float _zoom = 1f;
     private const float MinZoom = 0.5f;
     private const float MaxZoom = 2f;
@@ -92,7 +92,7 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
         StaticSprite.DisplayRect.Stretch = TextureRect.StretchMode.Scale;
 
         ServerButton.OnPressed += _ => OnServerButtonPressed?.Invoke();
-        JournalButton.OnPressed += _ => ToggleJournalWindow(); // Orion
+        JournalButton.OnPressed += _ => ToggleJournalWindow(); // RW
         DragContainer.OnKeyBindDown += OnKeybindDown;
         DragContainer.OnKeyBindUp += OnKeybindUp;
         RecenterButton.OnPressed += _ => Recenter();
@@ -115,52 +115,52 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
         {
             var proto = _prototype.Index<TechnologyPrototype>(tech.Key);
 
-            var control = new FancyResearchConsoleItem(proto, _sprite, _prototype, tech.Value); // Orion-Edit: _prototype
+            var control = new FancyResearchConsoleItem(proto, _sprite, _prototype, tech.Value); // RW-Edit: _prototype
             DragContainer.AddChild(control);
-            control.SetScale(_zoom); // Orion
+            control.SetScale(_zoom); // RW
 
             // Set position for all tech, relating to _position
             LayoutContainer.SetPosition(control, _position + proto.Position * 150 * _zoom);
             control.SelectAction += SelectTech;
 
-            if (tech.Key == _currentTech) // Orion-Edit
+            if (tech.Key == _currentTech) // RW-Edit
                 SelectTech(proto, tech.Value);
         }
     }
 
-    // Orion-Start
+    // RW-Start
     private bool ShouldShowDisciplineProgress(ResearchConsoleBoundInterfaceState state, TechDisciplinePrototype discipline)
     {
         return state.VisibleTechnologies.Any(technologyId => _prototype.Index(technologyId).Discipline == discipline.ID) ||
                state.AvailableTechnologies.Any(technologyId => _prototype.Index(technologyId).Discipline == discipline.ID) ||
                state.ResearchedTechnologies.Any(technologyId => _prototype.Index(technologyId).Discipline == discipline.ID);
     }
-    // Orion-End
+    // RW-End
 
-    public void UpdateInformationPanel(ResearchConsoleBoundInterfaceState state) // Orion-Edit
+    public void UpdateInformationPanel(ResearchConsoleBoundInterfaceState state) // RW-Edit
     {
-//        Points = points; // Orion-Edit
-        _lastState = state; // Orion
+//        Points = points; // RW-Edit
+        _lastState = state; // RW
 
         var amountMsg = new FormattedMessage();
-        // Orion-Edit-Start
+        // RW-Edit-Start
         var networkId = !string.IsNullOrWhiteSpace(state.NetworkId)
             ? FormattedMessage.EscapeText(state.NetworkId)
             : Loc.GetString("research-machine-common-none");
         amountMsg.AddMarkupOrThrow($"{Loc.GetString("research-console-network-label")} [color=white]{networkId}[/color]");
-        // Orion-Edit-End
+        // RW-Edit-End
 
-        // Orion-Start
+        // RW-Start
         foreach (var balance in state.PointBalances)
         {
             amountMsg.PushNewline();
             var type = GetLocalizedPointType(balance.Type);
             amountMsg.AddMarkupOrThrow($"[color=lightgreen]{type}[/color]: {balance.Amount}");
         }
-        // Orion-End
+        // RW-End
         ResearchAmountLabel.SetMessage(amountMsg);
 
-        UpdateJournalWindow(state); // Orion
+        UpdateJournalWindow(state); // RW
 
         if (!_entity.TryGetComponent(Entity, out TechnologyDatabaseComponent? database))
             return;
@@ -168,14 +168,14 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
         TierDisplayContainer.RemoveAllChildren();
         foreach (var disciplineId in database.SupportedDisciplines)
         {
-            var discipline = _prototype.Index(disciplineId); // Orion-Edit
+            var discipline = _prototype.Index(disciplineId); // RW-Edit
 
-            // Orion-Start
+            // RW-Start
             if (!ShouldShowDisciplineProgress(state, discipline))
                 continue;
-            // Orion-End
+            // RW-End
 
-            var tier = SharedResearchSystemExtensions.GetTierCompletionPercentage(database, discipline, _prototype); // Orion-Edit
+            var tier = SharedResearchSystemExtensions.GetTierCompletionPercentage(database, discipline, _prototype); // RW-Edit
 
             // i'm building the small-ass control here to spare me some mild annoyance in making a new file
             var texture = new TextureRect
@@ -203,7 +203,7 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
         }
     }
 
-    // Orion-Start
+    // RW-Start
     private string GetLocalizedPointType(string type)
     {
         var key = $"research-point-type-{type.ToLowerInvariant()}";
@@ -424,7 +424,7 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
             ? Loc.GetString("research-console-experiment-reward-none")
             : string.Join(", ", parts);
     }
-    // Orion-End
+    // RW-End
 
     #region Drag handle
     protected override void MouseMove(GUIMouseMoveEventArgs args)
@@ -501,35 +501,35 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
     /// </summary>
     /// <param name="proto">Tech proto</param>
     /// <param name="availability">Tech availablity</param>
-    private void SelectTech(TechnologyPrototype proto, ResearchAvailability availability) // Orion-Edit: Was public
+    private void SelectTech(TechnologyPrototype proto, ResearchAvailability availability) // RW-Edit: Was public
     {
         InfoContainer.RemoveAllChildren();
         if (!_player.LocalEntity.HasValue)
             return;
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         _currentTech = proto.ID;
         var lockReason = GetLockReason(proto);
         _entity.TryGetComponent(Entity, out TechnologyDatabaseComponent? database);
         var control = new FancyTechnologyInfoPanel(proto, _accessReader.IsAllowed(_player.LocalEntity.Value, Entity), availability, lockReason, _sprite, _prototype, database);
-        // Orion-Edit-End
+        // RW-Edit-End
         control.BuyAction += args => OnTechnologyCardPressed?.Invoke(args.ID);
         InfoContainer.AddChild(control);
     }
 
-    // Orion-Start
+    // RW-Start
     private ResearchTechnologyLockReason GetLockReason(TechnologyPrototype proto)
     {
         return !_entity.TryGetComponent(Entity, out TechnologyDatabaseComponent? database)
             ? ResearchTechnologyLockReason.None
             : Content.Shared.Research.Systems.SharedResearchSystem.GetTechnologyLockReason(database, proto);
     }
-    // Orion-End
+    // RW-End
 
     /// <summary>
     /// Sets <see cref="_position"/> to its default value
     /// </summary>
-    private void Recenter() // Orion-Edit: Was public
+    private void Recenter() // RW-Edit: Was public
     {
         _position = new(45, 250);
         foreach (var item in DragContainer.Children)
@@ -547,10 +547,10 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
 
         DragContainer.RemoveAllChildren();
         InfoContainer.RemoveAllChildren();
-        // Orion-Start
+        // RW-Start
         _journalWindow?.Close();
         _journalWindow = null;
-        // Orion-End
+        // RW-End
     }
 
     private sealed partial class DisciplineButton(TechDisciplinePrototype proto) : Button

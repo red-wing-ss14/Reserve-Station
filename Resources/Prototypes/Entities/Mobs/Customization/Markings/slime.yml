@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: MIT
 
-# Amour start
+# RW start
 - type: marking
   id: SlimeGradientHeadMale
   bodyPart: Head
@@ -99,14 +99,14 @@
   sprites:
   - sprite: Mobs/Species/Slime/parts.rsi
     state: groin_m
-# Amour end
+# RW end
 
 - type: marking
   id: SlimeGradientLeftArm
   bodyPart: LArm
-  markingCategory: BodyPartGradient # Amour edit
+  markingCategory: BodyPartGradient # RW edit
   speciesRestriction: [SlimePerson]
-  supportsGradient: true # Amour edit
+  supportsGradient: true # RW edit
   sprites:
   - sprite: Mobs/Customization/slime_parts.rsi
     state: gradient_l_arm
@@ -114,9 +114,9 @@
 - type: marking
   id: SlimeGradientRightArm
   bodyPart: RArm
-  markingCategory: BodyPartGradient # Amour edit
+  markingCategory: BodyPartGradient # RW edit
   speciesRestriction: [SlimePerson]
-  supportsGradient: true # Amour edit
+  supportsGradient: true # RW edit
   sprites:
   - sprite: Mobs/Customization/slime_parts.rsi
     state: gradient_r_arm
@@ -124,9 +124,9 @@
 - type: marking
   id: SlimeGradientLeftLeg
   bodyPart: LLeg
-  markingCategory: BodyPartGradient # Amour edit
+  markingCategory: BodyPartGradient # RW edit
   speciesRestriction: [SlimePerson]
-  supportsGradient: true # Amour edit
+  supportsGradient: true # RW edit
   sprites:
   - sprite: Mobs/Customization/slime_parts.rsi
     state: gradient_l_leg
@@ -134,9 +134,9 @@
 - type: marking
   id: SlimeGradientRightLeg
   bodyPart: RLeg
-  markingCategory: BodyPartGradient # Amour edit
+  markingCategory: BodyPartGradient # RW edit
   speciesRestriction: [SlimePerson]
-  supportsGradient: true # Amour edit
+  supportsGradient: true # RW edit
   sprites:
   - sprite: Mobs/Customization/slime_parts.rsi
     state: gradient_r_leg
@@ -144,9 +144,9 @@
 - type: marking
   id: SlimeGradientLeftFoot
   bodyPart: LFoot
-  markingCategory: BodyPartGradient # Amour edit
+  markingCategory: BodyPartGradient # RW edit
   speciesRestriction: [SlimePerson]
-  supportsGradient: true # Amour edit
+  supportsGradient: true # RW edit
   sprites:
   - sprite: Mobs/Customization/slime_parts.rsi
     state: gradient_l_foot
@@ -154,9 +154,9 @@
 - type: marking
   id: SlimeGradientRightFoot
   bodyPart: RFoot
-  markingCategory: BodyPartGradient # Amour edit
+  markingCategory: BodyPartGradient # RW edit
   speciesRestriction: [SlimePerson]
-  supportsGradient: true # Amour edit
+  supportsGradient: true # RW edit
   sprites:
   - sprite: Mobs/Customization/slime_parts.rsi
     state: gradient_r_foot
@@ -164,9 +164,9 @@
 - type: marking
   id: SlimeGradientLeftHand
   bodyPart: LHand
-  markingCategory: BodyPartGradient # Amour edit
+  markingCategory: BodyPartGradient # RW edit
   speciesRestriction: [SlimePerson]
-  supportsGradient: true # Amour edit
+  supportsGradient: true # RW edit
   sprites:
   - sprite: Mobs/Customization/slime_parts.rsi
     state: gradient_l_hand
@@ -174,7 +174,7 @@
 - type: marking
   id: SlimeGradientRightHand
   bodyPart: RHand
-  # Amour start: gradient
+  # RW start: gradient
   markingCategory: BodyPartGradient
   speciesRestriction: [SlimePerson]
   supportsGradient: true
@@ -310,4 +310,4 @@
     state: gradient_l_hand
   - sprite: Mobs/Customization/slime_parts.rsi
     state: gradient_r_hand
-  # Amour end
+  # RW end

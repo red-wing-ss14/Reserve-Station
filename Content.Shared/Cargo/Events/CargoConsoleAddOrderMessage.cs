@@ -10,25 +10,25 @@ namespace Content.Shared.Cargo.Events;
 [Serializable, NetSerializable]
 public sealed class CargoConsoleAddOrderMessage : BoundUserInterfaceMessage
 {
-    // Orion-Start
+    // RW-Start
     public string? Requester;
     public string? DeliveryDestination;
     public string? Note;
     public bool SecuredDelivery;
     public bool PayPrivately;
-    // Orion-End
+    // RW-End
     public string CargoProductId;
     public int Amount;
 
-    public CargoConsoleAddOrderMessage(string? requester, string? deliveryDestination, string? note, string cargoProductId, int amount, bool securedDelivery = false, bool payPrivately = false) // Orion-Edit
+    public CargoConsoleAddOrderMessage(string? requester, string? deliveryDestination, string? note, string cargoProductId, int amount, bool securedDelivery = false, bool payPrivately = false) // RW-Edit
     {
         Requester = requester;
-        // Orion-Start
+        // RW-Start
         DeliveryDestination = deliveryDestination;
         Note = note;
         SecuredDelivery = securedDelivery;
         PayPrivately = payPrivately;
-        // Orion-End
+        // RW-End
         CargoProductId = cargoProductId;
         Amount = amount;
     }

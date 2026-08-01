@@ -8,7 +8,7 @@
   setPreference: false
   objective: roles-antag-syndicate-agent-objective
   requirements:
-  - !type:DiscordLinkRequirement # Amour edit
+  - !type:DiscordLinkRequirement # RW edit
   - !type:SpeciesRequirement
     inverted: true
     species:

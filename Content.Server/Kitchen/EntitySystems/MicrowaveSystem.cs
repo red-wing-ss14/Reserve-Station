@@ -15,7 +15,7 @@ using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Temperature.Components;
 using Content.Server.Temperature.Systems;
-using Content.Shared._Orion.Construction.Events;
+using Content.Shared._RW.Construction.Events;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 using Content.Shared.Chat;
@@ -104,10 +104,10 @@ namespace Content.Server.Kitchen.EntitySystems
             SubscribeLocalEvent<MicrowaveComponent, MicrowaveEjectMessage>(OnEjectMessage);
             SubscribeLocalEvent<MicrowaveComponent, MicrowaveEjectSolidIndexedMessage>(OnEjectIndex);
             SubscribeLocalEvent<MicrowaveComponent, MicrowaveSelectCookTimeMessage>(OnSelectTime);
-            // Orion-Start
+            // RW-Start
             SubscribeLocalEvent<MicrowaveComponent, RefreshPartsEvent>(OnPartsRefresh);
             SubscribeLocalEvent<MicrowaveComponent, UpgradeExamineEvent>(OnUpgradeExamine);
-            // Orion-End
+            // RW-End
 
             SubscribeLocalEvent<ActiveMicrowaveComponent, ComponentStartup>(OnCookStart);
             SubscribeLocalEvent<ActiveMicrowaveComponent, ComponentShutdown>(OnCookStop);
@@ -295,16 +295,16 @@ namespace Content.Server.Kitchen.EntitySystems
 
         private void OnMapInit(Entity<MicrowaveComponent> ent, ref MapInitEvent args)
         {
-            // Orion-Start
+            // RW-Start
             ent.Comp.BaseCookTimeMultiplier = ent.Comp.CookTimeMultiplier;
             ent.Comp.BaseCapacity = ent.Comp.Capacity;
             ent.Comp.BaseExplosionChance = ent.Comp.ExplosionChance;
-            // Orion-End
+            // RW-End
 
             _deviceLink.EnsureSinkPorts(ent, ent.Comp.OnPort);
         }
 
-        // Orion-Start
+        // RW-Start
         private void OnPartsRefresh(EntityUid uid, MicrowaveComponent component, RefreshPartsEvent args)
         {
             var microLaserTier = args.GetPartRating(component.MicroLaserPart);
@@ -332,7 +332,7 @@ namespace Content.Server.Kitchen.EntitySystems
             args.AddPercentageUpgrade("machine-upgrade-capacity", capacityMultiplier);
             args.AddPercentageUpgrade("machine-upgrade-malfunction-reduction", malfunctionReduction);
         }
-        // Orion-End
+        // RW-End
 
         /// <summary>
         /// Kills the user by microwaving their head

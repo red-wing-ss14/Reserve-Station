@@ -504,7 +504,7 @@
       - state: inhand-right
       - state: inhand-right-unlit
         shader: unshaded
-  - type: Construction # Orion
+  - type: Construction # RW
     graph: BagOfHoldingMessenger
     node: bag_of_holding
 

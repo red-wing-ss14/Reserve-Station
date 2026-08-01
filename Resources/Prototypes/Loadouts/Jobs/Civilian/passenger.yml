@@ -22,7 +22,7 @@
 # Face
 - type: loadout
   id: PassengerFace
-#  effects: # Orion-Edit: Removed
+#  effects: # RW-Edit: Removed
 #  - !type:GroupLoadoutEffect
 #    proto: GreyTider
   equipment:
@@ -45,7 +45,7 @@
 # Rainbow
 - type: loadout
   id: RainbowJumpsuit
-#  effects: # Orion-Edit: Removed
+#  effects: # RW-Edit: Removed
 #  - !type:GroupLoadoutEffect
 #    proto: GreyTider
   equipment:
@@ -54,7 +54,7 @@
 # Rainbow Jumpskirt
 - type: loadout
   id: RainbowJumpskirt
-#  effects: # Orion-Edit: Removed
+#  effects: # RW-Edit: Removed
 #  - !type:GroupLoadoutEffect
 #    proto: GreyTider
   equipment:
@@ -74,7 +74,7 @@
   id: Mantle
   equipment:
     neck: ClothingNeckMantle
-#  effects: # Orion-Edit: Removed
+#  effects: # RW-Edit: Removed
 #  - !type:GroupLoadoutEffect
 #    proto: MasterGrey
 

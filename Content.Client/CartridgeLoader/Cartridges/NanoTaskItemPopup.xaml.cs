@@ -18,7 +18,7 @@ public sealed partial class NanoTaskItemPopup : DefaultWindow
     public Action<int, NanoTaskItem>? TaskSaved;
     public Action<int>? TaskDeleted;
     public Action<NanoTaskItem>? TaskCreated;
-//    public Action<NanoTaskItem>? TaskPrinted; // Orion-Edit
+//    public Action<NanoTaskItem>? TaskPrinted; // RW-Edit
 
     private NanoTaskItem MakeItem()
     {
@@ -51,7 +51,7 @@ public sealed partial class NanoTaskItemPopup : DefaultWindow
                 TaskDeleted?.Invoke(id);
             }
         };
-/* // Orion-Edit
+/* // RW-Edit
         PrintButton.OnPressed += _ =>
         {
             TaskPrinted?.Invoke(MakeItem());

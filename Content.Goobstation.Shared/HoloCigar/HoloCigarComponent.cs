@@ -18,7 +18,7 @@ public sealed partial class HoloCigarComponent : Component
     [DataField]
     [ViewVariables]
     public SoundSpecifier Music = new SoundPathSpecifier(
-        "/Audio/_Orion/Jukebox/DavidBowie/DavidBowie_TheManWhoSoldTheWorld.ogg", // Orion-Edit: Changed to David Bowie
+        "/Audio/_RW/Jukebox/DavidBowie/DavidBowie_TheManWhoSoldTheWorld.ogg", // RW-Edit: Changed to David Bowie
         new AudioParams().WithLoop(true).WithVolume(-3f));
 
     [ViewVariables]

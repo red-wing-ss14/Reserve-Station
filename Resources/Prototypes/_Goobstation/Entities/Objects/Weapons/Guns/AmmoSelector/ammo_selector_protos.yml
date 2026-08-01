@@ -7,7 +7,7 @@
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/selectable_ammo.rsi
     state: heavylaser-wide
   protoId: BulletLaserSpread
-  fireCost: 150 # Amour edit: 100 > 150
+  fireCost: 150 # RW edit: 100 > 150
 
 - type: selectableAmmo
   id: BulletLaserSpreadNarrow
@@ -16,7 +16,7 @@
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/selectable_ammo.rsi
     state: heavylaser-narrow
   protoId: BulletLaserSpreadNarrow
-  fireCost: 150 # Amour edit: 100 > 150
+  fireCost: 150 # RW edit: 100 > 150
 
 - type: selectableAmmo
   id: BulletDisablerSmgSpread
@@ -35,7 +35,7 @@
     state: omnilaser
   color: "#00B2FF"
   protoId: BulletDisabler
-  fireCost: 75 # Amour edit: 50 > 75
+  fireCost: 75 # RW edit: 50 > 75
 
 - type: selectableAmmo
   id: BulletEnergyGunLaser
@@ -140,7 +140,7 @@
     state: omnilaser
   color: "#00B2FF"
   protoId: HeavyPulse
-  fireCost: 500 # Amour edit: 250 > 500
+  fireCost: 500 # RW edit: 250 > 500
 
 - type: selectableAmmo
   id: Pulse
@@ -150,7 +150,7 @@
     state: omnilaser
   color: "#00B2FF"
   protoId: Pulse
-  fireCost: 300 # Amour edit: 200 > 300
+  fireCost: 300 # RW edit: 200 > 300
 
 - type: selectableAmmo
   id: LightPulse
@@ -170,4 +170,4 @@
     state: omnilaser-blue
   color: blue
   protoId: StunPulse
-  fireCost: 200 # Amour edit: 20 > 200
+  fireCost: 200 # RW edit: 20 > 200

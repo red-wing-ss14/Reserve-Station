@@ -44,9 +44,9 @@
       - Mouse
       - Monkey
       - Kobold
-      # Orion-Start
+      # RW-Start
       - CorporateCodespeak
-      # Orion-End
+      # RW-End
 
     understood:
       - TauCetiBasic # Common Languages -
@@ -84,9 +84,9 @@
       - Mouse
       - Monkey
       - Kobold
-      # Orion-Start
+      # RW-Start
       - CorporateCodespeak
-      # Orion-End
+      # RW-End
 
 
 

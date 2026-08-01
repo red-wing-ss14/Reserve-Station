@@ -103,7 +103,7 @@
   - type: Stripping
   - type: SolutionScanner
   - type: IgnoreUIRange
-  - type: IgnoreInventoryBlock # Orion
+  - type: IgnoreInventoryBlock # RW
   - type: ShowAntagIcons
   - type: ShowContrabandDetails
   - type: Inventory
@@ -145,11 +145,11 @@
   name: Solar Control Interface
   description: View a Solar Control Interface.
   components:
-  # Orion-Start
+  # RW-Start
   - type: Action
-    icon: { sprite: _Orion/Interface/Actions/consoles.rsi, state: solar }
-    iconOn: { sprite: _Orion/Interface/Actions/consoles.rsi, state: solar }
-  # Orion-End
+    icon: { sprite: _RW/Interface/Actions/consoles.rsi, state: solar }
+    iconOn: { sprite: _RW/Interface/Actions/consoles.rsi, state: solar }
+  # RW-End
   - type: InstantAction
     event: !type:ToggleIntrinsicUIEvent { key: enum.SolarControlConsoleUiKey.Key }
 
@@ -160,8 +160,8 @@
   description: View a Communications Interface.
   components:
   - type: Action
-    icon: { sprite: _Orion/Interface/Actions/consoles.rsi, state: communication } # Orion-Edit
-    iconOn: { sprite: _Orion/Interface/Actions/consoles.rsi, state: communication } # Orion-Edit
+    icon: { sprite: _RW/Interface/Actions/consoles.rsi, state: communication } # RW-Edit
+    iconOn: { sprite: _RW/Interface/Actions/consoles.rsi, state: communication } # RW-Edit
     keywords: [ "AI", "console", "interface" ]
     priority: -4
   - type: InstantAction
@@ -174,8 +174,8 @@
   description: View a Mass Scanner Interface.
   components:
   - type: Action
-    icon: { sprite: _Orion/Interface/Actions/consoles.rsi, state: radar } # Orion-Edit
-    iconOn: { sprite: _Orion/Interface/Actions/consoles.rsi, state: radar } # Orion-Edit
+    icon: { sprite: _RW/Interface/Actions/consoles.rsi, state: radar } # RW-Edit
+    iconOn: { sprite: _RW/Interface/Actions/consoles.rsi, state: radar } # RW-Edit
     keywords: [ "AI", "console", "interface" ]
     priority: -6
   - type: InstantAction
@@ -187,11 +187,11 @@
   name: Cargo Ordering Interface
   description: View a Cargo Ordering Interface.
   components:
-  # Orion-Start
+  # RW-Start
   - type: Action
-    icon: { sprite: _Orion/Interface/Actions/consoles.rsi, state: cargo }
-    iconOn: { sprite: _Orion/Interface/Actions/consoles.rsi, state: cargo }
-  # Orion-End
+    icon: { sprite: _RW/Interface/Actions/consoles.rsi, state: cargo }
+    iconOn: { sprite: _RW/Interface/Actions/consoles.rsi, state: cargo }
+  # RW-End
   - type: InstantAction
     event: !type:ToggleIntrinsicUIEvent { key: enum.CargoConsoleUiKey.Orders }
 
@@ -202,8 +202,8 @@
   description: View a Crew Monitoring Interface.
   components:
   - type: Action
-    icon: { sprite: _Orion/Interface/Actions/consoles.rsi, state: crew } # Orion-Edit
-    iconOn: { sprite: _Orion/Interface/Actions/consoles.rsi, state: crew } # Orion-Edit
+    icon: { sprite: _RW/Interface/Actions/consoles.rsi, state: crew } # RW-Edit
+    iconOn: { sprite: _RW/Interface/Actions/consoles.rsi, state: crew } # RW-Edit
     keywords: [ "AI", "console", "interface" ]
     priority: -8
   - type: InstantAction
@@ -216,8 +216,8 @@
   description: View a Station Records Interface.
   components:
   - type: Action
-    icon: { sprite: _Orion/Interface/Actions/consoles.rsi, state: records } # Orion-Edit
-    iconOn: { sprite: _Orion/Interface/Actions/consoles.rsi, state: records } # Orion-Edit
+    icon: { sprite: _RW/Interface/Actions/consoles.rsi, state: records } # RW-Edit
+    iconOn: { sprite: _RW/Interface/Actions/consoles.rsi, state: records } # RW-Edit
     keywords: [ "AI", "console", "interface" ]
     priority: -7
   - type: InstantAction

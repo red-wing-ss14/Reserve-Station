@@ -210,7 +210,7 @@
       path: /Audio/Weapons/Guns/Hits/bullet_hit.ogg
   - type: TimedDespawn
     lifetime: 10
-  - type: Tracer # Orion
+  - type: Tracer # RW
     color: "#FFFFFFFF"
     length: 3
 
@@ -260,7 +260,7 @@
     damage:
       types:
         Blunt: 1
-  - type: Tracer # Orion
+  - type: Tracer # RW
     color: "#CCCCCCFF"
     length: 3
 
@@ -282,7 +282,7 @@
     energy: 7.0
   - type: IgniteOnCollide
     fireStacks: 0.5
-  - type: Tracer # Orion
+  - type: Tracer # RW
     color: "#D1B479FF"
     length: 3
 
@@ -301,7 +301,7 @@
       types:
         Piercing: 11 # 20% decrease
     ignoreResistances: true
-  - type: Tracer # Orion
+  - type: Tracer # RW
     color: "#71C978FF"
     length: 3
 
@@ -324,7 +324,7 @@
     damage:
       types:
         Radiation: 11
-  - type: Tracer # Orion
+  - type: Tracer # RW
     color: "#71C978FF"
     length: 3
 
@@ -462,7 +462,7 @@
         hard: False
   - type: Ammo
   - type: StaminaDamageOnCollide
-    damage: 33 # Goob edit # Orion-Edit: 20 > 33
+    damage: 33 # Goob edit # RW-Edit: 20 > 33
   - type: Projectile
     impactEffect: BulletImpactEffectDisabler
     damage:
@@ -1124,7 +1124,7 @@
   - type: Explosive
     explosionType: Default
     totalIntensity: 150 # a ~2 tile radius
-    intensitySlope: 10 # Orion-Edit: 5 > 10
+    intensitySlope: 10 # RW-Edit: 5 > 10
     maxIntensity: 10
     canCreateVacuum: false
   - type: SmartLinkBlacklist  # Goobstation
@@ -1171,7 +1171,7 @@
   - type: ProjectileGrenade
     triggerKey: trigger
     fillPrototype: PelletClusterLessLethal
-    capacity: 50 # Orion-Edit: 30 > 50
+    capacity: 50 # RW-Edit: 30 > 50
   - type: SmartLinkBlacklist  # Goobstation
 
 - type: entity
@@ -1428,7 +1428,7 @@
         hard: False
   - type: Ammo
   - type: StaminaDamageOnCollide
-    damage: 15 # Goob edit # Orion-Edit: 12 > 15
+    damage: 15 # Goob edit # RW-Edit: 12 > 15
   - type: Projectile
     impactEffect: BulletImpactEffectDisabler
     damage:

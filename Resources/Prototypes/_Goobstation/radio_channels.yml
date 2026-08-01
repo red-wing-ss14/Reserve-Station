@@ -3,7 +3,7 @@
 - type: radioChannel
   id: Future
   name: chat-radio-future
-  keycode: 'й' # Orion-Edit
+  keycode: 'й' # RW-Edit
   frequency: 9999
   color: "#91E8E5"
   longRange: true
@@ -11,7 +11,7 @@
 - type: radioChannel
   id: RadioShow
   name: chat-radio-radioshow
-  keycode: 'л' # Orion-Edit
+  keycode: 'л' # RW-Edit
   frequency: 145
   color: "#bc1ac4"
   longRange: true

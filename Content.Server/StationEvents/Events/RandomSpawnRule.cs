@@ -8,12 +8,12 @@ namespace Content.Server.StationEvents.Events;
 
 public sealed class RandomSpawnRule : StationEventSystem<RandomSpawnRuleComponent>
 {
-    [Dependency] private readonly IRobustRandom _random = default!; // Orion
+    [Dependency] private readonly IRobustRandom _random = default!; // RW
     protected override void Started(EntityUid uid, RandomSpawnRuleComponent comp, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
         base.Started(uid, comp, gameRule, args);
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         int spawnCount = _random.Next(comp.MinCount, comp.MaxCount + 1);
 
         for (int i = 0; i < spawnCount; i++)
@@ -23,7 +23,7 @@ public sealed class RandomSpawnRule : StationEventSystem<RandomSpawnRuleComponen
                 Sawmill.Info($"Spawning {comp.Prototype} at {coords}");
                 Spawn(comp.Prototype, coords);
             }
-        // Orion-Edit-End
+        // RW-Edit-End
         }
     }
 }

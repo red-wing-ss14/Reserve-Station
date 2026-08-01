@@ -48,7 +48,7 @@ namespace Content.Goobstation.Client.Chemistry.UI
                          .Select(item => new EnergyReagentCardControl(item)))
             {
                 card.OnPressed += OnDispenseReagentButtonPressed;
-                card.UpdateCostLabel(_selectedAmount); // Orion
+                card.UpdateCostLabel(_selectedAmount); // RW
                 ReagentList.Children.Add(card);
             }
             _cardsNeedUpdate = true;
@@ -89,14 +89,14 @@ namespace Content.Goobstation.Client.Chemistry.UI
                 ? _batteryCharge / _batteryMaxCharge * 100
                 : 0;
 
-            // Orion-Start
+            // RW-Start
             BatteryStatusLabel.Text = Loc.GetString("energy-reagent-dispenser-window-battery-label",
                 ("charge", MathF.Round(_batteryCharge, 0)),
                 ("max", MathF.Round(_batteryMaxCharge, 0)),
                 ("percent", MathF.Round(batteryPercent, 0)));
-            // Orion-End
+            // RW-End
 
-//            BatteryStatusLabel.Text = $"{_batteryCharge,3:F0}/{_batteryMaxCharge,3:F0} ({batteryPercent,3:F0}%)"; // Orion-Edit
+//            BatteryStatusLabel.Text = $"{_batteryCharge,3:F0}/{_batteryMaxCharge,3:F0} ({batteryPercent,3:F0}%)"; // RW-Edit
             BatteryStatusLabel.StyleClasses.Clear();
             BatteryStatusLabel.StyleClasses.Add(batteryPercent switch
             {
@@ -181,7 +181,7 @@ namespace Content.Goobstation.Client.Chemistry.UI
                     continue;
 
                 var totalCost = card.PowerCostPerUnit * _selectedAmount;
-                card.UpdateCostLabel(_selectedAmount); // Orion
+                card.UpdateCostLabel(_selectedAmount); // RW
                 card.SetDisabled(totalCost > _batteryCharge, "Insufficient energy");
             }
         }

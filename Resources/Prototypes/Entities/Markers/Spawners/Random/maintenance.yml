@@ -86,7 +86,7 @@
         - id: ClothingOuterFlannelGreen
       - id: ClothingOuterVestHazard
       - id: ClothingShoesBootsJack
-      - id: ClothingShoesBootsJackToeless # Orion
+      - id: ClothingShoesBootsJackToeless # RW
       - id: ClothingShoesHighheelBoots
       - id: ClothingShoesBootsLaceup
       - id: ClothingShoesLeather
@@ -315,7 +315,7 @@
       - id: ResearchDisk5000
       - id: PetCarrier
       - id: DrinkMopwataBottleRandom
-      - id: ModsuitCoreStandard # Orion
+      - id: ModsuitCoreStandard # RW
       - id: LidSalami
         weight: 0.05
 

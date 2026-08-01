@@ -279,7 +279,7 @@ public abstract class SharedFlightSystem : EntitySystem
     private void OnMobStateChangedEvent(EntityUid uid, FlightComponent component, MobStateChangedEvent args)
     {
         if (!component.On
-            || args.NewMobState is MobState.SoftCritical or MobState.HardCritical or MobState.Dead) // Orion-Edit
+            || args.NewMobState is MobState.SoftCritical or MobState.HardCritical or MobState.Dead) // RW-Edit
             return;
 
         ToggleActive(args.Target, false, component, gracefulStop: false);

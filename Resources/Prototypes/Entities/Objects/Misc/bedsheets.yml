@@ -13,7 +13,7 @@
   components:
   - type: Sprite
     sprite: Objects/Misc/bedsheets.rsi
-    offset: 0, 0.09 # Orion
+    offset: 0, 0.09 # RW
     noRot: true
   - type: Item
     size: Small

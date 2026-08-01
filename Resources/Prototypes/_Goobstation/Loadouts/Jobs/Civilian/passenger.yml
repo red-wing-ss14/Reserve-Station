@@ -11,7 +11,7 @@
 # Quarterzip
 - type: loadout
   id: QuarterzipJumpsuit
-#  effects: # Orion-Edit: Removed
+#  effects: # RW-Edit: Removed
 #  - !type:GroupLoadoutEffect
 #    proto: SophisticatedTider
   equipment:

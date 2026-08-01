@@ -262,7 +262,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.MoveStoredItem);
             AddButton(ContentKeyFunctions.RotateStoredItem);
             AddButton(ContentKeyFunctions.SaveItemLocation);
-            // Orion-Start
+            // RW-Start
             AddButton(ContentKeyFunctions.TogglePosing);
             AddButton(ContentKeyFunctions.PosingOffsetLeft);
             AddButton(ContentKeyFunctions.PosingOffsetRight);
@@ -270,7 +270,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.PosingOffsetDown);
             AddButton(ContentKeyFunctions.PosingRotateNegative);
             AddButton(ContentKeyFunctions.PosingRotatePositive);
-            // Orion-End
+            // RW-End
 
             AddHeader("ui-options-header-interaction-adv");
             AddButton(ContentKeyFunctions.SmartEquipBackpack);

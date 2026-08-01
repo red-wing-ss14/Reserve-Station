@@ -64,5 +64,5 @@
     size: Ginormous
   - type: Unremoveable
     deleteOnDrop: true
-  - type: GlobalAntagonist # Orion
+  - type: GlobalAntagonist # RW
     antagonistPrototype: globalAntagonistBlob

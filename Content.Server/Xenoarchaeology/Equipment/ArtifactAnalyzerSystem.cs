@@ -15,9 +15,9 @@ public sealed class ArtifactAnalyzerSystem : SharedArtifactAnalyzerSystem
     [Dependency] private readonly ResearchSystem _research = default!;
     [Dependency] private readonly XenoArtifactSystem _xenoArtifact = default!;
 
-    // Orion-Start
+    // RW-Start
     private const int ArtifactNodeExperimentalReward = 180;
-    // Orion-End
+    // RW-End
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -48,7 +48,7 @@ public sealed class ArtifactAnalyzerSystem : SharedArtifactAnalyzerSystem
             return;
 
         _research.ModifyServerPoints(server.Value, sumResearch, serverComponent);
-        _research.ModifyServerPoints(server.Value, "Experimental", ArtifactNodeExperimentalReward, serverComponent); // Orion
+        _research.ModifyServerPoints(server.Value, "Experimental", ArtifactNodeExperimentalReward, serverComponent); // RW
         _audio.PlayPvs(ent.Comp.ExtractSound, artifact.Value);
         _popup.PopupEntity(Loc.GetString("analyzer-artifact-extract-popup"), artifact.Value, PopupType.Large);
     }

@@ -251,12 +251,12 @@
   - type: ContainerFill
     containers:
       board: [ WallmountSubstationElectronics ]
-      servo: [ MicroServoStockPart ] # Orion-Edit: Replaced manipulator
+      servo: [ MicroServoStockPart ] # RW-Edit: Replaced manipulator
       powercell: [ PowerCellSmall ]
   - type: ContainerContainer
     containers:
       board: !type:Container
-      servo: !type:Container # Orion-Edit: Replaced manipulator
+      servo: !type:Container # RW-Edit: Replaced manipulator
       powercell: !type:Container
 
       # Construction Frame

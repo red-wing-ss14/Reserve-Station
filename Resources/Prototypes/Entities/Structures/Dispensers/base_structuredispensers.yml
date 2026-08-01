@@ -9,7 +9,7 @@
   components:
   - type: Transform
     anchored: true
-#    noRot: true # Orion-Edit
+#    noRot: true # RW-Edit
   - type: Clickable
   - type: InteractionOutline
   - type: Physics
@@ -58,7 +58,7 @@
       - !type:PlaySoundBehavior
         sound:
           collection: MetalGlassBreak
-#  - type: Storage # Orion-Edit: Removed
+#  - type: Storage # RW-Edit: Removed
 #    maxItemSize: Normal
 #    grid:
 #    - 0,0,19,5
@@ -69,8 +69,8 @@
 #        components:
 #        - FitsInDispenser
 #      priority: 9
-#  - type: ItemSlots # Orion-Edit: Removed
-#  - type: ContainerContainer # Orion-Edit: Removed
+#  - type: ItemSlots # RW-Edit: Removed
+#  - type: ContainerContainer # RW-Edit: Removed
 #    containers:
 #      machine_board: !type:Container
 #      machine_parts: !type:Container

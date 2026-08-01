@@ -7,13 +7,13 @@
   playTimeTracker: JobERTLeader
   setPreference: false
   startingGear: ERTLeaderGearEVA
-  icon: "JobIconERTLeader" # Orion-Edit: Custom icon
+  icon: "JobIconERTLeader" # RW-Edit: Custom icon
   supervisors: job-supervisors-centcom
   canBeAntag: false
-  # Orion-Start
+  # RW-Start
   salary: 200
   payrollFromStationBudget: false
-  # Orion-End
+  # RW-End
   accessGroups:
   - AllAccess
   access:
@@ -116,13 +116,13 @@
   playTimeTracker: JobERTChaplain
   setPreference: false
   startingGear: ERTChaplainGear
-  icon: "JobIconERTChaplain" # Orion-Edit: Custom icon
+  icon: "JobIconERTChaplain" # RW-Edit: Custom icon
   supervisors: job-supervisors-centcom
   canBeAntag: false
-  # Orion-Start
+  # RW-Start
   salary: 180
   payrollFromStationBudget: false
-  # Orion-End
+  # RW-End
   accessGroups:
   - AllAccess
   access:
@@ -206,13 +206,13 @@
   playTimeTracker: JobERTEngineer
   setPreference: false
   startingGear: ERTEngineerGearEVA
-  icon: "JobIconERTEngineer" # Orion-Edit: Custom icon
+  icon: "JobIconERTEngineer" # RW-Edit: Custom icon
   supervisors: job-supervisors-centcom
   canBeAntag: false
-  # Orion-Start
+  # RW-Start
   salary: 180
   payrollFromStationBudget: false
-  # Orion-End
+  # RW-End
   accessGroups:
   - AllAccess
   access:
@@ -309,13 +309,13 @@
   playTimeTracker: JobERTSecurity
   setPreference: false
   startingGear: ERTSecurityGearEVA
-  icon: "JobIconERTOfficer" # Orion-Edit: Custom icon
+  icon: "JobIconERTOfficer" # RW-Edit: Custom icon
   supervisors: job-supervisors-centcom
   canBeAntag: false
-  # Orion-Start
+  # RW-Start
   salary: 180
   payrollFromStationBudget: false
-  # Orion-End
+  # RW-End
   accessGroups:
   - AllAccess
   access:
@@ -504,13 +504,13 @@
   playTimeTracker: JobERTMedical
   setPreference: false
   startingGear: ERTMedicalGearEVA
-  icon: "JobIconERTMedical" # Orion-Edit: Custom icon
+  icon: "JobIconERTMedical" # RW-Edit: Custom icon
   supervisors: job-supervisors-centcom
   canBeAntag: false
-  # Orion-Start
+  # RW-Start
   salary: 180
   payrollFromStationBudget: false
-  # Orion-End
+  # RW-End
   accessGroups:
   - AllAccess
   access:
@@ -625,13 +625,13 @@
   playTimeTracker: JobERTJanitor
   setPreference: false
   startingGear: ERTJanitorGearEVA
-  icon: "JobIconERTJanitor" # Orion-Edit: Custom icon
+  icon: "JobIconERTJanitor" # RW-Edit: Custom icon
   supervisors: job-supervisors-centcom
   canBeAntag: false
-  # Orion-Start
+  # RW-Start
   salary: 180
   payrollFromStationBudget: false
-  # Orion-End
+  # RW-End
   accessGroups:
   - AllAccess
   access:

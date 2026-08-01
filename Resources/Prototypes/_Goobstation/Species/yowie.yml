@@ -5,10 +5,10 @@
   name: species-name-yowie
   roundStart: true
   prototype: MobYowie
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
   bodyTypes:
   - YowieNormal
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
   markingLimits: MobYowieMarkingLimits
   dollPrototype: MobYowieDummy
   skinColoration: TintedHues
@@ -16,9 +16,9 @@
   naming: First
   maleFirstNames: NamesYowieMale
   femaleFirstNames: NamesYowieFemale
-  # Orion-Start
+  # RW-Start
   category: Unusual
-  description: "/ServerInfo/_Orion/SpeciesDescriptions/Yowie.xml"
+  description: "/ServerInfo/_RW/SpeciesDescriptions/Yowie.xml"
   pros:
   - species-yowie-pro-poison-immune
   - species-yowie-pro-radiation-resist
@@ -31,7 +31,7 @@
   - species-yowie-special-cannot-be-carried
   cons:
   - species-yowie-con-no-outer-clothing
-  # Orion-End
+  # RW-End
   # begin Goobstation: port EE height/width sliders
   # yowie were like. 1.3x scale before, which is comical
   minHeight: 1.10
@@ -48,11 +48,11 @@
 # be defined as a 'custom base layer'
 # in either the mob's starting marking prototype,
 # or it has to be added in C#.
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
 - type: bodyType
   id: YowieNormal
   name: body-normal
-# Amour port: WD Slim body types END
+# RW port: WD Slim body types END
   sprites:
     Head: MobYowieHead
     Face: MobHumanoidAnyMarking

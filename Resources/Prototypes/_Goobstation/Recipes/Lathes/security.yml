@@ -697,7 +697,7 @@
     Plasma: 1000
     BSCrystal: 100
 
-#- type: latheRecipe # Orion-Edit
+#- type: latheRecipe # RW-Edit
 #  id: ClothingEyesGlassesSecurityContraDetect
 #  result: ClothingEyesGlassesSecurityContraDetect
 #  completetime: 2

@@ -152,14 +152,14 @@
         sprite: Mobs/Customization/masking_helpers.rsi
         state: full
         visible: false
-#      - map: ["socks"] # Orion-Edit: Removed
-#      - map: ["underpants"] # Orion-Edit: Removed
-#      - map: ["undershirt"] # Orion-Edit: Removed
-      # Orion-Edit-Start: Moved under jumpsuit
+#      - map: ["socks"] # RW-Edit: Removed
+#      - map: ["underpants"] # RW-Edit: Removed
+#      - map: ["undershirt"] # RW-Edit: Removed
+      # RW-Edit-Start: Moved under jumpsuit
       - map: ["enum.HumanoidVisualLayers.LFoot"]
       - map: ["enum.HumanoidVisualLayers.RFoot"]
-      # Orion-Edit-End
-      - map: [ "socks" ] # Orion
+      # RW-Edit-End
+      - map: [ "socks" ] # RW
       - map: ["jumpsuit"]
       - map: ["enum.HumanoidVisualLayers.LHand"]
       - map: ["enum.HumanoidVisualLayers.RHand"]
@@ -170,9 +170,9 @@
         visible: false
       - map: ["id"]
       - map: [ "gloves" ]
-      - map: [ "wrists" ] # Orion
+      - map: [ "wrists" ] # RW
       - map: [ "shoes" ]
-      - map: [ "earsright" ] # Orion
+      - map: [ "earsright" ] # RW
       - map: [ "ears" ]
       - map: ["innerBelt"]
       - map: ["innerNeck"]
@@ -261,14 +261,14 @@
           sprite: Mobs/Customization/masking_helpers.rsi
           state: full
           visible: false
-#        - map: ["socks"] # Orion-Edit: Removed
-#        - map: ["underpants"] # Orion-Edit: Removed
-#        - map: ["undershirt"] # Orion-Edit: Removed
-        # Orion-Edit-Start: Moved under jumpsuit
+#        - map: ["socks"] # RW-Edit: Removed
+#        - map: ["underpants"] # RW-Edit: Removed
+#        - map: ["undershirt"] # RW-Edit: Removed
+        # RW-Edit-Start: Moved under jumpsuit
         - map: ["enum.HumanoidVisualLayers.LFoot"]
         - map: ["enum.HumanoidVisualLayers.RFoot"]
-        # Orion-Edit-End
-        - map: [ "socks" ] # Orion
+        # RW-Edit-End
+        - map: [ "socks" ] # RW
         - map: ["jumpsuit"]
         - map: ["enum.HumanoidVisualLayers.LHand"]
         - map: ["enum.HumanoidVisualLayers.RHand"]
@@ -279,9 +279,9 @@
           visible: false
         - map: ["id"]
         - map: ["gloves"]
-        - map: [ "wrists" ] # Orion
+        - map: [ "wrists" ] # RW
         - map: [ "shoes" ]
-        - map: [ "earsright" ] # Orion
+        - map: [ "earsright" ] # RW
         - map: ["ears"]
         - map: ["innerBelt"]
         - map: ["innerNeck"]

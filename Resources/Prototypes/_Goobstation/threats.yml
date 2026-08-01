@@ -9,13 +9,13 @@
     #TODO When Slasher is ready Slasher: 0.6 # Goobstation
     Blob: 0.5
     Dragon: 0.3
-    # Amour edit - SlaughterDemon: 0.3
+    # RW edit - SlaughterDemon: 0.3
     LaughterDemon: 0.3
     WizardMidRoundThreat: 0.1
 
 # Threats
 
-# Amour edit
+# RW edit
 #- type: ninjaHackingThreat
 #  id: SlaughterDemon
 #  announcement: terror-slaughter-demon

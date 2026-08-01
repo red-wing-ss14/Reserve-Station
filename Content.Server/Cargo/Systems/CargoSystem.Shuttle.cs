@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
-using Content.Server._Orion.Economy.Components;
+using Content.Server._RW.Economy.Components;
 using Content.Server.Cargo.Components;
 using Content.Shared.Cargo;
 using Content.Shared.Cargo.BUI;
@@ -45,19 +45,19 @@ public sealed partial class CargoSystem
             return;
         }
 
-        // Orion-Start
+        // RW-Start
         var station = _station.GetOwningStation(uid);
         if (station == null)
         {
             _uiSystem.SetUiState(uid, CargoPalletConsoleUiKey.Sale, new CargoPalletConsoleInterfaceState(0, 0, false));
             return;
         }
-        // Orion-End
+        // RW-End
 
-        GetPalletGoods(gridUid, station.Value, out var toSell, out var goods); // Orion-Edit
+        GetPalletGoods(gridUid, station.Value, out var toSell, out var goods); // RW-Edit
         var totalAmount = goods.Sum(t => t.Item3);
 
-        // Orion-Start
+        // RW-Start
         var activeChanges = new List<CargoPalletMarketChangeData>();
         var recentChanges = new List<CargoPalletMarketChangeData>();
 
@@ -73,11 +73,11 @@ public sealed partial class CargoSystem
                 recentChanges.Add(new CargoPalletMarketChangeData(change.Material, change.Multiplier, change.Sequence));
             }
         }
-        // Orion-End
+        // RW-End
 
         _uiSystem.SetUiState(uid,
             CargoPalletConsoleUiKey.Sale,
-            new CargoPalletConsoleInterfaceState((int) totalAmount, toSell.Count, true, activeChanges, recentChanges)); // Orion-Edit
+            new CargoPalletConsoleInterfaceState((int) totalAmount, toSell.Count, true, activeChanges, recentChanges)); // RW-Edit
     }
 
     private void OnPalletUIOpen(EntityUid uid, CargoPalletConsoleComponent component, BoundUIOpenedEvent args)
@@ -165,7 +165,7 @@ public sealed partial class CargoSystem
 
     private bool SellPallets(EntityUid gridUid, EntityUid station, out HashSet<(EntityUid, OverrideSellComponent?, double)> goods)
     {
-        GetPalletGoods(gridUid, station, out var toSell, out goods); // Orion-Edit
+        GetPalletGoods(gridUid, station, out var toSell, out goods); // RW-Edit
 
         if (toSell.Count == 0)
             return false;
@@ -181,7 +181,7 @@ public sealed partial class CargoSystem
         return true;
     }
 
-    private void GetPalletGoods(EntityUid gridUid, EntityUid station, out HashSet<EntityUid> toSell,  out HashSet<(EntityUid, OverrideSellComponent?, double)> goods) // Orion-Edit
+    private void GetPalletGoods(EntityUid gridUid, EntityUid station, out HashSet<EntityUid> toSell,  out HashSet<(EntityUid, OverrideSellComponent?, double)> goods) // RW-Edit
     {
         goods = new HashSet<(EntityUid, OverrideSellComponent?, double)>();
         toSell = new HashSet<EntityUid>();
@@ -212,8 +212,8 @@ public sealed partial class CargoSystem
                 if (_blacklistQuery.HasComponent(ent))
                     continue;
 
-                var basePrice = _pricing.GetPrice(ent); // Orion
-                var price = _market.AdjustSellPrice(station, ent, basePrice); // Orion-Edit
+                var basePrice = _pricing.GetPrice(ent); // RW
+                var price = _market.AdjustSellPrice(station, ent, basePrice); // RW-Edit
                 if (price == 0)
                     continue;
                 toSell.Add(ent);

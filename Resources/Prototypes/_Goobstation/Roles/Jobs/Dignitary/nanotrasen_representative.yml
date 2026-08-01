@@ -6,7 +6,7 @@
   description: job-description-ntr
   playTimeTracker: JobNanotrasenRepresentative
   requirements:
-    - !type:AnyOfRequirement # Amour edit - Discord OR playtime
+    - !type:AnyOfRequirement # RW edit - Discord OR playtime
       requirements:
         - !type:DiscordLinkRequirement
         - !type:DepartmentTimeRequirement
@@ -14,7 +14,7 @@
           time: 7200 #2 hours
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 90000 #25 hours # Amour-Edit
+      time: 90000 #25 hours # RW-Edit
     - !type:AgeRequirement
       requiredAge: 21
   weight: 20
@@ -25,16 +25,16 @@
   supervisors: job-supervisors-centcom
   canBeAntag: false
   guides:
-  # Amour-Edit-Start
+  # RW-Edit-Start
   # - SpaceLaw # Disabled until guide is created
   # - SOP # Disabled until guide is created
   # - SOP-Alerts # Disabled until guide is created
-  # Amour-Edit-End
+  # RW-Edit-End
   goobcoins: 40
-  # Orion-Start
+  # RW-Start
   salary: 120
   payrollDepartmentAccount: Command
-  # Orion-End
+  # RW-End
   access:
   - Security
   - Brig
@@ -60,13 +60,13 @@
       - type: CommandStaff
       - type: Condemned
         soulOwnedNotDevil: true
-      # Orion-Start
+      # RW-Start
       - type: AdditionalLanguage
         speaks:
         - CorporateCodespeak
         understands:
         - CorporateCodespeak
-      # Orion-End
+      # RW-End
 
 - type: startingGear
   id: NanotrasenRepresentativeGear

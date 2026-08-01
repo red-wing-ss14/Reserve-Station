@@ -12,7 +12,7 @@
   id: StandardNanotrasenStation
   parent:
     - BaseStation
-    - BaseStationGoal # Orion
+    - BaseStationGoal # RW
     - BaseStationNews
     - BaseStationCargo
     - BaseStationJobsSpawning

@@ -9,10 +9,10 @@
   icon: "JobIconMusician"
   supervisors: job-supervisors-hire
   goobcoins: 10 #Goob content
-  # Orion-Start
+  # RW-Start
   salary: 35
   payrollDepartmentAccount: Service
-  # Orion-End
+  # RW-End
   access:
   - Maintenance # TODO Remove maint access for all gimmick jobs once access work is completed
   - Theatre

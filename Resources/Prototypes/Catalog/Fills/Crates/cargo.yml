@@ -197,7 +197,7 @@
     - id: PlushieGhostRevenant
     - id: PlushiePenguin
       prob: 0.01
-#    - id: PlushieHuman # Orion-Edit: NC license sprites
+#    - id: PlushieHuman # RW-Edit: NC license sprites
 #      prob: 0.01
 #      orGroup: Plushies
     - id: PlushieLizard
@@ -206,7 +206,7 @@
     - id: PlushieSharkBlue
     - id: PlushieMoth
       prob: 0.01
-#    - id: PlushieArachind # Orion-Edit: NC license sprites
+#    - id: PlushieArachind # RW-Edit: NC license sprites
 #      prob: 0.01
 #      orGroup: Plushies
     - id: PlushieLizardJobMultiweh # the exceedingly rare multiweh!

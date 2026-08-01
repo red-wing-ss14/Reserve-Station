@@ -21,7 +21,7 @@ public sealed class RoundEndSummaryUIController : UIController,
 
     private void ToggleScoreboardWindow(ICommonSession? session = null)
     {
-        // Orion-Edit-Start
+        // RW-Edit-Start
         if (_window == null)
             return;
 
@@ -29,7 +29,7 @@ public sealed class RoundEndSummaryUIController : UIController,
             _window.Close();
         else
             _window.Open();
-        // Orion-Edit-End
+        // RW-Edit-End
     }
 
     public void OpenRoundEndSummaryWindow(RoundEndMessageEvent message)

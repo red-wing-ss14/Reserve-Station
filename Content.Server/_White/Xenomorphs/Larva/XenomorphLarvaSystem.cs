@@ -26,8 +26,8 @@ public sealed class XenomorphLarvaSystem : EntitySystem
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly JitteringSystem _jitter = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!; // Orion
-    [Dependency] private readonly DeathgaspSystem _deathgasp = default!; // Orion
+    [Dependency] private readonly MobStateSystem _mobState = default!; // RW
+    [Dependency] private readonly DeathgaspSystem _deathgasp = default!; // RW
     [Dependency] private readonly DamageableSystem _damageableSystem = default!; // Omu
 
     public override void Initialize()
@@ -90,12 +90,12 @@ public sealed class XenomorphLarvaSystem : EntitySystem
         damage.DamageDict.Add("Piercing", 80);
         _damageableSystem.TryChangeDamage(uid: victim, damage: damage, ignoreResistances: true, interruptsDoAfters: false, targetPart: TargetBodyPart.Chest);
 
-        // Orion-Start: Be sure they die!
+        // RW-Start: Be sure they die!
         if (_mobState.IsDead(victim))
             return;
 
         _mobState.ChangeMobState(victim, MobState.Dead);
         _deathgasp.Deathgasp(victim);
-        // Orion-End
+        // RW-End
     }
 }

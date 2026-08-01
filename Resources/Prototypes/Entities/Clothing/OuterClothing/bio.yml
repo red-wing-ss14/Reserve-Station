@@ -28,7 +28,7 @@
     sprite: Clothing/OuterClothing/Bio/general.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Bio/general.rsi
-    clothingType: suit # Amour port: WD Slim body types
+    clothingType: suit # RW port: WD Slim body types
   - type: Armor
     coverage:
     - Chest

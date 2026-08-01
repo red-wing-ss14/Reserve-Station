@@ -27,7 +27,7 @@
   - category: Breathing # Vox gang not calling this oxygen
   - category: Pressure
   - alertType: Bleed
-  - category: Pain # Orion: Woundmed Pain Indicator
+  - category: Pain # RW: Woundmed Pain Indicator
   - category: Temperature
   - category: Hunger
   - category: Thirst

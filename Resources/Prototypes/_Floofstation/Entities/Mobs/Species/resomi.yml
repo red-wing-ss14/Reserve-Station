@@ -132,7 +132,7 @@
           32:
             sprite: _Floofstation/Mobs/Species/Resomi/displacement.rsi
             state: belt
-      # Orion-Start
+      # RW-Start
       socks:
         sizeMaps:
           32:
@@ -148,7 +148,7 @@
           32:
             sprite: _Floofstation/Mobs/Species/Resomi/displacement.rsi
             state: hands
-      # Orion-End
+      # RW-End
     femaleDisplacements: # Goobstation - splitting up the genders broke displacements, apparently it won't just apply the same displacement to both genders :|
       jumpsuit:
         sizeMaps:
@@ -210,7 +210,7 @@
           32:
             sprite: _Floofstation/Mobs/Species/Resomi/displacement.rsi
             state: belt
-      # Orion-Start
+      # RW-Start
       socks:
         sizeMaps:
           32:
@@ -226,7 +226,7 @@
           32:
             sprite: _Floofstation/Mobs/Species/Resomi/displacement.rsi
             state: hands
-      # Orion-End
+      # RW-End
   - type: Bloodstream # Goobstation - lore stuff
     bloodReferenceSolution:
       reagents:
@@ -281,7 +281,7 @@
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
     - map: [ "enum.HumanoidVisualLayers.LFoot" ]
     - map: [ "enum.HumanoidVisualLayers.RFoot" ]
-    - map: [ "socks" ] # Orion
+    - map: [ "socks" ] # RW
     - map: [ "enum.HumanoidVisualLayers.LHand" ]  # Hands below jumpsuit since its bigger-than-usual sprite and this allows jumpsuits to have better-looking sleeves
     - map: [ "enum.HumanoidVisualLayers.RHand" ]
     - map: [ "enum.HumanoidVisualLayers.Tail" ]   # Tail changed to be below outerclothing and above limbs
@@ -292,9 +292,9 @@
       state: body-overlay-2-resomi
       visible: false
     - map: [ "gloves" ]
-    - map: [ "wrists" ] # Orion
+    - map: [ "wrists" ] # RW
     - map: [ "shoes" ]
-    - map: [ "earsright" ] # Orion
+    - map: [ "earsright" ] # RW
     - map: [ "ears" ]
     - map: [ "outerClothing" ]
     - map: [ "belt" ] #Goobedit - Belts over outerwear
@@ -320,7 +320,7 @@
 - type: entity
   parent: BaseSpeciesDummy
   id: MobResomiDummy
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   save: false
   description: A dummy resomi meant to be used in character setup.
   components:
@@ -397,7 +397,7 @@
           32:
             sprite: _Floofstation/Mobs/Species/Resomi/displacement.rsi
             state: belt
-      # Orion-Start
+      # RW-Start
       socks:
         sizeMaps:
           32:
@@ -413,7 +413,7 @@
           32:
             sprite: _Floofstation/Mobs/Species/Resomi/displacement.rsi
             state: hands
-      # Orion-End
+      # RW-End
   - type: Sprite # goob - makes character setup look consistent with in-game visuals
     layers:
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
@@ -427,7 +427,7 @@
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
     - map: [ "enum.HumanoidVisualLayers.LFoot" ]
     - map: [ "enum.HumanoidVisualLayers.RFoot" ]
-    - map: [ "socks" ] # Orion
+    - map: [ "socks" ] # RW
     - map: [ "enum.HumanoidVisualLayers.LHand" ]  # Hands below jumpsuit since its bigger-than-usual sprite and this allows jumpsuits to have better-looking sleeves
     - map: [ "enum.HumanoidVisualLayers.RHand" ]
     - map: [ "enum.HumanoidVisualLayers.Tail" ]   # Tail changed to be below outerclothing and above limbs
@@ -438,9 +438,9 @@
       state: body-overlay-2-resomi
       visible: false
     - map: [ "gloves" ]
-    - map: [ "wrists" ] # Orion
+    - map: [ "wrists" ] # RW
     - map: [ "shoes" ]
-    - map: [ "earsright" ] # Orion
+    - map: [ "earsright" ] # RW
     - map: [ "ears" ]
     - map: [ "outerClothing" ]
     - map: [ "belt" ] #Goobedit - Belts over outerwear

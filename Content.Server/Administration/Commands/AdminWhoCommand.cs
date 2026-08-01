@@ -9,7 +9,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Server.Administration.Commands;
 
-[AnyCommand] // Orion-Edit: Accessible to all
+[AnyCommand] // RW-Edit: Accessible to all
 public sealed class AdminWhoCommand : LocalizedCommands
 {
     [Dependency] private readonly IAfkManager _afkManager = default!;

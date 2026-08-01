@@ -24,7 +24,7 @@ namespace Content.IntegrationTests.Tests
         private static readonly HashSet<ProtoId<EntityCategoryPrototype>> IgnoredCategories = ["Spawner", "Debug"]; // goob fuck it maybe its like the debug spiral or something causing the mem.
 
         [Test, NonParallelizable] // Goobstation edit - NonParallelizable
-        [Ignore("Fucking broken, maybe someone fix")] // Orion
+        [Ignore("Fucking broken, maybe someone fix")] // RW
         public async Task SpawnAndDeleteAllEntitiesOnDifferentMaps()
         {
             // This test dirties the pair as it simply deletes ALL entities when done. Overhead of restarting the round
@@ -217,7 +217,7 @@ namespace Content.IntegrationTests.Tests
         ///     all components on every entity.
         /// </summary>
         [Test, NonParallelizable] // Goobstation edit - NonParallelizable
-        [Ignore("Fucking broken, maybe someone fix")] // Orion
+        [Ignore("Fucking broken, maybe someone fix")] // RW
         public async Task SpawnAndDirtyAllEntities()
         {
             // This test dirties the pair as it simply deletes ALL entities when done. Overhead of restarting the round
@@ -375,7 +375,7 @@ namespace Content.IntegrationTests.Tests
 
                 // makes an announcement on mapInit.
                 "AnnounceOnSpawn",
-                "Audio", // Orion
+                "Audio", // RW
                 // <Goob>
                 "PendingSlimeSpawn", // shut the fuck up please
                 "Slime", // please
@@ -480,13 +480,13 @@ namespace Content.IntegrationTests.Tests
                     // Check that the number of entities has gone back to the original value.
                     Assert.That(Count(server.EntMan), Is.EqualTo(count), $"Server prototype {protoId} failed on deletion: count didn't reset properly\n" +
                         BuildDiffString(serverEntities, Entities(server.EntMan), server.EntMan));
-                    // Orion-Edit-Start
+                    // RW-Edit-Start
                     Assert.That(Count(client.EntMan), Is.EqualTo(clientCount),
                         $"Client prototype {protoId} failed on deletion: count didn't reset properly:\n" +
                         $"Expected {clientCount} and found {Count(client.EntMan)} (total: {client.EntMan.EntityCount}).\n" +
                         $"Server count was {count}.\n" +
                         BuildDiffString(clientEntities, Entities(client.EntMan), client.EntMan));
-                     // Orion-Edit-End
+                     // RW-Edit-End
                 }
             });
 

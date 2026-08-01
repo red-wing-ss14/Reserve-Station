@@ -41,7 +41,7 @@
   - type: GhostRole
     job: CentralCommandOfficial
     requirements:
-      - !type:DiscordLinkRequirement # Amour edit
+      - !type:DiscordLinkRequirement # RW edit
 
 # Navy Officer
 

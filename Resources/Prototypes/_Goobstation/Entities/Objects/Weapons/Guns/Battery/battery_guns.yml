@@ -11,7 +11,7 @@
   - type: AmmoCounter
   - type: Gun
     fireRate: 2
-    projectileSpeed: 26 # Orion
+    projectileSpeed: 26 # RW
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -21,7 +21,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-#        name: Magazine # Orion-Edit: Localization
+#        name: Magazine # RW-Edit: Localization
         startingItem: PowerCellSmall
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
@@ -104,8 +104,8 @@
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
   - type: Gun
-    fireRate: 1 # Orion
-    projectileSpeed: 18 # Orion
+    fireRate: 1 # RW
+    projectileSpeed: 18 # RW
     resetOnHandSelected: false
     soundGunshot:
       path: /Audio/_Goobstation/Weapons/Guns/Gunshots/heavy_shot_suppressed.ogg
@@ -223,7 +223,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-#        name: Magazine # Orion-Edit: Localization
+#        name: Magazine # RW-Edit: Localization
         startingItem: EnergySpeedloaderLethal
         insertSound: /Audio/Weapons/Guns/MagIn/revolver_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/revolver_magout.ogg
@@ -238,8 +238,8 @@
   description: A self-defense weapon for corporate execs with money to burn. Slim, sturdy, and self-recharging for your convenience.
   components:
   - type: Battery
-    maxCharge: 1500 # Amour edit: missing > 1500
-    startingCharge: 1500 # Amour edit: missing > 1500
+    maxCharge: 1500 # RW edit: missing > 1500
+    startingCharge: 1500 # RW edit: missing > 1500
   - type: Sprite
     sprite: _EinsteinEngines/Objects/Weapons/Guns/Battery/ccdisabler.rsi
     layers:
@@ -256,11 +256,11 @@
     - Belt
   - type: BatteryAmmoProvider
     proto: BulletDisabler
-    fireCost: 75 # Amour edit: 50 > 75
+    fireCost: 75 # RW edit: 50 > 75
   - type: PacifismAllowedGun
   - type: BatterySelfRecharger
     autoRechargeRate: 40
-    autoRechargePauseTime: 0 # Amour edit: missing > 0
+    autoRechargePauseTime: 0 # RW edit: missing > 0
 
 - type: entity
   name: syndicate disabler
@@ -269,8 +269,8 @@
   description: A sleek disabler designed from a reverse-engineered NanoTrasen prototype. While it lacks stopping power, it makes up for it with a self-recharging cell.
   components:
     - type: Battery
-      maxCharge: 900 # Amour edit: missing > 900
-      startingCharge: 900 # Amour edit: missing > 900
+      maxCharge: 900 # RW edit: missing > 900
+      startingCharge: 900 # RW edit: missing > 900
     - type: Gun
       fireRate: 3
       soundGunshot:
@@ -296,13 +296,13 @@
         - Belt
     - type: BatteryAmmoProvider
       proto: BulletSyndicateDisabler
-      fireCost: 60 # Amour edit: 100 > 60
+      fireCost: 60 # RW edit: 100 > 60
     - type: Multishot
       spreadMultiplier: 1.25
       spreadAddition: 10
     - type: BatterySelfRecharger
       autoRechargeRate: 50
-      autoRechargePauseTime: 0 # Amour edit: missing > 0
+      autoRechargePauseTime: 0 # RW edit: missing > 0
 
 - type: entity
   name: advanced pulse carbine
@@ -311,17 +311,17 @@
   description: A state-of-the-art laser carbine that fires a rapidly pulsing beam. Expensive, though favoured by the Emergency Response corps due to its ability to self-recharge.
   components:
   - type: Battery
-    maxCharge: 4800 # Amour edit: missing > 4800
-    startingCharge: 4800 # Amour edit: missing > 4800
+    maxCharge: 4800 # RW edit: missing > 4800
+    startingCharge: 4800 # RW edit: missing > 4800
   - type: BatteryAmmoProvider
-    proto: Pulse # Amour edit: missing > Pulse
-    fireCost: 300 # Amour edit: missing > 300
+    proto: Pulse # RW edit: missing > Pulse
+    fireCost: 300 # RW edit: missing > 300
   - type: Tag
     tags:
     - Rifle
   - type: BatterySelfRecharger
-    autoRechargeRate: 100 # Amour edit: 80 > 100
-    autoRechargePauseTime: 5 # Amour edit: missing > 5
+    autoRechargeRate: 100 # RW edit: 80 > 100
+    autoRechargePauseTime: 5 # RW edit: missing > 5
 
 - type: entity
   name: CR-2 Hera
@@ -365,7 +365,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-#        name: Magazine # Orion-Edit: Localization
+#        name: Magazine # RW-Edit: Localization
         startingItem: EnergyMagRifleLethal
         insertSound: /Audio/Weapons/Guns/MagIn/revolver_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/revolver_magout.ogg

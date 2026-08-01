@@ -5,8 +5,8 @@
   description: job-description-shaftminer
   playTimeTracker: JobShaftMiner
   requirements:
-    - !type:DiscordLinkRequirement # Amour edit
-  icon: "JobIconShaftMiner" # Orion-Edit: Changed to JobIconShaftMiner
+    - !type:DiscordLinkRequirement # RW edit
+  icon: "JobIconShaftMiner" # RW-Edit: Changed to JobIconShaftMiner
   startingGear: ShaftMinerGear
   guides:
   - Salvage # TODO lavaland guide

@@ -36,31 +36,31 @@ public sealed partial class DoorComponent : Component
     /// Closing time until impassable. Total time is this plus <see cref="CloseTimeTwo"/>.
     /// </summary>
     [DataField]
-    public TimeSpan CloseTimeOne = TimeSpan.FromSeconds(0.3f); // Orion-Edit: 0.4 > 0.3
+    public TimeSpan CloseTimeOne = TimeSpan.FromSeconds(0.3f); // RW-Edit: 0.4 > 0.3
 
     /// <summary>
     /// Closing time until fully closed. Total time is this plus <see cref="CloseTimeOne"/>.
     /// </summary>
     [DataField]
-    public TimeSpan CloseTimeTwo = TimeSpan.FromSeconds(0.3f); // Orion-Edit: 0.2 > 0.3
+    public TimeSpan CloseTimeTwo = TimeSpan.FromSeconds(0.3f); // RW-Edit: 0.2 > 0.3
 
     /// <summary>
     /// Opening time until passable. Total time is this plus <see cref="OpenTimeTwo"/>.
     /// </summary>
     [DataField]
-    public TimeSpan OpenTimeOne = TimeSpan.FromSeconds(0.2f); // Orion-Edit: 0.4 > 0.2
+    public TimeSpan OpenTimeOne = TimeSpan.FromSeconds(0.2f); // RW-Edit: 0.4 > 0.2
 
     /// <summary>
     /// Opening time until fully open. Total time is this plus <see cref="OpenTimeOne"/>.
     /// </summary>
     [DataField]
-    public TimeSpan OpenTimeTwo = TimeSpan.FromSeconds(0.4f); // Orion-Edit: 0.2 > 0.4
+    public TimeSpan OpenTimeTwo = TimeSpan.FromSeconds(0.4f); // RW-Edit: 0.2 > 0.4
 
     /// <summary>
     ///     Interval between deny sounds & visuals;
     /// </summary>
     [DataField]
-    public TimeSpan DenyDuration = TimeSpan.FromSeconds(0.5f); // Orion-Edit: 0.45 > 0.5
+    public TimeSpan DenyDuration = TimeSpan.FromSeconds(0.5f); // RW-Edit: 0.45 > 0.5
 
     [DataField]
     public TimeSpan EmagDuration = TimeSpan.FromSeconds(0.8f);
@@ -140,11 +140,11 @@ public sealed partial class DoorComponent : Component
     #region Graphics
 
 
-    // Orion-Start: for notice
+    // RW-Start: for notice
     /// <summary>
     /// The key used when playing door opening/closing/emagging/deny animations.
     /// </summary>
-    // Orion-End
+    // RW-End
     public const string OpenKey = "door_animation_open";
 
     public const string CloseKey = "door_animation_close";
@@ -207,13 +207,13 @@ public sealed partial class DoorComponent : Component
     /// The length of the door's opening animation.
     /// </summary>
     [DataField]
-    public TimeSpan OpeningAnimationTime = TimeSpan.FromSeconds(0.6); // Orion-Edit: 0.8 > 0.6
+    public TimeSpan OpeningAnimationTime = TimeSpan.FromSeconds(0.6); // RW-Edit: 0.8 > 0.6
 
     /// <summary>
     /// The length of the door's closing animation.
     /// </summary>
     [DataField]
-    public TimeSpan ClosingAnimationTime = TimeSpan.FromSeconds(0.6); // Orion-Edit: 0.8 > 0.6.
+    public TimeSpan ClosingAnimationTime = TimeSpan.FromSeconds(0.6); // RW-Edit: 0.8 > 0.6.
 
     /// <summary>
     /// The length of the door's emagging animation.

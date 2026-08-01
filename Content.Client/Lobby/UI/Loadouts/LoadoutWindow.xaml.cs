@@ -3,7 +3,7 @@
 using System.Linq;
 using System.Numerics;
 using Content.Client.UserInterface.Controls;
-using Content.Shared._Amour.Loadouts.Effects;
+using Content.Shared._RW.Loadouts.Effects;
 using Content.Shared.CCVar;
 using Content.Shared.Preferences;
 using Content.Shared.Preferences.Loadouts;
@@ -21,7 +21,7 @@ public sealed partial class LoadoutWindow : FancyWindow
     public event Action<string>? OnNameChanged;
     public event Action<ProtoId<LoadoutGroupPrototype>, ProtoId<LoadoutPrototype>>? OnLoadoutPressed;
     public event Action<ProtoId<LoadoutGroupPrototype>, ProtoId<LoadoutPrototype>>? OnLoadoutUnpressed;
-    public event Action? OnRevertToBase; // Amour edit
+    public event Action? OnRevertToBase; // RW edit
 
     private List<LoadoutGroupContainer> _groups = new();
 
@@ -30,7 +30,7 @@ public sealed partial class LoadoutWindow : FancyWindow
     // CCvar.
     private int _maxLoadoutNameLength;
 
-    // Amour edit start
+    // RW edit start
     public LoadoutWindow(HumanoidCharacterProfile profile, RoleLoadout loadout, RoleLoadoutPrototype proto, ICommonSession session, IDependencyCollection collection, bool showRevertToBase = false)
     {
         RobustXamlLoader.Load(this);
@@ -38,7 +38,7 @@ public sealed partial class LoadoutWindow : FancyWindow
 
         RevertToBaseButton.Visible = showRevertToBase;
         RevertToBaseButton.OnPressed += _ => OnRevertToBase?.Invoke();
-     // Amour edit end
+     // RW edit end
         var protoManager = collection.Resolve<IPrototypeManager>();
         var configManager = collection.Resolve<IConfigurationManager>();
 
@@ -73,7 +73,7 @@ public sealed partial class LoadoutWindow : FancyWindow
         }
         else
         {
-            // Amour
+            // RW
             var allGroups = GetAllGroupsWithBaseCrew(proto, protoManager);
 
             foreach (var group in allGroups)
@@ -84,7 +84,7 @@ public sealed partial class LoadoutWindow : FancyWindow
                 if (groupProto.Hidden)
                     continue;
 
-                // Amour
+                // RW
                 var hasAvailableLoadouts = HasAvailableLoadoutsForUser(groupProto, profile, loadout, session, collection, protoManager);
                 if (!hasAvailableLoadouts)
                     continue;
@@ -114,7 +114,7 @@ public sealed partial class LoadoutWindow : FancyWindow
         }
     }
 
-    // Amour edit start
+    // RW edit start
     private const string BaseCrewProtoId = "BaseCrew";
     private const string RoleSurvivalPrefix = "RoleSurvival";
     private const string JobBorgProtoId = "JobBorg";
@@ -177,4 +177,4 @@ public sealed partial class LoadoutWindow : FancyWindow
         return false;
     }
 }
-// Amour edit end
+// RW edit end

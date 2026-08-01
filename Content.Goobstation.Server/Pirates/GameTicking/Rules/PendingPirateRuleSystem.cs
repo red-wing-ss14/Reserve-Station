@@ -95,7 +95,7 @@ public sealed partial class PendingPirateRuleSystem : GameRuleSystem<PendingPira
             var reason = Loc.GetString($"pirates-ransom-{announcer}-desc", ("num", price));
             var requester = Loc.GetString($"pirates-announcer-{announcer}");
 
-            var ransom = new CargoOrderData(orderId, component.RansomPrototype, name, price, 1, requester, null, reason, bank.PrimaryAccount, 30); // Orion-Edit: null
+            var ransom = new CargoOrderData(orderId, component.RansomPrototype, name, price, 1, requester, null, reason, bank.PrimaryAccount, 30); // RW-Edit: null
 
             component.Order = ransom;
 

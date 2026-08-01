@@ -148,7 +148,7 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
 
             //_audio.PlayGlobal("/Audio/_Goobstation/Announcements/violet.ogg", Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f)); // Goobstation
 
-            _roundEnd.RequestRoundEnd(null, false, isForcedCall: true); // Amour - Forced shuttle call
+            _roundEnd.RequestRoundEnd(null, false, isForcedCall: true); // RW - Forced shuttle call
         }
 
         // we include dead for this count because we don't want to end the round

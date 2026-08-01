@@ -6,7 +6,7 @@ using Content.Server.Jittering;
 using Content.Server.Kitchen.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Stack;
-using Content.Shared._Orion.Construction.Events;
+using Content.Shared._RW.Construction.Events;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Containers.ItemSlots;
@@ -45,7 +45,7 @@ namespace Content.Server.Kitchen.EntitySystems
         [Dependency] private readonly RandomHelperSystem _randomHelper = default!;
         [Dependency] private readonly JitteringSystem _jitter = default!;
 
-        private readonly List<EntityUid> _containedEntities = new(); // Orion
+        private readonly List<EntityUid> _containedEntities = new(); // RW
 
         public override void Initialize()
         {
@@ -65,10 +65,10 @@ namespace Content.Server.Kitchen.EntitySystems
             SubscribeLocalEvent<ReagentGrinderComponent, ReagentGrinderStartMessage>(OnStartMessage);
             SubscribeLocalEvent<ReagentGrinderComponent, ReagentGrinderEjectChamberAllMessage>(OnEjectChamberAllMessage);
             SubscribeLocalEvent<ReagentGrinderComponent, ReagentGrinderEjectChamberContentMessage>(OnEjectChamberContentMessage);
-            // Orion-Start
+            // RW-Start
             SubscribeLocalEvent<ReagentGrinderComponent, RefreshPartsEvent>(OnPartsRefresh);
             SubscribeLocalEvent<ReagentGrinderComponent, UpgradeExamineEvent>(OnUpgradeExamine);
-            // Orion-End
+            // RW-End
         }
 
         private void OnToggleAutoModeMessage(Entity<ReagentGrinderComponent> entity, ref ReagentGrinderToggleAutoModeMessage message)
@@ -98,12 +98,12 @@ namespace Content.Server.Kitchen.EntitySystems
                 if (outputContainer is null || !_solutionContainersSystem.TryGetFitsInDispenser(outputContainer.Value, out var containerSoln, out var containerSolution))
                     continue;
 
-                // Orion-Start
+                // RW-Start
                 _containedEntities.Clear();
                 _containedEntities.AddRange(inputContainer.ContainedEntities);
-                // Orion-End
+                // RW-End
 
-                foreach (var item in _containedEntities) // Orion-Edit
+                foreach (var item in _containedEntities) // RW-Edit
                 {
                     var solution = GetGrinderSolution(item, active.Program);
 
@@ -141,7 +141,7 @@ namespace Content.Server.Kitchen.EntitySystems
                     _solutionContainersSystem.TryAddSolution(containerSoln.Value, solution);
                 }
 
-                _containedEntities.Clear(); // Orion
+                _containedEntities.Clear(); // RW
 
                 _userInterfaceSystem.ServerSendUiMessage(uid, ReagentGrinderUiKey.Key,
                     new ReagentGrinderWorkCompleteMessage());
@@ -358,7 +358,7 @@ namespace Content.Server.Kitchen.EntitySystems
             return CompOrNull<ExtractableComponent>(uid)?.JuiceSolution is not null;
         }
 
-        // Orion-Start
+        // RW-Start
         private void OnPartsRefresh(EntityUid uid, ReagentGrinderComponent component, RefreshPartsEvent args)
         {
             var servoTier = args.GetPartRating(component.ServoPart, 1f);
@@ -382,6 +382,6 @@ namespace Content.Server.Kitchen.EntitySystems
             args.AddPercentageUpgrade("machine-upgrade-process-speed", speedMultiplier);
             args.AddPercentageUpgrade("machine-upgrade-capacity", capacityMultiplier);
         }
-        // Orion-End
+        // RW-End
     }
 }

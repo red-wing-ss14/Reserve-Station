@@ -5,7 +5,7 @@ using Content.Shared._EinsteinEngines.Language;
 using Content.Shared._EinsteinEngines.Language.Components;
 using Content.Shared._EinsteinEngines.Language.Events;
 using Content.Shared._EinsteinEngines.Language.Systems;
-using Content.Shared._Orion.Language.Components;
+using Content.Shared._RW.Language.Components;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -25,10 +25,10 @@ public sealed class LanguageSystem : SharedLanguageSystem
         SubscribeLocalEvent<UniversalLanguageSpeakerComponent, MapInitEvent>((uid, _, _) => UpdateEntityLanguages(uid));
         SubscribeLocalEvent<UniversalLanguageSpeakerComponent, ComponentRemove>((uid, _, _) => UpdateEntityLanguages(uid));
 
-        // Orion-Start
+        // RW-Start
         SubscribeLocalEvent<AdditionalLanguageComponent, ComponentAdd>(OnAdditionalLanguageAdd);
         SubscribeLocalEvent<AdditionalLanguageComponent, ComponentRemove>(OnAdditionalLanguageRemove);
-        // Orion-End
+        // RW-End
     }
 
     #region event handling
@@ -158,7 +158,7 @@ public sealed class LanguageSystem : SharedLanguageSystem
         if (!Resolve(ent, ref ent.Comp, false))
             return false;
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         if (ent.Comp.SpokenLanguages.Contains(ent.Comp.CurrentLanguage))
             return false;
 
@@ -166,7 +166,7 @@ public sealed class LanguageSystem : SharedLanguageSystem
         RaiseLocalEvent(ent, new LanguagesUpdateEvent());
         Dirty(ent);
         return true;
-        // Orion-Edit-End
+        // RW-Edit-End
     }
 
     /// <summary>
@@ -181,20 +181,20 @@ public sealed class LanguageSystem : SharedLanguageSystem
         // We add the intrinsically known languages first so other systems can manipulate them easily
         if (TryComp<LanguageKnowledgeComponent>(ent, out var knowledge))
         {
-            // Orion-Edit-Start
+            // RW-Edit-Start
             ev.SpokenLanguages.UnionWith(knowledge.SpokenLanguages);
             ev.UnderstoodLanguages.UnionWith(knowledge.UnderstoodLanguages);
-            // Orion-Edit-End
+            // RW-Edit-End
         }
 
-        // Orion-Start
+        // RW-Start
         // And then we add the additional languages
         if (TryComp<AdditionalLanguageComponent>(ent, out var additional))
         {
             ev.SpokenLanguages.UnionWith(additional.SpokenLanguages);
             ev.UnderstoodLanguages.UnionWith(additional.UnderstoodLanguages);
         }
-        // Orion-End
+        // RW-End
 
         RaiseLocalEvent(ent, ref ev);
 
@@ -213,7 +213,7 @@ public sealed class LanguageSystem : SharedLanguageSystem
 
     #endregion
 
-    // Orion-Start
+    // RW-Start
     #region Orion
 
     private void OnAdditionalLanguageAdd(EntityUid uid, AdditionalLanguageComponent component, ComponentAdd args)
@@ -233,5 +233,5 @@ public sealed class LanguageSystem : SharedLanguageSystem
     }
 
     #endregion
-    // Orion-End
+    // RW-End
 }

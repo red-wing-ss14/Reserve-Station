@@ -132,7 +132,7 @@
     layers:
     - state: mvcable_0
       color: Yellow
-#    - state: mvstripes_0 # Orion-Edit: Removed
+#    - state: mvstripes_0 # RW-Edit: Removed
   - type: Icon
     sprite: Structures/Power/Cables/mv_cable.rsi
     state: mvcable_4
@@ -165,7 +165,7 @@
         acts: [ "Destruction" ]
   - type: CableVisualizer
     statePrefix: mvcable_
-#    extraLayerPrefix: mvstripes_ # Orion-Edit: Removed
+#    extraLayerPrefix: mvstripes_ # RW-Edit: Removed
 
 - type: entity
   id: CableMVUncuttable

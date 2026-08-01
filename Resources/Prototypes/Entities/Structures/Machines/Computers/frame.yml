@@ -77,12 +77,12 @@
   - type: Sprite
     sprite: Structures/Machines/computers.rsi
     drawdepth: Objects
-    # Orion-Edit-Start
+    # RW-Edit-Start
     layers:
     - map: [ "computerLayerBody" ]
       state: broken
-    # Orion-Edit-End
-  # Orion-Start
+    # RW-Edit-End
+  # RW-Start
   - type: EdgeConnection
     connectionKey: computer-console
     allowedDirections: East, West
@@ -92,10 +92,10 @@
       enum.EdgeConnectionVisuals.ConnectionMask:
         computerLayerBody:
           None: { state: broken, sprite: Structures/Machines/computers.rsi }
-          West: { state: computer_r-broken, sprite: _Orion/Structures/Machines/computers.rsi }
-          East: { state: computer_l-broken, sprite: _Orion/Structures/Machines/computers.rsi }
-          East, West: { state: computer_l_r-broken, sprite: _Orion/Structures/Machines/computers.rsi }
-  # Orion-End
+          West: { state: computer_r-broken, sprite: _RW/Structures/Machines/computers.rsi }
+          East: { state: computer_l-broken, sprite: _RW/Structures/Machines/computers.rsi }
+          East, West: { state: computer_l_r-broken, sprite: _RW/Structures/Machines/computers.rsi }
+  # RW-End
   - type: Destructible
     thresholds:
     - trigger:

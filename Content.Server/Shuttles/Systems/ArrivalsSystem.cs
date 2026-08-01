@@ -539,10 +539,10 @@ public sealed class ArrivalsSystem : EntitySystem
 
     private void SetupArrivalsStation()
     {
-        // Orion-Start
+        // RW-Start
         if (EntityManager.System<GameTicker>().CurrentPreset?.IsMiniGame ?? false)
             return;
-        // Orion-End
+        // RW-End
 
         var path = new ResPath(_cfgManager.GetCVar(CCVars.ArrivalsMap));
         _mapSystem.CreateMap(out var mapId, runMapInit: false);

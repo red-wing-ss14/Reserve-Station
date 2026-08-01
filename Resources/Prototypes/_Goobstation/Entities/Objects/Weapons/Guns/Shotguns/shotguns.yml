@@ -26,18 +26,18 @@
   - type: AmmoCounter
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
-    fireRate: 1.4 # Orion-Edit: 1.4 > 1.3
+    fireRate: 1.4 # RW-Edit: 1.4 > 1.3
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
     soundGunshot:
-      collection: AutoShotgunShot # Orion-Edit: New sounds
+      collection: AutoShotgunShot # RW-Edit: New sounds
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
-#        name: Magazine # Orion-Edit: Localization
+#        name: Magazine # RW-Edit: Localization
         startingItem: MagazineShotgun
         priority: 2
         whitelist:
@@ -47,7 +47,7 @@
         insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
       gun_chamber:
-#        name: Chamber # Orion-Edit: Localization
+#        name: Chamber # RW-Edit: Localization
         startingItem: ShellShotgun
         priority: 1
         whitelist:
@@ -87,7 +87,7 @@
     sprite: _Goobstation/Objects/Weapons/Guns/Lever/combatshotgun.rsi
   - type: GunRequiresWield # remove when inaccuracy on spreads is fixed
   - type: Gun
-    fireRate: 1.25 # Amour edit: 2 > 1.25
+    fireRate: 1.25 # RW edit: 2 > 1.25
   - type: GunSpreadModifier
     spread: 0.6
   - type: Tag
@@ -150,7 +150,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-#        name: Magazine # Orion-Edit: Localization
+#        name: Magazine # RW-Edit: Localization
         startingItem: MagazineShotgunHeavy
         priority: 2
         whitelist:

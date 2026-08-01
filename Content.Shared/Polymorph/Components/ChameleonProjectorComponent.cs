@@ -66,7 +66,7 @@ public sealed partial class ChameleonProjectorComponent : Component
     public EntityUid? Disguised;
 }
 
-public sealed class UndisguisedEvent : EntityEventArgs // Orion
+public sealed class UndisguisedEvent : EntityEventArgs // RW
 {
     public EntityUid User { get; }
     public UndisguisedEvent(EntityUid user) => User = user;

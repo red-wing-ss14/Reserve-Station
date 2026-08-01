@@ -178,7 +178,7 @@
   description: death-match-description
   maxPlayers: 15
   showInVote: true
-  isMiniGame: true # Orion
+  isMiniGame: true # RW
   supportedMaps: DeathMatchMapPool
   rules:
     - DeathMatch31

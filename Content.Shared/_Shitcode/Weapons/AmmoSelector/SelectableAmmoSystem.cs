@@ -34,14 +34,14 @@ public sealed class SelectableAmmoSystem : EntitySystem
 
     private void OnExamine(Entity<AmmoSelectorComponent> ent, ref ExaminedEvent args)
     {
-        // Orion-Edit-Start
+        // RW-Edit-Start
         var entId = GetProviderProtoId(ent); // GetProviderProtoName -> GetProviderProtoId // name -> entId
 
         if (entId == null) // name -> entId
             return;
 
         args.PushMarkup(Loc.GetString("ammo-selector-examine-mode", ("mode", Loc.GetString("ent-" + entId)))); // name -> loc // name -> Loc.GetString("ent-" + entId)
-        // Orion-Edit-End
+        // RW-Edit-End
     }
 
     private void OnMapInit(Entity<AmmoSelectorComponent> ent, ref MapInitEvent args)
@@ -58,11 +58,11 @@ public sealed class SelectableAmmoSystem : EntitySystem
         if (!ent.Comp.Prototypes.Contains(args.ProtoId) || !TrySetProto(ent, args.ProtoId))
             return;
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         var entId = GetProviderProtoId(ent); // GetProviderProtoName -> GetProviderProtoId // name -> entId
         if (entId != null) // name -> entId
             _popup.PopupClient(Loc.GetString("mode-selected", ("mode", Loc.GetString("ent-" + entId))), ent, args.Actor); // ("mode", name) -> ("mode", Loc.GetString("ent-" + entId))
-        // Orion-Edit-End
+        // RW-Edit-End
         _audio.PlayPredicted(ent.Comp.SoundSelect, ent, args.Actor);
     }
 
@@ -95,7 +95,7 @@ public sealed class SelectableAmmoSystem : EntitySystem
         return true;
     }
 
-    // Orion-Edit-Start
+    // RW-Edit-Start
     private string? GetProviderProtoId(EntityUid uid) // GetProviderProtoName -> GetProviderProtoId
     {
         if (TryComp(uid, out BasicEntityAmmoProviderComponent? basic) && basic.Proto != null)
@@ -111,7 +111,7 @@ public sealed class SelectableAmmoSystem : EntitySystem
 
         return null;
     }
-    // Orion-Edit-End
+    // RW-Edit-End
 
     private bool SetProviderProto(EntityUid uid, SelectableAmmoPrototype proto)
     {

@@ -53,7 +53,7 @@
       - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
       - map: ["enum.HumanoidVisualLayers.LFoot"]
       - map: ["enum.HumanoidVisualLayers.RFoot"]
-      - map: [ "socks" ] # Orion
+      - map: [ "socks" ] # RW
       - map: ["jumpsuit"]
       - map: [ "enum.HumanoidVisualLayers.LHand" ]
       - map: [ "enum.HumanoidVisualLayers.RHand" ]
@@ -65,9 +65,9 @@
       - map: [ "enum.HumanoidVisualLayers.Face" ] # Goob 120
       - map: [ "id" ]
       - map: [ "gloves" ]
-      - map: [ "wrists" ] # Orion
+      - map: [ "wrists" ] # RW
       - map: [ "shoes" ]
-      - map: [ "earsright" ] # Orion
+      - map: [ "earsright" ] # RW
       - map: [ "ears" ]
       - map: [ "outerClothing" ]
       - map: [ "belt" ] # Goob
@@ -174,7 +174,7 @@
     - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
-    - map: [ "socks" ] # Orion
+    - map: [ "socks" ] # RW
     - map: ["jumpsuit"]
     - map: [ "enum.HumanoidVisualLayers.LHand" ]
     - map: [ "enum.HumanoidVisualLayers.RHand" ]
@@ -186,9 +186,9 @@
     - map: [ "enum.HumanoidVisualLayers.Face" ] # Goob 120
     - map: [ "id" ]
     - map: [ "gloves" ]
-    - map: [ "wrists" ] # Orion
+    - map: [ "wrists" ] # RW
     - map: [ "shoes" ]
-    - map: [ "earsright" ] # Orion
+    - map: [ "earsright" ] # RW
     - map: [ "ears" ]
     - map: [ "outerClothing" ]
     - map: [ "belt" ] # Goob

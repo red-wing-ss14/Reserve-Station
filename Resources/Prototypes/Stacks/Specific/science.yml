@@ -7,7 +7,7 @@
   icon: { sprite: /Textures/Objects/Specific/Xenoarchaeology/artifact_fragments.rsi, state: martianball1 }
   spawn: ArtifactFragment1
 
-# Orion-Edit: Replaced with Servo
+# RW-Edit: Replaced with Servo
 #- type: stack
 #  id: Manipulator
 #  name: stack-micro-manipulator

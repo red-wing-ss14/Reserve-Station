@@ -1,5 +1,5 @@
 using System.Linq;
-using Content.Server._Orion.Economy.Components;
+using Content.Server._RW.Economy.Components;
 using Content.Server.Cargo.Components;
 using Content.Shared.Cargo.Components;
 using Content.Shared.Cargo.Prototypes;
@@ -17,19 +17,19 @@ public sealed partial class CargoSystem
     private bool _allowPrimaryAccountAllocation;
     private bool _allowPrimaryCutAdjustment;
 
-    private void InitializeFunds() // Orion-Edit: Was public
+    private void InitializeFunds() // RW-Edit: Was public
     {
         SubscribeLocalEvent<CargoOrderConsoleComponent, CargoConsoleWithdrawFundsMessage>(OnWithdrawFunds);
         SubscribeLocalEvent<CargoOrderConsoleComponent, CargoConsoleToggleLimitMessage>(OnToggleLimit);
         SubscribeLocalEvent<FundingAllocationConsoleComponent, SetFundingAllocationBuiMessage>(OnSetFundingAllocation);
         SubscribeLocalEvent<FundingAllocationConsoleComponent, BeforeActivatableUIOpenEvent>(OnFundAllocationBuiOpen);
-        SubscribeLocalEvent<StationBankAccountComponent, ComponentStartup>(OnStationBankStartup); // Orion
+        SubscribeLocalEvent<StationBankAccountComponent, ComponentStartup>(OnStationBankStartup); // RW
 
         _cfg.OnValueChanged(CCVars.AllowPrimaryAccountAllocation, enabled => { _allowPrimaryAccountAllocation = enabled; }, true);
         _cfg.OnValueChanged(CCVars.AllowPrimaryCutAdjustment, enabled => { _allowPrimaryCutAdjustment = enabled; }, true);
     }
 
-    // Orion-Start
+    // RW-Start
     private void OnStationBankStartup(Entity<StationBankAccountComponent> ent, ref ComponentStartup args)
     {
         var changed = false;
@@ -49,7 +49,7 @@ public sealed partial class CargoSystem
         if (changed)
             Dirty(ent);
     }
-    // Orion-End
+    // RW-End
 
     private void OnWithdrawFunds(Entity<CargoOrderConsoleComponent> ent, ref CargoConsoleWithdrawFundsMessage args)
     {
@@ -136,7 +136,7 @@ public sealed partial class CargoSystem
             !TryComp<StationBankAccountComponent>(station, out var bank))
             return;
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         var expectedEditableKeys = bank.RevenueDistribution.Keys
             .Where(account => _allowPrimaryAccountAllocation || account != bank.PrimaryAccount)
             .ToHashSet();
@@ -144,18 +144,18 @@ public sealed partial class CargoSystem
 
         if (args.Percents.Count != expectedCount || !args.Percents.Keys.ToHashSet().SetEquals(expectedEditableKeys))
             return;
-        // Orion-Edit-End
+        // RW-Edit-End
 
         var differs = false;
         foreach (var (account, percent) in args.Percents)
         {
-            // Orion-Edit-Start
+            // RW-Edit-Start
             if (bank.RevenueDistribution.TryGetValue(account, out var currentPercent) && percent == (int) Math.Round(currentPercent * 100))
                 continue;
 
             differs = true;
             break;
-            // Orion-Edit-End
+            // RW-Edit-End
         }
         differs = differs || args.PrimaryCut != bank.PrimaryCut || args.LockboxCut != bank.LockboxCut;
 
@@ -165,16 +165,16 @@ public sealed partial class CargoSystem
         if (args.Percents.Values.Sum() != 100)
             return;
 
-//        var primaryCut = bank.RevenueDistribution[bank.PrimaryAccount]; // Orion-Edit
+//        var primaryCut = bank.RevenueDistribution[bank.PrimaryAccount]; // RW-Edit
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         var updatedDistribution = args.Percents.ToDictionary(kv => kv.Key, kv => kv.Value / 100.0);
 
         if (!_allowPrimaryAccountAllocation)
             updatedDistribution[bank.PrimaryAccount] = 0;
 
         bank.RevenueDistribution = updatedDistribution;
-        // Orion-Edit-End
+        // RW-Edit-End
 
         if (_allowPrimaryCutAdjustment && args.PrimaryCut is >= 0.0 and <= 1.0)
         {
@@ -196,20 +196,20 @@ public sealed partial class CargoSystem
 
     private void OnFundAllocationBuiOpen(Entity<FundingAllocationConsoleComponent> ent, ref BeforeActivatableUIOpenEvent args)
     {
-/* // Orion-Edit
+/* // RW-Edit
         if (_station.GetOwningStation(ent) is { } station)
             _uiSystem.SetUiState(ent.Owner, FundingAllocationConsoleUiKey.Key, new FundingAllocationConsoleBuiState(GetNetEntity(station)));
 */
 
-        // Orion-Start
+        // RW-Start
         if (_station.GetOwningStation(ent) is not { } station)
             return;
 
         _uiSystem.SetUiState(ent.Owner, FundingAllocationConsoleUiKey.Key, BuildFundingState(station));
-        // Orion-End
+        // RW-End
     }
 
-    // Orion-Start
+    // RW-Start
     private FundingAllocationConsoleBuiState BuildFundingState(EntityUid station)
     {
         var accounts = new List<FundingAllocationEconomyAccountData>();
@@ -281,5 +281,5 @@ public sealed partial class CargoSystem
         return job.PayrollFromStationBudget;
     }
 
-    // Orion-End
+    // RW-End
 }

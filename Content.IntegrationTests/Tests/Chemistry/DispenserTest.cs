@@ -34,17 +34,17 @@ public sealed class DispenserTest : InteractionTest
         AssertPrototype("Beaker", SEntMan.GetNetEntity(HandSys.GetActiveItem((SEntMan.GetEntity(Player), Hands))));
 
         // Re-insert the beaker
-        await InteractUsing("Beaker"); // Orion-Edit: InteractUsing Beaker
+        await InteractUsing("Beaker"); // RW-Edit: InteractUsing Beaker
         Assert.That(HandSys.GetActiveItem((SEntMan.GetEntity(Player), Hands)), Is.Null);
 
-        // Orion-Start
+        // RW-Start
         // Re-open BUI
         await Interact();
 
         // Eject again
         await SendBui(ReagentDispenserUiKey.Key, new ItemSlotButtonPressedEvent(SharedReagentDispenser.OutputSlotName));
         await RunTicks(5);
-        // Orion-End
+        // RW-End
 
         // Now click the eject button directly
         await ClickControl<ReagentDispenserWindow>(nameof(ReagentDispenserWindow.EjectButton));

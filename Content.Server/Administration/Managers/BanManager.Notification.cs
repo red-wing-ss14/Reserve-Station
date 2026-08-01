@@ -51,7 +51,7 @@ public sealed partial class BanManager
             return;
         }
 
-        await HandleMatchingConnectedPlayers(ban, "ban notification"); // Amour
+        await HandleMatchingConnectedPlayers(ban, "ban notification"); // RW
     }
 
     private bool CheckBanRateLimit()

@@ -40,11 +40,11 @@
     icon:
       sprite: _DV/Misc/program_icons.rsi
       state: nanochat
-    # Orion-Start
+    # RW-Start
     screenState:
-      sprite: _Orion/Objects/Devices/pda.rsi
+      sprite: _RW/Objects/Devices/pda.rsi
       state: request
-    # Orion-End
+    # RW-End
   - type: ActiveRadio
     channels:
     - Common

@@ -14,7 +14,7 @@ namespace Content.Goobstation.Shared.GrabIntent;
 
 public sealed partial class GrabIntentSystem
 {
-    [Dependency] private readonly MobStateSystem _mobState = default!; // Orion
+    [Dependency] private readonly MobStateSystem _mobState = default!; // RW
 
     #region Release/Throw Initialization
 
@@ -60,13 +60,13 @@ public sealed partial class GrabIntentSystem
         if (user == null || user.Value != pullableUid)
             return true;
 
-        // Orion-Start
+        // RW-Start
         if (!_mobState.IsAlive(pullableUid))
         {
             _popup.PopupPredicted(Loc.GetString("popup-grab-release-fail-not-alive"), pullableUid, pullableUid, PopupType.SmallCaution);
             return false;
         }
-        // Orion-End
+        // RW-End
 
         if (!TryComp<GrabbableComponent>(pullableUid, out var grabbable))
             return true;

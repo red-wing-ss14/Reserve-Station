@@ -62,7 +62,7 @@
             - material: Cable
               amount: 2
               doAfter: 1
-            # Orion-Start
+            # RW-Start
             - machinePart: Servo
               name: construction-graph-tag-servo
               icon:
@@ -75,6 +75,6 @@
                 sprite: "Objects/Misc/stock_parts.rsi"
                 state: "micro_mani"
               doAfter: 1
-            # Orion-End
+            # RW-End
     - node: potatoaichip
       entity: PotatoAIChip

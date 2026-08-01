@@ -21,9 +21,9 @@
         maxVol: 40
         reagents:
         - ReagentId: Ichor
-          Quantity: 30 # Orion-Edit: 35 > 30
-        - ReagentId: Ephedrine # Orion-Edit: TranexamicAcid > Ephedrine
-          Quantity: 10 # Orion-Edit: 5 > 10
+          Quantity: 30 # RW-Edit: 35 > 30
+        - ReagentId: Ephedrine # RW-Edit: TranexamicAcid > Ephedrine
+          Quantity: 10 # RW-Edit: 5 > 10
   - type: Injector
     solutionName: pen
     currentTransferAmount: 40

@@ -20,7 +20,7 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem // t
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly INetManager _net = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!; // Orion
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!; // RW
 
     public override void Initialize()
     {
@@ -150,7 +150,7 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem // t
             return;
 
         component.IsActive = state.IsActive;
-        UpdateVisuals(uid, component); // Orion
+        UpdateVisuals(uid, component); // RW
 
         RaiseSwitchableOverlayToggledEvent(uid,
             component.IsEquipment ? Transform(uid).ParentUid : uid,
@@ -172,7 +172,7 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem // t
     private void OnInit(EntityUid uid, TComp component, ComponentInit args)
     {
         component.PulseAccumulator = component.PulseTime;
-        UpdateVisuals(uid, component); // Orion
+        UpdateVisuals(uid, component); // RW
     }
 
     private void OnMapInit(EntityUid uid, TComp component, MapInitEvent args)
@@ -201,17 +201,17 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem // t
         if (component.PulseTime > 0f)
         {
             component.PulseAccumulator = activate ? 0f : component.PulseTime;
-            UpdateVisuals(uid, component); // Orion
+            UpdateVisuals(uid, component); // RW
             return;
         }
 
         component.IsActive = activate;
-        UpdateVisuals(uid, component); // Orion
+        UpdateVisuals(uid, component); // RW
         _actions.SetToggled(component.ToggleActionEntity, activate); // WD EDIT - it's white dream system but okay
         Dirty(uid, component);
     }
 
-    // Orion-Start
+    // RW-Start
     private void UpdateVisuals(EntityUid uid, TComp component)
     {
         if (!TryComp<AppearanceComponent>(uid, out var appearance))
@@ -219,7 +219,7 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem // t
 
         _appearance.SetData(uid, ToggleableVisuals.Enabled, component.IsActive, appearance);
     }
-    // Orion-End
+    // RW-End
 
     private void RaiseSwitchableOverlayToggledEvent(EntityUid uid, EntityUid user, bool activated)
     {

@@ -8,18 +8,18 @@
   objective: roles-antag-devil-description
   guides: [ Devil ]
   requirements:
-  - !type:AnyOfRequirement # Amour edit - Discord OR playtime
+  - !type:AnyOfRequirement # RW edit - Discord OR playtime
     requirements:
       - !type:DiscordLinkRequirement
       - !type:OverallPlaytimeRequirement
         time: 108000 # 30h
-  - !type:AnyOfRequirement # Amour edit - Discord OR playtime
+  - !type:AnyOfRequirement # RW edit - Discord OR playtime
     requirements:
       - !type:DiscordLinkRequirement
       - !type:DepartmentTimeRequirement
         department: Command
         time: 18000 # 5 hours
-  - !type:AnyOfRequirement # Amour edit - Discord OR playtime
+  - !type:AnyOfRequirement # RW edit - Discord OR playtime
     requirements:
       - !type:DiscordLinkRequirement
       - !type:RoleTimeRequirement

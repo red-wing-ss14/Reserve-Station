@@ -79,7 +79,7 @@ namespace Content.Client.Chat.UI
                     return new FancyTextSpeechBubble(message, senderEntity, "whisperBox");
 
                 case SpeechType.Looc:
-                    return new TextSpeechBubble(message, senderEntity, "emoteBox"); // Orion-Edit: Removed color
+                    return new TextSpeechBubble(message, senderEntity, "emoteBox"); // RW-Edit: Removed color
 
                 default:
                     throw new ArgumentOutOfRangeException();

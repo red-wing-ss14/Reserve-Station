@@ -195,7 +195,7 @@ public abstract partial class SharedChatSystem
         // optional override params > general params for all sounds in set > individual sound params
         var param = audioParams ?? proto.GeneralParams ?? sound.Params;
 
-/* // Orion-Edit: Removed
+/* // RW-Edit: Removed
         // Goobstation/MisandryBox - Emote spam countermeasures
         var ev = new EmoteSoundPitchShiftEvent();
         RaiseLocalEvent(uid, ref ev);

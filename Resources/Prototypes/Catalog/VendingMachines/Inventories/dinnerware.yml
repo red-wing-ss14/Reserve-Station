@@ -38,7 +38,7 @@
   emaggedInventory: # Goobstation
     CombatKnife: 1
     ThrowingKnife: 1
-  # Orion-Start
+  # RW-Start
   prices:
     RollingPin: 75
     Spoon: 50
@@ -49,4 +49,4 @@
     FoodPlateTin: 40
     FoodPlateMuffinTin: 40
     DrinkGlass: 25
-  # Orion-End
+  # RW-End

@@ -25,11 +25,11 @@
     - SemiAuto
     - FullAuto
     soundGunshot:
-      path: /Audio/_Orion/Weapons/Guns/Pistols/beretta_shot.ogg # Orion-Edit: New sounds
+      path: /Audio/_RW/Weapons/Guns/Pistols/beretta_shot.ogg # RW-Edit: New sounds
   - type: ItemSlots
     slots:
       gun_magazine:
-#        name: Magazine # Orion-Edit: Localization
+#        name: Magazine # RW-Edit: Localization
         startingItem: MagazinePistolHighCapacity
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
@@ -40,7 +40,7 @@
             - MagazinePistolHighCapacity
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
-#        name: Chamber # Orion-Edit: Localization
+#        name: Chamber # RW-Edit: Localization
         startingItem: CartridgePistol
         priority: 1
         whitelist:
@@ -139,7 +139,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-#        name: Magazine # Orion-Edit: Localization
+#        name: Magazine # RW-Edit: Localization
         startingItem: MagazinePistolNeurotoxin
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
@@ -149,7 +149,7 @@
           - MagazineMagnum
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
-#        name: Chamber # Orion-Edit: Localization
+#        name: Chamber # RW-Edit: Localization
         startingItem: CartridgeMagnumNeurotoxin
         priority: 1
         whitelist:

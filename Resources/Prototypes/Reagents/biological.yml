@@ -25,7 +25,7 @@
           - !type:MetabolizerTypeCondition
             type: [ Human ]
             inverted: true
-      # Orion-Start
+      # RW-Start
       - !type:ChemAddMoodlet
         moodPrototype: DrankBloodVampiric
         conditions:
@@ -40,7 +40,7 @@
         - !type:ReagentCondition
           reagent: Blood
           min: 0.1
-      # Orion-End
+      # RW-End
     Food:
       effects:
         - !type:AdjustReagent
@@ -74,13 +74,13 @@
   color: "#808A51"
   recognizable: true
   physicalDesc: reagent-physical-desc-slimy
-  # Orion-Start
+  # RW-Start
   metabolisms:
     Drink:
       effects:
       - !type:ChemAddMoodlet
         moodPrototype: DrankInsectBlood
-  # Orion-End
+  # RW-End
 
 - type: reagent
   id: Slime
@@ -176,7 +176,7 @@
       effects:
       - !type:SatiateThirst
         factor: -0.5
-      - !type:ChemAddMoodlet # Orion
+      - !type:ChemAddMoodlet # RW
         moodPrototype: DrankZombieBlood
     Poison:
       effects:
@@ -206,7 +206,7 @@
   recognizable: true
   metabolisms:
     Drink:
-      metabolismRate: 0.25 # Amour edit: 0.5 > 0.25
+      metabolismRate: 0.25 # RW edit: 0.5 > 0.25
       effects:
       - !type:SatiateThirst
         factor: 1.5
@@ -217,17 +217,17 @@
       - !type:HealthChange # Goobstation - Make Ichor less shit
         damage:
           types:
-            Heat: -3 # Amour edit: -5 > -3
-            Shock: -3 # Amour edit: -5 > -3
-            Cold: -3 # Amour edit: -5 > -3
-            Caustic: -3 # Amour edit: -5 > -3
-            Poison: -3 # Amour edit: -5 > -3
-            Radiation: -3 # Amour edit: -5 > -3
-            Asphyxiation: -3 # Amour edit: -5 > -3
-            Bloodloss: -3 # Amour edit: -5 > -3
-            Blunt: -3 # Amour edit: -5 > -3
-            Slash: -3 # Amour edit: -5 > -3
-            Piercing: -3 # Amour edit: -5 > -3
+            Heat: -3 # RW edit: -5 > -3
+            Shock: -3 # RW edit: -5 > -3
+            Cold: -3 # RW edit: -5 > -3
+            Caustic: -3 # RW edit: -5 > -3
+            Poison: -3 # RW edit: -5 > -3
+            Radiation: -3 # RW edit: -5 > -3
+            Asphyxiation: -3 # RW edit: -5 > -3
+            Bloodloss: -3 # RW edit: -5 > -3
+            Blunt: -3 # RW edit: -5 > -3
+            Slash: -3 # RW edit: -5 > -3
+            Piercing: -3 # RW edit: -5 > -3
       - !type:ModifyBloodLevel
         amount: 3
       - !type:ModifyBleed
@@ -261,7 +261,7 @@
   flavor: terrible
   color: "#87ab08"
   physicalDesc: reagent-physical-desc-pungent
-#  slipData: # Orion-Edit: Fuck slippery curse
+#  slipData: # RW-Edit: Fuck slippery curse
 #    requiredSlipSpeed: 4.0 #It's not as slippery as water
 #  friction: 0.4
   metabolisms:
@@ -272,7 +272,7 @@
       - !type:AdjustReagent
         reagent: Nutriment
         amount: 0.1
-      - !type:ChemAddMoodlet # Orion
+      - !type:ChemAddMoodlet # RW
         moodPrototype: DrankVomit
   footstepSound:
     collection: FootstepBlood

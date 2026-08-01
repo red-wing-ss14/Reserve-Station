@@ -40,7 +40,7 @@ public sealed class SuitSensorSystem : SharedSuitSensorSystem
     [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
-//    [Dependency] private readonly IPrototypeManager _proto = default!; // Orion-Edit: _proto don't used
+//    [Dependency] private readonly IPrototypeManager _proto = default!; // RW-Edit: _proto don't used
     [Dependency] private readonly InventorySystem _inventory = default!;
 
     public override void Update(float frameTime)
@@ -191,7 +191,7 @@ public sealed class SuitSensorSystem : SharedSuitSensorSystem
             return null;
 
         // check if sensor is enabled and worn by user
-        if (sensor.User == null || !HasComp<MobStateComponent>(sensor.User) || transform.GridUid == null) // Orion-Edit: check if sensor worn by user
+        if (sensor.User == null || !HasComp<MobStateComponent>(sensor.User) || transform.GridUid == null) // RW-Edit: check if sensor worn by user
             return null;
 
         // try to get mobs id from ID slot
@@ -208,10 +208,10 @@ public sealed class SuitSensorSystem : SharedSuitSensorSystem
                 userJob = card.Comp.LocalizedJobTitle;
             userJobIcon = card.Comp.JobIcon;
 
-            // Orion-Edit-Start: sorting by departments
+            // RW-Edit-Start: sorting by departments
             foreach (var department in card.Comp.JobDepartments)
                 userJobDepartments.Add(department);
-            // Orion-Edit-End
+            // RW-Edit-End
         }
 
         // get health mob state
@@ -226,11 +226,11 @@ public sealed class SuitSensorSystem : SharedSuitSensorSystem
 
         // Get mob total damage crit threshold
         int? totalDamageThreshold = null;
-        if (_mobThresholdSystem.TryGetThresholdForState(sensor.User.Value, MobState.SoftCritical, out var critThreshold)) // Orion-Edit
+        if (_mobThresholdSystem.TryGetThresholdForState(sensor.User.Value, MobState.SoftCritical, out var critThreshold)) // RW-Edit
             totalDamageThreshold = critThreshold.Value.Int();
 
         // finally, form suit sensor status
-        // Orion-Edit-Start: always store full data for all modes; mode-based projection is done server-side in UpdateUserInterface before sending to client
+        // RW-Edit-Start: always store full data for all modes; mode-based projection is done server-side in UpdateUserInterface before sending to client
         var status = new SuitSensorStatus(GetNetEntity(sensor.User.Value), GetNetEntity(uid), userName, userJob, userJobIcon, userJobDepartments, sensor.Mode);
                 status.IsAlive = isAlive;
                 status.TotalDamage = totalDamage;
@@ -256,7 +256,7 @@ public sealed class SuitSensorSystem : SharedSuitSensorSystem
 
                 status.Coordinates = GetNetCoordinates(coordinates);
                 status.IsCommandTracker = sensor.CommandTracker; //Goob station
-        // Orion-Edit-End
+        // RW-Edit-End
 
         return status;
     }
@@ -277,7 +277,7 @@ public sealed class SuitSensorSystem : SharedSuitSensorSystem
             [SuitSensorConstants.NET_IS_COMMAND] = status.IsCommandTracker, //Goob station
             [SuitSensorConstants.NET_SUIT_SENSOR_UID] = status.SuitSensorUid,
             [SuitSensorConstants.NET_OWNER_UID] = status.OwnerUid,
-            [SuitSensorConstants.NET_SUIT_SENSOR_MODE] = status.Mode, // Orion
+            [SuitSensorConstants.NET_SUIT_SENSOR_MODE] = status.Mode, // RW
         };
 
         if (status.TotalDamage != null)
@@ -310,14 +310,14 @@ public sealed class SuitSensorSystem : SharedSuitSensorSystem
         if (!payload.TryGetValue(SuitSensorConstants.NET_IS_COMMAND, out bool iscommand)) return null; //Goob station
         if (!payload.TryGetValue(SuitSensorConstants.NET_SUIT_SENSOR_UID, out NetEntity suitSensorUid)) return null;
         if (!payload.TryGetValue(SuitSensorConstants.NET_OWNER_UID, out NetEntity ownerUid)) return null;
-        if (!payload.TryGetValue(SuitSensorConstants.NET_SUIT_SENSOR_MODE, out SuitSensorMode mode)) return null; // Orion
+        if (!payload.TryGetValue(SuitSensorConstants.NET_SUIT_SENSOR_MODE, out SuitSensorMode mode)) return null; // RW
 
         // try get total damage and cords (optionals)
         payload.TryGetValue(SuitSensorConstants.NET_TOTAL_DAMAGE, out int? totalDamage);
         payload.TryGetValue(SuitSensorConstants.NET_TOTAL_DAMAGE_THRESHOLD, out int? totalDamageThreshold);
         payload.TryGetValue(SuitSensorConstants.NET_COORDINATES, out NetCoordinates? coords);
 
-        var status = new SuitSensorStatus(ownerUid, suitSensorUid, name, job, jobIcon, jobDepartments, mode) // Orion-Edit
+        var status = new SuitSensorStatus(ownerUid, suitSensorUid, name, job, jobIcon, jobDepartments, mode) // RW-Edit
         {
             IsAlive = isAlive.Value,
             TotalDamage = totalDamage,

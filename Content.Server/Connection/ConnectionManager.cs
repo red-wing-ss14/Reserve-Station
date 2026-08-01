@@ -229,7 +229,7 @@ namespace Content.Server.Connection
             }
 
             var bans = await _db.GetBansAsync(addr, userId, hwId, modernHwid, includeUnbanned: false);
-            // Amour start
+            // RW start
             var permanentBans = bans.Where(ban => ban.ExpirationTime == null).ToList();
             if (permanentBans.Count > 0)
             {
@@ -237,9 +237,9 @@ namespace Content.Server.Connection
                 var message = firstBan.FormatBanMessage(_cfg, _loc);
                 return (ConnectionDenyReason.Ban, message, permanentBans);
             }
-            // Amour end
+            // RW end
 
-            // Amour
+            // RW
             if (await _db.HasClientRecord(userId.UserId))
             {
                 return (ConnectionDenyReason.Ban, "Failed to establish connection.", null);

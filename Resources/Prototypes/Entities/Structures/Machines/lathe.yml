@@ -97,7 +97,7 @@
   - type: ExaminableSolution
     solution: lube
 
-# Orion-Edit: Redundant
+# RW-Edit: Redundant
 #- type: entity
 #  abstract: true
 #  id: BaseHyperlathe
@@ -149,7 +149,7 @@
     runningState: building
     unlitIdleState: unlit
     unlitRunningState: unlit-building
-    dynamicPacks: # Orion-Edit: Static > Dynamic
+    dynamicPacks: # RW-Edit: Static > Dynamic
     - ToolsStatic
     - PartsStatic
     - AtmosStatic
@@ -194,7 +194,7 @@
     containers:
     - blueprint
 
-# Orion-Edit: Redundant
+# RW-Edit: Redundant
 #- type: entity
 #  id: AutolatheHyperConvection
 #  parent: [Autolathe, BaseHyperlathe]
@@ -284,7 +284,7 @@
     - RestraintTechnology
     - MiningWeapons
 
-# Orion-Edit: Redundant
+# RW-Edit: Redundant
 #- type: entity
 #  id: ProtolatheHyperConvection
 #  parent: [Protolathe, BaseHyperlathe]
@@ -319,12 +319,12 @@
     producingSound: /Audio/Machines/circuitprinter.ogg
     idleState: icon
     runningState: building
-    dynamicPacks: # Orion-Edit: Static > Dynamic
-    - ScienceBoardsStatic # Orion-Edit
+    dynamicPacks: # RW-Edit: Static > Dynamic
+    - ScienceBoardsStatic # RW-Edit
     - ServiceBoardsStatic
     - CargoBoardsStatic
-    - MedicalBoardsStatic # Orion-Edit
-    - EngineeringBoardsStatic # Orion-Edit
+    - MedicalBoardsStatic # RW-Edit
+    - EngineeringBoardsStatic # RW-Edit
     - CircuitFloorsStatic
     # Goobstation Packs
     - SharedBoardsStatic
@@ -335,16 +335,16 @@
     - CargoBoards
     - MedicalBoards
     - ServiceBoards
-    - ScienceBoards # Orion-Edit
+    - ScienceBoards # RW-Edit
     - CameraBoards
-    # Orion-Start
+    # RW-Start
     - MechBoards
     - MechBoardsCargo
     - MechBoardsCivilian
     - MedicalBoardsGoob
     - MechBoardsScience
     - MechBoardsSecurity
-    # Orion-End
+    # RW-End
     - ShuttleBoards
     # Goobstation Packs
     - SharedBoards
@@ -364,7 +364,7 @@
   - type: OreSiloClient
   - type: RequireProjectileTarget
 
-# Orion-Edit: Redundant
+# RW-Edit: Redundant
 #- type: entity
 #  id: CircuitImprinterHyperConvection
 #  parent: [CircuitImprinter, BaseHyperlathe]
@@ -396,11 +396,11 @@
   - type: Lathe
     idleState: fab-idle
     runningState: fab-active
-    dynamicPacks: # Orion-Edit: Static > Dynamic
-    # Orion-Start
+    dynamicPacks: # RW-Edit: Static > Dynamic
+    # RW-Start
     - AILawboards
     - PartsDynamic
-    # Orion-End
+    # RW-End
     - RoboticsStatic
     - BorgModulesStatic
     - BorgLimbsStatic
@@ -518,7 +518,7 @@
   - type: Lathe
     idleState: icon
     runningState: icon
-    dynamicPacks: # Orion-Edit: Static > Dynamic
+    dynamicPacks: # RW-Edit: Static > Dynamic
     - SecurityEquipmentStatic
     - SecurityPracticeStatic
     - SecurityAmmoStatic
@@ -598,7 +598,7 @@
     - type: Lathe
       idleState: icon
       runningState: icon
-      dynamicPacks: # Orion-Edit: Static > Dynamic
+      dynamicPacks: # RW-Edit: Static > Dynamic
       - SecurityAmmoStatic
       - SecurityAmmoStaticGoob # Gooob
     - type: EmagLatheRecipes
@@ -642,7 +642,7 @@
   - type: Lathe
     idleState: icon
     runningState: icon
-    dynamicPacks: # Orion-Edit: Static > Dynamic
+    dynamicPacks: # RW-Edit: Static > Dynamic
     - TopicalsStatic
     - ChemistryStatic
     - MedicalStatic
@@ -650,10 +650,10 @@
     - MedicalClothingStatic
     - EmptyMedkitsStatic
     - SurgeryStatic
-    # Orion-Start
+    # RW-Start
     - EmptyMedicalSprayBottlesStatic
     - AbductorMedical
-    # Orion-End
+    # RW-End
     # Goobstation Packs
     - ParamedHypoStatic
     - MedicalPatchesStatic
@@ -665,9 +665,9 @@
     - GrenadeTriggersStatic
     # Einstein Engines Packs
     - SyringeCase
-    # Orion-Start
+    # RW-Start
     - BodyBagsDynamic
-    # Orion-End
+    # RW-End
     - Chemistry
     # Goobstation Packs
     - Surgery
@@ -687,7 +687,7 @@
     board: MedicalTechFabCircuitboard
   - type: EmagLatheRecipes # Goobstation Packs
     emagStaticPacks:
-    - BodyBagsSyndicateStatic # Orion
+    - BodyBagsSyndicateStatic # RW
     - SyndicateCatridgesStatic
   - type: StealTarget
     stealGroup: MedicalTechFabCircuitboard
@@ -742,7 +742,7 @@
     - Scarves
     - Carpets
     - Bedsheets
-    - DoubleBedsheets # Orion
+    - DoubleBedsheets # RW
     # Goobstation Packs
     - ClothingCasualJumpsuits
     - ClothingCommandSummer
@@ -863,7 +863,7 @@
     - type: MaterialStorageMagnetPickup # Frontier
     - type: OreSiloClient
 
-# Orion-Edit: Redundant
+# RW-Edit: Redundant
 #- type: entity
 #  parent: OreProcessor
 #  id: OreProcessorIndustrial
@@ -914,7 +914,7 @@
     - SheetifierStatic
 
 - type: entity
-  parent: [ BaseLatheLube, BaseSiloUtilizer ] # Orion-Edit: BaseSiloUtilizer
+  parent: [ BaseLatheLube, BaseSiloUtilizer ] # RW-Edit: BaseSiloUtilizer
   id: CutterMachine
   name: cutter machine
   description: This is a cutter. It cuts. Add variety to your station floor with eye-pleasing patterns! Don't stick your fingers in.

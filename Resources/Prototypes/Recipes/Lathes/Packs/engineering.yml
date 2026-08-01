@@ -25,14 +25,14 @@
   - ClothingHeadHatWelding
   - ClothingHeadHatCone
   - WeaponHammer
-  # Orion-Start
+  # RW-Start
   - WelderMini
   - Crowbar
   - Shovel
   - RemoteSignaller
   - ClothingEyesWelding
   - GeigerCounter
-  # Orion-End
+  # RW-End
 
 - type: latheRecipePack
   id: AtmosStatic
@@ -58,10 +58,10 @@
   - CellRechargerCircuitboard
   - WeaponCapacitorRechargerCircuitboard
   - FreezerElectronics
-  # Orion-Start
+  # RW-Start
   - ScreenTimerElectronics
   - PowerComputerCircuitboard
-  # Orion-End
+  # RW-End
 
 - type: latheRecipePack
   id: EngineeringBoardsStatic
@@ -77,22 +77,22 @@
   - PowerDrill
   - WelderExperimental
   - JawsOfLife
-  # Orion-Start
+  # RW-Start
   - InducerEngineering
-  # Orion-End
+  # RW-End
 
 - type: latheRecipePack
   id: AtmosTools
   recipes:
   - HolofanProjector
-  # Orion-Start
+  # RW-Start
   - OxygenTank
   - WaterVaporTank
   - PlasmaTank
   - FireExtinguisher
   - FireExtinguisherMini
   - ClothingShoesBootsMag
-  # Orion-End
+  # RW-End
 
 - type: latheRecipePack
   id: EngineeringWeapons
@@ -105,7 +105,7 @@
   id: EngineeringBoards
   recipes:
   - ThermomachineFreezerMachineCircuitBoard
-#  - HellfireFreezerMachineCircuitBoard # Orion-Edit: Redundant
+#  - HellfireFreezerMachineCircuitBoard # RW-Edit: Redundant
   - PortableScrubberMachineCircuitBoard
   - SolarControlComputerCircuitboard
   - SolarTrackerElectronics
@@ -119,11 +119,11 @@
   - HolopadMachineCircuitboard
   - TeslaCoilCircuitboard
   - RadiationCollectorCircuitboard
-  # Orion-Start
+  # RW-Start
   - CommsComputerCircuitboard
   - AlertsComputerCircuitboard
   - BlockGameArcadeComputerCircuitboard
   - SpaceVillainArcadeComputerCircuitboard
   - MaterialSiloMachineCircuitboard
   - TeslaGroundingRod
-  # Orion-End
+  # RW-End

@@ -102,10 +102,10 @@
 - type: entity
   id: BoozeDispenserEmpty
   name: booze dispenser
-#  suffix: Empty # Orion-Edit: Removed
+#  suffix: Empty # RW-Edit: Removed
   description: A booze dispenser with a single slot for a container to be filled.
   parent: ReagentDispenserBase
-  categories: [ HideSpawnMenu ] # Orion-Edit: Migration
+  categories: [ HideSpawnMenu ] # RW-Edit: Migration
   components:
   - type: Rotatable
   - type: Sprite
@@ -121,7 +121,7 @@
     noRot: false
   - type: Machine
     board: BoozeDispenserMachineCircuitboard
-  - type: ContainerContainer # Orion
+  - type: ContainerContainer # RW
     containers:
       machine_board: !type:Container
       machine_parts: !type:Container
@@ -137,11 +137,11 @@
 - type: entity
   id: BoozeDispenser
   name: booze dispenser
-#  suffix: Filled # Orion-Edit: Removed
+#  suffix: Filled # RW-Edit: Removed
   description: A booze dispenser with a single slot for a container to be filled.
   parent: BoozeDispenserEmpty
   components:
-  # Orion-Start
+  # RW-Start
   - type: EnergyReagentDispenser
     energyBeakerSlot:
       whitelistFailPopup: reagent-dispenser-component-cannot-put-entity-message
@@ -187,4 +187,4 @@
     batteryRechargeEfficiency: 1.0
   - type: ApcPowerReceiver
     powerLoad: 30
-  # Orion-End
+  # RW-End

@@ -232,7 +232,7 @@ namespace Content.IntegrationTests.Tests
             // if upstreaming take ours here and edit manually.
             //"Amber", kill
             "Atlas",
-            "Aspid", // Orion
+            "Aspid", // RW
             "Bagel",
             "Barratry",
             "Box",            // Not in pool
@@ -269,7 +269,7 @@ namespace Content.IntegrationTests.Tests
             "TestTeg",        // Dev map
             "Train",          // Not in pool
             // Goob end
-            "WonderBox"       // Amour
+            "WonderBox"       // RW
         };
         // Goobstation edit start, yeah i know, but this is easier and less load than loading protoman or something.
         private static readonly string[] GameMapsInCurrentPool = // plus dev
@@ -277,7 +277,7 @@ namespace Content.IntegrationTests.Tests
             // order this list alphabetically, mark dev maps
               //"Amber", kill
               "Atlas",
-              "Aspid", // Orion
+              "Aspid", // RW
               "Bagel",
              //  "Barratry", kill memory concerns
             //"Box",            // Not in pool

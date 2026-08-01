@@ -10,10 +10,10 @@
     sprite: /Textures/_White/Objects/Devices/experimentalsyndicateteleporter.rsi
     layers:
     - state: icon
-    # Orion-Start
+    # RW-Start
     - state: icon-unshaded
       shader: unshaded
-    # Orion-End
+    # RW-End
   - type: ExperimentalTeleporter
   - type: LimitedCharges
     maxCharges: 4

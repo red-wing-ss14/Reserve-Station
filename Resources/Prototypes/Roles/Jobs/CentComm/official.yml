@@ -10,10 +10,10 @@
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-centcom # Goobstation
   canBeAntag: false
-  # Orion-Start
+  # RW-Start
   salary: 300
   payrollFromStationBudget: false
-  # Orion-End
+  # RW-End
   requirements:
   - !type:AgeRequirement
     requiredAge: 21
@@ -27,7 +27,7 @@
   special: # Goobstation
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant, DeathRattleImplantCentcomm ]
-  # Orion-Start
+  # RW-Start
   - !type:AddComponentSpecial
     components:
       - type: AdditionalLanguage
@@ -35,7 +35,7 @@
         - CorporateCodespeak
         understands:
         - CorporateCodespeak
-  # Orion-End
+  # RW-End
 
 - type: startingGear # Goobstation - Start - SolsticeOfTheWinter
   id: CentcomGear

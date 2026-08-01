@@ -10,12 +10,12 @@
     CableApcStack: 2
     FlashlightLantern: 2
     PowerCellSmallPrinted: 3
-    MicroServoStockPart: 12 # Orion-Edit: Servo
+    MicroServoStockPart: 12 # RW-Edit: Servo
   contrabandInventory:
-    # Orion-Start
+    # RW-Start
     PowerCellHigh: 1
     MegaCellHigh: 1
-    # Orion-End
+    # RW-End
     ProximitySensor: 1
     LeftArmBorg: 1
   emaggedInventory: # goob

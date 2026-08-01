@@ -9,13 +9,13 @@
     Plastic: 400
     Gold: 200
 
-# Orion-Edit: Redundant
+# RW-Edit: Redundant
 #- type: latheRecipe
 #  parent: BaseUpgradeKit
 #  id: LatheUpgradeKitHyper
 #  result: LatheUpgradeKitHyper
 
-# Orion-Edit: Redundant
+# RW-Edit: Redundant
 #- type: latheRecipe
 #  parent: BaseUpgradeKit
 #  id: LatheUpgradeKitCryo

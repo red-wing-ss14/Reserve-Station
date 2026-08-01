@@ -5,10 +5,10 @@
   name: species-name-moth
   roundStart: true
   prototype: MobMoth
-  # Amour port: WD Slim body types START
+  # RW port: WD Slim body types START
   bodyTypes:
     - MothNormal
-  # Amour port: WD Slim body types END
+  # RW port: WD Slim body types END
   defaultSkinTone: "#ffda93"
   markingLimits: MobMothMarkingLimits
   dollPrototype: MobMothDummy
@@ -16,9 +16,9 @@
   maleFirstNames: NamesMothFirstMale
   femaleFirstNames: NamesMothFirstFemale
   lastNames: NamesMothLast
-  # Orion-Start
+  # RW-Start
   category: Classic
-  description: "/ServerInfo/_Orion/SpeciesDescriptions/Moth.xml"
+  description: "/ServerInfo/_RW/SpeciesDescriptions/Moth.xml"
   pros:
   - species-moth-pro-cold-resist
   - species-moth-pro-wing-jump
@@ -28,7 +28,7 @@
   cons:
   - species-moth-con-fire-vulnerable
   - species-moth-con-flammable
-  # Orion-End
+  # RW-End
   # begin Goobstation: port EE height/width sliders
   minHeight: 0.8
   defaultHeight: 1
@@ -38,11 +38,11 @@
   maxWidth: 1.25
   # end Goobstation: port EE height/width sliders
 
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
 - type: bodyType
   id: MothNormal
   name: body-normal
-# Amour port: WD Slim body types END
+# RW port: WD Slim body types END
   sprites:
     Head: MobMothHead
     Face: MobHumanoidAnyMarking
@@ -81,7 +81,7 @@
       points: 0
       required: false
     Tail:
-      points: 2 # Amour edit
+      points: 2 # RW edit
       required: true
       defaultMarkings: [ MothWingsDefault ]
     Snout:

@@ -4,7 +4,7 @@ using System.Linq;
 using Content.Goobstation.Shared.Communications;
 using Content.Goobstation.Shared.Loudspeaker.Events;
 using Content.Server._EinsteinEngines.Language;
-using Content.Server._Orion.ServerProtection.Chat;
+using Content.Server._RW.ServerProtection.Chat;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
 using Content.Server.Power.Components;
@@ -42,7 +42,7 @@ public sealed partial class RadioSystem : EntitySystem
     [Dependency] private readonly RadioJobIconSystem _radioIconSystem = default!; // Goobstation - radio icons
     [Dependency] private readonly LanguageSystem _language = default!; // Einstein Engines - Language
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!; // Goobstation - Whitelisted radio channels
-    [Dependency] private readonly ChatProtectionSystem _chatProtection = default!; // Orion
+    [Dependency] private readonly ChatProtectionSystem _chatProtection = default!; // RW
 
     // set used to prevent radio feedback loops.
     private readonly HashSet<string> _messages = new();
@@ -127,10 +127,10 @@ public sealed partial class RadioSystem : EntitySystem
             return;
         // Einstein Engines - Language end
 
-        // Orion-Start
+        // RW-Start
         if (_chatProtection.CheckICMessage(message, messageSource))
             return;
-        // Orion-End
+        // RW-End
 
         // TODO if radios ever garble / modify messages, feedback-prevention needs to be handled better than this.
         if (!_messages.Add(message))

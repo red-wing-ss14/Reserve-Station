@@ -166,7 +166,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-#        name: Magazine # Orion-Edit: Localization
+#        name: Magazine # RW-Edit: Localization
         startingItem: MagazineAntiMateriel
         insertSound: /Audio/Weapons/Guns/MagIn/rifle_load.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
@@ -176,7 +176,7 @@
           - MagazineAntiMateriel
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
-#        name: Chamber # Orion-Edit: Localization
+#        name: Chamber # RW-Edit: Localization
         startingItem: CartridgeAntiMateriel
         priority: 1
         whitelist:
@@ -192,9 +192,9 @@
 
 - type: entity
   name: Kardashev-Mosin
-  parent: [BaseWeaponSniper, BaseGunWieldable, BaseSecurityContraband] # Orion-Edit: MajorContraband > SecurityContraband
+  parent: [BaseWeaponSniper, BaseGunWieldable, BaseSecurityContraband] # RW-Edit: MajorContraband > SecurityContraband
   id: WeaponSniperMosin
-  description: A true relic, the Kardashev-Mosin has served in nearly every armed conflict since its creation 670 years ago. The bolt-action design of the rifle remains virtually identical to its original design, whether used for hunting, sniping, or endless trench warfare. Loads 10 rounds of 7.62mm rifle. # Orion-Edit: .30 rifle > 7.62mm
+  description: A true relic, the Kardashev-Mosin has served in nearly every armed conflict since its creation 670 years ago. The bolt-action design of the rifle remains virtually identical to its original design, whether used for hunting, sniping, or endless trench warfare. Loads 10 rounds of 7.62mm rifle. # RW-Edit: .30 rifle > 7.62mm
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
@@ -211,15 +211,15 @@
     inHandsMaxFillLevels: 1
     equippedFillBaseName: -fill-
     equippedMaxFillLevels: 1
-  - type: Gun # Orion
+  - type: Gun # RW
     fireRate: 1.3
   - type: MeleeWeapon
     wideAnimationRotation: -135
     animationRotation: -135 # WWDP
     damage:
       types:
-        Piercing: 15 # Orion-Edit: 12 > 15
-        Slash: 4 # Orion
+        Piercing: 15 # RW-Edit: 12 > 15
+        Slash: 4 # RW
     angle: 0
     animation: WeaponArcThrust
     soundHit:
@@ -249,13 +249,13 @@
     storedRotation: 45
   - type: ScannableForPoints # goob edit
     points: 2
-  # Orion-Start
+  # RW-Start
   - type: BallisticAmmoProvider
     proto: CartridgeRifle762
     whitelist:
       tags:
       - CartridgeRifle762
-  # Orion-End
+  # RW-End
 
 - type: entity
   name: Hristov

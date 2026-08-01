@@ -11,7 +11,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using System.Diagnostics.CodeAnalysis;
-using Content.Shared._Orion.Mood;
+using Content.Shared._RW.Mood;
 using Content.Shared.CCVar;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.Configuration;
@@ -28,15 +28,15 @@ public sealed class ThirstSystem : EntitySystem
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movement = default!;
     [Dependency] private readonly SharedJetpackSystem _jetpack = default!;
-    [Dependency] private readonly IConfigurationManager _config = default!; // Orion
-    [Dependency] private readonly INetManager _net = default!; // Orion
-    [Dependency] private readonly MobStateSystem _mobState = default!; // Orion
+    [Dependency] private readonly IConfigurationManager _config = default!; // RW
+    [Dependency] private readonly INetManager _net = default!; // RW
+    [Dependency] private readonly MobStateSystem _mobState = default!; // RW
 
     private static readonly ProtoId<SatiationIconPrototype> ThirstIconOverhydratedId = "ThirstIconOverhydrated";
     private static readonly ProtoId<SatiationIconPrototype> ThirstIconThirstyId = "ThirstIconThirsty";
     private static readonly ProtoId<SatiationIconPrototype> ThirstIconParchedId = "ThirstIconParched";
 
-    // Orion-Start
+    // RW-Start
     private static readonly HashSet<ThirstThreshold> MovementThresholds = new()
     {
         ThirstThreshold.Dead,
@@ -46,17 +46,17 @@ public sealed class ThirstSystem : EntitySystem
     private SatiationIconPrototype? _overhydratedIcon;
     private SatiationIconPrototype? _thirstyIcon;
     private SatiationIconPrototype? _parchedIcon;
-    // Orion-End
+    // RW-End
 
     public override void Initialize()
     {
         base.Initialize();
 
-        // Orion-Start
+        // RW-Start
         _prototype.TryIndex(ThirstIconOverhydratedId, out _overhydratedIcon);
         _prototype.TryIndex(ThirstIconThirstyId, out _thirstyIcon);
         _prototype.TryIndex(ThirstIconParchedId, out _parchedIcon);
-        // Orion-End
+        // RW-End
 
         SubscribeLocalEvent<ThirstComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovespeed);
         SubscribeLocalEvent<ThirstComponent, MapInitEvent>(OnMapInit);
@@ -82,18 +82,18 @@ public sealed class ThirstSystem : EntitySystem
 
         DirtyFields(uid, component, null, nameof(ThirstComponent.NextUpdateTime), nameof(ThirstComponent.CurrentThirstThreshold), nameof(ThirstComponent.LastThirstThreshold));
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         if (TryComp(uid, out MovementSpeedModifierComponent? moveMod))
             _movement.RefreshMovementSpeedModifiers(uid, moveMod);
-        // Orion-Edit-End
+        // RW-Edit-End
     }
 
     private void OnRefreshMovespeed(EntityUid uid, ThirstComponent component, RefreshMovementSpeedModifiersEvent args)
     {
-        // Orion-Start
+        // RW-Start
         if (_config.GetCVar(CCVars.MoodEnabled))
             return;
-        // Orion-End
+        // RW-End
 
         // TODO: This should really be taken care of somewhere else
         if (_jetpack.IsUserFlying(uid))
@@ -108,7 +108,7 @@ public sealed class ThirstSystem : EntitySystem
         SetThirst(uid, component, component.ThirstThresholds[ThirstThreshold.Okay]);
     }
 
-    // Orion-Edit-Start
+    // RW-Edit-Start
     private ThirstThreshold GetThirstThreshold(ThirstComponent component, float amount)
     {
         if (amount <= component.ThirstThresholds[ThirstThreshold.Dead])
@@ -124,7 +124,7 @@ public sealed class ThirstSystem : EntitySystem
             ? ThirstThreshold.Okay
             : ThirstThreshold.OverHydrated;
     }
-    // Orion-Edit-End
+    // RW-Edit-End
 
     public void ModifyThirst(EntityUid uid, ThirstComponent component, float amount)
     {
@@ -141,14 +141,14 @@ public sealed class ThirstSystem : EntitySystem
         DirtyField(uid, component, nameof(ThirstComponent.CurrentThirst));
     }
 
-    // Orion-Edit-Start
+    // RW-Edit-Start
     private static bool IsMovementThreshold(ThirstThreshold threshold)
     {
         return MovementThresholds.Contains(threshold);
     }
-    // Orion-Edit-End
+    // RW-Edit-End
 
-    // Orion-Edit-Start
+    // RW-Edit-Start
     public bool TryGetStatusIconPrototype(ThirstComponent component, [NotNullWhen(true)] out SatiationIconPrototype? prototype)
     {
         prototype = component.CurrentThirstThreshold switch
@@ -161,27 +161,27 @@ public sealed class ThirstSystem : EntitySystem
 
         return prototype != null;
     }
-    // Orion-Edit-End
+    // RW-Edit-End
 
     private void UpdateEffects(EntityUid uid, ThirstComponent component)
     {
-        // Orion-Start
+        // RW-Start
         var wasMovementAffected = IsMovementThreshold(component.LastThirstThreshold);
         var isMovementAffected = IsMovementThreshold(component.CurrentThirstThreshold);
-        // Orion-End
+        // RW-End
 
-        if (wasMovementAffected != isMovementAffected && TryComp(uid, out MovementSpeedModifierComponent? movementSlowdownComponent)) // Orion-Edit
+        if (wasMovementAffected != isMovementAffected && TryComp(uid, out MovementSpeedModifierComponent? movementSlowdownComponent)) // RW-Edit
         {
-            // Orion-Edit-Start
+            // RW-Edit-Start
             if (!_config.GetCVar(CCVars.MoodEnabled))
                 _movement.RefreshMovementSpeedModifiers(uid, movementSlowdownComponent);
-            // Orion-Edit-End
+            // RW-Edit-End
         }
 
-        // Orion-Start
+        // RW-Start
         if (_config.GetCVar(CCVars.MoodEnabled) && _net.IsServer)
             RaiseLocalEvent(uid, new MoodEffectEvent("Thirst" + component.CurrentThirstThreshold));
-        // Orion-End
+        // RW-End
 
         // Update UI
         if (ThirstComponent.ThirstThresholdAlertTypes.TryGetValue(component.CurrentThirstThreshold, out var alertId))
@@ -193,7 +193,7 @@ public sealed class ThirstSystem : EntitySystem
             _alerts.ClearAlertCategory(uid, component.ThirstyCategory);
         }
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         component.LastThirstThreshold = component.CurrentThirstThreshold;
 
         var newDecayRate = component.CurrentThirstThreshold switch
@@ -213,7 +213,7 @@ public sealed class ThirstSystem : EntitySystem
         }
 
         DirtyField(uid, component, nameof(ThirstComponent.LastThirstThreshold));
-        // Orion-Edit-End
+        // RW-Edit-End
     }
 
     public override void Update(float frameTime)
@@ -228,18 +228,18 @@ public sealed class ThirstSystem : EntitySystem
 
             thirst.NextUpdateTime += thirst.UpdateRate;
 
-            // Orion-Start
+            // RW-Start
             if (_mobState.IsDead(uid))
                 continue;
-            // Orion-End
+            // RW-End
 
-            var oldThirst = thirst.CurrentThirst; // Orion
+            var oldThirst = thirst.CurrentThirst; // RW
             ModifyThirst(uid, thirst, -thirst.ActualDecayRate);
 
-            // Orion-Start
+            // RW-Start
             if (Math.Abs(oldThirst - thirst.CurrentThirst) < 1e-6f)
                 continue;
-            // Orion-End
+            // RW-End
 
             var calculatedThirstThreshold = GetThirstThreshold(thirst, thirst.CurrentThirst);
 

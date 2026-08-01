@@ -42,7 +42,7 @@
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: BatteryAmmoProvider
     proto: RedHeavyLaser
-    fireCost: 20 # Orion-Edit: 30 > 20
+    fireCost: 20 # RW-Edit: 30 > 20
   - type: Appearance
   - type: AmmoCounter
 
@@ -65,7 +65,7 @@
       path: /Audio/Weapons/Guns/Gunshots/laser.ogg
   - type: BatteryAmmoProvider
     proto: RedMediumLaser
-    fireCost: 25 # Orion-Edit: 30 > 25
+    fireCost: 25 # RW-Edit: 30 > 25
   - type: Appearance
   - type: AmmoCounter
 
@@ -137,7 +137,7 @@
       path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
   - type: BatteryAmmoProvider
     proto: BulletDisabler
-    fireCost: 5 # Orion-Edit: 10 > 5
+    fireCost: 5 # RW-Edit: 10 > 5
   - type: Appearance
   - type: AmmoCounter
 
@@ -160,7 +160,7 @@
       path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
   - type: BatteryAmmoProvider
     proto: BulletTaser
-    fireCost: 79 # Orion-Edit: 19 > 79
+    fireCost: 79 # RW-Edit: 19 > 79
   - type: Appearance
   - type: AmmoCounter
 
@@ -183,7 +183,7 @@
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
   - type: BatteryAmmoProvider
     proto: ShellShotgun
-    fireCost: 20 # Orion-Edit: 30 > 20
+    fireCost: 20 # RW-Edit: 30 > 20
   - type: Appearance
   - type: AmmoCounter
 
@@ -206,7 +206,7 @@
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
   - type: BatteryAmmoProvider
     proto: ShellShotgunIncendiary
-    fireCost: 30 # Orion-Edit: 40 > 30
+    fireCost: 30 # RW-Edit: 40 > 30
   - type: Appearance
   - type: AmmoCounter
 
@@ -275,7 +275,7 @@
       path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
   - type: BatteryAmmoProvider
     proto: GrenadeBlast
-    fireCost: 100 # Orion-Edit: 300 > 100
+    fireCost: 100 # RW-Edit: 300 > 100
   - type: Battery
     maxCharge: 300 # Battery is charged by mech
     startingCharge: 300

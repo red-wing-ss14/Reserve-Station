@@ -67,7 +67,7 @@ namespace Content.Server.Construction.Conditions
                                            ("elementName", stackEnt.Name)));
             }
 
-            // Orion-Start
+            // RW-Start
             foreach (var (partType, required) in machineFrame.PartRequirements)
             {
                 var amount = required - machineFrame.PartProgress.GetValueOrDefault(partType, 0);
@@ -90,7 +90,7 @@ namespace Content.Server.Construction.Conditions
                     ("amount", amount),
                     ("elementName", elementName)));
             }
-            // Orion-End
+            // RW-End
 
             foreach (var (compName, info) in machineFrame.ComponentRequirements)
             {
@@ -101,7 +101,7 @@ namespace Content.Server.Construction.Conditions
 
                 var examineName = constructionSys.GetExamineName(info);
                 args.PushMarkup(Loc.GetString("construction-condition-machine-frame-required-element-entry",
-                                                ("amount", amount), // Orion-Edit
+                                                ("amount", amount), // RW-Edit
                                                 ("elementName", examineName)));
             }
 
@@ -114,7 +114,7 @@ namespace Content.Server.Construction.Conditions
 
                 var examineName = constructionSys.GetExamineName(info);
                 args.PushMarkup(Loc.GetString("construction-condition-machine-frame-required-element-entry",
-                                    ("amount", amount), // Orion-Edit
+                                    ("amount", amount), // RW-Edit
                                     ("elementName", examineName))
                                 + "\n");
             }

@@ -16,14 +16,14 @@ namespace Content.Client._EinsteinEngines.Language;
 public sealed partial class LanguageMenuWindow : DefaultWindow
 {
     private readonly LanguageSystem _clientLanguageSystem;
-    private readonly SpriteSystem _spriteSystem; // Orion
+    private readonly SpriteSystem _spriteSystem; // RW
     private readonly List<EntryState> _entries = new();
 
     public LanguageMenuWindow()
     {
         RobustXamlLoader.Load(this);
         _clientLanguageSystem = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<LanguageSystem>();
-        _spriteSystem = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<SpriteSystem>(); // Orion
+        _spriteSystem = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<SpriteSystem>(); // RW
         _clientLanguageSystem.OnLanguagesChanged += UpdateState;
     }
 
@@ -85,7 +85,7 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
             SeparationOverride = 2
         };
 
-        // Orion-Start
+        // RW-Start
         var texture = _spriteSystem.Frame0(proto!.Icon);
         var icon = new TextureRect
         {
@@ -96,7 +96,7 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
             VerticalExpand = true,
         };
         header.AddChild(icon);
-        // Orion-End
+        // RW-End
 
         var name = new Label
         {
@@ -105,7 +105,7 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
             HorizontalExpand = true
         };
 
-        var button = new Button { Text = "Выбрать" }; // Orion-Edit: Localization
+        var button = new Button { Text = "Выбрать" }; // RW-Edit: Localization
         button.OnPressed += _ => OnLanguageChosen(language);
         state.Button = button;
 

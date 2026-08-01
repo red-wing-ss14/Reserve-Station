@@ -322,8 +322,8 @@
     maxCharge: 1800
     startingCharge: 1800
   - type: BatteryAmmoProvider # goob edit - battery hitscan buff
-    proto: RedMediumLaser # Orion-Edit: to medium
-    fireCost: 120 # Orion-Edit: 225 > 120. 15 shots
+    proto: RedMediumLaser # RW-Edit: to medium
+    fireCost: 120 # RW-Edit: 225 > 120. 15 shots
 
 - type: entity
   id: PowerCellHyperPrinted
@@ -345,7 +345,7 @@
 - type: entity
   parent: BasePowerCell
   id: PowerCellMicroreactor
-  categories: [ HideSpawnMenu ] # Orion | Replaced with PowerCellBluespaceReactor
+  categories: [ HideSpawnMenu ] # RW | Replaced with PowerCellBluespaceReactor
   name: microreactor power cell
   description: A rechargeable standardized microreactor cell. Has lower capacity but slowly recharges by itself.
   suffix: Full
@@ -379,7 +379,7 @@
 - type: entity
   parent: PowerCellMicroreactor
   id: PowerCellMicroreactorPrinted
-  categories: [ HideSpawnMenu ] # Orion | Replaced with PowerCellBluespaceReactorPrinted
+  categories: [ HideSpawnMenu ] # RW | Replaced with PowerCellBluespaceReactorPrinted
   suffix: Empty
   components:
   - type: Sprite
@@ -397,7 +397,7 @@
   name: antique power cell prototype
   description: A small cell that self recharges. Used in old laser arms research.
   id: PowerCellAntiqueProto
-  categories: [ HideSpawnMenu ] # Orion | Replaced with PowerCellInfinite
+  categories: [ HideSpawnMenu ] # RW | Replaced with PowerCellInfinite
   parent: BasePowerCell
   components:
     - type: Sprite

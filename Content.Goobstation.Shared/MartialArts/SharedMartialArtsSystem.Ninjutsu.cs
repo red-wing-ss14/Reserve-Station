@@ -236,7 +236,7 @@ public abstract partial class SharedMartialArtsSystem
 
         DoDamage(ent, target, proto.DamageType, proto.ExtraDamage * GetDamageMultiplier(ent), out _);
         _audio.PlayPvs(args.Sound, target);
-        ComboPopup(ent, target, proto.ID); // Orion-Edit: proto.Name -> proto.ID
+        ComboPopup(ent, target, proto.ID); // RW-Edit: proto.Name -> proto.ID
         ent.Comp.LastAttacks.Clear();
     }
 
@@ -258,7 +258,7 @@ public abstract partial class SharedMartialArtsSystem
         _stun.TryKnockdown(target, proto.ParalyzeTime, true, true, proto.DropItems);
         DoDamage(ent, target, proto.DamageType, proto.ExtraDamage * GetDamageMultiplier(ent), out _);
         _audio.PlayPvs(args.Sound, target);
-        ComboPopup(ent, target, proto.ID); // Orion-Edit: proto.Name -> proto.ID
+        ComboPopup(ent, target, proto.ID); // RW-Edit: proto.Name -> proto.ID
         ent.Comp.LastAttacks.Clear();
     }
 

@@ -4,7 +4,7 @@
   abstract: true
   parent: [ BaseItem, BaseSecurityContraband ]
   id: BaseMagazineLightRifle
-  name: "magazine (5.45mm rifle)" # Orion-Edit: .30 > 5.45mm
+  name: "magazine (5.45mm rifle)" # RW-Edit: .30 > 5.45mm
   components:
   - type: Tag
     tags:
@@ -38,7 +38,7 @@
 - type: entity
   parent: BaseMagazineLightRifle
   id: MagazineLightRifleBox
-  name: "L6 SAW magazine box (5.45mm rifle)" # Orion-Edit: .30 > 5.45mm
+  name: "L6 SAW magazine box (5.45mm rifle)" # RW-Edit: .30 > 5.45mm
   description: Box containing a 100-round belt of linked .30 rifle rounds, used by light machine guns such as the L6. Intended to hold general-purpose kinetic ammunition.
   components:
   - type: Tag
@@ -57,7 +57,7 @@
   - type: Appearance
 - type: entity # Goobstation
   id: MagazineLightRifleBoxEmpty
-  name: "L6 SAW magazine box (5.45mm rifle any)" # Orion-Edit: .30 > 5.45mm
+  name: "L6 SAW magazine box (5.45mm rifle any)" # RW-Edit: .30 > 5.45mm
   parent: MagazineLightRifleBox
   components:
   - type: BallisticAmmoProvider
@@ -65,7 +65,7 @@
 - type: entity
   parent: BaseMagazineLightRifle
   id: MagazineLightRifle
-  name: "magazine (5.45mm rifle)" # Orion-Edit: .30 > 5.45mm
+  name: "magazine (5.45mm rifle)" # RW-Edit: .30 > 5.45mm
   description: Curved 30-round double stack magazine for combat rifles. Intended to hold general-purpose kinetic ammunition.
   components:
   - type: BallisticAmmoProvider
@@ -85,7 +85,7 @@
 - type: entity
   parent: MagazineLightRifle
   id: MagazineLightRifleEmpty
-  name: "magazine (5.45mm any)" # Orion-Edit: .30 rifle > 5.45mm
+  name: "magazine (5.45mm any)" # RW-Edit: .30 rifle > 5.45mm
   suffix: empty
   description: Curved 30-round double stack magazine for combat rifles.
   components:
@@ -106,7 +106,7 @@
 - type: entity
   parent: BaseMagazineLightRifle
   id: MagazineLightRiflePractice
-  name: "magazine (5.45mm practice)" # Orion-Edit: .30 rifle > 5.45mm
+  name: "magazine (5.45mm practice)" # RW-Edit: .30 rifle > 5.45mm
   description: Curved 30-round double stack magazine for combat rifles. Intended to hold non-harmful chalk ammunition.
   components:
   - type: BallisticAmmoProvider
@@ -132,7 +132,7 @@
 - type: entity
   parent: BaseMagazineLightRifle
   id: MagazineLightRifleUranium
-  name: "magazine (5.45mm uranium)" # Orion-Edit: .30 rifle > 5.45mm
+  name: "magazine (5.45mm uranium)" # RW-Edit: .30 rifle > 5.45mm
   description: Curved 30-round double stack magazine for combat rifles. Intended to hold exotic uranium-core ammunition.
   components:
   - type: BallisticAmmoProvider
@@ -158,7 +158,7 @@
 - type: entity
   parent: MagazineLightRifle
   id: MagazineLightRifleIncendiary
-  name: "magazine (5.45mm incendiary)" # Orion-Edit: .30 rifle > 5.45mm
+  name: "magazine (5.45mm incendiary)" # RW-Edit: .30 rifle > 5.45mm
   description: Curved 30-round double stack magazine for combat rifles. Intended to hold self-igniting incendiary ammunition.
   components:
   - type: BallisticAmmoProvider
@@ -183,7 +183,7 @@
         color: "#ff6e52"
 - type: entity
   id: MagazineLightRifleMaxim
-  name: "pan magazine (5.45mm rifle)" # Orion-Edit: .30 > 5.45mm
+  name: "pan magazine (5.45mm rifle)" # RW-Edit: .30 > 5.45mm
   parent: BaseMagazineLightRifle
   components:
   - type: BallisticAmmoProvider
@@ -193,7 +193,7 @@
     sprite: Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/maxim.rsi
 - type: entity
   id: MagazineLightRiflePkBox
-  name: "PK munitions box (5.45mm rifle)" # Orion-Edit: .30 > 5.45mm
+  name: "PK munitions box (5.45mm rifle)" # RW-Edit: .30 > 5.45mm
   parent: BaseMagazineLightRifle
   components:
   - type: Tag

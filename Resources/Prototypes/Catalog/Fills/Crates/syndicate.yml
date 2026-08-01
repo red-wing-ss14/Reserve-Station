@@ -13,7 +13,7 @@
 - type: entity
   id: CrateCybersunJuggernautBundle
   suffix: Filled
-  parent: CrateCybersunNightSecure # Orion-Edit
+  parent: CrateCybersunNightSecure # RW-Edit
   name: Cybersun juggernaut bundle
   description: Contains everything except a big gun to go postal.
   components:

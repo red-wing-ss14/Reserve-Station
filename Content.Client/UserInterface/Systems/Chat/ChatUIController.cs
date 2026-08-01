@@ -189,7 +189,7 @@ public sealed partial class ChatUIController : UIController
     public event Action<ChatChannel, int?>? UnreadMessageCountsUpdated;
     public event Action<ChatMessage>? MessageAdded;
 
-    public Func<string, ChatSelectChannel, bool>? BeforeMessageSent; // Amour edit
+    public Func<string, ChatSelectChannel, bool>? BeforeMessageSent; // RW edit
 
     public override void Initialize()
     {
@@ -806,7 +806,7 @@ public sealed partial class ChatUIController : UIController
 
         var text = box.ChatInput.Input.Text;
 
-        // Amour edit
+        // RW edit
         if (BeforeMessageSent != null && !BeforeMessageSent(text, channel))
             return;
 

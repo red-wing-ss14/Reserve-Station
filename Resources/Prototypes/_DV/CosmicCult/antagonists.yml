@@ -5,7 +5,7 @@
   setPreference: true
   objective: roles-antag-cosmiccult-description
   requirements:
-    - !type:DiscordLinkRequirement # Amour edit
+    - !type:DiscordLinkRequirement # RW edit
   guides: [ CosmicCult ]
 
 - type: antag

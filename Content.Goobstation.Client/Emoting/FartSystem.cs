@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-/* // Orion-Edit: Removed
+/* // RW-Edit: Removed
 using Content.Goobstation.Shared.Emoting;
 using Content.Shared.Chat.Prototypes;
 using Robust.Shared.GameStates;

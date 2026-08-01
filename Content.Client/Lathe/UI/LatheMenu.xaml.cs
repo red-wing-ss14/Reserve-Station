@@ -273,7 +273,7 @@ public sealed partial class LatheMenu : DefaultWindow
     private string GenerateTooltipText(LatheRecipePrototype prototype)
     {
         StringBuilder sb = new();
-        var multiplier = _entityManager.GetComponent<LatheComponent>(Entity).FinalMaterialMultiplier; // Orion-Edit
+        var multiplier = _entityManager.GetComponent<LatheComponent>(Entity).FinalMaterialMultiplier; // RW-Edit
 
         foreach (var (id, amount) in prototype.Materials)
         {

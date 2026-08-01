@@ -34,7 +34,7 @@ public sealed class DelayStartCommand : LocalizedEntityCommands
                 return;
         }
 
-        if (!int.TryParse(args[0], out var seconds) || seconds == 0) // Orion-Edit: Round start delay is now reducible.
+        if (!int.TryParse(args[0], out var seconds) || seconds == 0) // RW-Edit: Round start delay is now reducible.
         {
             shell.WriteLine(Loc.GetString("cmd-delaystart-invalid-seconds", ("value", args[0])));
             return;

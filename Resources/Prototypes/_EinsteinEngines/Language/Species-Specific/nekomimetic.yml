@@ -7,11 +7,11 @@
   speech:
     color: "#df57aaee"
     # fontId: Manga #* FONTS NOT ALREADY HERE ARE NOT BEING ADDED
-  # Orion-Start
+  # RW-Start
   icon:
-    sprite: _Orion/Interface/Chat/language.rsi
+    sprite: _RW/Interface/Chat/language.rsi
     state: felinid
-  # Orion-End
+  # RW-End
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1

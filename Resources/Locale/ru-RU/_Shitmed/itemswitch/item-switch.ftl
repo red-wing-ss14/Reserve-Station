@@ -7,7 +7,7 @@
 
 itemswitch-component-on-examine-detailed-message = Текущий режим: { $state }
 
-# Orion-Start
+# RW-Start
 # gloves
 itemswitch-component-state-gauntlet = перчатки
 itemswitch-component-state-claws = когти
@@ -49,4 +49,4 @@ itemswitch-component-state-bonesetter = установщик костей
 itemswitch-component-state-cautery = прижигатель
 itemswitch-component-state-stitches = хирургическая нить
 itemswitch-component-state-drill = дрель
-# Orion-End
+# RW-End

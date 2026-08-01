@@ -88,13 +88,13 @@ namespace Content.Server.Body.Components
 
 
         /// <summary>
-        ///     Amour add - stores the original prototype value of MaxReagentsProcessable.
+        ///     RW add - stores the original prototype value of MaxReagentsProcessable.
         /// </summary>
         [ViewVariables]
         public int? PrototypeMaxReagentsProcessable;
 
         /// <summary>
-        ///     Amour add - The current offset in the reagent list for rotation between ticks.
+        ///     RW add - The current offset in the reagent list for rotation between ticks.
         /// </summary>
         [ViewVariables]
         public int CurrentReagentIndex;

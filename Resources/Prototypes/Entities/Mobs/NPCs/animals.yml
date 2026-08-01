@@ -2092,7 +2092,7 @@
   # does not infect you unless the mouse has any diseases, which it doesn't by default
   - type: DiseaseOnHit
     spreadParams:
-      chance: 0.01 # 1984 lower chance for normal mice so creating the turboplague horde is not as strong # Amour-Edit: 0.05 > 0.01
+      chance: 0.01 # 1984 lower chance for normal mice so creating the turboplague horde is not as strong # RW-Edit: 0.05 > 0.01
       power: 1
       spreadType: Blood
   - type: DiseaseCarrier
@@ -2267,7 +2267,7 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Zombie
-  - type: GlobalAntagonist # Orion
+  - type: GlobalAntagonist # RW
     antagonistPrototype: globalAntagonistBlob
 
 - type: entity
@@ -2876,7 +2876,7 @@
     raffle:
       settings: short
   - type: GhostTakeoverAvailable
-  - type: GlobalAntagonist # Orion
+  - type: GlobalAntagonist # RW
     antagonistPrototype: globalAntagonistSpider
 
 - type: entity
@@ -2921,7 +2921,7 @@
   - MobSpiderAngryBase
   - MobGiantSpider
   id: MobGiantSpiderAngry
-  components: # Orion
+  components: # RW
   - type: GlobalAntagonist
     antagonistPrototype: globalAntagonistSpider
 
@@ -2974,7 +2974,7 @@
         reagents:
         - ReagentId: Laughter
           Quantity: 150
-    - type: GlobalAntagonist # Orion
+    - type: GlobalAntagonist # RW
       antagonistPrototype: globalAntagonistSpiderClown
 
 - type: entity
@@ -2989,7 +2989,7 @@
     - Universal # Should allow them to understand everything and speak it too. Might need to change this.
     understands:
     - Universal
-  - type: GlobalAntagonist # Orion
+  - type: GlobalAntagonist # RW
     antagonistPrototype: globalAntagonistSpider
 
 - type: entity

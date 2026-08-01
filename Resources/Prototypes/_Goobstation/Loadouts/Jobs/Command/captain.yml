@@ -4,7 +4,7 @@
   id: CaptainJacket
   equipment:
     outerClothing: ClothingOuterCapJacket
-#  effects: # Orion-Edit: Removed
+#  effects: # RW-Edit: Removed
 #  - !type:GroupLoadoutEffect
 #    proto: MasterCap
 

@@ -103,7 +103,7 @@ public sealed class MedibotSystem : EntitySystem
         if (!TryComp<DamageableComponent>(target, out var damageable)) return false;
         if (!_solutionContainer.TryGetInjectableSolution(target, out _, out _)) return false;
 
-        if (mobState.CurrentState != MobState.Alive && mobState.CurrentState != MobState.SoftCritical && mobState.CurrentState != MobState.HardCritical) // Orion-Edit
+        if (mobState.CurrentState != MobState.Alive && mobState.CurrentState != MobState.SoftCritical && mobState.CurrentState != MobState.HardCritical) // RW-Edit
         {
             _popup.PopupClient(Loc.GetString("medibot-target-dead"), medibot, medibot);
             return false;

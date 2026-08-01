@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseStructure # Orion-Edit
+  parent: BaseStructure # RW-Edit
   id: ResinDoor
   name: resin Door
   description: Thick resin solidified into a door.
@@ -16,7 +16,7 @@
       map: ["enum.DoorVisualLayers.BaseUnlit"]
     - state: closed_unlit
       map: ["enum.DoorVisualLayers.BaseBolted"]
-    - state: closed_unlit # Orion
+    - state: closed_unlit # RW
       map: ["enum.DoorVisualLayers.BaseEmergencyAccess"]
   - type: AnimationPlayer
   - type: Physics
@@ -34,7 +34,7 @@
   - type: IconSmooth
     key: walls
     mode: NoSprite
-  - type: DoorBolt # Orion
+  - type: DoorBolt # RW
     boltLightsEnabled: false
   - type: Door
     canPry: false
@@ -49,11 +49,11 @@
       path: /Audio/_RMC14/Xeno/alien_resin_move1.ogg
     closeSound:
       path: /Audio/_RMC14/Xeno/alien_resin_move2.ogg
-  # Orion-Start
+  # RW-Start
   - type: NpcFactionMember
     factions:
     - Xeno
-  # Orion-End
+  # RW-End
   - type: Appearance
   - type: Airtight
     fixVacuum: true
@@ -71,7 +71,7 @@
     - trigger:
         !type:DamageTypeTrigger
         damageType: Blunt
-        damage: 60 # Orion-Edit: 100 > 60
+        damage: 60 # RW-Edit: 100 > 60
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
@@ -81,7 +81,7 @@
     - trigger:
         !type:DamageTypeTrigger
         damageType: Heat
-        damage: 30 # Orion-Edit: 60 > 30
+        damage: 30 # RW-Edit: 60 > 30
       behaviors:
       - !type:SpawnEntitiesBehavior
         spawnInContainer: true

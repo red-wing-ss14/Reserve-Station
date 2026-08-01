@@ -25,7 +25,7 @@ namespace Content.Server.Research.Systems
         [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
         [Dependency] private readonly SharedPopupSystem _popup = default!;
         [Dependency] private readonly RadioSystem _radio = default!;
-        [Dependency] private readonly IRobustRandom _random = default!; // Orion
+        [Dependency] private readonly IRobustRandom _random = default!; // RW
 
         public override void Initialize()
         {
@@ -34,10 +34,10 @@ namespace Content.Server.Research.Systems
             InitializeConsole();
             InitializeSource();
             InitializeServer();
-            // Orion-Start
+            // RW-Start
             InitializeExperiments();
             InitializeDiscovery();
-            // Orion-End
+            // RW-End
 
             SubscribeLocalEvent<TechnologyDatabaseComponent, ResearchRegistrationChangedEvent>(OnDatabaseRegistrationChanged);
         }
@@ -85,20 +85,20 @@ namespace Content.Server.Research.Systems
             return GetServers(client).Select(x => x.Comp.Id).ToArray();
         }
 
-        public List<Entity<ResearchServerComponent>> GetServers(EntityUid client) // Orion-Edit
+        public List<Entity<ResearchServerComponent>> GetServers(EntityUid client) // RW-Edit
         {
             var clientXform = Transform(client);
             if (clientXform.GridUid is not { } grid)
-                return new List<Entity<ResearchServerComponent>>(); // Orion-Edit
+                return new List<Entity<ResearchServerComponent>>(); // RW-Edit
 
-            // Orion-Edit-Start
+            // RW-Edit-Start
             var servers = new HashSet<Entity<ResearchServerComponent>>();
             _lookup.GetGridEntities(grid, servers);
 
             return servers
                 .OrderBy(ent => ent.Comp.Id)
                 .ToList();
-            // Orion-Edit-End
+            // RW-Edit-End
         }
 
         public override void Update(float frameTime)

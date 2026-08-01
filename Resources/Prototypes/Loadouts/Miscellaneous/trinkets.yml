@@ -89,7 +89,7 @@
 
 - type: loadout
   id: CigarCase
-#  effects: # Orion-Edit: Removed
+#  effects: # RW-Edit: Removed
 #  - !type:GroupLoadoutEffect
 #    proto: Command
   storage:
@@ -331,7 +331,7 @@
 # Playing Cards (GoobStation START)
 - type: loadout
   id: CardBoxBlack
-#  effects: # Orion-Edit: Removed
+#  effects: # RW-Edit: Removed
 #  - !type:JobRequirementLoadoutEffect
 #    requirement:
 #      !type:OverallPlaytimeRequirement
@@ -344,9 +344,9 @@
 - type: loadout
   id: CardBoxNanotrasen
   effects:
-  - !type:GroupLoadoutEffect # Orion
+  - !type:GroupLoadoutEffect # RW
     proto: Command
-#  - !type:JobRequirementLoadoutEffect # Orion-Edit: Removed
+#  - !type:JobRequirementLoadoutEffect # RW-Edit: Removed
 #    requirement:
 #      !type:RoleTimeRequirement
 #      role: JobQuartermaster
@@ -359,7 +359,7 @@
 
 - type: loadout
   id: FoodSnackLollypopWrapped
-#  effects: # Orion-Edit: Removed
+#  effects: # RW-Edit: Removed
 #  - !type:JobRequirementLoadoutEffect
 #    requirement:
 #      !type:OverallPlaytimeRequirement
@@ -370,7 +370,7 @@
 
 - type: loadout
   id: FoodSnackLollypopWrappedRainbow
-#  effects: # Orion-Edit: Removed
+#  effects: # RW-Edit: Removed
 #  - !type:JobRequirementLoadoutEffect
 #    requirement:
 #      !type:OverallPlaytimeRequirement
@@ -381,7 +381,7 @@
 
 - type: loadout
   id: FoodSnackLollypopWrappedCarp
-#  effects: # Orion-Edit: Removed
+#  effects: # RW-Edit: Removed
 #  - !type:JobRequirementLoadoutEffect
 #    requirement:
 #      !type:RoleTimeRequirement
@@ -396,7 +396,7 @@
 # Towels
 - type: loadout
   id: TowelColorWhite
-#  effects: # Orion-Edit: Removed
+#  effects: # RW-Edit: Removed
 #  - !type:JobRequirementLoadoutEffect
 #    requirement:
 #      !type:OverallPlaytimeRequirement

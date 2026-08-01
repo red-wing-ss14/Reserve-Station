@@ -2,51 +2,51 @@
 
 - type: entity
   id: BulletLightRifle
-  name: bullet (5.45mm rifle) # Orion-Edit: 0.30 > 5.45mm
+  name: bullet (5.45mm rifle) # RW-Edit: 0.30 > 5.45mm
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Piercing: 17 # Amour edit: 19 > 17
-      armorPenetration: 0.1 # Amour edit: 0.2 > 0.1; Goobstation # Orion-Edit: 0.4 > 0.2
+        Piercing: 17 # RW edit: 19 > 17
+      armorPenetration: 0.1 # RW edit: 0.2 > 0.1; Goobstation # RW-Edit: 0.4 > 0.2
 
 - type: entity
   id: BulletLightRiflePractice
-  name: bullet (5.45mm practice) # Orion-Edit: 0.30 rifle > 5.45mm
+  name: bullet (5.45mm practice) # RW-Edit: 0.30 rifle > 5.45mm
   parent: BaseBulletPractice
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Blunt: 5 # Orion-Edit: 2 > 5
-      armorPenetration: -0.5 # Orion
+        Blunt: 5 # RW-Edit: 2 > 5
+      armorPenetration: -0.5 # RW
 
 - type: entity
   parent: BaseBulletIncendiary
   id: BulletLightRifleIncendiary
-  name: bullet (5.45mm incendiary) # Orion-Edit: 0.30 rifle > 5.45mm
+  name: bullet (5.45mm incendiary) # RW-Edit: 0.30 rifle > 5.45mm
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
         Blunt: 4
-        Heat: 4 # Amour edit: 5 > 4; Orion-Edit: 4 > 5
-        Piercing: 4 # Amour edit: missing > 4
-      armorPenetration: 0.10 # Orion
+        Heat: 4 # RW edit: 5 > 4; Orion-Edit: 4 > 5
+        Piercing: 4 # RW edit: missing > 4
+      armorPenetration: 0.10 # RW
 
 - type: entity
   parent: BaseBulletUranium
   id: BulletLightRifleUranium
-  name: bullet (5.45mm uranium) # Orion-Edit: 0.30 rifle > 5.45mm
+  name: bullet (5.45mm uranium) # RW-Edit: 0.30 rifle > 5.45mm
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Radiation: 1 # Amour edit: 5 > 1; Orion-Edit: 10 > 5
-        Piercing: 15 # Amour edit: 11 > 15
-      armorPenetration: 0.3 # Amour edit: 0.30 > 0.3; Orion
+        Radiation: 1 # RW edit: 5 > 1; Orion-Edit: 10 > 5
+        Piercing: 15 # RW edit: 11 > 15
+      armorPenetration: 0.3 # RW edit: 0.30 > 0.3; Orion

@@ -58,18 +58,18 @@ public sealed partial class PlantHolderComponent : Component
     [DataField]
     public float WaterLevel = 100f;
 
-    // Orion-Start
+    // RW-Start
     [DataField]
     public float BaseMaxWater = 100f;
 
     [DataField]
     public float MaxWater = 100f;
-    // Orion-End
+    // RW-End
 
     [DataField]
     public float NutritionLevel = 100f;
 
-    // Orion-Start
+    // RW-Start
     [DataField]
     public float BaseMaxNutrition = 100f;
 
@@ -78,7 +78,7 @@ public sealed partial class PlantHolderComponent : Component
 
     [DataField]
     public float NutrientConsumptionMultiplier = 1f;
-    // Orion-End
+    // RW-End
 
     [DataField]
     public float PestLevel;

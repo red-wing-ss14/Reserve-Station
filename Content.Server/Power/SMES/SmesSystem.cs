@@ -2,8 +2,8 @@
 
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
-using Content.Shared._Orion.Construction;
-using Content.Shared._Orion.Construction.Events;
+using Content.Shared._RW.Construction;
+using Content.Shared._RW.Construction.Events;
 using Content.Shared.Power;
 using Content.Shared.Power.Components;
 using Content.Shared.Power.EntitySystems;
@@ -29,15 +29,15 @@ public sealed class SmesSystem : EntitySystem // goob edit - made public
 
         SubscribeLocalEvent<SmesComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<SmesComponent, ChargeChangedEvent>(OnBatteryChargeChanged);
-        // Orion-Start
+        // RW-Start
         SubscribeLocalEvent<SmesComponent, RefreshPartsEvent>(OnPartsRefresh);
         SubscribeLocalEvent<SmesComponent, UpgradeExamineEvent>(OnUpgradeExamine);
-        // Orion-End
+        // RW-End
     }
 
     private void OnMapInit(EntityUid uid, SmesComponent component, MapInitEvent args)
     {
-        // Orion-Start
+        // RW-Start
         if (TryComp<PowerNetworkBatteryComponent>(uid, out var netBattery))
         {
             component.BaseMaxSupply = netBattery.MaxSupply;
@@ -45,7 +45,7 @@ public sealed class SmesSystem : EntitySystem // goob edit - made public
             component.FinalMaxSupply = netBattery.MaxSupply;
             component.FinalMaxChargeRate = netBattery.MaxChargeRate;
         }
-        // Orion-End
+        // RW-End
 
         UpdateSmesState(uid, component);
     }
@@ -55,7 +55,7 @@ public sealed class SmesSystem : EntitySystem // goob edit - made public
         UpdateSmesState(uid, component);
     }
 
-    // Orion-Start
+    // RW-Start
     private void OnPartsRefresh(EntityUid uid, SmesComponent component, RefreshPartsEvent args)
     {
         if (!TryComp<PowerNetworkBatteryComponent>(uid, out var netBattery))
@@ -82,7 +82,7 @@ public sealed class SmesSystem : EntitySystem // goob edit - made public
         args.AddPercentageUpgrade("machine-upgrade-power-input", inputMultiplier);
         args.AddPercentageUpgrade("machine-upgrade-power-output", outputMultiplier);
     }
-    // Orion-End
+    // RW-End
 
     private void UpdateSmesState(EntityUid uid, SmesComponent smes)
     {

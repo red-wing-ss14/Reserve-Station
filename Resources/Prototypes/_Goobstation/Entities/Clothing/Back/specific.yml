@@ -111,10 +111,10 @@
     zeroNoAmmo: true
   - type: Clothing
     slots: BACK
-    # Orion-Start
+    # RW-Start
     equipDelay: 2
     unequipDelay: 2
-    # Orion-End
+    # RW-End
     sprite: _Goobstation/Clothing/Back/Backpacks/lmg_backpack.rsi
     clothingVisuals:
       back:
@@ -126,12 +126,12 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-#        name: Magazine # Orion-Edit: Localization
+#        name: Magazine # RW-Edit: Localization
         whitelist:
           tags:
           - MilitaryPowerCellLMG
       item:
-#        name: LMG # Orion-Edit: Localization
+#        name: LMG # RW-Edit: Localization
         priority: 2
         startingItem: WeaponLaserLMG
         whitelist:

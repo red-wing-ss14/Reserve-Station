@@ -49,7 +49,7 @@ public sealed partial class ChargerComponent : Component
     public float FinalChargeRate;
 
     [DataField]
-    public Robust.Shared.Prototypes.ProtoId<Content.Shared._Orion.Construction.Prototypes.MachinePartPrototype> ChargePart = "Capacitor";
+    public Robust.Shared.Prototypes.ProtoId<Content.Shared._RW.Construction.Prototypes.MachinePartPrototype> ChargePart = "Capacitor";
 }
 
 [Serializable, NetSerializable]

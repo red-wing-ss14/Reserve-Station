@@ -520,12 +520,12 @@
   - type: Armor # Goob
     modifiers:
       coefficients:
-        Blunt: 0.55 # Amour edit: 0.65 > 0.55
-        Slash: 0.55 # Amour edit: 0.65 > 0.55
-        Piercing: 0.6 # Amour edit: 0.7 > 0.6
-        Heat: 0.5 # Amour edit: 0.6 > 0.5
-        Caustic: 0.8 # Amour edit: 0.85 > 0.8
-        Cold: 0.5 # Amour edit: missing > 0.5
+        Blunt: 0.55 # RW edit: 0.65 > 0.55
+        Slash: 0.55 # RW edit: 0.65 > 0.55
+        Piercing: 0.6 # RW edit: 0.7 > 0.6
+        Heat: 0.5 # RW edit: 0.6 > 0.5
+        Caustic: 0.8 # RW edit: 0.85 > 0.8
+        Cold: 0.5 # RW edit: missing > 0.5
 ################################################################
 
 - type: entity

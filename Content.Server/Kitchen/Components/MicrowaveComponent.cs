@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared._Orion.Construction.Prototypes;
+using Content.Shared._RW.Construction.Prototypes;
 using Content.Shared.DeviceLinking;
 using Content.Shared.Item;
 using Robust.Shared.Audio;
@@ -16,10 +16,10 @@ namespace Content.Server.Kitchen.Components
         [DataField("cookTimeMultiplier"), ViewVariables(VVAccess.ReadWrite)]
         public float CookTimeMultiplier = 1;
 
-        // Orion-Start
+        // RW-Start
         [ViewVariables(VVAccess.ReadWrite)]
         public float BaseCookTimeMultiplier = 1;
-        // Orion-End
+        // RW-End
 
         [DataField("baseHeatMultiplier"), ViewVariables(VVAccess.ReadWrite)]
         public float BaseHeatMultiplier = 100;
@@ -92,10 +92,10 @@ namespace Content.Server.Kitchen.Components
         [DataField, ViewVariables(VVAccess.ReadWrite)]
         public int Capacity = 10;
 
-        // Orion-Start
+        // RW-Start
         [ViewVariables(VVAccess.ReadWrite)]
         public int BaseCapacity = 10;
-        // Orion-End
+        // RW-End
 
         [DataField, ViewVariables(VVAccess.ReadWrite)]
         public ProtoId<ItemSizePrototype> MaxItemSize = "Normal";
@@ -112,7 +112,7 @@ namespace Content.Server.Kitchen.Components
         [DataField, ViewVariables(VVAccess.ReadWrite)]
         public float ExplosionChance = .1f;
 
-        // Orion-Start
+        // RW-Start
         [ViewVariables(VVAccess.ReadWrite)]
         public float BaseExplosionChance = .1f;
 
@@ -121,7 +121,7 @@ namespace Content.Server.Kitchen.Components
 
         [DataField]
         public ProtoId<MachinePartPrototype> MatterBinPart = "MatterBin";
-        // Orion-End
+        // RW-End
 
         /// <summary>
         /// Chance of lightning occurring when we microwave a metallic object

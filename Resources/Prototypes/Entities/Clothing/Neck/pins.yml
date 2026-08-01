@@ -37,7 +37,7 @@
 - type: entity
   parent: ClothingGenderPinBase
   id: ClothingNeckLGBTPin
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: LGBT pin
   description: Be gay do crime.
   components:
@@ -51,7 +51,7 @@
 - type: entity
   parent: ClothingGenderPinBase
   id: ClothingNeckAllyPin
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: straight ally pin
   description: Be ally do crime.
   components:
@@ -65,7 +65,7 @@
 - type: entity
   parent: ClothingGenderPinBase
   id: ClothingNeckAromanticPin
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: aromantic pin
   description: Be aro do crime.
   components:
@@ -79,7 +79,7 @@
 - type: entity
   parent: ClothingGenderPinBase
   id: ClothingNeckAroacePin
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: aroace pin
   description: Be aroace do crime.
   components:
@@ -93,7 +93,7 @@
 - type: entity
   parent: ClothingGenderPinBase
   id: ClothingNeckAsexualPin
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: asexual pin
   description: Be ace do crime.
   components:
@@ -107,7 +107,7 @@
 - type: entity
   parent: ClothingGenderPinBase
   id: ClothingNeckBisexualPin
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: bisexual pin
   description: Be bi do crime.
   components:
@@ -121,7 +121,7 @@
 - type: entity
   parent: ClothingGenderPinBase
   id: ClothingNeckGayPin
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: gay pin
   description: Be gay~ do crime.
   components:
@@ -135,7 +135,7 @@
 - type: entity
   parent: ClothingGenderPinBase
   id: ClothingNeckIntersexPin
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: intersex pin
   description: Be intersex do crime.
   components:
@@ -149,7 +149,7 @@
 - type: entity
   parent: ClothingGenderPinBase
   id: ClothingNeckLesbianPin
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: lesbian pin
   description: Be lesbian do crime.
   components:
@@ -163,7 +163,7 @@
 - type: entity
   parent: ClothingGenderPinBase
   id: ClothingNeckNonBinaryPin
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: non-binary pin
   description: "01100010 01100101 00100000 01100101 01101110 01100010 01111001 00100000 01100100 01101111 00100000 01100011 01110010 01101001 01101101 01100101"
   components:
@@ -177,7 +177,7 @@
 - type: entity
   parent: ClothingGenderPinBase
   id: ClothingNeckPansexualPin
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: pansexual pin
   description: Be pan do crime.
   components:
@@ -191,7 +191,7 @@
 - type: entity
   parent: ClothingGenderPinBase
   id: ClothingNeckPluralPin
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: plural pin
   description: Be plural, do crimes.
   components:
@@ -205,7 +205,7 @@
 - type: entity
   parent: ClothingGenderPinBase
   id: ClothingNeckOmnisexualPin
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: omnisexual pin
   description: Be omni do crime.
   components:
@@ -219,7 +219,7 @@
 - type: entity
   parent: ClothingGenderPinBase
   id: ClothingNeckGenderqueerPin
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: genderqueer pin
   description: be crime, do gender
   components:
@@ -233,7 +233,7 @@
 - type: entity
   parent: ClothingGenderPinBase
   id: ClothingNeckGenderfluidPin
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: genderfluid pin
   description: be gender, be fluid
   components:
@@ -247,7 +247,7 @@
 - type: entity
   parent: ClothingGenderPinBase
   id: ClothingNeckTransPin
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: transgender pin
   description: Be trans do crime.
   components:

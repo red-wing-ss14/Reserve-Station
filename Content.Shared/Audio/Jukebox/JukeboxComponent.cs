@@ -39,7 +39,7 @@ public sealed partial class JukeboxComponent : Component
 
     [ViewVariables]
     public float SelectAccumulator;
-    // Orion-Start
+    // RW-Start
     [ViewVariables, AutoNetworkedField]
     public float Volume = 50f;
 
@@ -56,7 +56,7 @@ public sealed partial class JukeboxComponent : Component
 
     [DataField]
     public float CurrentPlaybackOffset;
-    // Orion-End
+    // RW-End
 }
 
 [Serializable, NetSerializable]
@@ -80,7 +80,7 @@ public sealed class JukeboxSetTimeMessage(float songTime) : BoundUserInterfaceMe
     public float SongTime { get; } = songTime;
 }
 
-// Orion-Start
+// RW-Start
 [Serializable, NetSerializable]
 public sealed class JukeboxSetVolumeMessage(float volume) : BoundUserInterfaceMessage
 {
@@ -89,7 +89,7 @@ public sealed class JukeboxSetVolumeMessage(float volume) : BoundUserInterfaceMe
 
 [Serializable, NetSerializable]
 public sealed class JukeboxToggleLoopMessage : BoundUserInterfaceMessage;
-// Orion-End
+// RW-End
 
 [Serializable, NetSerializable]
 public enum JukeboxVisuals : byte

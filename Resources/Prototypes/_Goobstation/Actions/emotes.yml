@@ -13,7 +13,7 @@
   - does a flip
   - does a flip.
   - does a flip!
-  # Orion-Start
+  # RW-Start
   - сальто
   - сальто.
   - сальто!
@@ -23,7 +23,7 @@
   - кувыркается
   - кувыркается.
   - кувыркается!
-  # Orion-End
+  # RW-End
   event: !type:AnimationFlipEmoteEvent
 
 - type: emote
@@ -38,14 +38,14 @@
   - tweaks
   - tweaks.
   - tweaks!
-  # Orion-Start
+  # RW-Start
   - дёргается
   - дёргается.
   - дёргается!
   - дергается
   - дергается.
   - дергается!
-  # Orion-End
+  # RW-End
   event: !type:AnimationTweakEmoteEvent
 
 - type: emote
@@ -64,7 +64,7 @@
   - shows off muscles
   - shows off its muscles
   - intimidates
-  # Orion-Start
+  # RW-Start
   - напрягает мышцы
   - напрягает мышцы.
   - напрягает мышцы!
@@ -74,7 +74,7 @@
   - красуется
   - красуется.
   - красуется!
-  # Orion-End
+  # RW-End
   event: !type:AnimationFlexEmoteEvent
 
 - type: emote
@@ -87,14 +87,14 @@
   - spins
   - spins.
   - spins!
-  # Orion-Start
+  # RW-Start
   - крутится
   - крутится.
   - крутится!
   - кружится
   - кружится.
   - кружится!
-  # Orion-End
+  # RW-End
   event: !type:AnimationSpinEmoteEvent
 
 - type: emote
@@ -107,12 +107,12 @@
   - jumps
   - jumps.
   - jumps!
-  # Orion-Start
+  # RW-Start
   - прыгает
   - прыгает.
   - прыгает!
   - подпрыгивает
   - подпрыгивает.
   - подпрыгивает!
-  # Orion-End
+  # RW-End
   event: !type:AnimationJumpEmoteEvent

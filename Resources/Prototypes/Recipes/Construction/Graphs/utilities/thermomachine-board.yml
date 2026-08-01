@@ -18,14 +18,14 @@
       steps:
       - tool: Screwing
         doAfter: 2
-#  - node: hellfirefreezer # Orion-Edit: Redundant
+#  - node: hellfirefreezer # RW-Edit: Redundant
 #    entity: HellfireFreezerMachineCircuitBoard
 #    edges:
 #    - to: hellfireheater
 #      steps:
 #      - tool: Screwing
 #        doAfter: 2
-#  - node: hellfireheater # Orion-Edit: Redundant
+#  - node: hellfireheater # RW-Edit: Redundant
 #    entity: HellfireHeaterMachineCircuitBoard
 #    edges:
 #    - to: hellfirefreezer

@@ -28,7 +28,7 @@ public sealed class DoAfterOverlay : Overlay
     private readonly SpriteSystem _sprite;
 
     private readonly Texture _barTexture;
-    private readonly SpriteSpecifier _cogTexture; // Orion
+    private readonly SpriteSpecifier _cogTexture; // RW
     private readonly ShaderInstance _unshadedShader;
 
     /// <summary>
@@ -54,7 +54,7 @@ public sealed class DoAfterOverlay : Overlay
         _sprite = _entManager.System<SpriteSystem>();
         var sprite = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/progress_bar.rsi"), "icon");
         _barTexture = _entManager.EntitySysManager.GetEntitySystem<SpriteSystem>().Frame0(sprite);
-        _cogTexture = new SpriteSpecifier.Rsi(new("/Textures/_Orion/Interface/Misc/progress_cog.rsi"), "cog"); // Orion
+        _cogTexture = new SpriteSpecifier.Rsi(new("/Textures/_RW/Interface/Misc/progress_cog.rsi"), "cog"); // RW
 
         _unshadedShader = protoManager.Index(UnshadedShader).Instance();
     }
@@ -126,22 +126,22 @@ public sealed class DoAfterOverlay : Overlay
                     alpha = 0.5f;
                 }
 
-                // Orion-Edit-Start
+                // RW-Edit-Start
                 // Use sprite bounds to avoid overlap, but clamp the offset so oversized layers
                 // (e.g. tails) do not push the indicator too far upward.
                 var yOffset = MathF.Min(_sprite.GetLocalBounds((uid, sprite)).Height / 2f, 0.5f) + 0.05f;
-                // Orion-Edit-End
+                // RW-Edit-End
 
                 // Position above the entity (we've already applied the matrix transform to the entity itself)
                 // Offset by the texture size for every do_after we have.
                 var position = new Vector2(-_barTexture.Width / 2f / EyeManager.PixelsPerMeter,
                     yOffset / scale + offset / EyeManager.PixelsPerMeter * scale);
 
-                // Orion-Start
+                // RW-Start
                 var cogTexture = _sprite.GetFrame(_cogTexture, curTime);
-                // Orion-End
+                // RW-End
 
-                // Orion-Edit-Start
+                // RW-Edit-Start
                 // Draw the cog for everyone, but keep the progress bar client-only.
                 var showProgressBar = uid == localEnt;
                 const float cogOffsetY = 0f;
@@ -182,7 +182,7 @@ public sealed class DoAfterOverlay : Overlay
                 }
 
                 offset += _barTexture.Height / scale;
-                // Orion-Edit-End
+                // RW-Edit-End
             }
         }
 
@@ -190,7 +190,7 @@ public sealed class DoAfterOverlay : Overlay
         handle.SetTransform(Matrix3x2.Identity);
     }
 
-    private Color GetProgressColor(float progress, float alpha = 1f) // Orion-Edit: Was public
+    private Color GetProgressColor(float progress, float alpha = 1f) // RW-Edit: Was public
     {
         return _progressColor.GetProgressColor(progress).WithAlpha(alpha);
     }

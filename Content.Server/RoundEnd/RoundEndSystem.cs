@@ -66,7 +66,7 @@ namespace Content.Server.RoundEnd
         public TimeSpan AutoCallStartTime;
         private bool _autoCalledBefore;
 
-        public bool IsForcedCall { get; private set; } = false; // Amour - Forced shuttle call
+        public bool IsForcedCall { get; private set; } = false; // RW - Forced shuttle call
 
         public override void Initialize()
         {
@@ -98,7 +98,7 @@ namespace Content.Server.RoundEnd
 
             LastCountdownStart = null;
             ExpectedCountdownEnd = null;
-            IsForcedCall = false; // Amour - Forced shuttle call
+            IsForcedCall = false; // RW - Forced shuttle call
             SetAutoCallTime();
             _autoCalledBefore = false;
             RaiseLocalEvent(RoundEndSystemChangedEvent.Default);
@@ -221,7 +221,7 @@ namespace Content.Server.RoundEnd
 
             LastCountdownStart = _gameTiming.CurTime;
             ExpectedCountdownEnd = _gameTiming.CurTime + countdownTime;
-            IsForcedCall = isForcedCall; // Amour - Forced shuttle call
+            IsForcedCall = isForcedCall; // RW - Forced shuttle call
 
             // TODO full game saves
             Timer.Spawn(countdownTime, _shuttle.DockEmergencyShuttle, _countdownTokenSource.Token);
@@ -301,7 +301,7 @@ namespace Content.Server.RoundEnd
             if (_gameTicker.RunLevel != GameRunLevel.InRound) return;
             LastCountdownStart = null;
             ExpectedCountdownEnd = null;
-            IsForcedCall = false; // Amour - Forced shuttle call
+            IsForcedCall = false; // RW - Forced shuttle call
             RaiseLocalEvent(RoundEndSystemChangedEvent.Default);
             _gameTicker.EndRound();
             _countdownTokenSource?.Cancel();
@@ -366,7 +366,7 @@ namespace Content.Server.RoundEnd
 
         private void AfterEndRoundRestart()
         {
-            IsForcedCall = false; // Amour - Forced shuttle call
+            IsForcedCall = false; // RW - Forced shuttle call
             if (_gameTicker.RunLevel != GameRunLevel.PostRound) return;
             Reset();
             _gameTicker.RestartRound();

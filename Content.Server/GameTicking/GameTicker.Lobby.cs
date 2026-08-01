@@ -2,7 +2,7 @@
 
 using System.Linq;
 using System.Text;
-using Content.Server._Orion.Time;
+using Content.Server._RW.Time;
 using Content.Server.Station.Components;
 using Content.Shared.GameTicking;
 using Robust.Shared.Network;
@@ -12,7 +12,7 @@ namespace Content.Server.GameTicking
 {
     public sealed partial class GameTicker
     {
-        [Dependency] private readonly TimeSystem _timeSystem = default!; // Orion
+        [Dependency] private readonly TimeSystem _timeSystem = default!; // RW
 
         [ViewVariables]
         private readonly Dictionary<NetUserId, PlayerGameStatus> _playerGameStatuses = new();
@@ -96,7 +96,7 @@ namespace Content.Server.GameTicking
                 ("mapName", stationNames.ToString()),
                 ("gmTitle", gmTitle),
                 ("desc", desc),
-                ("stationDate", _timeSystem.GetStationDate().ToString("dd.MM.yyyy"))); // Orion
+                ("stationDate", _timeSystem.GetStationDate().ToString("dd.MM.yyyy"))); // RW
         }
 
         private TickerConnectionStatusEvent GetConnectionStatusMsg()
@@ -174,7 +174,7 @@ namespace Content.Server.GameTicking
                 if (!_playerManager.TryGetSessionById(playerUserId, out var playerSession))
                     continue;
                 RaiseNetworkEvent(GetStatusMsg(playerSession), playerSession.Channel);
-                RaiseLocalEvent(new PlayerToggleReadyEvent(playerSession)); // Orion
+                RaiseLocalEvent(new PlayerToggleReadyEvent(playerSession)); // RW
             }
         }
 
@@ -193,7 +193,7 @@ namespace Content.Server.GameTicking
 
             _playerGameStatuses[player.UserId] = ready ? PlayerGameStatus.ReadyToPlay : PlayerGameStatus.NotReadyToPlay;
             RaiseNetworkEvent(GetStatusMsg(player), player.Channel);
-            RaiseLocalEvent(new PlayerToggleReadyEvent(player)); // Orion
+            RaiseLocalEvent(new PlayerToggleReadyEvent(player)); // RW
             // update server info to reflect new ready count
             UpdateInfoText();
         }
@@ -204,7 +204,7 @@ namespace Content.Server.GameTicking
         public bool UserHasJoinedGame(NetUserId userId)
             => PlayerGameStatuses.TryGetValue(userId, out var status) && status == PlayerGameStatus.JoinedGame;
     }
-    // Orion-Start
+    // RW-Start
     public sealed class PlayerToggleReadyEvent : EntityEventArgs
     {
         public readonly ICommonSession PlayerSession;
@@ -214,5 +214,5 @@ namespace Content.Server.GameTicking
             PlayerSession = playerSession;
         }
     }
-    // Orion-End
+    // RW-End
 }

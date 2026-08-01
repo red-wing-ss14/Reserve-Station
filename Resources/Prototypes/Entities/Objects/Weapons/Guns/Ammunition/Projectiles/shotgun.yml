@@ -12,8 +12,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 45 # Orion-Edit: 40 > 45
-        Structural: 15 # Amour edit: 20 > 15; Orion-Edit: 15 > 20
+        Piercing: 45 # RW-Edit: 40 > 45
+        Structural: 15 # RW edit: 20 > 15; Orion-Edit: 15 > 20
 
 - type: entity
   parent: BaseBullet
@@ -42,8 +42,8 @@
     damage:
       types:
         Piercing: 10
-        Structural: 10 # Amour edit: 15 > 10
-      armorPenetration: -0.1 # Orion
+        Structural: 10 # RW edit: 15 > 10
+      armorPenetration: -0.1 # RW
       woundSeverityMultipliers:
         Piercing: 1.5 # Minced Meat
 
@@ -66,10 +66,10 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 4 # Orion-Edit: 3 > 4
-        Heat: 3 # Amour edit: 6 > 3; Orion-Edit: 3 > 6
-        Piercing: 8 # Amour edit: missing > 8
-      armorPenetration: -0.1 # Orion
+        Blunt: 4 # RW-Edit: 3 > 4
+        Heat: 3 # RW edit: 6 > 3; Orion-Edit: 3 > 6
+        Piercing: 8 # RW edit: missing > 8
+      armorPenetration: -0.1 # RW
   - type: IgnitionSource
     ignited: true
 
@@ -120,7 +120,7 @@
       types:
         Piercing: 3
         Slash: 3
-  - type: StaminaDamageOnCollide # Orion
+  - type: StaminaDamageOnCollide # RW
     damage: 3
 
 - type: entity
@@ -186,7 +186,7 @@
       params:
         loop: true
   - type: IgniteOnCollide
-    fireStacks: 2 # Orion-Edit: 1 > 2
+    fireStacks: 2 # RW-Edit: 1 > 2
   - type: PointLight
     enabled: true
     color: "#FF8080"
@@ -207,10 +207,10 @@
   - type: Projectile
     damage:
       types:
-        Radiation: 1 # Amour edit: 2 > 1; Orion-Edit: 5 > 2
-        Structural: 10 # Amour edit: missing > 10
-        Piercing: 10 # Amour edit: missing > 10
-      armorPenetration: 0.2 # Amour edit: 0.15 > 0.2; Orion
+        Radiation: 1 # RW edit: 2 > 1; Orion-Edit: 5 > 2
+        Structural: 10 # RW edit: missing > 10
+        Piercing: 10 # RW edit: missing > 10
+      armorPenetration: 0.2 # RW edit: 0.15 > 0.2; Orion
 
 - type: entity
   parent: PelletShotgunUranium

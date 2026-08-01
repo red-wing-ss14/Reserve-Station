@@ -465,7 +465,7 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.ToTable("admin_watchlists", (string)null);
                 });
 
-            modelBuilder.Entity("Content.Server.Database.AmourBooster", b =>
+            modelBuilder.Entity("Content.Server.Database.RwBooster", b =>
                 {
                     b.Property<Guid>("PlayerId")
                         .HasColumnType("uuid")
@@ -1115,7 +1115,7 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("facial_hair_color");
 
-                    // Amour start
+                    // RW start
                     b.Property<string>("FacialHairColor2")
                         .HasColumnType("text")
                         .HasColumnName("facial_hair_color2");
@@ -1128,7 +1128,7 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Property<bool?>("FacialHairUseGradient")
                         .HasColumnType("boolean")
                         .HasColumnName("facial_hair_use_gradient");
-                    // Amour end
+                    // RW end
 
                     b.Property<string>("FlavorText")
                         .IsRequired()
@@ -1150,7 +1150,7 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("hair_color");
 
-                    // Amour start
+                    // RW start
                     b.Property<string>("HairColor2")
                         .HasColumnType("text")
                         .HasColumnName("hair_color2");
@@ -1163,7 +1163,7 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Property<bool?>("HairUseGradient")
                         .HasColumnType("boolean")
                         .HasColumnName("hair_use_gradient");
-                    // Amour end
+                    // RW end
 
                     b.Property<float>("Height")
                         .HasColumnType("real")
@@ -2219,11 +2219,11 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Navigation("Round");
                 });
 
-            modelBuilder.Entity("Content.Server.Database.AmourBooster", b =>
+            modelBuilder.Entity("Content.Server.Database.RwBooster", b =>
                 {
                     b.HasOne("Content.Server.Database.Player", "Player")
                         .WithOne()
-                        .HasForeignKey("Content.Server.Database.AmourBooster", "PlayerId")
+                        .HasForeignKey("Content.Server.Database.RwBooster", "PlayerId")
                         .HasPrincipalKey("Content.Server.Database.Player", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()

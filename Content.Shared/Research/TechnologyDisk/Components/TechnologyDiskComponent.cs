@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared._Orion.Research;
+using Content.Shared._RW.Research;
 using Content.Shared.Random;
 using Content.Shared.Research.Prototypes;
 using Robust.Shared.GameStates;
@@ -25,7 +25,7 @@ public sealed partial class TechnologyDiskComponent : Component
     [DataField]
     public ProtoId<WeightedRandomPrototype> TierWeightPrototype = "TechDiskTierWeights";
 
-    // Orion-Start
+    // RW-Start
     /// <summary>
     /// Optional technology snapshot that can be imported into another network.
     /// </summary>
@@ -37,5 +37,5 @@ public sealed partial class TechnologyDiskComponent : Component
     /// </summary>
     [DataField]
     public List<ResearchPointAmount>? StoredPointBalances;
-    // Orion-End
+    // RW-End
 }

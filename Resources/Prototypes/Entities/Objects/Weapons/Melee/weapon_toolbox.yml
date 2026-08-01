@@ -8,12 +8,12 @@
   categories: [ DoNotMap ]
   components:
   - type: Sprite
-    sprite: _Orion/Objects/Tools/Toolboxes/toolbox_robust.rsi # Orion-Edit
+    sprite: _RW/Objects/Tools/Toolboxes/toolbox_robust.rsi # RW-Edit
     state: icon
   - type: Item
     size: Ginormous
-    sprite: _Orion/Objects/Tools/Toolboxes/toolbox_robust.rsi # Orion-Edit
-  # Orion-Start
+    sprite: _RW/Objects/Tools/Toolboxes/toolbox_robust.rsi # RW-Edit
+  # RW-Start
   - type: EmitSoundOnPickup
     sound:
       path: /Audio/_Goobstation/Items/handling/toolbox_pickup.ogg
@@ -23,9 +23,9 @@
   - type: EmitSoundOnLand
     sound:
       path: /Audio/Items/toolbox_drop.ogg
-  # Orion-End
+  # RW-End
   - type: MeleeWeapon
-#    wideAnimationRotation: -135 # Orion-Edit: Removed
+#    wideAnimationRotation: -135 # RW-Edit: Removed
     attackRate: 1.5
     damage:
       types:

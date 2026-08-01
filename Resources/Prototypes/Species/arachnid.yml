@@ -5,10 +5,10 @@
   name: species-name-arachnid
   roundStart: true
   prototype: MobArachnid
-  # Amour port: WD Slim body types START
+  # RW port: WD Slim body types START
   bodyTypes:
     - ArachnidNormal
-  # Amour port: WD Slim body types END
+  # RW port: WD Slim body types END
   defaultSkinTone: "#385878"
   markingLimits: MobArachnidMarkingLimits
   dollPrototype: MobArachnidDummy
@@ -18,9 +18,9 @@
   lastNames: NamesArachnidLast
   sexes:
   - Unsexed
-  # Orion-Start
+  # RW-Start
   category: Classic
-  description: "/ServerInfo/_Orion/SpeciesDescriptions/Arachnid.xml"
+  description: "/ServerInfo/_RW/SpeciesDescriptions/Arachnid.xml"
   pros:
   - species-arachnid-pro-web
   special:
@@ -31,13 +31,13 @@
   - species-arachnid-con-damage
   - species-arachnid-con-asphyxia
   - species-arachnid-con-temperature
-  # Orion-End
+  # RW-End
 
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
 - type: bodyType
   id: ArachnidNormal
   name: body-normal
-# Amour port: WD Slim body types END
+# RW port: WD Slim body types END
   sprites:
     Head: MobArachnidHead
     Snout: MobHumanoidAnyMarking
@@ -73,7 +73,7 @@
       points: 1
       required: false
     Tail:
-      points: 2 # Amour edit
+      points: 2 # RW edit
       required: true
       defaultMarkings: [ ArachnidAppendagesDefault ]
     HeadTop:

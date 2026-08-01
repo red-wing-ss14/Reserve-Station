@@ -14,16 +14,16 @@
   supervisors: job-supervisors-hos
   canBeAntag: false
   guides: # goobstation
-  # Orion-Edit-Start
+  # RW-Edit-Start
   - SpaceLaw
   # - SOP-Security-Officer # Disabled until guide is created
   # - SOP-Security # Disabled until guide is created
-  # Orion-Edit-End
+  # RW-Edit-End
   goobcoins: 30 #Goob content
-  # Orion-Start
+  # RW-Start
   salary: 85
   payrollDepartmentAccount: Security
-  # Orion-End
+  # RW-End
   access:
   - Security
   - Brig
@@ -42,11 +42,11 @@
   equipment:
     eyes: ClothingEyesGlassesSecurity
     ears: ClothingHeadsetAltSecurityRegular # Goobstation
-    pocket1: WeaponDisabler # Orion-Edit: PistolMk58 > Disabler
+    pocket1: WeaponDisabler # RW-Edit: PistolMk58 > Disabler
   storage:
     back:
     - Flash
-#    - MagazinePistol # Orion-Edit: Now in loadout
+#    - MagazinePistol # RW-Edit: Now in loadout
 
 - type: chameleonOutfit
   id: SecurityOfficerChameleonOutfit

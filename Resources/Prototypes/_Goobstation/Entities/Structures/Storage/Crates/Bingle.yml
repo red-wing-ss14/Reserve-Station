@@ -8,5 +8,5 @@
   - type: Icon
     sprite: _Goobstation/Objects/Storage/binglecrate.rsi
   - type: Sprite
-    offset: "0.0,0.0" # Orion | Not TG
+    offset: "0.0,0.0" # RW | Not TG
     sprite: _Goobstation/Objects/Storage/binglecrate.rsi

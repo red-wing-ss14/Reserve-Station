@@ -12,7 +12,7 @@
     layers:
     - map: ["console"]
       state: console
-  - type: GenericVisualizer # Orion
+  - type: GenericVisualizer # RW
     visuals:
       enum.EdgeConnectionVisuals.ConnectionMask:
         computerLayerBody:
@@ -55,7 +55,7 @@
     layers:
     - map: ["console"]
       state: console
-  - type: GenericVisualizer # Orion
+  - type: GenericVisualizer # RW
     visuals:
       enum.EdgeConnectionVisuals.ConnectionMask:
         computerLayerBody:

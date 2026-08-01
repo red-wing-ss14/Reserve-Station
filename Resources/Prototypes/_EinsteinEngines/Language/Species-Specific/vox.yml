@@ -7,19 +7,19 @@
   isVisibleLanguage: true
   speech:
     color: "#a489a0"
-    fontId: FestusCorrect # Orion-Edit
-    boldFontId: FestusCorrect # Orion
+    fontId: FestusCorrect # RW-Edit
+    boldFontId: FestusCorrect # RW
     fontSize: 12
-  # Orion-Start
+  # RW-Start
   icon:
-    sprite: _Orion/Interface/Chat/language.rsi
+    sprite: _RW/Interface/Chat/language.rsi
     state: vox
-  # Orion-End
+  # RW-End
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 4
-    # Orion-Edit-Start: Localization
+    # RW-Edit-Start: Localization
     replacement:
     - ка
     - ра
@@ -48,4 +48,4 @@
     - ии
     - кри
     - ка
-    # Orion-Edit-End: Localization
+    # RW-Edit-End: Localization

@@ -9,10 +9,10 @@
   icon: JobIconVisitor
   setPreference: false
   overrideConsoleVisibility: true
-  # Orion-Start
+  # RW-Start
   salary: 25
   payrollFromStationBudget: false
-  # Orion-End
+  # RW-End
   access:
   - Maintenance
   extendedAccess:

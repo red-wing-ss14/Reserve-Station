@@ -58,10 +58,10 @@ public sealed class MaterialStorageSystem : SharedMaterialStorageSystem
         if (args.SenderSession.AttachedEntity is not { } player)
             return;
 
-        // Orion-Start
+        // RW-Start
         if (TryComp<GhostComponent>(player, out var ghost) && !ghost.CanGhostInteract)
             return;
-        // Orion-End
+        // RW-End
 
         var uid = GetEntity(msg.Entity);
 
