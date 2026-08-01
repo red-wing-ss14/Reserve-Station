@@ -74667,7 +74667,7 @@ entities:
     - type: Transform
       pos: 52.82774,25.025684
       parent: 2
-- proto: ClothingUnderwearSocksStripedThigh
+- proto: ClothingSocksStripedThigh
   entities:
   - uid: 10828
     components:
