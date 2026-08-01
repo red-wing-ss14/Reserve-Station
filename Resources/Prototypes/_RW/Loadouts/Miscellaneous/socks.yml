@@ -79,21 +79,6 @@
     socks: ClothingSocksCommieThigh
 
 - type: loadout
-  id: SocksFishnet
-  equipment:
-    socks: ClothingSocksFishnet
-
-- type: loadout
-  id: SocksFishnetAlt
-  equipment:
-    socks: ClothingSocksFishnetAlt
-
-- type: loadout
-  id: SocksGarter
-  equipment:
-    socks: ClothingSocksGarter
-
-- type: loadout
   id: SocksLeggings
   equipment:
     socks: ClothingSocksLeggings
@@ -104,24 +89,9 @@
     socks: ClothingSocksLeggingsBlack
 
 - type: loadout
-  id: SocksPantyhose
-  equipment:
-    socks: ClothingSocksPantyhose
-
-- type: loadout
-  id: SocksPantyhoseRipped
-  equipment:
-    socks: ClothingSocksPantyhoseRipped
-
-- type: loadout
   id: SocksKnee
   equipment:
     socks: ClothingSocksKnee
-
-- type: loadout
-  id: SocksLatex
-  equipment:
-    socks: ClothingSocksLatex
 
 - type: loadout
   id: Socks
