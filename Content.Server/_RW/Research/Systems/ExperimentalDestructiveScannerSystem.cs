@@ -204,7 +204,7 @@ public sealed class ExperimentalDestructiveScannerSystem : EntitySystem
         else
             ent.Comp.LastResult = Loc.GetString("research-machine-experimental-destructive-scanner-no-matching-experiment");
 
-        _chat.TrySendInGameICMessage(ent.Owner, Loc.GetString("research-machine-experimental-destructive-scanner-chat-result", ("result", ent.Comp.LastResult)), InGameICChatType.Speak, false);
+        _chat.TrySendInGameICMessage(ent.Owner, Loc.GetString("research-machine-experimental-destructive-scanner-chat-result", ("result", ent.Comp.LastResult)), InGameICChatType.Speak, true);
         _audio.PlayPvs(changedAny || completedCount > 0
             ? ent.Comp.SuccessSound
             : ent.Comp.FailureSound,
