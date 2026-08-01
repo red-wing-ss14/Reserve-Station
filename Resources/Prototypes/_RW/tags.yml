@@ -23,12 +23,6 @@
   id: Socks
 
 - type: Tag
-  id: Underwear
-
-- type: Tag
-  id: Undershirt
-
-- type: Tag
   id: AnomalyCore
 
 - type: Tag

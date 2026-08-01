@@ -75,7 +75,7 @@
 
 # 2sh0nka
 - type: entity
-  parent: ClothingUnderwearSocksBase
+  parent: ClothingSocksBase
   id: ClothingUnderwearSocksBlackBoosty
   name: чёрные чулки
   suffix: Boosty
@@ -85,7 +85,7 @@
       sprite: _RW/Fluff/Boosty/black.rsi
 
 - type: entity
-  parent: ClothingUnderwearSocksBase
+  parent: ClothingSocksBase
   id: ClothingUnderwearSocksGrayBoosty
   name: серые чулки
   suffix: Boosty

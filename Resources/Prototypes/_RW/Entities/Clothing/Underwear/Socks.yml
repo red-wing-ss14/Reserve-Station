@@ -144,33 +144,6 @@
 
 - type: entity
   parent: ClothingSocksBase
-  id: ClothingSocksFishnet
-  name: fishnet socks
-  description: Stylish fishnet socks adding a touch of edginess to your outfit.
-  components:
-  - type: Sprite
-    sprite: _RW/Clothing/Underwear/Socks/fishnet.rsi
-
-- type: entity
-  parent: ClothingSocksBase
-  id: ClothingSocksFishnetAlt
-  name: fishnet socks
-  description: Stylish fishnet socks adding a touch of edginess to your outfit.
-  components:
-  - type: Sprite
-    sprite: _RW/Clothing/Underwear/Socks/fishnet_alt.rsi
-
-- type: entity
-  parent: ClothingSocksBase
-  id: ClothingSocksGarter
-  name: garter socks
-  description: Elegant garter socks, combining style and sophistication.
-  components:
-  - type: Sprite
-    sprite: _RW/Clothing/Underwear/Socks/garter.rsi
-
-- type: entity
-  parent: ClothingSocksBase
   id: ClothingSocksLeggings
   name: leggings
   description: Comfortable leggings offering a sleek and versatile look.
@@ -189,39 +162,12 @@
 
 - type: entity
   parent: ClothingSocksBase
-  id: ClothingSocksPantyhose
-  name: pantyhose
-  description: Smooth pantyhose providing an elegant finish to any outfit.
-  components:
-  - type: Sprite
-    sprite: _RW/Clothing/Underwear/Socks/pantyhose.rsi
-
-- type: entity
-  parent: ClothingSocksBase
-  id: ClothingSocksPantyhoseRipped
-  name: ripped pantyhose
-  description: Ripped pantyhose for a trendy and edgy fashion statement.
-  components:
-  - type: Sprite
-    sprite: _RW/Clothing/Underwear/Socks/pantyhose_ripped.rsi
-
-- type: entity
-  parent: ClothingSocksBase
   id: ClothingSocksKnee
   name: knee socks
   description: Simple knee socks for a classic and versatile style.
   components:
   - type: Sprite
     sprite: _RW/Clothing/Underwear/Socks/socks_knee.rsi
-
-- type: entity
-  parent: ClothingSocksBase
-  id: ClothingSocksLatex
-  name: latex socks
-  description: Smooth and shiny latex socks for a bold and unique fashion statement.
-  components:
-  - type: Sprite
-    sprite: _RW/Clothing/Underwear/Socks/socks_latex.rsi
 
 - type: entity
   parent: ClothingSocksBase
