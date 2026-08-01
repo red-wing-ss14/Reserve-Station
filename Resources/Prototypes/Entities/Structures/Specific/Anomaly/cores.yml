@@ -31,12 +31,12 @@
   - type: Tag
     tags:
     - ForceableFollow
-    - AnomalyCore # Orion
+    - AnomalyCore # RW
   - type: AnomalyCore
     timeToDecay: 600
     startPrice: 10000
     endPrice: 200
-    # Orion-Start
+    # RW-Start
     reactivationReagentAmount: 5
     reactivationReagents:
     - Bluespace
@@ -44,8 +44,8 @@
     - Plasma
     - UnstableMutagen
     hazardousFailureChance: 0.65
-    # Orion-End
-  # Orion-Start
+    # RW-End
+  # RW-Start
   - type: SolutionContainerManager
     solutions:
       reactivation:
@@ -54,10 +54,10 @@
     solution: reactivation
   - type: InjectableSolution
     solution: reactivation
-  # Orion-End
+  # RW-End
   - type: MovedByPressure #Goob - space wind moment
     enabled: false
-  # Orion-Start
+  # RW-Start
   - type: ResearchAnalyzable
     supportedMethods:
     - Deconstruct
@@ -70,7 +70,7 @@
     discoveryTrigger: machine:anomaly-core
     experimentActions:
     - analyze_anomaly_core
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: BaseAnomalyCore
@@ -200,7 +200,7 @@
     energy: 3.5
     color: "#00ccff"
     castShadows: false
-  - type: Tag # Orion
+  - type: Tag # RW
     tags:
     - ForceableFollow
     - AnomalyCore
@@ -321,7 +321,7 @@
     energy: 2.7
     color: "#fca3c0"
     castShadows: false
-  - type: AnomalyCore # Orion
+  - type: AnomalyCore # RW
     reactivationPrototype: AnomalyCorePyroclastic
   - type: Enchanter # Goobstation
     maxLevel: 1
@@ -342,7 +342,7 @@
     energy: 10
     color: "#1e070e"
     castShadows: false
-  - type: AnomalyCore # Orion
+  - type: AnomalyCore # RW
     reactivationPrototype: AnomalyCoreGravity
   - type: Enchanter # Goobstation
     maxLevel: 1
@@ -362,7 +362,7 @@
     energy: 2.7
     color: "#befaff"
     castShadows: false
-  - type: AnomalyCore # Orion
+  - type: AnomalyCore # RW
     reactivationPrototype: AnomalyCoreIce
   - type: Enchanter # Goobstation
     maxLevel: 2
@@ -383,7 +383,7 @@
     energy: 3.5
     color: "#cb5b7e"
     castShadows: false
-  - type: AnomalyCore # Orion
+  - type: AnomalyCore # RW
     reactivationPrototype: AnomalyCoreFlesh
   - type: Enchanter # Goobstation
     maxLevel: 3
@@ -403,7 +403,7 @@
     energy: 3.5
     color: "#5ca8cb"
     castShadows: false
-  - type: AnomalyCore # Orion
+  - type: AnomalyCore # RW
     reactivationPrototype: AnomalyCoreRock
   - type: Enchanter # Goobstation
     maxLevel: 1
@@ -424,7 +424,7 @@
     energy: 3.5
     color: "#ffffff"
     castShadows: false
-  - type: AnomalyCore # Orion
+  - type: AnomalyCore # RW
     reactivationPrototype: AnomalyCoreLiquid
   - type: Enchanter # Goobstation
     maxLevel: 2 # Non-inert cores can roll max level
@@ -445,7 +445,7 @@
     energy: 3.5
     color: "#00ccff"
     castShadows: false
-  - type: AnomalyCore # Orion
+  - type: AnomalyCore # RW
     reactivationPrototype: AnomalyCoreBluespace
 
 - type: entity
@@ -461,7 +461,7 @@
     energy: 2.0
     color: "#ffffaa"
     castShadows: false
-  - type: AnomalyCore # Orion
+  - type: AnomalyCore # RW
     reactivationPrototype: AnomalyCoreElectricity
   - type: Enchanter # Goobstation
     maxLevel: 4 # Insuls rolling
@@ -483,7 +483,7 @@
     energy: 2.0
     color: "#6270bb"
     castShadows: false
-  - type: AnomalyCore # Orion
+  - type: AnomalyCore # RW
     reactivationPrototype: AnomalyCoreFlora
   - type: Enchanter # Goobstation
     maxLevel: 2
@@ -503,7 +503,7 @@
     energy: 2.0
     color: "#793a80"
     castShadows: false
-  - type: AnomalyCore # Orion
+  - type: AnomalyCore # RW
     reactivationPrototype: AnomalyCoreShadow
 
 - type: entity
@@ -519,7 +519,7 @@
     energy: 2.0
     color: "#56c1e8"
     castShadows: false
-  - type: AnomalyCore # Orion
+  - type: AnomalyCore # RW
     reactivationPrototype: AnomalyCoreTech
 
 - type: entity
@@ -535,7 +535,7 @@
     energy: 2.0
     color: "#fc0303"
     castShadows: false
-  - type: AnomalyCore # Orion
+  - type: AnomalyCore # RW
     reactivationPrototype: AnomalyCoreSanta
   - type: Enchanter # Goobstation
     maxLevel: 2

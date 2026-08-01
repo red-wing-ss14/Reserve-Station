@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-using Content.Shared._Orion.CustomGhost;
+using Content.Shared._RW.CustomGhost;
 using Content.Shared.Construction.Prototypes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -18,16 +18,16 @@ namespace Content.Shared.Preferences
     {
         private Dictionary<int, ICharacterProfile> _characters;
 
-        public PlayerPreferences(IEnumerable<KeyValuePair<int, ICharacterProfile>> characters, int selectedCharacterIndex, Color adminOOCColor, ProtoId<CustomGhostPrototype> ghostPrototype, List<ProtoId<ConstructionPrototype>> constructionFavorites) // Orion-Edit
+        public PlayerPreferences(IEnumerable<KeyValuePair<int, ICharacterProfile>> characters, int selectedCharacterIndex, Color adminOOCColor, ProtoId<CustomGhostPrototype> ghostPrototype, List<ProtoId<ConstructionPrototype>> constructionFavorites) // RW-Edit
         {
             _characters = new Dictionary<int, ICharacterProfile>(characters);
             SelectedCharacterIndex = selectedCharacterIndex;
             AdminOOCColor = adminOOCColor;
-            CustomGhost = ghostPrototype; // Orion
+            CustomGhost = ghostPrototype; // RW
             ConstructionFavorites = constructionFavorites;
         }
 
-        // Orion-Start
+        // RW-Start
         public PlayerPreferences WithCharacters(IEnumerable<KeyValuePair<int, ICharacterProfile>> characters) =>
             new(characters, SelectedCharacterIndex, AdminOOCColor, CustomGhost, ConstructionFavorites);
 
@@ -42,7 +42,7 @@ namespace Content.Shared.Preferences
 
         public PlayerPreferences WithConstructionFavorites(List<ProtoId<ConstructionPrototype>> favorites) =>
             new(_characters, SelectedCharacterIndex, AdminOOCColor, CustomGhost, favorites);
-        // Orion-End
+        // RW-End
 
         /// <summary>
         ///     All player characters.
@@ -65,7 +65,7 @@ namespace Content.Shared.Preferences
         public ICharacterProfile SelectedCharacter => Characters[SelectedCharacterIndex];
 
         public Color AdminOOCColor { get; set; }
-        public ProtoId<CustomGhostPrototype> CustomGhost { get; set; } // Orion
+        public ProtoId<CustomGhostPrototype> CustomGhost { get; set; } // RW
 
         /// <summary>
         ///    List of favorite items in the construction menu.

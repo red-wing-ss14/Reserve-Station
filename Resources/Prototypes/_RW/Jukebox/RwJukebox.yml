@@ -1,0 +1,141 @@
+# Tape
+- type: entity
+  id: RwTape
+  name: кассета
+  description: Чистая кассета для записи музыки.
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/jukeboxStuff/tape.rsi
+    state: tape
+  - type: Item
+    size: Tiny
+  - type: RwTape
+  - type: Tag
+    tags:
+    - RwTape
+
+# Coin
+- type: entity
+  id: RwTapeRecorderCoin
+  name: жетон для записи
+  description: Позволяет записать одну песню на кассету.
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/coins.rsi
+    state: coin_gold
+  - type: Tag
+    tags:
+    - RwTapeRecorderCoin
+
+# Рекордер
+- type: entity
+  id: RwTapeRecorder
+  name: Устройство Мысль
+  description: Устройство для переноса ваших мыслей (OGG файлов) на магнитную ленту.
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: _RW/Objects/Devices/tapeRecorder.rsi
+    layers:
+    - state: base
+    - state: tape
+      map: ["tape"]
+      visible: false
+  - type: Item
+    size: Normal
+  - type: RwTapeCreator
+    coins: 3
+  - type: UserInterface
+    interfaces:
+      enum.RwTapeCreatorUIKey.Key:
+        type: RwTapeCreatorBUI
+  - type: ActivatableUI
+    key: enum.RwTapeCreatorUIKey.Key
+  - type: ContainerContainer
+    containers:
+      rw_tape_creator_container: !type:Container
+
+# Jukebox
+- type: entity
+  id: AmourBoombox
+  name: продвинутый бумбокс
+  description: Проигрывает музыку прямо с ваших кассет. 
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: _RW/Objects/Devices/jukebox.rsi
+    layers:
+    - state: off
+    - state: on
+      map: ["bars"]
+      visible: false
+  - type: Item
+    size: Normal
+    sprite: _RW/Objects/Devices/jukebox.rsi
+    shape:
+    - 0,0,1,2
+  - type: RwJukebox
+    volume: 0.7
+    maxAudioRange: 25
+  - type: UserInterface
+    interfaces:
+      enum.RwJukeboxUIKey.Key:
+        type: RwJukeboxBUI
+  - type: ActivatableUI
+    key: enum.RwJukeboxUIKey.Key
+  - type: ContainerContainer
+    containers:
+      rw_jukebox_tapes: !type:Container
+  - type: PointLight
+    enabled: false
+    radius: 1.5
+    energy: 3.5
+    color: "#FF1493"
+    mask: /Textures/Effects/LightMasks/double_cone.png
+    containerOcclusionMargin: 10
+  - type: RotatingLight
+    speed: 90
+  - type: Anchorable
+    delay: 1.5
+  - type: Pullable
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 800
+      Plastic: 400
+
+# Walkman
+- type: entity
+  id: AmourWalkman
+  name: переносной плеер
+  description: Карманный проигрыватель для ваших кассет.
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: _RW/Objects/Devices/walkman.rsi
+    layers:
+    - state: walkman
+    - state: walkman_working_overlay
+      map: ["bars"]
+      visible: false
+  - type: Item
+    size: Small
+    sprite: _RW/Objects/Devices/walkman.rsi
+    heldPrefix: walkman
+  - type: Clothing
+    sprite: _RW/Objects/Devices/walkman.rsi
+    slots:
+    - Belt
+  - type: RwJukebox
+    volume: 0.5
+    maxAudioRange: 5
+  - type: UserInterface
+    interfaces:
+      enum.RwJukeboxUIKey.Key:
+        type: RwJukeboxBUI
+  - type: ActivatableUI
+    key: enum.RwJukeboxUIKey.Key
+  - type: ContainerContainer
+    containers:
+      rw_jukebox_tapes: !type:Container

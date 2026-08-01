@@ -2,16 +2,16 @@
   id: FloorGoblin
   speech:
     color: "#288f43"
-  # Orion-Start
+  # RW-Start
   icon:
-    sprite: _Orion/Interface/Chat/language.rsi
+    sprite: _RW/Interface/Chat/language.rsi
     state: animal
-  # Orion-End
+  # RW-End
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 3
-    # Orion-Edit-Start: Localization
+    # RW-Edit-Start: Localization
     replacement:
     - ми
     - мими
@@ -26,4 +26,4 @@
     - би
     - мье
     - йо
-    # Orion-Edit-End: Localization
+    # RW-Edit-End: Localization

@@ -6,7 +6,7 @@
   description: job-description-chef
   playTimeTracker: JobChef
   requirements:
-    - !type:AnyOfRequirement # Amour edit - Discord OR playtime
+    - !type:AnyOfRequirement # RW edit - Discord OR playtime
       requirements:
         - !type:DiscordLinkRequirement
         - !type:OverallPlaytimeRequirement
@@ -15,14 +15,14 @@
   icon: "JobIconChef"
   supervisors: job-supervisors-hop
   guides: # goobstation
-#  - Chef # Orion-Edit: Removed because dont have this SOP
+#  - Chef # RW-Edit: Removed because dont have this SOP
   - FoodRecipes
   - CQC
   goobcoins: 15 #Goob content
-  # Orion-Start
+  # RW-Start
   salary: 55
   payrollDepartmentAccount: Service
-  # Orion-End
+  # RW-End
   access:
   - Service
   - Maintenance

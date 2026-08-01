@@ -6,7 +6,7 @@
   description: job-description-lawyer
   playTimeTracker: JobLawyer
   requirements:
-    - !type:AnyOfRequirement # Amour edit - Discord OR playtime
+    - !type:AnyOfRequirement # RW edit - Discord OR playtime
       requirements:
         - !type:DiscordLinkRequirement
         - !type:OverallPlaytimeRequirement
@@ -15,15 +15,15 @@
   icon: "JobIconLawyer"
   supervisors: job-supervisors-hop
   guides: # goobstation
-  # Amour-Edit-Start
+  # RW-Edit-Start
   # - SpaceLaw # Disabled until guide is created
-  # Amour-Edit-End
-#  - LegalSOP # Orion-Edit: Removed because dont have this SOP
+  # RW-Edit-End
+#  - LegalSOP # RW-Edit: Removed because dont have this SOP
   goobcoins: 10 #Goob content
-  # Orion-Start
+  # RW-Start
   salary: 50
   payrollDepartmentAccount: Service
-  # Orion-End
+  # RW-End
   access:
   - Service
   - Lawyer

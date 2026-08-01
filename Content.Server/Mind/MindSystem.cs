@@ -277,13 +277,13 @@ public sealed class MindSystem : SharedMindSystem
             mind.OwnedEntity = entity;
             mind.OriginalOwnedEntity ??= GetNetEntity(mind.OwnedEntity);
 
-            // Orion-Start
+            // RW-Start
             if (mind.FirstRoundParticipationTime == null
                 && (HasComp<HumanoidAppearanceComponent>(entity.Value)
                     || HasComp<BorgBrainComponent>(entity.Value)
                     || HasComp<BorgChassisComponent>(entity.Value)))
                 mind.FirstRoundParticipationTime = _gameTicker.RoundDuration();
-            // Orion-End
+            // RW-End
 
             Entity<MindComponent> mindEnt = (mindId, mind);
             Entity<MindContainerComponent> containerEnt = (entity.Value, component);

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
-using Content.Shared._Orion.Research;
+using Content.Shared._RW.Research;
 using Content.Shared.Database;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
@@ -12,22 +12,22 @@ namespace Content.Server.Research.Systems;
 
 public sealed partial class ResearchSystem
 {
-    private readonly ISawmill _sawmill = Logger.GetSawmill("research.tech-web"); // Orion
+    private readonly ISawmill _sawmill = Logger.GetSawmill("research.tech-web"); // RW
 
     /// <summary>
     /// Syncs the primary entity's database to that of the secondary entity's database.
     /// </summary>
-    private void Sync(EntityUid primaryUid, EntityUid otherUid, TechnologyDatabaseComponent? primaryDb = null, TechnologyDatabaseComponent? otherDb = null) // Orion-Edit: Was public
+    private void Sync(EntityUid primaryUid, EntityUid otherUid, TechnologyDatabaseComponent? primaryDb = null, TechnologyDatabaseComponent? otherDb = null) // RW-Edit: Was public
     {
         if (!Resolve(primaryUid, ref primaryDb) || !Resolve(otherUid, ref otherDb))
             return;
 
         primaryDb.MainDiscipline = otherDb.MainDiscipline;
-        // Orion-Edit-Start
+        // RW-Edit-Start
         primaryDb.CurrentTechnologyCards = new List<string>(otherDb.CurrentTechnologyCards);
         primaryDb.SupportedDisciplines = new List<ProtoId<TechDisciplinePrototype>>(otherDb.SupportedDisciplines);
-        // Orion-Edit-End
-        // Orion-Start
+        // RW-Edit-End
+        // RW-Start
         primaryDb.VisibleTechnologies = new List<ProtoId<TechnologyPrototype>>(otherDb.VisibleTechnologies);
         primaryDb.AvailableTechnologies = new List<ProtoId<TechnologyPrototype>>(otherDb.AvailableTechnologies);
         primaryDb.ResearchedTechnologies = new List<ProtoId<TechnologyPrototype>>(otherDb.ResearchedTechnologies);
@@ -39,13 +39,13 @@ public sealed partial class ResearchSystem
         primaryDb.ExperimentProgress = otherDb.ExperimentProgress
             .Select(CloneExperimentProgress)
             .ToList();
-        // Orion-End
-        primaryDb.UnlockedRecipes = new List<ProtoId<LatheRecipePrototype>>(otherDb.UnlockedRecipes); // Orion-Edit
-        // Orion-Start
+        // RW-End
+        primaryDb.UnlockedRecipes = new List<ProtoId<LatheRecipePrototype>>(otherDb.UnlockedRecipes); // RW-Edit
+        // RW-Start
         primaryDb.RevealedTechnologies = new List<ProtoId<TechnologyPrototype>>(otherDb.RevealedTechnologies);
         primaryDb.DiscoveryProgress = new List<TechnologyDiscoveryProgress>(otherDb.DiscoveryProgress);
         primaryDb.UnlockedInfrastructure = new List<string>(otherDb.UnlockedInfrastructure);
-        // Orion-End
+        // RW-End
 
         Dirty(primaryUid, primaryDb);
 
@@ -59,15 +59,15 @@ public sealed partial class ResearchSystem
     ///     syncs against the research server, and the server against the local database.
     /// </summary>
     /// <returns>Whether it could sync or not</returns>
-    private void SyncClientWithServer(EntityUid uid, TechnologyDatabaseComponent? databaseComponent = null, ResearchClientComponent? clientComponent = null) // Orion-Edit: Was public
+    private void SyncClientWithServer(EntityUid uid, TechnologyDatabaseComponent? databaseComponent = null, ResearchClientComponent? clientComponent = null) // RW-Edit: Was public
     {
         if (!Resolve(uid, ref databaseComponent, ref clientComponent, false))
             return;
 
-        if (clientComponent.Server is not { } serverUid) // Orion-Edit
+        if (clientComponent.Server is not { } serverUid) // RW-Edit
             return;
 
-        // Orion-Start
+        // RW-Start
         if (!TryComp(serverUid, out ResearchServerComponent? serverComponent))
             return;
 
@@ -81,16 +81,16 @@ public sealed partial class ResearchSystem
 
         if (!TryComp<TechnologyDatabaseComponent>(serverUid, out var serverDatabase))
             return;
-        // Orion-End
+        // RW-End
 
-        Sync(uid, serverUid, databaseComponent, serverDatabase); // Orion-Edit
+        Sync(uid, serverUid, databaseComponent, serverDatabase); // RW-Edit
     }
 
     /// <summary>
     /// Tries to add a technology to a database, checking if it is able to
     /// </summary>
     /// <returns>If the technology was successfully added</returns>
-    private bool UnlockTechnology(EntityUid client, // Orion-Edit: Was public
+    private bool UnlockTechnology(EntityUid client, // RW-Edit: Was public
         string prototypeid,
         EntityUid user,
         ResearchClientComponent? component = null,
@@ -106,7 +106,7 @@ public sealed partial class ResearchSystem
     /// Tries to add a technology to a database, checking if it is able to
     /// </summary>
     /// <returns>If the technology was successfully added</returns>
-    private bool UnlockTechnology(EntityUid client, // Orion-Edit: Was public
+    private bool UnlockTechnology(EntityUid client, // RW-Edit: Was public
         TechnologyPrototype prototype,
         EntityUid user,
         ResearchClientComponent? component = null,
@@ -118,16 +118,16 @@ public sealed partial class ResearchSystem
         if (!TryGetClientServer(client, out var serverEnt, out _, component))
             return false;
 
-        if (!CanServerUnlockTechnology(client, prototype, out var finalCosts, clientDatabase, component)) // Orion-Edit
+        if (!CanServerUnlockTechnology(client, prototype, out var finalCosts, clientDatabase, component)) // RW-Edit
             return false;
 
         AddTechnology(serverEnt.Value, prototype);
         //TrySetMainDiscipline(prototype, serverEnt.Value); // Goobstation commented
-        TryConsumePoints(serverEnt.Value, finalCosts); // Orion-Edit
+        TryConsumePoints(serverEnt.Value, finalCosts); // RW-Edit
         UpdateTechnologyCards(serverEnt.Value);
 
         _adminLog.Add(LogType.Action, LogImpact.Medium, $"{ToPrettyString(user):player} unlocked {prototype.ID} (discipline: {prototype.Discipline}, tier: {prototype.Tier}) at {ToPrettyString(client)}, for server {ToPrettyString(serverEnt.Value)}.");
-        LogNetworkEvent(serverEnt.Value, "technology", Loc.GetString("research-netlog-technology-unlocked", ("technology", Loc.GetString(prototype.Name)), ("user", GetResearchLogUserName(user))), user); // Orion
+        LogNetworkEvent(serverEnt.Value, "technology", Loc.GetString("research-netlog-technology-unlocked", ("technology", Loc.GetString(prototype.Name)), ("user", GetResearchLogUserName(user))), user); // RW
         return true;
     }
 
@@ -135,7 +135,7 @@ public sealed partial class ResearchSystem
     ///     Adds a technology to the database without checking if it could be unlocked.
     /// </summary>
     [PublicAPI]
-    public void AddTechnology(EntityUid uid, string technology, TechnologyDatabaseComponent? component = null) // Orion-Edit: Was public
+    public void AddTechnology(EntityUid uid, string technology, TechnologyDatabaseComponent? component = null) // RW-Edit: Was public
     {
         if (!Resolve(uid, ref component))
             return;
@@ -160,7 +160,7 @@ public sealed partial class ResearchSystem
                 RaiseLocalEvent(generic.PurchaseEvent);
         }
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         if (!component.ResearchedTechnologies.Contains(technology.ID))
             component.ResearchedTechnologies.Add(technology.ID);
 
@@ -172,7 +172,7 @@ public sealed partial class ResearchSystem
             if (!component.AvailableExperiments.Contains(experiment))
                 component.AvailableExperiments.Add(experiment);
         }
-        // Orion-Edit-End
+        // RW-Edit-End
 
         var addedRecipes = new List<string>();
         foreach (var unlock in technology.RecipeUnlocks)
@@ -183,7 +183,7 @@ public sealed partial class ResearchSystem
             addedRecipes.Add(unlock.Id);
         }
 
-        // Orion-Start
+        // RW-Start
         foreach (var infrastructure in technology.InfrastructureUnlocks)
         {
             if (!component.UnlockedInfrastructure.Contains(infrastructure))
@@ -196,7 +196,7 @@ public sealed partial class ResearchSystem
         }
 
         RecalculateTechnologyState(uid, component);
-        // Orion-End
+        // RW-End
         Dirty(uid, component);
 
         var ev = new TechnologyDatabaseModifiedEvent(addedRecipes);
@@ -208,9 +208,9 @@ public sealed partial class ResearchSystem
     ///     taking parent technologies into account.
     /// </summary>
     /// <returns>Whether it could be unlocked or not</returns>
-    private bool CanServerUnlockTechnology(EntityUid uid, TechnologyPrototype technology, out List<ResearchPointAmount> finalCosts, TechnologyDatabaseComponent? database = null, ResearchClientComponent? client = null) // Orion-Edit: Was public
+    private bool CanServerUnlockTechnology(EntityUid uid, TechnologyPrototype technology, out List<ResearchPointAmount> finalCosts, TechnologyDatabaseComponent? database = null, ResearchClientComponent? client = null) // RW-Edit: Was public
     {
-        // Orion-Start
+        // RW-Start
         finalCosts = technology.PointCosts
             .Select(cost => new ResearchPointAmount
             {
@@ -218,15 +218,15 @@ public sealed partial class ResearchSystem
                 Amount = cost.Amount,
             })
             .ToList();
-        // Orion-End
+        // RW-End
 
         if (!Resolve(uid, ref client, ref database, false))
             return false;
 
-        if (!TryGetClientServer(uid, out var serverUid, out var serverComp, client)) // Orion-Edit
+        if (!TryGetClientServer(uid, out var serverUid, out var serverComp, client)) // RW-Edit
             return false;
 
-        // Orion-Start
+        // RW-Start
         if (!TryComp<TechnologyDatabaseComponent>(serverUid, out var serverDatabase))
             return false;
 
@@ -245,10 +245,10 @@ public sealed partial class ResearchSystem
         }
 
         return HasSufficientPoints(serverUid.Value, finalCosts, serverComp);
-        // Orion-End
+        // RW-End
     }
 
-    // Orion-Start
+    // RW-Start
     public override bool CanUnlockTechnology(TechnologyDatabaseComponent component, TechnologyPrototype tech)
     {
         if (!component.VisibleTechnologies.Contains(tech.ID))
@@ -283,7 +283,7 @@ public sealed partial class ResearchSystem
 
         return true;
     }
-    // Orion-End
+    // RW-End
 
     private void OnDatabaseRegistrationChanged(EntityUid uid, TechnologyDatabaseComponent component, ref ResearchRegistrationChangedEvent args)
     {
@@ -292,7 +292,7 @@ public sealed partial class ResearchSystem
         component.MainDiscipline = null;
         component.CurrentTechnologyCards = new List<string>();
         component.SupportedDisciplines = new List<ProtoId<TechDisciplinePrototype>>();
-        // Orion-Start
+        // RW-Start
         component.VisibleTechnologies = new List<ProtoId<TechnologyPrototype>>();
         component.AvailableTechnologies = new List<ProtoId<TechnologyPrototype>>();
         component.ResearchedTechnologies = new List<ProtoId<TechnologyPrototype>>();
@@ -302,16 +302,16 @@ public sealed partial class ResearchSystem
         component.CompletedExperiments = new List<string>();
         component.SkippedExperiments = new List<string>();
         component.ExperimentProgress = new List<ResearchExperimentProgress>();
-        // Orion-End
+        // RW-End
         component.UnlockedRecipes = new List<ProtoId<LatheRecipePrototype>>();
-        // Orion-Start
+        // RW-Start
         component.RevealedTechnologies = new List<ProtoId<TechnologyPrototype>>();
         component.DiscoveryProgress = new List<TechnologyDiscoveryProgress>();
         component.UnlockedInfrastructure = new List<string>();
-        // Orion-End
+        // RW-End
         Dirty(uid, component);
     }
-    // Orion-Start
+    // RW-Start
     private static ResearchExperimentProgress CloneExperimentProgress(ResearchExperimentProgress source)
     {
         return new ResearchExperimentProgress
@@ -324,5 +324,5 @@ public sealed partial class ResearchSystem
             CompletedAt = source.CompletedAt,
         };
     }
-    // Orion-End
+    // RW-End
 }

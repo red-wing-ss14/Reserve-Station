@@ -73,7 +73,7 @@
     damageModifierSet: Xenomorph
   - type: Stamina
     baseCritThreshold: 500
-#  - type: Fixtures # Orion-Edit
+#  - type: Fixtures # RW-Edit
 #    fixtures:
 #      fix1:
 #        shape:

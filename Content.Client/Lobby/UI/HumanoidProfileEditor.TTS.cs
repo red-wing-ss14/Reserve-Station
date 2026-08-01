@@ -2,8 +2,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Client._Amour.TTS;
-using Content.Shared._Amour.TTS;
+using Content.Client._RW.TTS;
+using Content.Shared._RW.TTS;
 using Content.Shared.Humanoid;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.IoC;

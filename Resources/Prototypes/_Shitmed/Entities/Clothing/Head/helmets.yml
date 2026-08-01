@@ -11,13 +11,13 @@
     - Head
     modifiers:
       coefficients:
-        Blunt: 0.65 # Amour edit: 0.35 > 0.65
-        Slash: 0.65 # Amour edit: 0.35 > 0.65
-        Piercing: 0.65 # Amour edit: 0.35 > 0.65
-        Heat: 0.65 # Amour edit: 0.35 > 0.65
+        Blunt: 0.65 # RW edit: 0.35 > 0.65
+        Slash: 0.65 # RW edit: 0.35 > 0.65
+        Piercing: 0.65 # RW edit: 0.35 > 0.65
+        Heat: 0.65 # RW edit: 0.35 > 0.65
         Radiation: 0.5
         Caustic: 0.5
-        Cold: 0.65 # Amour edit: missing > 0.65
+        Cold: 0.65 # RW edit: missing > 0.65
   - type: ExplosionResistance
     damageCoefficient: 0.75
   - type: Sprite

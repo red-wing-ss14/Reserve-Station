@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared._Orion.Research.Prototypes;
+using Content.Shared._RW.Research.Prototypes;
 using Content.Shared.Lathe;
 using Content.Shared.Research.Prototypes;
 using Content.Shared.Research.Systems;
@@ -37,9 +37,9 @@ public sealed partial class TechnologyDatabaseComponent : Component
     /// </summary>
     [AutoNetworkedField]
     [DataField]
-    public List<ProtoId<TechnologyPrototype>> VisibleTechnologies = new(); // Orion-Edit: Was UnlockedTechnologies
+    public List<ProtoId<TechnologyPrototype>> VisibleTechnologies = new(); // RW-Edit: Was UnlockedTechnologies
 
-    // Orion-Start
+    // RW-Start
     /// <summary>
     /// Technologies that can be researched right now.
     /// </summary>
@@ -95,7 +95,7 @@ public sealed partial class TechnologyDatabaseComponent : Component
     [AutoNetworkedField]
     [DataField]
     public List<string> SkippedExperiments = new();
-    // Orion-End
+    // RW-End
 
     /// <summary>
     /// The ids of all the lathe recipes which have been unlocked.
@@ -105,7 +105,7 @@ public sealed partial class TechnologyDatabaseComponent : Component
     [DataField]
     public List<ProtoId<LatheRecipePrototype>> UnlockedRecipes = new();
 
-    // Orion-Start
+    // RW-Start
     /// <summary>
     /// Technologies revealed by non-standard effects (e.g. experiments).
     /// </summary>
@@ -126,7 +126,7 @@ public sealed partial class TechnologyDatabaseComponent : Component
     [AutoNetworkedField]
     [DataField]
     public List<string> UnlockedInfrastructure = new();
-    // Orion-End
+    // RW-End
 }
 
 /// <summary>
@@ -146,7 +146,7 @@ public readonly record struct TechnologyDatabaseModifiedEvent(List<string>? Newl
 /// </summary>
 [ByRefEvent]
 public readonly record struct TechnologyDatabaseSynchronizedEvent;
-// Orion-Start
+// RW-Start
 [DataDefinition, Serializable, NetSerializable]
 public partial record struct ResearchExperimentProgress
 {
@@ -187,4 +187,4 @@ public partial record struct TechnologyDiscoveryProgress
     [DataField]
     public TimeSpan? CompletedAt;
 }
-// Orion-End
+// RW-End

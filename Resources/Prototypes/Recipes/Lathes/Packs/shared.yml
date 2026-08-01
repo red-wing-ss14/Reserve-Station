@@ -12,14 +12,14 @@
   recipes:
   - Igniter
   - ModularReceiver
-  # Orion-Start
+  # RW-Start
   # Tier 1
   - CapacitorStockPart
   - ScanningModuleStockPart
-  - MicroServoStockPart # Orion-Edit: Servo
+  - MicroServoStockPart # RW-Edit: Servo
   - MicroLaserStockPart
   - MatterBinStockPart
-  # Orion-End
+  # RW-End
   - ConveyorBeltAssembly
 
 - type: latheRecipePack
@@ -37,7 +37,7 @@
 - type: latheRecipePack
   id: PowerCellsStatic
   recipes:
-  - MegaCellSmall # Orion
+  - MegaCellSmall # RW
   - PowerCellSmall
   - PowerCellMedium
 

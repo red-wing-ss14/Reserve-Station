@@ -4,16 +4,16 @@
   isVisibleLanguage: true
   speech:
     color: "#e00d4c"
-  # Orion-Start
+  # RW-Start
   icon:
-    sprite: _Orion/Interface/Chat/language.rsi
+    sprite: _RW/Interface/Chat/language.rsi
     state: animal
-  # Orion-End
+  # RW-End
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2
     maxSyllables: 4
-    # Orion-Edit-Start: Localization
+    # RW-Edit-Start: Localization
     replacement:
       - р
       - рр
@@ -24,4 +24,4 @@
       - сСс
       - рер
       - роу
-    # Orion-Edit-End: Localization
+    # RW-Edit-End: Localization

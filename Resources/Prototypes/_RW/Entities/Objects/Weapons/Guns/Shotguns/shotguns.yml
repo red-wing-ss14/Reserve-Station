@@ -1,0 +1,122 @@
+- type: entity
+  parent: [BaseMajorContraband, WeaponShotgunBulldog]
+  id: WeaponShotgunInteQBulldog
+  name: Bulldog
+  description: Magazine-fed shotgun designed for close quarters combat. Uses .12 shotgun shells. It is painted in the InteQ brand color.
+  suffix: Shotgun
+  components:
+  - type: Sprite
+    sprite: _RW/Objects/Weapons/Guns/Shotguns/inteq_bulldog.rsi
+  - type: Clothing
+    sprite: _RW/Objects/Weapons/Guns/Shotguns/inteq_bulldog.rsi
+  - type: Gun
+    fireRate: 2
+
+- type: entity
+  parent: WeaponShotgunBulldog
+  id: WeaponShotgunZauer
+  name: Zauer
+  components:
+  - type: Sprite
+    sprite: _RW/Objects/Weapons/Guns/Shotguns/zauer/big.rsi
+  - type: Item
+    sprite: _RW/Objects/Weapons/Guns/Shotguns/zauer/tiny.rsi
+  - type: Clothing
+    sprite: _RW/Objects/Weapons/Guns/Shotguns/zauer/tiny.rsi
+
+- type: entity
+  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseSecurityContraband]
+  id: WeaponShotgunXM1014
+  name: XM1014
+  suffix: Shotgun
+  description: The Earth Armories XM1014 combat shotgun is a semi automatic shotgun used by breachers and pointmen within the Earth Army squads. Uses .12 shotgun shells.
+  components:
+  - type: Sprite
+    sprite: _RW/Objects/Weapons/Guns/Shotguns/sh-39/big.rsi
+    scale: 0.8, 0.8
+  - type: Item
+    sprite: _RW/Objects/Weapons/Guns/Shotguns/sh-39/tiny.rsi
+  - type: Clothing
+    sprite: _RW/Objects/Weapons/Guns/Shotguns/sh-39/tiny.rsi
+  - type: BallisticAmmoProvider
+    capacity: 7 # RW edit: 6 > 7
+  - type: GunRequiresWield
+  - type: Gun
+    fireRate: 1.5 # RW edit: 1.7 > 1.5
+    cameraRecoilScalar: 2
+    soundGunshot:
+      path: /Audio/_RW/Weapons/Guns/Shotguns/sh39.ogg
+
+- type: entity
+  parent: WeaponShotgunXM1014
+  id: WeaponShotgunXM1014NonLethal
+  name: XM1014
+  suffix: Shotgun [Non Lethal]
+  components:
+  - type: BallisticAmmoProvider
+    proto: ShellShotgunBeanbag
+
+- type: entity
+  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseSecurityContraband]
+  id: WeaponShotgunPaladin
+  name: Paladin pump shotgun
+  description: A seven-round pump action shotgun. A shotgun used for hunting, home defence and police work, many versions of it exist and are used by just about anyone.
+  suffix: Shotgun
+  components:
+  - type: Sprite
+    sprite: _RW/Objects/Weapons/Guns/Shotguns/paladin-12/big.rsi
+    scale: 0.8, 0.8
+  - type: Item
+    sprite: _RW/Objects/Weapons/Guns/Shotguns/paladin-12/tiny.rsi
+  - type: Clothing
+    sprite: _RW/Objects/Weapons/Guns/Shotguns/paladin-12/tiny.rsi
+  - type: BallisticAmmoProvider
+    capacity: 5 # RW edit: 7 > 5
+    autoCycle: false
+    soundRack:
+      path: /Audio/_RW/Weapons/Guns/Shotguns/shotgun_cmb_pump.ogg
+    soundInsert:
+      path: /Audio/_RW/Weapons/Guns/Shotguns/shotgun_cmb_insert.ogg
+  - type: GunRequiresWield
+  - type: Gun
+    fireRate: 1.7 # RW edit: 3 > 1.7
+    cameraRecoilScalar: 2
+    soundGunshot:
+      path: /Audio/_RW/Weapons/Guns/Shotguns/shotgun_cmb.ogg
+      params:
+        volume: +2
+  - type: GunSpreadModifier
+    spread: 0.85 # RW edit: 0.9 > 0.85
+  - type: Tag
+    tags:
+    - WeaponShotgunKammerer
+
+- type: entity
+  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseSecurityContraband]
+  id: WeaponShotgunSpas
+  name: Spas-12
+  description: The Earth Armories Spas-12 is the shotgun used by the EarthGov Marine Corps. It's used as a close quarters tool when someone wants something more suited for close range than most people, or as an odd sidearm on your back for emergencies. Uses 50 gauge shells.
+  suffix: Shotgun
+  components:
+  - type: Sprite
+    sprite: _RW/Objects/Weapons/Guns/Shotguns/spas-16/big.rsi
+    scale: 0.8, 0.8
+  - type: Item
+    sprite: _RW/Objects/Weapons/Guns/Shotguns/spas-16/tiny.rsi
+  - type: Clothing
+    sprite: _RW/Objects/Weapons/Guns/Shotguns/spas-16/tiny.rsi
+  - type: BallisticAmmoProvider
+    capacity: 8 # RW edit: 12 > 8
+    autoCycle: false
+    soundRack:
+      path: /Audio/_RW/Weapons/Guns/Shotguns/shotgun_cmb_pump.ogg
+    soundInsert:
+      path: /Audio/_RW/Weapons/Guns/Shotguns/shotgun_cmb_insert.ogg
+  - type: GunRequiresWield
+  - type: Gun
+    fireRate: 1.35 # RW edit: 1 > 1.35
+    cameraRecoilScalar: 2
+    soundGunshot:
+      path: /Audio/_RW/Weapons/Guns/Shotguns/t35.ogg
+  - type: GunSpreadModifier
+    spread: 0.9 # RW edit: 0.8 > 0.9

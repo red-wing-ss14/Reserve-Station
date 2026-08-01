@@ -4,7 +4,7 @@
   parent: SeatBase
   id: FitnessWeightsBench1
   name: weights bench
-  placement: # Orion
+  placement: # RW
     mode: SnapgridCenter
   components:
   - type: Transform

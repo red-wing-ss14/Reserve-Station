@@ -377,7 +377,7 @@
   - type: ClawMachine # EVIL LOOT!!!
     rewards:
     - PlushieMoth
-#    - PlushieHuman # Orion-Edit: NC license sprites
+#    - PlushieHuman # RW-Edit: NC license sprites
     - PlushiePenguin
     - PlushieXeve
     - PlushieDurk

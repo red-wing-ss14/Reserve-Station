@@ -24,9 +24,9 @@ public sealed partial class LobbyCharacterPreviewPanel : Control
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
 
-        // Orion-Start
+        // RW-Start
         SetAnchorPreset(CharacterBackground, LayoutPreset.Wide);
-        // Orion-End
+        // RW-End
     }
 
     public void SetLoaded(bool value)
@@ -54,7 +54,7 @@ public sealed partial class LobbyCharacterPreviewPanel : Control
         {
             OverrideDirection = Direction.South,
             Scale = new Vector2(4f, 4f),
-            MaxSize = new Vector2(148, 148), // Orion-Edit: Was 122, 122
+            MaxSize = new Vector2(148, 148), // RW-Edit: Was 122, 122
             Stretch = SpriteView.StretchMode.Fill,
         };
         spriteView.SetEntity(uid);

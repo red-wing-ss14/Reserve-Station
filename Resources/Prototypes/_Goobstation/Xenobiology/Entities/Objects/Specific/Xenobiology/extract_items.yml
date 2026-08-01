@@ -183,11 +183,11 @@
       color: "#ff3333"
   - type: ClothingCoating
     coatingName: clothing-coating-xenobio-volatile
-    # Orion-Start
+    # RW-Start
     blacklist:
       tags:
       - NoSlimeExtractSlowReset
-    # Orion-End
+    # RW-End
     components:
     - type: VeryFlammable
     - type: SpeedModifierImmunity

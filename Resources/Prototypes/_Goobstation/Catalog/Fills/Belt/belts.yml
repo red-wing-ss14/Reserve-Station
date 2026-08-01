@@ -99,15 +99,15 @@
   table: !type:AllSelector
     children:
     - id: Handcuffs
-    # Orion-Start
+    # RW-Start
       amount: 2
-    # Orion-End
-    # Orion-Edit-Start: Removed
+    # RW-End
+    # RW-Edit-Start: Removed
 #    - id: Handcuffs
 #    - id: HoloprojectorSecurity
 #    - id: RadioHandheldSecurity
 #    - id: WeaponDisabler #Goobstation
-    # Orion-Edit-End
+    # RW-Edit-End
 
 - type: entity
   id: ClothingBeltCorporateJudoFilled
@@ -141,12 +141,12 @@
   - type: ItemSlots
     slots:
       item:
-#        name: casul # Orion-Edit: Localization
+#        name: casul # RW-Edit: Localization
         whitelist:
           tags:
           - WeaponPistolCasul
       item2:
-#        name: jackal # Orion-Edit: Localization
+#        name: jackal # RW-Edit: Localization
         whitelist:
           tags:
           - WeaponPistolJackal

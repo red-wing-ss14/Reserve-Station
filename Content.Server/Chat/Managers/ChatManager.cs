@@ -3,8 +3,8 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.InteropServices;
-using Content.Server._Orion.ServerProtection.Chat;
-using Content.Server._Amour.Booster;
+using Content.Server._RW.ServerProtection.Chat;
+using Content.Server._RW.Booster;
 using Content.Server._RMC14.LinkAccount;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -56,8 +56,8 @@ internal sealed partial class ChatManager : IChatManager
     [Dependency] private readonly DiscordChatLink _discordLink = default!;
     [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly LinkAccountManager _linkAccount = default!; // RMC - Patreon
-    [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!; // Amour - Boosters
-    [Dependency] private readonly ChatProtectionSystem _chatProtection = default!; // Orion
+    [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!; // RW - Boosters
+    [Dependency] private readonly ChatProtectionSystem _chatProtection = default!; // RW
 
 
     private ISawmill _sawmill = default!;
@@ -69,7 +69,7 @@ internal sealed partial class ChatManager : IChatManager
 
     private bool _oocEnabled = true;
     private bool _adminOocEnabled = true;
-    private bool _suppressNextOocAnnouncement; // Amour
+    private bool _suppressNextOocAnnouncement; // RW
 
     private readonly Dictionary<NetUserId, ChatUser> _players = new();
 
@@ -92,18 +92,18 @@ internal sealed partial class ChatManager : IChatManager
         if (_oocEnabled == val) return;
 
         _oocEnabled = val;
-        // Amour start
+        // RW start
         if (_suppressNextOocAnnouncement)
         {
             _suppressNextOocAnnouncement = false;
             return;
         }
-        // Amour end
+        // RW end
 
         DispatchServerAnnouncement(Loc.GetString(val ? "chat-manager-ooc-chat-enabled-message" : "chat-manager-ooc-chat-disabled-message"));
     }
 
-    // Amour start
+    // RW start
     public void SetOocEnabledSilently(bool enabled)
     {
         if (_configurationManager.GetCVar(CCVars.OocEnabled) == enabled)
@@ -112,7 +112,7 @@ internal sealed partial class ChatManager : IChatManager
         _suppressNextOocAnnouncement = true;
         _configurationManager.SetCVar(CCVars.OocEnabled, enabled);
     }
-    // Amour end
+    // RW end
 
     private void OnAdminOocEnabledChanged(bool val)
     {
@@ -233,9 +233,9 @@ internal sealed partial class ChatManager : IChatManager
         SendAdminAlert($"{playerName}{(antag ? " (ANTAG)" : "")} {message}");
     }
 
-    public void SendHookOOC(string sender, string message, bool isDiscordBridge = false) // Amour (add bool isDiscordBridge = false)
+    public void SendHookOOC(string sender, string message, bool isDiscordBridge = false) // RW (add bool isDiscordBridge = false)
     {
-        if (!_oocEnabled && _configurationManager.GetCVar(CCVars.DisablingOOCDisablesRelay) && !isDiscordBridge) // Amour (add && !isDiscordBridge)
+        if (!_oocEnabled && _configurationManager.GetCVar(CCVars.DisablingOOCDisablesRelay) && !isDiscordBridge) // RW (add && !isDiscordBridge)
         {
             return;
         }
@@ -266,10 +266,10 @@ internal sealed partial class ChatManager : IChatManager
         if (HandleRateLimit(player) != RateLimitStatus.Allowed)
             return;
 
-        // Orion-Start
+        // RW-Start
         if (_chatProtection.CheckOOCMessage(message, player))
             return;
-        // Orion-End
+        // RW-End
 
         // Check if message exceeds the character limit
         if (message.Length > MaxMessageLength)
@@ -316,8 +316,8 @@ internal sealed partial class ChatManager : IChatManager
             colorOverride = prefs.AdminOOCColor;
         }
         
-        // Amour - Booster OOC color
-        if (_entitySystemManager.GetEntitySystem<AmourBoosterSystem>().GetOocColor(player.UserId) is { } boosterColor)
+        // RW - Booster OOC color
+        if (_entitySystemManager.GetEntitySystem<RwBoosterSystem>().GetOocColor(player.UserId) is { } boosterColor)
         {
             var hexColor = $"#{boosterColor.R:X2}{boosterColor.G:X2}{boosterColor.B:X2}";
             wrappedMessage = Loc.GetString("chat-manager-send-ooc-wrap-message-booster",
@@ -350,8 +350,8 @@ internal sealed partial class ChatManager : IChatManager
         ChatMessageToAll(ChatChannel.OOC, message, wrappedMessage, EntityUid.Invalid, hideChat: false, recordReplay: true, colorOverride: colorOverride, author: player.UserId);
         _discordLink.SendMessage(message, player.Name, ChatChannel.OOC);
         
-        // Amour - Discord OOC Bridge
-        if (_entitySystemManager.TryGetEntitySystem<_Amour.Discord.DiscordOocBridgeSystem>(out var discordBridge))
+        // RW - Discord OOC Bridge
+        if (_entitySystemManager.TryGetEntitySystem<_RW.Discord.DiscordOocBridgeSystem>(out var discordBridge))
         {
             discordBridge.OnGameOocMessage(player.Name, message);
         }

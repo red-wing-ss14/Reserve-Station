@@ -2,7 +2,7 @@
 
 using System.Linq;
 using Content.Server.Power.EntitySystems;
-using Content.Shared._Orion.Research;
+using Content.Shared._RW.Research;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Examine;
 using Content.Shared.Research.Components;
@@ -15,11 +15,11 @@ public sealed partial class ResearchSystem
     private void InitializeServer()
     {
         SubscribeLocalEvent<ResearchServerComponent, ComponentStartup>(OnServerStartup);
-        SubscribeLocalEvent<ResearchServerComponent, MapInitEvent>(OnServerMapInit); // Orion
+        SubscribeLocalEvent<ResearchServerComponent, MapInitEvent>(OnServerMapInit); // RW
         SubscribeLocalEvent<ResearchServerComponent, ComponentShutdown>(OnServerShutdown);
         SubscribeLocalEvent<ResearchServerComponent, TechnologyDatabaseModifiedEvent>(OnServerDatabaseModified);
-        SubscribeLocalEvent<ResearchServerComponent, ExaminedEvent>(OnServerExamined); // Orion
-        SubscribeLocalEvent<ResearchClientComponent, GotEmaggedEvent>(OnResearchClientEmagged); // Orion
+        SubscribeLocalEvent<ResearchServerComponent, ExaminedEvent>(OnServerExamined); // RW
+        SubscribeLocalEvent<ResearchClientComponent, GotEmaggedEvent>(OnResearchClientEmagged); // RW
     }
 
     private void OnServerStartup(EntityUid uid, ResearchServerComponent component, ComponentStartup args)
@@ -28,13 +28,13 @@ public sealed partial class ResearchSystem
             .Max(s => s.Id) + 1;
         component.Id = unusedId;
 
-        // Orion-Start
+        // RW-Start
         EnsurePointBalance(component, "General");
         Dirty(uid, component);
-        // Orion-End
+        // RW-End
     }
 
-    // Orion-Start
+    // RW-Start
     private void OnServerMapInit(EntityUid uid, ResearchServerComponent component, MapInitEvent args)
     {
         AssignServerName(component);
@@ -71,11 +71,11 @@ public sealed partial class ResearchSystem
             TryAutoRegisterClient(clientUid, client);
         }
     }
-    // Orion-End
+    // RW-End
 
     private void OnServerShutdown(EntityUid uid, ResearchServerComponent component, ComponentShutdown args)
     {
-        // Orion-Start
+        // RW-Start
         var survivingAuthority = GetNetworkServers(uid, component)
             .Where(s => s != uid)
             .OrderBy(ent => TryComp<ResearchServerComponent>(ent, out var comp) ? comp.Id : int.MaxValue)
@@ -88,7 +88,7 @@ public sealed partial class ResearchSystem
                 "network",
                 Loc.GetString("research-netlog-server-left", ("server", component.ServerName)));
         }
-        // Orion-End
+        // RW-End
 
         foreach (var client in new List<EntityUid>(component.Clients))
         {
@@ -96,7 +96,7 @@ public sealed partial class ResearchSystem
         }
     }
 
-    // Orion-Start
+    // RW-Start
     private void AssignServerName(ResearchServerComponent component)
     {
         if (!string.IsNullOrWhiteSpace(component.ServerName) && component.ServerName != "RND-Server")
@@ -111,7 +111,7 @@ public sealed partial class ResearchSystem
 
         component.ServerName = $"RND-Server {new string(chars)}";
     }
-    // Orion-End
+    // RW-End
 
     private void OnServerDatabaseModified(EntityUid uid, ResearchServerComponent component, ref TechnologyDatabaseModifiedEvent args)
     {
@@ -121,7 +121,7 @@ public sealed partial class ResearchSystem
         }
     }
 
-    // Orion-Start
+    // RW-Start
     private void OnResearchClientEmagged(EntityUid uid, ResearchClientComponent component, ref GotEmaggedEvent args)
     {
         if (!_emag.CompareFlag(args.Type, EmagType.Interaction))
@@ -138,7 +138,7 @@ public sealed partial class ResearchSystem
         LogNetworkEvent(serverUid.Value, "security", message);
         args.Handled = true;
     }
-    // Orion-End
+    // RW-End
 
     private bool CanRun(EntityUid uid)
     {
@@ -150,20 +150,20 @@ public sealed partial class ResearchSystem
         if (!Resolve(uid, ref component))
             return;
 
-        // Orion-Start
+        // RW-Start
         if (GetNetworkAuthority(uid, component) != uid)
             return;
-        // Orion-End
+        // RW-End
 
         if (!CanRun(uid))
             return;
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         foreach (var generation in GetPointGenerationPerSecond(uid, component))
         {
             ModifyServerPoints(uid, generation.Type, generation.Amount * time, component);
         }
-        // Orion-Edit-End
+        // RW-Edit-End
     }
 
     /// <summary>
@@ -174,12 +174,12 @@ public sealed partial class ResearchSystem
     /// <param name="clientComponent"></param>
     /// <param name="serverComponent"></param>
     /// <param name="dirtyServer">Whether to dirty the server component after registration</param>
-    private void RegisterClient(EntityUid client, EntityUid server, ResearchClientComponent? clientComponent = null, ResearchServerComponent? serverComponent = null,  bool dirtyServer = true) // Orion-Edit: Was public
+    private void RegisterClient(EntityUid client, EntityUid server, ResearchClientComponent? clientComponent = null, ResearchServerComponent? serverComponent = null,  bool dirtyServer = true) // RW-Edit: Was public
     {
         if (!Resolve(client, ref clientComponent, false) || !Resolve(server, ref serverComponent, false))
             return;
 
-        // Orion-Start
+        // RW-Start
         var authorityServer = GetNetworkAuthority(server, serverComponent);
         if (authorityServer != server)
             serverComponent = null;
@@ -187,7 +187,7 @@ public sealed partial class ResearchSystem
         server = authorityServer;
         if (!Resolve(server, ref serverComponent, false))
             return;
-        // Orion-End
+        // RW-End
 
         if (serverComponent.Clients.Contains(client))
             return;
@@ -209,7 +209,7 @@ public sealed partial class ResearchSystem
     /// <param name="client"></param>
     /// <param name="clientComponent"></param>
     /// <param name="dirtyServer"></param>
-    private void UnregisterClient(EntityUid client, ResearchClientComponent? clientComponent = null, bool dirtyServer = true) // Orion-Edit: Was public
+    private void UnregisterClient(EntityUid client, ResearchClientComponent? clientComponent = null, bool dirtyServer = true) // RW-Edit: Was public
     {
         if (!Resolve(client, ref clientComponent))
             return;
@@ -228,7 +228,7 @@ public sealed partial class ResearchSystem
     /// <param name="clientComponent"></param>
     /// <param name="serverComponent"></param>
     /// <param name="dirtyServer"></param>
-    private void UnregisterClient(EntityUid client, EntityUid server, ResearchClientComponent? clientComponent = null, ResearchServerComponent? serverComponent = null, bool dirtyServer = true) // Orion-Edit: Was public
+    private void UnregisterClient(EntityUid client, EntityUid server, ResearchClientComponent? clientComponent = null, ResearchServerComponent? serverComponent = null, bool dirtyServer = true) // RW-Edit: Was public
     {
         if (!Resolve(client, ref clientComponent, false) || !Resolve(server, ref serverComponent, false))
             return;
@@ -246,7 +246,7 @@ public sealed partial class ResearchSystem
         RaiseLocalEvent(client, ref ev);
     }
 
-/* // Orion-Edit
+/* // RW-Edit
     /// <summary>
     /// Gets the amount of points generated by all the server's sources in a second.
     /// </summary>
@@ -273,7 +273,7 @@ public sealed partial class ResearchSystem
     }
 */
 
-    // Orion-Start
+    // RW-Start
     public List<ResearchPointAmount> GetPointGenerationPerSecond(EntityUid uid, ResearchServerComponent? component = null)
     {
         if (!Resolve(uid, ref component) || !CanRun(uid))
@@ -303,7 +303,7 @@ public sealed partial class ResearchSystem
 
         return generation.Select(x => new ResearchPointAmount { Type = x.Key, Amount = x.Value }).ToList();
     }
-    // Orion-End
+    // RW-End
 
     /// <summary>
     /// Adds a specified number of points to a server.
@@ -312,13 +312,13 @@ public sealed partial class ResearchSystem
     /// <param name="points">The amount of points being added</param>
     /// <param name="component"></param>
     public void ModifyServerPoints(EntityUid uid, int points, ResearchServerComponent? component = null)
-    // Orion-Start
+    // RW-Start
     {
         ModifyServerPoints(uid, "General", points, component);
     }
-    // Orion-End
+    // RW-End
 
-    public void ModifyServerPoints(EntityUid uid, string type, int points, ResearchServerComponent? component = null) // Orion
+    public void ModifyServerPoints(EntityUid uid, string type, int points, ResearchServerComponent? component = null) // RW
     {
         if (points == 0)
             return;
@@ -326,7 +326,7 @@ public sealed partial class ResearchSystem
         if (!Resolve(uid, ref component))
             return;
 
-        // Orion-Start
+        // RW-Start
         var authorityServer = GetNetworkAuthority(uid, component);
         if (authorityServer != uid)
         {
@@ -352,18 +352,18 @@ public sealed partial class ResearchSystem
         }
 
         component.Points = GetPointBalance(uid, "General", component);
-        // Orion-End
+        // RW-End
         var ev = new ResearchServerPointsChangedEvent(uid, component.Points, points);
-        var typeEv = new ResearchServerPointTypeChangedEvent(uid, type, totalByType, points); // Orion
+        var typeEv = new ResearchServerPointTypeChangedEvent(uid, type, totalByType, points); // RW
         foreach (var client in component.Clients)
         {
             RaiseLocalEvent(client, ref ev);
-            RaiseLocalEvent(client, ref typeEv); // Orion
+            RaiseLocalEvent(client, ref typeEv); // RW
         }
         Dirty(uid, component);
     }
 
-    // Orion-Start
+    // RW-Start
     private int GetPointBalance(EntityUid uid, string type, ResearchServerComponent? component = null)
     {
         if (!Resolve(uid, ref component, false))
@@ -532,5 +532,5 @@ public sealed partial class ResearchSystem
         var key = $"research-point-type-{type.ToLowerInvariant()}";
         return Loc.TryGetString(key, out var localized) ? localized : type;
     }
-    // Orion-End
+    // RW-End
 }

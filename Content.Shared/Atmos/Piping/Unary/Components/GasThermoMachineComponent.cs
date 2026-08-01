@@ -19,10 +19,10 @@ namespace Content.Shared.Atmos.Piping.Unary.Components
         [GuidebookData]
         public float HeatCapacity = 5000;
 
-        // Orion-Start
+        // RW-Start
         [DataField]
         public float BaseHeatCapacity = 5000;
-        // Orion-End
+        // RW-End
 
         [DataField, AutoNetworkedField]
         public float TargetTemperature = Atmospherics.T20C;
@@ -56,10 +56,10 @@ namespace Content.Shared.Atmos.Piping.Unary.Components
 		[GuidebookData]
         public float MinTemperature = 73.15f;
 
-        // Orion-Start
+        // RW-Start
         [DataField]
         public float BaseMinTemperature = 73.15f;
-        // Orion-End
+        // RW-End
 
         /// <summary>
         ///     Current maximum temperature
@@ -69,10 +69,10 @@ namespace Content.Shared.Atmos.Piping.Unary.Components
 		[GuidebookData]
         public float MaxTemperature = 593.15f;
 
-        // Orion-Start
+        // RW-Start
         [DataField]
         public float BaseMaxTemperature = 593.15f;
-        // Orion-End
+        // RW-End
 
         /// <summary>
         /// Last amount of energy added/removed from the attached pipe network

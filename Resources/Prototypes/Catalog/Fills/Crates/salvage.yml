@@ -4,7 +4,7 @@
   id: CrateSalvageEquipment
   name: "salvage equipment crate"
   suffix: Filled
-  parent: CrateMining # Orion-Edit
+  parent: CrateMining # RW-Edit
   components:
   - type: EntityTableContainerFill
     containers:
@@ -96,7 +96,7 @@
         - id: WeaponRevolverMateba
           prob: 0.0001
 - type: entity
-  parent: CrateMining # Orion-Edit
+  parent: CrateMining # RW-Edit
   id: CrateCrusherDagger
   name: crusher dagger crate
   description: Contains 4 crusher daggers for use by salvage.
@@ -109,7 +109,7 @@
 
 # Salvage rewards
 - type: entity
-  parent: CrateMining # Orion-Edit
+  parent: CrateMining # RW-Edit
   id: CrateSeismicCharge
   name: seismic charge crate
   description: Contains 6 seismic charges for use by salvage.
@@ -136,7 +136,7 @@
         - id: DoubleEmergencyWaterVaporTankFilled #Goob station
           amount: 2
 - type: entity
-  parent: CrateMining # Orion-Edit
+  parent: CrateMining # RW-Edit
   id: CrateCrusher
   name: crusher crate
   description: Contains 2 crushers for use by salvage.
@@ -147,7 +147,7 @@
         id: WeaponCrusher
         amount: 2
 - type: entity
-  parent: CrateMining # Orion-Edit
+  parent: CrateMining # RW-Edit
   id: CrateFulton
   name: fulton crate
   description: Contains a fulton beacon and 8 fultons.
@@ -170,7 +170,7 @@
       entity_storage:
         id: JetpackVoidFilled
 - type: entity
-  parent: CrateMining # Orion-Edit
+  parent: CrateMining # RW-Edit
   id: CrateSalvageHardsuit
   name: salvage hardsuit crate
   description: Contains a salvage hardsuit, breath mask, and oxygen tank.
@@ -183,7 +183,7 @@
         - id: ClothingMaskBreath
         - id: OxygenTankFilled
 - type: entity
-  parent: CrateMining # Orion-Edit
+  parent: CrateMining # RW-Edit
   id: CrateCrusherGlaive
   name: crusher glaive crate
   description: Contains a crusher glaive for use by salvage.
@@ -193,7 +193,7 @@
       entity_storage:
         id: WeaponCrusherGlaive
 - type: entity
-  parent: CrateMiningSecure # Orion-Edit
+  parent: CrateMiningSecure # RW-Edit
   id: CrateSupremeSalvagerCloak
   name: supreme salvager cloak crate
   description: Contains a cloak only to be worn by supreme salvagers. Wearing it undeservedly will result in your doom.

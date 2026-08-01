@@ -18,7 +18,7 @@
           - ItemMask
         restitution: 0.3  # fite me
         friction: 0.2
-  # Orion-Edit-Start: Optimization
+  # RW-Edit-Start: Optimization
 #  - type: Damageable
 #    damageContainer: StructuralInorganic
 #    damageModifierSet: StrongMetallic # We only want explosions breaking them (for the most part)
@@ -30,7 +30,7 @@
 #      behaviors:
 #      - !type:DoActsBehavior
 #        acts: [ "Destruction" ]
-  # Orion-Edit-End
+  # RW-Edit-End
   - type: Tag
     tags:
     - Cartridge

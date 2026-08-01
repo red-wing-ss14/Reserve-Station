@@ -2,6 +2,6 @@
 
 - type: guideEntry
   id: Conditions
-  name: guide-entry-conditions # Orion-Edit: Translate
-#  priority: 60 # Orion-Edit: Removed
+  name: guide-entry-conditions # RW-Edit: Translate
+#  priority: 60 # RW-Edit: Removed
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/MetaReveal.xml"

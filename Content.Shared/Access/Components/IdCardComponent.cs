@@ -56,11 +56,11 @@ public sealed partial class IdCardComponent : Component
     [AutoNetworkedField]
     public List<ProtoId<DepartmentPrototype>> JobDepartments = new();
 
-    // Orion-Start
+    // RW-Start
     [DataField]
     [AutoNetworkedField]
     public string? BankAccountId;
-    // Orion-End
+    // RW-End
     [DataField]
     public TimeSpan NextWithdrawTime; // RW
 

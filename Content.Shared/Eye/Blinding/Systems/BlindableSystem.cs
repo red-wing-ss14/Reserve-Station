@@ -29,7 +29,7 @@ public sealed class BlindableSystem : EntitySystem
         SubscribeLocalEvent<BlindableComponent, EyeDamageChangedEvent>(OnDamageChanged);
         SubscribeLocalEvent<BlindableComponent, GetEyePvsScaleAttemptEvent>(OnGetEyePvsScaleAttemptEvent);
         SubscribeLocalEvent<BlindableComponent, GetEyeOffsetAttemptEvent>(OnGetEyeOffsetAttemptEvent);
-        SubscribeLocalEvent<BlindableComponent, HealthBeingExaminedEvent>(OnHealthBeingExamined); // Orion
+        SubscribeLocalEvent<BlindableComponent, HealthBeingExaminedEvent>(OnHealthBeingExamined); // RW
     }
 
     // Might need to keep this one because of slimes since their eyes arent an organ, so they wouldnt get rejuvenated.
@@ -56,7 +56,7 @@ public sealed class BlindableSystem : EntitySystem
             args.Cancelled = true;
     }
 
-    // Orion-Start
+    // RW-Start
     private void OnHealthBeingExamined(Entity<BlindableComponent> ent, ref HealthBeingExaminedEvent args)
     {
         if (ent.Comp.EyeDamage <= 0)
@@ -65,7 +65,7 @@ public sealed class BlindableSystem : EntitySystem
         args.Message.PushNewline();
         args.Message.AddMarkupOrThrow(Loc.GetString("blindable-component-eye-damage", ("target", ent.Owner)));
     }
-    // Orion-End
+    // RW-End
 
     [PublicAPI]
     public void UpdateIsBlind(Entity<BlindableComponent?> blindable)

@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
-using Content.Shared._Orion.Research;
-using Content.Shared._Orion.Research.Prototypes;
+using Content.Shared._RW.Research;
+using Content.Shared._RW.Research.Prototypes;
 using Content.Shared.Lathe;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
@@ -28,7 +28,7 @@ public abstract class SharedResearchSystem : EntitySystem
 
     private void OnMapInit(EntityUid uid, TechnologyDatabaseComponent component, MapInitEvent args)
     {
-        RecalculateTechnologyState(uid, component); // Orion
+        RecalculateTechnologyState(uid, component); // RW
         UpdateTechnologyCards(uid, component);
     }
 
@@ -52,35 +52,35 @@ public abstract class SharedResearchSystem : EntitySystem
         Dirty(uid, component);
     }
 
-    private List<TechnologyPrototype> GetAvailableTechnologies(EntityUid uid, TechnologyDatabaseComponent? component = null) // Orion-Edit: Was public
+    private List<TechnologyPrototype> GetAvailableTechnologies(EntityUid uid, TechnologyDatabaseComponent? component = null) // RW-Edit: Was public
     {
         if (!Resolve(uid, ref component, false))
             return new List<TechnologyPrototype>();
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         return component.AvailableTechnologies
             .Select(techId => PrototypeManager.Index(techId))
             .ToList();
-        // Orion-Edit-End
+        // RW-Edit-End
     }
 
     public bool IsTechnologyAvailable(TechnologyDatabaseComponent component, TechnologyPrototype tech, Dictionary<string, int>? disciplineTiers = null)
     {
         disciplineTiers ??= GetDisciplineTiers(component);
 
-        if (!component.AvailableTechnologies.Contains(tech.ID)) // Orion-Edit
+        if (!component.AvailableTechnologies.Contains(tech.ID)) // RW-Edit
             return false;
 
-        if (!component.VisibleTechnologies.Contains(tech.ID)) // Orion-Edit
+        if (!component.VisibleTechnologies.Contains(tech.ID)) // RW-Edit
             return false;
 
         // if (tech.Tier > disciplineTiers[tech.Discipline])    // Goobstation R&D Console rework - removed main discipline checks
         //     return false;
 
-        return true; // Orion
+        return true; // RW
     }
 
-    // Orion-Start
+    // RW-Start
     public void RecalculateTechnologyState(EntityUid uid, TechnologyDatabaseComponent? component = null)
     {
         if (!Resolve(uid, ref component))
@@ -145,7 +145,7 @@ public abstract class SharedResearchSystem : EntitySystem
         if (tech.DiscountExperiments.Count == 0)
             return 0;
 
-        var baseCost = GetTechnologyPointCost(tech, "General"); // Orion-Edit
+        var baseCost = GetTechnologyPointCost(tech, "General"); // RW-Edit
         var flatDiscount = 0;
         var percentageDiscount = 0f;
 
@@ -175,10 +175,10 @@ public abstract class SharedResearchSystem : EntitySystem
 
     protected int GetTechnologyFinalCost(TechnologyDatabaseComponent component, TechnologyPrototype tech)
     {
-        return Math.Max(0, GetTechnologyPointCost(tech, "General") - GetTechnologyDiscounts(component, tech)); // Orion-Edit
+        return Math.Max(0, GetTechnologyPointCost(tech, "General") - GetTechnologyDiscounts(component, tech)); // RW-Edit
     }
 
-    // Orion-Start
+    // RW-Start
     protected List<ResearchPointAmount> GetTechnologyFinalPointCosts(TechnologyDatabaseComponent component, TechnologyPrototype tech)
     {
         var costs = tech.PointCosts
@@ -226,7 +226,7 @@ public abstract class SharedResearchSystem : EntitySystem
         var key = $"research-point-type-{type.ToLowerInvariant()}";
         return Loc.TryGetString(key, out var localized) ? localized : type;
     }
-    // Orion-End
+    // RW-End
 
     public virtual bool CanUnlockTechnology(TechnologyDatabaseComponent component, TechnologyPrototype tech)
     {
@@ -375,9 +375,9 @@ public abstract class SharedResearchSystem : EntitySystem
 
         return true;
     }
-    // Orion-End
+    // RW-End
 
-    private Dictionary<string, int> GetDisciplineTiers(TechnologyDatabaseComponent component) // Orion-Edit: Was public
+    private Dictionary<string, int> GetDisciplineTiers(TechnologyDatabaseComponent component) // RW-Edit: Was public
     {
         var tiers = new Dictionary<string, int>();
         foreach (var discipline in component.SupportedDisciplines)
@@ -388,7 +388,7 @@ public abstract class SharedResearchSystem : EntitySystem
         return tiers;
     }
 
-    private int GetHighestDisciplineTier(TechnologyDatabaseComponent component, string disciplineId) // Orion-Edit: Was public
+    private int GetHighestDisciplineTier(TechnologyDatabaseComponent component, string disciplineId) // RW-Edit: Was public
     {
         return GetHighestDisciplineTier(component, PrototypeManager.Index<TechDisciplinePrototype>(disciplineId));
     }
@@ -399,7 +399,7 @@ public abstract class SharedResearchSystem : EntitySystem
             .Where(p => p.Discipline == techDiscipline.ID && !p.Hidden)
             .ToList();
         var allUnlocked = new List<TechnologyPrototype>();
-        foreach (var recipe in component.ResearchedTechnologies) // Orion-Edit
+        foreach (var recipe in component.ResearchedTechnologies) // RW-Edit
         {
             var proto = PrototypeManager.Index(recipe);
             if (proto.Discipline != techDiscipline.ID)
@@ -452,25 +452,25 @@ public abstract class SharedResearchSystem : EntitySystem
             description.PushNewline();
         }
 
-        // Orion-Start
+        // RW-Start
         if (!string.IsNullOrWhiteSpace(technology.Description))
         {
             description.AddMarkupOrThrow(Loc.GetString(technology.Description));
             description.PushNewline();
         }
-        // Orion-End
+        // RW-End
 
         if (includeCost)
         {
-            description.AddMarkupOrThrow(Loc.GetString("research-console-cost", ("amount", FormatResearchPointAmounts(technology.PointCosts)))); // Orion-Edit
+            description.AddMarkupOrThrow(Loc.GetString("research-console-cost", ("amount", FormatResearchPointAmounts(technology.PointCosts)))); // RW-Edit
             description.PushNewline();
         }
 
-        var requiredTech = technology.AllRequiredTechnologies.ToList(); // Orion
-        if (includePrereqs && requiredTech.Count != 0) // Orion-Edit
+        var requiredTech = technology.AllRequiredTechnologies.ToList(); // RW
+        if (includePrereqs && requiredTech.Count != 0) // RW-Edit
         {
             description.AddMarkupOrThrow(Loc.GetString("research-console-prereqs-list-start"));
-            foreach (var recipe in requiredTech) // Orion-Edit
+            foreach (var recipe in requiredTech) // RW-Edit
             {
                 var techProto = PrototypeManager.Index(recipe);
                 description.PushNewline();
@@ -502,9 +502,9 @@ public abstract class SharedResearchSystem : EntitySystem
     ///     Returns whether a technology is unlocked on this database or not.
     /// </summary>
     /// <returns>Whether it is unlocked or not</returns>
-    public bool IsTechnologyUnlocked(EntityUid uid, TechnologyPrototype technology, TechnologyDatabaseComponent? component = null) // Orion-Edit: Was public
+    public bool IsTechnologyUnlocked(EntityUid uid, TechnologyPrototype technology, TechnologyDatabaseComponent? component = null) // RW-Edit: Was public
     {
-        return Resolve(uid, ref component) && IsTechnologyUnlocked(uid, technology.ID, component); // Orion-Edit
+        return Resolve(uid, ref component) && IsTechnologyUnlocked(uid, technology.ID, component); // RW-Edit
     }
 
     /// <summary>
@@ -545,7 +545,7 @@ public abstract class SharedResearchSystem : EntitySystem
     [PublicAPI]
     public bool TryRemoveTechnology(Entity<TechnologyDatabaseComponent> entity, TechnologyPrototype tech)
     {
-        if (!entity.Comp.ResearchedTechnologies.Remove(tech.ID)) // Orion-Edit
+        if (!entity.Comp.ResearchedTechnologies.Remove(tech.ID)) // RW-Edit
             return false;
 
         // check to make sure we didn't somehow get the recipe from another tech.
@@ -554,7 +554,7 @@ public abstract class SharedResearchSystem : EntitySystem
         foreach (var recipe in recipes)
         {
             var hasTechElsewhere = false;
-            foreach (var unlockedTech in entity.Comp.ResearchedTechnologies) // Orion-Edit
+            foreach (var unlockedTech in entity.Comp.ResearchedTechnologies) // RW-Edit
             {
                 var unlockedTechProto = PrototypeManager.Index(unlockedTech);
 
@@ -567,7 +567,7 @@ public abstract class SharedResearchSystem : EntitySystem
             if (!hasTechElsewhere)
                 entity.Comp.UnlockedRecipes.Remove(recipe);
         }
-        RecalculateTechnologyState(entity, entity.Comp); // Orion-Edit
+        RecalculateTechnologyState(entity, entity.Comp); // RW-Edit
         UpdateTechnologyCards(entity, entity);
         return true;
     }
@@ -578,13 +578,13 @@ public abstract class SharedResearchSystem : EntitySystem
     [PublicAPI]
     public void ClearTechs(EntityUid uid, TechnologyDatabaseComponent? comp = null)
     {
-        if (!Resolve(uid, ref comp) || comp.ResearchedTechnologies.Count == 0) // Orion-Edit
+        if (!Resolve(uid, ref comp) || comp.ResearchedTechnologies.Count == 0) // RW-Edit
             return;
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         comp.ResearchedTechnologies.Clear();
         RecalculateTechnologyState(uid, comp);
-        // Orion-Edit-End
+        // RW-Edit-End
     }
 
     /// <summary>

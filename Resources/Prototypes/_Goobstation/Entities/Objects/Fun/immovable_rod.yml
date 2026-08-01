@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 #Goobstation - add a skibidi toilet as an immovable rod sprite
-#- type: entity # Orion-Edit: NC license sprites
+#- type: entity # RW-Edit: NC license sprites
 #  parent: ImmovableRodKeepTilesStill
 #  id: ImmovableRodSkibidi
 #  name: immovable Skibidi

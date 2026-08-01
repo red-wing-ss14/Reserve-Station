@@ -392,7 +392,7 @@
   - type: ApcPowerReceiver
     powerDisabled: false
 
-# Orion-Edit: Redundant
+# RW-Edit: Redundant
 #- type: entity
 #  parent: GasThermoMachineFreezer
 #  id: GasThermoMachineHellfireFreezer
@@ -408,7 +408,7 @@
 #  - type: Machine
 #    board: HellfireFreezerMachineCircuitBoard
 
-# Orion-Edit: Redundant
+# RW-Edit: Redundant
 #- type: entity
 #  parent: GasThermoMachineHeater
 #  id: GasThermoMachineHellfireHeater

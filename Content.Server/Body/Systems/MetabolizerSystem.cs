@@ -105,10 +105,10 @@ public sealed class MetabolizerSystem : SharedMetabolizerSystem
     {
         _organQuery.Resolve(ent, ref ent.Comp2, logMissing: false);
 
-        // Orion-Start: Fixes metabolizing organs crash on surgery
+        // RW-Start: Fixes metabolizing organs crash on surgery
         if (ent.Comp2 is not null && (!ent.Comp2.Enabled || ent.Comp2.Body is null))
             return;
-        // Orion-End
+        // RW-End
 
         // First step is get the solution we actually care about
         var solutionName = ent.Comp1.SolutionName;
@@ -153,7 +153,7 @@ public sealed class MetabolizerSystem : SharedMetabolizerSystem
         var list = solution.Contents.ToArray();
         _random.Shuffle(list);
 
-        // Amour edit start - Metabolism limit
+        // RW edit start - Metabolism limit
         var processable = new ValueList<ReagentQuantity>(list.Length);
         foreach (var rq in list)
         {
@@ -192,15 +192,15 @@ public sealed class MetabolizerSystem : SharedMetabolizerSystem
 
             ent.Comp1.CurrentReagentIndex = (startIndex + maxReagents) % processableCount;
         }
-        // Amour edit end
+        // RW edit end
 
         int poisons = 0;
-        foreach (var reagentQuantity in reagentsToProcess) // Amour edit (reagent, quantity) in list) -> reagentQuantity in reagentsToProcess)
+        foreach (var reagentQuantity in reagentsToProcess) // RW edit (reagent, quantity) in list) -> reagentQuantity in reagentsToProcess)
         {
-        // Amour edit start
+        // RW edit start
             var reagent = reagentQuantity.Reagent;
             var quantity = reagentQuantity.Quantity;
-        // Amour edit end
+        // RW edit end
 
             if (!_prototypeManager.TryIndex<ReagentPrototype>(reagent.Prototype, out var proto))
                 continue;

@@ -92,7 +92,7 @@
   id: RingBase
   components:
   - type: Clothing
-    slots: [ gloves, neck, wrists ] # Orion-Edit: wrists
+    slots: [ gloves, neck, wrists ] # RW-Edit: wrists
   - type: Sprite
     sprite: Clothing/Hands/Rings/basic.rsi
   - type: Appearance

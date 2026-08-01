@@ -35,11 +35,11 @@
       - Biological
     damage:
       types:
-        # Amour edit: removed Shock -5, Caustic -1.5 > -2
+        # RW edit: removed Shock -5, Caustic -1.5 > -2
         Heat: -5
         Cold: -5
         Caustic: -2
-    delay: 4 # Amour edit
+    delay: 4 # RW edit
     healingBeginSound:
       path: "/Audio/Items/Medical/ointment_begin.ogg"
       params:
@@ -52,7 +52,7 @@
         variation: 0.125
   - type: Stack
     stackType: Ointment
-    count: 10 # Amour edit: returned
+    count: 10 # RW edit: returned
   - type: StackPrice
     price: 5
 
@@ -84,11 +84,11 @@
       - Biological
     damage:
       types:
-        # Amour edit: removed Shock -10, Caustic -10 > -5
+        # RW edit: removed Shock -10, Caustic -10 > -5
         Heat: -10
         Cold: -10
         Caustic: -5
-    delay: 4 # Amour edit
+    delay: 4 # RW edit
     healingBeginSound:
       path: "/Audio/Items/Medical/ointment_begin.ogg"
       params:
@@ -101,7 +101,7 @@
         variation: 0.125
   - type: Stack
     stackType: RegenerativeMesh
-    count: 10 # Amour edit: returned
+    count: 10 # RW edit: returned
   - type: StackPrice
     price: 20
 
@@ -132,11 +132,11 @@
     damageContainers:
       - Biological
     damage:
-      types: # Amour edit: Brute -15 > split damage
+      types: # RW edit: Brute -15 > split damage
         Blunt: -5
         Slash: -5
         Piercing: -5
-    delay: 4 # Amour edit
+    delay: 4 # RW edit
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
       params:
@@ -149,7 +149,7 @@
         variation: 0.125
   - type: Stack
     stackType: Brutepack
-    count: 10 # Amour edit: returned
+    count: 10 # RW edit: returned
   - type: StackPrice
     price: 5
 
@@ -181,12 +181,12 @@
     damageContainers:
       - Biological
     damage:
-      types: # Amour edit: Brute -20 > split damage
+      types: # RW edit: Brute -20 > split damage
         Blunt: -5
         Slash: -7
         Piercing: -10
     bloodlossModifier: -10 # a suture should stop ongoing bleeding
-    delay: 4 # Amour edit
+    delay: 4 # RW edit
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
       params:
@@ -199,7 +199,7 @@
         variation: 0.125
   - type: Stack
     stackType: MedicatedSuture
-    count: 10 # Amour edit: returned
+    count: 10 # RW edit: returned
   - type: StackPrice
     price: 20
   # <Shitmed>
@@ -247,8 +247,8 @@
       - Biological
     damage:
       types:
-        Bloodloss: -0.5 # Amour edit: returned
-    modifyBloodLevel: -15 # Amour edit: returned
+        Bloodloss: -0.5 # RW edit: returned
+    modifyBloodLevel: -15 # RW edit: returned
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
       params:
@@ -261,7 +261,7 @@
         variation: 0.125
   - type: Stack
     stackType: Bloodpack
-    count: 10 # Amour edit: returned
+    count: 10 # RW edit: returned
   - type: StackPrice
     price: 10
 
@@ -311,8 +311,8 @@
     - Gauze
   - type: Sprite
     state: gauze
-  - type: Clothing # Orion
-    sprite: _Orion/Clothing/Hands/Gloves/gauze.rsi
+  - type: Clothing # RW
+    sprite: _RW/Clothing/Hands/Gloves/gauze.rsi
     slots: gloves
   - type: Item
     heldPrefix: gauze
@@ -325,10 +325,10 @@
       - Biological
     damage:
       types:
-        Slash: -2 # Amour edit: -5 > -2
-        Piercing: -2 # Amour edit: -10 > -2
+        Slash: -2 # RW edit: -5 > -2
+        Piercing: -2 # RW edit: -10 > -2
     bloodlossModifier: -10
-    delay: 1 # Amour edit
+    delay: 1 # RW edit
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
       params:
@@ -341,7 +341,7 @@
         variation: 0.125
   - type: Stack
     stackType: Gauze
-    count: 10 # Amour edit: returned
+    count: 10 # RW edit: returned
   - type: StackPrice
     price: 10
 
@@ -364,7 +364,7 @@
     state: cream
   - type: Stack
     stackType: AloeCream
-    count: 10 # Amour edit: returned
+    count: 10 # RW edit: returned
 
 - type: entity
   parent: BaseHealingItem

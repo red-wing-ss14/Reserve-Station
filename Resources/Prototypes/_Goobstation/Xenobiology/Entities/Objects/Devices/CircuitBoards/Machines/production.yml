@@ -15,5 +15,5 @@
         amount: 2
         defaultPrototype: KitchenKnife
         examineName: construction-insert-info-examine-name-knife
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 5

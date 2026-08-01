@@ -6,11 +6,11 @@
   isVisibleLanguage: true
   speech:
     color: "#c480e8aa" # Goob Edit - Separation from Sol Common, make more unique.
-  # Orion-Start
+  # RW-Start
   icon:
-    sprite: _Orion/Interface/Chat/language.rsi
+    sprite: _RW/Interface/Chat/language.rsi
     state: what # TODO: Sprite it
-  # Orion-End
+  # RW-End
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1

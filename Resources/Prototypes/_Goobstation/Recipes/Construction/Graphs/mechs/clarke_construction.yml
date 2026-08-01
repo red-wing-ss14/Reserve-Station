@@ -71,13 +71,13 @@
           key: "enum.MechAssemblyVisuals.State"
           data: 8
 
-      # Orion-Start
+      # RW-Start
       - machinePart: Servo
         name: construction-graph-tag-servo
         icon:
           sprite: "Objects/Misc/stock_parts.rsi"
           state: "micro_mani"
-      # Orion-End
+      # RW-End
         completed:
         - !type:VisualizerDataInt
           key: "enum.MechAssemblyVisuals.State"

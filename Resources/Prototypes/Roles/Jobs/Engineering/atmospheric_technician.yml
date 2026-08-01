@@ -8,17 +8,17 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: Engineering
-    time: 9000 #2.5 hrs # Amour-Edit
+    time: 9000 #2.5 hrs # RW-Edit
   startingGear: AtmosphericTechnicianGear
   icon: "JobIconAtmosphericTechnician"
   supervisors: job-supervisors-ce
   guides: # goobstation
   - Atmospherics
   goobcoins: 20 #Goob content
-  # Orion-Start
+  # RW-Start
   salary: 85
   payrollDepartmentAccount: Engineering
-  # Orion-End
+  # RW-End
   access:
   - Maintenance
   - Engineering
@@ -35,7 +35,7 @@
 - type: startingGear
   id: AtmosphericTechnicianGear
   equipment:
-#    eyes: ClothingEyesGlassesMeson # Orion-Edit: In loadout
+#    eyes: ClothingEyesGlassesMeson # RW-Edit: In loadout
     id: AtmosPDA
     belt: ClothingBeltUtilityEngineering
     ears: ClothingHeadsetEngineering

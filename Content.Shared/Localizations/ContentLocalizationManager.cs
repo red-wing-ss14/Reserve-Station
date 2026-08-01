@@ -12,10 +12,10 @@ namespace Content.Shared.Localizations
 
         // If you want to change your codebase's language, do it here.
 
-        // Orion-Start
+        // RW-Start
         private const string FallbackCulture = "en-US";
         private const string LocalizedCulture = "ru-RU";
-        // Orion-End
+        // RW-End
 
         /// <summary>
         /// Custom format strings used for parsing and displaying minutes:seconds timespans.
@@ -28,11 +28,11 @@ namespace Content.Shared.Localizations
             @"mm"
         };
 
-        private string _culture = LocalizedCulture; // Orion
+        private string _culture = LocalizedCulture; // RW
 
         public void Initialize()
         {
-            // Orion-Start
+            // RW-Start
             var culture = new CultureInfo(_culture);
             var fallbackCulture = new CultureInfo(FallbackCulture);
 
@@ -40,7 +40,7 @@ namespace Content.Shared.Localizations
             if (_culture != FallbackCulture)
                 _loc.LoadCulture(fallbackCulture);
             _loc.SetFallbackCluture(fallbackCulture);
-            // Orion-End
+            // RW-End
 
             _loc.AddFunction(culture, "PRESSURE", FormatPressure);
             _loc.AddFunction(culture, "POWERWATTS", FormatPowerWatts);
@@ -54,7 +54,7 @@ namespace Content.Shared.Localizations
             _loc.AddFunction(culture, "NATURALPERCENT", FormatNaturalPercent);
             _loc.AddFunction(culture, "PLAYTIME", FormatPlaytime);
 
-            // Orion-Start
+            // RW-Start
             _loc.AddFunction(fallbackCulture, "PRESSURE", FormatPressure);
             _loc.AddFunction(fallbackCulture, "POWERWATTS", FormatPowerWatts);
             _loc.AddFunction(fallbackCulture, "POWERJOULES", FormatPowerJoules);
@@ -66,7 +66,7 @@ namespace Content.Shared.Localizations
             _loc.AddFunction(fallbackCulture, "NATURALFIXED", FormatNaturalFixed);
             _loc.AddFunction(fallbackCulture, "NATURALPERCENT", FormatNaturalPercent);
             _loc.AddFunction(fallbackCulture, "PLAYTIME", FormatPlaytime);
-            // Orion-End
+            // RW-End
 
             /*
              * The following language functions are specific to the english localization. When working on your own
@@ -97,7 +97,7 @@ namespace Content.Shared.Localizations
         {
             var number = ((LocValueNumber) args.Args[0]).Value * 100;
             var maxDecimals = (int)Math.Floor(((LocValueNumber) args.Args[1]).Value);
-            var formatter = (NumberFormatInfo)NumberFormatInfo.GetInstance(CultureInfo.GetCultureInfo(_culture)).Clone(); // Orion-Edit
+            var formatter = (NumberFormatInfo)NumberFormatInfo.GetInstance(CultureInfo.GetCultureInfo(_culture)).Clone(); // RW-Edit
             formatter.NumberDecimalDigits = maxDecimals;
             return new LocValueString(string.Format(formatter, "{0:N}", number).TrimEnd('0').TrimEnd(char.Parse(formatter.NumberDecimalSeparator)) + "%");
         }
@@ -106,7 +106,7 @@ namespace Content.Shared.Localizations
         {
             var number = ((LocValueNumber) args.Args[0]).Value;
             var maxDecimals = (int)Math.Floor(((LocValueNumber) args.Args[1]).Value);
-            var formatter = (NumberFormatInfo)NumberFormatInfo.GetInstance(CultureInfo.GetCultureInfo(_culture)).Clone(); // Orion-Edit
+            var formatter = (NumberFormatInfo)NumberFormatInfo.GetInstance(CultureInfo.GetCultureInfo(_culture)).Clone(); // RW-Edit
             formatter.NumberDecimalDigits = maxDecimals;
             return new LocValueString(string.Format(formatter, "{0:N}", number).TrimEnd('0').TrimEnd(char.Parse(formatter.NumberDecimalSeparator)));
         }
@@ -159,7 +159,7 @@ namespace Content.Shared.Localizations
                 <= 0 => string.Empty,
                 1 => list[0],
                 2 => $"{list[0]} or {list[1]}",
-                _ => $"{string.Join(", ", list.GetRange(0, list.Count - 1))}, or {list[^1]}" // Orion-Edit: Localization
+                _ => $"{string.Join(", ", list.GetRange(0, list.Count - 1))}, or {list[^1]}" // RW-Edit: Localization
             };
         }
 

@@ -121,7 +121,7 @@
       - Handcuff
       - Gun
       - EnergySword
-      - Nuke # Amour
+      - Nuke # RW
   - type: ContainerContainer # imp.
     containers:
       cell_slot: !type:ContainerSlot { }
@@ -171,7 +171,7 @@
   - type: StationMap #imp
   - type: GhostRole
     requirements:
-    - !type:AnyOfRequirement # Amour edit - Discord OR playtime
+    - !type:AnyOfRequirement # RW edit - Discord OR playtime
       requirements:
         - !type:DiscordLinkRequirement
         - !type:AllOfRequirement

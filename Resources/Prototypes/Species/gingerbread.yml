@@ -5,24 +5,24 @@
   name: species-name-gingerbread
   roundStart: false
   prototype: MobGingerbread
-  # Amour port: WD Slim body types START
+  # RW port: WD Slim body types START
   bodyTypes:
     - GingerbreadNormal
-  # Amour port: WD Slim body types END
+  # RW port: WD Slim body types END
   markingLimits: MobHumanMarkingLimits
   dollPrototype: MobGingerbreadDummy
   skinColoration: HumanToned
   defaultSkinTone: "#9a7c5a"
-  # Orion-Start
+  # RW-Start
   category: Special
   description: "/ServerInfo/Guidebook/Mobs/Gingerbread.xml"
-  # Orion-End
+  # RW-End
 
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
 - type: bodyType
   id: GingerbreadNormal
   name: body-normal
-# Amour port: WD Slim body types END
+# RW port: WD Slim body types END
   sprites:
     Head: MobGingerbreadHead
     HeadTop: MobHumanoidAnyMarking

@@ -2,7 +2,7 @@
 
 using Content.Server._DV.CosmicCult.Components;
 using Content.Server._Goobstation.Wizard.Components;
-using Content.Server._Amour.GameTicking.Rules.Components; // Amour edit
+using Content.Server._RW.GameTicking.Rules.Components; // RW edit
 using Content.Server.Antag;
 using Content.Server.Clothing.Systems;
 using Content.Server.GameTicking;
@@ -33,7 +33,7 @@ public sealed partial class AdminVerbSystem
     private static readonly EntProtoId DefaultNukeOpRule = "LoneOpsSpawn";
     private static readonly EntProtoId DefaultRevsRule = "Revolutionary";
     private static readonly EntProtoId DefaultThiefRule = "Thief";
-    private static readonly EntProtoId DefaultVampireRule = "Vampire"; // Amour edit
+    private static readonly EntProtoId DefaultVampireRule = "Vampire"; // RW edit
     private static readonly EntProtoId DefaultChangelingRule = "Changeling";
     private static readonly EntProtoId ParadoxCloneRuleId = "ParadoxCloneSpawn";
     private static readonly EntProtoId DefaultWizardRule = "Wizard";
@@ -250,13 +250,13 @@ public sealed partial class AdminVerbSystem
         };
         args.Verbs.Add(wizard);
 
-        // Amour edit - vampire antag admin verb
+        // RW edit - vampire antag admin verb
         var vampireName = Loc.GetString("admin-verb-text-make-vampire");
         Verb vampire = new()
         {
             Text = vampireName,
             Category = VerbCategory.Antag,
-            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_Amour/Vampire/actions_vampire.rsi"), "fangs_extended"),
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_RW/Vampire/actions_vampire.rsi"), "fangs_extended"),
             Act = () =>
             {
                 _antag.ForceMakeAntag<VampireRuleComponent>(targetPlayer, DefaultVampireRule);

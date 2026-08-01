@@ -57,8 +57,8 @@ namespace Content.Server.Database
         public DbSet<RMCLinkedAccount> RMCLinkedAccounts { get; set; } = default!;
         public DbSet<RMCPatronTier> RMCPatronTiers { get; set; } = default!;
         public DbSet<RMCPatron> RMCPatrons { get; set; } = default!;
-        public DbSet<AmourBooster> AmourBoosters { get; set; } = default!;
-        public DbSet<AmourClientRecord> AmourClientRecords { get; set; } = default!; // Amour edit
+        public DbSet<RwBooster> RwBoosters { get; set; } = default!;
+        public DbSet<AmourClientRecord> AmourClientRecords { get; set; } = default!; // RW edit
         public DbSet<RwBrainrotTrigger> RwBrainrotTriggers { get; set; } = default!; // RW
         public DbSet<RMCLinkingCodes> RMCLinkingCodes { get; set; } = default!;
         public DbSet<RMCLinkedAccountLogs> RMCLinkedAccountLogs { get; set; } = default!;
@@ -372,11 +372,11 @@ namespace Content.Server.Database
                 .HasPrincipalKey(p => p.Id)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // Amour Boosters
-            modelBuilder.Entity<AmourBooster>()
+            // RW Boosters
+            modelBuilder.Entity<RwBooster>()
                 .HasOne(b => b.Player)
                 .WithOne()
-                .HasForeignKey<AmourBooster>(b => b.PlayerId)
+                .HasForeignKey<RwBooster>(b => b.PlayerId)
                 .HasPrincipalKey<Player>(p => p.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
@@ -454,7 +454,7 @@ namespace Content.Server.Database
         public Guid UserId { get; set; }
         public int SelectedCharacterSlot { get; set; }
         public string AdminOOCColor { get; set; } = null!;
-        public string GhostId { get; set; } = null!; // Orion
+        public string GhostId { get; set; } = null!; // RW
         public List<string> ConstructionFavorites { get; set; } = new();
         public List<Profile> Profiles { get; } = new();
     }
@@ -466,16 +466,16 @@ namespace Content.Server.Database
     public string Voice { get; set; } = ""; // WD EDIT TTS
         [Column("char_name")] public string CharacterName { get; set; } = null!;
         public string FlavorText { get; set; } = null!;
-        // Orion-Start
+        // RW-Start
         public string CharacterFlavorText { get; set; } = null!;
         public string GreenFlavorText { get; set; } = null!;
         public string YellowFlavorText { get; set; } = null!;
         public string RedFlavorText { get; set; } = null!;
-        // Orion-End
+        // RW-End
         public int Age { get; set; }
         public string Sex { get; set; } = null!;
-        public string BodyType { get; set; } = null!; // Amour port: WD Slim body types
-        // Amour start
+        public string BodyType { get; set; } = null!; // RW port: WD Slim body types
+        // RW start
         public string? HairColor2 { get; set; }
         public bool? HairUseGradient { get; set; }
         public float? HairGradientPosition { get; set; }
@@ -484,7 +484,7 @@ namespace Content.Server.Database
         public bool? FacialHairUseGradient { get; set; }
         public float? FacialHairGradientPosition { get; set; }
         public float? FacialHairGradientBlur { get; set; }
-        // Amour end
+        // RW end
         public string Gender { get; set; } = null!;
         public string Species { get; set; } = null!;
         public float Height { get; set; } = 1f; // Goobstation: port EE height/width sliders
@@ -565,7 +565,7 @@ namespace Content.Server.Database
         /// </summary>
         public string RoleName { get; set; } = string.Empty;
 
-        // Amour edit start
+        // RW edit start
         /// <summary>
         /// If true, this entry represents the profile's base (global) loadout.
         /// </summary>
@@ -575,7 +575,7 @@ namespace Content.Server.Database
         /// Comma-separated list of group IDs that are overridden for this role.
         /// </summary>
         public string? OverriddenGroups { get; set; }
-        // Amour edit end
+        // RW edit end
 
         /// <summary>
         /// Custom name of the role loadout if it supports it.
@@ -583,12 +583,12 @@ namespace Content.Server.Database
         [MaxLength(256)]
         public string? EntityName { get; set; }
 
-        // Amour edit start
+        // RW edit start
         /// <summary>
         /// Whether <see cref="EntityName"/> is overridden for this role.
         /// </summary>
         public bool EntityNameOverridden { get; set; }
-        // Amour edit end
+        // RW edit end
 
         /// <summary>
         /// Store the saved loadout groups. These may get validated and removed when loaded at runtime.

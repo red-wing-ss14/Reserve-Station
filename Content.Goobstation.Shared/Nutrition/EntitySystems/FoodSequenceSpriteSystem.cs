@@ -10,7 +10,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Goobstation.Shared.Nutrition.EntitySystems;
 
-public sealed class FoodSequenceSpriteSystem : SharedFoodSequenceSystem // Orion-Edit: Sealed
+public sealed class FoodSequenceSpriteSystem : SharedFoodSequenceSystem // RW-Edit: Sealed
 {
     // Yeah nah i agree fuck this.
     /*

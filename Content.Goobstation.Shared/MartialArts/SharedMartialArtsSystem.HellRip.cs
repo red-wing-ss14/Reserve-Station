@@ -81,7 +81,7 @@ public partial class SharedMartialArtsSystem
 
         _audio.PlayPvs(new SoundPathSpecifier("/Audio/Effects/gib1.ogg"), target);
         _audio.PlayPvs(new SoundPathSpecifier("/Audio/Effects/demon_attack1.ogg"), ent);
-        ComboPopup(ent, target, proto.ID); // Orion-Edit: proto.Name -> proto.ID
+        ComboPopup(ent, target, proto.ID); // RW-Edit: proto.Name -> proto.ID
         ent.Comp.LastAttacks.Clear();
     }
 
@@ -111,7 +111,7 @@ public partial class SharedMartialArtsSystem
 
         _audio.PlayPvs(new SoundPathSpecifier("/Audio/Effects/demon_attack1.ogg"), ent);
         _audio.PlayPvs(new SoundPathSpecifier("/Audio/Effects/metal_slam5.ogg"), target);
-        ComboPopup(ent, target, proto.ID); // Orion-Edit: proto.Name -> proto.ID
+        ComboPopup(ent, target, proto.ID); // RW-Edit: proto.Name -> proto.ID
         ent.Comp.LastAttacks.Clear();
     }
 
@@ -134,7 +134,7 @@ public partial class SharedMartialArtsSystem
         _grabThrowing.Throw(target, ent, direction, 25, behavior: proto.DropItems);
 
         _audio.PlayPvs(new SoundPathSpecifier("/Audio/Effects/demon_attack1.ogg"), ent);
-        ComboPopup(ent, target, proto.ID); // Orion-Edit: proto.Name -> proto.ID
+        ComboPopup(ent, target, proto.ID); // RW-Edit: proto.Name -> proto.ID
         ent.Comp.LastAttacks.Clear();
     }
 

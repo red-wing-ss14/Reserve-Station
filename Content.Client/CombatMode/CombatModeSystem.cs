@@ -29,24 +29,24 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
     /// </summary>
     public event Action<bool>? LocalPlayerCombatModeUpdated;
 
-    // Orion-Start
+    // RW-Start
     private EntityQuery<SpriteComponent> _spriteQuery;
     private bool _combatModeSoundEnabled;
-    // Orion-End
+    // RW-End
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<CombatModeComponent, AfterAutoHandleStateEvent>(OnHandleState);
-        // SubscribeLocalEvent<CombatModeComponent, GetStatusIconsEvent>(UpdateCombatModeIndicator); // Orion
+        // SubscribeLocalEvent<CombatModeComponent, GetStatusIconsEvent>(UpdateCombatModeIndicator); // RW
         Subs.CVar(_cfg, CCVars.CombatModeIndicatorsPointShow, OnShowCombatIndicatorsChanged, true);
-        // Subs.CVar(_cfg, CCVars.CombatIndicator, (bool value) => OnShowCombatIndicatorChanged(value), true); // Orion
+        // Subs.CVar(_cfg, CCVars.CombatIndicator, (bool value) => OnShowCombatIndicatorChanged(value), true); // RW
 
-        // Orion-Start
+        // RW-Start
         _spriteQuery = GetEntityQuery<SpriteComponent>();
         _cfg.OnValueChanged(CCVars.CombatModeSoundEnabled, v => _combatModeSoundEnabled = v, true);
-        // Orion-End
+        // RW-End
     }
 
     private void OnHandleState(EntityUid uid, CombatModeComponent component, ref AfterAutoHandleStateEvent args)
@@ -90,7 +90,7 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
         }
 
         var inCombatMode = IsInCombatMode();
-        TryPlayCombatModeSound(entity); // Orion
+        TryPlayCombatModeSound(entity); // RW
         LocalPlayerCombatModeUpdated?.Invoke(inCombatMode);
     }
 
@@ -111,7 +111,7 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
         }
     }
 
-    // Orion-Start
+    // RW-Start
     // private bool _combatIndicatorEnabled = false;
 
     // private void OnShowCombatIndicatorChanged(bool value)
@@ -140,7 +140,7 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
     //             if (!_spriteQuery.TryComp(uid, out var sprite2))
     //                 return;
     //
-    //             layer = sprite2.AddLayer(new SpriteSpecifier.Rsi(new ResPath("_Orion/Effects/combat_mode.rsi"), "combat_mode"));
+    //             layer = sprite2.AddLayer(new SpriteSpecifier.Rsi(new ResPath("_RW/Effects/combat_mode.rsi"), "combat_mode"));
     //             sprite2.LayerMapSet("combat_mode_indicator", layer);
     //         }
     //     }
@@ -182,5 +182,5 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
                 break;
         }
     }
-    // Orion-End
+    // RW-End
 }

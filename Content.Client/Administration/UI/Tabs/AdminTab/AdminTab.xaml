@@ -7,7 +7,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
     xmlns:at="clr-namespace:Content.Client.Administration.UI.Tabs.AdminTab"
-    xmlns:adminTab="clr-namespace:Content.Client._Orion.Administration.UI.Tabs.AdminTab"
+    xmlns:adminTab="clr-namespace:Content.Client._RW.Administration.UI.Tabs.AdminTab"
     Margin="4"
     MinSize="50 50">
     <BoxContainer Orientation="Vertical">

@@ -26,13 +26,13 @@
     shape:
     - 0,0,4,2
   - type: Gun
-    fireRate: 2.5 # Amour edit: 2 > 2.5
+    fireRate: 2.5 # RW edit: 2 > 2.5
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ship_perforator.ogg
     defaultDirection: 1, 0
   - type: BatteryAmmoProvider
-    proto: RedMediumLaser # Amour edit: RedMediumSplitLaser > RedMediumLaser
-    fireCost: 100 # Amour edit: 80 > 100
+    proto: RedMediumLaser # RW edit: RedMediumSplitLaser > RedMediumLaser
+    fireCost: 100 # RW edit: 80 > 100
   - type: StaticPrice
     price: 2500
   - type: MagazineVisuals
@@ -40,8 +40,8 @@
     steps: 5
     zeroVisible: true
   - type: Battery
-    maxCharge: 3000 # Amour edit: missing > 3000
-    startingCharge: 3000 # Amour edit: missing > 3000
+    maxCharge: 3000 # RW edit: missing > 3000
+    startingCharge: 3000 # RW edit: missing > 3000
   - type: Appearance
 
 - type: entity
@@ -70,7 +70,7 @@
   - type: Gun
     minAngle: 3
     maxAngle: 18
-    fireRate: 9 # Amour edit: 6 > 9
+    fireRate: 9 # RW edit: 6 > 9
     burstFireRate: 8
     angleIncrease: 4
     angleDecay: 8
@@ -83,7 +83,7 @@
     defaultDirection: 1, 0
   - type: BatteryAmmoProvider
     proto: BulletLaserHeavy
-    fireCost: 30 # Amour edit: 33 > 30
+    fireCost: 30 # RW edit: 33 > 30
   - type: StaticPrice
     price: 2500
   - type: MagazineVisuals
@@ -91,8 +91,8 @@
     steps: 5
     zeroVisible: true
   - type: Battery
-    maxCharge: 3000 # Amour edit: missing > 3000
-    startingCharge: 3000 # Amour edit: missing > 3000
+    maxCharge: 3000 # RW edit: missing > 3000
+    startingCharge: 3000 # RW edit: missing > 3000
   - type: Appearance
 
 - type: entity
@@ -121,13 +121,13 @@
     shape:
     - 0,0,4,1
   - type: Gun
-    fireRate: 1.5 # Amour edit: 0.75 > 1.5
+    fireRate: 1.5 # RW edit: 0.75 > 1.5
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: BatteryAmmoProvider
     proto: BulletLaserSpreadHeavy
-    fireCost: 180 # Amour edit: 125 > 180
+    fireCost: 180 # RW edit: 125 > 180
   - type: StaticPrice
     price: 2500
   - type: MagazineVisuals
@@ -136,8 +136,8 @@
     zeroVisible: true
 
   - type: Battery
-    maxCharge: 3600 # Amour edit: missing > 3600
-    startingCharge: 3600 # Amour edit: missing > 3600
+    maxCharge: 3600 # RW edit: missing > 3600
+    startingCharge: 3600 # RW edit: missing > 3600
 - type: entity
   name: X-18 "Ranought"
   parent: [BaseWeaponBattery, BaseGunWieldable, BaseCommandContraband]
@@ -167,11 +167,11 @@
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
-    fireRate: 0.9 # Amour edit: 0.75 > 0.9
+    fireRate: 0.9 # RW edit: 0.75 > 0.9
   - type: GunRequiresWield
   - type: BatteryAmmoProvider
     proto: LaserSniper
-    fireCost: 250 # Amour edit: 100 > 250
+    fireCost: 250 # RW edit: 100 > 250
   - type: SpeedModifiedOnWield
     walkModifier: 0.80
     sprintModifier: 0.80
@@ -186,5 +186,5 @@
     steps: 5
     zeroVisible: true
   - type: Battery
-    maxCharge: 4000 # Amour edit: missing > 4000
-    startingCharge: 4000 # Amour edit: missing > 4000
+    maxCharge: 4000 # RW edit: missing > 4000
+    startingCharge: 4000 # RW edit: missing > 4000

@@ -20,7 +20,7 @@ public sealed class ChuuniEyepatchSystem : EntitySystem
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly ClothingSystem _clothing = default!;
 
-    private readonly HashSet<Entity<ChuuniEyepatchComponent>> _activeEyepatches = new(); // Orion
+    private readonly HashSet<Entity<ChuuniEyepatchComponent>> _activeEyepatches = new(); // RW
 
     public override void Initialize()
     {
@@ -28,7 +28,7 @@ public sealed class ChuuniEyepatchSystem : EntitySystem
 
         SubscribeLocalEvent<ChuuniEyepatchComponent, GetVerbsEvent<AlternativeVerb>>(AddFlipVerb);
         SubscribeLocalEvent<ChuuniEyepatchComponent, ComponentInit>(OnInit);
-        SubscribeLocalEvent<ChuuniEyepatchComponent, ComponentShutdown>(OnShutdown); // Orion
+        SubscribeLocalEvent<ChuuniEyepatchComponent, ComponentShutdown>(OnShutdown); // RW
         SubscribeLocalEvent<ChuuniEyepatchComponent, ExaminedEvent>(OnExamine);
         SubscribeLocalEvent<ChuuniEyepatchComponent, InventoryRelayedEvent<GetSpellInvocationEvent>>(OnGetInvocation);
         SubscribeLocalEvent<ChuuniEyepatchComponent, InventoryRelayedEvent<GetMessageColorOverrideEvent>>(OnGetPostfix);
@@ -41,7 +41,7 @@ public sealed class ChuuniEyepatchSystem : EntitySystem
         if (_net.IsClient)
             return;
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         var toRemove = new List<Entity<ChuuniEyepatchComponent>>();
         foreach (var (uid, eyepatch) in _activeEyepatches)
         {
@@ -65,7 +65,7 @@ public sealed class ChuuniEyepatchSystem : EntitySystem
         {
             _activeEyepatches.Remove(ent);
         }
-        // Orion-Edit-End
+        // RW-Edit-End
     }
 
     private void OnGetPostfix(Entity<ChuuniEyepatchComponent> ent,
@@ -86,15 +86,15 @@ public sealed class ChuuniEyepatchSystem : EntitySystem
         if (!ent.Comp.CanHeal || damageable.TotalDamage <= FixedPoint2.Zero)
             return;
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         if (ent.Comp.Accumulator != 0f)
         {
             ent.Comp.Accumulator = 0f;
             Dirty(ent);
         }
-        // Orion-Edit-End
+        // RW-Edit-End
 
-        _activeEyepatches.Add(ent); // Orion
+        _activeEyepatches.Add(ent); // RW
 
         if (ent.Comp.HealAmount < damageable.TotalDamage)
             args.Args.ToHeal = damageable.Damage * ent.Comp.HealAmount / damageable.TotalDamage;
@@ -122,12 +122,12 @@ public sealed class ChuuniEyepatchSystem : EntitySystem
         Dirty(uid, comp);
     }
 
-    // Orion-Start
+    // RW-Start
     private void OnShutdown(Entity<ChuuniEyepatchComponent> ent, ref ComponentShutdown args)
     {
         _activeEyepatches.Remove(ent);
     }
-    // Orion-End
+    // RW-End
 
     private void AddFlipVerb(Entity<ChuuniEyepatchComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
     {
@@ -141,10 +141,10 @@ public sealed class ChuuniEyepatchSystem : EntitySystem
             Act = () =>
             {
                 comp.IsFliped = !comp.IsFliped;
-                // Orion-Edit-Start
+                // RW-Edit-Start
                 var prefix = comp.IsFliped ? comp.FlippedPrefix : null;
                 _clothing.SetEquippedPrefix(uid, prefix);
-                // Orion-Edit-End
+                // RW-Edit-End
                 _appearance.SetData(uid, FlippedVisuals.Flipped, comp.IsFliped);
                 Dirty(ent);
             },

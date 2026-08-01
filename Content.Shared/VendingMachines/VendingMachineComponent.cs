@@ -107,13 +107,13 @@ namespace Content.Shared.VendingMachines
         ///     Sound that plays when ejecting an item
         /// </summary>
         [DataField]
-        // Grabbed from: https://github.com/tgstation/tgstation/blob/d34047a5ae911735e35cd44a210953c9563caa22/sound/machines/machine_vend.ogg // Orion-Edit: and modified by UmbiMax
-        public SoundSpecifier SoundVend = new SoundPathSpecifier("/Audio/_Orion/Machines/machine_vend.ogg") // Orion-Edit
+        // Grabbed from: https://github.com/tgstation/tgstation/blob/d34047a5ae911735e35cd44a210953c9563caa22/sound/machines/machine_vend.ogg // RW-Edit: and modified by UmbiMax
+        public SoundSpecifier SoundVend = new SoundPathSpecifier("/Audio/_RW/Machines/machine_vend.ogg") // RW-Edit
         {
             Params = new AudioParams
             {
-                Volume = 1f, // Orion-Edit: -4 > 1
-                Variation = 0.1f // Orion-Edit: 0.15 > 0.1
+                Volume = 1f, // RW-Edit: -4 > 1
+                Variation = 0.1f // RW-Edit: 0.15 > 0.1
             }
         };
 
@@ -214,21 +214,21 @@ namespace Content.Shared.VendingMachines
         [DataField]
         public uint Amount;
 
-        // Orion-Start
+        // RW-Start
         [DataField]
         public int Price;
 
         [DataField]
         public int DisplayPrice;
-        // Orion-End
+        // RW-End
 
-        public VendingMachineInventoryEntry(InventoryType type, string id, uint amount, int price = 0) // Orion-Edit
+        public VendingMachineInventoryEntry(InventoryType type, string id, uint amount, int price = 0) // RW-Edit
         {
             Type = type;
             ID = id;
             Amount = amount;
-            Price = price; // Orion
-            DisplayPrice = price; // Orion
+            Price = price; // RW
+            DisplayPrice = price; // RW
         }
 
         public VendingMachineInventoryEntry(VendingMachineInventoryEntry entry)
@@ -236,8 +236,8 @@ namespace Content.Shared.VendingMachines
             Type = entry.Type;
             ID = entry.ID;
             Amount = entry.Amount;
-            Price = entry.Price; // Orion
-            DisplayPrice = entry.DisplayPrice; // Orion
+            Price = entry.Price; // RW
+            DisplayPrice = entry.DisplayPrice; // RW
         }
     }
 
@@ -319,7 +319,7 @@ namespace Content.Shared.VendingMachines
         public bool Broken;
     }
 
-    // Orion-Start
+    // RW-Start
     [ByRefEvent]
     public record struct VendingMachineBeforeEjectEvent(EntityUid VendingMachine, EntityUid? User, InventoryType InventoryType, string ItemId, int Price, bool Cancelled = false);
 
@@ -335,5 +335,5 @@ namespace Content.Shared.VendingMachines
             Balance = balance;
         }
     }
-    // Orion-End
+    // RW-End
 }

@@ -28,8 +28,8 @@ using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
-using Content.Shared._Orion.CorticalBorer;
-using Content.Shared._Orion.CorticalBorer.Components;
+using Content.Shared._RW.CorticalBorer;
+using Content.Shared._RW.CorticalBorer.Components;
 using Content.Shared._Shitmed.Surgery;
 
 namespace Content.Shared._Shitmed.Medical.Surgery;
@@ -61,7 +61,7 @@ public abstract partial class SharedSurgerySystem
 
         SubSurgery<SurgeryTendWoundsEffectComponent>(OnTendWoundsStep, OnTendWoundsCheck);
         SubSurgery<SurgeryStepCavityEffectComponent>(OnCavityStep, OnCavityCheck);
-        SubSurgery<SurgeryStepRemoveCorticalBorerComponent>(OnCorticalBorerRemovalStep, OnCorticalBorerRemovalCheck); // Orion
+        SubSurgery<SurgeryStepRemoveCorticalBorerComponent>(OnCorticalBorerRemovalStep, OnCorticalBorerRemovalCheck); // RW
         SubSurgery<SurgeryAddPartStepComponent>(OnAddPartStep, OnAddPartCheck);
         SubSurgery<SurgeryAffixPartStepComponent>(OnAffixPartStep, OnAffixPartCheck);
         SubSurgery<SurgeryRemovePartStepComponent>(OnRemovePartStep, OnRemovePartCheck);
@@ -254,7 +254,7 @@ public abstract partial class SharedSurgerySystem
             args.Cancelled = true;
     }
 
-    // Orion-Start
+    // RW-Start
     private void OnCorticalBorerRemovalStep(Entity<SurgeryStepRemoveCorticalBorerComponent> ent, ref SurgeryStepEvent args)
     {
         if (!TryComp<CorticalBorerInfestedComponent>(args.Body, out var infested) ||
@@ -272,7 +272,7 @@ public abstract partial class SharedSurgerySystem
         if (HasComp<CorticalBorerInfestedComponent>(args.Body))
             args.Cancelled = true;
     }
-    // Orion-End
+    // RW-End
 
     private void OnAddPartStep(Entity<SurgeryAddPartStepComponent> ent, ref SurgeryStepEvent args)
     {
@@ -886,10 +886,10 @@ public abstract partial class SharedSurgerySystem
         var ev = new SurgeryDoAfterEvent(surgeryId, stepId, toolUsed);
         var duration = GetSurgeryDuration(step, user, body, speed);
 
-/* // Orion-Edit-Start: Moved to GetSurgeryDuration
+/* // RW-Edit-Start: Moved to GetSurgeryDuration
         if (TryComp(user, out SurgerySpeedModifierComponent? surgerySpeedMod))
             duration = duration / surgerySpeedMod.SpeedModifier;
-*/ // Orion-Edit-End
+*/ // RW-Edit-End
 
         var doAfter = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(duration), ev, body, part)
         {
@@ -936,12 +936,12 @@ public abstract partial class SharedSurgerySystem
         if (TryComp(user, out SurgerySpeedModifierComponent? surgerySpeedMod))
             speed *= surgerySpeedMod.SpeedModifier;
 
-        // Orion-Start: Self-surgery penalty
+        // RW-Start: Self-surgery penalty
         if (user == target && TryComp<SurgeryTargetComponent>(target, out var surgTarget))
             speed *= surgTarget.SelfSurgerySpeedModifier;
-        // Orion-End
+        // RW-End
 
-        return stepComp.Duration / MathF.Max(speed, 0.01f); // Orion-Edit: Guard against zero/invalid values
+        return stepComp.Duration / MathF.Max(speed, 0.01f); // RW-Edit: Guard against zero/invalid values
     }
     private (Entity<SurgeryComponent> Surgery, int Step)? GetNextStep(EntityUid body, EntityUid part, Entity<SurgeryComponent?> surgery, List<EntityUid> requirements, EntityUid user)
     {

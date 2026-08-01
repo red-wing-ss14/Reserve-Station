@@ -132,7 +132,7 @@
     spawned:
     - id: FoodMeatBingle
       amount: 3
-  - type: GlobalAntagonist # Orion
+  - type: GlobalAntagonist # RW
     antagonistPrototype: globalAntagonistBingle
 
 - type: entity

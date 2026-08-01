@@ -19,7 +19,7 @@
     - id: SalvageJobBoardComputerCircuitboard # Goobstation - This doesn't really have a use right now but it's there incase it ever gets use again
     - id: CargoMegaphone # goob - loudspeaker
     - id: SlotMachineHighRollerFlatPack # Goob - gambling
-    - id: DocumentPrinterFlatpack # Orion
+    - id: DocumentPrinterFlatpack # RW
 
 - type: entity
   id: LockerQuarterMasterFilled
@@ -143,7 +143,7 @@
     - id: ClothingEyesHudCommand
     - id: ServiceTechFabCircuitboard # Goobstation - Service Techfab
     - id: CommandMegaphone # goob - loudspeakers
-    - id: DocumentPrinterFlatpack # Orion
+    - id: DocumentPrinterFlatpack # RW
 
 - type: entity
   id: LockerHeadOfPersonnelFilled
@@ -186,7 +186,7 @@
     - id: WeaponLauncherSingularityBuster
     - id: MachinePowerTransmissionLaserFlatpack
     - id: RCDRechargingCE
-    - id: InducerEngineeringWhiteBattery # Orion
+    - id: InducerEngineeringWhiteBattery # RW
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -252,7 +252,7 @@
     - id: RapidSyringeGun
     - id: BoxSyringePax
     - id: ClothingBeltMilitaryWebbingCMOFilled
-    - id: SurgerykitFilled # Orion-Edit: ClothingBackpackDuffelSurgeryFilled now Surgerykit
+    - id: SurgerykitFilled # RW-Edit: ClothingBackpackDuffelSurgeryFilled now Surgerykit
     # Shitmed
     - id: MedicalBiofabricatorFlatpack
     # Virology
@@ -318,7 +318,7 @@
     - id: ClothingBeltGeminiHoloProjector # Goobstation - Who better to do science with than yourself?
     - id: XenobiologyBountyComputerCircuitboard # Goobstation
     - id: MMI # Goobstation
-    - id: InducerScientificBattery # Orion
+    - id: InducerScientificBattery # RW
       prob: 0.4
 
 # Hardsuit table, used for suit storage as well
@@ -363,7 +363,7 @@
   table: !type:AllSelector
     children:
     - id: WeaponEnergyMagnum
-    #- id: BookSpaceLaw # Orion-Edit: Removed
+    #- id: BookSpaceLaw # RW-Edit: Removed
     - id: BoxEncryptionKeySecurity
     - id: CigarGoldCase
       prob: 0.50
@@ -383,7 +383,7 @@
     - id: WantedListCartridge
     - id: DrinkHosFlask
     - id: ClothingBeltSheathHeadOfSecurityFilled # Goobstation - security revamp
-    - id: ClothingBeltArmyHandCombat #Amour edit
+    - id: ClothingBeltArmyHandCombat #RW edit
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable

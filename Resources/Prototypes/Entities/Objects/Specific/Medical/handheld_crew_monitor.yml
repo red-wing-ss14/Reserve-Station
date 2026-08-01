@@ -12,23 +12,23 @@
     heldPrefix: scanner
   - type: Sprite
     sprite: Objects/Specific/Medical/handheldcrewmonitor.rsi
-    # Orion-Edit-Start
+    # RW-Edit-Start
     layers:
     - state: scanner
     - state: scanner-light
       map: ["light"]
       shader: unshaded
       visible: false
-    # Orion-Edit-End
-  # Orion-Start
-  - type: GenericVisualizer # Orion
+    # RW-Edit-End
+  # RW-Start
+  - type: GenericVisualizer # RW
     visuals:
       enum.ToggleableVisuals.Enabled:
         light:
           True: { visible: true }
           False: { visible: false }
   - type: Appearance
-  # Orion-End
+  # RW-End
   - type: ActivatableUI
     key: enum.CrewMonitoringUIKey.Key
   - type: UserInterface

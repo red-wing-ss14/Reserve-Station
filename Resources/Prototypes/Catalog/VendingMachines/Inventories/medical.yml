@@ -96,9 +96,9 @@
     PillSpaceDrugs: 3
     FoodApple: 1
 
-  # Orion-Start
+  # RW-Start
   prices:
     HandheldHealthAnalyzer: 100
     Gauze: 100
     Tourniquet: 100
-  # Orion-End
+  # RW-End

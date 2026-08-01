@@ -30,7 +30,7 @@ public sealed partial class ItemRandomizeMovementspeedComponent : Component
     /// The value we are moving towards.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float TargetModifier = 1f; // Orion-Edit
+    public float TargetModifier = 1f; // RW-Edit
 
     /// <summary>
     /// Next execution time.

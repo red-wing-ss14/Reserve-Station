@@ -21,10 +21,10 @@ public sealed class SharedAnomalyCoreSystem : EntitySystem
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
-    // Orion-Start
+    // RW-Start
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly INetManager _net = default!;
-    // Orion-End
+    // RW-End
 
     public override void Initialize()
     {
@@ -113,7 +113,7 @@ public sealed class SharedAnomalyCoreSystem : EntitySystem
 
     private void Decay(EntityUid uid, AnomalyCoreComponent component)
     {
-        // Orion-Start
+        // RW-Start
         if (_net.IsServer && component.DecayPrototype is { } decayPrototype)
         {
             var decayed = Spawn(decayPrototype, Transform(uid).Coordinates);
@@ -131,7 +131,7 @@ public sealed class SharedAnomalyCoreSystem : EntitySystem
             QueueDel(uid);
             return;
         }
-        // Orion-End
+        // RW-End
 
         _appearance.SetData(uid, AnomalyCoreVisuals.Decaying, false);
         component.IsDecayed = true;

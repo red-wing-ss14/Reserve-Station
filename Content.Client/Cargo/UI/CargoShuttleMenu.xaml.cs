@@ -44,7 +44,7 @@ namespace Content.Client.Cargo.UI
                      Icon = { Texture = sprites.Frame0(product) },
                      ProductName =
                      {
-                         // Orion-Edit-Start
+                         // RW-Edit-Start
                          Text = order.PaidPrivately
                              ? Loc.GetString(
                                  "cargo-console-menu-populate-orders-cargo-order-row-product-name-private-text",
@@ -56,22 +56,22 @@ namespace Content.Client.Cargo.UI
                                  ("orderRequester", order.Requester),
                                  ("accountColor", account.Color),
                                  ("account", Loc.GetString(account.Code))),
-                         // Orion-Edit-End
+                         // RW-Edit-End
                      },
-                     // Orion-Edit-Start
+                     // RW-Edit-Start
                      DeliveryDestination =
                      {
                          Text = Loc.GetString("cargo-console-menu-order-row-product-delivery-destination",
                              ("destination", order.DeliveryDestination ?? Loc.GetString("cargo-console-paper-delivery-destination-default"))),
                      },
-                     // Orion-Edit-End
-                     // Orion-Start
+                     // RW-Edit-End
+                     // RW-Start
                      Note =
                      {
                          Text = Loc.GetString("cargo-console-menu-order-row-product-note",
                              ("note", order.Note ?? Loc.GetString("cargo-console-paper-note-default"))),
                      },
-                     // Orion-End
+                     // RW-End
                  };
 
                  row.Approve.Visible = false;

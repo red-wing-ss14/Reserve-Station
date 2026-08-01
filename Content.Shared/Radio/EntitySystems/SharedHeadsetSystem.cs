@@ -33,7 +33,7 @@ public abstract class SharedHeadsetSystem : EntitySystem
     protected virtual void OnGotEquipped(EntityUid uid, HeadsetComponent component, GotEquippedEvent args)
     {
         component.IsEquipped = args.SlotFlags.HasFlag(component.RequiredSlot) ||
-                               args.SlotFlags.HasFlag(component.AdditionalSlot); // Orion-Edit: Added AdditionalSlot
+                               args.SlotFlags.HasFlag(component.AdditionalSlot); // RW-Edit: Added AdditionalSlot
         Dirty(uid, component);
     }
 

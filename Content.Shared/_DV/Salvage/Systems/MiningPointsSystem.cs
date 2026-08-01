@@ -18,7 +18,7 @@ public sealed class MiningPointsSystem : EntitySystem
     [Dependency] private readonly SharedIdCardSystem _idCard = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!; // Orion
+    [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!; // RW
 
     private EntityQuery<MiningPointsComponent> _query;
 
@@ -55,10 +55,10 @@ public sealed class MiningPointsSystem : EntitySystem
     {
         var user = args.Actor;
 
-        // Orion-Start
+        // RW-Start
         if (!_actionBlocker.CanInteract(user, ent))
             return;
-        // Orion-End
+        // RW-End
 
         if (GetPointComp(user) is {} dest) // Goobstation - borg Miningpoints
             TransferAll(ent.Owner, dest);

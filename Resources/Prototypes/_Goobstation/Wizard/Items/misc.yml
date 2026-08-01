@@ -12,8 +12,8 @@
   - type: CartridgeAmmo
     proto: BulletMagic
   - type: Sprite
-    sprite: _Orion/Objects/Weapons/Guns/Ammunition/Casings/30_casing.rsi # Orion-Edit
-    scale: 0.9, 0.9 # Orion
+    sprite: _RW/Objects/Weapons/Guns/Ammunition/Casings/30_casing.rsi # RW-Edit
+    scale: 0.9, 0.9 # RW
     layers:
     - state: base
       map: ["enum.AmmoVisualLayers.Base"]

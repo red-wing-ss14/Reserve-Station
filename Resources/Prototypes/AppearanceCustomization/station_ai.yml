@@ -11,7 +11,7 @@
   - StationAiIconDorf
   - StationAiIconHeartline
   - StationAiIconSmiley
-  # Orion-Start
+  # RW-Start
   - StationAiIconThinking
   - StationAiIconXenomorph
   - StationAiIconBanned
@@ -47,7 +47,7 @@
   - StationAiIconLamp
   - StationAiIconLizard
   - StationAiIconVox
-  # Orion-End
+  # RW-End
   # </Trauma>
   - StationAiIconBingle #Goobstation
   - StationAiIconBlank #Goobstation
@@ -63,7 +63,7 @@
   - StationAiHologramFace
   - StationAiHologramCat
   - StationAiHologramDog
-  # Orion-Start
+  # RW-Start
   - StationAiHologramKobold
   - StationAiHologramMonkey
   - StationAiHologramHorror
@@ -81,9 +81,9 @@
   - StationAiHologramRorschach
   - StationAiHologramSeraphim
   - StationAiHologramTripleaffirmative
-  # Orion-End
-#  - StationAiHologramKobold # Orion-Edit: Already have it
-#  - StationAiHologramMonkey # Orion-Edit: Already have it
+  # RW-End
+#  - StationAiHologramKobold # RW-Edit: Already have it
+#  - StationAiHologramMonkey # RW-Edit: Already have it
   - StationAiHologramScurret #Goobstation
   - StationAiHologramQueen #Goobstation
   - StationAiHologramPerformer  #Goobstation

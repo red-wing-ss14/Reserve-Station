@@ -22,7 +22,7 @@
     sprite: Objects/Specific/Janitorial/soap.rsi
     storedRotation: -90
   - type: Slippery
-    slipData: # Orion
+    slipData: # RW
       stunTime: 1
   - type: StepTrigger
     intersectRatio: 0.2
@@ -143,9 +143,9 @@
   - type: Slippery
     staminaDamage: 50
     slipData:
-      stunTime: 2 # Orion
-      knockdownTime: 4 # Orion-Edit: 3 > 4
-      launchForwardsMultiplier: 5 # Orion-Edit: 3 > 5
+      stunTime: 2 # RW
+      knockdownTime: 4 # RW-Edit: 3 > 4
+      launchForwardsMultiplier: 5 # RW-Edit: 3 > 5
   - type: Item
     heldPrefix: syndie
   - type: FlavorProfile
@@ -179,7 +179,7 @@
     layers:
     - state: syndie-soaplet
   - type: Slippery
-    slipData: # Orion
+    slipData: # RW
       knockdownTime: 3
   - type: StepTrigger
     intersectRatio: 0.04
@@ -213,7 +213,7 @@
       path: "/Audio/Effects/Fluids/splat.ogg"
       params:
         volume: -8
-  - type: Tag # Orion
+  - type: Tag # RW
     tags:
     - Trash
     - Soap
@@ -257,9 +257,9 @@
   - type: Slippery
     staminaDamage: 50
     slipData:
-      stunTime: 3 # Orion
-      knockdownTime: 6.0 # Orion-Edit: 5 > 6
-      launchForwardsMultiplier: 7.0 # Orion-Edit: 3 > 7
+      stunTime: 3 # RW
+      knockdownTime: 6.0 # RW-Edit: 5 > 6
+      launchForwardsMultiplier: 7.0 # RW-Edit: 3 > 7
   - type: Item
     heldPrefix: omega
   - type: SolutionContainerManager

@@ -136,7 +136,7 @@
               amount: 2
               doAfter: 2
 
-        # Orion-Start
+        # RW-Start
         - to: solidSecretDoor
           completed:
           - !type:SnapToGrid
@@ -147,7 +147,7 @@
           - material: Steel
             amount: 2
             doAfter: 2
-        # Orion-End
+        # RW-End
 
     - node: wall
       entity: WallSolid
@@ -323,7 +323,7 @@
             - tool: Cutting
               doAfter: 2
 
-        # Orion-Start
+        # RW-Start
         - to: reinforcedSecretDoor
           completed:
           - !type:SnapToGrid
@@ -334,7 +334,7 @@
           - material: Plasteel
             amount: 2
             doAfter: 2
-        # Orion-End
+        # RW-End
 
     - node: reinforcedWall
       entity: WallReinforced
@@ -555,7 +555,7 @@
             - tool: Brushing
               doAfter: 12
 
-    # Orion-Start
+    # RW-Start
     - node: solidSecretDoor
       entity: SolidSecretDoor
       actions:
@@ -585,4 +585,4 @@
         steps:
         - tool: Welding
           doAfter: 10
-    # Orion-End
+    # RW-End

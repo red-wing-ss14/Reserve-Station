@@ -52,10 +52,10 @@ public sealed class ElectricityAnomalySystem : EntitySystem
         var query = EntityQueryEnumerator<ElectricityAnomalyComponent, AnomalyComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var elec, out var anom, out var xform))
         {
-            // Orion-Start
+            // RW-Start
             if (TerminatingOrDeleted(uid))
                 continue;
-            // Orion-End
+            // RW-End
 
             if (_timing.CurTime < elec.NextSecond)
                 continue;

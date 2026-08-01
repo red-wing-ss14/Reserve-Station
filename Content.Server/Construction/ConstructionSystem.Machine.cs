@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Construction.Components;
-using Content.Shared._Orion.Construction.Prototypes;
+using Content.Shared._RW.Construction.Prototypes;
 using Content.Shared.Construction.Components;
 using Content.Shared.Stacks;
 using Robust.Shared.Containers;
@@ -13,7 +13,7 @@ public sealed partial class ConstructionSystem
     private void InitializeMachines()
     {
         SubscribeLocalEvent<MachineComponent, ComponentInit>(OnMachineInit);
-        SubscribeLocalEvent<MachineComponent, ComponentStartup>(OnMachineStartup); // Orion
+        SubscribeLocalEvent<MachineComponent, ComponentStartup>(OnMachineStartup); // RW
         SubscribeLocalEvent<MachineComponent, MapInitEvent>(OnMachineMapInit);
     }
 
@@ -23,7 +23,7 @@ public sealed partial class ConstructionSystem
         component.PartContainer = _container.EnsureContainer<Container>(uid, MachineFrameComponent.PartContainerName);
     }
 
-    // Orion-Start
+    // RW-Start
     private void OnMachineStartup(EntityUid uid, MachineComponent component, ComponentStartup args)
     {
         if (component.BoardContainer.ContainedEntities.Count == 0)
@@ -31,12 +31,12 @@ public sealed partial class ConstructionSystem
 
         RefreshParts(uid, component);
     }
-    // Orion-End
+    // RW-End
 
     private void OnMachineMapInit(EntityUid uid, MachineComponent component, MapInitEvent args)
     {
         CreateBoardAndStockParts(uid, component);
-        RefreshParts(uid, component); // Orion
+        RefreshParts(uid, component); // RW
     }
 
     private void CreateBoardAndStockParts(EntityUid uid, MachineComponent component)
@@ -71,7 +71,7 @@ public sealed partial class ConstructionSystem
                 throw new Exception($"Couldn't insert machine material of type {stackType} to machine with prototype {Prototype(uid)?.ID ?? "N/A"}");
 */
 
-            // Orion-Start
+            // RW-Start
             if (PrototypeManager.TryIndex(stackType, out _))
             {
                 var stack = _stackSystem.SpawnAtPosition(amount, stackType, xform.Coordinates);
@@ -101,7 +101,7 @@ public sealed partial class ConstructionSystem
             }
 
             throw new Exception($"Unknown machine part requirement {partType} for machine with prototype {Prototype(uid)?.ID ?? "N/A"}");
-            // Orion-End
+            // RW-End
         }
 
         foreach (var (compName, info) in machineBoard.ComponentRequirements)

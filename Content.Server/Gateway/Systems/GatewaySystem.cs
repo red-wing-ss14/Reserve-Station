@@ -67,23 +67,23 @@ public sealed class GatewaySystem : EntitySystem
 
     public void UpdateAllGateways()
     {
-        // Orion-Edit-Start
+        // RW-Edit-Start
         var snapshot = BuildGatewaySnapshot();
         foreach (var (uid, comp, xform) in snapshot)
         {
             UpdateUserInterface(uid, comp, xform, snapshot);
         }
-        // Orion-Edit-End
+        // RW-Edit-End
     }
 
-    private void UpdateUserInterface(EntityUid uid, GatewayComponent comp, TransformComponent? xform = null, IReadOnlyList<(EntityUid Uid, GatewayComponent Comp, TransformComponent Xform)>? snapshot = null) // Orion-Edit
+    private void UpdateUserInterface(EntityUid uid, GatewayComponent comp, TransformComponent? xform = null, IReadOnlyList<(EntityUid Uid, GatewayComponent Comp, TransformComponent Xform)>? snapshot = null) // RW-Edit
     {
         if (!Resolve(uid, ref xform))
             return;
 
-        snapshot ??= BuildGatewaySnapshot(); // Orion
+        snapshot ??= BuildGatewaySnapshot(); // RW
         var destinations = new List<GatewayDestinationData>();
-//        var query = AllEntityQuery<GatewayComponent, TransformComponent>(); // Orion-Edit
+//        var query = AllEntityQuery<GatewayComponent, TransformComponent>(); // RW-Edit
 
         var nextUnlock = TimeSpan.Zero;
         var unlockTime = TimeSpan.Zero;
@@ -100,7 +100,7 @@ public sealed class GatewaySystem : EntitySystem
             unlockTime = generatorComp.UnlockCooldown;
         }
 
-        foreach (var (destUid, dest, destXform) in snapshot) // Orion-Edit
+        foreach (var (destUid, dest, destXform) in snapshot) // RW-Edit
         {
             // Goobstation
             if (!dest.Enabled
@@ -139,7 +139,7 @@ public sealed class GatewaySystem : EntitySystem
         _ui.SetUiState(uid, GatewayUiKey.Key, state);
     }
 
-    // Orion-Start
+    // RW-Start
     private IReadOnlyList<(EntityUid Uid, GatewayComponent Comp, TransformComponent Xform)> BuildGatewaySnapshot()
     {
         var snapshot = new List<(EntityUid Uid, GatewayComponent Comp, TransformComponent Xform)>();
@@ -152,7 +152,7 @@ public sealed class GatewaySystem : EntitySystem
 
         return snapshot;
     }
-    // Orion-End
+    // RW-End
 
     private void UpdateAppearance(EntityUid uid)
     {

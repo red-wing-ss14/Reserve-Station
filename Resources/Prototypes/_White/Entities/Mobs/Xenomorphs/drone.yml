@@ -65,7 +65,7 @@
         type: SurgeryBui
       enum.RadialSelectorUiKey.Key:
         type: TrackedRadialSelectorMenuBUI
-  - type: GlobalAntagonist # Orion
+  - type: GlobalAntagonist # RW
     antagonistPrototype: globalAntagonistXenomorph
 
 - type: entity

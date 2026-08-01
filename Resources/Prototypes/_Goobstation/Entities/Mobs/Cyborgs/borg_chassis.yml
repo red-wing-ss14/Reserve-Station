@@ -112,7 +112,7 @@
       settings: default
     job: Borg
     requirements:
-    - !type:DiscordLinkRequirement # Amour edit
+    - !type:DiscordLinkRequirement # RW edit
   - type: GhostTakeoverAvailable
 
 # Mining

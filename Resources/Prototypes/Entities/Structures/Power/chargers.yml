@@ -100,7 +100,7 @@
           False: { visible: false }
   - type: PowerCellSlot
     cellSlotId: charger_slot
-    allowMegaCells: true # Orion
+    allowMegaCells: true # RW
     # fitsInCharger is true i dont think this will ever affect anything negatively but it lets it function
   - type: Charger #Goobstation
     chargeRate: 25
@@ -111,7 +111,7 @@
         name: power-cell-slot-component-slot-name-default
         whitelist:
           tags:
-          - MegaCell # Orion
+          - MegaCell # RW
           - PowerCell
           - PowerCellSmall
         blacklist:
@@ -208,7 +208,7 @@
       charger_slot: enum.PowerChargerVisualLayers.ItemDisplay
       # Goob end
 
-# Orion-Edit: Redundant
+# RW-Edit: Redundant
 #- type: entity
 #  parent: BaseItemRecharger
 #  id: TurboItemRecharger

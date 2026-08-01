@@ -197,7 +197,7 @@
   description: "Filters toxins from the bloodstream."
   categories: [ HideSpawnMenu ]
   components:
-  - type: Kidney # Orion
+  - type: Kidney # RW
   - type: Organ # Shitmed
     intCap: 21
     integrity: 21

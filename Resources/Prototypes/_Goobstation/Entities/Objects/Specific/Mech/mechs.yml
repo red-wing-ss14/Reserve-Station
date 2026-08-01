@@ -135,7 +135,7 @@
         Blunt: 26
   - type: MovementSpeedModifier
     baseWalkSpeed: 3.5
-    baseSprintSpeed: 4 #Goobedit # Orion-Edit: 3.5 > 4
+    baseSprintSpeed: 4 #Goobedit # RW-Edit: 3.5 > 4
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: StaticPrice
@@ -209,7 +209,7 @@
   - type: MovementAlwaysTouching
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
-    baseSprintSpeed: 2.6 #Goobedit # Orion-Edit: 2 > 2.6
+    baseSprintSpeed: 2.6 #Goobedit # RW-Edit: 2 > 2.6
   - type: StaticPrice
     price: 3000
   - type: Tag
@@ -335,7 +335,7 @@
         Structural: 200
   - type: MovementSpeedModifier
     baseWalkSpeed: 1
-    baseSprintSpeed: 1.5 #Goobedit # Orion-Edit: 1 > 1.5
+    baseSprintSpeed: 1.5 #Goobedit # RW-Edit: 1 > 1.5
   - type: Damageable
     damageModifierSet: HeavyArmorNT
   - type: CanMoveInAir
@@ -408,7 +408,7 @@
         Structural: 400
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
-    baseSprintSpeed: 3 # Orion-Edit: 2.2 > 3
+    baseSprintSpeed: 3 # RW-Edit: 2.2 > 3
   - type: Damageable
     damageModifierSet: HeavyArmorNT
   - type: CanMoveInAir
@@ -427,7 +427,7 @@
   - type: ContainerFill
     containers:
       mech-battery-slot:
-      - PowerCellVortex # Orion-Edit: Replaced PowerCellAntiqueProto
+      - PowerCellVortex # RW-Edit: Replaced PowerCellAntiqueProto
 
 - type: entity
   id: MechSeraphFilled
@@ -484,7 +484,7 @@
         Structural: 200
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.2
-    baseSprintSpeed: 3.7 #Goobedit # Orion-Edit: 2.2 > 3.7
+    baseSprintSpeed: 3.7 #Goobedit # RW-Edit: 2.2 > 3.7
   - type: Damageable
     damageModifierSet: MediumArmorSyndi
   - type: CanMoveInAir
@@ -557,7 +557,7 @@
         Structural: 400
   - type: MovementSpeedModifier
     baseWalkSpeed: 1
-    baseSprintSpeed: 1.5 #Goobedit # Orion-Edit: 1 > 1.5
+    baseSprintSpeed: 1.5 #Goobedit # RW-Edit: 1 > 1.5
   - type: Damageable
     damageModifierSet: HeavyArmorSyndi
   - type: CanMoveInAir

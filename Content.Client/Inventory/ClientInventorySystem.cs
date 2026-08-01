@@ -281,7 +281,7 @@ namespace Content.Client.Inventory
             [ViewVariables] public bool Highlighted;
             [ViewVariables] public ContainerSlot? Container;
             [ViewVariables] public bool HasSlotGroup => SlotDef.SlotGroup != "Default";
-            [ViewVariables] public bool HasExtraSlotGroup => SlotDef.SlotGroup == "Extra"; // Orion
+            [ViewVariables] public bool HasExtraSlotGroup => SlotDef.SlotGroup == "Extra"; // RW
             [ViewVariables] public Vector2i ButtonOffset => SlotDef.UIWindowPosition;
             [ViewVariables] public string SlotName => SlotDef.Name;
             [ViewVariables] public bool ShowInWindow => SlotDef.ShowInWindow;

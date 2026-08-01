@@ -22,7 +22,7 @@ public sealed partial class ResearchSystem
         SubscribeLocalEvent<ResearchClientComponent, ResearchClientServerSelectedMessage>(OnClientSelected);
         SubscribeLocalEvent<ResearchClientComponent, ResearchClientServerDeselectedMessage>(OnClientDeselected);
         SubscribeLocalEvent<ResearchClientComponent, ResearchRegistrationChangedEvent>(OnClientRegistrationChanged);
-        SubscribeLocalEvent<ResearchClientComponent, TechnologyDatabaseModifiedEvent>(OnClientDatabaseModified); // Orion
+        SubscribeLocalEvent<ResearchClientComponent, TechnologyDatabaseModifiedEvent>(OnClientDatabaseModified); // RW
     }
 
     #region UI
@@ -33,7 +33,7 @@ public sealed partial class ResearchSystem
             return;
 
         // Validate that we can access this server.
-        if (!GetServers(uid).Any(server => server.Owner == serveruid.Value)) // Orion-Edit
+        if (!GetServers(uid).Any(server => server.Owner == serveruid.Value)) // RW-Edit
             return;
 
         UnregisterClient(uid, component);
@@ -64,18 +64,18 @@ public sealed partial class ResearchSystem
         UpdateClientInterface(uid, component);
     }
 
-    // Orion-Start
+    // RW-Start
     private void OnClientDatabaseModified(EntityUid uid, ResearchClientComponent component, ref TechnologyDatabaseModifiedEvent args)
     {
         SyncClientWithServer(uid, clientComponent: component);
     }
-    // Orion-End
+    // RW-End
 
     private void OnClientMapInit(EntityUid uid, ResearchClientComponent component, MapInitEvent args)
     {
-        // Orion-Edit-Start
+        // RW-Edit-Start
         TryAutoRegisterClient(uid, component);
-        // Orion-Edit-End
+        // RW-Edit-End
     }
 
     private void OnClientShutdown(EntityUid uid, ResearchClientComponent component, ComponentShutdown args)
@@ -95,9 +95,9 @@ public sealed partial class ResearchSystem
             if (ent.Comp.Server is not null)
                 return;
 
-            // Orion-Edit-Start
+            // RW-Edit-Start
             TryAutoRegisterClient(ent, ent.Comp);
-            // Orion-Edit-End
+            // RW-Edit-End
         }
         else
         {
@@ -105,7 +105,7 @@ public sealed partial class ResearchSystem
         }
     }
 
-    // Orion-Start
+    // RW-Start
     private void TryAutoRegisterClient(EntityUid uid, ResearchClientComponent component)
     {
         if (component.Server is not null)
@@ -118,7 +118,7 @@ public sealed partial class ResearchSystem
         var server = servers[0];
         RegisterClient(uid, server, component, server);
     }
-    // Orion-End
+    // RW-End
 
     private void UpdateClientInterface(EntityUid uid, ResearchClientComponent? component = null)
     {

@@ -10,8 +10,8 @@ namespace Content.Shared.Cargo.Components;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class CashComponent : Component
 {
-    // Orion-Start
+    // RW-Start
     [DataField]
     public int Value = 1;
-    // Orion-End
+    // RW-End
 }

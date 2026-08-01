@@ -683,7 +683,7 @@ public sealed class SpellsSystem : SharedSpellsSystem
         _teleport.RandomTeleport(ev.Performer, ev.Radius);
     }
 
-/* // Orion-Edit
+/* // RW-Edit
     protected override void Rathen(RathenEvent ev)
     {
         base.Rathen(ev);

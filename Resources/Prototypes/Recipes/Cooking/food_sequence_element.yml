@@ -1341,7 +1341,7 @@
 
 # Arachnid Plushie
 
-# Orion-Edit: Plushie removed
+# RW-Edit: Plushie removed
 #- type: foodSequenceElement
 #  id: ArachnidPlushie
 #  scale: 0.8, 0.8
@@ -1385,7 +1385,7 @@
 
 #Diona Plushie
 
-# Orion-Edit: Plushie removed
+# RW-Edit: Plushie removed
 #- type: foodSequenceElement
 #  id: DionaPlushie
 #  scale: 0.8, 0.8
@@ -1531,7 +1531,7 @@
 
 #Human Plushie
 
-# Orion-Edit: Plushie removed
+# RW-Edit: Plushie removed
 #- type: foodSequenceElement
 #  id: HumanPlushie
 #  scale: 0.8, 0.8

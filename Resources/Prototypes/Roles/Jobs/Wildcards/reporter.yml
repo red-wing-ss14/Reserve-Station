@@ -8,10 +8,10 @@
   startingGear: ReporterGear
   icon: "JobIconReporter"
   goobcoins: 15 #Goob content
-  # Orion-Start
+  # RW-Start
   salary: 40
   payrollDepartmentAccount: Service
-  # Orion-End
+  # RW-End
   supervisors: job-supervisors-hop
   access:
   - Service

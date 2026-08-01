@@ -30,7 +30,7 @@
     raffle:
       settings: default
     requirements: # Goobstation - ghost roles requirements
-    - !type:DiscordLinkRequirement # Amour edit
+    - !type:DiscordLinkRequirement # RW edit
   - type: GhostRoleMobSpawner
     prototype: MobRatKing
   - type: Sprite
@@ -121,7 +121,7 @@
     - MindRoleLoneops
     - MindRoleGhostRoleSoloAntagonist # Goobstation? Remove probably. todo marty
     requirements: # Goobstation - ghost roles requirements
-    - !type:DiscordLinkRequirement # Amour edit
+    - !type:DiscordLinkRequirement # RW edit
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
@@ -178,7 +178,7 @@
     - MindRoleDragon
     - MindRoleGhostRoleSoloAntagonistGoob
     requirements: # Goobstation - ghost roles requirements
-    - !type:DiscordLinkRequirement # Amour edit
+    - !type:DiscordLinkRequirement # RW edit
   - type: Sprite
     layers:
     - state: green
@@ -200,7 +200,7 @@
     raffle:
       settings: default
     requirements: # Goobstation - ghost roles requirements
-    - !type:DiscordLinkRequirement # Amour edit
+    - !type:DiscordLinkRequirement # RW edit
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
@@ -255,7 +255,7 @@
     raffle:
       settings: default
     requirements: # Goobstation - ghost roles requirements
-    - !type:DiscordLinkRequirement # Amour edit
+    - !type:DiscordLinkRequirement # RW edit
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:

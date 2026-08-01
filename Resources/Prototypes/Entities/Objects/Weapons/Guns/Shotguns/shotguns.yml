@@ -24,8 +24,8 @@
   - type: AmmoCounter
   - type: Gun
     fireRate: 2
-    projectileSpeed: 30 # Orion
-    cameraRecoilScalar: 2 # Orion
+    projectileSpeed: 30 # RW
+    cameraRecoilScalar: 2 # RW
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -37,7 +37,7 @@
     whitelist:
       tags:
       - ShellShotgun
-    capacity: 9 # Orion-Edit: 7 > 9
+    capacity: 9 # RW-Edit: 7 > 9
     proto: ShellShotgun
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
@@ -105,19 +105,19 @@
   - type: AmmoCounter
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
-    fireRate: 2 # Amour edit: 3 > 2; Goobstation edit
-    cameraRecoilScalar: 3 # Orion
+    fireRate: 2 # RW edit: 3 > 2; Goobstation edit
+    cameraRecoilScalar: 3 # RW
     selectedMode: FullAuto
     availableModes:
     - FullAuto
     soundGunshot:
-      collection: AutoShotgunShot # Orion-Edit
+      collection: AutoShotgunShot # RW-Edit
     soundEmpty:
-      path: /Audio/_Orion/Weapons/Guns/Shotguns/v51_empty.ogg # Orion-Edit
+      path: /Audio/_RW/Weapons/Guns/Shotguns/v51_empty.ogg # RW-Edit
   - type: ItemSlots
     slots:
       gun_magazine:
-#        name: Magazine # Orion-Edit: Localization
+#        name: Magazine # RW-Edit: Localization
         startingItem: MagazineShotgun
         priority: 2
         whitelist:
@@ -158,9 +158,9 @@
     sprite: Objects/Weapons/Guns/Shotguns/db_shotgun_inhands_64x.rsi
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
-    fireRate: 2 # Amour edit: 3 > 2
+    fireRate: 2 # RW edit: 3 > 2
   - type: GunSpreadModifier
-    spread: 0.7 # Amour edit: 0.6 > 0.7
+    spread: 0.7 # RW edit: 0.6 > 0.7
   - type: BallisticAmmoProvider
     capacity: 2
   - type: Construction
@@ -185,7 +185,7 @@
   components: # intend for Enforcer to have wider choke for semi-auto function
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
-    scale: 1.2, 1.2 # Orion
+    scale: 1.2, 1.2 # RW
   - type: Clothing
     sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
   - type: Item
@@ -193,12 +193,12 @@
     shape: # Goobstation
     - 0,0,4,1
   - type: BallisticAmmoProvider
-    capacity: 9 # Amour edit: 8 > 9; Orion
+    capacity: 9 # RW edit: 8 > 9; Orion
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
-    fireRate: 1.2 # Amour edit: 1.7 > 1.2; Goobstation
-    soundGunshot: # Orion
-      path: /Audio/_Orion/Weapons/Guns/Shotguns/t35.ogg
+    fireRate: 1.2 # RW edit: 1.7 > 1.2; Goobstation
+    soundGunshot: # RW
+      path: /Audio/_RW/Weapons/Guns/Shotguns/t35.ogg
 
 - type: entity
   parent: WeaponShotgunEnforcer
@@ -212,31 +212,31 @@
   name: Kammerer
   parent: [BaseWeaponShotgun, BaseGunWieldable, BaseSecurityContraband]
   id: WeaponShotgunKammerer
-  description: An old and faithful pump action, the Kammerer is cheap, light, and would probably still function if you left it in the burn chamber for a week. Popular for civilian use, and loved by NanoTrasen for its minuscule price tag. Loads 12 Gauge rounds. # Goobstation # Orion-Edit
+  description: An old and faithful pump action, the Kammerer is cheap, light, and would probably still function if you left it in the burn chamber for a week. Popular for civilian use, and loved by NanoTrasen for its minuscule price tag. Loads 12 Gauge rounds. # Goobstation # RW-Edit
   components: # intend for Kammerer to have tighter choke for slower fire rate and/or manual cycling
   - type: Item
     sprite: Objects/Weapons/Guns/Shotguns/pump_inhands_64x.rsi
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/pump.rsi
-    scale: 1.2, 1.2 # Orion
+    scale: 1.2, 1.2 # RW
   - type: Clothing
     sprite: Objects/Weapons/Guns/Shotguns/pump.rsi
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
-    fireRate: 1.2 # Amour edit: missing > 1.2
-    soundGunshot: # Orion
-      path: /Audio/_Orion/Weapons/Guns/Shotguns/t35.ogg
+    fireRate: 1.2 # RW edit: missing > 1.2
+    soundGunshot: # RW
+      path: /Audio/_RW/Weapons/Guns/Shotguns/t35.ogg
     # fireRate: 1 # goob
   - type: GunSpreadModifier
-    spread: 0.6 # Amour edit: 0.65 > 0.6; Orion-Edit: 0.6 > 0.65
+    spread: 0.6 # RW edit: 0.65 > 0.6; Orion-Edit: 0.6 > 0.65
   - type: Tag
     tags:
     - WeaponShotgunKammerer
   - type: BallisticAmmoProvider # Goobstation
-    capacity: 6 # Amour edit: missing > 6
+    capacity: 6 # RW edit: missing > 6
     autoCycle: false
-    soundRack: # Orion
-      path: /Audio/_Orion/Weapons/Guns/Shotguns/shotgun_cmb_pump.ogg
+    soundRack: # RW
+      path: /Audio/_RW/Weapons/Guns/Shotguns/shotgun_cmb_pump.ogg
 
 - type: entity
   name: sawn-off shotgun
@@ -254,7 +254,7 @@
     - 0,0,2,0
     sprite: Objects/Weapons/Guns/Shotguns/sawn_inhands_64x.rsi
   - type: Gun
-    fireRate: 2 # Amour edit: 3 > 2
+    fireRate: 2 # RW edit: 3 > 2
   - type: GunSpreadModifier
     spread: 1.4
   - type: BallisticAmmoProvider
@@ -294,7 +294,7 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/Shotguns/hm_pistol.rsi
   - type: Gun
-    fireRate: 1 # Amour edit: 4 > 1
+    fireRate: 1 # RW edit: 4 > 1
   - type: BallisticAmmoProvider
     capacity: 1
   - type: Construction
@@ -335,7 +335,7 @@
     sprite: Objects/Weapons/Guns/Shotguns/improvised_shotgun_inhands_64x.rsi
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
-    fireRate: 1 # Amour edit: 4 > 1; No reason to stifle the firerate since you have to manually reload every time anyways.
+    fireRate: 1 # RW edit: 4 > 1; No reason to stifle the firerate since you have to manually reload every time anyways.
   - type: BallisticAmmoProvider
     capacity: 1
     proto: null

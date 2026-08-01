@@ -6,18 +6,18 @@
   description: job-description-hos
   playTimeTracker: JobHeadOfSecurity
   requirements:
-    # Amour-Edit-Start
+    # RW-Edit-Start
     - !type:RoleTimeRequirement
       role: JobWarden
       time: 25200 # 7 hrs
     - !type:RoleTimeRequirement
       role: JobDetective
       time: 3600 # 1 h
-    # Amour-Edit-End
-    - !type:DiscordLinkRequirement # Amour
-    - !type:AgeRequirement # Amour
+    # RW-Edit-End
+    - !type:DiscordLinkRequirement # RW
+    - !type:AgeRequirement # RW
       requiredAge: 23
-    - !type:SpeciesRequirement # Amour
+    - !type:SpeciesRequirement # RW
       inverted: true
       species:
       - Felinid
@@ -28,14 +28,14 @@
   supervisors: job-supervisors-captain
   canBeAntag: false
   guides: # goobstation
-  # Amour-Edit-Start
+  # RW-Edit-Start
   # - SpaceLaw # Disabled until guide is created
-  # Amour-Edit-End
+  # RW-Edit-End
   goobcoins: 45 #Goob content
-  # Orion-Start
+  # RW-Start
   salary: 120
   payrollDepartmentAccount: Command
-  # Orion-End
+  # RW-End
   access:
   - HeadOfSecurity
   - Command
@@ -63,11 +63,11 @@
     id: HoSPDA
     #gloves: ClothingHandsGlovesCombat - Goobstation, moved to loadouts
     ears: ClothingHeadsetAltSecurity
-    pocket1: WeaponDisabler # Orion-Edit: PistolMk58 > Disabler
+    pocket1: WeaponDisabler # RW-Edit: PistolMk58 > Disabler
   storage:
     back:
     - Flash
-#    - MagazinePistol # Orion-Edit: Now in loadout
+#    - MagazinePistol # RW-Edit: Now in loadout
 
 - type: chameleonOutfit
   id: HeadOfSecurityChameleonOutfit

@@ -17,7 +17,7 @@
       - UpgradedMachine
     # ALWAYS add UpgradedMachine to components in inheritors
 
-# Orion-Edit: Redundant
+# RW-Edit: Redundant
 #- type: entity
 #  parent: BaseLatheUpgradeKit
 #  id: LatheUpgradeKitHyper
@@ -38,7 +38,7 @@
 #        SpaceLube: 0.8 # being faster means less heat so lube needs to be nerfed
 #        SpaceGlue: 5 # no change from normal lathe, overheat!!!
 
-# Orion-Edit: Redundant
+# RW-Edit: Redundant
 #- type: entity
 #  parent: BaseLatheUpgradeKit
 #  id: LatheUpgradeKitCryo

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-/* // Orion-Edit: Removed
+/* // RW-Edit: Removed
 using Content.Goobstation.Common.MisandryBox;
 using Content.Goobstation.Shared.MisandryBox.Smites;
 using Content.Server.Chat.Systems;
@@ -92,7 +92,7 @@ public sealed class CatEmoteSpamCountermeasureSystem : EntitySystem
 
     private void OnEmoteEvent(Entity<SpeechComponent> ent, ref EmoteEvent args)
     {
-        if (args.Emote.Category is EmoteCategory.Vocal && args.Voluntary) // Orion-Edit: Removed Fart category
+        if (args.Emote.Category is EmoteCategory.Vocal && args.Voluntary) // RW-Edit: Removed Fart category
             Add(ent.Owner);
     }
 

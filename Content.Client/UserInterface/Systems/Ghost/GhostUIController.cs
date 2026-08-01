@@ -102,7 +102,7 @@ public sealed class GhostUIController : UIController, IOnSystemChanged<GhostSyst
         if (Gui?.TargetWindow is not { } window)
             return;
 
-        window.UpdateWarps(msg.Players, msg.Places, msg.Antagonists); // Orion-Edit
+        window.UpdateWarps(msg.Players, msg.Places, msg.Antagonists); // RW-Edit
         window.Populate();
     }
 
@@ -134,7 +134,7 @@ public sealed class GhostUIController : UIController, IOnSystemChanged<GhostSyst
         Gui.ThunderdomePressed += ThunderdomePressed; // Goobstation - Thunderdome
         Gui.TargetWindow.WarpClicked += OnWarpClicked;
         Gui.TargetWindow.OnGhostnadoClicked += OnGhostnadoClicked;
-        Gui.ReturnToRoundPressed += ReturnToRound; // Orion
+        Gui.ReturnToRoundPressed += ReturnToRound; // RW
 
         UpdateGui();
     }
@@ -149,7 +149,7 @@ public sealed class GhostUIController : UIController, IOnSystemChanged<GhostSyst
         Gui.GhostRolesPressed -= GhostRolesPressed;
         Gui.ThunderdomePressed -= ThunderdomePressed; // Goobstation - Thunderdome
         Gui.TargetWindow.WarpClicked -= OnWarpClicked;
-        Gui.ReturnToRoundPressed -= ReturnToRound; // Orion
+        Gui.ReturnToRoundPressed -= ReturnToRound; // RW
 
         Gui.Hide();
     }
@@ -159,12 +159,12 @@ public sealed class GhostUIController : UIController, IOnSystemChanged<GhostSyst
         _system?.ReturnToBody();
     }
 
-    // Orion-Start
+    // RW-Start
     private void ReturnToRound()
     {
         _system?.ReturnToRound();
     }
-    // Orion-End
+    // RW-End
 
     private void RequestWarps()
     {

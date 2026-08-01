@@ -42,7 +42,7 @@
     mindRoles:
     - MindRoleGhostRoleSoloAntagonist
     requirements:
-      - !type:DiscordLinkRequirement # Amour edit
+      - !type:DiscordLinkRequirement # RW edit
   - type: AbductorScientist
   - type: SurgeryIgnoreClothing
   - type: Sanitized
@@ -63,7 +63,7 @@
     mindRoles:
     - MindRoleGhostRoleTeamAntagonist
     requirements:
-      - !type:DiscordLinkRequirement # Amour edit
+      - !type:DiscordLinkRequirement # RW edit
   - type: AbductorScientist
   - type: SurgeryIgnoreClothing
   - type: Sanitized
@@ -84,7 +84,7 @@
     mindRoles:
     - MindRoleGhostRoleTeamAntagonist
     requirements:
-      - !type:DiscordLinkRequirement # Amour edit
+      - !type:DiscordLinkRequirement # RW edit
   - type: RandomMetadata
     nameSegments:
       - AbductorAgentPrefix
@@ -175,7 +175,7 @@
     raffle:
       settings: default
     requirements:
-      - !type:DiscordLinkRequirement # Amour edit
+      - !type:DiscordLinkRequirement # RW edit
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
@@ -210,7 +210,7 @@
     raffle:
       settings: default
     requirements:
-      - !type:DiscordLinkRequirement # Amour edit
+      - !type:DiscordLinkRequirement # RW edit
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
@@ -245,7 +245,7 @@
     raffle:
       settings: default
     requirements:
-      - !type:DiscordLinkRequirement # Amour edit
+      - !type:DiscordLinkRequirement # RW edit
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:

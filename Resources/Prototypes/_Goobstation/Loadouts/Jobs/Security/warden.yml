@@ -48,6 +48,6 @@
   id: WardenCoatBlue
   equipment:
     outerClothing: ClothingOuterCoatWardenBlue
-#  effects: # Orion-Edit: Removed
+#  effects: # RW-Edit: Removed
 #  - !type:GroupLoadoutEffect
 #    proto: SeniorWarden

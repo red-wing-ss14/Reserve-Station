@@ -18,37 +18,37 @@ public sealed partial class FancyResearchConsoleItem : LayoutContainer
     // Public fields
     public TechnologyPrototype Prototype;
     public Action<TechnologyPrototype, ResearchAvailability>? SelectAction;
-    private ResearchAvailability _availability; // Orion-Edit: Was public
+    private ResearchAvailability _availability; // RW-Edit: Was public
 
     // Some visuals
-    private Color _color; // Orion-Edit
-    private Color _borderColor; // Orion-Edit
-    private Color _hoveredColor; // Orion-Edit
+    private Color _color; // RW-Edit
+    private Color _borderColor; // RW-Edit
+    private Color _hoveredColor; // RW-Edit
 
-    public FancyResearchConsoleItem(TechnologyPrototype proto, SpriteSystem sprite, IPrototypeManager prototypeManager, ResearchAvailability availability) // Orion-Edit
+    public FancyResearchConsoleItem(TechnologyPrototype proto, SpriteSystem sprite, IPrototypeManager prototypeManager, ResearchAvailability availability) // RW-Edit
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
 
-        _availability = availability; // Orion-Edit
+        _availability = availability; // RW-Edit
         Prototype = proto;
 
         ResearchDisplay.Texture = sprite.Frame0(proto.Icon);
 
-        // Orion-Start
+        // RW-Start
         if (prototypeManager.TryIndex(proto.Discipline, out var discipline))
             DisciplineDisplay.Texture = sprite.Frame0(discipline.Icon);
-        // Orion-End
+        // RW-End
 
         Button.OnPressed += Selected;
         Button.OnDrawModeChanged += UpdateColor;
 
-        (_color, _hoveredColor, _borderColor) = availability switch // Orion-Edit
+        (_color, _hoveredColor, _borderColor) = availability switch // RW-Edit
         {
             ResearchAvailability.Researched => (Color.DarkOliveGreen, Color.PaleGreen, Color.LimeGreen),
             ResearchAvailability.Available => (Color.FromHex("#7c7d2a"), Color.FromHex("#ecfa52"), Color.FromHex("#e8fa25")),
             ResearchAvailability.PrereqsMet => (Color.FromHex("#6b572f"), Color.FromHex("#fad398"), Color.FromHex("#cca031")),
-//            ResearchAvailability.Unavailable => (Color.DarkRed, Color.PaleVioletRed, Color.Crimson), // Orion-Edit
+//            ResearchAvailability.Unavailable => (Color.DarkRed, Color.PaleVioletRed, Color.Crimson), // RW-Edit
             _ => (Color.DarkRed, Color.PaleVioletRed, Color.Crimson),
         };
 
@@ -58,9 +58,9 @@ public sealed partial class FancyResearchConsoleItem : LayoutContainer
     private void UpdateColor()
     {
         var panel = (StyleBoxFlat) Panel.PanelOverride!;
-        panel.BackgroundColor = Button.IsHovered ? _hoveredColor : _color; // Orion-Edit
+        panel.BackgroundColor = Button.IsHovered ? _hoveredColor : _color; // RW-Edit
 
-        panel.BorderColor = _borderColor; // Orion-Edit
+        panel.BorderColor = _borderColor; // RW-Edit
     }
 
     protected override void ExitedTree()
@@ -72,19 +72,19 @@ public sealed partial class FancyResearchConsoleItem : LayoutContainer
 
     private void Selected(BaseButton.ButtonEventArgs args)
     {
-        SelectAction?.Invoke(Prototype, _availability); // Orion-Edit
+        SelectAction?.Invoke(Prototype, _availability); // RW-Edit
     }
 
     public void SetScale(float scale)
     {
-        // Orion-Edit-Start
+        // RW-Edit-Start
         NodeContainer.SetSize = new Vector2(80 * scale, 80 * scale);
 
         var badgeSize = new Vector2(20 * scale, 20 * scale);
         DisciplineBadge.SetSize = badgeSize;
         SetPosition(DisciplineBadge, Vector2.Zero);
         DisciplineDisplay.SetSize = badgeSize;
-        // Orion-Edit-End
+        // RW-Edit-End
     }
 }
 

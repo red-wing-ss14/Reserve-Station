@@ -17,16 +17,16 @@
   supervisors: job-supervisors-security
   canBeAntag: false
   guides: # goobstation
-  # Orion-Edit-Start
+  # RW-Edit-Start
   - SpaceLaw
   # - SOP-Security-Cadet # Disabled until guide is created
   # - SOP-Security # Disabled until guide is created
-  # Orion-Edit-End
+  # RW-Edit-End
   goobcoins: 30 #Goob content
-  # Orion-Start
+  # RW-Start
   salary: 45
   payrollDepartmentAccount: Security
-  # Orion-End
+  # RW-End
   access:
   - Security
   - Brig
@@ -50,12 +50,12 @@
     ears: ClothingHeadsetAltSecurityRegular # Goobstation
     belt: ClothingBeltSecurityFilled
     #pocket1: WeaponDisabler #Goobstation (Disablers in belts)
-#    pocket2: BookSecurity # Orion-Edit: Removed
+#    pocket2: BookSecurity # RW-Edit: Removed
   storage:
     back:
-    - BookSecurity # Orion
+    - BookSecurity # RW
     - Flash
-#    - MagazinePistol # Orion-Edit: Removed
+#    - MagazinePistol # RW-Edit: Removed
 
 - type: chameleonOutfit
   id: SecurityCadetChameleonOutfit

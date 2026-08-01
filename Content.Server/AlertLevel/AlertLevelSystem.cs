@@ -171,21 +171,21 @@ public sealed class AlertLevelSystem : EntitySystem
 
         var stationName = dataComponent.EntityName;
 
-        var name = level.ToUpper(); // Orion-Edit
+        var name = level.ToUpper(); // RW-Edit
 
         if (Loc.TryGetString($"alert-level-{level}", out var locName))
         {
-            name = locName.ToUpper(); // Orion-Edit
+            name = locName.ToUpper(); // RW-Edit
         }
 
-        // Orion-Start
+        // RW-Start
         var instruction = detail.Instruction;
 
         if (Loc.TryGetString($"alert-level-{level}-instructions", out var locInstruction))
         {
             instruction = locInstruction;
         }
-        // Orion-End
+        // RW-End
 
         // Announcement text. Is passed into announcementFull.
         var announcement = detail.Announcement;
@@ -214,7 +214,7 @@ public sealed class AlertLevelSystem : EntitySystem
             }
         }
 
-        // Orion-Start
+        // RW-Start
         var messageTitle = new FormattedMessage();
 
         messageTitle.PushTag(new MarkupNode("examineborder", null, null));
@@ -241,9 +241,9 @@ public sealed class AlertLevelSystem : EntitySystem
         message.AddText(Loc.GetString("announce-border-line"));
         message.PushNewline();
         message.Pop();
-        //Orion-End
+        //RW-End
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         if (announce)
         {
             _chatSystem.DispatchStationAnnouncement(
@@ -254,7 +254,7 @@ public sealed class AlertLevelSystem : EntitySystem
                 colorOverride: detail.Color
             );
         }
-        // Orion-Edit-End
+        // RW-Edit-End
 
         RaiseLocalEvent(new AlertLevelChangedEvent(station, level));
     }

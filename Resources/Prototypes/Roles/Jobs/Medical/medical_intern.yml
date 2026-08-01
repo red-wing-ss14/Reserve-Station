@@ -14,14 +14,14 @@
   icon: "JobIconMedicalIntern"
   supervisors: job-supervisors-medicine
   guides: # goobstation
-#  - MedicalDoctor # Orion-Edit: Removed because dont have this SOP
+#  - MedicalDoctor # RW-Edit: Removed because dont have this SOP
   - Cloning
   - Medicine
   goobcoins: 20 #Goob content
-  # Orion-Start
+  # RW-Start
   salary: 35
   payrollDepartmentAccount: Medical
-  # Orion-End
+  # RW-End
   access:
   - Medical
   - Maintenance

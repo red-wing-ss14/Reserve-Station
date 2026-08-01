@@ -101,12 +101,12 @@
       - map: [ "enum.HumanoidVisualLayers.LLeg" ]
       - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
       - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
-      - map: [ "underwear" ] # Orion
-      - map: [ "undershirt" ] # Orion
+      - map: [ "underwear" ] # RW
+      - map: [ "undershirt" ] # RW
       - map: ["jumpsuit"]
       - map: ["enum.HumanoidVisualLayers.LFoot"]
       - map: ["enum.HumanoidVisualLayers.RFoot"]
-      - map: [ "socks" ] # Orion
+      - map: [ "socks" ] # RW
       - map: [ "enum.HumanoidVisualLayers.LHand" ]
       - map: [ "enum.HumanoidVisualLayers.RHand" ]
       - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
@@ -115,9 +115,9 @@
         state: body-overlay-2
         visible: false
       - map: [ "gloves" ]
-      - map: [ "wrists" ] # Orion
+      - map: [ "wrists" ] # RW
       - map: [ "shoes" ]
-      - map: [ "earsright" ] # Orion
+      - map: [ "earsright" ] # RW
       - map: [ "ears" ]
       - map: [ "eyes" ]
       - map: [ "id" ]
@@ -169,7 +169,7 @@
           32:
             sprite: Mobs/Species/Moth/displacement.rsi
             state: shoes
-      # Orion-Start
+      # RW-Start
       underwear:
         sizeMaps:
           32:
@@ -185,7 +185,7 @@
           32:
             sprite: Mobs/Species/Moth/displacement.rsi
             state: hand
-      # Orion-End
+      # RW-End
     displacements:
       jumpsuit:
         sizeMaps:
@@ -212,7 +212,7 @@
           32:
             sprite: Mobs/Species/Moth/displacement.rsi
             state: shoes
-      # Orion-Start
+      # RW-Start
       underwear:
         sizeMaps:
           32:
@@ -228,7 +228,7 @@
           32:
             sprite: Mobs/Species/Moth/displacement.rsi
             state: hand
-      # Orion-End
+      # RW-End
   - type: Fixtures # Goob edit - make moths lighter
     fixtures: # TODO: This needs a second fixture just for mob collisions.
       fix1:
@@ -281,7 +281,7 @@
           32:
             sprite: Mobs/Species/Moth/displacement.rsi
             state: shoes
-      # Orion-Start
+      # RW-Start
       underwear:
         sizeMaps:
           32:
@@ -297,7 +297,7 @@
           32:
             sprite: Mobs/Species/Moth/displacement.rsi
             state: hand
-      # Orion-End
+      # RW-End
     displacements:
       jumpsuit:
         sizeMaps:
@@ -324,7 +324,7 @@
           32:
             sprite: Mobs/Species/Moth/displacement.rsi
             state: shoes
-      # Orion-Start
+      # RW-Start
       underwear:
         sizeMaps:
           32:
@@ -340,4 +340,4 @@
           32:
             sprite: Mobs/Species/Moth/displacement.rsi
             state: hand
-      # Orion-End
+      # RW-End

@@ -34,7 +34,7 @@ public sealed class NotJobRequirementSystem : EntitySystem
         var hasJob = false;
         if (comp.Jobs.Count > 0)
         {
-            // Amour edit: list-based exclusion takes priority when provided.
+            // RW edit: list-based exclusion takes priority when provided.
             hasJob = comp.Jobs.Contains(proto.ID);
         }
         else

@@ -319,7 +319,7 @@
     entries:
       CottonBurger: LampPlushie
 
-# Orion-Edit: NC license sprites
+# RW-Edit: NC license sprites
 #- type: entity
 #  parent: BasePlushie
 #  id: PlushieArachind
@@ -673,7 +673,7 @@
     entries:
       CottonBurger: InversedLizardPlushie
 
-# Orion-Edit: NC license sprites
+# RW-Edit: NC license sprites
 #- type: entity
 #  parent: BasePlushie
 #  id: PlushieDiona
@@ -1289,7 +1289,7 @@
     entries:
       CottonBurger: PenguinPlushie
 
-# Orion-Edit: NC license sprites
+# RW-Edit: NC license sprites
 #- type: entity
 #  parent: BasePlushie
 #  id: PlushieHuman

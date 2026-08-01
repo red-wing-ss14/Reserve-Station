@@ -131,19 +131,19 @@
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
     - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
     - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
-    - map: [ "underwear" ] # Orion
-    - map: [ "undershirt" ] # Orion
+    - map: [ "underwear" ] # RW
+    - map: [ "undershirt" ] # RW
     - map: [ "jumpsuit" ]
     - map: [ "enum.HumanoidVisualLayers.LFoot" ]
     - map: [ "enum.HumanoidVisualLayers.RFoot" ]
-    # Orion-Edit-End
-    - map: [ "socks" ] # Orion
+    # RW-Edit-End
+    - map: [ "socks" ] # RW
     - map: [ "enum.HumanoidVisualLayers.LHand" ]
     - map: [ "enum.HumanoidVisualLayers.RHand" ]
     - map: [ "gloves" ]
-    - map: [ "wrists" ] # Orion
+    - map: [ "wrists" ] # RW
     - map: [ "shoes" ]
-    - map: [ "earsright" ] # Orion
+    - map: [ "earsright" ] # RW
     - map: [ "ears" ]
     - map: [ "eyes" ]
     - map: [ "id" ]
@@ -221,7 +221,7 @@
           32:
             sprite: Mobs/Species/Vox/displacement.rsi
             state: outerClothing
-      # Orion-Start
+      # RW-Start
       undershirt:
         sizeMaps:
           32:
@@ -247,7 +247,7 @@
           32:
             sprite: Mobs/Species/Vox/displacement.rsi
             state: hand
-      # Orion-End
+      # RW-End
   # Goobstation start - voxes are uncloneable but do not rot - all the stuff from BaseMobSpeciesOrganic
   - type: Uncloneable
   - type: Absorbable # Goobstation - changelings
@@ -396,7 +396,7 @@
           32:
             sprite: Mobs/Species/Vox/displacement.rsi
             state: outerClothing
-      # Orion-Start
+      # RW-Start
       undershirt:
         sizeMaps:
           32:
@@ -422,7 +422,7 @@
           32:
             sprite: Mobs/Species/Vox/displacement.rsi
             state: hand
-      # Orion-End
+      # RW-End
   - type: Hands
     leftHandDisplacement:
       sizeMaps:

@@ -15,7 +15,7 @@
     chest:
       part: ChestReptilian
       organs:
-        heart: OrganAnthroAnimalHeart # Orion-Edit
+        heart: OrganAnthroAnimalHeart # RW-Edit
         lungs: OrganHumanLungs
       connections:
       - right arm
@@ -29,7 +29,7 @@
       - left leg
       organs:
         stomach: OrganReptilianStomach
-        liver: OrganAnthroAnimalLiver # Orion-Edit
+        liver: OrganAnthroAnimalLiver # RW-Edit
         kidneys: OrganHumanKidneys
     right arm:
       part: RightArmReptilian

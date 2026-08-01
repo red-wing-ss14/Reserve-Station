@@ -35,7 +35,7 @@
   - type: ItemSlots
     slots:
       item:
-#        name: Cartridge # Orion-Edit: Localization
+#        name: Cartridge # RW-Edit: Localization
         whitelist:
           tags:
           - AutoinjectorCartridge
@@ -106,7 +106,7 @@
   - type: ItemSlots
     slots:
       item:
-#        name: Cartridge # Orion-Edit: Localization
+#        name: Cartridge # RW-Edit: Localization
         whitelist:
           tags:
           - AutoinjectorCartridge

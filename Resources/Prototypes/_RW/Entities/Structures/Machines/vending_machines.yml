@@ -1,0 +1,117 @@
+﻿- type: entity
+  parent: VendingMachine
+  id: VendingMachineOld
+  abstract: true
+  components:
+  - type: VendingMachine
+    soundVend:
+      path: /Audio/Machines/machine_vend.ogg
+      params:
+        variation: 0.15
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineInteQDrobe
+  name: InteQDrobe
+  description: Wardrobe machine encoded by the InteQ, contains elite outfits for various operations.
+  components:
+  - type: VendingMachine
+    pack: InteQDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Advertise
+    pack: InteQDrobeAds
+  - type: Sprite
+    sprite: _RW/Structures/Machines/VendingMachines/inteqdrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#FF8C00"
+  - type: AccessReader
+    access: [["InteQVanguardLeader"], ["InteQVanguard"]]
+
+- type: entity
+  parent: VendingMachineInteQDrobe
+  id: VendingMachineInteQDrobeNerf
+  suffix: For station hiden places
+  components:
+  - type: VendingMachine
+    pack: InteQDrobeNerfInventory
+
+- type: entity
+  parent: VendingMachine
+  id: CaptainDrobe
+  name: CaptainDrobe
+  description: Stylish uniform, for a strong leader!
+  components:
+  - type: VendingMachine
+    pack: CaptainDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+  - type: Sprite
+    sprite: _RW/Structures/Machines/VendingMachines/captaindrobe.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    color: "#05DAF2"
+#  - type: AccessReader
+#    access: [["Captain"]]
+  # RW-Start
+  - type: VendingMachinePricing
+    discountDepartment: Command
+    defaultPrice: 100
+    extraPrice: 200
+  # RW-End
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineBitrunning
+  name: Bitrunning Supplies Order
+  description: A supplies order vending that exchanges bitrunning points for bitrunning goods.
+  components:
+  - type: VendingMachine
+    pack: EmptyVendingMachineInventory
+    offState: off
+    normalState: normal-unshaded
+  - type: Sprite
+    sprite: _RW/Structures/Machines/VendingMachines/bitrun.rsi
+    noRot: true
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    color: "#4f8dcf"
+    autoRot: true
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
+  - type: ShopVendor
+    pack: BitrunningVendorInventory
+  - type: UserInterface
+    interfaces:
+      enum.VendingMachineUiKey.Key:
+        type: ShopVendorBoundUserInterface
+  - type: BitrunningPointsVendor

@@ -66,7 +66,7 @@ public interface IBanManager
     }
 
     /// <summary>
-    /// Amour add: Applies an edited server ban to matching connected players.
+    /// RW add: Applies an edited server ban to matching connected players.
     /// </summary>
     /// <param name="banId">The id of the edited server ban.</param>
     public Task HandleServerBanChangedAsync(int banId);

@@ -1,0 +1,37 @@
+- type: entity
+  parent: BaseStructure
+  id: TatamiBase
+  abstract: true
+  components:
+  - type: Sprite
+    drawdepth: FloorTiles
+    sprite: _RW/Structures/Furniture/tatami.rsi
+  - type: Tag
+    tags: [ Carpet ]
+  - type: Physics
+    canCollide: false
+  - type: Fixtures
+
+- type: entity
+  parent: TatamiBase
+  id: TatamiSingle
+  name: tatami square
+  description: It's tatami, but a square.
+  components:
+  - type: Sprite
+    state: tatami_1x1
+  - type: Construction
+    graph: tatami
+    node: tatamiSquare
+
+- type: entity
+  parent: TatamiBase
+  id: TatamiMat
+  name: tatami mat
+  description: It's a portion of a tatami mat.
+  components:
+  - type: Sprite
+    state: tatami_1x1P
+  - type: Construction
+    graph: tatami
+    node: tatamiPart

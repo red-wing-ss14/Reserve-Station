@@ -15,7 +15,7 @@ public sealed partial class BlobRuleComponent : Component
     public SoundSpecifier? CriticalAudio = new SoundPathSpecifier("/Audio/StationEvents/blobin_time.ogg");
 
     [ViewVariables]
-    public List<(EntityUid mindId, MindComponent mind, EntityUid blobId)> Blobs = new(); //BlobRoleComponent // Amour fix
+    public List<(EntityUid mindId, MindComponent mind, EntityUid blobId)> Blobs = new(); //BlobRoleComponent // RW fix
 
     [ViewVariables]
     public BlobStage Stage = BlobStage.Default;

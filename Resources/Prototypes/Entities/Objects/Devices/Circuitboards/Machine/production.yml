@@ -10,11 +10,11 @@
       prototype: Autolathe
       stackRequirements:
         Glass: 1
-      partRequirements: # Orion
+      partRequirements: # RW
         MatterBin: 3
         Servo: 1
 
-# Orion-Edit: Redundant
+# RW-Edit: Redundant
 #- type: entity
 #  parent: BaseMachineCircuitboard
 #  id: AutolatheHyperConvectionMachineCircuitboard
@@ -29,7 +29,7 @@
 #      Igniter:
 #        amount: 1
 #        defaultPrototype: Igniter
-#    partRequirements: # Orion
+#    partRequirements: # RW
 #      Servo: 3
 
 - type: entity
@@ -46,11 +46,11 @@
       GlassBeaker:
         amount: 2
         defaultPrototype: Beaker
-    partRequirements: # Orion
+    partRequirements: # RW
       MatterBin: 2
       Servo: 2
 
-# Orion-Edit: Redundant
+# RW-Edit: Redundant
 #- type: entity
 #  parent: BaseMachineCircuitboard
 #  id: ProtolatheHyperConvectionMachineCircuitboard
@@ -68,7 +68,7 @@
 #      Igniter:
 #        amount: 1
 #        defaultPrototype: Igniter
-#    partRequirements: # Orion
+#    partRequirements: # RW
 #      MatterBin: 2
 #      Servo: 2
 
@@ -84,7 +84,7 @@
     prototype: Biofabricator
     stackRequirements:
       Glass: 1
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 4
 
 - type: entity
@@ -101,7 +101,7 @@
         GlassBeaker:
           amount: 2
           defaultPrototype: Beaker
-      partRequirements: # Orion
+      partRequirements: # RW
         MatterBin: 2
         Servo: 2
 
@@ -115,7 +115,7 @@
       state: security
     - type: MachineBoard
       prototype: AmmoTechFab
-      partRequirements: # Orion
+      partRequirements: # RW
         MatterBin: 2
         Servo: 2
 
@@ -133,7 +133,7 @@
         GlassBeaker:
           amount: 2
           defaultPrototype: Beaker
-      partRequirements: # Orion
+      partRequirements: # RW
         MatterBin: 2
         Servo: 2
     - type: StealTarget
@@ -152,11 +152,11 @@
       GlassBeaker:
         amount: 2
         defaultPrototype: Beaker
-    partRequirements: # Orion
+    partRequirements: # RW
       MatterBin: 1
       Servo: 1
 
-# Orion-Edit: Redundant
+# RW-Edit: Redundant
 #- type: entity
 #  parent: BaseMachineCircuitboard
 #  id: CircuitImprinterHyperConvectionMachineCircuitboard
@@ -174,7 +174,7 @@
 #      Igniter:
 #        amount: 1
 #        defaultPrototype: Igniter
-#    partRequirements: # Orion
+#    partRequirements: # RW
 #      MatterBin: 1
 #      Servo: 1
 
@@ -188,8 +188,8 @@
   - type: MachineBoard
     prototype: ExosuitFabricator
     stackRequirements:
-      Glass: 1 # Orion-Edit: 5 > 1
-    partRequirements: # Orion
+      Glass: 1 # RW-Edit: 5 > 1
+    partRequirements: # RW
       MatterBin: 2
       Servo: 1
       MicroLaser: 1
@@ -225,12 +225,12 @@
       GlassBeaker:
         amount: 1
         defaultPrototype: Beaker
-    # Orion-Start
+    # RW-Start
     stackRequirements:
       Cable: 1
       Glass: 1
-    # Orion-End
-    partRequirements: # Orion
+    # RW-End
+    partRequirements: # RW
       MatterBin: 1
       Servo: 1
 
@@ -241,7 +241,7 @@
   components:
   - type: MachineBoard
     prototype: UniformPrinter
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 3
 
 - type: entity
@@ -259,7 +259,7 @@
         GlassBeaker:
           amount: 1
           defaultPrototype: Beaker
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 2
 
 - type: entity
@@ -294,7 +294,7 @@
       prototype: MachineArtifactAnalyzer
       stackRequirements:
         Glass: 5
-      partRequirements: # Orion
+      partRequirements: # RW
         Capacitor: 1
 
 - type: entity
@@ -310,7 +310,7 @@
     stackRequirements:
       Glass: 1
       Steel: 5
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 2
 
 - type: entity
@@ -326,7 +326,7 @@
       stackRequirements:
         Cable: 1
         PlasmaGlass: 10
-      partRequirements: # Orion
+      partRequirements: # RW
         Servo: 3
 
 - type: entity
@@ -343,7 +343,7 @@
       Cable: 5
       PlasmaGlass: 15
       MetalRod: 4
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 3
 
 - type: entity
@@ -359,7 +359,7 @@
       stackRequirements:
         PlasmaGlass: 5
         Cable: 5
-      partRequirements: # Orion
+      partRequirements: # RW
         Servo: 7
 
 - type: entity
@@ -375,7 +375,7 @@
       stackRequirements:
         Cable: 1
         Glass: 1
-      partRequirements: # Orion
+      partRequirements: # RW
         Servo: 2
 
 - type: entity
@@ -389,9 +389,9 @@
   - type: MachineBoard
     prototype: GasThermoMachineFreezer
     stackRequirements:
-      Cable: 1 # Orion-Edit: 5 > 1
-      Glass: 1 # Orion
-    partRequirements: # Orion
+      Cable: 1 # RW-Edit: 5 > 1
+      Glass: 1 # RW
+    partRequirements: # RW
       MatterBin: 2
       MicroLaser: 2
   - type: Construction
@@ -410,9 +410,9 @@
   - type: MachineBoard
     prototype: GasThermoMachineHeater
     stackRequirements:
-      Cable: 1 # Orion-Edit: 5 > 1
-      Glass: 1 # Orion
-    partRequirements: # Orion
+      Cable: 1 # RW-Edit: 5 > 1
+      Glass: 1 # RW
+    partRequirements: # RW
       MatterBin: 2
       MicroLaser: 2
   - type: Construction
@@ -420,7 +420,7 @@
     deconstructionTarget: null
     node: heater
 
-# Orion-Edit: Redundant
+# RW-Edit: Redundant
 #- type: entity
 #  parent: BaseMachineCircuitboard
 #  id: HellfireFreezerMachineCircuitBoard
@@ -433,14 +433,14 @@
 #    prototype: GasThermoMachineHellfireFreezer
 #    stackRequirements:
 #      Plasma: 1
-#    partRequirements: # Orion
+#    partRequirements: # RW
 #      Servo: 4
 #  - type: Construction
 #    deconstructionTarget: null
 #    graph: ThermomachineBoard
 #    node: hellfirefreezer
 
-# Orion-Edit: Redundant
+# RW-Edit: Redundant
 #- type: entity
 #  parent: BaseMachineCircuitboard
 #  id: HellfireHeaterMachineCircuitBoard
@@ -453,7 +453,7 @@
 #    prototype: GasThermoMachineHellfireHeater
 #    stackRequirements:
 #      Plasma: 1
-#    partRequirements: # Orion
+#    partRequirements: # RW
 #      Servo: 4
 #  - type: Construction
 #    graph: ThermomachineBoard
@@ -472,7 +472,7 @@
     prototype: BaseGasCondenser
     stackRequirements:
       Glass: 1
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 1
 
 - type: entity
@@ -488,7 +488,7 @@
     stackRequirements:
       Cable: 5
       Glass: 2
-    partRequirements: # Orion
+    partRequirements: # RW
       MicroLaser: 2
       Capacitor: 2
 
@@ -503,8 +503,8 @@
   - type: MachineBoard
     prototype: SpaceHeater
     stackRequirements:
-      Cable: 3 # Orion-Edit: 5 > 3
-    partRequirements: # Orion
+      Cable: 3 # RW-Edit: 5 > 3
+    partRequirements: # RW
       MicroLaser: 2
       Capacitor: 2
 
@@ -520,8 +520,8 @@
       prototype: CloningPod
       stackRequirements:
         Glass: 1
-#        Cable: 1 # Orion-Edit
-      partRequirements: # Orion
+#        Cable: 1 # RW-Edit
+      partRequirements: # RW
         Capacitor: 1
 
 - type: entity
@@ -537,7 +537,7 @@
       stackRequirements:
         Glass: 5
         Cable: 1
-      partRequirements: # Orion
+      partRequirements: # RW
         Servo: 1
 
 - type: entity
@@ -565,7 +565,7 @@
       stackRequirements:
         Glass: 5
         Cable: 1
-      partRequirements: # Orion
+      partRequirements: # RW
         MatterBin: 2
         MicroLaser: 1
 
@@ -586,7 +586,7 @@
         GlassBeaker:
           amount: 2
           defaultPrototype: Beaker
-      partRequirements: # Orion
+      partRequirements: # RW
         Servo: 1
 
 - type: entity
@@ -601,18 +601,18 @@
       prototype: ChemDispenserEmpty
       stackRequirements:
         Glass: 1
-#        Steel: 3 # Orion-Edit
-      # Orion-Start
+#        Steel: 3 # RW-Edit
+      # RW-Start
       componentRequirements:
         PowerCell:
           amount: 1
           defaultPrototype: PowerCellSmall
-      # Orion-End
+      # RW-End
       tagRequirements:
         GlassBeaker:
           amount: 2
           defaultPrototype: Beaker
-      partRequirements: # Orion
+      partRequirements: # RW
         Servo: 2
         Capacitor: 2
 
@@ -633,7 +633,7 @@
         amount: 2
         defaultPrototype: KitchenKnife
         examineName: construction-insert-info-examine-name-knife
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 3
 
 - type: entity
@@ -648,13 +648,13 @@
       prototype: HydroponicsTrayEmpty
       stackRequirements:
         # replacing the console screen
-        Glass: 1 # Orion-Edit: 5 > 1
-#        Cable: 2 # Orion-Edit
+        Glass: 1 # RW-Edit: 5 > 1
+#        Cable: 2 # RW-Edit
       tagRequirements:
         GlassBeaker:
           amount: 2
           defaultPrototype: Beaker
-      partRequirements: # Orion
+      partRequirements: # RW
         MatterBin: 2
         Servo: 2
 
@@ -671,8 +671,8 @@
       stackRequirements:
         # replacing the console screen
         Glass: 1
-#        Cable: 2 # Orion-Edit
-      partRequirements: # Orion
+#        Cable: 2 # RW-Edit
+      partRequirements: # RW
         Servo: 1
 
 - type: entity
@@ -687,12 +687,12 @@
     - type: MachineBoard
       prototype: SMESBasicEmpty
       stackRequirements:
-        CableHV: 5 # Orion-Edit: 10 > 5
+        CableHV: 5 # RW-Edit: 10 > 5
       componentRequirements:
-        MegaCell: # Orion-Edit
-          amount: 5 # Orion-Edit: 4 > 5
-          defaultPrototype: MegaCellSmall # Orion-Edit
-      partRequirements: # Orion
+        MegaCell: # RW-Edit
+          amount: 5 # RW-Edit: 4 > 5
+          defaultPrototype: MegaCellSmall # RW-Edit
+      partRequirements: # RW
         Capacitor: 1
 
 - type: entity
@@ -709,10 +709,10 @@
     stackRequirements:
       CableHV: 20
     componentRequirements:
-      MegaCell: # Orion-Edit
+      MegaCell: # RW-Edit
         amount: 4
-        defaultPrototype: MegaCellHigh # Orion-Edit
-    partRequirements: # Orion
+        defaultPrototype: MegaCellHigh # RW-Edit
+    partRequirements: # RW
       Capacitor: 1
 
 - type: entity
@@ -728,7 +728,7 @@
       prototype: PowerCellRecharger
       stackRequirements:
         Cable: 5
-      partRequirements: # Orion
+      partRequirements: # RW
         Capacitor: 1
     - type: PhysicalComposition #Goobstation - Recycle update
       materialComposition:
@@ -755,7 +755,7 @@
       stackRequirements:
         Steel: 5
         Cable: 10
-      partRequirements: # Orion
+      partRequirements: # RW
         Servo: 4
     - type: PhysicalComposition #Goobstation - Recycle update
       materialComposition:
@@ -777,13 +777,13 @@
       prototype: BorgCharger
       stackRequirements:
         Cable: 5
-      # Orion-Start
+      # RW-Start
       componentRequirements:
         PowerCell:
           amount: 1
           defaultPrototype: PowerCellSmall
-      # Orion-End
-      partRequirements: # Orion
+      # RW-End
+      partRequirements: # RW
         Capacitor: 2
         Servo: 1
     - type: PhysicalComposition #Goobstation - Recycle update
@@ -810,7 +810,7 @@
       prototype: WeaponCapacitorRecharger
       stackRequirements:
         CableMV: 5
-      partRequirements: # Orion
+      partRequirements: # RW
         Capacitor: 1
     - type: PhysicalComposition #Goobstation - Recycle update
       materialComposition:
@@ -819,7 +819,7 @@
     - type: StaticPrice
       price: 15
 
-# Orion-Edit: Redundant
+# RW-Edit: Redundant
 #- type: entity
 #  id: TurboItemRechargerCircuitboard
 #  parent: BaseMachineCircuitboard
@@ -833,7 +833,7 @@
 #    prototype: TurboItemRecharger
 #    stackRequirements:
 #      CableMV: 5
-#    partRequirements: # Orion
+#    partRequirements: # RW
 #      Servo: 2
 #  - type: PhysicalComposition #Goobstation - Recycle update
 #    materialComposition:
@@ -853,10 +853,10 @@
         CableMV: 5
         CableHV: 5
       componentRequirements:
-        MegaCell: # Orion-Edit
+        MegaCell: # RW-Edit
           amount: 1
-          defaultPrototype: MegaCellSmall # Orion-Edit
-      partRequirements: # Orion
+          defaultPrototype: MegaCellSmall # RW-Edit
+      partRequirements: # RW
         Servo: 1
     - type: PhysicalComposition #Goobstation - Recycle update
       materialComposition:
@@ -912,7 +912,7 @@
       prototype: PortableGeneratorPacman
       stackRequirements:
         CableHV: 5
-      partRequirements: # Orion
+      partRequirements: # RW
         Servo: 1
     - type: PhysicalComposition #Goobstation - Recycle update
       materialComposition:
@@ -933,7 +933,7 @@
     prototype: Thruster
     stackRequirements:
       Steel: 5
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 4
 
 - type: entity
@@ -947,7 +947,7 @@
     prototype: Gyroscope
     stackRequirements:
       Glass: 2
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 3
 
 - type: entity
@@ -961,7 +961,7 @@
       prototype: PortableGeneratorSuperPacman
       stackRequirements:
         CableHV: 10
-      partRequirements: # Orion
+      partRequirements: # RW
         Servo: 2
     - type: PhysicalComposition #Goobstation - Recycle update
       materialComposition:
@@ -982,7 +982,7 @@
       prototype: PortableGeneratorJrPacman
       stackRequirements:
         Cable: 10
-      partRequirements: # Orion
+      partRequirements: # RW
         Servo: 1
     - type: PhysicalComposition #Goobstation - Recycle update
       materialComposition:
@@ -1004,7 +1004,7 @@
         GlassBeaker:
           amount: 1
           defaultPrototype: Beaker
-      partRequirements: # Orion
+      partRequirements: # RW
         Servo: 1
         MatterBin: 1
 
@@ -1020,7 +1020,7 @@
     prototype: ChemistryHotplate
     stackRequirements:
       Glass: 1
-    partRequirements: # Orion
+    partRequirements: # RW
       MicroLaser: 1
 
 - type: entity
@@ -1036,7 +1036,7 @@
     stackRequirements:
       Glass: 2
       Cable: 5
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 4
 
 - type: entity
@@ -1051,7 +1051,7 @@
       stackRequirements:
         Cable: 3
         Steel: 2
-      partRequirements: # Orion
+      partRequirements: # RW
         Servo: 1
         Capacitor: 1
 
@@ -1066,9 +1066,9 @@
   - type: MachineBoard
     prototype: MachineElectrolysisUnit
     stackRequirements:
-      Cable: 5 # Orion-Edit: 1 > 5
-      Glass: 1 # Orion
-    partRequirements: # Orion
+      Cable: 5 # RW-Edit: 1 > 5
+      Glass: 1 # RW
+    partRequirements: # RW
       Servo: 2
       Capacitor: 2
 
@@ -1084,7 +1084,7 @@
     prototype: MachineCentrifuge
     stackRequirements:
       Steel: 1
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 1
 
 - type: entity
@@ -1098,7 +1098,7 @@
     prototype: MachineMaterialSilo
     stackRequirements:
       Cable: 1
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 4
 
 - type: entity
@@ -1112,12 +1112,12 @@
       prototype: OreProcessor
       stackRequirements:
         Glass: 1
-      partRequirements: # Orion
+      partRequirements: # RW
         MatterBin: 1
         MicroLaser: 1
         Servo: 1
 
-# Orion-Edit: Redundant
+# RW-Edit: Redundant
 #- type: entity
 #  parent: BaseMachineCircuitboard
 #  id: OreProcessorIndustrialMachineCircuitboard
@@ -1129,7 +1129,7 @@
 #    prototype: OreProcessorIndustrial
 #    stackRequirements:
 #      Glass: 1
-#    partRequirements: # Orion
+#    partRequirements: # RW
 #      MatterBin: 1
 #      MicroLaser: 1
 #      Servo: 1
@@ -1141,7 +1141,7 @@
   components:
   - type: MachineBoard
     prototype: Sheetifier
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 2
       MatterBin: 2
 
@@ -1157,7 +1157,7 @@
       stackRequirements:
         Glass: 2
         Cable: 2
-      partRequirements: # Orion
+      partRequirements: # RW
         MicroLaser: 1
         MatterBin: 1
         Capacitor: 1
@@ -1178,7 +1178,7 @@
       stackRequirements:
         Glass: 2
         Cable: 2
-      partRequirements: # Orion
+      partRequirements: # RW
         MicroLaser: 1
         MatterBin: 1
         Capacitor: 1
@@ -1197,7 +1197,7 @@
           amount: 1
           defaultPrototype: ForkPlastic
           examineName: construction-insert-info-examine-name-utensil
-      partRequirements: # Orion
+      partRequirements: # RW
         MicroLaser: 1
 
 - type: entity
@@ -1208,9 +1208,9 @@
   - type: MachineBoard
     prototype: MachineFlatpacker
     stackRequirements:
-#      Steel: 1 # Orion-Edit
-      Plasteel: 5 # Orion
-    partRequirements: # Orion
+#      Steel: 1 # RW-Edit
+      Plasteel: 5 # RW
+    partRequirements: # RW
       MatterBin: 2
       MicroLaser: 2
       Servo: 1
@@ -1227,7 +1227,7 @@
       stackRequirements:
         CableHV: 5
         Glass: 2
-      partRequirements: # Orion
+      partRequirements: # RW
         MicroLaser: 1
         Servo: 1
 
@@ -1313,7 +1313,7 @@
     stackRequirements:
       Steel: 10
       Plasma: 5
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 2
 
 - type: entity
@@ -1325,10 +1325,10 @@
     - type: Sprite
       state: service
     - type: MachineBoard
-      prototype: BoozeDispenser # Orion-Edit
+      prototype: BoozeDispenser # RW-Edit
       stackRequirements:
         Steel: 5
-      partRequirements: # Orion
+      partRequirements: # RW
         Servo: 2
         Capacitor: 1
       tagRequirements:
@@ -1349,7 +1349,7 @@
       stackRequirements:
         Steel: 5
         BSCrystal: 2 # Goobstation
-      partRequirements: # Orion
+      partRequirements: # RW
         Servo: 1
 
 - type: entity
@@ -1363,9 +1363,9 @@
   - type: MachineBoard
     prototype: CargoMailTeleporter
     stackRequirements:
-#      Steel: 5 # Orion-Edit
-      Glass: 1 # Orion
-    partRequirements: # Orion
+#      Steel: 5 # RW-Edit
+      Glass: 1 # RW
+    partRequirements: # RW
       MatterBin: 2
       ScanningModule: 1
 
@@ -1378,10 +1378,10 @@
     - type: Sprite
       state: service
     - type: MachineBoard
-      prototype: SodaDispenser # Orion-Edit
+      prototype: SodaDispenser # RW-Edit
       stackRequirements:
         Steel: 5
-      partRequirements: # Orion
+      partRequirements: # RW
         Servo: 2
         Capacitor: 1
       tagRequirements:
@@ -1417,7 +1417,7 @@
       Steel: 5
       CableHV: 5
       Cable: 2
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 1
       MatterBin: 1
 
@@ -1435,7 +1435,7 @@
       Steel: 5
       CableHV: 5
       Uranium: 2
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 7
 
 - type: entity
@@ -1451,7 +1451,7 @@
       Glass: 5
       CableHV: 8
       Uranium: 2
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 7
 
 - type: entity
@@ -1463,7 +1463,7 @@
     prototype: ReagentGrinderIndustrial
     stackRequirements:
       Glass: 1
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 4
 
 - type: entity
@@ -1492,7 +1492,7 @@
     stackRequirements:
       Steel: 2
       Cable: 1
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 2
 
 - type: entity
@@ -1525,7 +1525,7 @@
       state: medical
     - type: MachineBoard
       prototype: MedicalBiofabricator
-      partRequirements: # Orion
+      partRequirements: # RW
         Servo: 4
 # Shitmed Change End
 
@@ -1539,5 +1539,5 @@
     stackRequirements:
       Steel: 1
       Cable: 1
-    partRequirements: # Orion-Edit: Replaced manipulator
+    partRequirements: # RW-Edit: Replaced manipulator
       Servo: 1

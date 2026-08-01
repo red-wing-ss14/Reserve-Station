@@ -11,5 +11,5 @@
       stackRequirements:
         Cable: 4
         Glass: 2
-      partRequirements: # Orion
+      partRequirements: # RW
         Capacitor: 1

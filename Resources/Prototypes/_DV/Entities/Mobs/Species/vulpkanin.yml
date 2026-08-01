@@ -53,15 +53,15 @@
         sprite: _DV/Mobs/Customization/Vulpkanin/masking_helpers.rsi
         state: female_full
         visible: false
-      # Orion-Start
+      # RW-Start
       - map: [ "underwear" ]
       - map: [ "undershirt" ]
-      # Orion-End
-      # Orion-Edit-Start: Moved under jumpsuit
+      # RW-End
+      # RW-Edit-Start: Moved under jumpsuit
       - map: ["enum.HumanoidVisualLayers.LFoot"]
       - map: ["enum.HumanoidVisualLayers.RFoot"]
-      # Orion-Edit-End
-      - map: [ "socks" ] # Orion
+      # RW-Edit-End
+      - map: [ "socks" ] # RW
       - map: ["jumpsuit"]
       - map: [ "enum.HumanoidVisualLayers.LHand" ]
       - map: [ "enum.HumanoidVisualLayers.RHand" ]
@@ -72,9 +72,9 @@
         visible: false
       - map: [ "id" ]
       - map: [ "gloves" ]
-      - map: [ "wrists" ] # Orion
+      - map: [ "wrists" ] # RW
       - map: [ "shoes" ]
-      - map: [ "earsright" ] # Orion
+      - map: [ "earsright" ] # RW
       - map: [ "ears" ]
       - map: [ "outerClothing" ]
       - map: [ "eyes" ]

@@ -35,10 +35,10 @@ public sealed class TraitSystem : EntitySystem
             return;
         }
 
-        ApplyTraits(args.Mob, args.Profile); // Orion-Edit
+        ApplyTraits(args.Mob, args.Profile); // RW-Edit
     }
 
-    // Orion-Edit-Start
+    // RW-Edit-Start
     public void ApplyTraits(EntityUid mob, HumanoidCharacterProfile profile)
     {
         foreach (var traitId in profile.TraitPreferences)
@@ -121,5 +121,5 @@ public sealed class TraitSystem : EntitySystem
                 handsComp: handsComponent);
         }
     }
-    // Orion-Edit-End
+    // RW-Edit-End
 }

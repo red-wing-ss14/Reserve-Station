@@ -37,8 +37,8 @@ using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
-using Content.Shared._Orion.Antag;
-using Content.Shared._Orion.Antag.Components;
+using Content.Shared._RW.Antag;
+using Content.Shared._RW.Antag.Components;
 using Content.Shared._RW.BloodCult.Constructs;
 
 namespace Content.Server._RW.BloodCult.Gamerule;

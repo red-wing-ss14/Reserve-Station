@@ -5,18 +5,18 @@
   name: species-name-slime
   roundStart: true
   prototype: MobSlimePerson
-  metabolismLimit: 6 # Amour add
-  # Amour port: WD Slim body types START
+  metabolismLimit: 6 # RW add
+  # RW port: WD Slim body types START
   bodyTypes:
     - SlimeNormal
-  # Amour port: WD Slim body types END
+  # RW port: WD Slim body types END
   defaultSkinTone: "#b8b8b8"
   markingLimits: MobSlimeMarkingLimits
   dollPrototype: MobSlimePersonDummy
   skinColoration: Hues
-  # Orion-Start
+  # RW-Start
   category: Classic
-  description: "/ServerInfo/_Orion/SpeciesDescriptions/SlimePerson.xml"
+  description: "/ServerInfo/_RW/SpeciesDescriptions/SlimePerson.xml"
   pros:
   - species-slime-pro-blunt-poison-resist
   - species-slime-pro-vacuum-survival
@@ -32,21 +32,21 @@
   - species-slime-con-cold-slash-pierce-vulnerable
   - species-slime-con-water-vulnerable
   - species-slime-con-pressure-vulnerable
-  # Orion-End
+  # RW-End
 
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
 - type: bodyType
   id: SlimeNormal
   name: body-normal
-# Amour port: WD Slim body types END
+# RW port: WD Slim body types END
   sprites:
     Face: MobHumanoidAnyMarking
     Head: MobSlimeHead
     HeadSide: MobHumanoidAnyMarking
     Hair: MobSlimeMarkingFollowSkin
     FacialHair: MobSlimeMarkingFollowSkin
-    Tail: MobSlimeMarkingFollowSkin # Amour edit
-    HeadTop: MobSlimeMarkingFollowSkin # Amour edit
+    Tail: MobSlimeMarkingFollowSkin # RW edit
+    HeadTop: MobSlimeMarkingFollowSkin # RW edit
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
     Chest: MobSlimeChest
@@ -73,10 +73,10 @@
     FacialHair:
       points: 1
       required: false
-    Tail: # Amour edit
+    Tail: # RW edit
       points: 1
       required: false
-    HeadTop: # Amour edit
+    HeadTop: # RW edit
       points: 3
       required: false
     Chest:
@@ -112,18 +112,18 @@
     LeftHand:
       points: 2
       required: false
-    # Amour start
+    # RW start
     BodyPartGradient:
       points: 11
       required: false
     BodyGradient:
       points: 1
       required: false
-    # Amour end
+    # RW end
 
 - type: humanoidBaseSprite
   id: MobSlimeMarkingFollowSkin
-  markingsMatchSkin: false # Amour edit
+  markingsMatchSkin: false # RW edit
   layerAlpha: 0.75
 
 - type: humanoidBaseSprite

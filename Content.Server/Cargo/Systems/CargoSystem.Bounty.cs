@@ -125,28 +125,28 @@ public sealed partial class CargoSystem
         msg.AddMarkupOrThrow(Loc.GetString("bounty-manifest-list-start"));
         msg.PushNewline();
 
-        var detailBountyInfo = string.Empty; // Orion
+        var detailBountyInfo = string.Empty; // RW
 
-        var i = 1; // Orion
+        var i = 1; // RW
 
         foreach (var entry in prototype.Entries)
         {
-            var name = Loc.GetString(entry.Name); // Orion
+            var name = Loc.GetString(entry.Name); // RW
 
             msg.AddMarkupOrThrow($"- {Loc.GetString("bounty-console-manifest-entry",
                 ("amount", entry.Amount),
-                ("item", name))}"); // Orion-Edit
+                ("item", name))}"); // RW-Edit
             msg.PushNewline();
-            // Orion-Start
+            // RW-Start
             detailBountyInfo += Loc.GetString("cargo-console-bounty-manifest-name-entry", ("detailName", name), ("detailQuantity", entry.Amount));
             if (i != prototype.Entries.Count)
                 detailBountyInfo += ", ";
 
             i++;
-            // Orion-End
+            // RW-End
         }
 
-        _metaSystem.SetEntityName(uid, Loc.GetString("cargo-console-bounty-manifest-name", ("entries", detailBountyInfo))); // Orion
+        _metaSystem.SetEntityName(uid, Loc.GetString("cargo-console-bounty-manifest-name", ("entries", detailBountyInfo))); // RW
 
         msg.AddMarkupOrThrow(Loc.GetString("bounty-console-manifest-reward", ("reward", prototype.Reward)));
         _paperSystem.SetContent((uid, paper), msg.ToMarkup());

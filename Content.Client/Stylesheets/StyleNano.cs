@@ -324,7 +324,7 @@ namespace Content.Client.Stylesheets
         public const string StyleClassPinButtonPinned = "pinButtonPinned";
         public const string StyleClassPinButtonUnpinned = "pinButtonUnpinned";
 
-        // Orion-Start
+        // RW-Start
         public static readonly Color ButtonColorCentralCommand = Color.FromHex("#0c344d");
         public static readonly Color ButtonColorCommand = Color.FromHex("#334E6D");
         public static readonly Color ButtonColorSecurity = Color.FromHex("#DE3A3A");
@@ -337,7 +337,7 @@ namespace Content.Client.Stylesheets
         public static readonly Color ButtonColorJustice = Color.FromHex("#8E3D3D");
         public static readonly Color ButtonColorSpecific = Color.FromHex("#969696");
         public static readonly Color ButtonColorAntagonist = Color.FromHex("#7F4141");
-        // Orion-End
+        // RW-End
         // i'm not sure what the missing symbols were referencing, and this is getting obseleted anyway so:
         public const string ButtonOpenRight = "OpenRight";
         public const string ButtonOpenLeft = "OpenLeft";
@@ -1683,7 +1683,7 @@ namespace Content.Client.Stylesheets
                         new StyleProperty(Label.StylePropertyFont, notoSansDisplayBold14),
                     }),
 
-                // Orion-Start
+                // RW-Start
                 new StyleRule(
                     new SelectorElement(typeof(MenuButton), new[] {StyleClassRedTopButton}, null, new[] {ContainerButton.StylePseudoClassNormal}),
                     new[]
@@ -1766,7 +1766,7 @@ namespace Content.Client.Stylesheets
                     {
                         new StyleProperty(Control.StylePropertyModulateSelf, ButtonColorAntagonist),
                     }),
-                // Orion-End
+                // RW-End
 
                 // MonotoneButton (unfilled)
                 new StyleRule(
@@ -2162,7 +2162,7 @@ namespace Content.Client.Stylesheets
                 Element<Label>().Class("Disabled")
                     .Prop("font-color", DisabledFore),
 
-                // Orion-Start
+                // RW-Start
                 Element<Button>().Class("ButtonColorCentralCommandDepartment")
                     .Prop(Control.StylePropertyModulateSelf, ButtonColorCentralCommand),
                 Element<Button>().Class("ButtonColorCentralCommandDepartment").Pseudo(ContainerButton.StylePseudoClassNormal)
@@ -2222,7 +2222,7 @@ namespace Content.Client.Stylesheets
                     .Prop(Control.StylePropertyModulateSelf, ButtonColorAntagonist),
                 Element<Button>().Class("ButtonColorAntagonistDepartment").Pseudo(ContainerButton.StylePseudoClassNormal)
                     .Prop(Control.StylePropertyModulateSelf, ButtonColorAntagonist),
-                // Orion-End
+                // RW-End
 
                 // Radial menu buttons
                 Element<TextureButton>().Class("RadialMenuButton")

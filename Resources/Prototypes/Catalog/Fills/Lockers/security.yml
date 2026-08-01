@@ -32,13 +32,13 @@
     - id: FlashlightSeclite
     #- id: WeaponDisabler # Goobstation (Disablers in belts)
     - id: ClothingBeltSecurityFilled
-#    - id: Flash # Orion-Edit: Removed
+#    - id: Flash # RW-Edit: Removed
     - id: ClothingEyesGlassesSecurity
     - id: ClothingHandsGlovesCombat
-#    - id: ClothingShoesBootsJack # Orion-Edit: Removed
+#    - id: ClothingShoesBootsJack # RW-Edit: Removed
     - id: ClothingOuterCoatWarden
     - id: ClothingOuterWinterWarden
-    - id: ClothingOuterCoatWardenBlue # Orion
+    - id: ClothingOuterCoatWardenBlue # RW
     - id: RubberStampWarden
     - id: DoorRemoteArmory
     #- id: HoloprojectorSecurity Goob, its in your belt
@@ -56,7 +56,7 @@
     - id: Multitool # Goobstation
     - id: Wrench # Goobstation
     - id: ContrabandDetectorFlatpack # Goobstation
-      amount: 2 # Orion
+      amount: 2 # RW
     - id: SecurityMegaphone # goob - loudspeakers
 
 - type: entityTable
@@ -104,14 +104,14 @@
       prob: 0.5
     - id: ClothingHeadsetAltSecurityRegular # Goobstation
     - id: PanicButton # Goobstation
-#    - id: PepperSpray # Goobstation # Orion-Edit: Removed
+#    - id: PepperSpray # Goobstation # RW-Edit: Removed
     # Goobstation - Martial Arts - start
     - !type:GroupSelector
       children:
       - id: ClothingBeltSecurityFilled
-        weight: 0.8 # Orion-Edit: 0.5 > 0.8
+        weight: 0.8 # RW-Edit: 0.5 > 0.8
       # - id: ClothingBeltCorporateJudoFilled # RW: disable judo
-      #   weight: 0.2 # Orion-Edit: 0.5 > 0.2
+      #   weight: 0.2 # RW-Edit: 0.5 > 0.2
     # Goobstation - Martial Arts - end
 
 - type: entity
@@ -132,19 +132,19 @@
     - id: WeaponDisabler
     - id: TrackingImplanter
       amount: 2
-    - id: SurgerykitFilled # Orion-Edit: ClothingBackpackDuffelSurgeryFilled now Surgerykit
+    - id: SurgerykitFilled # RW-Edit: ClothingBackpackDuffelSurgeryFilled now Surgerykit
     - id: ClothingHandsGlovesLatex
     - id: OxygenTankFilled
     - id: NitrogenTankFilled
     - id: ClothingUniformJumpskirtOfLife
       prob: 0.1
-    # Orion-Start
+    # RW-Start
     - id: ClothingHeadHatBeretSecurityMedic
       prob: 0.5
     - id: ClothingBackpackDuffelBrigmedicFilledJanitorialSupplies
     - id: MedkitToxinFilled
     - id: MedkitRadiationFilled
-    # Orion-End
+    # RW-End
     - id: MedkitOxygenFilled
     - id: MedkitAdvancedFilled
     - id: BoxSyringe
@@ -253,7 +253,7 @@
 - type: entity
   parent: [GunSafeBaseSecure, BaseSecurityContraband]
   id: GunSafeRifleLecter
-  abstract: true # Orion | Alert Level Locked
+  abstract: true # RW | Alert Level Locked
   name: lecter safe
   components:
   - type: EntityTableContainerFill
@@ -273,7 +273,7 @@
 - type: entity
   parent: [GunSafeBaseSecure, BaseSecurityContraband]
   id: GunSafeSubMachineGunDrozd
-  abstract: true # Orion | Alert Level Locked
+  abstract: true # RW | Alert Level Locked
   name: drozd safe
   components:
   - type: EntityTableContainerFill
@@ -293,7 +293,7 @@
 - type: entity
   parent: [GunSafeBaseSecure, BaseSecurityContraband]
   id: GunSafeShotgunEnforcer
-  abstract: true # Orion | Alert Level Locked
+  abstract: true # RW | Alert Level Locked
   name: enforcer safe
   components:
   - type: EntityTableContainerFill
@@ -313,7 +313,7 @@
 - type: entity
   parent: [GunSafeBaseSecure, BaseSecurityContraband]
   id: GunSafeShotgunKammerer
-  abstract: true # Orion | Alert Level Locked
+  abstract: true # RW | Alert Level Locked
   name: kammerer safe
   components:
   - type: EntityTableContainerFill
@@ -332,7 +332,7 @@
 
 - type: entity
   id: GunSafeSubMachineGunWt550
-  abstract: true # Orion | Alert Level Locked
+  abstract: true # RW | Alert Level Locked
   suffix: Wt550
   parent: [GunSafeBaseSecure, BaseSecurityContraband]
   name: wt550 safe
@@ -354,7 +354,7 @@
 - type: entity
   parent: [GunSafeBaseSecure, BaseSecurityContraband]
   id: GunSafeLaserCarbine
-  abstract: true # Orion | Alert Level Locked
+  abstract: true # RW | Alert Level Locked
   name: laser safe
   components:
   - type: EntityTableContainerFill
@@ -367,13 +367,13 @@
   table: !type:AllSelector
     children:
     - id: WeaponLaserCarbine
-#      amount: 3   # Orion-Edit: Removed
-    # Orion-Start
+#      amount: 3   # RW-Edit: Removed
+    # RW-Start
     - id: WeaponEarthGovLaserSniper
     - id: WeaponEarthGovLaserCarbine  
     - id: WeaponEarthGovXRay
-    # Orion-End
+    # RW-End
     - id: WeaponTemperatureGun # Goobstation
       amount: 2
     - id: WeaponEnergyIonRifle # Goobstation
-#      amount: 2 # Orion-Edit: Removed
+#      amount: 2 # RW-Edit: Removed

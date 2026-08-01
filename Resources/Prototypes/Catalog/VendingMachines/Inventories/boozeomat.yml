@@ -54,7 +54,7 @@
     DrinkBottleOfNothingFull: 1
     DrinkPoisonWinebottleFull: 2
 
-  # Orion-Start
+  # RW-Start
   prices:
     DrinkGlass: 25
     DrinkShotGlass: 20
@@ -73,4 +73,4 @@
     DrinkColaBottleFull: 45
     DrinkBeerBottleFull: 45
     DrinkBeerCan: 45
-  # Orion-End
+  # RW-End

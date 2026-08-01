@@ -6,7 +6,7 @@
   - type: Sprite
     sprite: _White/Mobs/Species/Xenomorph/organs.rsi
   - type: Organ
-#  - type: Edible # Orion-Edit: Removed
+#  - type: Edible # RW-Edit: Removed
   - type: Extractable
     grindableSolutionName: organ
   - type: SolutionContainerManager
@@ -95,7 +95,7 @@
   name: acid gland
   description: A specialized tank with acid. The resulting corrosive mixture can melt most known materials.
   components:
-  #- type: Edible # Orion - Component doesn't exist
+  #- type: Edible # RW - Component doesn't exist
   - type: Sprite
     state: acid_gland
   - type: Organ
@@ -119,7 +119,7 @@
   name: neurotoxin gland
   description: A specialized tank with neurotoxin. Сonsists of many microscopic tubes filled with clear liquid.
   components:
-  #- type: Edible # Orion - Component doesn't exist
+  #- type: Edible # RW - Component doesn't exist
   - type: Sprite
     state: neurotoxin_gland
   - type: Organ
@@ -163,7 +163,7 @@
   name: resin spinner
   description: Designed for the production and isolation of resin-like biopolymer.
   components:
-  #- type: Edible # Orion - Component doesn't exist
+  #- type: Edible # RW - Component doesn't exist
   - type: Sprite
     state: resin_spinner
   - type: Organ
@@ -173,7 +173,7 @@
   - type: OrganActions
     actions:
     - ActionSpawnWallResin
-    - ActionSpawnResinMembrane # Orion
+    - ActionSpawnResinMembrane # RW
     - ActionSpawnResinDoor
     - ActionSpawnResinNest
   # </Goobstation>

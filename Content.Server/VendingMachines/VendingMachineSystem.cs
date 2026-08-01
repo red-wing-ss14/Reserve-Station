@@ -2,8 +2,8 @@
 
 using System.Linq;
 using System.Numerics;
-using Content.Server._Orion.Economy.Components;
-using Content.Server._Orion.Economy.Systems;
+using Content.Server._RW.Economy.Components;
+using Content.Server._RW.Economy.Systems;
 using Content.Server.Access.Systems;
 using Content.Server.Cargo.Systems;
 using Content.Server.Power.Components;
@@ -17,7 +17,7 @@ using Content.Shared.Cargo;
 using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.Destructible;
-using Content.Shared._Orion.VendingMachines.Components;
+using Content.Shared._RW.VendingMachines.Components;
 using Content.Shared.Emp;
 using Content.Shared.Power;
 using Content.Shared.Silicons.Borgs.Components;
@@ -43,18 +43,18 @@ namespace Content.Server.VendingMachines
         [Dependency] private readonly PricingSystem _pricing = default!;
         [Dependency] private readonly ThrowingSystem _throwingSystem = default!;
         [Dependency] private readonly IGameTiming _timing = default!;
-        // Orion-Start
+        // RW-Start
         [Dependency] private readonly BankSystem _bank = default!;
         [Dependency] private readonly CargoSystem _cargo = default!;
         [Dependency] private readonly IdCardSystem _idCard = default!;
         [Dependency] private readonly StationSystem _station = default!;
         [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
         [Dependency] private readonly UserInterfaceSystem _ui = default!;
-        // Orion-End
+        // RW-End
 
         private const float WallVendEjectDistanceFromWall = 1f;
-        private const float DefaultDepartmentDiscount = 0.2f; // Orion
-        private static readonly ProtoId<CargoAccountPrototype> CargoDepartmentAccount = "Cargo"; // Orion
+        private const float DefaultDepartmentDiscount = 0.2f; // RW
+        private static readonly ProtoId<CargoAccountPrototype> CargoDepartmentAccount = "Cargo"; // RW
 
         public override void Initialize()
         {
@@ -68,11 +68,11 @@ namespace Content.Server.VendingMachines
             SubscribeLocalEvent<VendingMachineComponent, VendingMachineSelfDispenseEvent>(OnSelfDispense);
 
             SubscribeLocalEvent<VendingMachineRestockComponent, PriceCalculationEvent>(OnPriceCalculation);
-            SubscribeLocalEvent<VendingMachineComponent, VendingMachineBeforeEjectEvent>(OnBeforeEject); // Orion
-            SubscribeLocalEvent<VendingMachineComponent, BoundUIOpenedEvent>(OnBoundUiOpened); // Orion
+            SubscribeLocalEvent<VendingMachineComponent, VendingMachineBeforeEjectEvent>(OnBeforeEject); // RW
+            SubscribeLocalEvent<VendingMachineComponent, BoundUIOpenedEvent>(OnBoundUiOpened); // RW
         }
 
-        // Orion-Start
+        // RW-Start
         private void OnBeforeEject(Entity<VendingMachineComponent> ent, ref VendingMachineBeforeEjectEvent args)
         {
             if (args.User is not { } user)
@@ -221,7 +221,7 @@ namespace Content.Server.VendingMachines
             _adminLogger.Add(LogType.Action, LogImpact.Low, $"Borg purchase charged cargo account. Item: {itemId}. Amount: {price}. Station: {station}.");
             return true;
         }
-        // Orion-End
+        // RW-End
 
         private void OnVendingPrice(EntityUid uid, VendingMachineComponent component, ref PriceCalculationEvent args)
         {
@@ -245,7 +245,7 @@ namespace Content.Server.VendingMachines
         {
             base.OnMapInit(uid, component, args);
 
-            InitializeOffStationFreePricing(uid); // Orion
+            InitializeOffStationFreePricing(uid); // RW
 
             if (HasComp<ApcPowerReceiverComponent>(uid))
             {
@@ -253,7 +253,7 @@ namespace Content.Server.VendingMachines
             }
         }
 
-        // Orion-Start
+        // RW-Start
         private void InitializeOffStationFreePricing(EntityUid uid)
         {
             if (!TryComp<VendingMachinePricingComponent>(uid, out var pricing))
@@ -273,9 +273,9 @@ namespace Content.Server.VendingMachines
             pricing.AllProductsFree = true;
             Dirty(uid, pricing);
         }
-        // Orion-End
+        // RW-End
 
-        private static void OnActivatableUIOpenAttempt(EntityUid uid, VendingMachineComponent component, ActivatableUIOpenAttemptEvent args) // Orion-Edit: static
+        private static void OnActivatableUIOpenAttempt(EntityUid uid, VendingMachineComponent component, ActivatableUIOpenAttemptEvent args) // RW-Edit: static
         {
             if (component.Broken)
                 args.Cancel();
@@ -335,11 +335,11 @@ namespace Content.Server.VendingMachines
 
             Popup.PopupEntity(Loc.GetString("vending-machine-restock-done-self", ("target", uid)), args.Args.User, args.Args.User, PopupType.Medium);
             var othersFilter = Filter.PvsExcept(args.Args.User);
-            // Orion-Edit-Start: Localization
+            // RW-Edit-Start: Localization
             Popup.PopupEntity(Loc.GetString("vending-machine-restock-done", // vending-machine-restock-done-others -> vending-machine-restock-done
             ("user", Identity.Entity(args.User, EntityManager)),
             ("target", uid)), args.Args.User, othersFilter, true, PopupType.Medium);
-            // Orion-Edit-End
+            // RW-Edit-End
 
             Audio.PlayPvs(restockComponent.SoundRestockDone, uid, AudioParams.Default.WithVolume(-2f).WithVariation(0.2f));
 

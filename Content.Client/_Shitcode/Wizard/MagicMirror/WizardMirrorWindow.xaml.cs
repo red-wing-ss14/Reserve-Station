@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
-using Content.Client._Orion.Lobby.UI;
+using Content.Client._RW.Lobby.UI;
 using Content.Client.Humanoid;
 using Content.Client.Lobby;
 using Content.Shared.Humanoid;

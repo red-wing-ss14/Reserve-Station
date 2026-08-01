@@ -24,10 +24,10 @@
 #  - ResearchDirectorSOP
 #  - ScienceSOP
   goobcoins: 40 #Goob content
-  # Orion-Start
+  # RW-Start
   salary: 120
   payrollDepartmentAccount: Command
-  # Orion-End
+  # RW-End
   access:
   - Research
   - Command

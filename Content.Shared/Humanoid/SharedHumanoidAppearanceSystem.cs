@@ -3,9 +3,9 @@
 using System.IO;
 using System.Linq;
 using System.Numerics;
-using Content.Shared._Amour.Humanoid.Prototypes;
+using Content.Shared._RW.Humanoid.Prototypes;
 using Content.Shared.Examine;
-using Content.Shared._Amour.TTS;
+using Content.Shared._RW.TTS;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared._Shitmed.Humanoid.Events; // Shitmed Change
 using Content.Shared.Humanoid.Prototypes;
@@ -43,7 +43,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     [Dependency] private readonly IConfigurationManager _cfgManager = default!;
     [Dependency] private readonly INetManager _netManager = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly IRobustRandom _random = default!; // Amour - TTS
+    [Dependency] private readonly IRobustRandom _random = default!; // RW - TTS
     [Dependency] private readonly ISerializationManager _serManager = default!;
     [Dependency] private readonly HeightAdjustSystem _heightAdjust = default!; // Goobstation: port EE height/width sliders
     [Dependency] private readonly MarkingManager _markingManager = default!;
@@ -53,10 +53,10 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     public static readonly ProtoId<SpeciesPrototype> DefaultSpecies = "Human";
     public static readonly ProtoId<BarkPrototype> DefaultBarkVoice = "Alto"; // Goob Station - Barks
 
-    // Amour port: WD Slim body types START
+    // RW port: WD Slim body types START
     [ValidatePrototypeId<BodyTypePrototype>]
     public const string DefaultBodyType = "HumanNormal";
-    // Amour port: WD Slim body types END
+    // RW port: WD Slim body types END
 
     public override void Initialize()
     {
@@ -178,7 +178,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         targetHumanoid.SkinColor = sourceHumanoid.SkinColor;
         targetHumanoid.EyeColor = sourceHumanoid.EyeColor;
         targetHumanoid.Age = sourceHumanoid.Age;
-        targetHumanoid.BodyType = sourceHumanoid.BodyType; // Amour port: WD Slim body types
+        targetHumanoid.BodyType = sourceHumanoid.BodyType; // RW port: WD Slim body types
         targetHumanoid.Height = sourceHumanoid.Height; // Goobstation: port EE height/width sliders
         targetHumanoid.Width = sourceHumanoid.Width; // Goobstation: port EE height/width sliders
         SetSex(target, sourceHumanoid.Sex, false, targetHumanoid);
@@ -285,7 +285,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         }
 
         humanoid.Species = species;
-        humanoid.MarkingSet.EnsureSpecies(species, humanoid.SkinColor, _markingManager, null); // Amour add null
+        humanoid.MarkingSet.EnsureSpecies(species, humanoid.SkinColor, _markingManager, null); // RW add null
         var oldMarkings = humanoid.MarkingSet.GetForwardEnumerator().ToList();
         humanoid.MarkingSet = new(oldMarkings, prototype.MarkingPoints, _markingManager, _proto);
 
@@ -408,7 +408,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     }
     // goob edit end
 
-    // Amour port: WD Slim body types START
+    // RW port: WD Slim body types START
     /// <summary>
     ///     Set a humanoid mob's body tupe. This will change their base sprites.
     /// </summary>
@@ -434,7 +434,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         if (sync)
             Dirty(uid, humanoid);
     }
-    // Amour port: WD Slim body types END
+    // RW port: WD Slim body types END
 
     // begin Goobstation: port EE height/width sliders
 
@@ -516,7 +516,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         SetSpecies(uid, profile.Species, false, humanoid);
         SetSex(uid, profile.Sex, false, humanoid);
-        SetBodyType(uid, profile.BodyType, false, humanoid); // Amour port: WD Slim body types
+        SetBodyType(uid, profile.BodyType, false, humanoid); // RW port: WD Slim body types
         humanoid.EyeColor = profile.Appearance.EyeColor;
 
         SetSkinColor(uid, profile.Appearance.SkinColor, false);
@@ -531,7 +531,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
             {
                 if (!prototype.ForcedColoring)
                 {
-                    AddMarking(uid, new Marking(marking), false); // Amour edit: preserve gradient flags and secondary colors on saved markings.
+                    AddMarking(uid, new Marking(marking), false); // RW edit: preserve gradient flags and secondary colors on saved markings.
                 }
                 else
                 {
@@ -550,7 +550,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         if (_markingManager.Markings.TryGetValue(profile.Appearance.HairStyleId, out var hairPrototype) &&
             _markingManager.CanBeApplied(profile.Species, profile.Sex, hairPrototype, _proto))
         {
-            // Amour start
+            // RW start
             var hairMarking = new Marking(profile.Appearance.HairStyleId, new[] { hairColor });
             if (profile.Appearance.HairUseGradient)
             {
@@ -560,13 +560,13 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
                 hairMarking.SetGradientColor(0, profile.Appearance.HairColor2);
             }
             AddMarking(uid, hairMarking, false);
-            // Amour end
+            // RW end
         }
 
         if (_markingManager.Markings.TryGetValue(profile.Appearance.FacialHairStyleId, out var facialHairPrototype) &&
             _markingManager.CanBeApplied(profile.Species, profile.Sex, facialHairPrototype, _proto))
         {
-            // Amour start
+            // RW start
             var facialHairMarking = new Marking(profile.Appearance.FacialHairStyleId, new[] { facialHairColor });
             if (profile.Appearance.FacialHairUseGradient)
             {
@@ -576,7 +576,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
                 facialHairMarking.SetGradientColor(0, profile.Appearance.FacialHairColor2);
             }
             AddMarking(uid, facialHairMarking, false);
-            // Amour end
+            // RW end
         }
         
         humanoid.MarkingSet.EnsureSpecies(profile.Species, profile.Appearance.SkinColor, _markingManager, _proto);
@@ -595,7 +595,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         EnsureDefaultMarkings(uid, humanoid);
         SetBarkVoice(uid, profile.BarkVoice, humanoid); // Goob Station - Barks
-        SetTTSVoice(uid, profile.Voice); // Amour - TTS
+        SetTTSVoice(uid, profile.Voice); // RW - TTS
 
         humanoid.Gender = profile.Gender;
         if (TryComp<GrammarComponent>(uid, out var grammar))
@@ -671,7 +671,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     /// <param name="sync">Whether to immediately sync this marking or not</param>
     /// <param name="forced">If this marking was forced (ignores marking points)</param>
     /// <param name="humanoid">Humanoid component of the entity</param>
-    // Amour edit start
+    // RW edit start
     public void AddMarking(EntityUid uid, Marking marking, bool sync = true, bool forced = false, HumanoidAppearanceComponent? humanoid = null)
     {
         if (!Resolve(uid, ref humanoid)
@@ -686,7 +686,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         if (sync)
             Dirty(uid, humanoid);
     }
-    // Amour edit end
+    // RW edit end
 
     public void AddMarking(EntityUid uid, string marking, IReadOnlyList<Color> colors, bool sync = true, bool forced = false, HumanoidAppearanceComponent? humanoid = null)
     {
@@ -704,7 +704,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
             Dirty(uid, humanoid);
     }
 
-    // Amour - TTS Start
+    // RW - TTS Start
     #region Amour - TTS
     public void SetTTSVoice(EntityUid uid, string? voiceId)
     {
@@ -744,7 +744,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         return _random.Pick(voices).ID;
     }
     #endregion
-    // Amour - TTS End
+    // RW - TTS End
 
     //  Goob Station - Barks Start
     #region Goob - Barks

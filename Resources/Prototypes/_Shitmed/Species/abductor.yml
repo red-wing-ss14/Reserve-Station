@@ -5,20 +5,20 @@
   name: species-name-abductor
   roundStart: false
   prototype: MobAbductor
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
   bodyTypes:
   - AbductorNormal
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
   markingLimits: MobHumanMarkingLimits
   dollPrototype: MobAbductorDummy
   skinColoration: HumanToned
   defaultSkinTone: "#BFC2C7"
 
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
 - type: bodyType
   id: AbductorNormal
   name: body-normal
-# Amour port: WD Slim body types END
+# RW port: WD Slim body types END
   sprites:
     Head: MobAbductorHead
     HeadTop: MobHumanoidAnyMarking

@@ -16,7 +16,7 @@ namespace Content.Client.Cargo.UI;
 [GenerateTypedNameReferences]
 public sealed partial class CargoPalletMenu : FancyWindow
 {
-    [Dependency] private readonly IPrototypeManager _prototype = default!; // Orion
+    [Dependency] private readonly IPrototypeManager _prototype = default!; // RW
 
     public Action? SellRequested;
     public Action? AppraiseRequested;
@@ -24,18 +24,18 @@ public sealed partial class CargoPalletMenu : FancyWindow
     public CargoPalletMenu()
     {
         RobustXamlLoader.Load(this);
-        IoCManager.InjectDependencies(this); // Orion
+        IoCManager.InjectDependencies(this); // RW
 
-        // Orion-Start
+        // RW-Start
         TabContainer.SetTabTitle(0, Loc.GetString("cargo-pallet-tab-sales"));
         TabContainer.SetTabTitle(1, Loc.GetString("cargo-pallet-tab-analytics"));
-        // Orion-End
+        // RW-End
 
         SellButton.OnPressed += OnSellPressed;
         AppraiseButton.OnPressed += OnAppraisePressed;
     }
 
-    // Orion-Start
+    // RW-Start
     public void UpdateState(CargoPalletConsoleInterfaceState state)
     {
         SetEnabled(state.Enabled);
@@ -123,19 +123,19 @@ public sealed partial class CargoPalletMenu : FancyWindow
         panel.AddChild(label);
         return panel;
     }
-    // Orion-End
+    // RW-End
 
-    private void SetAppraisal(int amount) // Orion-Edit: Was public
+    private void SetAppraisal(int amount) // RW-Edit: Was public
     {
         AppraisalLabel.Text = Loc.GetString("cargo-console-menu-points-amount", ("amount", amount.ToString()));
     }
 
-    private void SetCount(int count) // Orion-Edit: Was public
+    private void SetCount(int count) // RW-Edit: Was public
     {
         CountLabel.Text = count.ToString();
     }
 
-    private void SetEnabled(bool enabled) // Orion-Edit: Was public
+    private void SetEnabled(bool enabled) // RW-Edit: Was public
     {
         AppraiseButton.Disabled = !enabled;
         SellButton.Disabled = !enabled;

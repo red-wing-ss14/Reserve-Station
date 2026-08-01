@@ -11,10 +11,10 @@
 #  guides: # goobstation | Orion-Edit: Removed because dont have this SOP
 #  - Cargo
   goobcoins: 20 #Goob content
-  # Orion-Start
+  # RW-Start
   salary: 70
   payrollDepartmentAccount: Cargo
-  # Orion-End
+  # RW-End
   access:
   - Cargo
   - Maintenance

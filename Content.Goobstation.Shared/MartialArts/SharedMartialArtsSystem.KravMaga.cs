@@ -89,7 +89,7 @@ public abstract partial class SharedMartialArtsSystem
 
         args.Handled = true;
 
-        _popupSystem.PopupClient(Loc.GetString("krav-maga-ready", ("user", Identity.Entity(ent, EntityManager)), ("action", Loc.GetString("ent-Action" + kravActionComp.Name.Replace(" ", "")).ToLowerInvariant())), ent, ent); // Orion-Edit: Localization
+        _popupSystem.PopupClient(Loc.GetString("krav-maga-ready", ("user", Identity.Entity(ent, EntityManager)), ("action", Loc.GetString("ent-Action" + kravActionComp.Name.Replace(" ", "")).ToLowerInvariant())), ent, ent); // RW-Edit: Localization
         ent.Comp.SelectedMove = kravActionComp.Configuration;
         ent.Comp.SelectedMoveComp = kravActionComp;
     }

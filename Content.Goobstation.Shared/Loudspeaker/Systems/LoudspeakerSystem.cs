@@ -106,10 +106,10 @@ public sealed class LoudSpeakerSystem : EntitySystem
 
     private void OnExamined(Entity<LoudspeakerComponent> ent, ref ExaminedEvent args)
     {
-        var state = ent.Comp.IsActive ? "loudspeaker-state-on" : "loudspeaker-state-off"; // Orion-Edit: Localization
+        var state = ent.Comp.IsActive ? "loudspeaker-state-on" : "loudspeaker-state-off"; // RW-Edit: Localization
 
         var message = ent.Comp.CanToggle
-            ? Loc.GetString("loudspeaker-examine-toggleable", ("state", Loc.GetString(state))) // Orion-Edit: Localization
+            ? Loc.GetString("loudspeaker-examine-toggleable", ("state", Loc.GetString(state))) // RW-Edit: Localization
             : Loc.GetString("loudspeaker-examine-generic");
 
         args.PushMarkup(message);
@@ -151,10 +151,10 @@ public sealed class LoudSpeakerSystem : EntitySystem
 
     private void ToggleLoudspeakerEffect(EntityUid user, Entity<LoudspeakerComponent> loudspeaker)
     {
-        var state = !loudspeaker.Comp.IsActive ? "loudspeaker-state-on" : "loudspeaker-state-off"; // Orion-Edit: Localization
+        var state = !loudspeaker.Comp.IsActive ? "loudspeaker-state-on" : "loudspeaker-state-off"; // RW-Edit: Localization
 
         _audio.PlayPredicted(loudspeaker.Comp.ToggleSound, user, user);
-        _popup.PopupClient(Loc.GetString("loudspeaker-toggle-popup", ("state", Loc.GetString(state))), user, user); // Orion-Edit: Localization
+        _popup.PopupClient(Loc.GetString("loudspeaker-toggle-popup", ("state", Loc.GetString(state))), user, user); // RW-Edit: Localization
     }
 
     #endregion

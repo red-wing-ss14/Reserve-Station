@@ -147,7 +147,7 @@
       - id: AirGrenade
       - id: ClothingHandsGlovesAtmosInsulated # Goobstation - insulated atmos gloves
       - id: ClothingBackpackFirefighterTank # Assmos - Firefighter nozzle
-      - id: InducerEngineeringBattery # Orion
+      - id: InducerEngineeringBattery # RW
         prob: 0.4
 
 - type: entity
@@ -177,7 +177,7 @@
     - id: ClothingBackpackFirefighterTank # Assmos - Firefighter nozzle
     - id: RPD #funkystation
     - id: DoorRemoteFirefight # Goobstation - re adding fire door remote
-    - id: InducerEngineeringBattery # Orion
+    - id: InducerEngineeringBattery # RW
       prob: 0.4
 
 - type: entityTable
@@ -205,7 +205,7 @@
       - id: RCD
       - id: RCDAmmo
       - id: MetalFoamGrenade
-      - id: InducerEngineeringBattery # Orion
+      - id: InducerEngineeringBattery # RW
         prob: 0.4
 
 - type: entity
@@ -228,7 +228,7 @@
     - id: RCD
     - id: RCDAmmo
     - id: MetalFoamGrenade
-    - id: InducerEngineeringBattery # Orion
+    - id: InducerEngineeringBattery # RW
       prob: 0.4
 
 - type: entityTable

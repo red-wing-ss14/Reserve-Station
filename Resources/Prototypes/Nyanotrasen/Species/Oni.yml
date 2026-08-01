@@ -7,18 +7,18 @@
   prototype: MobOni
   dollPrototype: MobOniDummy
   markingLimits: MobOniMarkingLimits
-  # Amour port: WD Slim body types START
+  # RW port: WD Slim body types START
   bodyTypes:
   - HumanNormal
-  # Amour port: WD Slim body types END
+  # RW port: WD Slim body types END
   skinColoration: Hues
   maleFirstNames: NamesOniFirstMale
   femaleFirstNames: NamesOniFirstFemale
   lastNames: NamesOniLast
   naming: LastNoFirst
-  # Orion-Start
+  # RW-Start
   category: Unusual
-  description: "/ServerInfo/_Orion/SpeciesDescriptions/Oni.xml"
+  description: "/ServerInfo/_RW/SpeciesDescriptions/Oni.xml"
   pros:
   - species-oni-pro-damage-resist
   - species-oni-pro-melee-damage
@@ -31,7 +31,7 @@
   cons:
   - species-oni-con-ranged-accuracy
   - species-oni-con-holy-vulnerable
-  # Orion-End
+  # RW-End
   # begin Goobstation: port EE height/width sliders
   minHeight: 1.0 # RW 1.11 > 1.0
   defaultHeight: 1.2

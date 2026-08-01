@@ -29,7 +29,7 @@
                 sprite: Objects/Devices/communication.rsi
                 state: walkietalkie
               doAfter: 5
-            # Orion-Start
+            # RW-Start
             - machinePart: Servo
               name: construction-graph-tag-servo
               icon:
@@ -42,6 +42,6 @@
                 sprite: "Objects/Misc/stock_parts.rsi"
                 state: "micro_mani"
               doAfter: 5
-            # Orion-End
+            # RW-End
     - node: medsecHud
       entity: ClothingEyesHudMedSec

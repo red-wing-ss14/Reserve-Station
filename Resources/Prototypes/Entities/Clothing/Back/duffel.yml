@@ -264,7 +264,7 @@
   - type: StaticPrice #Goobstation - Recycle update
     price: 1850
   - type: HideContrabandContent #Goobstation Contraband detector
-  - type: Construction # Orion
+  - type: Construction # RW
     graph: BagOfHoldingDuffel
     node: bag_of_holding
 

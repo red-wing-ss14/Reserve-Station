@@ -1,4 +1,0 @@
-- type: shader
-  id: AmourMarkingGradient
-  kind: source
-  path: "/Textures/_Amour/Shaders/marking_gradient.swsl"

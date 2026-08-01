@@ -77,13 +77,13 @@ public sealed partial class SpeciesPrototype : IPrototype
     // sprite layout, and leave this null. Keep in mind that this will disable
     // sprite accessories.
 
-    // Amour port: WD Slim body types START
+    // RW port: WD Slim body types START
     /// <summary>
     ///     Default body type for this species.
     /// </summary>
     [DataField(required: true)]
     public List<string> BodyTypes { get; private set; } = default!;
-    // Amour port: WD Slim body types END
+    // RW port: WD Slim body types END
 
     /// <summary>
     ///     Default skin tone for this species. This applies for non-human skin tones.
@@ -162,7 +162,7 @@ public sealed partial class SpeciesPrototype : IPrototype
     [DataField]
     public int MaxAge = 120;
 
-    /// Orion-Start
+    /// RW-Start
     [DataField]
     public SpeciesCategory Category = SpeciesCategory.Classic;
 
@@ -177,7 +177,7 @@ public sealed partial class SpeciesPrototype : IPrototype
 
     [DataField]
     public List<string> Special = new();
-    /// Orion-End
+    /// RW-End
 
     // begin Goobstation: port EE height/width sliders
 
@@ -238,7 +238,7 @@ public sealed partial class SpeciesPrototype : IPrototype
     // end Goobstation: port EE height/width sliders
 
     /// <summary>
-    ///     Amour add
+    ///     RW add
     /// </summary>
     [DataField]
     public int? MetabolismLimit;
@@ -256,7 +256,7 @@ public enum SpeciesNaming : byte
     FirstRoman // EE Plasmeme Change
 }
 
-// Orion-Start
+// RW-Start
 public enum SpeciesCategory : byte
 {
     Classic,
@@ -264,4 +264,4 @@ public enum SpeciesCategory : byte
     Special,
     Sponsor
 }
-// Orion-end
+// RW-end

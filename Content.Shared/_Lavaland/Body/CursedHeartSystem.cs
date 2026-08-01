@@ -46,7 +46,7 @@ public sealed class CursedHeartSystem : EntitySystem
         var query = EntityQueryEnumerator<CursedHeartComponent, MobStateComponent>();
         while (query.MoveNext(out var uid, out var comp, out var state))
         {
-            if (state.CurrentState is MobState.SoftCritical or MobState.HardCritical or MobState.Dead) // Orion-Edit
+            if (state.CurrentState is MobState.SoftCritical or MobState.HardCritical or MobState.Dead) // RW-Edit
                 continue;
 
             if (_timing.CurTime < comp.LastPump + TimeSpan.FromSeconds(comp.MaxDelay))

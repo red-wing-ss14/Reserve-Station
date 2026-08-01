@@ -173,7 +173,7 @@ namespace Content.Shared.Interaction
         {
             _uiQuery.TryComp(ev.Target, out var aUiComp);
 
-            // Orion-Start
+            // RW-Start
             if (TryComp<GhostComponent>(ev.Actor, out var ghost) && !ghost.CanGhostInteract)
             {
                 if (ev.Message is not OpenBoundInterfaceMessage
@@ -183,13 +183,13 @@ namespace Content.Shared.Interaction
 
                 return;
             }
-            // Orion-End
+            // RW-End
 
             if (!_actionBlockerSystem.CanInteract(ev.Actor, ev.Target))
             {
                 // We permit ghosts to open uis unless explicitly blocked
                 if (ev.Message is not OpenBoundInterfaceMessage
-/* // Orion-Edit
+/* // RW-Edit
                     || !HasComp<GhostComponent>(ev.Actor)
                     || aUiComp?.BlockSpectators == true
 */

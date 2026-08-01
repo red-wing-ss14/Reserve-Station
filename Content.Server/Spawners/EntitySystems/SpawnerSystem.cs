@@ -22,7 +22,7 @@ public sealed class SpawnerSystem : EntitySystem
     private void OnSpawnerInit(EntityUid uid, TimedSpawnerComponent component, ComponentInit args)
     {
         component.TokenSource?.Cancel();
-        component.TokenSource?.Dispose(); // Orion
+        component.TokenSource?.Dispose(); // RW
         component.TokenSource = new CancellationTokenSource();
         uid.SpawnRepeatingTimer(TimeSpan.FromSeconds(component.IntervalSeconds), () => OnTimerFired(uid, component), component.TokenSource.Token);
     }
@@ -46,12 +46,12 @@ public sealed class SpawnerSystem : EntitySystem
         }
     }
 
-    private static void OnTimedSpawnerShutdown(EntityUid uid, TimedSpawnerComponent component, ComponentShutdown args) // Orion-Edit: Static
+    private static void OnTimedSpawnerShutdown(EntityUid uid, TimedSpawnerComponent component, ComponentShutdown args) // RW-Edit: Static
     {
         component.TokenSource?.Cancel();
-        // Orion-Start
+        // RW-Start
         component.TokenSource?.Dispose();
         component.TokenSource = null;
-        // Orion-End
+        // RW-End
     }
 }

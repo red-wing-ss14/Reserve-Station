@@ -10,7 +10,7 @@ namespace Content.IntegrationTests.Tests.Chemistry;
 
 [TestFixture]
 [TestOf(typeof(ReagentData))]
-[Ignore("Fucking broken, maybe someone fix")] // Orion
+[Ignore("Fucking broken, maybe someone fix")] // RW
 public sealed class ReagentDataTest : InteractionTest
 {
     [Test]

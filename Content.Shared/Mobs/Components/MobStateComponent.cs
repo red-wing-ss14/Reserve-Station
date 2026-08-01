@@ -27,8 +27,8 @@ namespace Content.Shared.Mobs.Components
         public HashSet<MobState> AllowedStates = new()
             {
                 MobState.Alive,
-                MobState.SoftCritical, // Orion-Edit
-                MobState.HardCritical, // Orion
+                MobState.SoftCritical, // RW-Edit
+                MobState.HardCritical, // RW
                 MobState.Dead,
             };
     }

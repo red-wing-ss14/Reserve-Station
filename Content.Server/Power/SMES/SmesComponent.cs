@@ -44,7 +44,7 @@ public sealed partial class SmesComponent : Component
     [ViewVariables]
     public ChargeState ChargeState = ChargeState.Still;
 
-    // Orion-Start
+    // RW-Start
     [DataField]
     public float BaseMaxSupply = 200000f;
 
@@ -56,5 +56,5 @@ public sealed partial class SmesComponent : Component
 
     [DataField]
     public float FinalMaxChargeRate = 200000f;
-    // Orion-End
+    // RW-End
 }

@@ -32,14 +32,14 @@ public sealed class AirlockSystem : SharedAirlockSystem
             door.OpenSpriteStates.Add((DoorVisualLayers.BaseUnlit, comp.OpenSpriteState));
             door.ClosedSpriteStates.Add((DoorVisualLayers.BaseUnlit, comp.ClosedSpriteState));
         }
-        // Orion-Start
+        // RW-Start
         else
         {
-            // Orion: Register BaseUnlit end-states so DoorSystem.OnAnimationCompleted restores them. Allows removing LayerSetAnimationTime(0) in OnAppearanceChange that caused jitter.
+            // RW: Register BaseUnlit end-states so DoorSystem.OnAnimationCompleted restores them. Allows removing LayerSetAnimationTime(0) in OnAppearanceChange that caused jitter.
             door.OpenSpriteStates.Add((DoorVisualLayers.BaseUnlit, comp.ClosingSpriteState));
             door.ClosedSpriteStates.Add((DoorVisualLayers.BaseUnlit, comp.OpeningSpriteState));
         }
-        // Orion-End
+        // RW-End
 
         ((Animation)door.OpeningAnimation).AnimationTracks.Add(new AnimationTrackSpriteFlick()
         {
@@ -113,7 +113,7 @@ public sealed class AirlockSystem : SharedAirlockSystem
                 ||  state == DoorState.Opening
                 ||  state == DoorState.Denying
                 || (state == DoorState.Open && comp.OpenUnlitVisible)
-                || (state == DoorState.Closed && comp.OpenUnlitVisible)) // Orion-Edit
+                || (state == DoorState.Closed && comp.OpenUnlitVisible)) // RW-Edit
                     && !boltedVisible && !emergencyLightsVisible;
         }
 
@@ -144,6 +144,6 @@ public sealed class AirlockSystem : SharedAirlockSystem
                 _sprite.LayerSetAnimationTime((uid, args.Sprite), DoorVisualLayers.BaseUnlit, 0);
                 break;
         }
-        */ // Orion-Edit-End
+        */ // RW-Edit-End
     }
 }

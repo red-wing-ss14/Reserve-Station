@@ -40,7 +40,7 @@
     ActionTeleportWizard: 2
     ActionSwapSpell: 1
     ActionKnock: 1
-#    ActionRathenSpell: 1 # Orion-Edit
+#    ActionRathenSpell: 1 # RW-Edit
 
 - type: weightedRandomEntity
   id: FullRandomSpellTable

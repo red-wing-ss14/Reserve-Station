@@ -7,7 +7,7 @@
   setPreference: true
   objective: roles-antag-nuclear-operative-objective
   requirements:
-  - !type:DiscordLinkRequirement # Amour edit
+  - !type:DiscordLinkRequirement # RW edit
   - !type:SpeciesRequirement
     inverted: true
     species:
@@ -21,7 +21,7 @@
   setPreference: true
   objective: roles-antag-nuclear-operative-agent-objective
   requirements:
-  - !type:DiscordLinkRequirement # Amour edit
+  - !type:DiscordLinkRequirement # RW edit
   - !type:SpeciesRequirement
     inverted: true
     species:
@@ -35,7 +35,7 @@
   setPreference: true
   objective: roles-antag-nuclear-operative-commander-objective
   requirements:
-  - !type:DiscordLinkRequirement # Amour edit
+  - !type:DiscordLinkRequirement # RW edit
   - !type:SpeciesRequirement
     inverted: true
     species:

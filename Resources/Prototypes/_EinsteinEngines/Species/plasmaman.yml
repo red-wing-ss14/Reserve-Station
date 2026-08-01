@@ -3,10 +3,10 @@
   name: species-name-plasmaman
   roundStart: true
   prototype: MobPlasmaman
-  # Amour port: WD Slim body types START
+  # RW port: WD Slim body types START
   bodyTypes:
   - PlasmamanNormal
-  # Amour port: WD Slim body types END
+  # RW port: WD Slim body types END
   defaultSkinTone: "#a349a4"
   markingLimits: MobPlasmamanMarkingLimits
   dollPrototype: MobPlasmamanDummy
@@ -19,9 +19,9 @@
   naming: FirstRoman
   sexes:
   - Unsexed
-  # Orion-Start
+  # RW-Start
   category: Unusual
-  description: "/ServerInfo/_Orion/SpeciesDescriptions/Plasmaman.xml"
+  description: "/ServerInfo/_RW/SpeciesDescriptions/Plasmaman.xml"
   pros:
   - species-plasmaman-pro-piercing-resist
   - species-plasmaman-pro-poison-resist
@@ -37,13 +37,13 @@
   - species-plasmaman-con-heat-vulnerable
   - species-plasmaman-con-ignite-without-suit
   - species-plasmaman-con-unarmed-self-burn
-  # Orion-End
+  # RW-End
 
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
 - type: bodyType
   id: PlasmamanNormal
   name: body-normal
-# Amour port: WD Slim body types END
+# RW port: WD Slim body types END
   sprites:
     Head: MobPlasmamanHead
     Face: MobHumanoidAnyMarking

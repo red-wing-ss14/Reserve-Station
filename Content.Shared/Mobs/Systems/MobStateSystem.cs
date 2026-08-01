@@ -59,10 +59,10 @@ public partial class MobStateSystem : EntitySystem
         if (!_mobStateQuery.Resolve(target, ref component, false))
             return false;
 
-        return component.CurrentState is MobState.SoftCritical or MobState.HardCritical; // Orion-Edit
+        return component.CurrentState is MobState.SoftCritical or MobState.HardCritical; // RW-Edit
     }
 
-    // Orion-Start
+    // RW-Start
     /// <summary>
     /// New MobStates, better use these methods!
     /// </summary>
@@ -83,7 +83,7 @@ public partial class MobStateSystem : EntitySystem
 
         return component.CurrentState == MobState.HardCritical;
     }
-    // Orion-End
+    // RW-End
 
     /// <summary>
     ///  Check if a Mob is Dead
@@ -108,7 +108,7 @@ public partial class MobStateSystem : EntitySystem
     {
         if (!_mobStateQuery.Resolve(target, ref component, false))
             return false;
-        return component.CurrentState is MobState.SoftCritical or MobState.HardCritical or MobState.Dead; // Orion-Edit
+        return component.CurrentState is MobState.SoftCritical or MobState.HardCritical or MobState.Dead; // RW-Edit
     }
 
     /// <summary>

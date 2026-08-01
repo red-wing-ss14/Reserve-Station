@@ -13,12 +13,12 @@
     deleteOnSpawn: true
   - type: Sprite
     noRot: false
-    sprite: _Orion/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi # Orion-Edit: New sprites
+    sprite: _RW/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi # RW-Edit: New sprites
     layers:
-    - state: 25combat # Orion-Edit: New sprites
+    - state: 25combat # RW-Edit: New sprites
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
-#  - type: SpentAmmoVisuals # Orion-Edit: Removed for optimization
+#  - type: SpentAmmoVisuals # RW-Edit: Removed for optimization
   - type: StaticPrice
     price: 10
 
@@ -41,8 +41,8 @@
     proto: BulletCaselessRiflePractice
   - type: Sprite
     layers:
-      - state: 25training # Orion-Edit: New sprites
+      - state: 25training # RW-Edit: New sprites
         map: [ "enum.AmmoVisualLayers.Base" ]
-#      - state: tip # Orion-Edit: Removed
+#      - state: tip # RW-Edit: Removed
 #        map: [ "enum.AmmoVisualLayers.Tip" ]
 #        color: "#dbdbdb"

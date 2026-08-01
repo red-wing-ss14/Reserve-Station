@@ -42,7 +42,7 @@
   - type: FlavorProfile
     flavors:
       - people
-#  - type: FoodSequenceElement # Orion-Edit: Removed
+#  - type: FoodSequenceElement # RW-Edit: Removed
 #    entries:
 #      Burger: Brain
 #      Taco: Brain
@@ -60,7 +60,7 @@
   name: animal eyes
   description: "I see you!"
   components:
-  - type: Edible # Orion
+  - type: Edible # RW
   # start-backmen: surgery
   - type: Organ
     slotId: eyes

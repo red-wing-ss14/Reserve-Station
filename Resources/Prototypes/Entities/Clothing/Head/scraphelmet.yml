@@ -113,10 +113,10 @@
       NerveDamage: 0
     modifiers:
       coefficients:
-        Blunt: 0.6 # Amour edit: 0.85 > 0.6
-        Slash: 0.6 # Amour edit: 0.85 > 0.6
-        Piercing: 0.75 # Amour edit: 0.85 > 0.75
-        Heat: 0.9 # Amour edit: 0.85 > 0.9
+        Blunt: 0.6 # RW edit: 0.85 > 0.6
+        Slash: 0.6 # RW edit: 0.85 > 0.6
+        Piercing: 0.75 # RW edit: 0.85 > 0.75
+        Heat: 0.9 # RW edit: 0.85 > 0.9
         Radiation: 0.8
   - type: HideLayerClothing
     slots:

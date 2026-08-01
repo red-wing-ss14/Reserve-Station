@@ -42,7 +42,7 @@
 
 - type: loadout
   id: MedicalHeadMirror
-#  effects: # Orion-Edit: Removed
+#  effects: # RW-Edit: Removed
 #  - !type:GroupLoadoutEffect
 #    proto: MedicalHeadMirrorTimer
   equipment:

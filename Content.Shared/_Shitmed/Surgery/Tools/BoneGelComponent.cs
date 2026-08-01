@@ -7,7 +7,7 @@ namespace Content.Shared._Shitmed.Medical.Surgery.Tools;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class BoneGelComponent : Component, ISurgeryToolComponent
 {
-    public string ToolName => Loc.GetString("surgery-tool-bonegel"); // Orion-Edit: Localization
+    public string ToolName => Loc.GetString("surgery-tool-bonegel"); // RW-Edit: Localization
 
     [DataField]
     public bool? Used { get; set; } = null;

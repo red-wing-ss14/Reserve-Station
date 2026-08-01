@@ -21,7 +21,7 @@ public sealed partial class CargoSlipComponent : Component
     [DataField]
     public string Requester;
 
-    // Orion-Start
+    // RW-Start
     [DataField]
     public string? DeliveryDestination;
 
@@ -30,7 +30,7 @@ public sealed partial class CargoSlipComponent : Component
 
     [DataField]
     public bool SecuredDelivery;
-    // Orion-End
+    // RW-End
 
     /// <summary>
     /// How many of the product to order

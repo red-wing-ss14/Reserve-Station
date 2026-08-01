@@ -64,10 +64,10 @@ public sealed class ThunderdomeRuleSystem : EntitySystem
     [Dependency] private readonly TemporaryMindSystem _tempMind = default!;
     [Dependency] private readonly ILocalizationManager _loc = default!;
     [Dependency] private readonly GunSystem _gun = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!; // Orion
+    [Dependency] private readonly IPrototypeManager _prototype = default!; // RW
 
     private const string RulePrototype = "ThunderdomeRule";
-    private static readonly ProtoId<LocalizedDatasetPrototype> ThunderdomeNameSuffixDataset = "NamesOperationPrefix"; // Orion
+    private static readonly ProtoId<LocalizedDatasetPrototype> ThunderdomeNameSuffixDataset = "NamesOperationPrefix"; // RW
     private EntityUid? _ruleEntity;
     private bool _refillOnKill;
 
@@ -254,7 +254,7 @@ public sealed class ThunderdomeRuleSystem : EntitySystem
 
         HumanoidCharacterProfile? profile = null;
         if (mindComp.UserId is { } userId && _prefs.TryGetCachedPreferences(userId, out var prefs))
-        // Orion-Edit-Start
+        // RW-Edit-Start
         {
             if (prefs.SelectedCharacter is HumanoidCharacterProfile selectedProfile)
             {
@@ -264,7 +264,7 @@ public sealed class ThunderdomeRuleSystem : EntitySystem
                 profile = selectedProfile.WithName(thunderdomeName);
             }
         }
-        // Orion-Edit-End
+        // RW-Edit-End
 
         var originalBody = mindComp.OwnedEntity != ghostEntity ? mindComp.OwnedEntity : null;
 

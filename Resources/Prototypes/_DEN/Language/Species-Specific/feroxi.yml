@@ -4,16 +4,16 @@
   isVisibleLanguage: true
   speech:
     color: "#8DB9D6"
-  # Orion-Start
+  # RW-Start
   icon:
-    sprite: _Orion/Interface/Chat/language.rsi
+    sprite: _RW/Interface/Chat/language.rsi
     state: what # TODO: Sprite it
-  # Orion-End
+  # RW-End
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2
     maxSyllables: 5
-    # Orion-Edit-Start: Localization
+    # RW-Edit-Start: Localization
     replacement:
     - ка
     - па
@@ -76,4 +76,4 @@
     - ван
     - йуп
     - губ
-    # Orion-Edit-End: Localization
+    # RW-Edit-End: Localization

@@ -129,12 +129,12 @@
     graph: DoorGraph
     node: paperDoor
   - type: Door
-  # Orion-Start
+  # RW-Start
     closeTimeOne: 0.4
     closeTimeTwo: 0.8
     openTimeOne: 0.8
     openTimeTwo: 0.4
-  # Orion-End
+  # RW-End
     openSound:
       path: /Audio/Effects/paperdoor_openclose.ogg
     closeSound:
@@ -195,14 +195,14 @@
     graph: DoorGraph
     node: bananiumDoor
   - type: Door
-  # Orion-Start
+  # RW-Start
     closeTimeOne: 0.1
     closeTimeTwo: 0.2
     openTimeOne: 0.2
     openTimeTwo: 0.1
     openingAnimationTime: 0.6
     closingAnimationTime: 0.6
-  # Orion-End
+  # RW-End
     openSound:
       path: /Audio/Items/bikehorn.ogg
     closeSound:

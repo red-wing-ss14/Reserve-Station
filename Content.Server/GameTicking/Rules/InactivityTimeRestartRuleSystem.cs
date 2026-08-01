@@ -42,7 +42,7 @@ public sealed class InactivityTimeRestartRuleSystem : GameRuleSystem<InactivityR
             return;
 
         component.TimerCancel.Cancel();
-        component.TimerCancel.Dispose(); // Orion
+        component.TimerCancel.Dispose(); // RW
         component.TimerCancel = new CancellationTokenSource();
         Timer.Spawn(component.InactivityMaxTime, () => TimerFired(uid, component), component.TimerCancel.Token);
     }

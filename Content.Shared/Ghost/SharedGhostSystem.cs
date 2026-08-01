@@ -34,12 +34,12 @@ namespace Content.Shared.Ghost
 
         private void OnAttemptInteract(Entity<GhostComponent> ent, ref InteractionAttemptEvent args)
         {
-            // Orion-Edit-Start
+            // RW-Edit-Start
             if (ent.Comp.CanGhostInteract || HasComp<ActivatableUIComponent>(args.Target) && ent.Comp.CanGhostOpenUI) // CorvaxGoob-GhostUIViewing
                 return;
 
             args.Cancelled = true;
-            // Orion-Edit-End
+            // RW-Edit-End
         }
 
         private void OnAttempt(EntityUid uid, GhostComponent component, CancellableEntityEventArgs args)
@@ -122,7 +122,7 @@ namespace Content.Shared.Ghost
     {
     }
 
-     // Orion-Start
+     // RW-Start
      /// <summary>
      /// An player body a ghost can warp to.
      /// This is used as part of <see cref="GhostWarpsResponseEvent"/>
@@ -225,23 +225,23 @@ namespace Content.Shared.Ghost
          public string PrototypeID { get; }
 
      }
-    // Orion-End
+    // RW-End
 
     /// <summary>
     /// An individual place a ghost can warp to.
     /// This is used as part of <see cref="GhostWarpsResponseEvent"/>
     /// </summary>
     [Serializable, NetSerializable]
-    public struct GhostWarpPlace // Orion-Edit: GhostWarp > GhostWarpPlace
+    public struct GhostWarpPlace // RW-Edit: GhostWarp > GhostWarpPlace
     {
-        // Orion-Edit-Start
+        // RW-Edit-Start
         public GhostWarpPlace(NetEntity entity, string name, string description)
         {
             Entity = entity;
             Name = name;
             Description = description;
         }
-        // Orion-Edit-End
+        // RW-Edit-End
 
         /// <summary>
         /// The entity representing the warp point.
@@ -252,12 +252,12 @@ namespace Content.Shared.Ghost
         /// <summary>
         /// The display name to be surfaced in the ghost warps menu
         /// </summary>
-        public string Name { get; } // Orion-Edit: DisplayName > Name
+        public string Name { get; } // RW-Edit: DisplayName > Name
 
         /// <summary>
         /// Display name to be surfaced in the ghost warps menu
         /// </summary>
-        public string Description { get;  } // Orion-Edit: IsWarpPoint > Description
+        public string Description { get;  } // RW-Edit: IsWarpPoint > Description
     }
 
     /// <summary>
@@ -267,7 +267,7 @@ namespace Content.Shared.Ghost
     [Serializable, NetSerializable]
     public sealed class GhostWarpsResponseEvent : EntityEventArgs
     {
-/* // Orion-Edit: Removed
+/* // RW-Edit: Removed
         public GhostWarpsResponseEvent(List<GhostWarp> warps)
         {
             Warps = warps;
@@ -279,7 +279,7 @@ namespace Content.Shared.Ghost
         public List<GhostWarp> Warps { get; }
 */
 
-        // Orion-Start
+        // RW-Start
         public GhostWarpsResponseEvent(List<GhostWarpPlayer> players, List<GhostWarpPlace> places, List<GhostWarpGlobalAntagonist> antagonists)
         {
             Players = players;
@@ -301,7 +301,7 @@ namespace Content.Shared.Ghost
         /// A list of antagonists to teleport.
         /// </summary>
         public List<GhostWarpGlobalAntagonist> Antagonists { get; }
-        // Orion-End
+        // RW-End
     }
 
     /// <summary>
@@ -346,8 +346,8 @@ namespace Content.Shared.Ghost
         }
     }
 
-    // Orion-Start
+    // RW-Start
     [Serializable, NetSerializable]
     public sealed class GhostReturnToRoundRequest : EntityEventArgs;
-    // Orion-End
+    // RW-End
 }

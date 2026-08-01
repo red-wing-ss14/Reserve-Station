@@ -2,7 +2,7 @@
 
 using System.Linq;
 using Content.Shared._Goobstation.Heretic.Components;
-using Content.Shared._Orion.Ghost;
+using Content.Shared._RW.Ghost;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CombatMode;
 using Content.Shared.Cuffs;
@@ -11,7 +11,7 @@ using Content.Shared.Database;
 using Content.Shared.DoAfter;
 using Content.Shared.DragDrop;
 using Content.Shared.Hands.Components;
-using Content.Shared._Amour.SSDIndicator; // Amour
+using Content.Shared._RW.SSDIndicator; // RW
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
@@ -337,11 +337,11 @@ public abstract class SharedStrippableSystem : EntitySystem
             DuplicateCondition = DuplicateConditions.SameTool
         };
 
-        // Amour start
+        // RW start
         // _doAfterSystem.TryStartDoAfter(doAfterArgs);
         if (_doAfterSystem.TryStartDoAfter(doAfterArgs))
             RaiseLocalEvent(target, new SSDStripAttemptedEvent(user, time));
-        // Amour end
+        // RW end
     }
 
     /// <summary>
@@ -555,11 +555,11 @@ public abstract class SharedStrippableSystem : EntitySystem
             DuplicateCondition = DuplicateConditions.SameTool
         };
 
-        // Amour start
+        // RW start
         // _doAfterSystem.TryStartDoAfter(doAfterArgs);
         if (_doAfterSystem.TryStartDoAfter(doAfterArgs))
             RaiseLocalEvent(target.Owner, new SSDStripAttemptedEvent(user, time));
-        // Amour end
+        // RW end
     }
 
     /// <summary>
@@ -716,7 +716,7 @@ public abstract class SharedStrippableSystem : EntitySystem
         return !HasComp<BypassInteractionChecksComponent>(viewer);
     }
 
-    // Orion-Start
+    // RW-Start
     public (bool IgnoreBlock, bool ShowAllItems) IsInventoryIgnored(EntityUid? viewer)
     {
         var ignoreInventoryBlockComponent = CompOrNull<IgnoreInventoryBlockComponent>(viewer);
@@ -725,5 +725,5 @@ public abstract class SharedStrippableSystem : EntitySystem
 
         return (ignoreInventoryBlockComponent.IgnoreBlock, ignoreInventoryBlockComponent.ShowAllItems);
     }
-    // Orion-End
+    // RW-End
 }

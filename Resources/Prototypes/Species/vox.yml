@@ -21,10 +21,10 @@
   name: species-name-vox
   roundStart: true
   prototype: MobVox
-  # Amour port: WD Slim body types START
+  # RW port: WD Slim body types START
   bodyTypes:
     - VoxNormal
-  # Amour port: WD Slim body types END
+  # RW port: WD Slim body types END
   markingLimits: MobVoxMarkingLimits
   dollPrototype: MobVoxDummy
   skinColoration: VoxFeathers
@@ -34,9 +34,9 @@
   naming: First
   sexes:
   - Unsexed
-  # Orion-Start
+  # RW-Start
   category: Classic
-  description: "/ServerInfo/_Orion/SpeciesDescriptions/Vox.xml"
+  description: "/ServerInfo/_RW/SpeciesDescriptions/Vox.xml"
   pros:
   - species-vox-pro-toxin-heal
   - species-vox-pro-disgust-resist
@@ -46,13 +46,13 @@
   - species-vox-special-welding-fuel
   cons:
   - species-vox-con-uncloneable
-  # Orion-End
+  # RW-End
 
-# Amour port: WD Slim body types START
+# RW port: WD Slim body types START
 - type: bodyType
   id: VoxNormal
   name: body-normal
-# Amour port: WD Slim body types END
+# RW port: WD Slim body types END
   sprites:
     Head: MobVoxHead
     Snout: MobHumanoidAnyMarking

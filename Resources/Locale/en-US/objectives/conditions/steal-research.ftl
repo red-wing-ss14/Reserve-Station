@@ -6,3 +6,5 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 objective-condition-steal-research-title = Steal {$count} technologies.
+objective-condition-research-disk-title = Steal a research disk containing at least {$count} technologies.
+objective-condition-research-disk-description = Print a research disk with at least {$count} research nodes unlocked and bring it with you on evacuation.

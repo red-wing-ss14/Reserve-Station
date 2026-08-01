@@ -1,13 +1,13 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-// Amour start: SSD status icons are hidden.
+// RW start: SSD status icons are hidden.
 // using Content.Shared.CCVar;
 // using Content.Shared.Mind.Components;
 // using Content.Shared.Mobs.Systems;
 // using Content.Shared.NPC;
 // using Robust.Shared.Configuration;
 // using Robust.Shared.Prototypes;
-// Amour end
+// RW end
 using Content.Shared.SSDIndicator;
 using Content.Shared.StatusIcon.Components;
 
@@ -18,11 +18,11 @@ namespace Content.Client.SSDIndicator;
 /// </summary>
 public sealed class SSDIndicatorSystem : EntitySystem
 {
-    // Amour start: SSD status icons are hidden.
+    // RW start: SSD status icons are hidden.
     // [Dependency] private readonly IPrototypeManager _prototype = default!;
     // [Dependency] private readonly IConfigurationManager _cfg = default!;
     // [Dependency] private readonly MobStateSystem _mobState = default!;
-    // Amour end
+    // RW end
 
     public override void Initialize()
     {
@@ -33,7 +33,7 @@ public sealed class SSDIndicatorSystem : EntitySystem
 
     private void OnGetStatusIcon(EntityUid uid, SSDIndicatorComponent component, ref GetStatusIconsEvent args)
     {
-        // Amour start: SSD status icons are hidden.
+        // RW start: SSD status icons are hidden.
         // if (component.IsSSD &&
         //     _cfg.GetCVar(CCVars.ICShowSSDIndicator) &&
         //     !_mobState.IsDead(uid) &&
@@ -42,6 +42,6 @@ public sealed class SSDIndicatorSystem : EntitySystem
         // {
         //     args.StatusIcons.Add(_prototype.Index(component.Icon));
         // }
-        // Amour end
+        // RW end
     }
 }

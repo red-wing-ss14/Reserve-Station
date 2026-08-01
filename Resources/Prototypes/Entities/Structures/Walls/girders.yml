@@ -56,7 +56,7 @@
           collection: MetalBreak
   - type: StaticPrice
     price: 30
-  - type: Rotatable # Orion | For secret doors
+  - type: Rotatable # RW | For secret doors
     rotateWhileAnchored: true
 
 - type: entity

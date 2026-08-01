@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Server._Orion.Economy.Systems;
+using Content.Server._RW.Economy.Systems;
 using Content.Server.Cargo.Components;
 using Content.Server.DeviceLinking.Systems;
 using Content.Server.Popups;
@@ -44,8 +44,8 @@ public sealed partial class CargoSystem : SharedCargoSystem
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly MetaDataSystem _metaSystem = default!;
     [Dependency] private readonly RadioSystem _radio = default!;
-    [Dependency] private readonly MarketSystem _market = default!; // Orion
-    [Dependency] private readonly BankSystem _bank = default!; // Orion
+    [Dependency] private readonly MarketSystem _market = default!; // RW
+    [Dependency] private readonly BankSystem _bank = default!; // RW
 
     private EntityQuery<TransformComponent> _xformQuery;
     private EntityQuery<CargoSellBlacklistComponent> _blacklistQuery;
@@ -56,7 +56,7 @@ public sealed partial class CargoSystem : SharedCargoSystem
     private List<EntityUid> _listEnts = new();
     private List<(EntityUid, CargoPalletComponent, TransformComponent)> _pads = new();
 
-    private float _uiRefreshAccumulator; // Orion
+    private float _uiRefreshAccumulator; // RW
 
     public override void Initialize()
     {
@@ -80,15 +80,15 @@ public sealed partial class CargoSystem : SharedCargoSystem
         UpdateConsole();
         UpdateTelepad(frameTime);
         UpdateBounty();
-        UpdateEconomyInterfaces(frameTime); // Orion
+        UpdateEconomyInterfaces(frameTime); // RW
     }
 
-    // Orion-Start
+    // RW-Start
     public bool HasAccount(Entity<StationBankAccountComponent?> ent, ProtoId<CargoAccountPrototype> account)
     {
         return Resolve(ent, ref ent.Comp) && ent.Comp.Accounts.ContainsKey(account);
     }
-    // Orion-End
+    // RW-End
 
     public void UpdateBankAccount(
         Entity<StationBankAccountComponent?> ent,
@@ -122,7 +122,7 @@ public sealed partial class CargoSystem : SharedCargoSystem
 
         foreach (var (account, percent) in accountDistribution)
         {
-            // Orion-Edit-Start
+            // RW-Edit-Start
             var accountBalancedAdded = (int) Math.Round(percent * balanceAdded);
             if (!ent.Comp.Accounts.TryGetValue(account, out var currentBalance))
             {
@@ -131,7 +131,7 @@ public sealed partial class CargoSystem : SharedCargoSystem
             }
 
             ent.Comp.Accounts[account] = currentBalance + accountBalancedAdded;
-            // Orion-Edit-End
+            // RW-Edit-End
         }
 
         var ev = new BankBalanceUpdatedEvent(ent, ent.Comp.Accounts);

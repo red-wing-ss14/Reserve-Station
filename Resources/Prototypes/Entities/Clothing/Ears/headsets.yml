@@ -102,7 +102,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-#  abstract: true # Orion-Edit
+#  abstract: true # RW-Edit
   parent: Clothing
   id: ClothingHeadset
   name: headset
@@ -111,7 +111,7 @@
   - type: ContainerContainer
     containers:
       key_slots: !type:Container
-#  - type: ContainerFill # Orion-Edit
+#  - type: ContainerFill # RW-Edit
 #    containers:
 #      key_slots:
 #      - EncryptionKeyCommon
@@ -119,14 +119,14 @@
   - type: EncryptionKeyHolder
     keySlots: 4
   - type: Sprite
-    sprite: Clothing/Ears/Headsets/base.rsi # Orion
+    sprite: Clothing/Ears/Headsets/base.rsi # RW
     state: icon
   - type: Item
     size: Small
   - type: Clothing
     slots:
     - ears
-    - earsright # Orion
+    - earsright # RW
     sprite: Clothing/Ears/Headsets/base.rsi
   - type: GuideHelp
     guides:
@@ -145,7 +145,7 @@
   id: ClothingHeadsetGrey
   name: passenger headset
   components:
-  - type: ContainerFill # Orion
+  - type: ContainerFill # RW
     containers:
       key_slots:
       - EncryptionKeyCommon

@@ -4,7 +4,7 @@
   speech:
     color: "#8bb05b"
   icon:
-    sprite: _Orion/Interface/Chat/language.rsi
+    sprite: _RW/Interface/Chat/language.rsi
     state: zombie
   obfuscation:
     !type:LocalizedReplacementObfuscation

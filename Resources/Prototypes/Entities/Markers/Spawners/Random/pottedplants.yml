@@ -13,10 +13,10 @@
   - type: RandomSpawner
     offset: 0
     prototypes:
-      # Orion-Start
+      # RW-Start
       - PottedPlantPlasmaPlant
       - Hedge
-      # Orion-End
+      # RW-End
       - PottedPlant0
       - PottedPlant1
       - PottedPlant2

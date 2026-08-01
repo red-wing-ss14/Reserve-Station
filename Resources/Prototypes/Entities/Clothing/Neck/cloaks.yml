@@ -62,7 +62,7 @@
   description: A sterile blue cloak with a green cross, radiating with a sense of duty and willingness to help others.
   components:
   - type: Sprite
-    sprite: Clothing/Neck/Cloaks/cmo.rsi # Orion-Edit: Reset to base
+    sprite: Clothing/Neck/Cloaks/cmo.rsi # RW-Edit: Reset to base
   - type: StealTarget
     stealGroup: HeadCloak
 
@@ -151,7 +151,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakTrans
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: vampire cloak
   description: Worn by high ranking vampires of the transylvanian society of vampires.
   components:
@@ -240,7 +240,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakAce
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: pilot's cloak
   description: Cloak awarded to Nanotrasen's finest space aces.
   components:
@@ -250,7 +250,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakAro
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: werewolf cloak
   description: This cloak lets others know you're a lone wolf.
   components:
@@ -260,7 +260,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakAroace
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: aeropilot's cloak # thank you happyman442 this was the best name idea ever
   description: Cloak awarded to Nanotrasen's finest pilots on planets with inhabitable atmospheres.
   components:
@@ -270,7 +270,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakBi
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: poison cloak
   description: The purple color is a clear indicator you are poisonous.
   components:
@@ -280,7 +280,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakIntersex
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: cyclops cloak
   description: The circle on this cloak represents a cyclops' eye.
   components:
@@ -290,7 +290,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakLesbian
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: poet cloak
   description: This cloak belonged to an ancient poet, you forgot which one.
   components:
@@ -300,7 +300,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakGay
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: multi-level marketing cloak
   description: This cloak is highly sought after in the Nanotrasen Marketing Offices.
   components:
@@ -310,7 +310,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakEnby
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: treasure hunter cloak
   description: This cloak belonged to a greedy treasure hunter.
   components:
@@ -320,7 +320,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakPan
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: chef's cloak
   description: Meant to be worn alongside a frying pan.
   components:

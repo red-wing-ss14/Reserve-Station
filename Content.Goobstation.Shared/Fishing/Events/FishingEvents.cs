@@ -10,10 +10,10 @@ public sealed partial class ThrowFishingLureActionEvent : WorldTargetActionEvent
 
 public sealed partial class PullFishingLureActionEvent : InstantActionEvent;
 
-// Orion-Start
+// RW-Start
 [ByRefEvent]
 public readonly record struct FishCaughtEvent(EntProtoId FishId);
-// Orion-End
+// RW-End
 
 [Serializable, NetSerializable]
 public sealed class ActiveFishingSpotComponentState : ComponentState

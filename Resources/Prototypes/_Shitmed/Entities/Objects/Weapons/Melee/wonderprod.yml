@@ -35,8 +35,8 @@
     angle: 60
     animation: WeaponArcThrust
   - type: StaminaDamageOnHit
-    damage: 50 # Amour edit - 60 > 50
-    lightAttackDamageMultiplier: 0.5 # Amour edit - 2 > 0.5
+    damage: 50 # RW edit - 60 > 50
+    lightAttackDamageMultiplier: 0.5 # RW edit - 2 > 0.5
     sound: /Audio/Weapons/Guns/Hits/taser_hit.ogg
 #  - type: RestrictMeleeByUserTag
 #    contains:
@@ -78,8 +78,8 @@
           angle: 60
           animation: WeaponArcThrust
         - type: StaminaDamageOnHit
-          damage: 50 # Amour edit - 60 > 50
-          lightAttackDamageMultiplier: 0.5 # Amour edit - 2 > 0.5
+          damage: 50 # RW edit - 60 > 50
+          lightAttackDamageMultiplier: 0.5 # RW edit - 2 > 0.5
           sound: /Audio/Weapons/Guns/Hits/taser_hit.ogg
         soundStateActivate:
           collection: sparks
@@ -102,7 +102,7 @@
           animation: WeaponArcThrust
         - type: CuffsOnHit
           proto: Cablecuffs
-        - type: UseDelayBlockMelee # Amour edit
+        - type: UseDelayBlockMelee # RW edit
           delays:
           - wonderprod-cuffs
 

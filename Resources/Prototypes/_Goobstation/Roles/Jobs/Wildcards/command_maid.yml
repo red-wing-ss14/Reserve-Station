@@ -4,12 +4,12 @@
   description: job-description-command-maid
   playTimeTracker: JobCommandMaid
   requirements:
-    - !type:AnyOfRequirement # Amour edit - Discord OR playtime
+    - !type:AnyOfRequirement # RW edit - Discord OR playtime
       requirements:
         - !type:DiscordLinkRequirement
         - !type:OverallPlaytimeRequirement
           time: 36000 #10 hrs
-    - !type:AnyOfRequirement # Amour edit - Discord OR playtime
+    - !type:AnyOfRequirement # RW edit - Discord OR playtime
       requirements:
         - !type:DiscordLinkRequirement
         - !type:RoleTimeRequirement
@@ -19,10 +19,10 @@
   icon: "JobIconCommandMaid"
   supervisors: job-supervisors-command
   setPreference: false
-  # Orion-Start
+  # RW-Start
   salary: 80
   payrollDepartmentAccount: Command
-  # Orion-End
+  # RW-End
   access:
   - Service
   - Janitor

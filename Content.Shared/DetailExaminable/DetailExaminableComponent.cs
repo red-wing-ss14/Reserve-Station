@@ -8,10 +8,10 @@ namespace Content.Shared.DetailExaminable;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class DetailExaminableComponent : Component
 {
-    [DataField, AutoNetworkedField] // Orion-Edit: Removed: "required: true"
+    [DataField, AutoNetworkedField] // RW-Edit: Removed: "required: true"
     public string Content = string.Empty;
 
-    // Orion-Start
+    // RW-Start
     [DataField, AutoNetworkedField]
     public string CharacterContent { get; set; } = string.Empty;
 
@@ -33,5 +33,5 @@ public sealed partial class DetailExaminableComponent : Component
         YellowContent = profile.YellowFlavorText;
         RedContent = profile.RedFlavorText;
     }
-    // Orion-End
+    // RW-End
 }

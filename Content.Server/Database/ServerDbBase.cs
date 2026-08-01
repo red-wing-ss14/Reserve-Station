@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
-using Content.Shared._Orion.CustomGhost;
+using Content.Shared._RW.CustomGhost;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Database;
@@ -152,7 +152,7 @@ namespace Content.Server.Database
                 UserId = userId.UserId,
                 SelectedCharacterSlot = 0,
                 AdminOOCColor = Color.Red.ToHex(),
-                GhostId = "default", // Orion
+                GhostId = "default", // RW
                 ConstructionFavorites = [],
             };
 
@@ -188,7 +188,7 @@ namespace Content.Server.Database
 
         }
 
-        // Orion-Start
+        // RW-Start
         public async Task SaveGhostTypeAsync(NetUserId userId, ProtoId<CustomGhostPrototype> proto)
         {
             await using var db = await GetDb();
@@ -200,7 +200,7 @@ namespace Content.Server.Database
 
             await db.DbContext.SaveChangesAsync();
         }
-        // Orion-End
+        // RW-End
 
         public async Task SaveConstructionFavoritesAsync(NetUserId userId, List<ProtoId<ConstructionPrototype>> constructionFavorites)
         {
@@ -254,7 +254,7 @@ namespace Content.Server.Database
             }
 
             var loadouts = new Dictionary<string, RoleLoadout>();
-            // Amour edit start
+            // RW edit start
             RoleLoadout? baseLoadout = null;
 
             foreach (var role in profile.Loadouts)
@@ -269,7 +269,7 @@ namespace Content.Server.Database
                             .Select(s => new ProtoId<LoadoutGroupPrototype>(s.Trim()))
                             .ToHashSet(),
                 };
-                // Amour edit end
+                // RW edit end
 
                 foreach (var group in role.Groups)
                 {
@@ -283,12 +283,12 @@ namespace Content.Server.Database
                     }
                 }
 
-                // Amour edit start
+                // RW edit start
                 if (role.IsBase)
                     baseLoadout = loadout;
                 else
                     loadouts[role.RoleName] = loadout;
-                // Amour edit end
+                // RW edit end
             }
 
 // RW start
@@ -309,24 +309,24 @@ namespace Content.Server.Database
 // RW end
 
             var barkVoice = profile.BarkVoice ?? SharedHumanoidAppearanceSystem.DefaultBarkVoice; // Goob Station - Barks
-            var voice = profile.Voice ?? string.Empty; // Amour - TTS
-            var bodyType = profile.BodyType ?? "HumanNormal"; // Amour port: WD Slim body types
+            var voice = profile.Voice ?? string.Empty; // RW - TTS
+            var bodyType = profile.BodyType ?? "HumanNormal"; // RW port: WD Slim body types
 
             return new HumanoidCharacterProfile(
                 profile.CharacterName,
                 profile.FlavorText,
-                // Orion-Start
+                // RW-Start
                 profile.CharacterFlavorText,
                 profile.GreenFlavorText,
                 profile.YellowFlavorText,
                 profile.RedFlavorText,
-                // Orion-End
+                // RW-End
                 profile.Species,
                 profile.Height, // Goobstation: port EE height/width sliders
                 profile.Width, // Goobstation: port EE height/width sliders
                 profile.Age,
                 sex,
-                bodyType, // Amour port: WD Slim body types
+                bodyType, // RW port: WD Slim body types
                 gender,
                 new HumanoidCharacterAppearance
                 (
@@ -339,7 +339,7 @@ namespace Content.Server.Database
                     markings
                 )
                 {
-                    // Amour start
+                    // RW start
                     HairColor2 = Color.FromHex(profile.HairColor2 ?? "#000000"),
                     HairUseGradient = profile.HairUseGradient ?? false,
                     HairGradientPosition = Marking.ClampGradientPosition(profile.HairGradientPosition ?? Marking.DefaultGradientPosition),
@@ -348,7 +348,7 @@ namespace Content.Server.Database
                     FacialHairUseGradient = profile.FacialHairUseGradient ?? false,
                     FacialHairGradientPosition = Marking.ClampGradientPosition(profile.FacialHairGradientPosition ?? Marking.DefaultGradientPosition),
                     FacialHairGradientBlur = Marking.ClampGradientBlur(profile.FacialHairGradientBlur ?? Marking.DefaultGradientBlur)
-                    // Amour end
+                    // RW end
                 },
                 spawnPriority,
                 jobs,
@@ -358,7 +358,7 @@ namespace Content.Server.Database
                 baseLoadout,
                 loadouts,
                 barkVoice, // Goob Station - Barks
-                voice // Amour - TTS
+                voice // RW - TTS
             );
         }
 
@@ -416,35 +416,35 @@ namespace Content.Server.Database
 
             profile.CharacterName = humanoid.Name;
             profile.FlavorText = humanoid.FlavorText;
-            // Orion-Start
+            // RW-Start
             profile.CharacterFlavorText = humanoid.CharacterFlavorText;
             profile.GreenFlavorText = humanoid.GreenFlavorText;
             profile.YellowFlavorText = humanoid.YellowFlavorText;
             profile.RedFlavorText = humanoid.RedFlavorText;
-            // Orion-End
+            // RW-End
             profile.Species = humanoid.Species;
             profile.Height = humanoid.Height; // Goobstation: port EE height/width sliders
             profile.Width = humanoid.Width; // Goobstation: port EE height/width sliders
             profile.Age = humanoid.Age;
             profile.Sex = humanoid.Sex.ToString();
-            profile.BodyType = humanoid.BodyType; // Amour port: WD Slim body types
+            profile.BodyType = humanoid.BodyType; // RW port: WD Slim body types
             profile.Gender = humanoid.Gender.ToString();
             profile.HairName = appearance.HairStyleId;
             profile.HairColor = appearance.HairColor.ToHex();
-            // Amour start
+            // RW start
             profile.HairColor2 = appearance.HairColor2.ToHex();
             profile.HairUseGradient = appearance.HairUseGradient;
             profile.HairGradientPosition = Marking.ClampGradientPosition(appearance.HairGradientPosition);
             profile.HairGradientBlur = HumanoidCharacterAppearance.ClampHairGradientBlur(appearance.HairGradientBlur);
-            // Amour end
+            // RW end
             profile.FacialHairName = appearance.FacialHairStyleId;
             profile.FacialHairColor = appearance.FacialHairColor.ToHex();
-            // Amour start
+            // RW start
             profile.FacialHairColor2 = appearance.FacialHairColor2.ToHex();
             profile.FacialHairUseGradient = appearance.FacialHairUseGradient;
             profile.FacialHairGradientPosition = Marking.ClampGradientPosition(appearance.FacialHairGradientPosition);
             profile.FacialHairGradientBlur = Marking.ClampGradientBlur(appearance.FacialHairGradientBlur);
-            // Amour end
+            // RW end
             profile.EyeColor = appearance.EyeColor.ToHex();
             profile.SkinColor = appearance.SkinColor.ToHex();
             profile.SpawnPriority = (int) humanoid.SpawnPriority;
@@ -472,11 +472,11 @@ namespace Content.Server.Database
             );
 
             profile.BarkVoice = humanoid.BarkVoice; // Goob Station - Barks
-            profile.Voice = humanoid.Voice; // Amour - TTS
+            profile.Voice = humanoid.Voice; // RW - TTS
 
             profile.Loadouts.Clear();
 
-            // Amour edit start
+            // RW edit start
             // Save base loadout.
             var baseEntry = new ProfileRoleLoadout
             {
@@ -496,19 +496,19 @@ namespace Content.Server.Database
             }
 
             profile.Loadouts.Add(baseEntry);
-            // Amour edit end
+            // RW edit end
 
             foreach (var (role, loadouts) in humanoid.Loadouts)
             {
                 var dz = new ProfileRoleLoadout
                 {
                     RoleName = role,
-                    // Amour edit start
+                    // RW edit start
                     IsBase = false,
                     EntityName = loadouts.EntityName,
                     EntityNameOverridden = loadouts.EntityNameOverridden,
                     OverriddenGroups = string.Join(',', loadouts.OverriddenGroups.Select(g => g.Id)),
-                    // Amour edit end
+                    // RW edit end
                 };
 
                 foreach (var (group, groupLoadouts) in loadouts.SelectedLoadouts)
@@ -649,7 +649,7 @@ namespace Content.Server.Database
 
             return updated != 0;
         }
-        // Amour end
+        // RW end
 
         protected static async Task<ServerBanExemptFlags?> GetBanExemptionCore(
             DbGuard db,
@@ -1942,11 +1942,11 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             await db.DbContext.SaveChangesAsync();
         }
 
-        // Amour Boosters
+        // RW Boosters
         public async Task<int?> GetBoosterColor(Guid player, CancellationToken cancel)
         {
             await using var db = await GetDb(cancel);
-            var booster = await db.DbContext.AmourBoosters.FirstOrDefaultAsync(b => b.PlayerId == player, cancel);
+            var booster = await db.DbContext.RwBoosters.FirstOrDefaultAsync(b => b.PlayerId == player, cancel);
             // Only return color if booster is active
             if (booster == null || !booster.IsActive)
                 return null;
@@ -1957,14 +1957,14 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
         {
             await using var db = await GetDb();
 
-            var booster = await db.DbContext.AmourBoosters.FirstOrDefaultAsync(b => b.PlayerId == player);
+            var booster = await db.DbContext.RwBoosters.FirstOrDefaultAsync(b => b.PlayerId == player);
 
             if (color.HasValue)
             {
                 if (booster == null)
                 {
-                    booster = new AmourBooster { PlayerId = player, OocColor = color.Value };
-                    db.DbContext.AmourBoosters.Add(booster);
+                    booster = new RwBooster { PlayerId = player, OocColor = color.Value };
+                    db.DbContext.RwBoosters.Add(booster);
                 }
                 else
                 {
@@ -1973,17 +1973,17 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             }
             else if (booster != null)
             {
-                db.DbContext.AmourBoosters.Remove(booster);
+                db.DbContext.RwBoosters.Remove(booster);
             }
 
             await db.DbContext.SaveChangesAsync();
         }
 
-        // Amour - Boosty Tier
+        // RW - Boosty Tier
         public async Task<BoostyTierInfo?> GetBoostyTierAsync(Guid player, CancellationToken cancel = default)
         {
             await using var db = await GetDb(cancel);
-            var booster = await db.DbContext.AmourBoosters.FirstOrDefaultAsync(b => b.PlayerId == player, cancel);
+            var booster = await db.DbContext.RwBoosters.FirstOrDefaultAsync(b => b.PlayerId == player, cancel);
 
             if (booster == null)
                 return null;
@@ -2154,7 +2154,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
 
         #endregion
 
-        // Amour edit
+        // RW edit
 
         public async Task<bool> HasClientRecord(Guid clientId, CancellationToken cancel = default)
         {

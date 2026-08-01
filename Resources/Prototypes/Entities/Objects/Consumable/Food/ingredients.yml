@@ -696,7 +696,7 @@
   - type: Slippery
   - type: StepTrigger
     intersectRatio: 0.2
-    triggerGroups: # Orion 
+    triggerGroups: # RW 
       types:  
       - SlipEntity  
   - type: CollisionWake

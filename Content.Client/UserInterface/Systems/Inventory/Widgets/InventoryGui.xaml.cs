@@ -15,17 +15,17 @@ public sealed partial class InventoryGui : UIWidget
 
         var inventoryUIController = UserInterfaceManager.GetUIController<InventoryUIController>();
         inventoryUIController.RegisterInventoryBarContainer(InventoryHotbar);
-        // Orion-Start
+        // RW-Start
         inventoryUIController.RegisterExtraHotbarContainer(ExtraHotbar);
-        // Orion-End
+        // RW-End
 
         LayoutContainer.SetGrowVertical(this, LayoutContainer.GrowDirection.Begin);
     }
 
-    // Orion-Start
+    // RW-Start
     public void ToggleExtraHotbarVisibility()
     {
         ExtraHotbar.Visible = !ExtraHotbar.Visible;
     }
-    // Orion-End
+    // RW-End
 }

@@ -153,7 +153,7 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
         return ent.Comp.MaterialWhiteList.Contains(material);
     }
 
-    // Orion-Start
+    // RW-Start
     public void SetStorageLimit(EntityUid uid, int? storageLimit, MaterialStorageComponent? component = null)
     {
         if (!Resolve(uid, ref component))
@@ -162,7 +162,7 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
         component.StorageLimit = storageLimit;
         Dirty(uid, component);
     }
-    // Orion-End
+    // RW-End
 
     /// <summary>
     /// Checks if the specified material can be changed by the specified volume.

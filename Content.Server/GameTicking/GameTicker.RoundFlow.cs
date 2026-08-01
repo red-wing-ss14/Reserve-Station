@@ -457,7 +457,7 @@ namespace Content.Server.GameTicking
             AnnounceRound();
             UpdateInfoText();
             SendRoundStartedDiscordMessage();
-            RaiseLocalEvent(new RoundStartedEvent(RoundId)); // Orion
+            RaiseLocalEvent(new RoundStartedEvent(RoundId)); // RW
 
 #if EXCEPTION_TOLERANCE
             }
@@ -862,8 +862,8 @@ namespace Content.Server.GameTicking
                     return;
 
                 var mapName = _gameMapManager.GetSelectedMap()?.MapName ?? Loc.GetString("discord-round-notifications-unknown-map");
-                var gameMode = CurrentPreset != null ? Loc.GetString(CurrentPreset.ModeTitle) : Loc.GetString("discord-round-notifications-unknown-gamemode"); // Orion
-                var content = Loc.GetString("discord-round-notifications-started", ("id", RoundId), ("map", mapName), ("mode", gameMode)); // Orion-Edit: Gamemode
+                var gameMode = CurrentPreset != null ? Loc.GetString(CurrentPreset.ModeTitle) : Loc.GetString("discord-round-notifications-unknown-gamemode"); // RW
+                var content = Loc.GetString("discord-round-notifications-started", ("id", RoundId), ("map", mapName), ("mode", gameMode)); // RW-Edit: Gamemode
 
                 var payload = new WebhookPayload { Content = content };
 

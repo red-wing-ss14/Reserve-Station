@@ -11,10 +11,10 @@ public sealed partial class DevilClausePrototype : IPrototype
     [IdDataField]
     public string ID { get; private set; } = default!;
 
-    // Orion-Start | Without localized name clauses don't work
+    // RW-Start | Without localized name clauses don't work
     [DataField(required: true)]
     public String? Name;
-    // Orion-End
+    // RW-End
 
     [DataField(required: true)]
     public int ClauseWeight;

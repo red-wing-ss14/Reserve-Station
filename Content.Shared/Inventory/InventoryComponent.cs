@@ -8,7 +8,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.Inventory;
 
 [RegisterComponent, NetworkedComponent]
-// [Access(typeof(InventorySystem))] // Orion-Edit: Removed
+// [Access(typeof(InventorySystem))] // RW-Edit: Removed
 [AutoGenerateComponentState(true)]
 public sealed partial class InventoryComponent : Component
 {
@@ -39,13 +39,13 @@ public sealed partial class InventoryComponent : Component
     [ViewVariables]
     public ContainerSlot[] Containers = Array.Empty<ContainerSlot>();
 
-    // Orion-Start
+    // RW-Start
     [DataField("blockedSlotsList"), AutoNetworkedField]
     public HashSet<SlotFlags> BlockList = new();
 
     [DataField("hiddenSlotsList"), AutoNetworkedField]
     public HashSet<SlotFlags> HideList = new();
-    // Orion-End
+    // RW-End
 
     [DataField, AutoNetworkedField]
     public Dictionary<string, DisplacementData> Displacements = new();

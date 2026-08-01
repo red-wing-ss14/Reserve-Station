@@ -19,11 +19,11 @@ namespace Content.Shared.Cargo;
 public abstract class SharedCargoSystem : EntitySystem
 {
     [Dependency] protected readonly IGameTiming Timing = default!;
-    // Orion-Start
+    // RW-Start
     [Dependency] protected readonly IPrototypeManager Proto = default!;
     [Dependency] protected readonly AccessReaderSystem AccessReader = default!;
     [Dependency] protected readonly SharedIdCardSystem IdCard = default!;
-    // Orion-End
+    // RW-End
 
     public override void Initialize()
     {
@@ -70,7 +70,7 @@ public abstract class SharedCargoSystem : EntitySystem
         return distribution;
     }
 
-    // Orion-Start
+    // RW-Start
     public bool CanBeSecuredDelivery(Entity<CargoOrderConsoleComponent> entity, CargoProductPrototype productId)
     {
         var product = Proto.Index<EntityPrototype>(productId.Product);
@@ -111,7 +111,7 @@ public abstract class SharedCargoSystem : EntitySystem
 
         return name;
     }
-    // Orion-End
+    // RW-End
 
     /// <summary>
     /// Returns information about the given bank account.

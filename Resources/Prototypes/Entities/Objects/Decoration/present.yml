@@ -96,9 +96,9 @@
         orGroup: GiftPool
       - id: ToyAmongPequeno
         orGroup: GiftPool
-#      - id: PlushieDiona # Orion-Edit: NC license sprites
+#      - id: PlushieDiona # RW-Edit: NC license sprites
 #        orGroup: GiftPool
-#      - id: PlushieArachind # Orion-Edit: NC license sprites
+#      - id: PlushieArachind # RW-Edit: NC license sprites
 #        orGroup: GiftPool
       - id: ClothingNeckCloakMoth
         orGroup: GiftPool

@@ -19,12 +19,12 @@
     shape:
     - 0,0,2,1
   - type: Gun
-    fireRate: 13.5 # Reduced fireRate and increased projectileSpeed # Orion-Edit: 12.5 > 13.5
+    fireRate: 13.5 # Reduced fireRate and increased projectileSpeed # RW-Edit: 12.5 > 13.5
     projectileSpeed: 30
     minAngle: 15 # More controlled than before
     maxAngle: 55
     angleDecay: -8 # Intentionally negative, loses accuracy while not shooting
-    angleIncrease: -1.65 # Intentionally negative, gains accuracy while shooting # Orion-Edit: -1.15 > -1.65
+    angleIncrease: -1.65 # Intentionally negative, gains accuracy while shooting # RW-Edit: -1.15 > -1.65
     availableModes:
     - FullAuto
     soundGunshot:
@@ -34,7 +34,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-#        name: Magazine # Orion-Edit: Localization
+#        name: Magazine # RW-Edit: Localization
         startingItem: MagazineLowCaliberM7S
         insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
@@ -44,7 +44,7 @@
           - MagazineLowCaliberM7S
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
-#        name: Chamber # Orion-Edit: Localization
+#        name: Chamber # RW-Edit: Localization
         startingItem: CartridgeLowCaliber
         priority: 1
         whitelist:

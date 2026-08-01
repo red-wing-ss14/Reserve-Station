@@ -83,8 +83,8 @@ using Content.Server.Actions;
 using Content.Server.Body.Systems;
 using Content.Server.Power.Components;
 using Content.Shared._EinsteinEngines.Silicon.Components;
-using Content.Shared._Orion.Construction;
-using Content.Shared._Orion.Construction.Events;
+using Content.Shared._RW.Construction;
+using Content.Shared._RW.Construction.Events;
 using Content.Shared._Shitmed.Damage;
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Actions;
@@ -135,10 +135,10 @@ public sealed class BedSystem : Content.Shared.Bed.BedSystem
 
         _sleepingQuery = GetEntityQuery<SleepingComponent>();
 
-        // Orion-Start
+        // RW-Start
         SubscribeLocalEvent<StasisBedComponent, RefreshPartsEvent>(OnStasisRefreshParts);
         SubscribeLocalEvent<StasisBedComponent, UpgradeExamineEvent>(OnStasisUpgradeExamine);
-        // Orion-End
+        // RW-End
     }
 
     private void OnHealMapInit(Entity<HealOnBuckleComponent> ent, ref MapInitEvent args)
@@ -258,7 +258,7 @@ public sealed class BedSystem : Content.Shared.Bed.BedSystem
         }
     }
 
-    // Orion-Start
+    // RW-Start
     private void OnStasisRefreshParts(EntityUid uid, StasisBedComponent component, RefreshPartsEvent args)
     {
         var capacitorTier = args.GetPartRating(MachinePartIds.Capacitor);
@@ -272,5 +272,5 @@ public sealed class BedSystem : Content.Shared.Bed.BedSystem
     {
         args.AddPercentageUpgrade("machine-upgrade-stasis-bed-power", component.PowerLoad / component.BasePowerLoad);
     }
-    // Orion-End
+    // RW-End
 }

@@ -32,10 +32,10 @@ public sealed class AtmosAlertsComputerSystem : SharedAtmosAlertsComputerSystem
     private const float UpdateTime = 1.0f;
 
     // Note: this data does not need to be saved
-    // Orion-Start
+    // RW-Start
     private readonly Dictionary<EntityUid, HashSet<EntityUid>> _consolesByGrid = new();
     private readonly Dictionary<(EntityUid Grid, AtmosAlertsComputerGroup Group), HashSet<EntityUid>> _devicesByGrid = new();
-    // Orion-End
+    // RW-End
     private float _updateTimer = 1.0f;
 
     public override void Initialize()
@@ -44,7 +44,7 @@ public sealed class AtmosAlertsComputerSystem : SharedAtmosAlertsComputerSystem
 
         // Console events
         SubscribeLocalEvent<AtmosAlertsComputerComponent, ComponentInit>(OnConsoleInit);
-        SubscribeLocalEvent<AtmosAlertsComputerComponent, ComponentShutdown>(OnConsoleShutdown); // Orion
+        SubscribeLocalEvent<AtmosAlertsComputerComponent, ComponentShutdown>(OnConsoleShutdown); // RW
         SubscribeLocalEvent<AtmosAlertsComputerComponent, EntParentChangedMessage>(OnConsoleParentChanged);
         SubscribeLocalEvent<AtmosAlertsComputerComponent, AtmosAlertsComputerFocusChangeMessage>(OnFocusChangedMessage);
 
@@ -60,27 +60,27 @@ public sealed class AtmosAlertsComputerSystem : SharedAtmosAlertsComputerSystem
 
     private void OnConsoleInit(EntityUid uid, AtmosAlertsComputerComponent component, ComponentInit args)
     {
-        TrackConsole(uid); // Orion
+        TrackConsole(uid); // RW
         InitalizeConsole(uid, component);
     }
 
-    // Orion-Start
+    // RW-Start
     private void OnConsoleShutdown(EntityUid uid, AtmosAlertsComputerComponent component, ComponentShutdown args)
     {
         UntrackConsole(uid, Transform(uid).GridUid);
     }
-    // Orion-End
+    // RW-End
 
     private void OnConsoleParentChanged(EntityUid uid, AtmosAlertsComputerComponent component, EntParentChangedMessage args)
     {
-        // Orion-Start
+        // RW-Start
         UntrackConsole(uid, GetTrackedGrid(args.OldParent));
         TrackConsole(uid);
-        // Orion-End
+        // RW-End
         InitalizeConsole(uid, component);
     }
 
-    private static void OnFocusChangedMessage(EntityUid uid, AtmosAlertsComputerComponent component, AtmosAlertsComputerFocusChangeMessage args) // Orion-Edit: Static
+    private static void OnFocusChangedMessage(EntityUid uid, AtmosAlertsComputerComponent component, AtmosAlertsComputerFocusChangeMessage args) // RW-Edit: Static
     {
         component.FocusDevice = args.FocusDevice;
     }
@@ -88,7 +88,7 @@ public sealed class AtmosAlertsComputerSystem : SharedAtmosAlertsComputerSystem
     private void OnGridSplit(ref GridSplitEvent args)
     {
         // Collect grids
-        // Orion-Edit-Start
+        // RW-Edit-Start
         var allGrids = new HashSet<EntityUid>(args.NewGrids) { args.Grid };
 
         // Update atmos monitoring consoles that stand upon an updated grid
@@ -103,7 +103,7 @@ public sealed class AtmosAlertsComputerSystem : SharedAtmosAlertsComputerSystem
                     InitalizeConsole(ent, entConsole);
             }
         }
-        // Orion-Edit-End
+        // RW-Edit-End
     }
 
     private void OnDeviceAnchorChanged(EntityUid uid, AtmosAlertsDeviceComponent component, AnchorStateChangedEvent args)
@@ -127,7 +127,7 @@ public sealed class AtmosAlertsComputerSystem : SharedAtmosAlertsComputerSystem
         if (!TryComp<NavMapComponent>(xform.GridUid, out var navMap))
             return;
 
-        // Orion-Start
+        // RW-Start
         var netEntity = GetNetEntity(uid);
 
         if (!isAdding)
@@ -149,25 +149,25 @@ public sealed class AtmosAlertsComputerSystem : SharedAtmosAlertsComputerSystem
             _navMapSystem.RemoveNavMapRegion(gridUid.Value, navMap, netEntity);
             return;
         }
-        // Orion-End
+        // RW-End
 
         if (!TryGetAtmosDeviceNavMapData(uid, component, xform, out var data))
             return;
 
-//        var netEntity = GetNetEntity(uid); // Orion-Edit
-        UpdateTrackedDevice(uid, component, gridUid.Value, true); // Orion
+//        var netEntity = GetNetEntity(uid); // RW-Edit
+        UpdateTrackedDevice(uid, component, gridUid.Value, true); // RW
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         if (!_consolesByGrid.TryGetValue(gridUid.Value, out var consoles))
             return;
 
         foreach (var ent in consoles)
-        // Orion-Edit-End
+        // RW-Edit-End
         {
-            if (!TryComp(ent, out AtmosAlertsComputerComponent? entConsole)) // Orion-Edit
+            if (!TryComp(ent, out AtmosAlertsComputerComponent? entConsole)) // RW-Edit
                 continue;
 
-/* // Orion-Edit
+/* // RW-Edit
             if (isAdding)
             {
                 entConsole.AtmosDevices.Add(data.Value);
@@ -180,7 +180,7 @@ public sealed class AtmosAlertsComputerSystem : SharedAtmosAlertsComputerSystem
             }
 */
 
-            entConsole.AtmosDevices.Add(data.Value); // Orion
+            entConsole.AtmosDevices.Add(data.Value); // RW
             Dirty(ent, entConsole);
         }
     }
@@ -274,24 +274,24 @@ public sealed class AtmosAlertsComputerSystem : SharedAtmosAlertsComputerSystem
     private List<AtmosAlertsComputerEntry> GetAlarmStateData(EntityUid gridUid, AtmosAlertsComputerGroup group)
     {
         var alarmStateData = new List<AtmosAlertsComputerEntry>();
-        // Orion-Start
+        // RW-Start
         if (!_devicesByGrid.TryGetValue((gridUid, group), out var devices))
             return alarmStateData;
-        // Orion-End
+        // RW-End
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         foreach (var ent in devices)
-        // Orion-Edit-End
+        // RW-Edit-End
         {
-            // Orion-Edit-Start
+            // RW-Edit-Start
             if (!TryComp(ent, out AtmosAlertsDeviceComponent? entDevice) ||
                 !TryComp(ent, out AtmosAlarmableComponent? entAtmosAlarmable) ||
                 !TryComp(ent, out DeviceNetworkComponent? entDeviceNetwork) ||
                 !TryComp(ent, out TransformComponent? entXform))
                 continue;
-            // Orion-Edit-End
+            // RW-Edit-End
 
-            if (!entXform.Anchored || entXform.GridUid != gridUid) // Orion-Edit
+            if (!entXform.Anchored || entXform.GridUid != gridUid) // RW-Edit
                 continue;
 
             if (entDevice.Group != group)
@@ -355,7 +355,7 @@ public sealed class AtmosAlertsComputerSystem : SharedAtmosAlertsComputerSystem
         return alarmStateData;
     }
 
-    // Orion-Start
+    // RW-Start
     private void TrackConsole(EntityUid uid)
     {
         var gridUid = Transform(uid).GridUid;
@@ -413,7 +413,7 @@ public sealed class AtmosAlertsComputerSystem : SharedAtmosAlertsComputerSystem
         var xform = Transform(parent.Value);
         return xform.GridUid ?? parent;
     }
-    // Orion-End
+    // RW-End
 
     private AtmosAlertsFocusDeviceData? GetFocusAlarmData(EntityUid uid, EntityUid? focusDevice, EntityUid gridUid)
     {

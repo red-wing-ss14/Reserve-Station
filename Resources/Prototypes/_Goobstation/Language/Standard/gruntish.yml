@@ -4,16 +4,16 @@
   speech:
     fontSize: 14
     color: "#8C5353"
-  # Orion-Start
+  # RW-Start
   icon:
-    sprite: _Orion/Interface/Chat/language.rsi
+    sprite: _RW/Interface/Chat/language.rsi
     state: demonic
-  # Orion-End
+  # RW-End
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 3
-    # Orion-Edit-Start: Localization
+    # RW-Edit-Start: Localization
     replacement:
     - бах
     - гаагх
@@ -58,4 +58,4 @@
     - ууух
     - ууух!
     - рах!
-    # Orion-Edit-End: Localization
+    # RW-Edit-End: Localization

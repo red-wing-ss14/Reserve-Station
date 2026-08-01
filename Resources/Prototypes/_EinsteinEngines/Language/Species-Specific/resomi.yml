@@ -7,19 +7,19 @@
   isVisibleLanguage: true
   speech:
     color: "#4DBFD9"
-    fontId: CountryhouseG # Orion-Edit
-    boldFontId: CountryhouseG # Orion
+    fontId: CountryhouseG # RW-Edit
+    boldFontId: CountryhouseG # RW
     fontSize: 14
-  # Orion-Start
+  # RW-Start
   icon:
-    sprite: _Orion/Interface/Chat/language.rsi
+    sprite: _RW/Interface/Chat/language.rsi
     state: birb
-  # Orion-End
+  # RW-End
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
     maxSyllables: 4
-    # Orion-Edit-Start: Localization
+    # RW-Edit-Start: Localization
     replacement:
     - ми
     - мви
@@ -97,4 +97,4 @@
     - тва
     - ва
     - а
-    # Orion-Edit-End: Localization
+    # RW-Edit-End: Localization

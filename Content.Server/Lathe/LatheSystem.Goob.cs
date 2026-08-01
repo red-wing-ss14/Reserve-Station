@@ -3,7 +3,7 @@ using Content.Goobstation.Common.NTR.Scan;
 using Content.Goobstation.Shared.Lathe;
 using Content.Server.Chat.Systems;
 using Content.Server.Lathe.Components;
-using Content.Shared._Orion.DocumentPrinter;
+using Content.Shared._RW.DocumentPrinter;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Lathe;
@@ -20,7 +20,7 @@ public sealed partial class LatheSystem
         var (uid, component) = ent;
         if (component.Queue.Count > 0)
         {
-            // Orion-Edit-Start
+            // RW-Edit-Start
             var totalMaterials = new Dictionary<string, int>();
 
             if (component.ActiveMaterialRefund != null)
@@ -38,7 +38,7 @@ public sealed partial class LatheSystem
                     totalMaterials[mat] = totalMaterials.GetValueOrDefault(mat) + amount;
                 }
             }
-            // Orion-Edit-End
+            // RW-Edit-End
 
             if(_materialStorage.CanChangeMaterialAmount(uid, totalMaterials))
             {
@@ -47,15 +47,15 @@ public sealed partial class LatheSystem
                     _materialStorage.TryChangeMaterialAmount(uid, mat, amount);
                 }
                 component.Queue.Clear();
-                // Orion-Start
+                // RW-Start
                 component.QueuedMaterialRefunds.Clear();
                 component.ActiveMaterialRefund = null;
-                // Orion-End
+                // RW-End
 
-                // Orion-Start
+                // RW-Start
                 if (TryComp<DocumentPrinterComponent>(uid, out var printerComponent))
                     printerComponent.Queue.RemoveRange(1, Math.Max(0, printerComponent.Queue.Count - 1));
-                // Orion-End
+                // RW-End
             }
             else
             {

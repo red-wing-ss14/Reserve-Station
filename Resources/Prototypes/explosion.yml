@@ -18,7 +18,7 @@
   tileBreakIntensity: [0, 10, 30]
   tileBreakRerollReduction: 20
   lightColor: Orange
-  texturePath: /Textures/_Orion/Effects/tile_fire_explode.rsi # Orion-Edit
+  texturePath: /Textures/_RW/Effects/tile_fire_explode.rsi # RW-Edit
   fireStates: 3
   temperature: 800
 
@@ -34,7 +34,7 @@
   tileBreakIntensity: [ 0, 10, 30 ]
   tileBreakRerollReduction: 20
   lightColor: Orange
-  texturePath: /Textures/_Orion/Effects/tile_fire_explode.rsi # Orion-Edit
+  texturePath: /Textures/_RW/Effects/tile_fire_explode.rsi # RW-Edit
   fireStates: 3
   temperature: 800
 
@@ -51,7 +51,7 @@
   tileBreakRerollReduction: 30
   intensityPerState: 20
   lightColor: Orange
-  texturePath: /Textures/_Orion/Effects/tile_fire_explode.rsi # Orion-Edit
+  texturePath: /Textures/_RW/Effects/tile_fire_explode.rsi # RW-Edit
   fireStates: 3
   temperature: 800
 
@@ -65,7 +65,7 @@
       Slash: 3 # Goob edit
   lightColor: Green
   fireColor: Green
-  texturePath: /Textures/_Orion/Effects/tile_fire_explode_grayscale.rsi # Orion-Edit
+  texturePath: /Textures/_RW/Effects/tile_fire_explode_grayscale.rsi # RW-Edit
   fireStates: 3
 
 - type: explosion
@@ -79,7 +79,7 @@
   tileBreakIntensity: [0]
   lightColor: Blue
   fireColor: Blue
-  texturePath: /Textures/_Orion/Effects/tile_fire_explode_grayscale.rsi # Orion-Edit
+  texturePath: /Textures/_RW/Effects/tile_fire_explode_grayscale.rsi # RW-Edit
   fireStates: 3
 
 - type: explosion
@@ -93,7 +93,7 @@
   tileBreakIntensity: [0, 10, 30]
   tileBreakRerollReduction: 20
   lightColor: Orange
-  texturePath: /Textures/_Orion/Effects/tile_fire_explode.rsi # Orion-Edit
+  texturePath: /Textures/_RW/Effects/tile_fire_explode.rsi # RW-Edit
   fireStates: 3
   temperature: 800
 
@@ -110,7 +110,7 @@
   tileBreakRerollReduction: 3
   intensityPerState: 20
   lightColor: Orange
-  texturePath: /Textures/_Orion/Effects/tile_fire_explode.rsi # Orion-Edit
+  texturePath: /Textures/_RW/Effects/tile_fire_explode.rsi # RW-Edit
   fireStates: 3
   temperature: 800
 
@@ -127,7 +127,7 @@
   tileBreakRerollReduction: 10
   intensityPerState: 20
   lightColor: Orange
-  texturePath: /Textures/_Orion/Effects/tile_fire_explode.rsi # Orion-Edit
+  texturePath: /Textures/_RW/Effects/tile_fire_explode.rsi # RW-Edit
   fireStates: 3
   temperature: 800
 
@@ -139,7 +139,7 @@
       Blunt: 2
       Slash: 3 # Goob edit
   lightColor: Orange
-  texturePath: /Textures/_Orion/Effects/tile_fire_explode.rsi # Orion-Edit
+  texturePath: /Textures/_RW/Effects/tile_fire_explode.rsi # RW-Edit
   fireStates: 3
   fireStacks: 2
   temperature: 1500

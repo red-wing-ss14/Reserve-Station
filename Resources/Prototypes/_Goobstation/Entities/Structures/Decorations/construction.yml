@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-#- type: entity # Orion-Edit: NC license sprites
+#- type: entity # RW-Edit: NC license sprites
 #  id: ConstructionBarricade
 #  parent: BaseStructure
 #  name: construction barricade

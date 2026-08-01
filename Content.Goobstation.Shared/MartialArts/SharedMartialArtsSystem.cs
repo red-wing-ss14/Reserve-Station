@@ -102,7 +102,7 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
         InitializeNinjutsu();
         InitializeHellRip();
         InitializeCanPerformCombo();
-        InitializeArmyHandCombat(); // Amour
+        InitializeArmyHandCombat(); // RW
 
         SubscribeLocalEvent<MartialArtsKnowledgeComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<MartialArtsKnowledgeComponent, CheckGrabOverridesEvent>(CheckGrabStageOverride);
@@ -418,7 +418,7 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
             return;
         var userName = Identity.Entity(user, EntityManager);
         var targetName = Identity.Entity(target, EntityManager);
-        // Orion-Edit-Start: Localization
+        // RW-Edit-Start: Localization
         string locComboName;
         if (Loc.TryGetString(comboName, out var name))
             locComboName = name;
@@ -437,7 +437,7 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
             ("move", locComboName)), // comboName -> locComboName
             target,
             target);
-        // Orion-Edit-End
+        // RW-Edit-End
     }
 
     #endregion

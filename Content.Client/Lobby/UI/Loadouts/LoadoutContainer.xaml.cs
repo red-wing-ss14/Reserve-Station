@@ -13,7 +13,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.Lobby.UI.Loadouts;
 
-// Amour edit start
+// RW edit start
 public enum LoadoutSourceType
 {
     UserSelected,
@@ -21,7 +21,7 @@ public enum LoadoutSourceType
     PersonalFluff,
     BoostySubscription
 }
-// Amour edit end
+// RW edit end
 
 [GenerateTypedNameReferences]
 public sealed partial class LoadoutContainer : BoxContainer
@@ -31,11 +31,11 @@ public sealed partial class LoadoutContainer : BoxContainer
 
     private readonly EntityUid? _entity;
 
-    // Amour edit start
+    // RW edit start
     private LoadoutSourceType _sourceType = LoadoutSourceType.UserSelected;
 
     private static readonly Color ColorInheritedFromBase = new Color(0.4f, 0.7f, 0.9f, 1.0f);
-    // Amour edit end
+    // RW edit end
 
     public Button Select => SelectButton;
 
@@ -45,7 +45,7 @@ public sealed partial class LoadoutContainer : BoxContainer
         set => SelectButton.Text = value;
     }
 
-    // Amour edit start
+    // RW edit start
     public LoadoutSourceType SourceType
     {
         get => _sourceType;
@@ -70,7 +70,7 @@ public sealed partial class LoadoutContainer : BoxContainer
             _ => null
         };
     }
-    // Amour edit end
+    // RW edit end
 
     public LoadoutContainer(ProtoId<LoadoutPrototype> proto, bool disabled, FormattedMessage? reason)
     {

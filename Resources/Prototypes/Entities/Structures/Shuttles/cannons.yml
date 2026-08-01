@@ -86,7 +86,7 @@
   - type: ItemSlots
     slots:
       gun_magazine: # goob edit - svalinn buff fix
-#        name: Magazine # Orion-Edit: Localization
+#        name: Magazine # RW-Edit: Localization
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         whitelist:
@@ -145,7 +145,7 @@
   - type: ItemSlots
     slots:
       cell_slot:
-#        name: Magazine # Orion-Edit: Localization
+#        name: Magazine # RW-Edit: Localization
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         whitelist:
@@ -261,7 +261,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-#        name: Magazine # Orion-Edit: Localization
+#        name: Magazine # RW-Edit: Localization
         priority: 2
         whitelist:
           tags:

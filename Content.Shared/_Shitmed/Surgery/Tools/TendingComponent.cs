@@ -10,7 +10,7 @@ namespace Content.Shared._Shitmed.Medical.Surgery.Tools;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class TendingComponent : Component, ISurgeryToolComponent
 {
-    public string ToolName => Loc.GetString("surgery-tool-woundtender"); // Orion-Edit: Localization
+    public string ToolName => Loc.GetString("surgery-tool-woundtender"); // RW-Edit: Localization
     [DataField]
     public bool? Used { get; set; } = null;
     [DataField]

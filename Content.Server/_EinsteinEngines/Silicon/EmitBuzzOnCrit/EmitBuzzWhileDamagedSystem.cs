@@ -35,7 +35,7 @@ public sealed class EmitBuzzWhileDamagedSystem : EntitySystem
         {
 
             if (_mobState.IsDead(uid, mobStateComponent)
-                || !_mobThreshold.TryGetThresholdForState(uid, MobState.SoftCritical, out var threshold, thresholdsComponent) // Orion-Edit
+                || !_mobThreshold.TryGetThresholdForState(uid, MobState.SoftCritical, out var threshold, thresholdsComponent) // RW-Edit
                 || damageableComponent.TotalDamage < threshold / 2)
                 continue;
 

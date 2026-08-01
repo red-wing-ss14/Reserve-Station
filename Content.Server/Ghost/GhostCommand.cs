@@ -2,8 +2,8 @@
 
 using Content.Server.GameTicking;
 using Content.Server.Popups;
-using Content.Server._Amour.Ghost.Roles;
-using Content.Server._Amour.Gulag.Components;
+using Content.Server._RW.Ghost.Roles;
+using Content.Server._RW.Gulag.Components;
 using Content.Shared.Administration;
 using Content.Shared.GameTicking;
 using Content.Shared.Mind;
@@ -47,14 +47,14 @@ namespace Content.Server.Ghost
                 return;
             }
 
-            // Amour start
+            // RW start
             if (player.AttachedEntity is { Valid: true } gulagPrisoner &&
                 _entities.HasComponent<GulagBoundComponent>(gulagPrisoner))
             {
                 shell.WriteLine(Loc.GetString("ghost-command-denied"));
                 return;
             }
-            // Amour end
+            // RW end
 
             var minds = _entities.System<SharedMindSystem>();
             if (!minds.TryGetMind(player, out var mindId, out var mind))
@@ -63,7 +63,7 @@ namespace Content.Server.Ghost
                 mind = _entities.GetComponent<MindComponent>(mindId);
             }
 
-            // Amour start
+            // RW start
             var previousBody = player.AttachedEntity;
             var ghosted = _entities.System<GhostSystem>().OnGhostAttempt(mindId, true, true, mind: mind);
 
@@ -75,7 +75,7 @@ namespace Content.Server.Ghost
 
             if (previousBody is { Valid: true } body)
                 _entities.System<SsdAmnesiacGhostRoleSystem>().TryCreateImmediateGhostRole(body, mindId, mind, player);
-            // Amour end
+            // RW end
         }
     }
 }

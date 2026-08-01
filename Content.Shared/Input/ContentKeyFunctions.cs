@@ -197,7 +197,7 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction ZoomIn = "ZoomIn";
         public static readonly BoundKeyFunction ResetZoom = "ResetZoom";
         public static readonly BoundKeyFunction ResistGrab = "ResistGrab"; // Goobstation - Grab Intent
-        // Orion-Start
+        // RW-Start
         public static readonly BoundKeyFunction TogglePosing = "TogglePosing";
         public static readonly BoundKeyFunction PosingOffsetLeft = "PosingOffsetLeft";
         public static readonly BoundKeyFunction PosingOffsetRight = "PosingOffsetRight";
@@ -205,7 +205,7 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction PosingOffsetDown = "PosingOffsetDown";
         public static readonly BoundKeyFunction PosingRotateNegative = "PosingRotateNegative";
         public static readonly BoundKeyFunction PosingRotatePositive = "PosingRotatePositive";
-        // Orion-End
+        // RW-End
 
         // Shitmed Change Start
         public static readonly BoundKeyFunction TargetHead = "TargetHead";

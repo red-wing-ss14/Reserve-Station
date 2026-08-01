@@ -2,7 +2,7 @@
 # Harpy
 - type: emote
   id: Ring
-  name: chat-emote-name-ring # Orion-Edit: Localization
+  name: chat-emote-name-ring # RW-Edit: Localization
   category: Vocal
   icon: _Goobstation/Interface/Emotes/ring.png
   whitelist:
@@ -11,13 +11,13 @@
   blacklist:
     components:
     - BorgChassis
-  chatMessages: ["chat-emote-msg-ring"] # Orion-Edit: Localization
+  chatMessages: ["chat-emote-msg-ring"] # RW-Edit: Localization
   chatTriggers:
     - ring
     - rings
     - ringing
     - ringed
-    # Orion-Start
+    # RW-Start
     - звенит
     - звенит.
     - звенит!
@@ -27,11 +27,11 @@
     - зазвенела
     - зазвенела.
     - зазвенела!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Pew
-  name: chat-emote-name-pew # Orion-Edit: Localization
+  name: chat-emote-name-pew # RW-Edit: Localization
   category: Vocal
   icon: _Goobstation/Interface/Emotes/pew.png
   whitelist:
@@ -40,22 +40,22 @@
   blacklist:
     components:
     - BorgChassis
-  chatMessages: ["chat-emote-msg-pew"] # Orion-Edit: Localization
+  chatMessages: ["chat-emote-msg-pew"] # RW-Edit: Localization
   chatTriggers:
     - pew
     - pews
-    # Orion-Start
+    # RW-Start
     - пиу
     - пиу.
     - пиу!
     - пью
     - пью.
     - пью!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Bang
-  name: chat-emote-name-bang # Orion-Edit: Localization
+  name: chat-emote-name-bang # RW-Edit: Localization
   category: Vocal
   icon: _Goobstation/Interface/Emotes/bang.png
   whitelist:
@@ -64,13 +64,13 @@
   blacklist:
     components:
     - BorgChassis
-  chatMessages: ["chat-emote-msg-bang"] # Orion-Edit: Localization
+  chatMessages: ["chat-emote-msg-bang"] # RW-Edit: Localization
   chatTriggers:
     - bangs
     - bang
     - banging
     - banged
-    # Orion-Start
+    # RW-Start
     - бах
     - бах.
     - бах!
@@ -80,7 +80,7 @@
     - хлоп
     - хлоп.
     - хлоп!
-    # Orion-End
+    # RW-End
 
 #- type: emote
 #  id: Beep
@@ -94,7 +94,7 @@
 
 - type: emote
   id: Rev
-  name: chat-emote-name-rev # Orion-Edit: Localization
+  name: chat-emote-name-rev # RW-Edit: Localization
   category: Vocal
   icon: _Goobstation/Interface/Emotes/rev.png
   whitelist:
@@ -103,13 +103,13 @@
   blacklist:
     components:
     - BorgChassis
-  chatMessages: ["chat-emote-msg-rev"] # Orion-Edit: Localization
+  chatMessages: ["chat-emote-msg-rev"] # RW-Edit: Localization
   chatTriggers:
     - revs
     - rev
     - revving
     - revved
-    # Orion-Start
+    # RW-Start
     - газует
     - газует.
     - газует!
@@ -122,7 +122,7 @@
     - ревет мотором
     - ревет мотором.
     - ревет мотором!
-    # Orion-End
+    # RW-End
 
 #- type: emote
 #  id: Click
@@ -136,7 +136,7 @@
 
 - type: emote
   id: Caw
-  name: chat-emote-name-caw # Orion-Edit: Localization
+  name: chat-emote-name-caw # RW-Edit: Localization
   category: Vocal
   icon: _Goobstation/Interface/Emotes/caw.png
   whitelist:
@@ -145,13 +145,13 @@
   blacklist:
     components:
     - BorgChassis
-  chatMessages: ["chat-emote-msg-caw"] # Orion-Edit: Localization
+  chatMessages: ["chat-emote-msg-caw"] # RW-Edit: Localization
   chatTriggers:
     - caws
     - caw
     - cawing
     - cawed
-    # Orion-Start
+    # RW-Start
     - каркает
     - каркает.
     - каркает!
@@ -161,12 +161,12 @@
     - каркнула
     - каркнула.
     - каркнула!
-    # Orion-End
+    # RW-End
 
 #Vulpkanin
 - type: emote
   id: Bark
-  name: chat-emote-name-bark # Orion-Edit: Localization
+  name: chat-emote-name-bark # RW-Edit: Localization
   category: Vocal
   icon: _Goobstation/Interface/Emotes/bark.png
   whitelist:
@@ -176,13 +176,13 @@
   blacklist:
     components:
     - BorgChassis
-  chatMessages: ["chat-emote-msg-bark"] # Orion-Edit: Localization
+  chatMessages: ["chat-emote-msg-bark"] # RW-Edit: Localization
   chatTriggers:
     - bark
     - barks
     - barked
     - barking
-    # Orion-Start
+    # RW-Start
     - лает
     - лает.
     - лает!
@@ -195,11 +195,11 @@
     - гавкнула
     - гавкнула.
     - гавкнула!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Snarl
-  name: chat-emote-name-snarl # Orion-Edit: Localization
+  name: chat-emote-name-snarl # RW-Edit: Localization
   category: Vocal
   icon: _Goobstation/Interface/Emotes/snarl.png
   whitelist:
@@ -209,13 +209,13 @@
   blacklist:
     components:
     - BorgChassis
-  chatMessages: ["chat-emote-msg-snarl"] # Orion-Edit: Localization
+  chatMessages: ["chat-emote-msg-snarl"] # RW-Edit: Localization
   chatTriggers:
     - snarl
     - snarls
     - snarled
     - snarling
-    # Orion-Start
+    # RW-Start
     - скалится
     - скалится.
     - скалится!
@@ -225,11 +225,11 @@
     - угрожающе рычит
     - угрожающе рычит.
     - угрожающе рычит!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Whine
-  name: chat-emote-name-whine # Orion-Edit: Localization
+  name: chat-emote-name-whine # RW-Edit: Localization
   category: Vocal
   icon: _Goobstation/Interface/Emotes/whine.png
   whitelist:
@@ -239,13 +239,13 @@
   blacklist:
     components:
     - BorgChassis
-  chatMessages: ["chat-emote-msg-whine"] # Orion-Edit: Localization
+  chatMessages: ["chat-emote-msg-whine"] # RW-Edit: Localization
   chatTriggers:
     - whine
     - whines
     - whined
     - whining
-    # Orion-Start
+    # RW-Start
     - скулит
     - скулит.
     - скулит!
@@ -258,11 +258,11 @@
     - заскулила
     - заскулила.
     - заскулила!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Howl
-  name: chat-emote-name-howl # Orion-Edit: Localization
+  name: chat-emote-name-howl # RW-Edit: Localization
   category: Vocal
   icon: _Goobstation/Interface/Emotes/howl.png
   whitelist:
@@ -272,13 +272,13 @@
   blacklist:
     components:
     - BorgChassis
-  chatMessages: ["chat-emote-msg-howl"] # Orion-Edit: Localization
+  chatMessages: ["chat-emote-msg-howl"] # RW-Edit: Localization
   chatTriggers:
     - howl
     - howls
     - howling
     - howled
-    # Orion-Start
+    # RW-Start
     - воет
     - воет.
     - воет!
@@ -291,11 +291,11 @@
     - завыла
     - завыла.
     - завыла!
-    # Orion-End
+    # RW-End
 
 - type: emote
   id: Awoo
-  name: chat-emote-name-awoo # Orion-Edit: Localization
+  name: chat-emote-name-awoo # RW-Edit: Localization
   category: Vocal
   icon: _Goobstation/Interface/Emotes/awoo.png
   whitelist:
@@ -305,13 +305,13 @@
   blacklist:
     components:
     - BorgChassis
-  chatMessages: ["chat-emote-msg-awoo"] # Orion-Edit: Localization
+  chatMessages: ["chat-emote-msg-awoo"] # RW-Edit: Localization
   chatTriggers:
     - awoo
     - awoos
     - awooing
     - awooed
-    # Orion-Start
+    # RW-Start
     - аву
     - аву.
     - аву!
@@ -324,7 +324,7 @@
     - жалобно воет
     - жалобно воет.
     - жалобно воет!
-    # Orion-End
+    # RW-End
 
 # Feroxi
 - type: emote
@@ -338,7 +338,7 @@
   blacklist:
     components:
     - BorgChassis
-  chatMessages: ["chat-emote-msg-gnash"] # Orion-Edit: Localization
+  chatMessages: ["chat-emote-msg-gnash"] # RW-Edit: Localization
   chatTriggers:
     - gnash
     - gnashes
@@ -360,7 +360,7 @@
     - gnashed her teeth
     - gnashed his teeth
     - gnashed its teeth
-    # Orion-Start
+    # RW-Start
     - скрежещет зубами
     - скрежещет зубами.
     - скрежещет зубами!
@@ -373,4 +373,4 @@
     - скрежетнула зубами
     - скрежетнула зубами.
     - скрежетнула зубами!
-    # Orion-End
+    # RW-End

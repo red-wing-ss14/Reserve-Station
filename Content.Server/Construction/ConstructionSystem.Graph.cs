@@ -416,16 +416,16 @@ namespace Content.Server.Construction
 
             EntityManager.InitializeAndStartEntity(newUid);
 
-            // Orion-Start
+            // RW-Start
             var node = GetCurrentGraph(uid, construction) is { } graph
                 ? GetNodeFromGraph(graph, construction.Node)
                 : null;
-            // Orion-End
+            // RW-End
 
-            // Orion-Edit-Start
+            // RW-Edit-Start
             if (node?.KeepOriginalEntity != true)
                 QueueDel(uid);
-            // Orion-Edit-End
+            // RW-Edit-End
 
             // If ChangeEntity has ran, then the entity uid has changed and the
             // new entity should be initialized by this point.

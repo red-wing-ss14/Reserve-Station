@@ -244,7 +244,7 @@
           - Cybernetic # Shitmed - Cybernetic Organs
           - Yowie # Goobstation - Yowie
           inverted: true
-      - !type:ChemAddMoodlet # Orion
+      - !type:ChemAddMoodlet # RW
         moodPrototype: EthanolBenefit
       - !type:Drunk
         boozePower: 2
@@ -287,7 +287,7 @@
   metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
-  # Orion-Start
+  # RW-Start
   metabolisms:
     Drink:
       effects:
@@ -297,7 +297,7 @@
       - !type:AdjustReagent
         reagent: Theobromine
         amount: 0.02
-  # Orion-End
+  # RW-End
 
 - type: reagent
   id: MelonLiquor
@@ -795,11 +795,11 @@
       - !type:AdjustReagent
         reagent: Ethanol
         amount: 0.2
-        # Orion-Start
+        # RW-Start
       - !type:AdjustReagent
         reagent: Theobromine
         amount: 0.02
-        # Orion-End
+        # RW-End
 
 - type: reagent
   id: BloodyMary
@@ -2096,7 +2096,7 @@
         - !type:AdjustReagent
           reagent: Ethanol
           amount: 0.10
-#        - !type:AdjustReagent # Orion-Edit: Removed
+#        - !type:AdjustReagent # RW-Edit: Removed
 #          reagent: Theobromine
 #          amount: 0.05
         - !type:ModifyStatusEffect
@@ -2127,7 +2127,7 @@
         - !type:AdjustReagent
           reagent: Ethanol
           amount: 0.15
-#        - !type:AdjustReagent # Orion-Edit: Removed
+#        - !type:AdjustReagent # RW-Edit: Removed
 #          reagent: Theobromine
 #          amount: 0.05
         - !type:ModifyStatusEffect
@@ -2158,7 +2158,7 @@
         - !type:AdjustReagent
           reagent: Ethanol
           amount: 0.10
-#        - !type:AdjustReagent # Orion-Edit: Removed
+#        - !type:AdjustReagent # RW-Edit: Removed
 #          reagent: Theobromine
 #          amount: 0.05
         - !type:ModifyStatusEffect
@@ -2189,7 +2189,7 @@
         - !type:AdjustReagent
           reagent: Ethanol
           amount: 0.15
-#        - !type:AdjustReagent # Orion-Edit: Removed
+#        - !type:AdjustReagent # RW-Edit: Removed
 #          reagent: Theobromine
 #          amount: 0.05
         - !type:ModifyStatusEffect
@@ -2222,7 +2222,7 @@
           amount: 0.07
         - !type:AdjustReagent
           reagent: Theobromine
-          amount: 0.02 # Orion-Edit: 0.05 > 0.02
+          amount: 0.02 # RW-Edit: 0.05 > 0.02
         - !type:ModifyStatusEffect
           effectProto: StatusEffectDrowsiness
           time: 1

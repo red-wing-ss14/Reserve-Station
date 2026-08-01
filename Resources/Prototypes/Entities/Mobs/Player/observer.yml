@@ -63,7 +63,7 @@
   - type: Ghost
   - type: GhostHearing
   - type: ShowElectrocutionHUD
-  - type: ToggleableHUD # Orion
+  - type: ToggleableHUD # RW
   - type: IntrinsicRadioReceiver
   - type: ActiveRadio
     receiveAllChannels: true
@@ -100,7 +100,7 @@
   - type: Tag
     tags: # BAD: Intentional removal of inherited tag
     - AllowGhostShownByEvent
-    - NoConsoleSound # Orion
+    - NoConsoleSound # RW
   # <Goobstation>
   - type: UserInterface
     interfaces:

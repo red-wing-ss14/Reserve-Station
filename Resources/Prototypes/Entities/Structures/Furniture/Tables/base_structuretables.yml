@@ -45,7 +45,7 @@
     - ForceFixRotations
   - type: RequireProjectileTarget # Goobstation - Crawling
     ignoreThrow: true
-  - type: InteractionVerbs # Orion
+  - type: InteractionVerbs # RW
     allowedVerbs:
       - KnockOn
 

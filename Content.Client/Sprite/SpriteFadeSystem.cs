@@ -69,10 +69,10 @@ public sealed class SpriteFadeSystem : EntitySystem
     {
         var player = _playerManager.LocalEntity;
 
-        // Orion-Start
+        // RW-Start
         if (player == null)
             return;
-        // Orion-End
+        // RW-End
 
         // ExcludeBoundingBox is set if we don't want to fade this sprite within the collision bounding boxes for the given POI
         _points.Clear();
@@ -106,7 +106,7 @@ public sealed class SpriteFadeSystem : EntitySystem
                     // If it intersects a fixture ignore it.
                     if (excludeBB && _fixturesQuery.TryComp(ent, out var body))
                     {
-                        // Orion-Edit-Start
+                        // RW-Edit-Start
                         var hasHardFixtures = false;
                         foreach (var fixture in body.Fixtures.Values)
                         {
@@ -141,7 +141,7 @@ public sealed class SpriteFadeSystem : EntitySystem
                             if (collided)
                                 continue;
                         }
-                        // Orion-Edit-End
+                        // RW-Edit-End
                     }
 
                     if (!_fadingQuery.TryComp(ent, out var fading))
@@ -173,10 +173,10 @@ public sealed class SpriteFadeSystem : EntitySystem
             if (_comps.Contains(comp))
                 continue;
 
-            // Orion-Start
+            // RW-Start
             if (TerminatingOrDeleted(uid))
                 continue;
-            // Orion-End
+            // RW-End
 
             if (!_spriteQuery.TryGetComponent(uid, out var sprite))
                 continue;

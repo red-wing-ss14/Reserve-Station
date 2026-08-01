@@ -16,7 +16,7 @@
     ClothingOuterCardborg: 2
     ClothingHeadHatSombrero: 2
     ClothingOuterPonchoClassic: 2
-    ClothingHeadHatBunny: 2 # Orion
+    ClothingHeadHatBunny: 2 # RW
     ClothingHeadHatPwig: 2
     ClothingOuterRobesJudge: 2
     ClothingOuterPoncho: 2
@@ -64,7 +64,7 @@
     ClothingHeadSanabi: 1 # Goobstation
     ClothingNeckCloakSanabi: 1 # Goobstation
     ClothingCostumeGingerbreadHead: 1 #goob
-    # Orion-Start
+    # RW-Start
     ClothingUniformJumpsuitClownis: 2
     ClothingUniformJumpsuitFallout: 2
     ClothingUniformJumpsuitFallout14: 2
@@ -81,7 +81,7 @@
     ClothingUniformKimonoSky: 2
     ClothingUniformKimonoGreen: 2
     ClothingUniformKendoHakama: 1
-    # Orion-End
+    # RW-End
     ClothingOuterSuitHotDog: 1 # Goob
     ClothingOuterSuitPickle: 1
     ClothingOuterSuitTutu: 2 # Goob
@@ -104,12 +104,12 @@
     ClothingShoesResonant: 1 # Goobstation
     ClothingNeckCloakResonant: 1 # Goobstation
     ClothingUniformJumpsuitResonant: 1 # Goobstation
-    # Orion-Start
+    # RW-Start
     ClothingNeckCloakCarp: 1
     ClothingNeckCloakCarpAlt: 1
     ClothingOuterArmorKendoBogu: 1
     ClothingHeadHelmetKendoMen: 1
-    # Orion-End
+    # RW-End
     ClothingOuterArmorHereticCostume: 1 # Goobstation
     ToyBladeEldritch: 1 # Goobstation
   emaggedInventory: # goob

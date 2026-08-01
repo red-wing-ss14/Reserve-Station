@@ -1,5 +1,5 @@
 using Content.Goobstation.Common.Barks;
-using Content.Shared._Amour;
+using Content.Shared._RW;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
@@ -24,17 +24,17 @@ public sealed class BarkSystem : EntitySystem
 
     private readonly List<ActiveBark> _activeBarks = new();
 
-    private bool _barksEnabled = true; // Amour - TTS toggle
+    private bool _barksEnabled = true; // RW - TTS toggle
 
     public override void Initialize()
     {
         base.Initialize();
-        _cfg.OnValueChanged(WhiteCVars.VoiceType, OnVoiceTypeChanged, true); // Amour - TTS toggle
+        _cfg.OnValueChanged(WhiteCVars.VoiceType, OnVoiceTypeChanged, true); // RW - TTS toggle
         SubscribeNetworkEvent<PlayBarkEvent>(OnPlayBark);
         SubscribeLocalEvent<PreviewBarkEvent>(OnPreviewBark);
     }
 
-    // Amour - TTS toggle Start
+    // RW - TTS toggle Start
     public override void Shutdown()
     {
         base.Shutdown();
@@ -45,7 +45,7 @@ public sealed class BarkSystem : EntitySystem
     {
         _barksEnabled = voiceType == CharacterVoiceType.Barks;
     }
-    // Amour - TTS toggle End
+    // RW - TTS toggle End
 
     public void OnPreviewBark(PreviewBarkEvent ev)
     {
@@ -63,7 +63,7 @@ public sealed class BarkSystem : EntitySystem
 
     private void OnPlayBark(PlayBarkEvent ev)
     {
-        if (!_barksEnabled) // Amour - TTS toggle
+        if (!_barksEnabled) // RW - TTS toggle
             return;
 
         var sourceEntity = GetEntity(ev.SourceUid);

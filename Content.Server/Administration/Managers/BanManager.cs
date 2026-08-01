@@ -5,8 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Content.Server._Amour.Gulag;
-using Content.Server._Orion.ServerProtection.Administration;
+using Content.Server._RW.Gulag;
+using Content.Server._RW.ServerProtection.Administration;
 using Content.Server.Chat.Managers;
 using Content.Server.Database;
 using Content.Server.GameTicking;
@@ -43,7 +43,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
     [Dependency] private readonly IEntitySystemManager _systems = default!;
     [Dependency] private readonly ITaskManager _taskManager = default!;
     [Dependency] private readonly UserDbDataManager _userDbData = default!;
-    [Dependency] private readonly AdminActionProtectionSystem _adminActionProtection = default!; // Orion
+    [Dependency] private readonly AdminActionProtectionSystem _adminActionProtection = default!; // RW
 
     private ISawmill _sawmill = default!;
 
@@ -174,12 +174,12 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         _sawmill.Info(logMessage);
         _chat.SendAdminAlert(logMessage);
 
-        // Orion-Start
+        // RW-Start
         if (banInfo.BanningAdmin != null)
             _adminActionProtection.ReportBanAction(banInfo.BanningAdmin.Value, adminName, targetName);
-        // Orion-End
+        // RW-End
 
-        await HandleMatchingConnectedPlayers(banDef, "newly placed ban"); // Amour
+        await HandleMatchingConnectedPlayers(banDef, "newly placed ban"); // RW
     }
 
     private NoteSeverity GetSeverityForServerBan(CreateBanInfo banInfo, CVarDef<string> defaultCVar)
@@ -199,7 +199,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         _taskManager.RunOnMainThread(async () => await HandleMatchingConnectedPlayers(def, source));
     }
 
-    // Amour start
+    // RW start
     public async Task HandleServerBanChangedAsync(int banId)
     {
         var ban = await _db.GetBanAsync(banId);
@@ -238,7 +238,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             }
         }
     }
-    // Amour end
+    // RW end
 
     private bool BanMatchesPlayer(ICommonSession player, BanDef ban)
     {

@@ -55,7 +55,7 @@ public sealed partial class CryoPodComponent : Component
     [DataField]
     public FixedPoint2 BeakerTransferAmount = 1;
 
-    // Orion-Start
+    // RW-Start
     [DataField]
     public FixedPoint2 BaseBeakerTransferAmount = 1;
 
@@ -64,7 +64,7 @@ public sealed partial class CryoPodComponent : Component
 
     [DataField]
     public float BaseCoolingEfficiency = 1f;
-    // Orion-End
+    // RW-End
 
     /// <summary>
     /// Delay applied when inserting a mob in the pod (in seconds).

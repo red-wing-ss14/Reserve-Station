@@ -17,7 +17,7 @@ public static class SharedResearchSystemExtensions
             .Where(p => p.Discipline == techDiscipline.ID && !p.Hidden)
             .ToList();
 
-        // Orion-Edit-Start
+        // RW-Edit-Start
         if (allTech.Count == 0)
             return 0;
 
@@ -28,7 +28,7 @@ public static class SharedResearchSystemExtensions
         });
 
         var percentage = researchedVisible / (float) allTech.Count * 100f;
-        // Orion-Edit-End
+        // RW-Edit-End
 
         return (int) Math.Clamp(percentage, 0, 100);
     }

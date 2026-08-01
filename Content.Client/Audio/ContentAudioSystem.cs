@@ -26,14 +26,14 @@ public sealed partial class ContentAudioSystem : SharedContentAudioSystem
      */
 
     public const float MasterVolumeMultiplier = 3f;
-    public const float MidiVolumeMultiplier = 0.5f; // Amour edit
+    public const float MidiVolumeMultiplier = 0.5f; // RW edit
     public const float AmbienceMultiplier = 3f;
     public const float AmbientMusicMultiplier = 3f;
     public const float LobbyMultiplier = 3f;
     public const float InterfaceMultiplier = 2f;
-    public const float TTSMultiplier = 1f; // Amour
+    public const float TTSMultiplier = 1f; // RW
     public const float BarksMultiplier = 3f; // Goob Station - Barks
-    public const float RadioMultiplier = 2f; // Orion
+    public const float RadioMultiplier = 2f; // RW
     public const float AdminNotificationsMultiplier = 1f; // Goobstation - Admin Notifications
 
     public override void Initialize()

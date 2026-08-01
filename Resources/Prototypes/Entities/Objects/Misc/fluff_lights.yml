@@ -349,10 +349,10 @@
     materialComposition:
       Glass: 500
       Steel: 200
-  # Orion-Start
+  # RW-Start
   - type: HandheldLight
     wattage: 0.5
-  # Orion-End
+  # RW-End
 - type: entity
   name: broken floodlight
   id: FloodlightBroken

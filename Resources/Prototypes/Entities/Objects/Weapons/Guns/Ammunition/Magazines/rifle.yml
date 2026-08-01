@@ -4,7 +4,7 @@
   abstract: true
   parent: [ BaseItem, BaseSecurityContraband ]
   id: BaseMagazineRifle
-  name: "magazine (5.56mm rifle)"  # Orion-Edit: .20 > 5.56mm
+  name: "magazine (5.56mm rifle)"  # RW-Edit: .20 > 5.56mm
   components:
   - type: Tag
     tags:
@@ -35,7 +35,7 @@
 - type: entity
   parent: BaseMagazineRifle
   id: MagazineRifle
-  name: "magazine (5.56mm rifle)" # Orion-Edit: .20 > 5.56mm
+  name: "magazine (5.56mm rifle)" # RW-Edit: .20 > 5.56mm
   description: 25-round double stack magazine for combat rifles. Intended to hold general-purpose kinetic ammunition.
   components:
   - type: BallisticAmmoProvider
@@ -55,7 +55,7 @@
 - type: entity
   parent: MagazineRifle
   id: MagazineRifleEmpty
-  name: "magazine (5.56mm any)" # Orion-Edit: .20 rifle > 5.56mm
+  name: "magazine (5.56mm any)" # RW-Edit: .20 rifle > 5.56mm
   suffix: empty
   description: 25-round double stack magazine for combat rifles.
   components:
@@ -76,7 +76,7 @@
 - type: entity
   parent: MagazineRifle
   id: MagazineRifleIncendiary
-  name: "magazine (5.56mm incendiary)" # Orion-Edit: .20 rifle > 5.56mm
+  name: "magazine (5.56mm incendiary)" # RW-Edit: .20 rifle > 5.56mm
   description: 25-round double stack magazine for combat rifles. Intended to hold self-igniting incendiary ammunition.
   components:
   - type: BallisticAmmoProvider
@@ -102,7 +102,7 @@
 - type: entity
   parent: BaseMagazineRifle
   id: MagazineRiflePractice
-  name: "magazine (5.56mm practice)" # Orion-Edit: .20 rifle > 5.56mm
+  name: "magazine (5.56mm practice)" # RW-Edit: .20 rifle > 5.56mm
   description: 25-round double stack magazine for combat rifles. Intended to hold non-harmful chalk ammunition.
   components:
   - type: BallisticAmmoProvider
@@ -128,7 +128,7 @@
 - type: entity
   parent: BaseMagazineRifle
   id: MagazineRifleUranium
-  name: "magazine (5.56mm uranium)" # Orion-Edit: .20 rifle > 5.56mm
+  name: "magazine (5.56mm uranium)" # RW-Edit: .20 rifle > 5.56mm
   description: 25-round double stack magazine for combat rifles. Intended to hold exotic uranium-core ammunition.
   components:
   - type: BallisticAmmoProvider

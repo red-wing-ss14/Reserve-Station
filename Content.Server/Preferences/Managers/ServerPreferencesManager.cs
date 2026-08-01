@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Database;
-using Content.Shared._Orion.CustomGhost;
+using Content.Shared._RW.CustomGhost;
 using Content.Shared.CCVar;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Preferences;
@@ -75,7 +75,7 @@ namespace Content.Server.Preferences.Managers
                 return;
             }
 
-            prefsData.Prefs = curPrefs.WithSlot(index); // Orion-Edit
+            prefsData.Prefs = curPrefs.WithSlot(index); // RW-Edit
 
             if (ShouldStorePrefs(message.MsgChannel.AuthType))
             {
@@ -115,7 +115,7 @@ namespace Content.Server.Preferences.Managers
                 [slot] = profile
             };
 
-            prefsData.Prefs = curPrefs.WithCharacters(profiles).WithSlot(slot); // Orion-Edit
+            prefsData.Prefs = curPrefs.WithCharacters(profiles).WithSlot(slot); // RW-Edit
 
             if (ShouldStorePrefs(session.Channel.AuthType))
                 await _db.SaveCharacterSlotAsync(userId, profile, slot);
@@ -130,7 +130,7 @@ namespace Content.Server.Preferences.Managers
             }
 
             var curPrefs = prefsData.Prefs!;
-            // Orion-Edit-Start
+            // RW-Edit-Start
             var session = _playerManager.GetSessionById(userId);
 
             prefsData.Prefs = new PlayerPreferences(
@@ -140,7 +140,7 @@ namespace Content.Server.Preferences.Managers
                 curPrefs.CustomGhost,
                 favorites
             );
-            // Orion-Edit-End
+            // RW-Edit-End
 
             if (ShouldStorePrefs(session.Channel.AuthType))
                 await _db.SaveConstructionFavoritesAsync(userId, favorites);
@@ -183,7 +183,7 @@ namespace Content.Server.Preferences.Managers
             var arr = new Dictionary<int, ICharacterProfile>(curPrefs.Characters);
             arr.Remove(slot);
 
-            // Orion-Edit-Start
+            // RW-Edit-Start
             prefsData.Prefs = new PlayerPreferences(
                 arr,
                 nextSlot ?? curPrefs.SelectedCharacterIndex,
@@ -191,7 +191,7 @@ namespace Content.Server.Preferences.Managers
                 curPrefs.CustomGhost,
                 curPrefs.ConstructionFavorites
             );
-            // Orion-Edit-End
+            // RW-Edit-End
 
             if (ShouldStorePrefs(message.MsgChannel.AuthType))
             {
@@ -232,7 +232,7 @@ namespace Content.Server.Preferences.Managers
             }
 
             var curPrefs = prefsData.Prefs!;
-            // Orion-Edit-Start
+            // RW-Edit-Start
             prefsData.Prefs = new PlayerPreferences(
                 curPrefs.Characters,
                 curPrefs.SelectedCharacterIndex,
@@ -240,7 +240,7 @@ namespace Content.Server.Preferences.Managers
                 curPrefs.CustomGhost,
                 validatedList
             );
-            // Orion-Edit-End
+            // RW-Edit-End
 
             if (ShouldStorePrefs(message.MsgChannel.AuthType))
             {
@@ -259,7 +259,7 @@ namespace Content.Server.Preferences.Managers
                     PrefsLoaded = true,
                     Prefs = new PlayerPreferences(
                         new[] { new KeyValuePair<int, ICharacterProfile>(0, HumanoidCharacterProfile.Random()) },
-                        0, Color.Transparent, "default", []) // Orion-Edit
+                        0, Color.Transparent, "default", []) // RW-Edit
                 };
 
                 _cachedPlayerPrefs[session.UserId] = prefsData;

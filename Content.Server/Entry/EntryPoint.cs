@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Server._Amour.Jukebox;
+using Content.Server._RW.Jukebox;
 using Content.Server._Goobstation.Antag;
 using Content.Server.Acz;
-using Content.Server._Amour.TTS;
+using Content.Server._RW.TTS;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -83,7 +83,7 @@ namespace Content.Server.Entry
         [Dependency] private readonly ServerUpdateManager _updateManager = default!;
 
         [Dependency] private readonly LastRolledAntagManager _lastAntagManager = default!; // Goobstation
-        [Dependency] private readonly TTSManager _ttsManager = default!; // Amour - TTS
+        [Dependency] private readonly TTSManager _ttsManager = default!; // RW - TTS
 
         public override void PreInit()
         {
@@ -141,9 +141,9 @@ namespace Content.Server.Entry
             _rateLimit.Initialize();
             _lastAntagManager.Initialize(); // Goobstation
 
-            IoCManager.Resolve<Content.Server._Amour.Registry.ClientMetricsManager>().Initialize(); // Amour edit
-            IoCManager.Resolve<ServerAmourJukeboxSongsSyncManager>().Initialize(); // Amour edit
-            IoCManager.Resolve<Content.Server._Amour.Chat.SayFloodAutoBanManager>().Initialize(); // Amour edit
+            IoCManager.Resolve<Content.Server._RW.Registry.ClientMetricsManager>().Initialize(); // RW edit
+            IoCManager.Resolve<ServerRwJukeboxSongsSyncManager>().Initialize(); // RW edit
+            IoCManager.Resolve<Content.Server._RW.Chat.SayFloodAutoBanManager>().Initialize(); // RW edit
         }
 
         public override void PostInit()

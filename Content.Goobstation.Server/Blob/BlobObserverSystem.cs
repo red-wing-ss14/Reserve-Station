@@ -150,7 +150,7 @@ public sealed class BlobObserverSystem : SharedBlobObserverSystem
         SendBlobBriefing(mindId);
 
         var blobRule = EntityQuery<GameTicking.BlobRuleComponent>().FirstOrDefault();
-        blobRule?.Blobs.Add((mindId, mind, blobCoreUid)); // Amour fix
+        blobRule?.Blobs.Add((mindId, mind, blobCoreUid)); // RW fix
 
         _mindSystem.TransferTo(mindId, observer, true, mind: mind);
         if (_actorSystem.TryGetSessionById(args.UserId, out var session))

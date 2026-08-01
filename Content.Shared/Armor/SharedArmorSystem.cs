@@ -124,22 +124,22 @@ public abstract class SharedArmorSystem : EntitySystem
         if (!component.ArmourCoverageHidden)
         {
 
-            // Orion-Start
+            // RW-Start
             var coveredParts = coverage
                 .Where(coveragePart => coveragePart != BodyPartType.Other)
                 .Select(coveragePart => Loc.GetString("armor-coverage-type-" + coveragePart.ToString().ToLower()))
                 .ToList();
-            // Orion-End
+            // RW-End
 
-            // Orion-Edit-Start
+            // RW-Edit-Start
             if (coveredParts.Count > 0)
             {
                 msg.PushNewline();
                 msg.AddMarkupOrThrow(Loc.GetString("armor-coverage-list-value", ("parts", string.Join(", ", coveredParts))));
             }
-            // Orion-Edit-End
+            // RW-Edit-End
 
-/* // Orion-Edit: We did it better!
+/* // RW-Edit: We did it better!
             // <Trauma>
             var coveredParts = coverage.Where(coveragePart => coveragePart != BodyPartType.Other).ToList();
             List<string> coverageText = [];
@@ -156,15 +156,15 @@ public abstract class SharedArmorSystem : EntitySystem
         {
             foreach (var coefficientArmor in armorModifiers.Coefficients)
             {
-                // Orion-Start
+                // RW-Start
                 var protectionPercent = (1f - coefficientArmor.Value) * 100f;
                 var rounded = (int) MathF.Round(protectionPercent); // RW revert roman
 
                 if (rounded == 0)
                     continue;
-                // Orion-End
+                // RW-End
 
-                // Orion-Edit-Start
+                // RW-Edit-Start
                 msg.PushNewline();
                 /*
                 var armorType = Loc.GetString("armor-damage-type-class-" + coefficientArmor.Key.ToLower());
@@ -177,7 +177,7 @@ public abstract class SharedArmorSystem : EntitySystem
                     ("type", armorType),
                     ("value", rounded)) // RW "class", $"{sign}{roman}" > "value", rounded
                 );
-                // Orion-Edit-End
+                // RW-Edit-End
             }
 
             foreach (var flatArmor in armorModifiers.FlatReduction)

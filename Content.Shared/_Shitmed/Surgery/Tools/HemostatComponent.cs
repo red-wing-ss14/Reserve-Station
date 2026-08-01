@@ -7,7 +7,7 @@ namespace Content.Shared._Shitmed.Medical.Surgery.Tools;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class HemostatComponent : Component, ISurgeryToolComponent
 {
-    public string ToolName => Loc.GetString("surgery-tool-hemostat"); // Orion-Edit: Localization
+    public string ToolName => Loc.GetString("surgery-tool-hemostat"); // RW-Edit: Localization
     [DataField]
     public bool? Used { get; set; } = null;
     [DataField]

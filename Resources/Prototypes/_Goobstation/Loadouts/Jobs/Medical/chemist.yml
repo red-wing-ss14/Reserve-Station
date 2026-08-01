@@ -11,7 +11,7 @@
 
 - type: loadout
   id: ChemistUshanka
-#  effects: # Orion-Edit: Removed
+#  effects: # RW-Edit: Removed
 #  - !type:GroupLoadoutEffect
 #    proto: MasterChemist
   equipment:

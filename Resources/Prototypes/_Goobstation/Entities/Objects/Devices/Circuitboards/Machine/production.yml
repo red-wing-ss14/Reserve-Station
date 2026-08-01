@@ -14,7 +14,7 @@
       GlassBeaker:
         amount: 2
         defaultPrototype: Beaker
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 4
 
 - type: entity
@@ -31,7 +31,7 @@
       GlassBeaker:
         amount: 2
         defaultPrototype: Beaker
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 4
 
 - type: entity
@@ -44,7 +44,7 @@
     state: science
   - type: MachineBoard
     prototype: ScienceTechFab
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 4
     tagRequirements:
       GlassBeaker:
@@ -65,7 +65,7 @@
       GlassBeaker:
         amount: 2
         defaultPrototype: Beaker
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 4
 
 - type: entity
@@ -82,7 +82,7 @@
       GlassBeaker:
         amount: 2
         defaultPrototype: Beaker
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 4
 
 - type: entity
@@ -97,7 +97,7 @@
       stackRequirements:
         Steel: 10
         CableHV: 10
-      partRequirements: # Orion
+      partRequirements: # RW
         Servo: 5
 
 - type: entity
@@ -113,7 +113,7 @@
         Steel: 5
         CableHV: 10
         Plasma: 5
-      partRequirements: # Orion
+      partRequirements: # RW
         Servo: 5
 
 - type: entity
@@ -131,7 +131,7 @@
       GlassBeaker:
         amount: 2
         defaultPrototype: Beaker
-    partRequirements: # Orion
+    partRequirements: # RW
       Servo: 4
 
 - type: entity
@@ -151,7 +151,7 @@
         GlassBeaker:
           amount: 2
           defaultPrototype: Beaker
-      partRequirements: # Orion
+      partRequirements: # RW
         Servo: 1
 
 - type: entity

@@ -147,7 +147,7 @@ namespace Content.Shared.Roles
         [DataField]
         public IReadOnlyCollection<ProtoId<AccessGroupPrototype>> ExtendedAccessGroups { get; private set; } = Array.Empty<ProtoId<AccessGroupPrototype>>();
 
-        // Orion-Start
+        // RW-Start
         [DataField]
         public int? Salary { get; private set; }
 
@@ -160,7 +160,7 @@ namespace Content.Shared.Roles
         /// </summary>
         [DataField]
         public bool PayrollFromStationBudget { get; private set; } = true;
-        // Orion-End
+        // RW-End
 
         [DataField]
         public bool Whitelisted;

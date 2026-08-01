@@ -21,7 +21,7 @@ namespace Content.Shared.VendingMachines
         [DataField("contrabandInventory", customTypeSerializer:typeof(PrototypeIdDictionarySerializer<uint, EntityPrototype>))]
         public Dictionary<string, uint>? ContrabandInventory { get; private set; }
 
-        // Orion-Start
+        // RW-Start
         /// <summary>
         /// Default item price for regular inventory entries when no per-item override exists.
         /// </summary>
@@ -52,6 +52,6 @@ namespace Content.Shared.VendingMachines
         /// </summary>
         [DataField(customTypeSerializer: typeof(PrototypeIdDictionarySerializer<int, EntityPrototype>))]
         public Dictionary<string, int>? EmaggedPrices { get; private set; }
-        // Orion-End
+        // RW-End
     }
 }

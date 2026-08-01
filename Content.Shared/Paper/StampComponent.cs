@@ -36,25 +36,25 @@ public partial struct StampDisplayInfo
     public bool HasIcon = true; // goob
 };
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState] // Orion-Edit: NetworkedComponent, AutoGenerateComponentState
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState] // RW-Edit: NetworkedComponent, AutoGenerateComponentState
 public sealed partial class StampComponent : Component
 {
     /// <summary>
     ///     The loc string name that will be stamped to the piece of paper on examine.
     /// </summary>
-    [DataField("stampedName"), AutoNetworkedField] // Orion-Edit: AutoNetworkedField
+    [DataField("stampedName"), AutoNetworkedField] // RW-Edit: AutoNetworkedField
     public string StampedName { get; set; } = "stamp-component-stamped-name-default";
 
     /// <summary>
     ///     The sprite state of the stamp to display on the paper from paper Sprite path.
     /// </summary>
-    [DataField("stampState"), AutoNetworkedField] // Orion-Edit: AutoNetworkedField
+    [DataField("stampState"), AutoNetworkedField] // RW-Edit: AutoNetworkedField
     public string StampState { get; set; } = "paper_stamp-generic";
 
     /// <summary>
     /// The color of the ink used by the stamp in UIs
     /// </summary>
-    [DataField("stampedColor"), AutoNetworkedField] // Orion-Edit: AutoNetworkedField
+    [DataField("stampedColor"), AutoNetworkedField] // RW-Edit: AutoNetworkedField
     public Color StampedColor = Color.FromHex("#BB3232"); // StyleNano.DangerousRedFore
 
     /// <summary>

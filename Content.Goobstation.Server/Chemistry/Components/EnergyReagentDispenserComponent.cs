@@ -3,7 +3,7 @@
 using Content.Shared.Containers.ItemSlots;
 using Content.Goobstation.Server.Chemistry.EntitySystems;
 using Content.Goobstation.Shared.Chemistry;
-using Content.Shared._Orion.Construction.Prototypes;
+using Content.Shared._RW.Construction.Prototypes;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
@@ -31,7 +31,7 @@ namespace Content.Goobstation.Server.Chemistry.Components
         [DataField]
         public Dictionary<string, float> Reagents = [];
 
-        // Orion-Start
+        // RW-Start
         [DataField]
         public float RefundEnergyEfficiency = 0.5f;
 
@@ -58,6 +58,6 @@ namespace Content.Goobstation.Server.Chemistry.Components
 
         [DataField]
         public ProtoId<MachinePartPrototype> MatterBinPart = "MatterBin";
-        // Orion-End
+        // RW-End
     }
 }

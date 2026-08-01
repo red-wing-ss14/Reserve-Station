@@ -314,7 +314,7 @@
     - type: TriggerOnMobstateChange #activates the timer
       mobState:
       - Dead
-      preventSuicide: false # Orion-Edit: true > false
+      preventSuicide: false # RW-Edit: true > false
     - type: TimerTrigger
       delay: 7
       beepSound:
@@ -331,9 +331,9 @@
       - timer
     - type: Explosive
       explosionType: Default
-      totalIntensity: 4000 # Orion-Edit: 3500 > 4000
-      intensitySlope: 5 # Orion-Edit: 15 > 5
-      maxIntensity: 50 # Orion-Edit: 70 > 50
+      totalIntensity: 4000 # RW-Edit: 3500 > 4000
+      intensitySlope: 5 # RW-Edit: 15 > 5
+      maxIntensity: 50 # RW-Edit: 70 > 50
       canCreateVacuum: true
     - type: Tag
       tags:

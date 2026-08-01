@@ -19,7 +19,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [Slime, Human]
-  minBoostyTier: 1 # Amour edit
+  minBoostyTier: 1 # RW edit
   coloring:
     default:
       type:
@@ -43,7 +43,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [Slime, Human]
-  minBoostyTier: 1 # Amour edit
+  minBoostyTier: 1 # RW edit
   coloring:
     default:
       type:

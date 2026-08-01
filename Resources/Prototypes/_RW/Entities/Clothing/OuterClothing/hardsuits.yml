@@ -1,0 +1,95 @@
+- type: entity
+  parent: [ BaseMajorContraband, ClothingOuterHardsuitSyndieElite ]
+  id: ClothingOuterHardsuitInteQElite
+  name: elite InteQ hardsuit
+  description: An upgraded version of the syndicate hardsuit that features enhanced fireproofing, pressure resist, and superior armor.
+  components:
+  - type: Sprite
+    sprite: _RW/Clothing/OuterClothing/Hardsuits/elite_inteq_hardsuit.rsi
+  - type: Clothing
+    sprite: _RW/Clothing/OuterClothing/Hardsuits/elite_inteq_hardsuit.rsi
+  - type: ToggleableClothing
+    clothingPrototypes: #goobstation change
+      head: ClothingHeadHelmetHardsuitInteQElite
+
+- type: entity
+  parent: [ BaseMajorContraband, ClothingOuterHardsuitSyndie ]
+  id: ClothingOuterHardsuitInteQ
+  name: InteQ hardsuit
+  description: An upgraded version of the syndicate hardsuit that features enhanced fireproofing, pressure resist, and superior armor.
+  components:
+  - type: Sprite
+    sprite: _RW/Clothing/OuterClothing/Hardsuits/inteq_hardsuit.rsi
+  - type: Clothing
+    sprite: _RW/Clothing/OuterClothing/Hardsuits/inteq_hardsuit.rsi
+  - type: ToggleableClothing
+    clothingPrototypes: #goobstation change
+      head: ClothingHeadHelmetHardsuitInteQ
+
+- type: entity
+  parent: [ BaseMajorContraband, ClothingOuterHardsuitSyndie ]
+  id: ClothingOuterHardsuitSyndicateInteQ
+  name: InteQ hardsuit
+  description: An upgraded version of the syndicate hardsuit that features enhanced fireproofing, pressure resist, and superior armor.
+  components:
+  - type: Sprite
+    sprite: _RW/Clothing/OuterClothing/Hardsuits/inteq_syn_hardsuit.rsi
+  - type: Clothing
+    sprite: _RW/Clothing/OuterClothing/Hardsuits/inteq_syn_hardsuit.rsi
+  - type: ToggleableClothing
+    clothingPrototypes: #goobstation change
+      head: ClothingHeadHelmetHardsuitSyndicateInteQ
+
+- type: entity
+  parent: ClothingOuterHardsuitCBURN
+  id: ClothingOuterHardsuitCBURNLeader
+  name: CBURN leader hardsuit
+  description: A lightweight yet strong exosuit used for special cleanup operations.
+  components:
+  - type: Sprite
+    sprite: _RW/Clothing/OuterClothing/Hardsuits/cburn_leader.rsi
+  - type: Clothing
+    sprite: _RW/Clothing/OuterClothing/Hardsuits/cburn_leader.rsi
+  - type: ToggleableClothing
+    clothingPrototypes:
+      head: ClothingHeadHelmetCBURNLeader
+
+- type: entity
+  parent: ClothingOuterHardsuitSecurity
+  id: ClothingOuterHardsuitOTAAlliance
+  name: OTA alliance hardsuit
+  description: OTA Stormtrooper Hardsuit.
+  components:
+  - type: Sprite
+    sprite: _RW/Clothing/OuterClothing/Hardsuits/OTA_alliance_hardsuit.rsi
+  - type: Clothing
+    sprite: _RW/Clothing/OuterClothing/Hardsuits/OTA_alliance_hardsuit.rsi
+  - type: ToggleableClothing
+    clothingPrototypes: #goobstation change
+      head: ClothingHeadHelmetHardsuitOTAAlliance
+
+- type: entity
+  parent: ClothingOuterHardsuitDeathsquad
+  id: ClothingOuterHardsuitDeathsquadUnremovable
+  suffix: Unremoveable
+  components:
+  - type: Unremoveable
+
+- type: entity
+  parent: ClothingOuterHardsuitCybersunDreadnought
+  id: ClothingOuterHardsuitCybersunDreadnoughtexperimental
+  name: Syndicate dreadnought experimental suit
+  description: This experimental hardsuit uses nanites for continuous tissue regeneration. WARNING! The side effects of nanites are irreversible, your life expectancy is shortened to one year.
+  suffix: Healing
+  components:
+  - type: ClothingGrantComponent
+    component:
+    - type: DamageOverTime
+      damage:
+        types:
+          Blunt: -1.0
+          Slash: -1.0
+          Piercing: -1.5
+          Asphyxiation: -10.0
+          Bloodloss: -10.0
+          Heat: -0.5

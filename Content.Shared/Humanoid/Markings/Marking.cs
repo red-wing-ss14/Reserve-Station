@@ -13,10 +13,10 @@ namespace Content.Shared.Humanoid.Markings
         [DataField("markingColor")]
         private List<Color> _markingColors = new();
 
-        // Amour edit start: secondary gradient colors per sprite layer
+        // RW edit start: secondary gradient colors per sprite layer
         [DataField("markingSecondaryColor")]
         private List<Color>? _secondaryColors;
-        // Amour edit end
+        // RW edit end
         private Marking()
         {
         }
@@ -49,13 +49,13 @@ namespace Content.Shared.Humanoid.Markings
             _markingColors = new(other.MarkingColors);
             Visible = other.Visible;
             Forced = other.Forced;
-            // Amour edit start
+            // RW edit start
             UseGradient = other.UseGradient;
             if (other._secondaryColors != null)
                 _secondaryColors = new List<Color>(other._secondaryColors);
             GradientPosition = other.GradientPosition;
             GradientBlur = other.GradientBlur;
-            // Amour edit end
+            // RW edit end
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Content.Shared.Humanoid.Markings
         [ViewVariables]
         public IReadOnlyList<Color> MarkingColors => _markingColors;
 
-        // Amour edit start
+        // RW edit start
         /// <summary>
         ///     Secondary colors used as the second stop of a vertical gradient
         ///     when <see cref="UseGradient"/> is enabled. May be null if the
@@ -78,7 +78,7 @@ namespace Content.Shared.Humanoid.Markings
         /// </summary>
         [ViewVariables]
         public IReadOnlyList<Color>? SecondaryMarkingColors => _secondaryColors;
-        // Amour edit end
+        // RW edit end
         /// <summary>
         ///     If this marking is currently visible.
         /// </summary>
@@ -91,7 +91,7 @@ namespace Content.Shared.Humanoid.Markings
         [ViewVariables]
         public bool Forced;
 
-        // Amour edit start: gradient coloring for markings (hair/slime body etc.)
+        // RW edit start: gradient coloring for markings (hair/slime body etc.)
         /// <summary>
         ///     If true, the marking is rendered using a vertical gradient between
         ///     the first and the second color from <see cref="MarkingColors"/>.
@@ -115,7 +115,7 @@ namespace Content.Shared.Humanoid.Markings
         /// </summary>
         [DataField("gradientBlur")]
         public float GradientBlur = DefaultGradientBlur;
-        // Amour edit end
+        // RW edit end
         public void SetColor(int colorIndex, Color color) =>
             _markingColors[colorIndex] = color;
 
@@ -127,7 +127,7 @@ namespace Content.Shared.Humanoid.Markings
             }
         }
 
-        // Amour edit start: helpers for gradient access
+        // RW edit start: helpers for gradient access
         /// <summary>
         ///     Returns the secondary gradient color for the given layer index,
         ///     or the primary color if no secondary is set / gradient is disabled.
@@ -154,7 +154,7 @@ namespace Content.Shared.Humanoid.Markings
 
         public static float ClampGradientBlur(float blur) =>
             float.IsNaN(blur) ? DefaultGradientBlur : Math.Clamp(blur, MinGradientBlur, 1f);
-        // Amour edit end
+        // RW edit end
 
         public int CompareTo(Marking? marking)
         {
@@ -184,15 +184,15 @@ namespace Content.Shared.Humanoid.Markings
                 && _markingColors.SequenceEqual(other._markingColors)
                 && Visible.Equals(other.Visible)
                 && Forced.Equals(other.Forced)
-                // Amour edit start
+                // RW edit start
                 && UseGradient.Equals(other.UseGradient)
                 && GradientPosition.Equals(other.GradientPosition)
                 && GradientBlur.Equals(other.GradientBlur)
                 && SecondaryColorsEqual(_secondaryColors, other._secondaryColors);
-                // Amour edit end
+                // RW edit end
         }
 
-        // Amour edit start
+        // RW edit start
         private static bool SecondaryColorsEqual(List<Color>? a, List<Color>? b)
         {
             if (a == null && b == null)
@@ -202,7 +202,7 @@ namespace Content.Shared.Humanoid.Markings
             return a.SequenceEqual(b);
         }
 
-        // Amour edit end
+        // RW edit end
         // VERY BIG TODO: TURN THIS INTO JSONSERIALIZER IMPLEMENTATION
 
 
@@ -222,7 +222,7 @@ namespace Content.Shared.Humanoid.Markings
             foreach (Color color in _markingColors)
                 colorStringList.Add(color.ToHex());
 
-            // Amour edit start: append optional gradient sections
+            // RW edit start: append optional gradient sections
             // Format: id@col1,col2,...[|sec1,sec2,...][|Pposition][|Bblur][!G]
             var result = $"{sanitizedName}@{String.Join(',', colorStringList)}";
             if (_secondaryColors != null && _secondaryColors.Count > 0)
@@ -244,7 +244,7 @@ namespace Content.Shared.Humanoid.Markings
             if (UseGradient)
                 result += "!G";
             return result;
-            // Amour edit end
+            // RW edit end
         }
 
         public static Marking? ParseFromDbString(string input)
@@ -253,7 +253,7 @@ namespace Content.Shared.Humanoid.Markings
             var split = input.Split('@');
             if (split.Length != 2) return null;
 
-            // Amour edit start: parse optional gradient sections
+            // RW edit start: parse optional gradient sections
             var payload = split[1];
             var useGradient = false;
             if (payload.EndsWith("!G", StringComparison.Ordinal))
@@ -310,7 +310,7 @@ namespace Content.Shared.Humanoid.Markings
             if (secondaryList != null)
                 marking._secondaryColors = secondaryList;
             return marking;
-            // Amour edit end
+            // RW edit end
         }
     }
 }

@@ -39,7 +39,7 @@ public sealed partial class AirlockComponent : Component
     [DataField]
     public SoundSpecifier EmergencyOffSound = new SoundPathSpecifier("/Audio/Machines/airlock_emergencyoff.ogg");
 
-    // Orion-Start
+    // RW-Start
     /// <summary>
     /// Sound to play when the airlock is force-opened.
     /// </summary>
@@ -51,7 +51,7 @@ public sealed partial class AirlockComponent : Component
     /// </summary>
     [DataField]
     public SoundSpecifier? ForceCloseSound;
-    // Orion-End
+    // RW-End
 
     /// <summary>
     /// Pry modifier for a powered airlock.

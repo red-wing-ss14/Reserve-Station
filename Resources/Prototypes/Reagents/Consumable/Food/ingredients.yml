@@ -114,7 +114,7 @@
         showInChat: true
         showInGuidebook: true
         probability: 0.05
-      - !type:ChemAddMoodlet # Orion
+      - !type:ChemAddMoodlet # RW
         moodPrototype: PepperEffect
   reactiveEffects:
     Acidic:
@@ -188,7 +188,7 @@
       - !type:AdjustReagent
         reagent: Nutriment
         amount: 0.75
-      - !type:ChemAddMoodlet # Orion
+      - !type:ChemAddMoodlet # RW
         moodPrototype: OilyEffect
 
 - type: reagent
@@ -203,13 +203,13 @@
   color: "#b67823"
   boilingPoint: 300.0
   meltingPoint: -16.0
-  # Orion-Start
+  # RW-Start
   metabolisms:
     Food:
       effects:
       - !type:ChemAddMoodlet
         moodPrototype: DeepFriedEffect
-  # Orion-End
+  # RW-End
   tileReactions:
   - !type:FlammableTileReaction {}
 
@@ -231,7 +231,7 @@
       - !type:AdjustReagent
         reagent: Nutriment #Oils enhance nutrition
         amount: 0.75
-      - !type:ChemAddMoodlet # Orion
+      - !type:ChemAddMoodlet # RW
         moodPrototype: SpicyEffect
     Poison:
       effects:
@@ -271,13 +271,13 @@
           reagent: Nutriment
           min: 0.1
         factor: 1
-      # Orion-Start
+      # RW-Start
       - !type:AdjustReagent
          reagent: Theobromine
          amount: 0.02
       - !type:ChemAddMoodlet
         moodPrototype: ChocolateEffect
-      # Orion-End
+      # RW-End
   plantMetabolism:
   - !type:PlantAdjustNutrition
     amount: 0.1
@@ -303,7 +303,7 @@
       - !type:AdjustReagent
         reagent: Nutriment
         amount: 0.75
-      - !type:ChemAddMoodlet # Orion
+      - !type:ChemAddMoodlet # RW
         moodPrototype: ButterEffect
 
 - type: reagent
@@ -337,7 +337,7 @@
       - !type:AdjustReagent
         reagent: Nutriment #Oils enhance nutrition
         amount: 0.75
-      - !type:ChemAddMoodlet # Orion
+      - !type:ChemAddMoodlet # RW
         moodPrototype: MintyEffect
     Poison:
       effects:

@@ -5,10 +5,10 @@ namespace Content.Shared.Inventory;
 /// <summary>
 /// Used to prevent items from being unequipped and equipped from slots that are listed in <see cref="Slots"/>.
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState] // Orion-Edit: Removed access SlotBlockSystem
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState] // RW-Edit: Removed access SlotBlockSystem
 public sealed partial class SlotBlockComponent : Component
 {
-    // Orion-Start
+    // RW-Start
     /// <summary>
     /// Slots that this entity should block and hide.
     /// </summary>
@@ -20,11 +20,11 @@ public sealed partial class SlotBlockComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public HashSet<SlotFlags> HideList = new();
-    // Orion-End
+    // RW-End
 
     /// <summary>
     /// Slots that this entity should block.
     /// </summary>
-    [DataField, AutoNetworkedField] // Orion-Edit: Removed required
+    [DataField, AutoNetworkedField] // RW-Edit: Removed required
     public SlotFlags Slots = SlotFlags.NONE;
 }

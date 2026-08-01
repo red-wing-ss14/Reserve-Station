@@ -47,13 +47,13 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
         _client.RunLevelChanged += ClientOnRunLevelChanged;
     }
 
-    // Orion-Start
+    // RW-Start
     public bool TryGetTrackerTimes(ICommonSession id, [NotNullWhen(true)] out Dictionary<string, TimeSpan>? time)
     {
         time = new(_roles);
         return true;
     }
-    // Orion-End
+    // RW-End
 
     private void ClientOnRunLevelChanged(object? sender, RunLevelChangedEventArgs e)
     {

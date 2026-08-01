@@ -44,10 +44,10 @@ public sealed partial class ReagentGrinderComponent : Component
     public int BaseStorageMaxEntities = 6;
 
     [DataField]
-    public Robust.Shared.Prototypes.ProtoId<Content.Shared._Orion.Construction.Prototypes.MachinePartPrototype> ServoPart = "Servo";
+    public Robust.Shared.Prototypes.ProtoId<Content.Shared._RW.Construction.Prototypes.MachinePartPrototype> ServoPart = "Servo";
 
     [DataField]
-    public Robust.Shared.Prototypes.ProtoId<Content.Shared._Orion.Construction.Prototypes.MachinePartPrototype> MatterBinPart = "MatterBin";
+    public Robust.Shared.Prototypes.ProtoId<Content.Shared._RW.Construction.Prototypes.MachinePartPrototype> MatterBinPart = "MatterBin";
 }
 
 [RegisterComponent, NetworkedComponent]

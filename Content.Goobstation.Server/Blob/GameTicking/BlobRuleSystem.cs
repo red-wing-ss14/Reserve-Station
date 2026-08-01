@@ -42,7 +42,7 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
     {
         base.Initialize();
 
-        SubscribeLocalEvent<NukeExplodedEvent>(OnNukeExploded); // Amour fix
+        SubscribeLocalEvent<NukeExplodedEvent>(OnNukeExploded); // RW fix
         SubscribeLocalEvent<BlobRuleComponent, AfterAntagEntitySelectedEvent>(AfterAntagSelected);
     }
 
@@ -213,7 +213,7 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
         }
     }
 
-    // Amour fix start
+    // RW fix start
     private void OnNukeExploded(NukeExplodedEvent ev)
     {
         var query = QueryActiveRules();
@@ -233,7 +233,7 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
             }
         }
     }
-    // Amour fix end
+    // RW fix end
     protected override void AppendRoundEndText(
         EntityUid uid,
         BlobRuleComponent blob,
@@ -246,7 +246,7 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
         var result = Loc.GetString("blob-round-end-result", ("blobCount", blob.Blobs.Count));
 
         // yeah this is duplicated from traitor rules lol, there needs to be a generic rewrite where it just goes through all minds with objectives
-        foreach (var (mindId, mind, _) in blob.Blobs) // Amour fix
+        foreach (var (mindId, mind, _) in blob.Blobs) // RW fix
         {
             var name = mind.CharacterName;
             _player.TryGetSessionByEntity(mindId, out var session);

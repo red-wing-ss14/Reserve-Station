@@ -128,12 +128,12 @@
     understands:
     - TauCetiBasic
     - RobotTalk
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     departmentAccount: Cargo
     defaultPrice: 25
     extraPrice: 50
-  # Orion-End
+  # RW-End
 
 - type: entity
   id: VendingMachineWallmount
@@ -235,7 +235,7 @@
     noRot: false
 
 - type: entity
-  parent: VendingMachineOld # Orion-Edit
+  parent: VendingMachineOld # RW-Edit
   id: VendingMachineAmmo
   name: liberation station
   description: An overwhelming amount of ancient patriotism washes over you just by looking at the machine.
@@ -287,18 +287,18 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Bar"]]
   - type: GuideHelp
     guides:
     - Bartender
     - Drinks
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Service
     defaultPrice: 55
     extraPrice: 155
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachineBooze
@@ -327,7 +327,7 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["SyndicateAgent"]]
   - type: GuideHelp
     guides:
@@ -335,7 +335,7 @@
     - Drinks
 
 - type: entity
-  parent: VendingMachineOld # Orion-Edit
+  parent: VendingMachineOld # RW-Edit
   id: VendingMachineCart
   name: PTech
   description: PTech vending! Providing a ROBUST selection of PDAs, cartridges, and anything else a dull paper pusher needs!
@@ -364,19 +364,19 @@
     color: "#ffb0b0"
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["HeadOfPersonnel"]]
   - type: Transform
     noRot: false
   - type: Rotatable
     rotateWhileAnchored: false
     rotateWhilePulling: true
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Command
     defaultPrice: 100
     extraPrice: 150
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -404,7 +404,7 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Service"]]
   - type: PointLight
     radius: 1.5
@@ -412,10 +412,10 @@
     color: "#4b93ad"
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Service
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -452,11 +452,11 @@
   - type: Rotatable
     rotateWhileAnchored: false
     rotateWhilePulling: true
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     defaultPrice: 50
     extraPrice: 150
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -493,11 +493,11 @@
   - type: Tag
     tags:
       - DroneUsable # Goobstation
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     defaultPrice: 35
     extraPrice: 100
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -583,13 +583,13 @@
   - type: Rotatable
     rotateWhileAnchored: false
     rotateWhilePulling: true
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     extraPrice: 60
-  # Orion-End
+  # RW-End
 
 - type: entity
-  parent: VendingMachineOld # Orion-Edit
+  parent: VendingMachineOld # RW-Edit
   id: VendingMachineCola
   name: Robust Softdrinks
   description: A softdrink vendor provided by Robust Industries, LLC.
@@ -631,11 +631,11 @@
   - type: Rotatable
     rotateWhileAnchored: false
     rotateWhilePulling: true
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     defaultPrice: 45
     extraPrice: 95
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachineCola
@@ -683,7 +683,7 @@
     autoRot: true
 
 - type: entity
-  parent: VendingMachineOld # Orion-Edit
+  parent: VendingMachineOld # RW-Edit
   id: VendingMachineSpaceUp
   name: Space-Up! Vendor
   description: Indulge in an explosion of flavor.
@@ -708,11 +708,11 @@
     color: "#44964A"
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     defaultPrice: 45
     extraPrice: 95
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachineCola
@@ -747,14 +747,14 @@
   - type: Rotatable
     rotateWhileAnchored: false
     rotateWhilePulling: true
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     defaultPrice: 45
     extraPrice: 95
-  # Orion-End
+  # RW-End
 
 - type: entity
-  parent: VendingMachineOld # Orion-Edit
+  parent: VendingMachineOld # RW-Edit
   id: VendingMachineStarkist
   name: Star-kist Vendor
   description: The taste of a star in liquid form.
@@ -781,14 +781,14 @@
     autoRot: true
   - type: Transform
     noRot: true
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     defaultPrice: 45
     extraPrice: 95
-  # Orion-End
+  # RW-End
 
 - type: entity
-  parent: VendingMachineOld # Orion-Edit
+  parent: VendingMachineOld # RW-Edit
   id: VendingMachineShamblersJuice
   name: Shambler's Juice Vendor
   description: ~Shake me up some of that Shambler's Juice!~
@@ -822,14 +822,14 @@
     color: "#66538F"
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     defaultPrice: 45
     extraPrice: 95
-  # Orion-End
+  # RW-End
 
 - type: entity
-  parent: VendingMachineOld # Orion-Edit
+  parent: VendingMachineOld # RW-Edit
   id: VendingMachinePwrGame
   name: Pwr Game Vendor
   description: You want it, we got it. Brought to you in partnership with Vlad's Salads.
@@ -865,14 +865,14 @@
     color: "#6927C5"
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     defaultPrice: 45
     extraPrice: 95
-  # Orion-End
+  # RW-End
 
 - type: entity
-  parent: VendingMachineOld # Orion-Edit
+  parent: VendingMachineOld # RW-Edit
   id: VendingMachineDrGibb
   name: Dr. Gibb Vendor
   description: Canned explosion of different flavors in this very vendor!
@@ -908,14 +908,14 @@
     color: "#D82929"
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     defaultPrice: 45
     extraPrice: 95
-  # Orion-End
+  # RW-End
 
 - type: entity
-  parent: VendingMachineOld # Orion-Edit
+  parent: VendingMachineOld # RW-Edit
   id: VendingMachineSmite
   name: Smite Vendor
   description: Popular with the administration.
@@ -978,7 +978,7 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Kitchen"]]
   - type: PointLight
     radius: 1.5
@@ -991,12 +991,12 @@
   - type: Rotatable
     rotateWhileAnchored: false
     rotateWhilePulling: true
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Service
     defaultPrice: 40
     extraPrice: 75
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -1037,11 +1037,11 @@
   - type: Rotatable
     rotateWhileAnchored: false
     rotateWhilePulling: true
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     defaultPrice: 0
     extraPrice: 0
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -1079,7 +1079,7 @@
     autoRot: true
 
 - type: entity
-  parent: VendingMachineOld # Orion-Edit
+  parent: VendingMachineOld # RW-Edit
   id: VendingMachineEngivend
   name: Engi-Vend
   description: Spare tool vending. What? Did you expect some witty description?
@@ -1102,7 +1102,7 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Engineering"]]
   - type: PointLight
     radius: 1.5
@@ -1118,12 +1118,12 @@
   - type: Tag
     tags:
     - DroneUsable # Goobstation
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Engineering
     defaultPrice: 50
     extraPrice: 150
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -1154,7 +1154,7 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Medical"]]
   - type: PointLight
     radius: 1.5
@@ -1170,10 +1170,10 @@
   - type: Rotatable
     rotateWhileAnchored: false
     rotateWhilePulling: true
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Medical
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachineMedicalBase
@@ -1198,7 +1198,7 @@
     access: [["Medical"]]
 
 - type: entity
-  parent: VendingMachineOld # Orion-Edit
+  parent: VendingMachineOld # RW-Edit
   id: VendingMachineNutri
   name: NutriMax
   description: A vending machine containing nutritional substances for plants and botanical tools.
@@ -1224,7 +1224,7 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Hydroponics"]]
   - type: PointLight
     radius: 1.5
@@ -1232,15 +1232,15 @@
     color: "#326e3f"
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Service
     defaultPrice: 40
     extraPrice: 100
-  # Orion-End
+  # RW-End
 
 - type: entity
-  parent: VendingMachineOld # Orion-Edit
+  parent: VendingMachineOld # RW-Edit
   id: VendingMachineSec
   name: SecTech
   description: A vending machine containing Security equipment. A label reads SECURITY PERSONNEL ONLY.
@@ -1267,7 +1267,7 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Security"]]
   - type: PointLight
     radius: 1
@@ -1284,12 +1284,12 @@
   - type: Rotatable
     rotateWhileAnchored: false
     rotateWhilePulling: true
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Security
     defaultPrice: 50
     extraPrice: 150
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -1331,12 +1331,12 @@
   id: VendingMachineSeeds
   suffix: Hydroponics
   components:
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Hydroponics"]]
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Service
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -1380,13 +1380,13 @@
   - type: Rotatable
     rotateWhileAnchored: false
     rotateWhilePulling: true
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     defaultPrice: 30
-  # Orion-End
+  # RW-End
 
 - type: entity
-  parent: [VendingMachineSnack, VendingMachineOld] # Orion-Edit
+  parent: [VendingMachineSnack, VendingMachineOld] # RW-Edit
   id: VendingMachineSustenance
   name: Sustenance Vendor
   description: A vending machine which vends food, as required by section 47-C of the NT's Prisoner Ethical Treatment Agreement.
@@ -1416,11 +1416,11 @@
     color: "#737785"
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     defaultPrice: 0
     extraPrice: 0
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachineSnack
@@ -1511,7 +1511,7 @@
     autoRot: true
 
 - type: entity
-  parent: VendingMachineOld # Orion-Edit
+  parent: VendingMachineOld # RW-Edit
   id: VendingMachineSovietSoda
   name: ВОДА
   description: An old vending machine containing sweet water.
@@ -1601,14 +1601,14 @@
   - type: Tag
     tags:
     - DroneUsable # Goobstation
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     defaultPrice: 40
     extraPrice: 100
-  # Orion-End
+  # RW-End
 
 - type: entity
-  parent: VendingMachineOld # Orion-Edit
+  parent: VendingMachineOld # RW-Edit
   id: VendingMachineVendomat
   name: Vendomat
   description: Only the finest robust equipment in space!
@@ -1646,13 +1646,13 @@
   - type: Rotatable
     rotateWhileAnchored: false
     rotateWhilePulling: true
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     defaultPrice: 35
-  # Orion-End
+  # RW-End
 
 - type: entity
-  parent: VendingMachineOld # Orion-Edit
+  parent: VendingMachineOld # RW-Edit
   id: VendingMachineRobotics
   name: Robotech Deluxe
   description: All the tools you need to create your own robot army.
@@ -1679,7 +1679,7 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Research"]]
   - type: PointLight
     radius: 1.5
@@ -1695,14 +1695,14 @@
   - type: GuideHelp
     guides:
     - Robotics
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Science
     defaultPrice: 20
-  # Orion-End
+  # RW-End
 
 - type: entity
-  parent: VendingMachineOld # Orion-Edit
+  parent: VendingMachineOld # RW-Edit
   id: VendingMachineYouTool
   name: YouTool
   description: "A vending machine containing standard tools. A label reads: Tools for tools."
@@ -1739,12 +1739,12 @@
   - type: Tag
     tags:
     - DroneUsable # Goobstation
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Engineering
     defaultPrice: 50
     extraPrice: 150
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -1880,7 +1880,7 @@
     #- MiningDrone
   - type: Wires # DeltaV: Use shop vendor wires layout
     layoutId: ShopVendor
-#  - type: AccessReader # Orion-Edit: Removed
+#  - type: AccessReader # RW-Edit: Removed
 #    access: [["Salvage"]]
   - type: GuideHelp
     guides:
@@ -1952,12 +1952,12 @@
     radius: 1.5
     energy: 3.0
     color: "#326e3f"
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Hydroponics"]]
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Service
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -1984,12 +1984,12 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Lawyer"]]
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Security
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -2020,14 +2020,14 @@
     radius: 1.5
     energy: 3.0
     color: "#d82929"
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Security"]]
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Security
     defaultPrice: 50
     extraPrice: 100
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -2054,12 +2054,12 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Bar"]]
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Service
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -2082,7 +2082,7 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Chapel"]]
   - type: PointLight
     radius: 1.5
@@ -2090,10 +2090,10 @@
     color: "#CCCCCC" #The holy C
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Service
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -2124,12 +2124,12 @@
     radius: 1.5
     energy: 3.0
     color: "#b89e2a"
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Cargo"]]
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Cargo
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -2156,14 +2156,14 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Medical"]]
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Medical
     defaultPrice: 50
     extraPrice: 100
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -2190,14 +2190,14 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Chemistry"]]
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Medical
     defaultPrice: 50
     extraPrice: 100
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -2224,14 +2224,14 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Service"]]
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Service
     defaultPrice: 50
     extraPrice: 100
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -2262,14 +2262,14 @@
     radius: 1.5
     energy: 3.0
     color: "#b89e2a"
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Engineering"]]
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Engineering
     defaultPrice: 50
     extraPrice: 100
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -2300,14 +2300,14 @@
     radius: 1.5
     energy: 3.0
     color: "#b89e2a"
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Engineering"]]
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Engineering
     defaultPrice: 50
     extraPrice: 100
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -2334,14 +2334,14 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Kitchen"]]
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Service
     defaultPrice: 50
     extraPrice: 100
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -2368,14 +2368,14 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Detective"]]
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Security
     defaultPrice: 50
     extraPrice: 100
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -2402,7 +2402,7 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Janitor"]]
   - type: PointLight
     radius: 1.5
@@ -2410,12 +2410,12 @@
     color: "#6927C5"
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Service
     defaultPrice: 50
     extraPrice: 100
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -2442,14 +2442,14 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Research"]]
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Science
     defaultPrice: 50
     extraPrice: 100
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -2482,11 +2482,11 @@
     color: "#d82929"
   - type: AccessReader
     access: [["NuclearOperative"], ["SyndicateAgent"]]
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     defaultPrice: 50
     extraPrice: 100
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -2513,14 +2513,14 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Research"]]
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Science
     defaultPrice: 50
     extraPrice: 100
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -2547,14 +2547,14 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Medical"]]
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Medical
     defaultPrice: 50
     extraPrice: 100
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -2581,14 +2581,14 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Medical"]]
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Medical
     defaultPrice: 50
     extraPrice: 100
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -2617,13 +2617,13 @@
     color: "#48CF48"
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["CentralCommand"]]
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     defaultPrice: 150
     extraPrice: 300
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachine
@@ -2662,7 +2662,7 @@
     dataset: HappyHonkAds
   - type: SpeakOnUIClosed
     pack: HappyHonkGoodbyes
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Kitchen"], ["Theatre"]]
 
 # Pride Vending Machine | No, fuck you
@@ -2670,7 +2670,7 @@
 - type: entity
   parent: VendingMachine
   id: VendingMachinePride
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   name: Pride-O-Mat
   description: A vending machine containing pride.
   components:
@@ -2751,16 +2751,16 @@
       map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Chemistry"]]
   - type: GuideHelp
     guides:
     - Chemicals
     - Chemist
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Medical
-  # Orion-End
+  # RW-End
 
 - type: entity
   parent: VendingMachineChemicals
@@ -2832,14 +2832,14 @@
     radius: 1.3
     energy: 1.6
     color: "#43ccb5"
-#  - type: AccessReader # Orion-Edit
+#  - type: AccessReader # RW-Edit
 #    access: [["Medical"]]
   - type: GuideHelp
     guides:
     - Medical
-  # Orion-Start
+  # RW-Start
   - type: VendingMachinePricing
     discountDepartment: Medical
-  # Orion-End
+  # RW-End
 
 

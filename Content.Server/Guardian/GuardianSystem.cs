@@ -273,7 +273,7 @@ namespace Content.Server.Guardian
 
             TryComp<GuardianComponent>(component.HostedGuardian, out var guardianComp);
 
-            if (args.NewMobState is MobState.SoftCritical or MobState.HardCritical) // Orion-Edit
+            if (args.NewMobState is MobState.SoftCritical or MobState.HardCritical) // RW-Edit
             {
                 _popupSystem.PopupEntity(Loc.GetString("guardian-host-critical-warn"), component.HostedGuardian.Value, component.HostedGuardian.Value);
                 if (guardianComp != null)

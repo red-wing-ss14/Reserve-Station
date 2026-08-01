@@ -6,16 +6,16 @@
   description: job-description-cmo
   playTimeTracker: JobChiefMedicalOfficer
   requirements:
-    # Amour-Edit-Start
+    # RW-Edit-Start
     - !type:RoleTimeRequirement
       role: JobChemist
-      time: 9000 #2.50 hrs # Amour edit
+      time: 9000 #2.50 hrs # RW edit
     - !type:RoleTimeRequirement
       role: JobMedicalDoctor
-      time: 3600 #1 h # Amour edit
-    # Amour-Edit-End
-    - !type:DiscordLinkRequirement # Amour
-    - !type:AgeRequirement # Amour
+      time: 3600 #1 h # RW edit
+    # RW-Edit-End
+    - !type:DiscordLinkRequirement # RW
+    - !type:AgeRequirement # RW
       requiredAge: 23
   weight: 10
   startingGear: CMOGear
@@ -23,17 +23,17 @@
   supervisors: job-supervisors-captain
   canBeAntag: false
   guides: # goobstation
-#  - Medical # Orion-Edit: Removed because dont have this SOP
-#  - ChiefMedicalOfficerSOP # Orion-Edit: Removed because dont have this SOP
-#  - MedicalSOP # Orion-Edit: Removed because dont have this SOP
-#  - Command # Orion-Edit: Removed because dont have this SOP
+#  - Medical # RW-Edit: Removed because dont have this SOP
+#  - ChiefMedicalOfficerSOP # RW-Edit: Removed because dont have this SOP
+#  - MedicalSOP # RW-Edit: Removed because dont have this SOP
+#  - Command # RW-Edit: Removed because dont have this SOP
   - Chemicals
   - Virology
   goobcoins: 40 #Goob content
-  # Orion-Start
+  # RW-Start
   salary: 120
   payrollDepartmentAccount: Command
-  # Orion-End
+  # RW-End
   access:
   - Medical
   - Command

@@ -31,13 +31,13 @@ public sealed partial class LanguagePrototype : IPrototype
     public SpeechOverrideInfo SpeechOverride = new();
 
     #region utility
-    // Orion-Start
+    // RW-Start
     /// <summary>
     ///     The icon that used for this language. Also include fallback icon "?".
     /// </summary>
     [DataField]
-    public SpriteSpecifier Icon { get; private set; } = new SpriteSpecifier.Rsi(new ResPath("_Orion/Interface/Chat/language.rsi"), "what");
-    // Orion-End
+    public SpriteSpecifier Icon { get; private set; } = new SpriteSpecifier.Rsi(new ResPath("_RW/Interface/Chat/language.rsi"), "what");
+    // RW-End
 
     /// <summary>
     ///     The in-world name of this language, localized.

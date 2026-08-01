@@ -4,12 +4,12 @@
   description: job-description-security-clown
   playTimeTracker: JobSecurityClown
   requirements:
-    - !type:AnyOfRequirement # Amour edit - Discord OR playtime
+    - !type:AnyOfRequirement # RW edit - Discord OR playtime
       requirements:
         - !type:DiscordLinkRequirement
         - !type:OverallPlaytimeRequirement
           time: 36000 #10 hrs
-    - !type:AnyOfRequirement # Amour edit - Discord OR playtime
+    - !type:AnyOfRequirement # RW edit - Discord OR playtime
       requirements:
         - !type:DiscordLinkRequirement
         - !type:RoleTimeRequirement
@@ -20,10 +20,10 @@
   supervisors: job-supervisors-security
   canBeAntag: false
   setPreference: false
-  # Orion-Start
+  # RW-Start
   salary: 45
   payrollDepartmentAccount: Security
-  # Orion-End
+  # RW-End
   access:
   - Security
   - Brig

@@ -13,7 +13,7 @@
   - PlushieSpaceLizard
   - PersonalAI # Goobstation
   - GoldenPersonalAI # Goobstation
-  - InteQMiniFlag # Orion
+  - InteQMiniFlag # RW
   - CrewCassette # Goobstation
   - ThreeCandles
   - Lighter
@@ -161,12 +161,12 @@
   loadouts:
   - CaptainHead
   - CaptainCap
-  # Orion-Start
+  # RW-Start
   - CaptainWhiteBeret
   - SheriffBeret
   - CaptainWhiteCap
   - SheriffCap
-  # Orion-End
+  # RW-End
   - CaptainCapcapSenior # goob
 
 - type: loadoutGroup
@@ -177,13 +177,13 @@
   - CaptainJumpskirt
   - CaptainFormalSuit
   - CaptainFormalSkirt
-  # Orion-Start
+  # RW-Start
   - CaptainWhiteJumpsuit
   - CaptainWhiteJumpskirt
   - CaptainWhiteTurtleneck
   - SheriffJumpsuit
   - CaptainCommandJumpsuit
-  # Orion-End
+  # RW-End
   - CaptainJumpsuitMilitary # goob
   - CaptainSummerShirt # also goob
 
@@ -195,12 +195,12 @@
   - CaptainCloak
   - CaptainCloakFormal
   - CaptainMantle
-  # Orion-Start
+  # RW-Start
   - CaptainWideCloak
   - CaptainRoyalCloak
   - CaptainWhiteMantle
   - CaptainWhiteShoulderMantle
-  # Orion-End
+  # RW-End
   - VeteranCaptainCloak # goob
   - CaptainEnsemble # goob
 
@@ -211,7 +211,7 @@
   - CaptainBackpack
   - CaptainSatchel
   - CaptainDuffel
-  - CaptainDuffelWhite # Orion
+  - CaptainDuffelWhite # RW
   - CaptainMessenger # Frontier
 
 - type: loadoutGroup
@@ -219,15 +219,15 @@
   name: loadout-group-captain-outerclothing
   loadouts:
   - CaptainOuterClothing
-  # Orion-Start
+  # RW-Start
   - CaptainWhiteCarapace
-  # Orion-End
+  # RW-End
   - CaptainWintercoat
   - CaptainJacket # Goobstation
-  # Orion-Start
+  # RW-Start
   - CaptainWhiteCoat
   - CaptainSheriffCoat
-  # Orion-End
+  # RW-End
 
 - type: loadoutGroup
   id: CaptainJobTrinkets
@@ -357,10 +357,10 @@
   minLimit: 0
   loadouts:
   - PassengerWintercoat
-  # Orion-Start
+  # RW-Start
   - InteQWinter
   - InteQHoodie
-  # Orion-End
+  # RW-End
 
 - type: loadoutGroup
   id: PassengerShoes
@@ -988,7 +988,7 @@
   loadouts:
   - ChiefEngineerHead
   - ChiefEngineerBeret
-  - EngineeringBeret # Orion
+  - EngineeringBeret # RW
 
 - type: loadoutGroup
   id: ChiefEngineerJumpsuit
@@ -1133,7 +1133,7 @@
   minLimit: 0
   loadouts:
   - AtmosphericTechnicianWintercoat
-  - AtmosOveralls # Orion
+  - AtmosOveralls # RW
 
 - type: loadoutGroup
   id: AtmosphericTechnicianBackpack
@@ -1179,7 +1179,7 @@
   minLimit: 0
   loadouts:
   - ResearchDirectorBeret
-  - TinfoilHat # Orion
+  - TinfoilHat # RW
 
 - type: loadoutGroup
   id: ResearchDirectorNeck
@@ -1188,7 +1188,7 @@
   loadouts:
   - ResearchDirectorMantle
   - ResearchDirectorCloak
-  - ResearchDirectorRoyalCloak # Orion
+  - ResearchDirectorRoyalCloak # RW
   - ResearchDirectorEnsemble # goob
 
 - type: loadoutGroup
@@ -1233,7 +1233,7 @@
   #- RoboticistCap
   #- SkullBandana
   - ScientificBeret
-  - TinfoilHat # Orion
+  - TinfoilHat # RW
 
 - type: loadoutGroup
   id: ScientistNeck
@@ -1344,7 +1344,7 @@
   - HeadofSecurityFormalSuit
   - HeadofSecurityFormalSkirt
   - HoSSummerShirt # goob
-  - HeadOfSecurityCommandJumpsuit # Orion
+  - HeadOfSecurityCommandJumpsuit # RW
 
 - type: loadoutGroup
   id: HeadofSecurityNeck
@@ -1353,8 +1353,8 @@
   loadouts:
   - HeadofSecurityCloak
   - HeadofSecurityMantle
-  - HeadOfSecurityRoyalCloak # Orion
-  - SecurityScarfRed # Orion
+  - HeadOfSecurityRoyalCloak # RW
+  - SecurityScarfRed # RW
   - Bodycam # Goobstation - Body cameras
   - HeadOfSecurityEnsemble # goob
 
@@ -1416,7 +1416,7 @@
   - SecurityBeret
   - SecurityHat
   - TrooperHat
-  - SecuritySideCap # Orion
+  - SecuritySideCap # RW
 
 - type: loadoutGroup
   id: SecurityJumpsuit
@@ -1465,11 +1465,11 @@
   name: loadout-group-security-shoes
   loadouts:
   - JackBoots
-  # Orion-Start
+  # RW-Start
   - JackBootsToeless
   - JackBootsTall
   - JackBootsTallHeels
-  # Orion-End
+  # RW-End
   - CombatBoots # Goobstation
   - SecurityWinterBoots
 
@@ -1502,7 +1502,7 @@
   minLimit: 0
   loadouts:
   - DetectiveTie
-  - SecurityScarfRed # Orion
+  - SecurityScarfRed # RW
   - Bodycam # Goobstation - Body cameras
 
 - type: loadoutGroup
@@ -1747,7 +1747,7 @@
   minLimit: 0
   loadouts:
   - ParamedicHead
-  - ParamedicHeadBeret # Orion
+  - ParamedicHeadBeret # RW
   - SeniorPhysicianBeret # Goobstation
 
 - type: loadoutGroup

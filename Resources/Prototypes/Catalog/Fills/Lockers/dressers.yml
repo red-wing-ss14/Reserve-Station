@@ -2,7 +2,7 @@
 
 - type: entity
   id: DresserCaptainFilled
-  categories: [ HideSpawnMenu ] # Orion
+  categories: [ HideSpawnMenu ] # RW
   parent: Dresser
   suffix: Filled, Captain
   components:
@@ -28,12 +28,12 @@
     contents:
       - id: ClothingUniformJumpsuitChiefEngineerTurtle
       - id: ClothingUniformJumpskirtChiefEngineerTurtle
-#      - id: ClothingHeadHatBeretEngineering # Orion-Edit: Replaced
+#      - id: ClothingHeadHatBeretEngineering # RW-Edit: Replaced
       - id: ClothingOuterWinterCE
-      # Orion-Start
+      # RW-Start
       - id: ClothingHeadHatBeretEngineering
       - id: ClothingHeadHatBeretCEngineer
-      # Orion-End
+      # RW-End
       - id: ClothingNeckCloakWhiteCe
 
 - type: entity

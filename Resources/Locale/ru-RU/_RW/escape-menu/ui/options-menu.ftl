@@ -1,0 +1,17 @@
+ui-options-tts-volume = Громкость TTS:
+ui-options-jukebox-volume = Громкость музыкальных проигрывателей:
+ui-options-voice-type = Тип голоса:
+ui-options-voice-type-barks = Барки (звуки)
+ui-options-voice-type-tts = TTS (синтез речи)
+ui-options-radio-volume = Громкость радио-барков:
+
+ui-options-combat-indicator = Отображение индикатора боевого режима
+ui-options-combat-mode-sound = Звук перехода в Боевой Режим
+
+ui-options-function-toggle-posing = Переключить режим позирования
+ui-options-function-posing-offset-left = Переместиться влево (позирование)
+ui-options-function-posing-offset-right = Переместиться вправо (позирование)
+ui-options-function-posing-offset-up = Переместиться вверх (позирование)
+ui-options-function-posing-offset-down = Переместиться вниз (позирование)
+ui-options-function-posing-rotate-negative = Повернуть против часовой (позирование)
+ui-options-function-posing-rotate-positive = Повернуть по часовой (позирование)

@@ -38,7 +38,7 @@ public sealed class MaxTimeRestartRuleSystem : GameRuleSystem<MaxTimeRestartRule
     {
         // TODO FULL GAME SAVE
         component.TimerCancel.Cancel();
-        component.TimerCancel.Dispose(); // Orion
+        component.TimerCancel.Dispose(); // RW
         component.TimerCancel = new CancellationTokenSource();
         Timer.Spawn(component.RoundMaxTime, () => TimerFired(component), component.TimerCancel.Token);
     }
