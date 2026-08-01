@@ -698,7 +698,6 @@ namespace Content.Client.Lobby.UI
             _clothingDisplayMode = ClothingDisplayMode.ShowAll;
 
             ClothingDisplayButton.AddItem(Loc.GetString("humanoid-profile-editor-clothing-show-all"), (int)ClothingDisplayMode.ShowAll);
-            ClothingDisplayButton.AddItem(Loc.GetString("humanoid-profile-editor-clothing-show-underwear"), (int)ClothingDisplayMode.ShowUnderwearOnly);
             ClothingDisplayButton.AddItem(Loc.GetString("humanoid-profile-editor-clothing-hide-all"), (int)ClothingDisplayMode.HideAll);
             ClothingDisplayButton.SelectId((int)ClothingDisplayMode.ShowAll);
 
@@ -1959,97 +1958,6 @@ namespace Content.Client.Lobby.UI
                     Profile = Profile?.WithGender(Gender.Epicene);
                     break;
             }
-
-            // RW start
-            if (Profile != null)
-            {
-                var baseLoadout = Profile.BaseLoadout.Clone();
-                var underwearGroup = new ProtoId<LoadoutGroupPrototype>("Underwear");
-                var undershirtGroup = new ProtoId<LoadoutGroupPrototype>("Undershirt");
-                var changed = false;
-
-                if (newSex == Sex.Male)
-                {
-                    if (baseLoadout.SelectedLoadouts.TryGetValue(underwearGroup, out var underwearList))
-                    {
-                        if (underwearList.Count == 1 && underwearList[0].Prototype == "Panties")
-                        {
-                            underwearList[0] = new Loadout { Prototype = "UnderwearBoxerShorts" };
-                            changed = true;
-                        }
-                        else if (underwearList.Count == 0)
-                        {
-                            underwearList.Add(new Loadout { Prototype = "UnderwearBoxerShorts" });
-                            changed = true;
-                        }
-                    }
-                    else
-                    {
-                        baseLoadout.SelectedLoadouts[underwearGroup] = new List<Loadout>
-                        {
-                            new() { Prototype = "UnderwearBoxerShorts" }
-                        };
-                        changed = true;
-                    }
-
-                    if (baseLoadout.SelectedLoadouts.TryGetValue(undershirtGroup, out var undershirtList))
-                    {
-                        if (undershirtList.Count == 1 && undershirtList[0].Prototype == "Bra")
-                        {
-                            undershirtList.Clear();
-                            changed = true;
-                        }
-                    }
-                }
-                else if (newSex == Sex.Female)
-                {
-                    if (baseLoadout.SelectedLoadouts.TryGetValue(underwearGroup, out var underwearList))
-                    {
-                        if (underwearList.Count == 1 && underwearList[0].Prototype == "UnderwearBoxerShorts")
-                        {
-                            underwearList[0] = new Loadout { Prototype = "Panties" };
-                            changed = true;
-                        }
-                        else if (underwearList.Count == 0)
-                        {
-                            underwearList.Add(new Loadout { Prototype = "Panties" });
-                            changed = true;
-                        }
-                    }
-                    else
-                    {
-                        baseLoadout.SelectedLoadouts[underwearGroup] = new List<Loadout>
-                        {
-                            new() { Prototype = "Panties" }
-                        };
-                        changed = true;
-                    }
-
-                    if (baseLoadout.SelectedLoadouts.TryGetValue(undershirtGroup, out var undershirtList))
-                    {
-                        if (undershirtList.Count == 0)
-                        {
-                            undershirtList.Add(new Loadout { Prototype = "Bra" });
-                            changed = true;
-                        }
-                    }
-                    else
-                    {
-                        baseLoadout.SelectedLoadouts[undershirtGroup] = new List<Loadout>
-                        {
-                            new() { Prototype = "Bra" }
-                        };
-                        changed = true;
-                    }
-                }
-
-                if (changed)
-                {
-                    Profile = Profile.WithBaseLoadout(baseLoadout);
-                    SetDirty();
-                }
-            }
-            // RW end
 
             UpdateGenderControls();
             Markings.SetSex(newSex);

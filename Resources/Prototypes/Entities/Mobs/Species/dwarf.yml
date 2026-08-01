@@ -261,16 +261,6 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: dwarfism
-      underwear:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Human/displacement.rsi
-            state: dwarfism
-      undershirt:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Human/displacement.rsi
-            state: dwarfism
       socks:
         sizeMaps:
           32:
@@ -474,16 +464,6 @@
             sprite: Mobs/Species/Human/displacement.rsi
             state: dwarfism
       shoes:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Human/displacement.rsi
-            state: dwarfism
-      underwear:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Human/displacement.rsi
-            state: dwarfism
-      undershirt:
         sizeMaps:
           32:
             sprite: Mobs/Species/Human/displacement.rsi

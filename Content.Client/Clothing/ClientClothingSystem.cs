@@ -52,8 +52,6 @@ public sealed class ClientClothingSystem : ClothingSystem
         {"suitstorage", "SUITSTORAGE"},
         // Orion-Start
         {"earsright", "EARSRIGHT"},
-        {"underwear", "UNDERWEAR"},
-        {"undershirt", "UNDERSHIRT"},
         {"socks", "SOCKS"},
         {"wrists", "WRISTS"},
         // Orion-End

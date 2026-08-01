@@ -124,10 +124,6 @@
 #        - map: ["socks"] # Orion-Edit: Removed
 #        - map: ["underpants"] # Orion-Edit: Removed
 #        - map: ["undershirt"] # Orion-Edit: Removed
-        # Orion-Start
-        - map: [ "underwear" ]
-        - map: [ "undershirt" ]
-        # Orion-End
         # Orion-Edit-Start: Moved under jumpsuit
         - map: ["enum.HumanoidVisualLayers.LFoot"]
         - map: ["enum.HumanoidVisualLayers.RFoot"]

@@ -101,8 +101,6 @@
       - map: [ "enum.HumanoidVisualLayers.LLeg" ]
       - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
       - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
-      - map: [ "underwear" ] # Orion
-      - map: [ "undershirt" ] # Orion
       - map: ["jumpsuit"]
       - map: ["enum.HumanoidVisualLayers.LFoot"]
       - map: ["enum.HumanoidVisualLayers.RFoot"]
@@ -170,11 +168,6 @@
             sprite: Mobs/Species/Moth/displacement.rsi
             state: shoes
       # Orion-Start
-      underwear:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Moth/displacement.rsi
-            state: jumpsuit-male
       socks:
         sizeMaps:
           32:
@@ -213,11 +206,6 @@
             sprite: Mobs/Species/Moth/displacement.rsi
             state: shoes
       # Orion-Start
-      underwear:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Moth/displacement.rsi
-            state: jumpsuit-male
       socks:
         sizeMaps:
           32:
@@ -282,11 +270,6 @@
             sprite: Mobs/Species/Moth/displacement.rsi
             state: shoes
       # Orion-Start
-      underwear:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Moth/displacement.rsi
-            state: jumpsuit-male
       socks:
         sizeMaps:
           32:
@@ -325,11 +308,6 @@
             sprite: Mobs/Species/Moth/displacement.rsi
             state: shoes
       # Orion-Start
-      underwear:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Moth/displacement.rsi
-            state: jumpsuit-male
       socks:
         sizeMaps:
           32:

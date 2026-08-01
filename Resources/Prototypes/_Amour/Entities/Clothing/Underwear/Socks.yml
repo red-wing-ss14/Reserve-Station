@@ -48,51 +48,6 @@
   - type: Clothing
     sprite: _Amour/Clothing/Underwear/Socks/bee_thigh.rsi
 
-# Fishnet
-- type: entity
-  parent: ClothingUnderwearSocksBase
-  id: ClothingUnderwearSocksFishnet
-  name: fishnet stockings
-  components:
-  - type: Sprite
-    sprite: _Amour/Clothing/Underwear/Socks/fishnet.rsi
-  - type: Clothing
-    sprite: _Amour/Clothing/Underwear/Socks/fishnet.rsi
-
-# Garter
-- type: entity
-  parent: ClothingUnderwearSocksBase
-  id: ClothingUnderwearSocksGarter
-  name: garter belt stockings
-  components:
-  - type: Sprite
-    sprite: _Amour/Clothing/Underwear/Socks/garter.rsi
-  - type: Clothing
-    sprite: _Amour/Clothing/Underwear/Socks/garter.rsi
-
-# Pantyhose
-- type: entity
-  parent: ClothingUnderwearSocksBase
-  id: ClothingUnderwearSocksPantyhose
-  name: pantyhose
-  components:
-  - type: Sprite
-    sprite: _Amour/Clothing/Underwear/Socks/pantyhose.rsi
-  - type: Clothing
-    sprite: _Amour/Clothing/Underwear/Socks/pantyhose.rsi
-
-# Pantyhose ripped
-- type: entity
-  parent: ClothingUnderwearSocksBase
-  id: ClothingUnderwearSocksPantyhoseRipped
-  name: ripped pantyhose
-  description: "Somebody went through these..."
-  components:
-  - type: Sprite
-    sprite: _Amour/Clothing/Underwear/Socks/pantyhose_ripped.rsi
-  - type: Clothing
-    sprite: _Amour/Clothing/Underwear/Socks/pantyhose_ripped.rsi
-
 # Rainbow knee
 - type: entity
   parent: ClothingUnderwearSocksBase
@@ -170,7 +125,7 @@
   - type: Clothing
     sprite: _Amour/Clothing/Underwear/Socks/stockings_blue.rsi
 
-# Stockings cyan  
+# Stockings cyan
 - type: entity
   parent: ClothingUnderwearSocksBase
   id: ClothingUnderwearStockingsCyan

@@ -58,10 +58,6 @@
       - map: [ "enum.HumanoidVisualLayers.LArm" ]
       - map: [ "enum.HumanoidVisualLayers.RLeg" ]
       - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-      # Orion-Start
-      - map: [ "underwear" ]
-      - map: [ "undershirt" ]
-      # Orion-End
       # Orion-Edit-Start: Moved under jumpsuit
       - map: ["enum.HumanoidVisualLayers.LFoot"]
       - map: ["enum.HumanoidVisualLayers.RFoot"]
