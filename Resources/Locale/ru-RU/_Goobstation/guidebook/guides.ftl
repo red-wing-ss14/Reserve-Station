@@ -15,8 +15,8 @@ guide-entry-rules-nrp = Правила НРП
 guide-entry-sm = Суперматерия
 guide-entry-automation = Автоматизация
 guide-entry-plumbing = Трубы
-guide-entry-alcoholic-drinks = Алкоголь
-guide-entry-non-alcoholic-drinks = Безалкоголь
+guide-entry-alcoholic-drinks = Алкогольные напитки
+guide-entry-non-alcoholic-drinks = Безалкогольные напитки
 guide-entry-enchanting = Зачарования
 # Goob SOP
 # - Основные разделы
@@ -123,7 +123,7 @@ guide-entry-sop-cargotech = Грузчик
 guide-entry-sop-salvage = Утилизатор
 guide-entry-sop-shaft-miner = Шахтер
 # - Командование
-guide-entry-sop-ntr = ПНТ
+guide-entry-sop-ntr = ПНаноТрейзен
 guide-entry-sop-bso = Офицер "Синий Щит"
 guide-entry-sop-captain = Капитан
 guide-entry-sop-hop = ГП

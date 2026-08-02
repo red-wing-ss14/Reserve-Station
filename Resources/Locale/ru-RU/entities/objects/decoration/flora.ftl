@@ -1,3 +1,8 @@
+ent-BaseRock = валун
+    .desc = Очень тяжёлый.
+
+ent-FloraRockSolid = { ent-BaseRock }
+    .desc = { ent-BaseRock.desc }
 ent-FloraRockSolid01 = { ent-BaseRock }
     .desc = { ent-BaseRock.desc }
 ent-FloraRockSolid02 = { ent-BaseRock }
@@ -5,6 +10,8 @@ ent-FloraRockSolid02 = { ent-BaseRock }
 ent-FloraRockSolid03 = { ent-BaseRock }
     .desc = { ent-BaseRock.desc }
 
+ent-FloraStalagmite = сталагмит
+    .desc = Каменный шип природного происхождения.
 ent-FloraStalagmite1 = { ent-FloraStalagmite }
     .desc = { ent-FloraStalagmite.desc }
 ent-FloraStalagmite2 = { ent-FloraStalagmite }
@@ -18,6 +25,8 @@ ent-FloraStalagmite5 = { ent-FloraStalagmite }
 ent-FloraStalagmite6 = { ent-FloraStalagmite }
     .desc = { ent-FloraStalagmite.desc }
 
+ent-FloraGreyStalagmite = { ent-FloraStalagmite }
+    .desc = { ent-FloraStalagmite.desc }
 ent-FloraGreyStalagmite1 = { ent-FloraGreyStalagmite }
     .desc = { ent-FloraGreyStalagmite.desc }
 ent-FloraGreyStalagmite2 = { ent-FloraGreyStalagmite }
@@ -31,6 +40,10 @@ ent-FloraGreyStalagmite5 = { ent-FloraGreyStalagmite }
 ent-FloraGreyStalagmite6 = { ent-FloraGreyStalagmite }
     .desc = { ent-FloraGreyStalagmite.desc }
 
+ent-BaseTree = дерево
+    .desc = Самое настоящее дерево!
+ent-FloraTree = { ent-BaseTree }
+    .desc = { ent-BaseTree.desc }
 ent-FloraTree01 = { ent-FloraTree }
     .desc = { ent-FloraTree.desc }
 ent-FloraTree02 = { ent-FloraTree }
@@ -44,6 +57,10 @@ ent-FloraTree05 = { ent-FloraTree }
 ent-FloraTree06 = { ent-FloraTree }
     .desc = { ent-FloraTree.desc }
 
+ent-BaseTreeSnow = заснеженное дерево
+    .desc = { ent-BaseTree.desc }
+ent-FloraTreeSnow = { ent-BaseTreeSnow }
+    .desc = { ent-BaseTreeSnow.desc }
 ent-FloraTreeSnow01 = { ent-FloraTreeSnow }
     .desc = { ent-FloraTreeSnow.desc }
 ent-FloraTreeSnow02 = { ent-FloraTreeSnow }
@@ -57,6 +74,10 @@ ent-FloraTreeSnow05 = { ent-FloraTreeSnow }
 ent-FloraTreeSnow06 = { ent-FloraTreeSnow }
     .desc = { ent-FloraTreeSnow.desc }
 
+ent-BaseTreeLarge = большое дерево
+    .desc = { ent-BaseTree.desc }
+ent-FloraTreeLarge = { ent-BaseTreeLarge }
+    .desc = { ent-BaseTreeLarge.desc }
 ent-FloraTreeLarge01 = { ent-FloraTreeLarge }
     .desc = { ent-FloraTreeLarge.desc }
 ent-FloraTreeLarge02 = { ent-FloraTreeLarge }
@@ -70,6 +91,10 @@ ent-FloraTreeLarge05 = { ent-FloraTreeLarge }
 ent-FloraTreeLarge06 = { ent-FloraTreeLarge }
     .desc = { ent-FloraTreeLarge.desc }
 
+ent-BaseTreeConifer = снежное хвойное дерево
+    .desc = { ent-BaseTree.desc }
+ent-FloraTreeConifer = { ent-BaseTreeConifer }
+    .desc = { ent-BaseTreeConifer.desc }
 ent-FloraTreeConifer01 = { ent-FloraTreeConifer }
     .desc = { ent-FloraTreeConifer.desc }
 ent-FloraTreeConifer02 = { ent-FloraTreeConifer }
@@ -77,6 +102,25 @@ ent-FloraTreeConifer02 = { ent-FloraTreeConifer }
 ent-FloraTreeConifer03 = { ent-FloraTreeConifer }
     .desc = { ent-FloraTreeConifer.desc }
 
+ent-FloraTreeChristmas01 = рождественская ель
+    .desc = { ent-FloraTreeConifer.desc }
+    .suffix = Дерево
+ent-FloraTreeChristmas02 = { ent-FloraTreeChristmas01 }
+    .desc = { ent-FloraTreeConifer.desc }
+    .suffix = Безопасные подарки, Дерево
+ent-FloraTreeChristmas03 = { ent-FloraTreeChristmas01 }
+    .desc = { ent-FloraTreeChristmas01.desc }
+    .suffix = Безумные подарки, Дерево
+
+ent-FloraTreeStump = пень
+    .desc = { ent-FloraTree.desc }
+    .suffix = Дерево
+ent-FloraTreeStumpConifer = { ent-FloraTreeStump }
+    .desc = { ent-FloraTreeConifer.desc }
+    .suffix = Хвойное дерево
+
+ent-ShadowTree = тёмное дерево
+    .desc = Листья шепчутся о тебе.
 ent-ShadowTree01 = { ent-ShadowTree }
     .desc = { ent-ShadowTree.desc }
 ent-ShadowTree02 = { ent-ShadowTree }
@@ -90,6 +134,8 @@ ent-ShadowTree05 = { ent-ShadowTree }
 ent-ShadowTree06 = { ent-ShadowTree }
     .desc = { ent-ShadowTree.desc }
 
+ent-LightTree = светящееся дерево
+    .desc = Удивительное дерево, наполненное странной энергией.
 ent-LightTree01 = { ent-LightTree }
     .desc = { ent-LightTree.desc }
 ent-LightTree02 = { ent-LightTree }

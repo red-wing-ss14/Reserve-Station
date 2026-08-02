@@ -1,0 +1,11 @@
+ent-MobWraith = фантом
+    .desc = ОЧЕНЬ жуткое привидение.
+ent-MobWraithPlague = предвестник чумы
+    .desc = { ent-MobWraith.desc }
+    .suffix = Фантом
+ent-MobWraithHarbinger = предвестник пустоты
+    .desc = { ent-MobWraith.desc }
+    .suffix = Фантом
+ent-MobWraithTrickster = иллюзионист
+    .desc = { ent-MobWraith.desc }
+    .suffix = Фантом

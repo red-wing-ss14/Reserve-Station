@@ -2,7 +2,7 @@
 
 ui-escape-title = Игровое меню
 ui-escape-options = Настройки
-ui-escape-character = Редактор персонажа
+ui-escape-character = Редактор персонажей
 ui-escape-rules = Правила
 ui-escape-guidebook = Руководство
 ui-escape-wiki = Вики

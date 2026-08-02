@@ -1,32 +1,3 @@
-# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
-# SPDX-FileCopyrightText: 2024 Armok <155400926+ARMOKS@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Ilya246 <ilyukarno@gmail.com>
-# SPDX-FileCopyrightText: 2024 NULL882 <gost6865@yandex.ru>
-# SPDX-FileCopyrightText: 2024 Piras314 <92357316+Piras314@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-# SPDX-FileCopyrightText: 2024 ScyronX <166930367+ScyronX@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Tristan <traynor123123@gmail.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2024 a_person <40855173+a-person5660@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 starch <starchpersonal@gmail.com>
-# SPDX-FileCopyrightText: 2024 yglop <95057024+yglop@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
-# SPDX-FileCopyrightText: 2025 Aineias1 <142914808+Aineias1@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 LuciferMkshelter <154002422+LuciferEOS@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 PunishedJoe <PunishedJoeseph@proton.me>
-# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
-# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Theodore Lukin <66275205+pheenty@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Weide <64257676+Lyacs@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 absurd-shaman <165011607+absurd-shaman@users.noreply.github.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 # Surplus Voidsuits
 
 uplink-hardsuit-syndiemedic-name = Боевой костюм медика Горлекс
@@ -37,12 +8,12 @@ uplink-hardsuit-syndiecommander-desc = Запасной командирский
 
 # Cybersun Stealth
 
-uplink-hardsuit-cybersun-stealth-name = Маскировочный костюм Киберсан
+uplink-hardsuit-cybersun-stealth-name = Маскировочный костюм Cybersun
 uplink-hardsuit-cybersun-stealth-desc = Реверс-инженеринг технологии Клана Паука. Этот костюм покрыт специализированными пластинами для проведения скрытых спецопераций. Немного медленнее и защищает меньше, чем другие скафандры.
 
 # Cybersun Dreadnought suit
 
-uplink-hardsuit-cybersun-dreadnought-name = Дредноут костюм Киберсан
+uplink-hardsuit-cybersun-dreadnought-name = Дредноут костюм Cybersun
 uplink-hardsuit-cybersun-dreadnought-desc = Невероятно прочный боевой костюм из гипер-блюспейс улучшенной пластали — почти непробиваемая стена. Но наденут его лишь самые безумные фанатики Синдиката. Из-за веса костюм нужно затягивать до боли, застежки впиваются в кожу и не могут быть сняты без повреждения кожи.
 
 # Misc
@@ -129,7 +100,7 @@ uplink-dualetta-bundle-name = Комплект Дуалетта
 uplink-dualetta-bundle-desc = В комплекте 2 пистолета Дуалетта, 2 магазина, перчатки, нуарный костюм, тренч детектива и шнурованные ботинки.
 
 uplink-anaconda-name = Анаконда
-uplink-anaconda-desc = Тяжёлый пистолет с встроенным фабрикатором патронов. Гордость Киберсан.
+uplink-anaconda-desc = Тяжёлый пистолет с встроенным фабрикатором патронов. Гордость Cybersun.
 
 uplink-bulk-mosin-name = Синдикатский ящик с винтовками
 uplink-bulk-mosin-desc = 10 винтовок эпохи WW4 для вас, друзей и вашей кошки. Экономьте 40% при оптовой покупке!
@@ -145,6 +116,9 @@ uplink-combat-shotgun-desc = Надёжный помповый дробовик 
 
 uplink-he1sg8-bundle-name = Комплект HE1S-G8
 uplink-he1sg8-bundle-desc = В комплекте 10 разрушительных и 9 гиперзаряженных патронов Gauss-8.
+
+uplink-hushpup-name = Волкодав
+uplink-hushpup-desc = Редкая модификация Силовика, оснащенная громоздким глушителем. Отлично подойдет тем, кто придерживается строгих моральных принципов. Вмещает 5 патронов 12-го калибра.
 
 # Ammo
 
@@ -243,7 +217,7 @@ uplink-mech-teleporter-heavy-name = Телепортер тяжёлого мех
 uplink-mech-teleporter-heavy-desc = Содержит тяжёлый бронированный мех Cybersun с интегрированным мечом-пилой, Ultra AC-2, LBX AC 10 "Бессистемный", ракетной установкой BRM-6 и пушкой P-X Тесла.
 
 uplink-mech-teleporter-assault-name = Телепорт штурмового меха
-uplink-mech-teleporter-assault-desc = Содержит лёгкий бронированный мех Киберсан с интегрированным мечом-пилой, LBX AC 10 "Бессистемный", лёгкой ракетной установкой SRM-8 и пушкой P-X Тесла.
+uplink-mech-teleporter-assault-desc = Содержит лёгкий бронированный мех Cybersun с интегрированным мечом-пилой, LBX AC 10 "Бессистемный", лёгкой ракетной установкой SRM-8 и пушкой P-X Тесла.
 
 # Chemicals
 
@@ -286,14 +260,17 @@ uplink-autosurgeon-right-mantis-blade-name = Автооперация (прав�
 uplink-autosurgeon-left-mantis-blade-name = Автооперация (левые клинки богомола)
 uplink-autosurgeon-mantis-blade-desc = Модифицирует руку пользователя, добавляя в неё имплант "Клинок богомола", выдвигающийся по желанию. Лучше работает в паре. Требует слишком тонкой настройки, чтобы человек мог её выполнить, поэтому поставляется с одноразовой автооперацией для установки.
 
-uplink-autosurgeon-sandevistan-name = Автооперация (сандевистан)
-uplink-autosurgeon-sandevistan-desc = Заменяет сердце пользователя на сандевистан — синтетический орган, который значительно увеличивает скорость пользователя ценой его выносливости. Требует слишком тонкой настройки, чтобы человек мог её выполнить, поэтому поставляется с одноразовой автооперацией для установки.
-
 uplink-davids-jacket-name = Куртка эджраннера
 uplink-davids-jacket-desc = Куртка для тех, кто особенно заинтересован в улучшении своего тела. Например таких как вы.
 
-uplink-autosurgeon-smartlink-name = Автооперация (смартлинк)
-uplink-autosurgeon-smartlink-desc = Модифицирует ваши руки, добавляя смартлинк, наводя пули при стрельбе из дальнобойного оружия. Требует слишком тонкой настройки для человека, поэтому комплектуется одноразовой автооперацией для установки.
+uplink-autosurgeon-sandevistan-name = Автохирург (Сандевистан)
+uplink-autosurgeon-sandevistan-desc = Заменяет сердце пользователя на "Сандевистан", синтетический орган, который значительно увеличивает скорость работы пользователя за счет его выносливости. Требует слишком тонкой настройки для человека, поставляется с одноразовым автохирургом для установки.
+
+uplink-autosurgeon-statveka-sandevistan-name = Автохирург (статвека Сандевистан)
+uplink-autosurgeon-statveka-sandevistan-desc = Заменяет сердце пользователя на статвеку Сандевистан, синтетический орган, который значительно увеличивает скорость и рефлексы пользователя за счет снижения выносливости. В отличие от обычного аналога, этот, по-видимому, замедляет время рядом с пользователем. В комплекте идет одноразовый автохирург для установки.
+
+uplink-autosurgeon-smartlink-name = Автохирург (смартлинк)
+uplink-autosurgeon-smartlink-desc = Модифицирует ваши руки, добавляя смартлинк, наводя пули при стрельбе из дальнобойного оружия. Требует слишком тонкой настройки для человека, поэтому комплектуется одноразовым автохирургом для установки.
 
 uplink-autosurgeon-recoil-absorbing-name = Автооперация (поглощение отдачи)
 uplink-autosurgeon-recoil-absorbing-desc = Модифицирует ваши руки, добавляя поглощение отдачи, значительно снижая отдачу при стрельбе из дальнобойного оружия. Требует слишком тонкой настройки для человека, комплектуется одноразовой автооперацией для установки.
@@ -309,8 +286,8 @@ uplink-krav-maga-implant-desc = Позволяет выполнять разли
 
 # Wearables
 
-uplink-heat-lamp-name = Обогреватель Киберсан
-uplink-heat-lamp-desc = Дизайн Киберсан, часто используется холоднокровными мародёрами Горлекс в осадах. Также эффективен как оружие ближнего боя.
+uplink-heat-lamp-name = Обогреватель Cybersun
+uplink-heat-lamp-desc = Дизайн Cybersun, часто используется холоднокровными мародёрами Горлекс в осадах. Также эффективен как оружие ближнего боя.
 
 uplink-belt-rig-name = РПС гренадёра
 uplink-belt-rig-desc = Специализированная разгрузочная поясная система, позволяющая носить столько гранат, что устанете их бросать. Также можете хранить пистолет и магазины к нему.
@@ -366,7 +343,7 @@ uplink-pizza-party-crate-name = Ящик для пицца-вечеринки
 uplink-pizza-party-crate-desc = Ящик в виде коробки для пиццы, наполненный пиццами и пицца-бомбами для самой взрывной пицца-вечеринки. К сожалению, сложно определить, где какая пицца.
 
 uplink-bloodred-cassette-name = Кроваво-красный кассетный плеер
-uplink-bloodred-cassette-desc = Предоставлен самыми эгоистичными дизайнерами Киберсан, портативный музыкальный плеер!
+uplink-bloodred-cassette-desc = Предоставлен самыми эгоистичными дизайнерами Cybersun, портативный музыкальный плеер!
 
 uplink-tcminer-name = Майнер телекристаллов
 uplink-tcminer-desc = Содержит плоский комплект для сборки майнера телекристаллов — очень шумной машины, использующей редспейс-блокчейн-технологию для генерации телекристаллов каждые 10 секунд при наличии питания. Требует 10 кВт энергии и подключения к основной сети станции. Мультитул в комплект не входит.
@@ -404,7 +381,7 @@ uplink-syndiedrobe-name = СиндиШкаф
 uplink-syndiedrobe-desc = Торговый автомат, заполненный одеждой с символикой Синдиката. Простой, строгий и чётко красно-черный. Предлагает оперативникам одеться в стиле Синдиката.
 
 uplink-bloodred-casette-name = Плеер Синдиката
-uplink-bloodred-casette-desc = Представленный самыми самовлюблёнными модными дизайнерами Киберсан, портативный музыкальный плеер!
+uplink-bloodred-casette-desc = Представленный самыми самовлюблёнными модными дизайнерами Cybersun, портативный музыкальный плеер!
 
 uplink-undetermined-bundle-name = Неопределённый набор
 uplink-undetermined-bundle-desc = Ящик с тремя случайными наборами, из которых можно выбрать один. Гарантированно содержит ключ шифрования Синдиката.

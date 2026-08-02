@@ -1,6 +1,6 @@
 ent-ClothingHeadHatHoodZeusHood = капюшон Зевса
-    .desc = Гарантированно не слетит с головы при прыжках с небоскрёба на небоскрёб.
-ent-ClothingHeadHatHoodWinterBso = капюшон зимней куртки офицера "Синий Щит"
+    .desc = Гарантированно не слетит при перепрыгивании с небоскреба на небоскреб.
+ent-ClothingHeadHatHoodWinterBso = капюшон зимнего пальто офицера Синего Щита
     .desc = { ent-ClothingHeadHatHoodWinterBase.desc }
 ent-ClothingHeadHatHoodWinterCapFancy = капюшон зимней куртки капитана
     .desc = { ent-ClothingHeadHatHoodWinterBase.desc }

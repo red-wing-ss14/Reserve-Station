@@ -1,5 +1,5 @@
 ent-DoorElectronicsCentralCommandCaptain = { ent-DoorElectronics }
-    .suffix = Капитан ЦК, Закрытый
+    .suffix = Капитан ЦентКом, Закрытый
     .desc = { ent-DoorElectronics.desc }
 ent-DoorElectronicsNTR = { ent-DoorElectronics }
     .suffix = Представитель НаноТрейзен, Закрытый

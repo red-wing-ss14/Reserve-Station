@@ -37,6 +37,10 @@
 # Salvage Specialist
 # Chemist
 # Head of Security
+loadout-group-head-of-security-envirohelm = Экошлем главы службы безопасности
+loadout-group-head-of-security-envirosuit = Экокостюм главы службы безопасности
+loadout-group-head-of-security-envirogloves = Экоперчатки главы службы безопасности
+loadout-group-head-of-security-gloves = Перчатки главы службы безопасности
 # Brigmedic
 # Zookeeper
 # Boxer

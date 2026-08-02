@@ -1,6 +1,6 @@
 ent-DresserBlueshieldOfficerFilled = { ent-Dresser }
-    .suffix = Заполненный, Синий Щит
+    .suffix = Заполненный, Офицер Синего Щита
     .desc = { ent-Dresser.desc }
 ent-DresserNanorepFilled = { ent-Dresser }
-    .suffix = Заполненный, Представитель НаноТрейзен
+    .suffix = Заполненный, Представитель NanoTrasen
     .desc = { ent-Dresser.desc }

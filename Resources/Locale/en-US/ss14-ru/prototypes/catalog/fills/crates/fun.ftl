@@ -48,5 +48,3 @@ ent-CrateFunDartsSet = dartboard box set
     .desc = A box with everything you need for a fun game of darts.
 ent-CrateFunScurret = hydrated scurret
     .desc = Wait, what?
-
-ent-CrateFunSelfInsertPlushie = ящик с плюшевыми фигурками экипажа

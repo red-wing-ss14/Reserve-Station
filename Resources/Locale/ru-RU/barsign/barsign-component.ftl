@@ -61,8 +61,8 @@ barsign-prototype-description-the-net = Не заметишь, как затян
 
 ## Maid Cafe
 
-barsign-prototype-name-maid-cafe = Мэйдо-кафе
-barsign-prototype-description-maid-cafe = С возвращением, хозяин!
+barsign-prototype-name-maid-cafe = Кошко-кафе
+barsign-prototype-description-maid-cafe = С возвращением!
 
 ## Maltese Falcon
 

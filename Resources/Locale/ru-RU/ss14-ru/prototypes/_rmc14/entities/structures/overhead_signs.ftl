@@ -4,6 +4,7 @@ ent-RMCOverheadSignNeon = неоновый знак
     .desc = { ent-RMCOverheadSign.desc }
 ent-RMCOverheadSignNeonArcade = неоновый знак "аркада"
     .desc = { ent-RMCOverheadSignNeon.desc }
+    .suffix = { ent-ArcadeBase.suffix }
 ent-RMCOverheadSignNeonBar = неоновый знак "бар"
     .desc = { ent-RMCOverheadSignNeon.desc }
 ent-RMCOverheadSignNeonCafe = неоновый знак "кафе"

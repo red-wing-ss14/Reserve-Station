@@ -1,0 +1,9 @@
+ent-MaterialAshwoodPlank = пепельная древесина
+    .suffix = Полный
+    .desc = { ent-MaterialBase.desc }
+ent-MaterialAshwoodPlank1 = { ent-MaterialAshwoodPlank }
+    .suffix = Один
+    .desc = { ent-MaterialAshwoodPlank.desc }
+ent-MaterialAshwoodPlank10 = { ent-MaterialAshwoodPlank }
+    .suffix = 10
+    .desc = { ent-MaterialAshwoodPlank.desc }

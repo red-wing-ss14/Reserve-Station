@@ -1,6 +1,6 @@
-ent-MobContractor = контрактник
+ent-MobContractor = контрактник Синдиката
     .desc = { ent-MobHuman.desc }
-ent-SpawnPointContractor = спавнер контрактник
-    .desc = { ent-MarkerBase.desc }
-ent-ContractorSpawner = { ent-BaseAntagSpawner }
-    .desc = { ent-BaseAntagSpawner.desc }
+ent-SpawnPointContractor = точка появления контрактника Синдиката
+    .desc = { ent-MobHuman.desc }
+ent-ContractorSpawner = спавнер контрактника Синдиката
+    .desc = { ent-MobHuman.desc }
