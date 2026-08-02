@@ -26,10 +26,12 @@
     - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
     - map: [ "underwear" ] # RW
     - map: [ "undershirt" ] # RW
-    - map: ["jumpsuit"]
+    # RW-Edit-Start: Moved under jumpsuit
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
+    # RW-Edit-End
     - map: [ "socks" ] # RW
+    - map: ["jumpsuit"]
     - map: ["enum.HumanoidVisualLayers.LHand"]
     - map: ["enum.HumanoidVisualLayers.RHand"]
     - map: ["enum.HumanoidVisualLayers.Face"] #Goob 120 - why did we have face on dummy but not basespecies
@@ -383,11 +385,12 @@
     - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
     - map: [ "underwear" ] # RW
     - map: [ "undershirt" ] # RW
-    - map: ["jumpsuit"]
+    # RW-Edit-Start: Moved under jumpsuit
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
     # RW-Edit-End
     - map: [ "socks" ] # RW
+    - map: ["jumpsuit"]
     - map: ["enum.HumanoidVisualLayers.LHand"]
     - map: ["enum.HumanoidVisualLayers.RHand"]
     - map: ["enum.HumanoidVisualLayers.Handcuffs"]
