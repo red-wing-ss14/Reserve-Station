@@ -1,4 +1,4 @@
-ent-MobOniBase = Урист МакЁкай
+ent-MobOniBase = Урист МакОни
     .desc = { ent-BaseMobHuman.desc }
-ent-MobOniDummy = Урист МакЁкай
-    .desc = Манекен ёкая, предназначенный для настройки персонажа.
+ent-MobOniDummy = Урист МакОни
+    .desc = Манекен Они, предназначенный для настройки персонажа.

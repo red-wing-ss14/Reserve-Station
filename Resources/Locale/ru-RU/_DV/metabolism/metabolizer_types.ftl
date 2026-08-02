@@ -1,1 +1,1 @@
-metabolizer-type-oni = Ёкай
+metabolizer-type-oni = Они

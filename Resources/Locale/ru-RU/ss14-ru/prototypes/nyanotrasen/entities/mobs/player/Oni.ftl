@@ -1,2 +1,2 @@
-ent-MobOni = Урист МакЁкай
+ent-MobOni = Урист МакОни
     .desc = { ent-MobOniBase.desc }
