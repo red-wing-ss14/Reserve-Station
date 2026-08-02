@@ -169,6 +169,8 @@
   - FlashPayload
   - ChemicalPayload
   - ShrapnelPayload
+  - CableDetStack1
+  - EmptyDetonator
   position: 1,0
 
 - type: technology

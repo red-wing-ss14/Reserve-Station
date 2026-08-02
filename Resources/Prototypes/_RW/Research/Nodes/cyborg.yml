@@ -133,6 +133,7 @@
   - AdvancedSurgery
   recipeUnlocks:
   - BorgModuleAdvancedSurgery
+  - BorgModuleAdvancedTopical
   position: -5,0
 
 - type: technology
@@ -157,6 +158,8 @@
   - BorgModuleTool
   - BorgModuleCable
   - BorgModuleFireExtinguisher
+  - BorgModuleInflatable
+  - BorgModuleArtistry
   position: -5,-1
 
 - type: technology

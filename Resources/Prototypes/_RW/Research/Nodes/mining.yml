@@ -17,6 +17,8 @@
   - ConveyorBeltAssembly
   - AutolatheMachineCircuitboard
   - SheetRGlass
+  - MaterialDurathread
+  - UtilityKnife
   - OreProcessorMachineCircuitboard
   - SalvageMagnetMachineCircuitboard
   position: 5,6

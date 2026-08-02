@@ -29,6 +29,7 @@
   - Flare
   - StationRadioCircuitboard
   - DocumentPrinterMachineCircuitboard # RW
+  - SmartFridgeCircuitboard
   - HandheldStationMap
   - ClothingHeadHatCone
   - WeaponHammer
@@ -55,6 +56,9 @@
   - TapeDeckCircuitboard
   - StationRadioServerCircuitboard
   - StationRadioRigCircuitboard
+  - BoxFolderClipboardEmpty
+  - BoxFolderPlasticClipboardEmpty
+  - TowelColorWhite
   position: 8,-4
 
 - type: technology
