@@ -1,4 +1,4 @@
-ent-MobShadowkinBase = Урист МакСумеречник
+ent-MobShadowkinBase = Урист МакШэдоукин
     .desc = { ent-BaseMobSpeciesOrganic.desc }
 ent-MobShadowkinDummy = { ent-MobHumanDummy }
-    .desc = Манекен сумеречника, предназначенный для настройки персонажа.
+    .desc = Манекен шэдоукина, предназначенный для настройки персонажа.

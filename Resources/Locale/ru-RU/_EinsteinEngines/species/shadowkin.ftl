@@ -1,1 +1,1 @@
-species-name-shadowkin = Сумеречник
+species-name-shadowkin = Шэдоукин

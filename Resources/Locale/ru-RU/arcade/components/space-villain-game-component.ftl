@@ -38,7 +38,7 @@ space-villain-game-enemy-last-peteoid = Питоид
 space-villain-game-enemy-last-slime = Слайм
 space-villain-game-enemy-last-griefer = Грифер
 space-villain-game-enemy-last-erper = ERPер
-space-villain-game-enemy-last-lizard-man = Ящеролюд
+space-villain-game-enemy-last-lizard-man = Унатх
 space-villain-game-enemy-last-unicorn = Единорог
 
 space-villain-game-player-attack-message = Вы атакуете { $enemyName } на { $attackAmount } урона!
