@@ -8,6 +8,8 @@ using Robust.Client.GameObjects;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
+using Robust.Shared.Localization;
+using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
 
 namespace Content.Client._EinsteinEngines.Language;
@@ -15,12 +17,21 @@ namespace Content.Client._EinsteinEngines.Language;
 [GenerateTypedNameReferences]
 public sealed partial class LanguageMenuWindow : DefaultWindow
 {
+    private const float IconWidth = 32;
+    private const float HeaderSeparation = 2;
+    private const float RowPadding = 20;
+    private const float WindowPadding = 48;
+    private const float MinWindowWidth = 280;
+    private const float DefaultWindowHeight = 300;
+
+    [Dependency] private readonly ILocalizationManager _loc = default!;
     private readonly LanguageSystem _clientLanguageSystem;
     private readonly SpriteSystem _spriteSystem; // RW
     private readonly List<EntryState> _entries = new();
 
     public LanguageMenuWindow()
     {
+        IoCManager.InjectDependencies(this);
         RobustXamlLoader.Load(this);
         _clientLanguageSystem = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<LanguageSystem>();
         _spriteSystem = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<SpriteSystem>(); // RW
@@ -51,8 +62,8 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
 
     public void UpdateState(ProtoId<LanguagePrototype> currentLanguage, List<ProtoId<LanguagePrototype>> spokenLanguages)
     {
-        var langName = Loc.GetString($"language-{currentLanguage}-name");
-        CurrentLanguageLabel.Text = Loc.GetString("language-menu-current-language", ("language", langName));
+        var langName = _loc.GetString($"language-{currentLanguage}-name");
+        CurrentLanguageLabel.Text = _loc.GetString("language-menu-current-language", ("language", langName));
 
         OptionsList.RemoveAllChildren();
         _entries.Clear();
@@ -68,6 +79,45 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
             if (entry.Button != null)
                 entry.Button.Disabled = entry.Language == currentLanguage;
         }
+
+        ResizeToContent(spokenLanguages);
+    }
+
+    private void ResizeToContent(List<ProtoId<LanguagePrototype>> spokenLanguages)
+    {
+        var buttonWidth = MeasureButtonWidth(_loc.GetString("language-menu-select"));
+        var maxContentWidth = MeasureLabelWidth(CurrentLanguageLabel.Text ?? string.Empty);
+
+        foreach (var language in spokenLanguages)
+        {
+            var proto = _clientLanguageSystem.GetLanguagePrototype(language);
+            var name = proto?.Name ?? _loc.GetString("generic-error");
+            var nameWidth = MeasureLabelWidth(name);
+            var rowWidth = IconWidth + HeaderSeparation + nameWidth + HeaderSeparation + buttonWidth + RowPadding;
+            maxContentWidth = MathF.Max(maxContentWidth, rowWidth);
+        }
+
+        var titleWidth = MeasureLabelWidth(Title ?? string.Empty) + 60;
+        var width = MathF.Max(MathF.Max(maxContentWidth + WindowPadding, titleWidth), MinWindowWidth);
+
+        MinSize = new Vector2(width, DefaultWindowHeight);
+
+        if (Size.X < width)
+            SetSize = new Vector2(width, MathF.Max(Size.Y, DefaultWindowHeight));
+    }
+
+    private static float MeasureLabelWidth(string text)
+    {
+        var label = new Label { Text = text };
+        label.Measure(Vector2Helpers.Infinity);
+        return label.DesiredSize.X;
+    }
+
+    private static float MeasureButtonWidth(string text)
+    {
+        var button = new Button { Text = text };
+        button.Measure(Vector2Helpers.Infinity);
+        return button.DesiredSize.X;
     }
 
     private void AddLanguageEntry(ProtoId<LanguagePrototype> language)
@@ -100,12 +150,12 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
 
         var name = new Label
         {
-            Text = proto?.Name ?? Loc.GetString("generic-error"),
+            Text = proto?.Name ?? _loc.GetString("generic-error"),
             MinWidth = 50,
             HorizontalExpand = true
         };
 
-        var button = new Button { Text = "Выбрать" }; // RW-Edit: Localization
+        var button = new Button { Text = _loc.GetString("language-menu-select") };
         button.OnPressed += _ => OnLanguageChosen(language);
         state.Button = button;
 
@@ -123,10 +173,10 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
         };
 
         var description = new RichTextLabel { HorizontalExpand = true };
-        description.SetMessage(proto?.Description ?? Loc.GetString("generic-error"));
+        description.SetMessage(proto?.Description ?? _loc.GetString("generic-error"));
         body.AddChild(description);
 
-        var collapser = new Collapsible(Loc.GetString("language-menu-description-header"), body)
+        var collapser = new Collapsible(_loc.GetString("language-menu-description-header"), body)
         {
             Orientation = BoxContainer.LayoutOrientation.Vertical,
             HorizontalExpand = true
