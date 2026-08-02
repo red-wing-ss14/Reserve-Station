@@ -1,1 +1,2 @@
-ui-lobby-boosty-button = Boostyui-lobby-manifest-button = Manifest
+ui-lobby-boosty-button = Boosty
+ui-lobby-manifest-button = Manifest
