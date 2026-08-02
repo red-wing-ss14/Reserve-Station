@@ -5,8 +5,8 @@
   name: chat-emote-name-hiss
   icon: _RW/Interface/Emotes/hiss.png
   whitelist:
-    components:
-    - Vocal
+    tags:
+    - ReptilianEmotes
   blacklist:
     components:
     - BorgChassis

@@ -2,7 +2,7 @@
   id: Belch
   name: chat-emote-name-belch
   category: Vocal
-  available: true
+  available: false # RW edit: bug-reports #
   icon: _NF/Interface/Emotes/belch.png
   whitelist:
     components:
