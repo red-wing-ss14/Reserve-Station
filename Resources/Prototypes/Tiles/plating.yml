@@ -20,14 +20,6 @@
   parent: BasePlating
   name: tiles-plating
   sprite: /Textures/Tiles/plating.png
-  # RW-Start
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  # RW-End
 
 - type: tile
   id: PlatingRCD
@@ -62,12 +54,11 @@
   parent: BasePlating
   name: tiles-plating
   sprite: /Textures/Tiles/plating_damaged.png
-  variants: 4 # RW-Edit: 3 > 4
+  variants: 3
   placementVariants:
   - 1.0
   - 1.0
   - 1.0
-  - 1.0 # RW
   baseTurf: Lattice
   isSubfloor: true
   # Goobstation - Fireaxe plating prying
@@ -82,14 +73,6 @@
   id: PlatingBurnt
   name: tiles-plating
   sprite: /Textures/Tiles/plating_burnt.png
-  # RW-Start
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  # RW-End
   baseTurf: Lattice
   isSubfloor: true
   # Goobstation - Fireaxe plating prying
@@ -123,14 +106,6 @@
   name: tiles-snow-plating
   parent: BasePlating
   sprite: /Textures/Tiles/snow_plating.png #Not in the snow planet RSI because it doesn't have any metadata. Should probably be moved to its own folder later.
-  # RW-Start
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  # RW-End
   baseTurf: Lattice
   isSubfloor: true
   # Goobstation - Fireaxe plating prying

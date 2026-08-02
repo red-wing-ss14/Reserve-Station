@@ -799,7 +799,7 @@
   parent: BaseStationTile
   name: tiles-freezer
   sprite: /Textures/Tiles/freezer.png
-  variants: 4
+  variants: 1
   footstepSounds:
     collection: FootstepHull
   itemDrop: FloorTileItemFreezer
@@ -1159,7 +1159,7 @@
   parent: BaseStationTile
   name: tiles-grey-shuttle-floor
   sprite: /Textures/Tiles/shuttlegrey.png
-  variants: 4 # Trauma - no
+  variants: 1
   #placementVariants:
   #- 1.0
   #- 1.0
@@ -1172,7 +1172,7 @@
   parent: BaseStationTile
   name: tiles-black-shuttle-floor
   sprite: /Textures/Tiles/shuttleblack.png
-  variants: 4 # Trauma - no
+  variants: 1
   #placementVariants:
   #- 1.0
   #- 1.0
@@ -1211,7 +1211,7 @@
   parent: BaseStationTile
   name: tiles-purple-shuttle-floor
   sprite: /Textures/Tiles/shuttlepurple.png
-  variants: 4 # Trauma - no
+  variants: 1
   #placementVariants:
   #- 1.0
   #- 1.0
@@ -1224,7 +1224,7 @@
   parent: BaseStationTile
   name: tiles-red-shuttle-floor
   sprite: /Textures/Tiles/shuttlered.png
-  variants: 4 # Trauma - no
+  variants: 1
   #placementVariants:
   #- 1.0
   #- 1.0
