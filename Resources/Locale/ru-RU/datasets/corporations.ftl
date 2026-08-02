@@ -1,4 +1,4 @@
-traitor-corporations-dataset-1 = Киберсан Индастрис
+traitor-corporations-dataset-1 = Cybersun Индастрис
 traitor-corporations-dataset-2 = Мародёры Горлекса
 traitor-corporations-dataset-3 = МИ13
 traitor-corporations-dataset-4 = Кооператив "Тигр"

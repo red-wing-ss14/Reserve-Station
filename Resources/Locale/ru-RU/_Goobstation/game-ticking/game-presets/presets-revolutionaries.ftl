@@ -11,11 +11,11 @@ revolutionaries-lose-announcement-shuttle-call = По нашим данным, �
 revolutionaries-lose-announcement = По нашим данным, вражеские революционные ячейки на станции подавлены и нейтрализованы.
 revolutionaries-win-announcement-shuttle-call =
     Согласно отчетам Глав Революции, командование корпорации было свергнуто, и мы захватили контроль над станцией.
-    
+
     Viva la revolution!
 revolutionaries-win-announcement =
     Согласно отчетам Глав Революции, командование корпорации было свергнуто, и мы захватили контроль над станцией.
-    
+
     Viva la revolution!
-revolutionaries-win-sender = Коммуникация Киберсан
+revolutionaries-win-sender = Коммуникация Cybersun
 revolutionaries-sender-cc = Отдел лояльности НаноТрейзен

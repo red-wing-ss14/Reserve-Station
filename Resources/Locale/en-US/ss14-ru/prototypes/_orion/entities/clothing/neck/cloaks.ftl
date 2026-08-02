@@ -11,7 +11,7 @@ ent-ClothingNeckWhiteMantleCaptain = белая мантия капитана
 ent-ClothingNeckMantleCaptainWhiteShoulder = белая наплечная мантия капитана
     .desc = Идеальная белая наплечная мантия для капитана. Чистота придает ей брутальность.
 
-ent-ClothingNeckCloakCentcomAdmiral = плащ адмирала НТ
+ent-ClothingNeckCloakCentcomAdmiral = плащ адмирала НаноТрейзен
 ent-ClothingNeckCloakFluffyPink = плюшевый розовый плащ
 ent-ClothingNeckCloakHellDiverBlack = чёрный плащ хеллдайвера
 ent-ClothingNeckCloakHellDiverWhite = белый плащ хеллдайвера

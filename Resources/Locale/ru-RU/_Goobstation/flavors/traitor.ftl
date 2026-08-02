@@ -14,11 +14,11 @@ traitor-beeliberationfront-goal = Мы должны доказать Синди�
 traitor-beeliberationfront-allies = Вы можете сотрудничать с другими агентами Синдиката, если они поддерживают нашу цель. Может, удастся завербовать кого-то из Защиты Прав Животных, чтобы тот был хоть чем-то полезен?
 traitor-beeliberationfront-uplink = Синдикат любезно предоставил нам один из своих аплинков в ПДА — посмотрим, достойны ли мы.
 traitor-beeliberationfront-roundend = [color=green]активист Фронт Освобождённых Пчёл[/color]
-traitor-cybersunindustries-intro = Вы — специалист из Киберсан Индастрис.
+traitor-cybersunindustries-intro = Вы — специалист из Cybersun Индастрис.
 traitor-cybersunindustries-goal = Не устанавливайте заметного присутствия на объекте. Крупные инциденты сложнее скрыть.
-traitor-cybersunindustries-allies = Доверяйте только другим оперативникам Киберсан и агентам МИ13. Остальные агенты Синдиката ненадёжны.
+traitor-cybersunindustries-allies = Доверяйте только другим оперативникам Cybersun и агентам МИ13. Остальные агенты Синдиката ненадёжны.
 traitor-cybersunindustries-uplink = Вам выдали инструменты для выполнения задания — аплинк Синдиката в вашем ПДА.
-traitor-cybersunindustries-roundend = [color=yellow]специалист из Киберсан Индастрис[/color]
+traitor-cybersunindustries-roundend = [color=yellow]специалист из Cybersun Индастрис[/color]
 traitor-corporateclimber-intro = Вы — Корпоративная крыса.
 traitor-corporateclimber-goal = Бессмысленные убийства сделают тебя предателем или, как минимум, тебя именно так и воспримут. Всё это лишь средство достижения цели.
 traitor-corporateclimber-allies = Смерть Синдикату.
@@ -41,13 +41,13 @@ traitor-legaltrouble-uplink = Вы подключились к чёрному р
 traitor-legaltrouble-roundend = [color=white]под следствием[/color]
 traitor-mi13-intro = Вы — агент МИ13.
 traitor-mi13-goal = Избегайте убийства невиновных любой ценой. Мы здесь не для того, чтобы бездумно убивать — это привлекло бы слишком много внимания. Оставайтесь незаметным.
-traitor-mi13-allies = Вы — единственный настоящий агент. Все остальные — самозванцы. Доверяйте только специалистам Киберсан.
+traitor-mi13-allies = Вы — единственный настоящий агент. Все остальные — самозванцы. Доверяйте только специалистам Cybersun.
 traitor-mi13-uplink = Вам выдали аплинк Синдиката в ПДА для выполнения задания.
 traitor-mi13-roundend = [color=cyan]агент МИ13[/color]
 traitor-tigercooperative-intro = Вы — фанатик Кооператив Тигра.
 traitor-tigercooperative-goal = Помните учение Хай-лургиксона: сперва убей, потом задавай вопросы!
 traitor-tigercooperative-allies = Доверяйте только просвещённым братьям Тиграм. Все остальные должны быть изгнаны из этого мира!
-traitor-tigercooperative-uplink = Друзья из Киберсан выдали вам аплинк Синдиката. Докажите улью генокрадов, что вы достойны стать их частью.
+traitor-tigercooperative-uplink = Друзья из Cybersun выдали вам аплинк Синдиката. Докажите улью генокрадов, что вы достойны стать их частью.
 traitor-tigercooperative-roundend = [color=crimson]фанатик Кооператива Тигр[/color]
 traitor-wafflecorporation-intro = Вы — внедрённый агент Ваффель Ко.
 traitor-wafflecorporation-goal = Вы не здесь не для того, чтобы устраивать показательную резню. Может, другие агенты Ваффель Ко. и будут этим заниматься, но ваша задача — просто выполнить цели.
@@ -65,7 +65,7 @@ traitor-neulithivfederationvisionary-allies = Члены Федерации Ко
 traitor-neulithivfederationvisionary-uplink = Федерация предоставила вам аплинк в ПДА. Используйте его с умом.
 traitor-neulithivfederationvisionary-roundend = [color=violet]визионер Федерации Неулитив[/color]
 traitor-postal-intro = Ты сошел с ума.
-traitor-postal-goal = Приготовления, наконец, завершены. Сегодня тот день, когда вы отправитесь в путь. Вы собираетесь захватить эвакуационный шаттл и начать новую жизнь, свободную от Нанотрейзена.
+traitor-postal-goal = Приготовления, наконец, завершены. Сегодня тот день, когда вы отправитесь в путь. Вы собираетесь захватить эвакуационный шаттл и начать новую жизнь, свободную от НаноТрейзена.
 traitor-postal-allies = Если синдикат прознает о вашем плане, они убьют вас и заберут аплинк. Не рискуйте.
 traitor-postal-uplink = Месяц назад вам удалось удачно украсть аплинк. Это, безусловно, должно помочь в достижении ваших целей.
 traitor-postal-roundend = [color=white]просто стань абсолютно безумным[/color]

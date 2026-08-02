@@ -22,7 +22,7 @@ bitrunning-domain-corsair-cove-desc = Пробейтесь к скрытому �
 bitrunning-domain-zealot-arena-name = Арена фанатиков
 bitrunning-domain-zealot-arena-desc = Танцуйте, марионетки, танцуйте!
 bitrunning-domain-experimental-soldier-name = Экспериментальный солдат
-bitrunning-domain-experimental-soldier-desc = У Синдиката появились новые разработки. Доставьте данные о них во благо Нанотрейзен!
+bitrunning-domain-experimental-soldier-desc = У Синдиката появились новые разработки. Доставьте данные о них во благо НаноТрейзен!
 
 bitrunning-domain-special-squad-name = Специальный отряд
 bitrunning-domain-special-squad-desc = После удачной революции на вашу станцию выслали "особый" отряд ОБР. Синдикат выслал вам припасы для боя, не подведите его.

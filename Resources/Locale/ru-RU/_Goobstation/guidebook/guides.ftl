@@ -123,7 +123,7 @@ guide-entry-sop-cargotech = Грузчик
 guide-entry-sop-salvage = Утилизатор
 guide-entry-sop-shaft-miner = Шахтер
 # - Командование
-guide-entry-sop-ntr = ПНТ
+guide-entry-sop-ntr = ПНаноТрейзен
 guide-entry-sop-bso = Офицер "Синий Щит"
 guide-entry-sop-captain = Капитан
 guide-entry-sop-hop = ГП

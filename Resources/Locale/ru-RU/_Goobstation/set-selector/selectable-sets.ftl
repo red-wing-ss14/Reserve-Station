@@ -32,7 +32,7 @@ selectable-set-thief-communicator-name = Набор коммуникатора
 selectable-set-thief-communicator-description =
     Деньги — это власть, а секреты — деньги. Используйте своё красноречие
     и богатство, чтобы подорвать структуру станции.
-    Включает: мастер-ключ для всех каналов станции, ручку Киберсан,
+    Включает: мастер-ключ для всех каналов станции, ручку Cybersun,
     маску хамелеона и 20000 кредитов в чемодане.
 selectable-set-thief-smuggler-name = Набор контрабандиста
 selectable-set-thief-smuggler-description =
