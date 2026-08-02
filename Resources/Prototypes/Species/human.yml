@@ -60,7 +60,6 @@
     RFoot: MobHumanRFoot
     Tail: MobHumanoidAnyMarking # Goobstation - Required for felinids, harpies & tajaran.
     HeadSide: MobHumanoidAnyMarking # Oni port from DeltaV
-    Wings: MobHumanoidAnyMarking # RW: Required for oni.
 
 - type: markingPoints
   id: MobHumanMarkingLimits

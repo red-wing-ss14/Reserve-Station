@@ -33,10 +33,10 @@
   - species-oni-con-holy-vulnerable
   # RW-End
   # begin Goobstation: port EE height/width sliders
-  minHeight: 1.0 # RW 1.11 > 1.0
+  minHeight: 1.11
   defaultHeight: 1.2
   maxHeight: 1.35
-  minWidth: 1.0 # RW 1.1 > 1.0
+  minWidth: 1.1
   defaultWidth: 1.2
   maxWidth: 1.3
   # end Goobstation: port EE height/width sliders
@@ -88,8 +88,3 @@
     LeftHand:
       points: 3
       required: false
-    # RW start
-    Wings:
-      points: 1
-      required: false
-    # RW end

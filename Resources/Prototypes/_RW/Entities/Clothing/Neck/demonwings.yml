@@ -1,8 +1,0 @@
-﻿- type: entity
-  parent: ClothingNeckBase
-  id: ClothingDemonWings
-  name: demon wings
-  description: The wings of a Demon.
-  components:
-  - type: Sprite
-    sprite: _RW/Clothing/Neck/Wings/demon_wings.rsi

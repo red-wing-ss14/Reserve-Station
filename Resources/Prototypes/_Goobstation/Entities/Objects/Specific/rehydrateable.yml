@@ -152,14 +152,3 @@
   - type: Rehydratable
     possibleSpawns:
     - MobFeroxiRandom
-
-# RW start
-- type: entity
-  parent: MonkeyCube
-  id: DemonCube
-  name: demon cube
-  components:
-  - type: Rehydratable
-    possibleSpawns:
-    - MobDemonRandom
-# RW end

@@ -1,9 +1,0 @@
-﻿- type: entity
-  parent: ClothingHeadBase
-  id: DemonHorns
-  name: demon horns
-  description: A cute accessory in the shape of demon horns with a little tail. Something is still missing...
-  components:
-  - type: Sprite
-    sprite: _RW/Clothing/Head/demon_horns.rsi
-    scale: 0.65, 0.65
