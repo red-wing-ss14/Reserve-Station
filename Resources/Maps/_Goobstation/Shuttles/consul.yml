@@ -3723,8 +3723,6 @@ entities:
     components:
     - type: Transform
       parent: 2
-    - type: Stack
-      count: 4
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -3733,8 +3731,6 @@ entities:
     components:
     - type: Transform
       parent: 7
-    - type: Stack
-      count: 4
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -3743,8 +3739,6 @@ entities:
     components:
     - type: Transform
       parent: 12
-    - type: Stack
-      count: 4
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -3753,8 +3747,6 @@ entities:
     components:
     - type: Transform
       parent: 17
-    - type: Stack
-      count: 4
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -3763,8 +3755,6 @@ entities:
     components:
     - type: Transform
       parent: 22
-    - type: Stack
-      count: 4
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -3773,8 +3763,6 @@ entities:
     components:
     - type: Transform
       parent: 27
-    - type: Stack
-      count: 4
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -3783,8 +3771,6 @@ entities:
     components:
     - type: Transform
       parent: 32
-    - type: Stack
-      count: 4
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -3793,8 +3779,6 @@ entities:
     components:
     - type: Transform
       parent: 37
-    - type: Stack
-      count: 4
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -3803,8 +3787,6 @@ entities:
     components:
     - type: Transform
       parent: 42
-    - type: Stack
-      count: 4
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -3813,8 +3795,6 @@ entities:
     components:
     - type: Transform
       parent: 47
-    - type: Stack
-      count: 4
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -9788,8 +9768,6 @@ entities:
     components:
     - type: Transform
       parent: 94
-    - type: Stack
-      count: 3
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -9798,8 +9776,6 @@ entities:
     components:
     - type: Transform
       parent: 101
-    - type: Stack
-      count: 2
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -9867,8 +9843,6 @@ entities:
     components:
     - type: Transform
       parent: 101
-    - type: Stack
-      count: 2
     - type: Physics
       angularDamping: 0
       linearDamping: 0

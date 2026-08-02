@@ -88,7 +88,7 @@ public sealed class ExperiScannerSystem : EntitySystem
 
         _audio.PlayPvs(ent.Comp.SuccessSound, ent, AudioParams.Default.WithVolume(-2f));
         _popup.PopupEntity(popup, ent, args.User, PopupType.SmallCaution);
-        _chat.TrySendInGameICMessage(ent.Owner, ent.Comp.LastResult, Shared.Chat.InGameICChatType.Speak, false);
+        _chat.TrySendInGameICMessage(ent.Owner, ent.Comp.LastResult, Shared.Chat.InGameICChatType.Speak, true);
         UpdateUi(ent);
 
         _research.LogNetworkEvent(server,

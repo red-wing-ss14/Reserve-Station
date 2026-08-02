@@ -214,7 +214,7 @@ public sealed partial class ResearchSystem
                 !HasComp<ExperimentalDestructiveScannerComponent>(client))
                 continue;
 
-            _chat.TrySendInGameICMessage(client, completionMessage, InGameICChatType.Speak, hideChat: false);
+            _chat.TrySendInGameICMessage(client, completionMessage, InGameICChatType.Speak, hideChat: true);
         }
 
         TriggerDiscovery(serverUid, $"experiment:{experiment.ID}", database);

@@ -310,7 +310,7 @@ public sealed class DestructiveAnalyzerSystem : EntitySystem
         _audio.PlayPvs(ent.Comp.SuccessSound, ent, ent.Comp.AudioParams);
         UpdateUi(ent);
         _popup.PopupEntity(Loc.GetString("research-destructive-analyzer-success"), ent, PopupType.SmallCaution);
-        _chat.TrySendInGameICMessage(ent.Owner, Loc.GetString("research-machine-destructive-chat-result", ("result", rewardSummary)), InGameICChatType.Speak, false);
+        _chat.TrySendInGameICMessage(ent.Owner, Loc.GetString("research-machine-destructive-chat-result", ("result", rewardSummary)), InGameICChatType.Speak, true);
     }
 
     private void OnEject(Entity<DestructiveAnalyzerComponent> ent, ref DestructiveAnalyzerEjectMessage args)
