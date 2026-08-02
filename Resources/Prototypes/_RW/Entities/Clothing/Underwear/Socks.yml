@@ -144,6 +144,33 @@
 
 - type: entity
   parent: ClothingSocksBase
+  id: ClothingSocksFishnet
+  name: fishnet socks
+  description: Stylish fishnet socks adding a touch of edginess to your outfit.
+  components:
+  - type: Sprite
+    sprite: _RW/Clothing/Underwear/Socks/fishnet.rsi
+
+- type: entity
+  parent: ClothingSocksBase
+  id: ClothingSocksFishnetAlt
+  name: fishnet socks
+  description: Stylish fishnet socks adding a touch of edginess to your outfit.
+  components:
+  - type: Sprite
+    sprite: _RW/Clothing/Underwear/Socks/fishnet_alt.rsi
+
+- type: entity
+  parent: ClothingSocksBase
+  id: ClothingSocksGarter
+  name: garter socks
+  description: Elegant garter socks, combining style and sophistication.
+  components:
+  - type: Sprite
+    sprite: _RW/Clothing/Underwear/Socks/garter.rsi
+
+- type: entity
+  parent: ClothingSocksBase
   id: ClothingSocksLeggings
   name: leggings
   description: Comfortable leggings offering a sleek and versatile look.
@@ -159,6 +186,15 @@
   components:
   - type: Sprite
     sprite: _RW/Clothing/Underwear/Socks/leggings_black.rsi
+
+- type: entity
+  parent: ClothingSocksBase
+  id: ClothingSocksPantyhose
+  name: pantyhose
+  description: Smooth pantyhose providing an elegant finish to any outfit.
+  components:
+  - type: Sprite
+    sprite: _RW/Clothing/Underwear/Socks/pantyhose.rsi
 
 - type: entity
   parent: ClothingSocksBase
