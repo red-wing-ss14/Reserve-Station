@@ -9,6 +9,27 @@
   name: body-slim
   sexRestrictions:
   - Male
+  markingsDisplacement:
+    Chest: &reptilianSlimMarkingTorso
+      sizeMaps:
+        32:
+          sprite: _RW/Mobs/Species/Reptilian/displacement.rsi
+          state: jumpsuit-female-slim
+    LLeg: *reptilianSlimMarkingTorso
+    RLeg: *reptilianSlimMarkingTorso
+    Head: *reptilianSlimMarkingTorso
+    Hair: *reptilianSlimMarkingTorso
+    FacialHair: *reptilianSlimMarkingTorso
+    LArm: *reptilianSlimMarkingTorso
+    RArm: *reptilianSlimMarkingTorso
+    LHand: *reptilianSlimMarkingTorso
+    RHand: *reptilianSlimMarkingTorso
+    LFoot: &reptilianSlimMarkingShoes
+      sizeMaps:
+        32:
+          sprite: _RW/Mobs/Species/Reptilian/displacement.rsi
+          state: shoes-slim
+    RFoot: *reptilianSlimMarkingShoes
   sprites:
     Head: MobReptilianSlimHead
     Face: MobHumanoidAnyMarking

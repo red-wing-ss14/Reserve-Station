@@ -1,3 +1,4 @@
+using Content.Shared.DisplacementMap;
 using Content.Shared.Humanoid;
 using Robust.Shared.Prototypes;
 
@@ -32,4 +33,10 @@ public sealed partial class BodyTypePrototype : IPrototype
     /// </summary>
     [DataField]
     public List<string> SexRestrictions = new();
+
+    /// <summary>
+    ///     Displacement maps applied to markings on this body type.
+    /// </summary>
+    [DataField]
+    public Dictionary<HumanoidVisualLayers, DisplacementData> MarkingsDisplacement = new();
 }
