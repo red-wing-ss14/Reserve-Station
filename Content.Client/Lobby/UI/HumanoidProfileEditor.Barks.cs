@@ -10,6 +10,7 @@ public sealed partial class HumanoidProfileEditor
 
     private void InitializeBarkVoice()
     {
+        // RW edit start: bug-fixes #12
         BarkPitchSlider.OnReleased += _ => OnBarkPitchChanged();
         BarkPitchVarianceSlider.OnReleased += _ => OnBarkPitchVarianceChanged();
         BarkPauseSlider.OnReleased += _ => OnBarkPauseChanged();
@@ -134,4 +135,5 @@ public sealed partial class HumanoidProfileEditor
         var ev = new PreviewBarkEvent(Profile.BarkVoice, Profile.BarkSettings);
         _entManager.EventBus.RaiseEvent(EventSource.Local, ref ev);
     }
+    // RW edit end: bug-fixes #12
 }

@@ -8,168 +8,168 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-# guide-entry-space-law = РљРѕСЃРјРёС‡РµСЃРєРёР№ Р·Р°РєРѕРЅ
-guide-entry-medpatches = РњРµРґРёС†РёРЅСЃРєРёРµ РїР»Р°СЃС‚С‹СЂРё
-guide-entry-virology = Р’РёСЂСѓСЃРѕР»РѕРіРёСЏ
-guide-entry-rules-nrp = РџСЂР°РІРёР»Р° РќР Рџ
-guide-entry-sm = РЎСѓРїРµСЂРјР°С‚РµСЂРёСЏ
-guide-entry-automation = РђРІС‚РѕРјР°С‚РёР·Р°С†РёСЏ
-guide-entry-plumbing = РўСЂСѓР±С‹
-guide-entry-alcoholic-drinks = РђР»РєРѕРіРѕР»СЊ
-guide-entry-non-alcoholic-drinks = Р‘РµР·Р°Р»РєРѕРіРѕР»СЊ
-guide-entry-enchanting = Р—Р°С‡Р°СЂРѕРІР°РЅРёСЏ
+# guide-entry-space-law = Космический закон
+guide-entry-medpatches = Медицинские пластыри
+guide-entry-virology = Вирусология
+guide-entry-rules-nrp = Правила НРП
+guide-entry-sm = Суперматерия
+guide-entry-automation = Автоматизация
+guide-entry-plumbing = Трубы
+guide-entry-alcoholic-drinks = Алкоголь
+guide-entry-non-alcoholic-drinks = Безалкоголь
+guide-entry-enchanting = Зачарования
 
-guide-entry-devil = Р”СЊСЏРІРѕР»
-guide-entry-devil-clauses = РљР»СЏС‚РІС‹ РґСЊСЏРІРѕР»Р°
-guide-entry-bingle = Р‘РёРЅРіР»
+guide-entry-devil = Дьявол
+guide-entry-devil-clauses = Клятвы дьявола
+guide-entry-bingle = Бингл
 guide-entry-xenobiology = Ксенобиология
-guide-entry-corporate-agents = РљРѕСЂРїРѕСЂР°С‚РёРІРЅС‹Рµ Р°РіРµРЅС‚С‹
-guide-entry-slasher = РњСЏСЃРЅРёРє
-guide-entry-slaughter-demon = Р”РµРјРѕРЅ СЂРµР·РЅРё
+guide-entry-corporate-agents = Корпоративные агенты
+guide-entry-slasher = Мясник
+guide-entry-slaughter-demon = Демон резни
 
 # Goob SOP
-# - РћСЃРЅРѕРІРЅС‹Рµ СЂР°Р·РґРµР»С‹
-# guide-entry-sop = РЎРћРџ (РЎС‚Р°РЅРґР°СЂС‚РЅС‹Рµ РћРїРµСЂР°С†РёРѕРЅРЅС‹Рµ РџСЂРѕС†РµРґСѓСЂС‹)
-# guide-entry-sop-alert-levels = РЈСЂРѕРІРЅРё СѓРіСЂРѕР·С‹
-# guide-entry-sop-emergencies = РђРІР°СЂРёР№РЅС‹Рµ СЃРёС‚СѓР°С†РёРё
-# guide-entry-sop-jobs = Р”РѕР»Р¶РЅРѕСЃС‚Рё
-# guide-entry-sop-legal = Р®СЂРёРґРёС‡РµСЃРєР°СЏ С‡Р°СЃС‚СЊ
-# guide-entry-sop-standards = РЎС‚Р°РЅРґР°СЂС‚РЅС‹Рµ РїСЂРѕС†РµРґСѓСЂС‹
-# - РџРѕРґСЂР°Р·РґРµР»С‹
-# guide-entry-sop-cargo = Р“СЂСѓР·РѕРІРѕР№ РѕС‚РґРµР»
-# guide-entry-sop-command = РљРѕРјР°РЅРґРѕРІР°РЅРёРµ
-# guide-entry-sop-engineering = РРЅР¶РµРЅРµСЂРёСЏ
-# guide-entry-sop-medical = РњРµРґРёС†РёРЅР°
-# guide-entry-sop-science = РќР°СѓРєР°
-# guide-entry-sop-security = РћС…СЂР°РЅР°
-# guide-entry-sop-service = РЎРµСЂРІРёСЃ
-# - РЈСЂРѕРІРЅРё С‚СЂРµРІРѕРіРё
-guide-entry-sop-greenalert = Р—РµР»С‘РЅС‹Р№ РєРѕРґ
-guide-entry-sop-bluealert = РЎРёРЅРёР№ РєРѕРґ
-guide-entry-sop-yellowalert = Р–С‘Р»С‚С‹Р№ РєРѕРґ
-guide-entry-sop-redalert = РљСЂР°СЃРЅС‹Р№ РєРѕРґ
-guide-entry-sop-deltaalert = Р”РµР»СЊС‚Р° РєРѕРґ
-guide-entry-sop-epsilonalert = Р­РїСЃРёР»РѕРЅ РєРѕРґ
-guide-entry-sop-gammaalert = Р“Р°РјРјР° РєРѕРґ
-guide-entry-sop-violetalert = Р¤РёРѕР»РµС‚РѕРІС‹Р№ РєРѕРґ
-guide-entry-sop-omicronalert = РћРјРёРєСЂРѕРЅ РєРѕРґ
-# - РЎС‚Р°РЅРґР°СЂС‚РЅС‹Рµ РїСЂРѕС†РµРґСѓСЂС‹
-guide-entry-sop-demoting = РЈРІРѕР»СЊРЅРµРЅРёРµ/РїРѕРЅРёР¶РµРЅРёРµ
-guide-entry-sop-evacuation = Р Р°РЅРЅСЏСЏ СЌРІР°РєСѓР°С†РёСЏ
-guide-entry-sop-hiring = РќР°Р№Рј/РїРµСЂРµРІРѕРґ
-guide-entry-sop-succession = Р¦РµРїРѕС‡РєР° РєРѕРјР°РЅРґРѕРІР°РЅРёСЏ
-# - РђРІР°СЂРёР№РЅС‹Рµ СЃРёС‚СѓР°С†РёРё
-guide-entry-sop-confirmedrevs = Р РµРІРѕР»СЋС†РёСЏ
-guide-entry-sop-containmentfail = РќР°СЂСѓС€РµРЅРёРµ СЃРѕРґРµСЂР¶Р°РЅРёСЏ
-guide-entry-sop-firegasspill = РџРѕР¶Р°СЂС‹/СѓС‚РµС‡РєРё РіР°Р·Р°
-guide-entry-sop-meteorstorm = РњРµС‚РµРѕСЂРёС‚РЅС‹Р№ С€С‚РѕСЂРј
-guide-entry-sop-stationdamage = РџРѕРІСЂРµР¶РґРµРЅРёСЏ СЃС‚Р°РЅС†РёРё
-guide-entry-sop-supermatterdelam = Р Р°СЃРїР°Рґ РЎСѓРїРµСЂРјР°С‚РµСЂРёРё
-guide-entry-sop-wardeclaration = РћР±СЉСЏРІР»РµРЅРёРµ РІРѕР№РЅС‹
-guide-entry-sop-zombieoutbreak = Р’СЃРїС‹С€РєР° Р·РѕРјР±Рё
-guide-entry-sop-emergencyresponseteam = РћР‘Р  (РћС‚СЂСЏРґ Р‘С‹СЃС‚СЂРѕРіРѕ Р РµР°РіРёСЂРѕРІР°РЅРёСЏ)
-# - Р®СЂРёРґРёС‡РµСЃРєР°СЏ С‡Р°СЃС‚СЊ
-# guide-entry-sop-execution = РљР°Р·РЅРё
-# guide-entry-sop-permabrig = РџРµСЂРјР°Р±СЂРёРі
-# guide-entry-sop-punishments = РќР°РєР°Р·Р°РЅРёСЏ
-# guide-entry-sop-searches = РћР±С‹СЃРєРё
-# - Р“СЂСѓР·РѕРІРѕР№ РѕС‚РґРµР»
-# guide-entry-sop-cargotech = Р“СЂСѓР·С‡РёРє
-# guide-entry-sop-salvage = РЈС‚РёР»РёР·Р°С‚РѕСЂ
-# guide-entry-sop-shaft-miner = РЁР°С…С‚С‘СЂ
-# - РљРѕРјР°РЅРґРѕРІР°РЅРёРµ
-# guide-entry-sop-ntr = РџСЂРµРґСЃС‚Р°РІРёС‚РµР»СЊ РќР°РЅРѕРўСЂРµР№Р·РµРЅ
-# guide-entry-sop-bso = РћС„РёС†РµСЂ "РЎРёРЅРёР№ Р©РёС‚"
-# guide-entry-sop-captain = РљР°РїРёС‚Р°РЅ
-# guide-entry-sop-hop = Р“Р»Р°РІР° РџРµСЂСЃРѕРЅР°Р»Р°
-# guide-entry-sop-hos = Р“Р»Р°РІР° РЎР»СѓР¶Р±С‹ Р‘РµР·РѕРїР°СЃРЅРѕСЃС‚Рё
-# guide-entry-sop-rd = РќР°СѓС‡РЅС‹Р№ Р СѓРєРѕРІРѕРґРёС‚РµР»СЊ
-# guide-entry-sop-cmo = Р“Р»Р°РІРЅС‹Р№ Р’СЂР°С‡
-# guide-entry-sop-ce = РЎС‚Р°СЂС€РёР№ РРЅР¶РµРЅРµСЂ
-# guide-entry-sop-qm = РљРІР°СЂС‚РёСЂРјРµР№СЃС‚РµСЂ
-# - РРЅР¶РµРЅРµСЂРёСЏ
-# guide-entry-sop-atmostech = РђС‚РјРѕСЃС„РµСЂРЅС‹Р№ С‚РµС…РЅРёРє
-# guide-entry-sop-stationengineer = РРЅР¶РµРЅРµСЂ СЃС‚Р°РЅС†РёРё
-# - РњРµРґРёС†РёРЅР°
-# guide-entry-sop-chemist = РҐРёРјРёРє
-# guide-entry-sop-doctorintern = Р’СЂР°С‡/РРЅС‚РµСЂРЅ
-# - РќР°СѓРєР°
-# guide-entry-sop-roboticist = Р РѕР±РѕС‚РѕС‚РµС…РЅРёРє
-# guide-entry-sop-scientist = РЈС‡С‘РЅС‹Р№
-# - РћС…СЂР°РЅР°
-# guide-entry-sop-brigmedic = Р‘СЂРёРіРјРµРґРёРє
-# guide-entry-sop-detective = Р”РµС‚РµРєС‚РёРІ
-# guide-entry-sop-officercadet = РћС„РёС†РµСЂ/РљР°РґРµС‚
-# guide-entry-sop-warden = РЎРјРѕС‚СЂРёС‚РµР»СЊ
-# - РЎР»СѓР¶Р±Р°
-# guide-entry-sop-bartender = Р‘Р°СЂРјРµРЅ
-# guide-entry-sop-botanist = Р‘РѕС‚Р°РЅРёРє
-# guide-entry-sop-chef = РџРѕРІР°СЂ
-# guide-entry-sop-clown = РљР»РѕСѓРЅ
-# guide-entry-sop-janitor = РЈР±РѕСЂС‰РёРє
-# guide-entry-sop-librarian = Р‘РёР±Р»РёРѕС‚РµРєР°СЂСЊ
-# guide-entry-sop-mime = РњРёРј
-# guide-entry-sop-reporter = Р РµРїРѕСЂС‚С‘СЂ
-guide-entry-sop-alert-levels = РљРѕРґС‹ СЃС‚Р°РЅС†РёРё
-guide-entry-sop-emergencies = Р§СЂРµР·РІС‹С‡Р°Р№РЅС‹Рµ СЃРёС‚СѓР°С†РёРё
-guide-entry-sop-jobs = РџСЂРѕС„РµСЃСЃРёРё
-guide-entry-sop-legal = Р—Р°РєРѕРЅ
-guide-entry-sop-standards = РЎС‚Р°РЅРґР°СЂС‚РЅС‹Рµ РїСЂРѕС†РµРґСѓСЂС‹
-# - Р’Р»РѕР¶РµРЅРЅС‹Рµ РєР°С‚Р°Р»РѕРіРё
-guide-entry-sop-cargo = РћС‚РґРµР» СЃРЅР°Р±Р¶РµРЅРёСЏ
-guide-entry-sop-command = РљРѕРјР°РЅРґРѕРІР°РЅРёРµ
-guide-entry-sop-engineering = РРЅР¶РµРЅРµСЂРЅС‹Р№ РѕС‚РґРµР»
-guide-entry-sop-medical = РњРµРґРёС†РёРЅСЃРєРёР№ РѕС‚РґРµР»
-guide-entry-sop-science = РќР°СѓС‡РЅС‹Р№ РѕС‚РґРµР»
-guide-entry-sop-service = РЎРµСЂРІРёСЃ
-# - РЈСЂРѕРІРЅРё РѕРїРѕРІРµС‰РµРЅРёСЏ
-guide-entry-sop-execution = РљР°Р·РЅРё
-guide-entry-sop-permabrig = РџРµСЂРјР°РЅРµРЅС‚РЅС‹Р№ Р±СЂРёРі
-guide-entry-sop-punishments = РќР°РєР°Р·Р°РЅРёСЏ
-guide-entry-sop-searches = РћР±С‹СЃРєРё
-# - Р“СЂСѓР·
-guide-entry-sop-cargotech = Р“СЂСѓР·С‡РёРє
-guide-entry-sop-salvage = РЈС‚РёР»РёР·Р°С‚РѕСЂ
-guide-entry-sop-shaft-miner = РЁР°С…С‚РµСЂ
-# - РљРѕРјР°РЅРґРѕРІР°РЅРёРµ
-guide-entry-sop-ntr = РџРќРў
-guide-entry-sop-bso = РћС„РёС†РµСЂ "РЎРёРЅРёР№ Р©РёС‚"
-guide-entry-sop-captain = РљР°РїРёС‚Р°РЅ
-guide-entry-sop-hop = Р“Рџ
-guide-entry-sop-hos = Р“РЎР‘
-guide-entry-sop-rd = РќР 
-guide-entry-sop-cmo = Р“Р’
-guide-entry-sop-ce = РЎР
-guide-entry-sop-qm = РљРњ
-# - РРЅР¶РµРЅРµСЂРЅС‹Р№
-guide-entry-sop-atmostech = РђС‚РјРѕСЃ
-guide-entry-sop-stationengineer = РРЅР¶РµРЅРµСЂ
-# - РњРµРґРёС†РёРЅР°
-guide-entry-sop-chemist = РҐРёРјРёРє
-guide-entry-sop-doctorintern = Р’СЂР°С‡
+# - Основные разделы
+# guide-entry-sop = СОП (Стандартные Операционные Процедуры)
+# guide-entry-sop-alert-levels = Уровни угрозы
+# guide-entry-sop-emergencies = Аварийные ситуации
+# guide-entry-sop-jobs = Должности
+# guide-entry-sop-legal = Юридическая часть
+# guide-entry-sop-standards = Стандартные процедуры
+# - Подразделы
+# guide-entry-sop-cargo = Грузовой отдел
+# guide-entry-sop-command = Командование
+# guide-entry-sop-engineering = Инженерия
+# guide-entry-sop-medical = Медицина
+# guide-entry-sop-science = Наука
+# guide-entry-sop-security = Охрана
+# guide-entry-sop-service = Сервис
+# - Уровни тревоги
+guide-entry-sop-greenalert = Зелёный код
+guide-entry-sop-bluealert = Синий код
+guide-entry-sop-yellowalert = Жёлтый код
+guide-entry-sop-redalert = Красный код
+guide-entry-sop-deltaalert = Дельта код
+guide-entry-sop-epsilonalert = Эпсилон код
+guide-entry-sop-gammaalert = Гамма код
+guide-entry-sop-violetalert = Фиолетовый код
+guide-entry-sop-omicronalert = Омикрон код
+# - Стандартные процедуры
+guide-entry-sop-demoting = Увольнение/понижение
+guide-entry-sop-evacuation = Ранняя эвакуация
+guide-entry-sop-hiring = Найм/перевод
+guide-entry-sop-succession = Цепочка командования
+# - Аварийные ситуации
+guide-entry-sop-confirmedrevs = Революция
+guide-entry-sop-containmentfail = Нарушение содержания
+guide-entry-sop-firegasspill = Пожары/утечки газа
+guide-entry-sop-meteorstorm = Метеоритный шторм
+guide-entry-sop-stationdamage = Повреждения станции
+guide-entry-sop-supermatterdelam = Распад Суперматерии
+guide-entry-sop-wardeclaration = Объявление войны
+guide-entry-sop-zombieoutbreak = Вспышка зомби
+guide-entry-sop-emergencyresponseteam = ОБР (Отряд Быстрого Реагирования)
+# - Юридическая часть
+# guide-entry-sop-execution = Казни
+# guide-entry-sop-permabrig = Пермабриг
+# guide-entry-sop-punishments = Наказания
+# guide-entry-sop-searches = Обыски
+# - Грузовой отдел
+# guide-entry-sop-cargotech = Грузчик
+# guide-entry-sop-salvage = Утилизатор
+# guide-entry-sop-shaft-miner = Шахтёр
+# - Командование
+# guide-entry-sop-ntr = Представитель НаноТрейзен
+# guide-entry-sop-bso = Офицер "Синий Щит"
+# guide-entry-sop-captain = Капитан
+# guide-entry-sop-hop = Глава Персонала
+# guide-entry-sop-hos = Глава Службы Безопасности
+# guide-entry-sop-rd = Научный Руководитель
+# guide-entry-sop-cmo = Главный Врач
+# guide-entry-sop-ce = Старший Инженер
+# guide-entry-sop-qm = Квартирмейстер
+# - Инженерия
+# guide-entry-sop-atmostech = Атмосферный техник
+# guide-entry-sop-stationengineer = Инженер станции
+# - Медицина
+# guide-entry-sop-chemist = Химик
+# guide-entry-sop-doctorintern = Врач/Интерн
+# - Наука
+# guide-entry-sop-roboticist = Робототехник
+# guide-entry-sop-scientist = Учёный
+# - Охрана
+# guide-entry-sop-brigmedic = Бригмедик
+# guide-entry-sop-detective = Детектив
+# guide-entry-sop-officercadet = Офицер/Кадет
+# guide-entry-sop-warden = Смотритель
+# - Служба
+# guide-entry-sop-bartender = Бармен
+# guide-entry-sop-botanist = Ботаник
+# guide-entry-sop-chef = Повар
+# guide-entry-sop-clown = Клоун
+# guide-entry-sop-janitor = Уборщик
+# guide-entry-sop-librarian = Библиотекарь
+# guide-entry-sop-mime = Мим
+# guide-entry-sop-reporter = Репортёр
+guide-entry-sop-alert-levels = Коды станции
+guide-entry-sop-emergencies = Чрезвычайные ситуации
+guide-entry-sop-jobs = Профессии
+guide-entry-sop-legal = Закон
+guide-entry-sop-standards = Стандартные процедуры
+# - Вложенные каталоги
+guide-entry-sop-cargo = Отдел снабжения
+guide-entry-sop-command = Командование
+guide-entry-sop-engineering = Инженерный отдел
+guide-entry-sop-medical = Медицинский отдел
+guide-entry-sop-science = Научный отдел
+guide-entry-sop-service = Сервис
+# - Уровни оповещения
+guide-entry-sop-execution = Казни
+guide-entry-sop-permabrig = Перманентный бриг
+guide-entry-sop-punishments = Наказания
+guide-entry-sop-searches = Обыски
+# - Груз
+guide-entry-sop-cargotech = Грузчик
+guide-entry-sop-salvage = Утилизатор
+guide-entry-sop-shaft-miner = Шахтер
+# - Командование
+guide-entry-sop-ntr = ПНТ
+guide-entry-sop-bso = Офицер "Синий Щит"
+guide-entry-sop-captain = Капитан
+guide-entry-sop-hop = ГП
+guide-entry-sop-hos = ГСБ
+guide-entry-sop-rd = НР
+guide-entry-sop-cmo = ГВ
+guide-entry-sop-ce = СИ
+guide-entry-sop-qm = КМ
+# - Инженерный
+guide-entry-sop-atmostech = Атмос
+guide-entry-sop-stationengineer = Инженер
+# - Медицина
+guide-entry-sop-chemist = Химик
+guide-entry-sop-doctorintern = Врач
 # - Science
-guide-entry-sop-roboticist = Р РѕР±РѕС‚РµС…РЅРёРє
-# - РќР°СѓРєР°
-guide-entry-sop-robotocist = Р РѕР±РѕС‚РѕС‚РµС…РЅРёРє
-guide-entry-sop-scientist = РЈС‡С‘РЅС‹Р№
+guide-entry-sop-roboticist = Роботехник
+# - Наука
+guide-entry-sop-robotocist = Робототехник
+guide-entry-sop-scientist = Учёный
 # - Security
-guide-entry-sop-brigmedic = Р‘СЂРёРіРјРµРґРёРє
-# - Р‘РµР·РѕРїР°СЃРЅРѕСЃС‚СЊ
-guide-entry-sop-detective = Р”РµС‚РµРєС‚РёРІ
-guide-entry-sop-officercadet = РћС„РёС†РµСЂ/РљР°РґРµС‚
-guide-entry-sop-warden = РЎРјРѕС‚СЂРёС‚РµР»СЊ
-# - РћР±СЃР»СѓР¶РёРІР°РЅРёРµ
-guide-entry-sop-bartender = Р‘Р°СЂРјРµРЅ
-guide-entry-sop-botanist = Р‘РѕС‚Р°РЅРёРє
-guide-entry-sop-chef = РЁРµС„-РїРѕРІР°СЂ
-guide-entry-sop-clown = РљР»РѕСѓРЅ
-guide-entry-sop-janitor = РЈР±РѕСЂС‰РёРє
-guide-entry-sop-librarian = Р‘РёР±Р»РёРѕС‚РµРєР°СЂСЊ
-guide-entry-sop-mime = РњРёРј
-guide-entry-sop-reporter = Р РµРїРѕСЂС‚РµСЂ
-# - РљРѕСЃРјРёС‡РµСЃРєРёР№ Р·Р°РєРѕРЅ
-guide-entry-space-law-violations-minor = 1РҐРҐ СЃС‚Р°С‚СЊРё (Р»С‘РіРєРёРµ)
-guide-entry-space-law-violations-average = 2РҐРҐ СЃС‚Р°С‚СЊРё (СЃСЂРµРґРЅРёРµ)
-guide-entry-space-law-violations-serious = 3РҐРҐ СЃС‚Р°С‚СЊРё (С‚СЏР¶РєРёРµ)
+guide-entry-sop-brigmedic = Бригмедик
+# - Безопасность
+guide-entry-sop-detective = Детектив
+guide-entry-sop-officercadet = Офицер/Кадет
+guide-entry-sop-warden = Смотритель
+# - Обслуживание
+guide-entry-sop-bartender = Бармен
+guide-entry-sop-botanist = Ботаник
+guide-entry-sop-chef = Шеф-повар
+guide-entry-sop-clown = Клоун
+guide-entry-sop-janitor = Уборщик
+guide-entry-sop-librarian = Библиотекарь
+guide-entry-sop-mime = Мим
+guide-entry-sop-reporter = Репортер
+# - Космический закон
+guide-entry-space-law-violations-minor = 1ХХ статьи (лёгкие)
+guide-entry-space-law-violations-average = 2ХХ статьи (средние)
+guide-entry-space-law-violations-serious = 3ХХ статьи (тяжкие)
 
-# - Р‘РѕРµРІС‹Рµ РёСЃРєСѓСЃСЃС‚РІР°
+# - Боевые искусства

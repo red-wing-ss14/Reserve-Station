@@ -58,7 +58,7 @@ public sealed class BarkSystem : EntitySystem
         {
             message[i] = _random.Pick(Characters);
         }
-        PlayBark(null, new string(message), false, proto, ev.BarkSettings);
+        PlayBark(null, new string(message), false, proto, ev.BarkSettings); // RW edit: bug-fixes #12
     }
 
     private void OnPlayBark(PlayBarkEvent ev)
@@ -72,9 +72,10 @@ public sealed class BarkSystem : EntitySystem
             || !_prototypeManager.TryIndex<BarkPrototype>(comp.VoicePrototypeId, out var proto))
             return;
 
-        PlayBark(sourceEntity, ev.Message, ev.Whisper, proto, comp.BarkSettings);
+        PlayBark(sourceEntity, ev.Message, ev.Whisper, proto, comp.BarkSettings); // RW edit: bug-fixes #12
     }
 
+    // RW edit start: bug-fixes #12
     private void PlayBark(EntityUid? source, string message, bool whisper, BarkPrototype proto, BarkPercentageApplyData settings)
     {
         if (proto.SoundCollection is null)
@@ -118,6 +119,7 @@ public sealed class BarkSystem : EntitySystem
 
         _activeBarks.Add(activeBark);
     }
+    // RW edit end: bug-fixes #12
 
     public override void Update(float frameTime)
     {

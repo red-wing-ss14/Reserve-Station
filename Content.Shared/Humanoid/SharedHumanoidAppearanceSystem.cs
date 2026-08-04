@@ -594,7 +594,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         }
 
         EnsureDefaultMarkings(uid, humanoid);
-        SetBarkSettings(uid, profile.BarkSettings, humanoid);
+        SetBarkSettings(uid, profile.BarkSettings, humanoid); // RW edit: bug-fixes #12
         SetBarkVoice(uid, profile.BarkVoice, humanoid); // Goob Station - Barks
         SetTTSVoice(uid, profile.Voice); // RW - TTS
 
@@ -770,11 +770,12 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         EnsureComp<SpeechSynthesisComponent>(uid, out var comp);
         comp.VoicePrototypeId = voicePrototypeId;
-        comp.BarkSettings = humanoid.BarkSettings.Clone();
+        comp.BarkSettings = humanoid.BarkSettings.Clone(); // RW edit: bug-fixes #12
         humanoid.BarkVoice = voicePrototypeId;
         Dirty(uid, comp);
     }
 
+    // RW edit start: bug-fixes #12
     public void SetBarkSettings(EntityUid uid, BarkPercentageApplyData settings, HumanoidAppearanceComponent? humanoid = null)
     {
         if (!Resolve(uid, ref humanoid, false))
@@ -786,6 +787,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         Dirty(uid, comp);
         Dirty(uid, humanoid);
     }
+    // RW edit end: bug-fixes #12
     #endregion
     // Goob Station - Barks End
 

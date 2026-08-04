@@ -11,7 +11,7 @@ public sealed class PlayBarkEvent(NetEntity sourceUid, string message, bool whis
 }
 
 [Serializable, NetSerializable]
-public sealed class PreviewBarkEvent(string barkProtoID, BarkPercentageApplyData barkSettings) : EntityEventArgs
+public sealed class PreviewBarkEvent(string barkProtoID, BarkPercentageApplyData barkSettings) : EntityEventArgs // RW edit: bug-fixes #12
 {
     public string BarkProtoID { get; } = barkProtoID;
     public BarkPercentageApplyData BarkSettings { get; } = barkSettings;

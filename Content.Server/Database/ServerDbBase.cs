@@ -310,12 +310,14 @@ namespace Content.Server.Database
 // RW end
 
             var barkVoice = profile.BarkVoice ?? SharedHumanoidAppearanceSystem.DefaultBarkVoice; // Goob Station - Barks
+            // RW edit start: bug-fixes #12
             var barkSettings = new BarkPercentageApplyData
             {
                 Pause = profile.BarkPause,
                 Pitch = profile.BarkPitch,
                 PitchVariance = profile.BarkPitchVariance,
             };
+            // RW edit end: bug-fixes #12
             var voice = profile.Voice ?? string.Empty; // RW - TTS
             var bodyType = profile.BodyType ?? "HumanNormal"; // RW port: WD Slim body types
 
@@ -368,7 +370,7 @@ namespace Content.Server.Database
                 voice // RW - TTS
             );
 
-            characterProfile.BarkSettings = barkSettings;
+            characterProfile.BarkSettings = barkSettings; // RW edit: bug-fixes #12
             return characterProfile;
         }
 
@@ -482,9 +484,11 @@ namespace Content.Server.Database
             );
 
             profile.BarkVoice = humanoid.BarkVoice; // Goob Station - Barks
+            // RW edit start: bug-fixes #12
             profile.BarkPause = humanoid.BarkSettings.Pause;
             profile.BarkPitch = humanoid.BarkSettings.Pitch;
             profile.BarkPitchVariance = humanoid.BarkSettings.PitchVariance;
+            // RW edit end: bug-fixes #12
             profile.Voice = humanoid.Voice; // RW - TTS
 
             profile.Loadouts.Clear();

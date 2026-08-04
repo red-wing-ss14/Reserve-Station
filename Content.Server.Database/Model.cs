@@ -490,9 +490,9 @@ namespace Content.Server.Database
         public float Height { get; set; } = 1f; // Goobstation: port EE height/width sliders
         public float Width { get; set; } = 1f; // Goobstation: port EE height/width sliders
         public string BarkVoice { get; set; } = null!; // Goob Station - Barks
-        public byte BarkPause { get; set; } = 127;
-        public byte BarkPitch { get; set; } = 127;
-        public byte BarkPitchVariance { get; set; } = 127;
+        public byte BarkPause { get; set; } = 127; // RW edit: bug-fixes #12
+        public byte BarkPitch { get; set; } = 127; // RW edit: bug-fixes #12
+        public byte BarkPitchVariance { get; set; } = 127; // RW edit: bug-fixes #12
         [Column(TypeName = "jsonb")] public JsonDocument? Markings { get; set; } = null!;
         public string HairName { get; set; } = null!;
         public string HairColor { get; set; } = null!;

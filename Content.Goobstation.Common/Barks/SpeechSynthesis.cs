@@ -10,5 +10,5 @@ public sealed partial class SpeechSynthesisComponent : Component
     public ProtoId<BarkPrototype>? VoicePrototypeId;
 
     [DataField, AutoNetworkedField]
-    public BarkPercentageApplyData BarkSettings = BarkPercentageApplyData.Default;
+    public BarkPercentageApplyData BarkSettings = BarkPercentageApplyData.Default; // RW edit: bug-fixes #12
 }

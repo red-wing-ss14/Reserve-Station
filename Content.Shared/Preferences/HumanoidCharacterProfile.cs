@@ -168,7 +168,7 @@ namespace Content.Shared.Preferences
         public ProtoId<BarkPrototype> BarkVoice { get; set; } = SharedHumanoidAppearanceSystem.DefaultBarkVoice; // Goob Station - Barks
 
         [DataField]
-        public BarkPercentageApplyData BarkSettings { get; set; } = BarkPercentageApplyData.Default;
+        public BarkPercentageApplyData BarkSettings { get; set; } = BarkPercentageApplyData.Default; // RW edit: bug-fixes #12
 
         [DataField] // RW - TTS
         public ProtoId<TTSVoicePrototype> Voice { get; set; } = string.Empty; // RW - TTS
@@ -328,7 +328,7 @@ namespace Content.Shared.Preferences
                 other.BarkVoice, // Goob Station - Barks
                 other.Voice) // RW - TTS
         {
-            BarkSettings = other.BarkSettings.Clone();
+            BarkSettings = other.BarkSettings.Clone(); // RW edit: bug-fixes #12
         }
 
         /// <summary>
@@ -525,10 +525,12 @@ namespace Content.Shared.Preferences
             return new(this) { BarkVoice = barkVoice };
         }
 
+        // RW edit start: bug-fixes #12
         public HumanoidCharacterProfile WithBarkSettings(BarkPercentageApplyData barkSettings)
         {
             return new(this) { BarkSettings = barkSettings.Clone() };
         }
+        // RW edit end: bug-fixes #12
         // Goob Station - Barks End
 
         // RW - TTS Start
