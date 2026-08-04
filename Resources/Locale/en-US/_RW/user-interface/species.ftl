@@ -6,7 +6,6 @@
 species-window-title = Species
 ui-species-select-button = Select
 ui-species-pros-cons = Advantages and disadvantages
-ui-species-mechanics-title = Mechanics
 ui-species-lore-title = Description
 ui-species-no-pros-cons = Missing
 ui-species-list-two = { $first } and { $second }

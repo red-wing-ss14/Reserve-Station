@@ -18,15 +18,11 @@
   description: "/ServerInfo/_RW/SpeciesDescriptions/Harpy.xml"
   pros:
   - species-harpy-pro-fly
-  - species-harpy-pro-run-speed
   - species-harpy-pro-singing
   - species-harpy-pro-voice-mimic
   - species-harpy-pro-glass-traps-immune
   special:
   - species-harpy-special-frequent-breathe
-  cons:
-  - species-harpy-con-blunt-vulnerable
-  - species-harpy-con-weak-pull
   # RW-End
   # begin Goobstation: port EE height/width sliders
   minHeight: 0.80

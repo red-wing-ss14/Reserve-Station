@@ -207,89 +207,93 @@ public sealed partial class SpeciesWindow : FancyWindow
         prosConsContainer.AddChild(separator);
         DetailInfoContainer.AddChild(prosConsContainer);
 
-        if (proto.Pros.Count <= 0 && proto.Special.Count <= 0 && proto.Cons.Count <= 0)
-        {
-            var noProsConsLabel = new RichTextLabel()
-            {
-                Text = Loc.GetString("ui-species-no-pros-cons"),
-                Margin = new(4f),
-            };
-            prosConsContainer.AddChild(noProsConsLabel);
-        }
-        else
-        {
-            if (proto.Pros.Count > 0)
-            {
-                foreach (var item in proto.Pros)
-                {
-                    var label = new RichTextLabel()
-                    {
-                        Text = "[color=#13f244]- " + Loc.GetString(item) + "[/color]",
-                        StyleClasses = { StyleClass.LowDivider },
-                        Margin = new(4f, 2f),
-                    };
-                    prosConsContainer.AddChild(label);
-                }
-                prosConsContainer.AddChild(new Control() { MinHeight = 8f });
-            }
-
-            if (proto.Special.Count > 0)
-            {
-                foreach (var item in proto.Special)
-                {
-                    var label = new RichTextLabel()
-                    {
-                        Text = "- " + Loc.GetString(item),
-                        StyleClasses = { StyleClass.LowDivider },
-                        Margin = new(4f, 2f),
-                    };
-                    prosConsContainer.AddChild(label);
-                }
-                prosConsContainer.AddChild(new Control() { MinHeight = 8f });
-            }
-
-            if (proto.Cons.Count > 0)
-            {
-                foreach (var item in proto.Cons)
-                {
-                    var label = new RichTextLabel()
-                    {
-                        Text = "[color=#d63636]- " + Loc.GetString(item) + "[/color]",
-                        StyleClasses = { StyleClass.LowDivider },
-                        Margin = new(4f, 2f),
-                    };
-                    prosConsContainer.AddChild(label);
-                }
-                prosConsContainer.AddChild(new Control() { MinHeight = 8f });
-            }
-        }
-
-        // RW edit start: bug-fixes #12
-        AddMechanicsSection(proto);
-        AddLoreSection(proto);
-    }
-
-    private void AddMechanicsSection(SpeciesPrototype proto)
-    {
-        var mechanics = SpeciesDescriptionGenerator
+        var generatedTraits = SpeciesDescriptionGenerator
             .Generate(proto, _proto, _componentFactory)
             .ToList();
 
-        if (mechanics.Count == 0)
-            return;
+        var hasTraits = false;
 
-        var container = CreateSection(Loc.GetString("ui-species-mechanics-title"));
-        DetailInfoContainer.AddChild(container);
-
-        foreach (var line in mechanics)
+        if (proto.Pros.Count > 0)
         {
-            container.AddChild(new RichTextLabel
+            foreach (var item in proto.Pros)
             {
-                Text = "- " + line,
-                StyleClasses = { StyleClass.LowDivider },
-                Margin = new(4f, 2f),
+                AddTraitLabel(prosConsContainer, Loc.GetString(item), SpeciesTraitKind.Pro);
+                hasTraits = true;
+            }
+        }
+
+        foreach (var trait in generatedTraits.Where(t => t.Kind == SpeciesTraitKind.Pro))
+        {
+            AddTraitLabel(prosConsContainer, trait.Text, SpeciesTraitKind.Pro);
+            hasTraits = true;
+        }
+
+        if (proto.Pros.Count > 0 || generatedTraits.Any(t => t.Kind == SpeciesTraitKind.Pro))
+            prosConsContainer.AddChild(new Control() { MinHeight = 8f });
+
+        if (proto.Special.Count > 0)
+        {
+            foreach (var item in proto.Special)
+            {
+                AddTraitLabel(prosConsContainer, Loc.GetString(item), SpeciesTraitKind.Neutral);
+                hasTraits = true;
+            }
+        }
+
+        foreach (var trait in generatedTraits.Where(t => t.Kind == SpeciesTraitKind.Neutral))
+        {
+            AddTraitLabel(prosConsContainer, trait.Text, SpeciesTraitKind.Neutral);
+            hasTraits = true;
+        }
+
+        if (proto.Special.Count > 0 || generatedTraits.Any(t => t.Kind == SpeciesTraitKind.Neutral))
+            prosConsContainer.AddChild(new Control() { MinHeight = 8f });
+
+        if (proto.Cons.Count > 0)
+        {
+            foreach (var item in proto.Cons)
+            {
+                AddTraitLabel(prosConsContainer, Loc.GetString(item), SpeciesTraitKind.Con);
+                hasTraits = true;
+            }
+        }
+
+        foreach (var trait in generatedTraits.Where(t => t.Kind == SpeciesTraitKind.Con))
+        {
+            AddTraitLabel(prosConsContainer, trait.Text, SpeciesTraitKind.Con);
+            hasTraits = true;
+        }
+
+        if (!hasTraits)
+        {
+            prosConsContainer.AddChild(new RichTextLabel
+            {
+                Text = Loc.GetString("ui-species-no-pros-cons"),
+                Margin = new(4f),
             });
         }
+
+        // RW edit start: bug-fixes #12
+        AddLoreSection(proto);
+    }
+
+    private static void AddTraitLabel(BoxContainer container, string text, SpeciesTraitKind kind)
+    {
+        var prefix = kind switch
+        {
+            SpeciesTraitKind.Pro => "[color=#13f244]- ",
+            SpeciesTraitKind.Con => "[color=#d63636]- ",
+            _ => "- ",
+        };
+
+        var suffix = kind == SpeciesTraitKind.Neutral ? "" : "[/color]";
+
+        container.AddChild(new RichTextLabel
+        {
+            Text = prefix + text + suffix,
+            StyleClasses = { StyleClass.LowDivider },
+            Margin = new(4f, 2f),
+        });
     }
 
     private void AddLoreSection(SpeciesPrototype proto)

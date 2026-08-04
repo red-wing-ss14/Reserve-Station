@@ -1,6 +1,5 @@
 # Arachnid
 species-arachnid-pro-web = Не получают дебаффов от передвижения по паутине.
-species-arachnid-special-silk = Могут производить шёлк, взамен голоду.
 species-arachnid-special-stomach = Имеют животный желудок.
 species-arachnid-special-hunger-damage = Получают урон от голода кровотечением и холодом по 0.5 единице в секунду.
 species-arachnid-con-damage = Получают на 50% больше тупого и огненного урона.

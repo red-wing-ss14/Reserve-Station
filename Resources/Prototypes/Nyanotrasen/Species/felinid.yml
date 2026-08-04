@@ -39,8 +39,6 @@
   - species-felinid-special-silent-footsteps
   - species-felinid-special-hairball
   - species-felinid-special-puke-on-grab
-  cons:
-  - species-felinid-con-stamina
   # RW-End
 
 - type: markingPoints

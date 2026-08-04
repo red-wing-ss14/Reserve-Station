@@ -22,8 +22,6 @@
   description: "/ServerInfo/_RW/SpeciesDescriptions/Diona.xml"
   pros:
   - species-diona-pro-asphyxia
-  - species-diona-pro-damage-resist
-  - species-diona-pro-metabolism-slow
   - species-diona-pro-co2-breathe
   - species-diona-pro-infrequent-breathe
   - species-diona-pro-shards-immune
@@ -34,9 +32,7 @@
   - species-diona-special-hunger-bleed
   - species-diona-special-no-shoes
   cons:
-  - species-diona-con-fire-shock-vulnerable
   - species-diona-con-no-run
-  - species-diona-con-flammable
   # RW-End
 
 # RW port: WD Slim body types START

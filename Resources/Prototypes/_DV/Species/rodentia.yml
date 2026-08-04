@@ -27,9 +27,7 @@
   - species-rodentia-special-fit-in-duffel
   - species-rodentia-special-trash-foraging
   cons:
-  - species-rodentia-con-physical-vulnerable
   - species-rodentia-con-mousetraps
-  - species-rodentia-con-hunger-faster
   # RW-End
   # begin Goobstation: port EE height/width sliders
   sizeRatio: 1.1 # i don't know WHY, but disproportionate rodentia always look weird.

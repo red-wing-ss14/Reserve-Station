@@ -20,9 +20,6 @@
   defaultWidth: 1
   maxWidth: 1.10
   pros:
-  - species-demon-pro-fire-resist
-  - species-demon-pro-physical-resist
-  - species-demon-pro-cold-resist
   - species-demon-pro-piercing-unarmed
   cons:
   - species-demon-con-holy-vulnerable

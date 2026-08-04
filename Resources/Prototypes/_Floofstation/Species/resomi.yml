@@ -23,15 +23,8 @@
   # RW-Start
   category: Classic
   description: "/ServerInfo/_RW/SpeciesDescriptions/Resomi.xml"
-  pros:
-  - species-resomi-pro-cold-immunity
   special:
   - species-resomi-special-fit-in-duffel
-  cons:
-  - species-resomi-con-heat-vulnerable
-  - species-resomi-con-blunt-vulnerable
-  - species-resomi-con-heat-sensitivity
-  - species-resomi-con-weak-pull
   # RW-End
   # begin Goobstation: port EE height/width sliders
   # resomi sprites look very wrong when too big or too wide

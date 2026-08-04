@@ -19,16 +19,11 @@
   description: "/ServerInfo/_RW/SpeciesDescriptions/Feroxi.xml"
   pros:
   - species-feroxi-pro-bite-damage
-  - species-feroxi-pro-blunt-resist
-  - species-feroxi-pro-cold-resist
   special:
   - species-feroxi-special-steam-breathe
   - species-feroxi-special-thirst-suffocation
   - species-feroxi-special-salt-dehydration
   - species-feroxi-special-inseparable-lungs
-  cons:
-  - species-feroxi-con-slash-vulnerable
-  - species-feroxi-con-thirst-faster
   # RW-End
 
 # RW port: WD Slim body types START

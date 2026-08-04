@@ -18,18 +18,13 @@
   category: Unusual
   description: "/ServerInfo/_RW/SpeciesDescriptions/Chitinid.xml"
   pros:
-  - species-chitinid-pro-radiation-resist
-  - species-chitinid-pro-damage-resist
   - species-chitinid-pro-radiation-heal
   - species-chitinid-pro-bioluminescence
   special:
   - species-chitinid-special-radioactive-stones
   - species-chitinid-special-bug-blood
   cons:
-  - species-chitinid-con-cold-damage
-  - species-chitinid-con-shock-damage
   - species-chitinid-con-syringes
-  - species-chitinid-con-hunger
   # RW-End
 
 # RW port: WD Slim body types START

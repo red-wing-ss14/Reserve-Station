@@ -18,9 +18,7 @@
   category: Classic
   description: "/ServerInfo/_RW/SpeciesDescriptions/SlimePerson.xml"
   pros:
-  - species-slime-pro-blunt-poison-resist
   - species-slime-pro-vacuum-survival
-  - species-slime-pro-internal-storage
   - species-slime-pro-reagent-digest
   special:
   - species-slime-special-alcohol-sensitivity
@@ -29,7 +27,6 @@
   - species-slime-special-n2-breathe
   - species-slime-special-slime-blood
   cons:
-  - species-slime-con-cold-slash-pierce-vulnerable
   - species-slime-con-water-vulnerable
   - species-slime-con-pressure-vulnerable
   # RW-End
