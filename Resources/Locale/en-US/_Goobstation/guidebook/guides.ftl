@@ -20,6 +20,14 @@ guide-entry-alcoholic-drinks = Alcoholic Drinks
 guide-entry-non-alcoholic-drinks = Non-Alcoholic Drinks
 guide-entry-enchanting = Enchanting
 
+guide-entry-devil = Devil
+guide-entry-devil-clauses = Devil Clauses
+guide-entry-bingle = Bingle
+guide-entry-xenobiology = Xenobiology
+guide-entry-corporate-agents = Corporate Agents
+guide-entry-slasher = The Slasher
+guide-entry-slaughter-demon = Slaughter Demon
+
 # Goob SOP
 # - Main Directories
 guide-entry-sop = Standard Operating Procedure

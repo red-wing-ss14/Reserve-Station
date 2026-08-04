@@ -6,6 +6,8 @@
 species-window-title = Расы
 ui-species-select-button = Выбрать
 ui-species-pros-cons = Плюсы и минусы
+ui-species-mechanics-title = Механика
+ui-species-lore-title = Описание
 ui-species-no-pros-cons = Отсутствуют
 ui-species-list-two = { $first } и { $second }
 ui-species-list-many = { $head } и { $tail }

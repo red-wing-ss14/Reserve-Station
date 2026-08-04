@@ -283,6 +283,10 @@ ui-options-function-editor-rotate-object = Rotate
 ui-options-function-editor-flip-object = Flip
 ui-options-function-editor-copy-object = Copy
 
+ui-options-function-mapping-enable-pick = Mapping: enable pick
+ui-options-function-mapping-enable-decal-pick = Mapping: enable decal pick
+ui-options-function-mapping-enable-delete = Mapping: enable delete
+
 ui-options-function-show-debug-console = Open Console
 ui-options-function-show-debug-monitors = Show Debug Monitors
 ui-options-function-inspect-entity = Inspect Entity

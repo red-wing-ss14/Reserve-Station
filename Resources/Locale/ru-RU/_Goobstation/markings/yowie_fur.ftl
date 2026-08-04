@@ -4,22 +4,22 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-marking-YowieFur = Шерсть тела Йови
-marking-YowieFurHead = Йови, Пушистая голова
-marking-YowieFurHead-yowie_fur_head = Йови, Пушистая голова
-marking-YowieFurChest = Йови, Пушистый торс
-marking-YowieFurChest-yowie_fur_chest = Йови, Пушистый торс
-marking-YowieFurGroin = Йови, Пушистый пах
-marking-YowieFurGroin-yowie_fur_groin = Йови, Пушистый пах
-marking-YowieFurArmRight = Йови, Пушистая правая рука
-marking-YowieFurArmRight-yowie_fur_arm_right = Йови, Пушистая правая рука
-marking-YowieFurArmLeft = Йови, Пушистая левая рука
-marking-YowieFurArmLeft-yowie_fur_arm_left = Йови, Пушистая левая рука
-marking-YowieFurLegRight = Йови, Пушистая правая нога
-marking-YowieFurLegRight-yowie_fur_leg_right = Йови, Пушистая правая нога
-marking-YowieFurLegLeft = Йови, Пушистая левая нога
-marking-YowieFurLegLeft-yowie_fur_leg_left = Йови, Пушистая левая нога
-marking-YowieFurFeetRight = Йови, Пушистая правая стопа
-marking-YowieFurFeetRight-yowie_fur_feet_right = Йови, Пушистая правая стопа
-marking-YowieFurFeetLeft = Йови, Пушистая левая стопа
-marking-YowieFurFeetLeft-yowie_fur_feet_left = Йови, Пушистая левая стопа
+marking-YowieFur = Шерсть тела Йоуи
+marking-YowieFurHead = Йоуи, Пушистая голова
+marking-YowieFurHead-yowie_fur_head = Йоуи, Пушистая голова
+marking-YowieFurChest = Йоуи, Пушистый торс
+marking-YowieFurChest-yowie_fur_chest = Йоуи, Пушистый торс
+marking-YowieFurGroin = Йоуи, Пушистый пах
+marking-YowieFurGroin-yowie_fur_groin = Йоуи, Пушистый пах
+marking-YowieFurArmRight = Йоуи, Пушистая правая рука
+marking-YowieFurArmRight-yowie_fur_arm_right = Йоуи, Пушистая правая рука
+marking-YowieFurArmLeft = Йоуи, Пушистая левая рука
+marking-YowieFurArmLeft-yowie_fur_arm_left = Йоуи, Пушистая левая рука
+marking-YowieFurLegRight = Йоуи, Пушистая правая нога
+marking-YowieFurLegRight-yowie_fur_leg_right = Йоуи, Пушистая правая нога
+marking-YowieFurLegLeft = Йоуи, Пушистая левая нога
+marking-YowieFurLegLeft-yowie_fur_leg_left = Йоуи, Пушистая левая нога
+marking-YowieFurFeetRight = Йоуи, Пушистая правая стопа
+marking-YowieFurFeetRight-yowie_fur_feet_right = Йоуи, Пушистая правая стопа
+marking-YowieFurFeetLeft = Йоуи, Пушистая левая стопа
+marking-YowieFurFeetLeft-yowie_fur_feet_left = Йоуи, Пушистая левая стопа

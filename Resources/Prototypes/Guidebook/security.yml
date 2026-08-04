@@ -27,5 +27,5 @@
 
 - type: guideEntry
   id: SpaceLaw
-  name: guide-entry-spacelaw
+  name: guide-entry-space-law # RW edit: bug-fixes #12
   text: "/ServerInfo/Guidebook/Security/SpaceLaw.xml"

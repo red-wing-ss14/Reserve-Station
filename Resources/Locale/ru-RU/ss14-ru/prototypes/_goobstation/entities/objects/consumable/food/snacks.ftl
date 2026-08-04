@@ -1,6 +1,6 @@
 ent-FoodSnackProteinbar = протеиновый батончик
     .desc = Протеиновые батончики бренда SwoleMAX, гарантированно вызывают чрезмерную уверенность в себе.
-ent-FoodSnackMothdog = моль в тесте
+ent-FoodSnackMothdog = ниан в тесте
     .desc = Он в прайме.
 ent-FoodSnackLunacakeWrapped = запакованный лунакейк
     .desc = Теперь с на 20% меньше регофлита, вызывающего судебные иски!
@@ -69,7 +69,7 @@ ent-FoodPacketVenusTrash = упаковка венерианских лепёш�
     .desc = { ent-FoodPacketLunacakeTrash.desc }
 ent-FoodPacketOortrocksTrash = упаковка оортовских камней
     .desc = { ent-FoodPacketLunacakeTrash.desc }
-ent-FoodSnackMothdogTrash = палочка моли в тесте
+ent-FoodSnackMothdogTrash = палочка ниана в тесте
     .desc = Он больше не в прайме.
 ent-FoodPacketRedalertnutsTrash = упаковка орехов "Красный сигнал"
     .desc = { ent-FoodPacketLunacakeTrash.desc }

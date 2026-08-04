@@ -13,7 +13,7 @@
   <Box>
     <GuideEntityEmbed Entity="MobHuman" Caption="Человек"/>
     <GuideEntityEmbed Entity="MobIPCDummy" Caption="КПБ"/>
-    <GuideEntityEmbed Entity="MobMoth" Caption="Мотылёк"/>
+    <GuideEntityEmbed Entity="MobMoth" Caption="Ниан"/>
     <GuideEntityEmbed Entity="MobOni" Caption="Ёкай"/>
     <GuideEntityEmbed Entity="MobReptilian" Caption="Ящеролюд"/>
     <GuideEntityEmbed Entity="MobResomi" Caption="Резоми"/>
@@ -24,7 +24,7 @@
     <GuideEntityEmbed Entity="MobTajaran" Caption="Таяр"/>
     <GuideEntityEmbed Entity="MobVox" Caption="Вокс"/>
     <GuideEntityEmbed Entity="MobVulpkanin" Caption="Вульпканин"/>
-    <GuideEntityEmbed Entity="MobYowie" Caption="Йови"/>
+    <GuideEntityEmbed Entity="MobYowie" Caption="Йоуи"/>
     <GuideEntityEmbed Entity="MobChitinid" Caption="Хитинид"/>
     <GuideEntityEmbed Entity="MobFeroxi" Caption="Ферокси"/>
   </Box>

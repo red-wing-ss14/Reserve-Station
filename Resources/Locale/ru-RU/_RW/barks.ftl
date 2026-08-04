@@ -58,7 +58,7 @@ bark-name-undertale-temmie = Тэмми (Undertale)
 bark-name-undertale-toriel = Ториэль (Undertale)
 bark-name-undertale-undyne = Андайн (Undertale)
 bark-name-bleat = Блеяние
-bark-name-moth = Моль
+bark-name-moth = Ниан
 bark-name-nomi = Номи
 bark-name-poyo = Пойо
 
@@ -116,7 +116,7 @@ UndertaleTemmie = Тэмми (Undertale)
 UndertaleToriel = Ториэль (Undertale)
 UndertaleUndyne = Андайн (Undertale)
 Bleat = Блеяние
-Moth = Моль
+Moth = Ниан
 Nomi = Номи
 Poyo = Пойо
 Aviu1 = Бесстыжий
