@@ -44,20 +44,24 @@ public sealed class ObraDinnBodySystem : EntitySystem
 
         foreach (var possibleWitness in list)
         {
-            if(!TryComp<MobStateComponent>(possibleWitness, out var mobStateComponent) )
+            // RW: bug-fixes #12 — no duplicate corpse hologram; only humanoid bystanders.
+            if (possibleWitness == ent.Owner)
                 continue;
 
-            MarkingSet markings = new MarkingSet();
-            // copy the markings to make sure the markings e.g. hair and beard at the time of death is stored
-            if (TryComp<HumanoidAppearanceComponent>(possibleWitness, out var appearanceComponent))
-                markings = new MarkingSet(appearanceComponent.MarkingSet);
+            if (!TryComp<HumanoidAppearanceComponent>(possibleWitness, out var appearanceComponent))
+                continue;
 
-            ent.Comp.Witnesses.Add( new ObraDinnWitness( possibleWitness,
+            if (!TryComp<MobStateComponent>(possibleWitness, out var mobStateComponent))
+                continue;
+
+            var markings = new MarkingSet(appearanceComponent.MarkingSet);
+
+            ent.Comp.Witnesses.Add(new ObraDinnWitness(
+                possibleWitness,
                 Transform(possibleWitness).Coordinates,
-                Identity.Name(possibleWitness,EntityManager,ent.Owner),
+                Identity.Name(possibleWitness, EntityManager, ent.Owner),
                 mobStateComponent.CurrentState,
-                markings
-                ));
+                markings));
         }
         Dirty(ent);
     }

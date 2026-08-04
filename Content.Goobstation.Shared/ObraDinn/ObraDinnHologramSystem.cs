@@ -19,8 +19,10 @@ using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Nutrition.AnimalHusbandry;
 using Content.Shared.Nutrition.Components;
+using Content.Shared.Kitchen;
 using Content.Shared.Speech;
 using Content.Shared.Speech.Components;
+using Content.Shared.Verbs;
 using Content.Shared.SSDIndicator;
 using Content.Shared.Storage.Components;
 using Content.Shared.Strip.Components;
@@ -54,6 +56,7 @@ public sealed class ObraDinnHologramSystem : EntitySystem
         SubscribeLocalEvent<ObraDinnHologramComponent, DragDropTargetEvent>(OnDragDropTarget);
         SubscribeLocalEvent<ObraDinnHologramComponent, CanDropTargetEvent>(OnCanDropTarget);
         SubscribeLocalEvent<ObraDinnHologramComponent, CanDropDraggedEvent>(OnCanDropDragged);
+        SubscribeLocalEvent<ObraDinnHologramComponent, GetVerbsEvent<InteractionVerb>>(OnGetInteractionVerbs);
         // RW end
     }
 
@@ -94,13 +97,13 @@ public sealed class ObraDinnHologramSystem : EntitySystem
         RemCompDeferred<MobMoverComponent>(ent);
         RemCompDeferred<CarriableComponent>(ent);
         RemCompDeferred<HasJobIconsComponent>(ent);
+        // RW start: bug-fixes #12 — RemComp (not deferred) so SharpSystem cannot butcher before end-of-tick cleanup.
+        RemComp<ButcherableComponent>(ent);
+        RemComp<BloodstreamComponent>(ent);
+        RemComp<BodyComponent>(ent);
+        RemComp<SolutionContainerManagerComponent>(ent);
         RemCompDeferred<MobStateComponent>(ent);
-        // RW start
-        // TODO: Revert when Goobstation fixes Obra Dinn holograms inheriting physical mob components (butchering, breeding, buckling, bloodstream, etc.).
-        RemCompDeferred<BloodstreamComponent>(ent);
-        RemCompDeferred<BodyComponent>(ent);
         RemCompDeferred<BuckleComponent>(ent);
-        RemCompDeferred<ButcherableComponent>(ent);
         RemCompDeferred<ClimbableComponent>(ent);
         RemCompDeferred<ClimbingComponent>(ent);
         RemCompDeferred<CuffableComponent>(ent);
@@ -108,7 +111,6 @@ public sealed class ObraDinnHologramSystem : EntitySystem
         RemCompDeferred<InventoryComponent>(ent);
         RemCompDeferred<ReproductiveComponent>(ent);
         RemCompDeferred<ReproductivePartnerComponent>(ent);
-        RemCompDeferred<SolutionContainerManagerComponent>(ent);
         RemCompDeferred<StrapComponent>(ent);
         // RW end
     }
@@ -156,6 +158,12 @@ public sealed class ObraDinnHologramSystem : EntitySystem
     {
         args.CanDrop = false;
         args.Handled = true;
+    }
+
+    private void OnGetInteractionVerbs(Entity<ObraDinnHologramComponent> ent, ref GetVerbsEvent<InteractionVerb> args)
+    {
+        var butcherText = Loc.GetString("butcherable-verb-name");
+        args.Verbs.RemoveWhere(verb => verb.Text == butcherText);
     }
     // RW end
 }
