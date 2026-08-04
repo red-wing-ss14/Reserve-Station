@@ -44,10 +44,6 @@ public sealed class ObraDinnBodySystem : EntitySystem
 
         foreach (var possibleWitness in list)
         {
-            // RW: bug-fixes #12 — no duplicate corpse hologram; only humanoid bystanders.
-            if (possibleWitness == ent.Owner)
-                continue;
-
             if (!TryComp<HumanoidAppearanceComponent>(possibleWitness, out var appearanceComponent))
                 continue;
 

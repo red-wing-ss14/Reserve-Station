@@ -2,6 +2,7 @@ using Content.Shared._DV.Carrying;
 using Content.Shared._Goobstation.Wizard.Components;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared.Body.Components;
+using Content.Shared.Body.Systems;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Climbing.Components;
@@ -40,6 +41,7 @@ public sealed class ObraDinnHologramSystem : EntitySystem
 {
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedBodySystem _body = default!;
 
     public override void Initialize()
     {
@@ -85,7 +87,13 @@ public sealed class ObraDinnHologramSystem : EntitySystem
 
         // comps we dont want the hologram to have
         RemCompDeferred<PullableComponent>(ent);
-        RemCompDeferred<WoundableComponent>(ent);
+        RemComp<WoundableComponent>(ent);
+        if (TryComp<BodyComponent>(ent, out var body) && body.RootContainer.ContainedEntity is { } rootPart)
+        {
+            foreach (var (partId, _) in _body.GetBodyPartChildren(rootPart))
+                RemComp<WoundableComponent>(partId);
+        }
+
         RemCompDeferred<ActorComponent>(ent);
         RemCompDeferred<MindContainerComponent>(ent);
         RemCompDeferred<FixturesComponent>(ent);
@@ -97,11 +105,11 @@ public sealed class ObraDinnHologramSystem : EntitySystem
         RemCompDeferred<MobMoverComponent>(ent);
         RemCompDeferred<CarriableComponent>(ent);
         RemCompDeferred<HasJobIconsComponent>(ent);
-        // RW start: bug-fixes #12 — RemComp (not deferred) so SharpSystem cannot butcher before end-of-tick cleanup.
+        // RW start: bug-fixes #12 — RemComp Butcherable immediately; Body deferred to avoid WoundableVisuals cascade.
         RemComp<ButcherableComponent>(ent);
         RemComp<BloodstreamComponent>(ent);
-        RemComp<BodyComponent>(ent);
         RemComp<SolutionContainerManagerComponent>(ent);
+        RemCompDeferred<BodyComponent>(ent);
         RemCompDeferred<MobStateComponent>(ent);
         RemCompDeferred<BuckleComponent>(ent);
         RemCompDeferred<ClimbableComponent>(ent);
