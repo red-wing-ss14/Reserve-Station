@@ -1,6 +1,6 @@
 ent-FoodSnackProteinbar = протеиновый батончик
     .desc = Протеиновые батончики бренда SwoleMAX, гарантированно вызывают чрезмерную уверенность в себе.
-ent-FoodSnackMothdog = ниан в тесте
+ent-FoodSnackMothdog = моль в тесте
     .desc = Он в прайме.
 ent-FoodSnackLunacakeWrapped = запакованный лунакейк
     .desc = Теперь с на 20% меньше регофлита, вызывающего судебные иски!

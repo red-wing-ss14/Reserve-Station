@@ -167,6 +167,9 @@ namespace Content.Shared.Preferences
         [DataField] // Goob Station - Barks
         public ProtoId<BarkPrototype> BarkVoice { get; set; } = SharedHumanoidAppearanceSystem.DefaultBarkVoice; // Goob Station - Barks
 
+        [DataField]
+        public BarkPercentageApplyData BarkSettings { get; set; } = BarkPercentageApplyData.Default;
+
         [DataField] // RW - TTS
         public ProtoId<TTSVoicePrototype> Voice { get; set; } = string.Empty; // RW - TTS
 
@@ -325,6 +328,7 @@ namespace Content.Shared.Preferences
                 other.BarkVoice, // Goob Station - Barks
                 other.Voice) // RW - TTS
         {
+            BarkSettings = other.BarkSettings.Clone();
         }
 
         /// <summary>
@@ -520,6 +524,11 @@ namespace Content.Shared.Preferences
         {
             return new(this) { BarkVoice = barkVoice };
         }
+
+        public HumanoidCharacterProfile WithBarkSettings(BarkPercentageApplyData barkSettings)
+        {
+            return new(this) { BarkSettings = barkSettings.Clone() };
+        }
         // Goob Station - Barks End
 
         // RW - TTS Start
@@ -692,6 +701,11 @@ namespace Content.Shared.Preferences
             if (Height != other.Height) return false; // Goobstation: port EE height/width sliders
             if (Width != other.Width) return false; // Goobstation: port EE height/width sliders
             if (BarkVoice != other.BarkVoice) return false; // Goob Station - Barks
+            if (BarkSettings.Pause != other.BarkSettings.Pause
+                || BarkSettings.Pitch != other.BarkSettings.Pitch
+                || BarkSettings.PitchVariance != other.BarkSettings.PitchVariance
+                || BarkSettings.Volume != other.BarkSettings.Volume)
+                return false;
             if (Voice != other.Voice) return false; // RW - TTS
             if (PreferenceUnavailable != other.PreferenceUnavailable) return false;
             if (SpawnPriority != other.SpawnPriority) return false;
@@ -1121,6 +1135,10 @@ namespace Content.Shared.Preferences
             hashCode.Add((int) Gender);
             hashCode.Add(Appearance);
             hashCode.Add(BarkVoice); // Goob Station - Barks
+            hashCode.Add(BarkSettings.Pause);
+            hashCode.Add(BarkSettings.Pitch);
+            hashCode.Add(BarkSettings.PitchVariance);
+            hashCode.Add(BarkSettings.Volume);
             hashCode.Add(Voice); // RW - TTS
             hashCode.Add((int) SpawnPriority);
             hashCode.Add((int) PreferenceUnavailable);

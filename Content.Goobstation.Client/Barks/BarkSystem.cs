@@ -58,7 +58,7 @@ public sealed class BarkSystem : EntitySystem
         {
             message[i] = _random.Pick(Characters);
         }
-        PlayBark(null, new string(message), false, proto);
+        PlayBark(null, new string(message), false, proto, ev.BarkSettings);
     }
 
     private void OnPlayBark(PlayBarkEvent ev)
@@ -72,10 +72,10 @@ public sealed class BarkSystem : EntitySystem
             || !_prototypeManager.TryIndex<BarkPrototype>(comp.VoicePrototypeId, out var proto))
             return;
 
-        PlayBark(sourceEntity, ev.Message, ev.Whisper, proto);
+        PlayBark(sourceEntity, ev.Message, ev.Whisper, proto, comp.BarkSettings);
     }
 
-    private void PlayBark(EntityUid? source, string message, bool whisper, BarkPrototype proto)
+    private void PlayBark(EntityUid? source, string message, bool whisper, BarkPrototype proto, BarkPercentageApplyData settings)
     {
         if (proto.SoundCollection is null)
             return;
@@ -98,7 +98,9 @@ public sealed class BarkSystem : EntitySystem
 
         var messageLength = message.Length;
         var totalDuration = Math.Max(0.1f, messageLength * 0.05f);
-        var soundInterval = 0.08f / proto.Frequency;
+        var pause = BarkSettingsUtility.GetPause(settings);
+        const float defaultPause = 0.085f;
+        var soundInterval = 0.08f / proto.Frequency * (pause / defaultPause);
         var soundCount = (int) Math.Max(1, totalDuration / soundInterval);
 
         var activeBark = new ActiveBark
@@ -107,6 +109,7 @@ public sealed class BarkSystem : EntitySystem
             IsPreview = source == null,
             Message = message,
             Prototype = proto,
+            Settings = settings,
             Volume = volume,
             TotalSounds = soundCount,
             SoundInterval = soundInterval,
@@ -151,6 +154,13 @@ public sealed class BarkSystem : EntitySystem
         var sound = _sharedAudio.ResolveSound(proto.SoundCollection!);
         var audioParams = proto.SoundCollection!.Params;
 
+        var pitchMult = BarkSettingsUtility.GetPitch(bark.Settings);
+        var pitchVariance = BarkSettingsUtility.GetPitchVariance(bark.Settings);
+        var minPitch = proto.MinPitch * pitchMult - pitchVariance;
+        var maxPitch = proto.MaxPitch * pitchMult + pitchVariance;
+        minPitch = MathF.Max(0.1f, minPitch);
+        maxPitch = MathF.Max(minPitch, maxPitch);
+
         if (proto.Predictable)
         {
             var hashCode = character.GetHashCode();
@@ -162,8 +172,8 @@ public sealed class BarkSystem : EntitySystem
                 sound = new ResolvedCollectionSpecifier(collection.Collection, index);
             }
 
-            var minPitchInt = (int) (proto.MinPitch * 100);
-            var maxPitchInt = (int) (proto.MaxPitch * 100);
+            var minPitchInt = (int) (minPitch * 100);
+            var maxPitchInt = (int) (maxPitch * 100);
             var pitchRangeInt = maxPitchInt - minPitchInt;
             if (pitchRangeInt != 0)
             {
@@ -173,12 +183,12 @@ public sealed class BarkSystem : EntitySystem
             }
             else
             {
-                audioParams = audioParams.WithPitchScale(proto.MinPitch);
+                audioParams = audioParams.WithPitchScale(minPitch);
             }
         }
         else
         {
-            audioParams = audioParams.WithPitchScale(_random.NextFloat(proto.MinPitch, proto.MaxPitch));
+            audioParams = audioParams.WithPitchScale(_random.NextFloat(minPitch, maxPitch));
         }
 
         audioParams = audioParams.WithVolume(bark.Volume);
@@ -217,6 +227,7 @@ public sealed class BarkSystem : EntitySystem
         public bool IsPreview;
         public string Message = string.Empty;
         public BarkPrototype Prototype = default!;
+        public BarkPercentageApplyData Settings = BarkPercentageApplyData.Default;
         public float Volume;
 
         public int TotalSounds;

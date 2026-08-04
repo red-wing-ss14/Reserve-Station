@@ -1302,6 +1302,18 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("bark_voice");
 
+                    b.Property<byte>("BarkPause")
+                        .HasColumnType("smallint")
+                        .HasColumnName("bark_pause");
+
+                    b.Property<byte>("BarkPitch")
+                        .HasColumnType("smallint")
+                        .HasColumnName("bark_pitch");
+
+                    b.Property<byte>("BarkPitchVariance")
+                        .HasColumnType("smallint")
+                        .HasColumnName("bark_pitch_variance");
+
                     b.Property<string>("BodyType")
                         .IsRequired()
                         .HasColumnType("text")
