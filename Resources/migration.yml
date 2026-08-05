@@ -38,39 +38,6 @@ LGBTQFlag: RandomPosterLegit
 
 DresserCaptainFilled: CaptainDrobe
 
-LGBTQHandyFlag: BlankHandyFlag
-ClothingNeckLGBTPin: ClothingNeckAutismPin
-ClothingNeckAromanticPin: ClothingNeckAutismPin
-ClothingNeckAsexualPin: ClothingNeckAutismPin
-ClothingNeckBisexualPin: ClothingNeckAutismPin
-ClothingNeckGayPin: ClothingNeckAutismPin
-ClothingNeckIntersexPin: ClothingNeckAutismPin
-ClothingNeckLesbianPin: ClothingNeckAutismPin
-ClothingNeckNonBinaryPin: ClothingNeckAutismPin
-ClothingNeckPansexualPin: ClothingNeckAutismPin
-ClothingNeckOmnisexualPin: ClothingNeckAutismPin
-ClothingNeckTransPin: ClothingNeckAutismPin
-ClothingNeckScarfStripedAce: ClothingNeckScarfStripedBlack
-ClothingNeckScarfStripedAro: ClothingNeckScarfStripedBlack
-ClothingNeckScarfStripedBiSexual: ClothingNeckScarfStripedBlack
-ClothingNeckScarfStripedGay: ClothingNeckScarfStripedBlack
-ClothingNeckScarfStripedInter: ClothingNeckScarfStripedBlack
-ClothingNeckScarfStripedLesbian: ClothingNeckScarfStripedBlack
-ClothingNeckScarfStripedPan: ClothingNeckScarfStripedBlack
-ClothingNeckScarfStripedNonBinary: ClothingNeckScarfStripedBlack
-ClothingNeckScarfStripedRainbow: ClothingNeckScarfStripedBlack
-ClothingNeckScarfStripedTrans: ClothingNeckScarfStripedBlack
-ClothingNeckCloakAce: null
-ClothingNeckCloakAro: null
-ClothingNeckCloakBi: null
-ClothingNeckCloakIntersex: null
-ClothingNeckCloakLesbian: null
-ClothingNeckCloakTrans: null
-ClothingNeckCloakGay: null
-ClothingNeckCloakEnby: null
-ClothingNeckCloakPan: null
-VendingMachinePride: RandomVending
-
 DoorXenoResin: ResinDoor
 DoorXenoResinThick: ResinDoor
 XenoWeeds: ResinWeed

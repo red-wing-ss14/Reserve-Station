@@ -2,7 +2,6 @@
 
 - type: entity
   id: DresserCaptainFilled
-  categories: [ HideSpawnMenu ] # RW
   parent: Dresser
   suffix: Filled, Captain
   components:

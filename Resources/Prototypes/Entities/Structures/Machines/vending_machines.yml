@@ -2665,12 +2665,11 @@
 #  - type: AccessReader # RW-Edit
 #    access: [["Kitchen"], ["Theatre"]]
 
-# Pride Vending Machine | No, fuck you
+# Pride Vending Machine
 
 - type: entity
   parent: VendingMachine
   id: VendingMachinePride
-  categories: [ HideSpawnMenu ] # RW
   name: Pride-O-Mat
   description: A vending machine containing pride.
   components:

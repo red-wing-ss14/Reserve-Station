@@ -60,23 +60,9 @@
   components:
   - type: StorageFill
     contents:
-      # RW-Start
-      - id: ClothingHandsGlovesCatPawsBrown
-        prob: 0.005
+      - id: ClothingNeckLGBTPin
+        prob: 0.06
         orGroup: dressermainloot
-      - id: ClothingHandsGlovesCatPawsBlack
-        prob: 0.005
-        orGroup: dressermainloot
-      - id: ClothingHandsGlovesCatPawsBlackWhite
-        prob: 0.005
-        orGroup: dressermainloot
-      - id: ClothingHandsGlovesCatPawsWhite
-        prob: 0.005
-        orGroup: dressermainloot
-      # RW-End
-#      - id: ClothingNeckLGBTPin # RW-Edit: Removed
-#        prob: 0.06
-#        orGroup: dressermainloot
       - id: ClothingUniformJumpsuitColorGrey
         prob: 0.06
         orGroup: dressermainloot
