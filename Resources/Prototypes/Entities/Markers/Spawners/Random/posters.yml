@@ -112,14 +112,7 @@
       - PosterContrabandGoobChuckler # Goobstation
       - PosterContrabandGoobYakub # Goobstation
       - PosterContrabandGoobRedFOSS # Goobstation
-    chance: 0.99 # RW-Edit: 1 > 0.99
-    # RW-Start
-    rarePrototypes:
-      - FlagCoder
-      - FlagSyndicate
-      - FlagInteQ
-    rareChance: 0.01
-    # RW-End
+    chance: 1
 
 - type: entity
   parent: MarkerBase
