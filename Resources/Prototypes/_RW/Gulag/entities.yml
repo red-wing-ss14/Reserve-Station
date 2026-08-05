@@ -23,13 +23,9 @@
   name: shock collar
   components:
     - type: Sprite
-      sprite: _Amour/Clothing/Neck/lewd_neck.rsi
-      state: shockcollar
+      sprite: Clothing/Neck/Scarfs/PrideScarfs/aro.rsi
     - type: Clothing
-      sprite: _Amour/Clothing/Neck/lewd_neck.rsi
-      clothingVisuals:
-        neck:
-        - state: shockcollar-equipped
+      sprite: Clothing/Neck/Scarfs/PrideScarfs/aro.rsi
 
 - type: entity
   parent: CollarShock

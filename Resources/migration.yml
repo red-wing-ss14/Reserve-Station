@@ -32,9 +32,8 @@ Shower: null
 
 AntiPsychicKnife: null
 
-NTFlag: FlagNanoTrasen
-SyndieFlag: FlagSyndicate
-LGBTQFlag: RandomPosterLegit
+FlagNanoTrasen: NTFlag
+FlagSyndicate: SyndieFlag
 
 DresserCaptainFilled: CaptainDrobe
 

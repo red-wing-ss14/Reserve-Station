@@ -155,6 +155,10 @@
 - type: entity
   parent: ClothingScarfBase
   id: ClothingNeckScarfStripedAro
+  name: striped aromantic scarf
+  description: A stylish striped aromantic scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks.
+  components:
+  - type: Sprite
     sprite: Clothing/Neck/Scarfs/PrideScarfs/aro.rsi
   - type: Clothing
     sprite: Clothing/Neck/Scarfs/PrideScarfs/aro.rsi
