@@ -25,12 +25,14 @@ public sealed partial class DefaultGameScreen : InGameScreen
         SetAnchorAndMarginPreset(Chat, LayoutPreset.TopRight, margin: 10);
         SetAnchorAndMarginPreset(Alerts, LayoutPreset.TopRight, margin: 10);
         SetAnchorAndMarginPreset(Targeting, LayoutPreset.BottomRight, margin: 5); // Shitmed Change
+        SetGrowHorizontal(Alerts, GrowDirection.Begin);  // RW edit: Fix alert icons positioning
 
         Chat.OnResized += ChatOnResized;
         Chat.OnChatResizeFinish += ChatOnResizeFinish;
         MainViewport.OnResized += ResizeActionContainer;
         MainViewport.OnResized += ResizeAlertsContainer;
         Inventory.OnResized += ResizeActionContainer;
+        Targeting.OnResized += ResizeAlertsContainer;  // RW edit: Fix alert icons positioning
     }
 
     private void ResizeActionContainer()
@@ -56,6 +58,7 @@ public sealed partial class DefaultGameScreen : InGameScreen
     {
         var marginBottom = Chat.GetValue<float>(MarginBottomProperty);
         SetMarginTop(Alerts, marginBottom);
+        ResizeAlertsContainer();  // RW edit: Fix alert icons positioning
     }
 
     public override ChatBox ChatBox => Chat;
