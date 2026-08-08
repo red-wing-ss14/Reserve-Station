@@ -40,6 +40,9 @@ public sealed partial class HumanoidAppearanceComponent : Component
     [DataField] // Goob Station - Barks
     public ProtoId<BarkPrototype> BarkVoice { get; set; } = SharedHumanoidAppearanceSystem.DefaultBarkVoice; // Goob Station - Barks
 
+    [DataField, AutoNetworkedField]
+    public BarkPercentageApplyData BarkSettings = BarkPercentageApplyData.Default; // RW edit: bug-fixes #12
+
     /// <summary>
     ///     Any custom base layers this humanoid might have. See:
     ///     limb transplants (potentially), robotic arms, etc.

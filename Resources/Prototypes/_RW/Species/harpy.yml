@@ -3,6 +3,23 @@
   name: body-slim
   sexRestrictions:
   - Male
+  markingsDisplacement:
+    Chest: &harpySlimMarkingTorso
+      sizeMaps:
+        32:
+          sprite: _RW/Mobs/Species/Harpy/displacement.rsi
+          state: jumpsuit-slim
+    LLeg: *harpySlimMarkingTorso
+    RLeg: *harpySlimMarkingTorso
+    Head: *harpySlimMarkingTorso
+    Hair: *harpySlimMarkingTorso
+    FacialHair: *harpySlimMarkingTorso
+    LArm: *harpySlimMarkingTorso
+    RArm: *harpySlimMarkingTorso
+    LHand: *harpySlimMarkingTorso
+    RHand: *harpySlimMarkingTorso
+    LFoot: *harpySlimMarkingTorso
+    RFoot: *harpySlimMarkingTorso
   sprites:
     Head: MobHarpyHeadSlim
     Face: MobHumanoidAnyMarking

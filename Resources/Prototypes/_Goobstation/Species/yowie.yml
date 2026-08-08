@@ -20,11 +20,6 @@
   category: Unusual
   description: "/ServerInfo/_RW/SpeciesDescriptions/Yowie.xml"
   pros:
-  - species-yowie-pro-poison-immune
-  - species-yowie-pro-radiation-resist
-  - species-yowie-pro-physical-resist
-  - species-yowie-pro-bleed-cold-resist
-  - species-yowie-pro-surgery-poison-immune
   - species-yowie-pro-unarmed-damage
   - species-yowie-pro-one-hand-two-handed
   special:

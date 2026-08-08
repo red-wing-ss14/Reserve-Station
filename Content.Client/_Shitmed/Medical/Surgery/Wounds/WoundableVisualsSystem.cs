@@ -111,14 +111,14 @@ public sealed class WoundableVisualsSystem : VisualizerSystem<WoundableVisualsCo
     private void OnWoundableRemoved(Entity<WoundableVisualsComponent> ent, ref BodyPartRemovedEvent args)
     {
         var body = args.Part.Comp.Body;
-        if (body is null)
+        if (body is null || !TryComp<SpriteComponent>(body.Value, out var bodySprite)) // RW edit: bug-fixes #12
             return;
 
         foreach (var part in _body.GetBodyPartChildren(ent))
         {
             if (!TryComp<WoundableVisualsComponent>(part.Id, out var woundableVisuals))
                 continue;
-            RemoveWoundableLayers(body.Value, woundableVisuals);
+            RemoveWoundableLayers((body.Value, bodySprite), woundableVisuals); // RW edit: bug-fixes #12
             if (TryComp(ent, out SpriteComponent? pieceSprite))
                 UpdateWoundableVisuals((part.Id, woundableVisuals), (ent, pieceSprite));
         }

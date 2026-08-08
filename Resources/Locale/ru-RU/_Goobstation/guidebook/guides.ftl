@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+﻿# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2024 Theapug <159912420+Teapug@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
@@ -18,6 +18,15 @@ guide-entry-plumbing = Трубы
 guide-entry-alcoholic-drinks = Алкоголь
 guide-entry-non-alcoholic-drinks = Безалкоголь
 guide-entry-enchanting = Зачарования
+
+guide-entry-devil = Дьявол
+guide-entry-devil-clauses = Клятвы дьявола
+guide-entry-bingle = Бингл
+guide-entry-xenobiology = Ксенобиология
+guide-entry-corporate-agents = Корпоративные агенты
+guide-entry-slasher = Мясник
+guide-entry-slaughter-demon = Демон резни
+
 # Goob SOP
 # - Основные разделы
 # guide-entry-sop = СОП (Стандартные Операционные Процедуры)

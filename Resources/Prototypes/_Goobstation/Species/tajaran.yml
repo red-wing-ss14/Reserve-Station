@@ -19,15 +19,10 @@
   category: Classic
   description: "/ServerInfo/_RW/SpeciesDescriptions/Tajaran.xml"
   pros:
-  - species-tajaran-pro-cold-resist
   - species-tajaran-pro-fall-damage
   special:
   - species-tajaran-special-silent-footsteps
   - species-tajaran-special-fit-in-duffel
-  cons:
-  - species-tajaran-con-physical-vulnerable
-  - species-tajaran-con-fire-vulnerable
-  - species-tajaran-con-stamina
   # RW-End
   # begin Goobstation: port EE height/width sliders
   minHeight: 0.85

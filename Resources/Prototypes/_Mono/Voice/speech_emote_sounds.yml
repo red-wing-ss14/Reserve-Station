@@ -26,8 +26,6 @@
       collection: HydrakinWhistle
     DefaultDeathgasp:
       collection: HydrakinDeathgasp
-    Belch: # Frontier
-      collection: Belch # Frontier
 
 - type: speechSounds
   id: Hydrakin

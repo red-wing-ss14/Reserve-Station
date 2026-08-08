@@ -28,6 +28,9 @@ guide-entry-antagonist = Антагонисты
 guide-entry-antagonist-cortical-borer = Кортикальный Паразит
 guide-entry-antagonist-morph = Морф
 
+guide-entry-conditions = Условия раскрытия
+guide-entry-orion-rnd-machines = Научное оборудование
+
 guide-entry-sop = Нормативные Рабочие Процедуры
 
 guide-entry-sop-alerts = Уровень угрозы

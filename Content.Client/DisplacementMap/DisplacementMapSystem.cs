@@ -83,7 +83,7 @@ public sealed class DisplacementMapSystem : EntitySystem
         {
             if (actualRSI.Size.X != actualRSI.Size.Y)
             {
-                Log.Warning(
+                Log.Debug(
                     $"DISPLACEMENT: {displacementKey} has a resolution that is not 1:1, things can look crooked");
             }
 

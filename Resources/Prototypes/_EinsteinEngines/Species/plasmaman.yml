@@ -23,18 +23,13 @@
   category: Unusual
   description: "/ServerInfo/_RW/SpeciesDescriptions/Plasmaman.xml"
   pros:
-  - species-plasmaman-pro-piercing-resist
-  - species-plasmaman-pro-poison-resist
-  - species-plasmaman-pro-slash-resist
   - species-plasmaman-pro-no-food-water
-  - species-plasmaman-pro-radiation-cold-immune
   - species-plasmaman-pro-no-blood
   - species-plasmaman-pro-unarmed-damage
   special:
   - species-plasmaman-special-plasma-breathe
   - species-plasmaman-special-plasma-milk-heal
   cons:
-  - species-plasmaman-con-heat-vulnerable
   - species-plasmaman-con-ignite-without-suit
   - species-plasmaman-con-unarmed-self-burn
   # RW-End

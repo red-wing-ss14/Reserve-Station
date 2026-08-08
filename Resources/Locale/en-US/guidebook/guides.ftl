@@ -140,6 +140,7 @@ guide-entry-security = Security
 guide-entry-forensics = Forensics
 guide-entry-defusal = Large Bomb Defusal
 guide-entry-criminal-records = Criminal Records
+guide-entry-ingredient-recipes = Ingredients
 guide-entry-command = Command
 guide-entry-service = Service
 

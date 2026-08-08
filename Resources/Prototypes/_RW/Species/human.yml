@@ -3,6 +3,31 @@
   name: body-slim
   sexRestrictions:
   - Male
+  markingsDisplacement:
+    Chest: &humanSlimMarkingTorso
+      sizeMaps:
+        32:
+          sprite: _RW/Mobs/Species/Human/displacement.rsi
+          state: jumpsuit
+    LLeg: *humanSlimMarkingTorso
+    RLeg: *humanSlimMarkingTorso
+    Head: *humanSlimMarkingTorso
+    Hair: *humanSlimMarkingTorso
+    FacialHair: *humanSlimMarkingTorso
+    LArm: &humanSlimMarkingGloves
+      sizeMaps:
+        32:
+          sprite: _RW/Mobs/Species/Human/displacement.rsi
+          state: gloves
+    RArm: *humanSlimMarkingGloves
+    LHand: *humanSlimMarkingGloves
+    RHand: *humanSlimMarkingGloves
+    LFoot: &humanSlimMarkingShoes
+      sizeMaps:
+        32:
+          sprite: _RW/Mobs/Species/Human/displacement.rsi
+          state: shoes
+    RFoot: *humanSlimMarkingShoes
   sprites:
     Head: MobHumanSlimHead
     Hair: MobHumanoidAnyMarking

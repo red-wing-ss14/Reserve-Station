@@ -20,11 +20,7 @@
   category: Unusual
   description: "/ServerInfo/_RW/SpeciesDescriptions/Oni.xml"
   pros:
-  - species-oni-pro-damage-resist
   - species-oni-pro-melee-damage
-  - species-oni-pro-strong-pull
-  - species-oni-pro-cold-resist
-  - species-oni-pro-fire-resist
   special:
   - species-oni-special-large-target
   - species-oni-special-raw-food
