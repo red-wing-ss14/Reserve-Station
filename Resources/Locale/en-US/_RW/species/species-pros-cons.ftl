@@ -1,6 +1,5 @@
 # Arachnid
 species-arachnid-pro-web = Do not receive movement debuffs from cobwebs.
-species-arachnid-special-silk = Can produce silk in exchange for hunger.
 species-arachnid-special-stomach = Has an animal stomach.
 species-arachnid-special-hunger-damage = Takes 0.5 bleeding and cold damage per second when starving.
 species-arachnid-con-damage = Takes 50% more blunt and fire damage.

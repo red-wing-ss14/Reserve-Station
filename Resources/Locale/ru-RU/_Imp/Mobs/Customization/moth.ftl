@@ -1,8 +1,8 @@
 # Chest
 
-marking-ChestChimeraFemaleMoth = Грудь моли (Химера)
+marking-ChestChimeraFemaleMoth = Грудь ниана (Химера)
 marking-ChestChimeraFemaleMoth-chimeraf = Химера
-marking-ChestChimeraMaleMoth = Грудь моли (Химера)
+marking-ChestChimeraMaleMoth = Грудь ниана (Химера)
 marking-ChestChimeraMaleMoth-chimeram = Химера
 marking-ChestTwistingLeftFemaleMoth = Шрам (Крученый шрам слева)
 marking-ChestTwistingLeftFemaleMoth-twistingleftf = Крученый шрам (слева)
@@ -16,7 +16,7 @@ marking-ChestStarMoth = Шрам (Звезда)
 marking-ChestStarMoth-star = Звездный шрам
 marking-MothBodyClaw = Шрам (Когти)
 marking-MothBodyClaw-claw = Когтистые шрамы
-marking-MothChestGlow = Биолюминесценция моли (Грудь)
+marking-MothChestGlow = Биолюминесценция ниана (Грудь)
 marking-MothChestGlow-glow = Свет
 marking-TorsoIncisionMoth = Шрам (Разрез)
 marking-TorsoIncisionMoth-incision = Разрез на туловище
@@ -27,7 +27,7 @@ marking-BadmoltMoth = Шрам (Плохая линька)
 marking-BadmoltMoth-badmolt = Плохая линька
 marking-EyebagsMoth = Глаза (Мешки под глазами)
 marking-EyebagsMoth-eyebags = Мешки под глазами
-marking-HeadChimeraMoth = Голова моли (Химера)
+marking-HeadChimeraMoth = Голова ниана (Химера)
 marking-HeadChimeraMoth-chimera = Химера
 marking-HeadTwistingMoth = Шрам (Крученый шрам)
 marking-HeadTwistingMoth-twisting = Крученый шрам
@@ -37,7 +37,7 @@ marking-MothBurnRight = Шрам ожога (Справа)
 marking-MothBurnRight-burnright = Шрам ожога (Справа)
 marking-MothFaceClaw = Когтистые шрамы (Лицо)
 marking-MothFaceClaw-claw = Когтистые шрамы (Лицо)
-marking-MothHeadGlow = Биолюминесценция моли (Голова)
+marking-MothHeadGlow = Биолюминесценция ниана (Голова)
 marking-MothHeadGlow-glow = Свет
 marking-MothSlashLeft = Шрам (Когти слева)
 marking-MothSlashLeft-slashleft = Когтистые шрамы (Слева)
@@ -72,7 +72,7 @@ marking-TwistingArmRightMoth-twisting = Крученый шрам (Справа)
 
 # LArm
 
-marking-ChimeraArmLeftMoth = Левая рука моли (Химера)
+marking-ChimeraArmLeftMoth = Левая рука ниана (Химера)
 marking-ChimeraArmLeftMoth-chimera = Химера (Рука)
 marking-ProstheticArmLeftMoth = Протез (Левая рука)
 marking-ProstheticArmLeftMoth-prosthetic = Протез (Левая рука)
@@ -88,7 +88,7 @@ marking-LegTwistingRightMoth-twisting = Крученый шрам (Правая 
 
 # LLeg
 
-marking-LegChimeraLeftMoth = Левая нога моли (Химера)
+marking-LegChimeraLeftMoth = Левая нога ниана (Химера)
 marking-LegChimeraLeftMoth-chimera = Химера (Нога)
 marking-LegProstheticLeftMoth = Протез (Левая нога)
 marking-LegProstheticLeftMoth-prosthetic = Протез (Левая нога)
@@ -101,7 +101,7 @@ marking-LegTwistingLeftMoth-twisting = Крученый шрам (Левая н�
 
 # LFoot
 
-marking-FootChimeraLeftMoth = Левая ступня моли (Химера)
+marking-FootChimeraLeftMoth = Левая ступня ниана (Химера)
 marking-FootChimeraLeftMoth-chimera = Химера (Ступня)
 marking-FootProstheticLeftMoth = Протез (Левая ступня)
 marking-FootProstheticLeftMoth-prosthetic = Протез (Левая ступня)
@@ -113,7 +113,7 @@ marking-FootProstheticRightMoth-prosthetic = Протез (Правая ступ
 
 # LHand
 
-marking-HandChimeraLeftMoth = Левая рука моли (Химера)
+marking-HandChimeraLeftMoth = Левая рука ниана (Химера)
 marking-HandChimeraLeftMoth-chimera = Химера (Рука)
 marking-HandProstheticLeftMoth = Протез (Левая рука)
 marking-HandProstheticLeftMoth-prosthetic = Протез (Левая рука)

@@ -1229,6 +1229,18 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("bark_voice");
 
+                    b.Property<byte>("BarkPause")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("bark_pause");
+
+                    b.Property<byte>("BarkPitch")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("bark_pitch");
+
+                    b.Property<byte>("BarkPitchVariance")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("bark_pitch_variance");
+
                     b.Property<string>("BodyType")
                         .IsRequired()
                         .HasColumnType("TEXT")

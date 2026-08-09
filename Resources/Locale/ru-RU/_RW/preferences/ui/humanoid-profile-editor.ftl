@@ -1,5 +1,8 @@
 humanoid-profile-editor-voice-label = Голос(TTS):
 humanoid-profile-editor-barks-label = Голос (барки):
+humanoid-profile-editor-bark-pitch-label = Тон
+humanoid-profile-editor-bark-pitch-variance-label = Вариативность тона
+humanoid-profile-editor-bark-pause-label = Темп
 humanoid-profile-editor-tts-label = Голос (TTS):
 humanoid-profile-editor-voice-play = ▶
 

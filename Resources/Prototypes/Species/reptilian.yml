@@ -26,8 +26,6 @@
   special:
   - species-reptilian-special-temperature-threshold
   - species-reptilian-special-animal-stomach
-  cons:
-  - species-reptilian-con-cold-sensitivity
   # RW-End
 
 # RW port: WD Slim body types START

@@ -24,13 +24,10 @@
   pros:
   - species-arachnid-pro-web
   special:
-  - species-arachnid-special-silk
   - species-arachnid-special-stomach
   - species-arachnid-special-hunger-damage
   cons:
-  - species-arachnid-con-damage
   - species-arachnid-con-asphyxia
-  - species-arachnid-con-temperature
   # RW-End
 
 # RW port: WD Slim body types START

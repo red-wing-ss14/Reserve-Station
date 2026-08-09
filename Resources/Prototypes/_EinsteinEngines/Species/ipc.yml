@@ -37,9 +37,6 @@
   special:
   - species-ipc-special-battery
   - species-ipc-special-repair-tools
-  cons:
-  - species-ipc-con-uncloneable
-  - species-ipc-con-run-speed
   # RW-End
 
 # The lack of a layer means that

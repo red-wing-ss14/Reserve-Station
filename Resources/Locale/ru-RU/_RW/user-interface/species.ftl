@@ -6,6 +6,7 @@
 species-window-title = Расы
 ui-species-select-button = Выбрать
 ui-species-pros-cons = Плюсы и минусы
+ui-species-lore-title = Описание
 ui-species-no-pros-cons = Отсутствуют
 ui-species-list-two = { $first } и { $second }
 ui-species-list-many = { $head } и { $tail }
@@ -47,6 +48,6 @@ ui-species-generated-internal-storage = Имеют внутреннее хран
 ui-species-generated-jump-ability = Имеют особую способность к прыжку.
 ui-species-generated-pulling-without-hands = Могут тянуть без рук.
 ui-species-generated-pulling-needs-hands = Нужны руки, чтобы тянуть.
-ui-species-generated-sericulture = Могут производить шёлк.
+ui-species-generated-sericulture = Могут производить шёлк, взамен голоду.
 ui-species-generated-breathes-gas = Дышат газом { $gas }.
 ui-species-generated-does-not-breathe-gas = Не дышат газом { $gas }.

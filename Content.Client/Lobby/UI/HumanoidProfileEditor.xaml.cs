@@ -2033,11 +2033,6 @@ namespace Content.Client.Lobby.UI
             ReloadProfilePreview();
             IsDirty = true;
         }
-        private void SetBarkVoice(BarkPrototype newVoice)
-        {
-            Profile = Profile?.WithBarkVoice(newVoice);
-            IsDirty = true;
-        }
         // Goob Station - End
 
         // RW - TTS Start

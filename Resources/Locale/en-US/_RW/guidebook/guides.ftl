@@ -21,3 +21,6 @@ guide-entry-space-law-laws-procedures = Procedures
 
 guide-entry-antagonist = Antagonists
 guide-entry-cortical-borer = Cortical Borer
+
+guide-entry-conditions = Revealing Conditions
+guide-entry-orion-rnd-machines = R&D Machines

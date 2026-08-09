@@ -11,6 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
+using Content.Goobstation.Common.Barks;
 using Content.Shared._RW.CustomGhost;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Construction.Prototypes;
@@ -292,10 +293,18 @@ namespace Content.Server.Database
             }
 
             var barkVoice = profile.BarkVoice ?? SharedHumanoidAppearanceSystem.DefaultBarkVoice; // Goob Station - Barks
+            // RW edit start: bug-fixes #12
+            var barkSettings = new BarkPercentageApplyData
+            {
+                Pause = profile.BarkPause,
+                Pitch = profile.BarkPitch,
+                PitchVariance = profile.BarkPitchVariance,
+            };
+            // RW edit end: bug-fixes #12
             var voice = profile.Voice ?? string.Empty; // RW - TTS
             var bodyType = profile.BodyType ?? "HumanNormal"; // RW port: WD Slim body types
 
-            return new HumanoidCharacterProfile(
+            var characterProfile = new HumanoidCharacterProfile(
                 profile.CharacterName,
                 profile.FlavorText,
                 // RW-Start
@@ -343,6 +352,9 @@ namespace Content.Server.Database
                 barkVoice, // Goob Station - Barks
                 voice // RW - TTS
             );
+
+            characterProfile.BarkSettings = barkSettings; // RW edit: bug-fixes #12
+            return characterProfile;
         }
 
         private static Profile ConvertProfiles(HumanoidCharacterProfile humanoid, int slot, Profile? profile = null)
@@ -414,6 +426,11 @@ namespace Content.Server.Database
             );
 
             profile.BarkVoice = humanoid.BarkVoice; // Goob Station - Barks
+            // RW edit start: bug-fixes #12
+            profile.BarkPause = humanoid.BarkSettings.Pause;
+            profile.BarkPitch = humanoid.BarkSettings.Pitch;
+            profile.BarkPitchVariance = humanoid.BarkSettings.PitchVariance;
+            // RW edit end: bug-fixes #12
             profile.Voice = humanoid.Voice; // RW - TTS
 
             profile.Loadouts.Clear();

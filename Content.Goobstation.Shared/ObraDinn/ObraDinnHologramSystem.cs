@@ -2,6 +2,7 @@ using Content.Shared._DV.Carrying;
 using Content.Shared._Goobstation.Wizard.Components;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared.Body.Components;
+using Content.Shared.Body.Systems;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Climbing.Components;
@@ -19,8 +20,10 @@ using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Nutrition.AnimalHusbandry;
 using Content.Shared.Nutrition.Components;
+using Content.Shared.Kitchen;
 using Content.Shared.Speech;
 using Content.Shared.Speech.Components;
+using Content.Shared.Verbs;
 using Content.Shared.SSDIndicator;
 using Content.Shared.Storage.Components;
 using Content.Shared.Strip.Components;
@@ -38,6 +41,7 @@ public sealed class ObraDinnHologramSystem : EntitySystem
 {
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedBodySystem _body = default!;
 
     public override void Initialize()
     {
@@ -54,6 +58,7 @@ public sealed class ObraDinnHologramSystem : EntitySystem
         SubscribeLocalEvent<ObraDinnHologramComponent, DragDropTargetEvent>(OnDragDropTarget);
         SubscribeLocalEvent<ObraDinnHologramComponent, CanDropTargetEvent>(OnCanDropTarget);
         SubscribeLocalEvent<ObraDinnHologramComponent, CanDropDraggedEvent>(OnCanDropDragged);
+        SubscribeLocalEvent<ObraDinnHologramComponent, GetVerbsEvent<InteractionVerb>>(OnGetInteractionVerbs);
         // RW end
     }
 
@@ -82,7 +87,13 @@ public sealed class ObraDinnHologramSystem : EntitySystem
 
         // comps we dont want the hologram to have
         RemCompDeferred<PullableComponent>(ent);
-        RemCompDeferred<WoundableComponent>(ent);
+        RemComp<WoundableComponent>(ent);
+        if (TryComp<BodyComponent>(ent, out var body) && body.RootContainer.ContainedEntity is { } rootPart)
+        {
+            foreach (var (partId, _) in _body.GetBodyPartChildren(rootPart))
+                RemComp<WoundableComponent>(partId);
+        }
+
         RemCompDeferred<ActorComponent>(ent);
         RemCompDeferred<MindContainerComponent>(ent);
         RemCompDeferred<FixturesComponent>(ent);
@@ -94,13 +105,13 @@ public sealed class ObraDinnHologramSystem : EntitySystem
         RemCompDeferred<MobMoverComponent>(ent);
         RemCompDeferred<CarriableComponent>(ent);
         RemCompDeferred<HasJobIconsComponent>(ent);
-        RemCompDeferred<MobStateComponent>(ent);
-        // RW start
-        // TODO: Revert when Goobstation fixes Obra Dinn holograms inheriting physical mob components (butchering, breeding, buckling, bloodstream, etc.).
-        RemCompDeferred<BloodstreamComponent>(ent);
+        // RW start: bug-fixes #12 — RemComp Butcherable immediately; Body deferred to avoid WoundableVisuals cascade.
+        RemComp<ButcherableComponent>(ent);
+        RemComp<BloodstreamComponent>(ent);
+        RemComp<SolutionContainerManagerComponent>(ent);
         RemCompDeferred<BodyComponent>(ent);
+        RemCompDeferred<MobStateComponent>(ent);
         RemCompDeferred<BuckleComponent>(ent);
-        RemCompDeferred<ButcherableComponent>(ent);
         RemCompDeferred<ClimbableComponent>(ent);
         RemCompDeferred<ClimbingComponent>(ent);
         RemCompDeferred<CuffableComponent>(ent);
@@ -108,7 +119,6 @@ public sealed class ObraDinnHologramSystem : EntitySystem
         RemCompDeferred<InventoryComponent>(ent);
         RemCompDeferred<ReproductiveComponent>(ent);
         RemCompDeferred<ReproductivePartnerComponent>(ent);
-        RemCompDeferred<SolutionContainerManagerComponent>(ent);
         RemCompDeferred<StrapComponent>(ent);
         // RW end
     }
@@ -156,6 +166,12 @@ public sealed class ObraDinnHologramSystem : EntitySystem
     {
         args.CanDrop = false;
         args.Handled = true;
+    }
+
+    private void OnGetInteractionVerbs(Entity<ObraDinnHologramComponent> ent, ref GetVerbsEvent<InteractionVerb> args)
+    {
+        var butcherText = Loc.GetString("butcherable-verb-name");
+        args.Verbs.RemoveWhere(verb => verb.Text == butcherText);
     }
     // RW end
 }

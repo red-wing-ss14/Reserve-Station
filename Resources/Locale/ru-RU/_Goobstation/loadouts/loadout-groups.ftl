@@ -151,6 +151,7 @@ loadout-group-captain-envirohelm = Экошлем капитана
 loadout-group-captain-envirosuit = Экокостюм капитана
 loadout-group-captain-envirogloves = Экоперчатки капитана
 loadout-group-captain-gloves = Капитан, перчатки
+loadout-group-captain-shoes = Капитан, обувь
 # Salvage Specialist
 loadout-group-salvage-envirohelm = Экошлем утилизатора
 loadout-group-salvage-envirosuit = Экокостюм утилизатора

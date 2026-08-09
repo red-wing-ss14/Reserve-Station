@@ -35,8 +35,6 @@
       collection: Whistles
     Weh:
       collection: Weh
-    Belch: # Frontier
-      collection: Belch # Frontier
     Hew:
       collection: Hew
     Gasp:
@@ -45,8 +43,6 @@
       collection: MaleDeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/Human/gulp.ogg
-    Hiss: # RW
-      collection: ReptilianHisses
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
 
@@ -87,8 +83,6 @@
       collection: Weh
     Hew:
       collection: Hew
-    Belch: # Frontier
-      collection: Belch # Frontier
     Gasp:
       collection: FemaleGasp
     DefaultDeathgasp:
@@ -141,8 +135,6 @@
       collection: MaleDeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/Human/gulp.ogg ## GOOB CONTENT END
-    Hiss: # RW
-      collection: ReptilianHisses
 
 - type: emoteSounds
   id: MaleReptilian
@@ -187,8 +179,6 @@
       collection: MaleCoughs
     Yawn: # Goob
       collection: MaleYawn
-    Belch: # Frontier
-      collection: Belch # Frontier
 
 - type: emoteSounds
   id: FemaleReptilian
@@ -233,8 +223,6 @@
       collection: FemaleCoughs
     Yawn: # Goob
       collection: FemaleYawn
-    Belch: # Frontier
-      collection: Belch # Frontier
 
 - type: emoteSounds
   id: MaleSlime
@@ -275,8 +263,6 @@
       collection: Whistles
     Weh:
       collection: Weh
-    Belch: # Frontier
-      collection: Belch # Frontier
     Hew:
       collection: Hew
     Gasp:
@@ -285,8 +271,6 @@
       collection: MaleDeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
-    Hiss: # RW
-      collection: ReptilianHisses
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
   params:
@@ -335,14 +319,10 @@
       collection: Hew
     Gasp:
       collection: FemaleGasp
-    Belch: # Frontier
-      collection: Belch # Frontier
     DefaultDeathgasp:
       collection: FemaleDeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
-    Hiss: # RW
-      collection: ReptilianHisses
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
   params:
@@ -408,8 +388,6 @@
       collection: VoxChitter
     Hiss: #imp
       collection: VoxHiss
-    Belch: # Frontier
-      collection: Belch # Frontier
     Caw:
       collection: HarpyCaws
     # Goob end
@@ -443,8 +421,6 @@
       collection: DeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
-    Hiss: # RW
-      collection: ReptilianHisses
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
     Crying: #goob
@@ -457,8 +433,6 @@
       collection: Dionayawn
     Sigh: #goob
       collection: Dionasigh
-    Belch: # Frontier
-      collection: Belch # Frontier
   params:
     variation: 0.125
 
@@ -492,8 +466,6 @@
       path: /Audio/_Goobstation/Voice/surprised.ogg
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
-    Hiss: # RW
-      collection: ReptilianHisses
 
 - type: emoteSounds
   id: UnisexDwarf
@@ -528,8 +500,6 @@
       collection: Whistles
     Weh:
       collection: Weh
-    Belch: # Frontier
-      collection: Belch # Frontier
     Hew:
       collection: Hew
     Gasp:
@@ -538,8 +508,6 @@
       collection: MaleDeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/Human/gulp.ogg
-    Hiss: # RW
-      collection: ReptilianHisses
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
   params:
@@ -579,16 +547,12 @@
       collection: Whistles
     Weh:
       collection: Weh
-    Belch: # Frontier
-      collection: Belch # Frontier
     Gasp:
       collection: FemaleGasp
     DefaultDeathgasp:
       collection: FemaleDeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/Human/gulp.ogg
-    Hiss: # RW
-      collection: ReptilianHisses
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
   params:
@@ -626,8 +590,6 @@
       path: /Audio/_Goobstation/Voice/Moth/moth_flap.ogg
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
-    Hiss: # RW
-      collection: ReptilianHisses
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
     RobotBeep:
@@ -646,8 +608,6 @@
       collection: MaleSneezes
     Cough:
       collection: MaleCoughs
-    Belch: # Frontier
-      collection: Belch # Frontier
 
 - type: emoteSounds
   id: MaleMoth
@@ -680,8 +640,6 @@
       path: /Audio/_Goobstation/Voice/Moth/moth_flap.ogg
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
-    Hiss: # RW
-      collection: ReptilianHisses
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
     RobotBeep:
@@ -700,8 +658,6 @@
       collection: MaleSneezes
     Cough:
       collection: MaleCoughs
-    Belch: # Frontier
-      collection: Belch # Frontier
 
 - type: emoteSounds
   id: FemaleMoth
@@ -734,8 +690,6 @@
       path: /Audio/_Goobstation/Voice/Moth/moth_flap.ogg
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
-    Hiss: # RW
-      collection: ReptilianHisses
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
     RobotBeep:
@@ -754,8 +708,6 @@
       collection: FemaleSneezes
     Cough:
       collection: FemaleCoughs
-    Belch: # Frontier
-      collection: Belch # Frontier
 
 - type: emoteSounds
   id: UnisexSilicon

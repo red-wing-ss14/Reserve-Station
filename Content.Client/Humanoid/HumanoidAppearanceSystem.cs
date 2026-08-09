@@ -1,9 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Content.Client.DisplacementMap;
 using Content.Shared.CCVar;
-using Content.Shared.CCVar;
+using Content.Shared.DisplacementMap;
 using Content.Shared._RW.Humanoid.Prototypes;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -37,6 +38,22 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
     private static bool UsesBodyLayerGradient(MarkingPrototype marking) =>
         marking.MarkingCategory == MarkingCategories.BodyGradient &&
         marking.BodyParts is { Count: > 0 };
+
+    private bool TryGetMarkingsDisplacement(
+        HumanoidAppearanceComponent humanoid,
+        HumanoidVisualLayers layer,
+        [NotNullWhen(true)] out DisplacementData? displacementData)
+    {
+        var bodyType = _prototypeManager.Index<BodyTypePrototype>(humanoid.BodyType);
+        if (bodyType.MarkingsDisplacement.TryGetValue(layer, out displacementData))
+            return true;
+
+        if (humanoid.MarkingsDisplacement.TryGetValue(layer, out displacementData))
+            return true;
+
+        displacementData = null;
+        return false;
+    }
 
     private static int GetBodyPartSpriteOffset(MarkingPrototype markingPrototype, HumanoidVisualLayers bodyPart, int spriteIndex)
     {
@@ -217,7 +234,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         if (proto.BaseSprite != null)
             _sprite.LayerSetSprite((entity.Owner, sprite), layerIndex, proto.BaseSprite);
 
-        if (component.MarkingsDisplacement.TryGetValue(key, out var displacementData))
+        if (TryGetMarkingsDisplacement(component, key, out var displacementData))
         {
             _displacement.TryAddDisplacement(displacementData, (entity.Owner, sprite), layerIndex, key, out var displacementKey);
             if (displacementKey != null && _sprite.LayerMapTryGet((entity.Owner, sprite), displacementKey, out var dispIndex, false))
@@ -605,7 +622,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 
             if (gradientApplied)
             {
-                if (humanoid.MarkingsDisplacement.TryGetValue(bodyPart, out var dispData) && markingPrototype.CanBeDisplaced)
+                if (TryGetMarkingsDisplacement(humanoid, bodyPart, out var dispData) && markingPrototype.CanBeDisplaced)
                 {
                     _displacement.TryAddDisplacement(dispData, (entity.Owner, sprite), targetLayer + layerOffset, layerId, out _);
                 }
@@ -635,7 +652,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
                 // Goob edit end
             }
 
-            if (humanoid.MarkingsDisplacement.TryGetValue(bodyPart, out var displacementData) && markingPrototype.CanBeDisplaced) // RW edit
+            if (TryGetMarkingsDisplacement(humanoid, bodyPart, out var displacementData) && markingPrototype.CanBeDisplaced) // RW edit
             {
                 _displacement.TryAddDisplacement(displacementData, (entity.Owner, sprite), targetLayer + layerOffset, layerId, out _); // RW edit
             }

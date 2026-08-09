@@ -1,4 +1,4 @@
-ent-FoodBurgerMustard = тараканомольбургер
+ent-FoodBurgerMustard = таракамольбургер
     .desc = Последней лампой, которую он увидел, была лампочка внутри микроволновки.
 ent-FoodBurgerCecropia = { ent-FoodBurgerMustard }
     .desc = { ent-FoodBurgerMustard.desc }
