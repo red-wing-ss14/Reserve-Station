@@ -31,7 +31,6 @@ using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Robust.Shared.Prototypes;
-using Content.Server._RW.Gulag;
 
 namespace Content.Server.Administration.Systems
 {
@@ -51,8 +50,6 @@ namespace Content.Server.Administration.Systems
         [Dependency] private readonly IServerDbManager _dbManager = default!;
         [Dependency] private readonly PlayerRateLimitManager _rateLimit = default!;
         [Dependency] private readonly IServerPreferencesManager _preferencesManager = default!;
-        [Dependency] private readonly IBanManager _banManager = default!; // RW
-        [Dependency] private readonly GulagSystem _gulag = default!; // RW
 
         [GeneratedRegex(@"^https://(?:(?:canary|ptb)\.)?discord\.com/api/webhooks/(\d+)/((?!.*/).*)$")]
         private static partial Regex DiscordRegex();
@@ -128,12 +125,12 @@ namespace Content.Server.Administration.Systems
             SubscribeNetworkEvent<BwoinkClientTypingUpdated>(OnClientTypingUpdated);
             SubscribeLocalEvent<RoundRestartCleanupEvent>(_ => _activeConversations.Clear());
 
-        	_rateLimit.Register(
+            _rateLimit.Register(
                 RateLimitKey,
                 new RateLimitRegistration(CCVars.AhelpRateLimitPeriod,
                     CCVars.AhelpRateLimitCount,
                     PlayerRateLimitedAction)
-                );
+            );
         }
 
         private async void OnCallChanged(string url)
@@ -673,11 +670,6 @@ namespace Content.Server.Administration.Systems
 
             var senderSession = eventArgs.SenderSession;
 
-            // RW start
-            if (_gulag.IsUserGulagged(senderSession.UserId))
-                return;
-            // RW end
-
             // TODO: Sanitize text?
             // Confirm that this person is actually allowed to send a message here.
             var personalChannel = senderSession.UserId == message.UserId;
@@ -689,18 +681,6 @@ namespace Content.Server.Administration.Systems
                 // Unauthorized bwoink (log?)
                 return;
             }
-
-            // RW-Start
-            var currentTime = _timing.RealTime;
-
-            if (IsOnCooldown(message.UserId, currentTime))
-                return;
-
-            if (IsSpam(message.UserId, message.Text))
-                _banManager.CreateServerBan(senderSession.UserId, senderSession.Name, null, null, null, 10, NoteSeverity.High, "Косинус синус, ебало на минус. Доспамился в ахелп.");
-
-            AddToRecentMessages(message.UserId, message.Text, currentTime);
-            // RW-End
 
             if (_rateLimit.CountAction(eventArgs.SenderSession, RateLimitKey) != RateLimitStatus.Allowed)
                 return;

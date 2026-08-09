@@ -66,12 +66,6 @@ public interface IBanManager
     }
 
     /// <summary>
-    /// RW add: Applies an edited server ban to matching connected players.
-    /// </summary>
-    /// <param name="banId">The id of the edited server ban.</param>
-    public Task HandleServerBanChangedAsync(int banId);
-
-    /// <summary>
     /// Gets a list of prefixed prototype IDs with the player's role bans.
     /// </summary>
     public HashSet<BanRoleDef>? GetRoleBans(NetUserId playerUserId);
@@ -261,7 +255,7 @@ public abstract class CreateBanInfo
     public CreateBanInfo WithMinutes(int minutes)
     {
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(minutes);
-        return WithMinutes((uint)minutes);
+        return WithMinutes((uint) minutes);
     }
 
     /// <summary>

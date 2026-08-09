@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 
 ﻿using Content.Server.Database;
-using Content.Server._RW.Gulag;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
 
@@ -11,7 +10,6 @@ namespace Content.Server.Administration.Commands
     public sealed class PardonCommand : LocalizedCommands
     {
         [Dependency] private readonly IServerDbManager _dbManager = default!;
-        [Dependency] private readonly IEntityManager _entityManager = default!; // RW
 
         public override string Command => "pardon";
 
@@ -55,10 +53,6 @@ namespace Content.Server.Administration.Commands
             }
 
             await _dbManager.AddUnbanAsync(new UnbanDef(banId, player?.UserId, DateTimeOffset.Now));
-            // RW start
-            var gulag = _entityManager.EntitySysManager.GetEntitySystem<GulagSystem>();
-            await gulag.RefreshTemporaryBanAsync(banId);
-            // RW end
 
             shell.WriteLine(Loc.GetString("cmd-pardon-success", ("id", banId)));
         }

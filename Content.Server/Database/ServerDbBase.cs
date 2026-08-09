@@ -584,32 +584,6 @@ namespace Content.Server.Database
             await db.DbContext.SaveChangesAsync();
         }
 
-        public async Task<bool> TryEditServerBanExpiration(
-            int id,
-            DateTimeOffset expectedExpiration,
-            DateTimeOffset expiration,
-            Guid editedBy,
-            DateTimeOffset editedAt)
-        {
-            await using var db = await GetDb();
-
-            var expectedExpirationUtc = expectedExpiration.UtcDateTime;
-            var expirationUtc = expiration.UtcDateTime;
-            var editedAtUtc = editedAt.UtcDateTime;
-
-            var updated = await db.DbContext.Ban
-                .Where(b => b.Id == id &&
-                            !db.DbContext.Unban.Any(u => u.BanId == id) &&
-                            b.ExpirationTime == expectedExpirationUtc)
-                .ExecuteUpdateAsync(setters => setters
-                    .SetProperty(b => b.ExpirationTime, expirationUtc)
-                    .SetProperty(b => b.LastEditedById, editedBy)
-                    .SetProperty(b => b.LastEditedAt, editedAtUtc));
-
-            return updated != 0;
-        }
-        // RW end
-
         protected static async Task<ServerBanExemptFlags?> GetBanExemptionCore(
             DbGuard db,
             NetUserId? userId,
