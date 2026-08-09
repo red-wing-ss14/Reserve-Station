@@ -57,8 +57,6 @@ public sealed class GulagSystem : EntitySystem
     private static readonly ResPath GulagMapPath = new("/Maps/_RW/Gulag/gulag.yml");
     private static readonly ProtoId<BiomeTemplatePrototype> GulagBiome = "GulagBiome";
     // private static readonly EntProtoId GulagCrate = "CrateGulag";
-    private static readonly ProtoId<StartingGearPrototype> GulagRegulatingCollarGear = "GulagRegulatingCollarGear";
-    private static readonly ProtoId<StartingGearPrototype> GulagGoodBoyCollarGear = "GulagGoodBoyCollarGear";
     private static readonly ProtoId<StartingGearPrototype> GulagPrisonerGear = "GulagPrisonerGear";
     // private static readonly ProtoId<CargoAccountPrototype> CargoAccount = "Cargo";
     private const string NeckSlot = "neck";
@@ -753,7 +751,6 @@ public sealed class GulagSystem : EntitySystem
         EnsureComp<GulagBoundComponent>(playerEntity);
         EnsureComp<KillTrackerComponent>(playerEntity);
         _spawning.EquipStartingGear(playerEntity, GulagPrisonerGear, raiseEvent: false);
-        TryEquipRegulatingCollar(playerEntity, replaceExisting: true);
     }
 
     private void SpawnPlayer(ICommonSession session, HumanoidCharacterProfile profile, string prisonerName)
@@ -768,29 +765,6 @@ public sealed class GulagSystem : EntitySystem
         EnsureComp<GulagBoundComponent>(mob);
         EnsureComp<KillTrackerComponent>(mob);
         _spawning.EquipStartingGear(mob, GulagPrisonerGear, raiseEvent: false);
-        TryEquipRegulatingCollar(mob, replaceExisting: true);
-    }
-
-    public bool TryEquipRegulatingCollar(EntityUid playerEntity, bool replaceExisting = false)
-    {
-        return TryEquipRegulatingCollar(playerEntity, GulagRegulatingCollarGear, replaceExisting);
-    }
-
-    public bool TryEquipGoodBoyCollar(EntityUid playerEntity, bool replaceExisting = false)
-    {
-        return TryEquipRegulatingCollar(playerEntity, GulagGoodBoyCollarGear, replaceExisting);
-    }
-
-    private bool TryEquipRegulatingCollar(EntityUid playerEntity, ProtoId<StartingGearPrototype> collarGear, bool replaceExisting)
-    {
-        if (!replaceExisting && _regulatingCollar.IsWearingRegulatingCollar(playerEntity))
-            return true;
-
-        if (replaceExisting && _inventory.TryGetSlotEntity(playerEntity, NeckSlot, out _))
-            _inventory.TryUnequip(playerEntity, playerEntity, NeckSlot, silent: true, force: true);
-
-        _spawning.EquipStartingGear(playerEntity, collarGear, raiseEvent: false);
-        return _regulatingCollar.IsWearingRegulatingCollar(playerEntity);
     }
 
     private EntityCoordinates GetSpawnPosition()

@@ -602,23 +602,6 @@ public sealed partial class AdminVerbSystem
             };
             args.Verbs.Add(nyanify);
 
-            // RW start
-            var goodBoyName = Loc.GetString("admin-smite-good-boy-name").ToLowerInvariant();
-            Verb goodBoy = new()
-            {
-                Text = goodBoyName,
-                Category = VerbCategory.Smite,
-                Icon = new SpriteSpecifier.Rsi(new("/Textures/_RW/Clothing/Neck/lewd_neck.rsi"), "shockcollar"),
-                Act = () =>
-                {
-                    _gulag.TryEquipGoodBoyCollar(args.Target, replaceExisting: true);
-                },
-                Impact = LogImpact.Extreme,
-                Message = string.Join(": ", goodBoyName, Loc.GetString("admin-smite-good-boy-description"))
-            };
-            args.Verbs.Add(goodBoy);
-            // RW end
-
             var killSignName = Loc.GetString("admin-smite-kill-sign-name").ToLowerInvariant();
             Verb killSign = new()
             {

@@ -18,35 +18,6 @@
   - type: GulagFillContainer
 
 - type: entity
-  parent: ClothingNeckBase
-  id: CollarShock
-  name: shock collar
-  components:
-    - type: Sprite
-      sprite: Clothing/Neck/Scarfs/PrideScarfs/aro.rsi
-    - type: Clothing
-      sprite: Clothing/Neck/Scarfs/PrideScarfs/aro.rsi
-
-- type: entity
-  parent: CollarShock
-  id: GulagRegulatingCollar
-  categories: [ HideSpawnMenu ]
-  name: regulating collar
-  description: A collar that guarantees good behavior from labor camp workers.
-  components:
-  - type: GulagRegulatingCollar
-  - type: Unremoveable
-
-- type: entity
-  parent: GulagRegulatingCollar
-  id: GulagRegulatingCollarGoodBoy
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: GulagRegulatingCollar
-    harmSentenceExtension: 0
-    liquidationSentenceExtension: 0
-
-- type: entity
   id: GulagRegulatingCollarExplosionEffect
   categories: [ HideSpawnMenu ]
   components:

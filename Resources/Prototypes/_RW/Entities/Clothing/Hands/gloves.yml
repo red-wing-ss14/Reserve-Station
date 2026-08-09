@@ -66,58 +66,6 @@
       sprite: _RW/Clothing/Hands/Gloves/centcom_naval.rsi
 
 - type: entity
-  parent: ClothingHandsGlovesSyntheticBase
-  id: ClothingHandsGlovesCatPawsWhite
-  name: white cat paws gloves
-  description: Extra soft cat paws, especially made for the most stern assistants.
-  components:
-  - type: Sprite
-    sprite: _RW/Clothing/Hands/Gloves/paws-white.rsi
-  - type: Clothing
-    sprite: _RW/Clothing/Hands/Gloves/paws-white.rsi
-  - type: Fiber
-    fiberColor: fibers-white
-
-- type: entity
-  parent: ClothingHandsGlovesSyntheticBase
-  id: ClothingHandsGlovesCatPawsBrown
-  name: brown cat paws gloves
-  description: Extra soft cat paws, especially made for the most stern assistants.
-  components:
-  - type: Sprite
-    sprite: _RW/Clothing/Hands/Gloves/paws-brown.rsi
-  - type: Clothing
-    sprite: _RW/Clothing/Hands/Gloves/paws-brown.rsi
-  - type: Fiber
-    fiberColor: fibers-brown
-
-- type: entity
-  parent: ClothingHandsGlovesSyntheticBase
-  id: ClothingHandsGlovesCatPawsBlack
-  name: black cat paws gloves
-  description: Extra soft cat paws, especially made for the most stern assistants.
-  components:
-  - type: Sprite
-    sprite: _RW/Clothing/Hands/Gloves/paws-black.rsi
-  - type: Clothing
-    sprite: _RW/Clothing/Hands/Gloves/paws-black.rsi
-  - type: Fiber
-    fiberColor: fibers-black
-
-- type: entity
-  parent: ClothingHandsGlovesSyntheticBase
-  id: ClothingHandsGlovesCatPawsBlackWhite
-  name: black and white cat paws gloves
-  description: Extra soft cat paws, especially made for the most stern assistants.
-  components:
-  - type: Sprite
-    sprite: _RW/Clothing/Hands/Gloves/paws-black_white.rsi
-  - type: Clothing
-    sprite: _RW/Clothing/Hands/Gloves/paws-black_white.rsi
-  - type: Fiber
-    fiberColor: fibers-grey
-
-- type: entity
   parent: [ ClothingHandsGlovesCombat, ClothingHandsGlovesKravMaga ]
   id: ClothingHandsGlovesAllianceAssassin
   name: alliance assassin gloves

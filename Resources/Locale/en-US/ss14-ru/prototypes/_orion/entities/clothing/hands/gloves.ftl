@@ -8,8 +8,4 @@ ent-ClothingHandsGlovesSheriff = sheriff gloves
     .desc = Gloves with an ergonomic shape designed to hold a revolver.
 
 ent-ClothingHandsGlovesCentcomNaval = перчатки флота НаноТрейзен
-ent-ClothingHandsGlovesCatPawsWhite = белые кошачьи перчатки-лапки
-ent-ClothingHandsGlovesCatPawsBrown = коричневые кошачьи перчатки-лапки
-ent-ClothingHandsGlovesCatPawsBlack = чёрные кошачьи перчатки-лапки
-ent-ClothingHandsGlovesCatPawsBlackWhite = чёрно-белые кошачьи перчатки-лапки
 ent-ClothingHandsGlovesAllianceAssassin = перчатки ассасина альянса

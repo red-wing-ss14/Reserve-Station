@@ -1,15 +1,5 @@
 - type: entity
   parent: ClothingUniformBase
-  id: Darkholme
-  name: Darkholme
-  components:
-    - type: Sprite
-      sprite: _RW/Clothing/Uniforms/darkholme.rsi
-    - type: Clothing
-      sprite: _RW/Clothing/Uniforms/darkholme.rsi
-
-- type: entity
-  parent: ClothingUniformBase
   id: Gladiator
   name: Gladiator
   components:
@@ -17,23 +7,3 @@
       sprite: _RW/Clothing/Uniforms/gladiator.rsi
     - type: Clothing
       sprite: _RW/Clothing/Uniforms/gladiator.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: Sexyclown
-  name: Sexyclown
-  components:
-    - type: Sprite
-      sprite: _RW/Clothing/Uniforms/sexyclown.rsi
-    - type: Clothing
-      sprite: _RW/Clothing/Uniforms/sexyclown.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: Sexymime
-  name: Sexymime
-  components:
-    - type: Sprite
-      sprite: _RW/Clothing/Uniforms/sexymime.rsi
-    - type: Clothing
-      sprite: _RW/Clothing/Uniforms/sexymime.rsi
