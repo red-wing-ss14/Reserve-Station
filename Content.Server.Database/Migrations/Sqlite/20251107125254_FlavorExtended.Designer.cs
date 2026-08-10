@@ -861,11 +861,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("jsonb")
                         .HasColumnName("markings");
 
-                    b.Property<string>("NSFWFlavorText")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("nsfwflavor_text");
-
                     b.Property<string>("OOCFlavorText")
                         .IsRequired()
                         .HasColumnType("TEXT")

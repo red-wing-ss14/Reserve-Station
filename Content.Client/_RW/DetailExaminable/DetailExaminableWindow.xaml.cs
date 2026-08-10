@@ -78,8 +78,6 @@ public sealed partial class DetailExaminableWindow : FancyWindow
         var config = IoCManager.Resolve<IConfigurationManager>();
         _currentEntity = entManager.GetEntity(state.Target);
 
-        var isClothed = IsCharacterClothed(_currentEntity.Value, entManager);
-
         PreviewTabs.SetTabTitle(0, Loc.GetString("flavor-tab-flavor"));
         PreviewTabs.SetTabTitle(1, Loc.GetString("flavor-tab-character"));
         PreviewTabs.SetTabTitle(2, Loc.GetString("flavor-tab-gyr"));
@@ -187,17 +185,6 @@ public sealed partial class DetailExaminableWindow : FancyWindow
         var grantedCKeys = new[] { "puroslavking" };
 
         return grantedCKeys.Contains(ckeyLower);
-    }
-
-    private bool IsCharacterClothed(EntityUid entity, IEntityManager entManager) // Hide NSFW flavor if character is clothed
-    {
-        if (entity == EntityUid.Invalid)
-            return false;
-
-        var inventorySystem = entManager.System<InventorySystem>();
-
-        return inventorySystem.TryGetSlotEntity(entity, "outerClothing", out _) ||
-               inventorySystem.TryGetSlotEntity(entity, "jumpsuit", out _);
     }
 
     protected override void Dispose(bool disposing)
