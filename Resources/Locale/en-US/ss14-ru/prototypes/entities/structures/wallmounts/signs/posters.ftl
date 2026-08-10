@@ -262,6 +262,3 @@ ent-PosterMapWaystation = Waystation Map
     .desc = A map of Waystation... wait isn't this packed upside down?
 ent-PosterMapOrigin = origin map
     .desc = A map of Origin Station.
-
-ent-PosterContrabandLustyExomorph = Похотливая ксено дева
-ent-PosterContrabandBustyBackdoorExoBabes6 = Фигуристые Ксено-Малышки 6
