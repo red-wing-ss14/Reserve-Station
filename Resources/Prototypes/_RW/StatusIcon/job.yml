@@ -1,12 +1,5 @@
 ﻿- type: jobIcon
   parent: JobIcon
-  id: JobIconInteQLeader
-  icon:
-    sprite: /Textures/_RW/Interface/Misc/job_icons.rsi
-    state: InteQ-Leader
-
-- type: jobIcon
-  parent: JobIcon
   id: JobIconInteQ
   icon:
     sprite: /Textures/_RW/Interface/Misc/job_icons.rsi

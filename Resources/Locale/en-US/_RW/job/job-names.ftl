@@ -9,13 +9,8 @@ job-name-inteq-vanguard = Vanguard
 job-description-inteq-vanguard = Follow the goal.
 InteQVanguard = { job-name-inteq-vanguard }
 
-job-name-ert-inteq-vanguard-leader = ERT Vanguard Leader
-JobERTInteQVanguardLeader = { job-name-ert-inteq-vanguard-leader }
-job-name-ert-inteq-vanguard = ERT Vanguard
-JobERTInteQVanguard = { job-name-ert-inteq-vanguard }
-
-job-title-vanguard-leader = { job-name-inteq-vanguard-leader }
-job-title-vanguard = { job-name-inteq-vanguard }
+job-title-vanguard-leader = Vanguard Leader
+job-title-vanguard = Vanguard
 
 job-name-cburn-leader = CBURN Leader
 job-description-cburn-leader = Take your goal.

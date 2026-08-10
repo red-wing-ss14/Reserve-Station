@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server._Lavaland.Procedural.Components;
-using Robust.Server.Player;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Decals;
 using Content.Server.GameTicking;
@@ -28,7 +27,6 @@ namespace Content.Server._Lavaland.Procedural.Systems;
 public sealed partial class LavalandSystem : EntitySystem
 {
     public bool LavalandEnabled = true;
-    public int InteQSizoMinPlayers = 20; // RW
 
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
@@ -48,7 +46,6 @@ public sealed partial class LavalandSystem : EntitySystem
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly ShuttleSystem _shuttle = default!;
     [Dependency] private readonly SharedRoofSystem _roof = default!; // RW
-    [Dependency] private readonly IPlayerManager _playerManager = default!; // RW
 
     private EntityQuery<MapGridComponent> _gridQuery;
     private EntityQuery<TransformComponent> _xformQuery;
@@ -67,7 +64,6 @@ public sealed partial class LavalandSystem : EntitySystem
         _fixtureQuery = GetEntityQuery<FixturesComponent>();
 
         Subs.CVar(_config, CCVars.LavalandEnabled, value => LavalandEnabled = value, true);
-        Subs.CVar(_config, CCVars.InteQSizoMinPlayers, value => InteQSizoMinPlayers = value, true); // RW
     }
 
     private void OnLoadingMaps(LoadingMapsEvent ev)

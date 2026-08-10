@@ -3,10 +3,6 @@
 - type: npcFaction
   id: Dragon
   hostile:
-    # RW-Start
-    - InteQ
-    - InteQHostile
-    # RW-End
     - NanoTrasen
     - Syndicate
     - Xeno
@@ -27,9 +23,6 @@
 - type: npcFaction
   id: NanoTrasen
   hostile:
-  # RW-Start
-  - InteQHostile
-  # RW-End
   - SimpleHostile
   - Syndicate
   - Xeno
@@ -62,11 +55,8 @@
   - RWSecurityTurret
   # RW end
   hostile:
-  # RW-Start
-  - InteQHostile
-  # RW-End
   - Mouse
-  - Balloon # Goob Balloon Edit - Pets can join the fight against the balloons
+  - Balloon # Goob Balloon Edit     Pets can join the fight against the balloons
   - SimpleHostile
   - Zombie
   - Xeno
@@ -78,10 +68,6 @@
 - type: npcFaction
   id: SimpleHostile
   hostile:
-  # RW-Start
-  - InteQ
-  - InteQHostile
-  # RW-End
   - NanoTrasen
   - Syndicate
   - Passive
@@ -108,9 +94,6 @@
 - type: npcFaction
   id: Syndicate
   hostile:
-  # RW-Start
-  - InteQHostile
-  # RW-End
   - NanoTrasen
   - SimpleHostile
   - Xeno
@@ -131,10 +114,6 @@
 - type: npcFaction
   id: Xeno
   hostile:
-  # RW-Start
-  - InteQ
-  - InteQHostile
-  # RW-End
   - NanoTrasen
   - Syndicate
   - Passive
@@ -157,10 +136,6 @@
 - type: npcFaction
   id: Zombie
   hostile:
-  # RW-Start
-  - InteQ
-  - InteQHostile
-  # RW-End
   - NanoTrasen
   - SimpleNeutral
   - SimpleHostile
@@ -183,10 +158,6 @@
 - type: npcFaction
   id: Revolutionary
   hostile:
-  # RW-Start
-  - InteQ
-  - InteQHostile
-  # RW-End
   - NanoTrasen
   - Zombie
   - SimpleHostile
@@ -202,10 +173,6 @@
 - type: npcFaction
   id: AllHostile
   hostile:
-  # RW-Start
-  - InteQ
-  - InteQHostile
-  # RW-End
   - NanoTrasen
   - Dragon
   - Mouse
@@ -234,16 +201,12 @@
 - type: npcFaction
   id: Monkey
   hostile:
-  - Balloon # Custom faction specifically for attacking bloons
+  - Balloon     # Custom faction specifically for attacking bloons
 
 - type: npcFaction
   id: Xenoborg
   hostile:
   # they have brains
-  # RW-Start
-  - InteQ
-  - InteQHostile
-  # RW-End
   - NanoTrasen
   - Syndicate
   - Zombie
@@ -252,7 +215,9 @@
   - Changeling # goob edit - changelings
   - Heretic # goob edit - heretics
   - PirateFaction # goob - pirates
+
   - Xeno # rivalry
+
   # cause they are hostile to them
   - SimpleHostile
   - AllHostile
