@@ -910,11 +910,6 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("jsonb")
                         .HasColumnName("markings");
 
-                    b.Property<string>("NSFWFlavorText")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("nsfwflavor_text");
-
                     b.Property<string>("OOCFlavorText")
                         .IsRequired()
                         .HasColumnType("text")

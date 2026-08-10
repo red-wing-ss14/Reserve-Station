@@ -58,13 +58,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                 type: "TEXT",
                 nullable: false,
                 defaultValue: "");
-
-            migrationBuilder.AddColumn<string>(
-                name: "nsfwflavor_text",
-                table: "profile",
-                type: "TEXT",
-                nullable: false,
-                defaultValue: "");
         }
 
         /// <inheritdoc />
@@ -96,10 +89,6 @@ namespace Content.Server.Database.Migrations.Sqlite
 
             migrationBuilder.DropColumn(
                 name: "links_flavor_text",
-                table: "profile");
-
-            migrationBuilder.DropColumn(
-                name: "nsfwflavor_text",
                 table: "profile");
         }
     }
