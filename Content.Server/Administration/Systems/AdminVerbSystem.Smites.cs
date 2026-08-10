@@ -2,7 +2,6 @@
 
 using System.Threading;
 using Content.Goobstation.Common.Speech;
-using Content.Server._RW.Gulag;
 using Content.Server.Administration.Components;
 using System.Numerics;
 using System.Threading;
@@ -94,7 +93,6 @@ public sealed partial class AdminVerbSystem
     [Dependency] private readonly FixtureSystem _fixtures = default!;
     [Dependency] private readonly FlammableSystem _flammableSystem = default!;
     [Dependency] private readonly GhostKickManager _ghostKickManager = default!;
-    [Dependency] private readonly GulagSystem _gulag = default!; // RW
     [Dependency] private readonly SharedGodmodeSystem _sharedGodmodeSystem = default!;
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifierSystem = default!;

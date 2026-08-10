@@ -6,7 +6,6 @@ using System.Text;
 using Content.Goobstation.Common.Chat;
 using Content.Goobstation.Common.Traits;
 using Content.Goobstation.Shared.Loudspeaker.Events;
-using Content.Server._RW.Gulag; // RW
 using Content.Server._EinsteinEngines.Language;
 using Content.Server._Goobstation.Wizard.Systems;
 using Content.Server._RW.ServerProtection.Chat;
@@ -239,6 +238,11 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (player != null && _chatManager.HandleRateLimit(player) != RateLimitStatus.Allowed)
             return;
 
+        // Orion-Start
+        if (_chatProtection.CheckICMessage(message, source))
+            return;
+        // Orion-End
+
         // Sus
         if (player?.AttachedEntity is { Valid: true } entity && source != entity)
         {
@@ -247,16 +251,6 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         if (!CanSendInGame(message, shell, player))
             return;
-
-        // RW start
-        if (TryHandleGulagChatMessage(source, player))
-            return;
-        // RW end
-
-        // RW-Start
-        if (_chatProtection.CheckICMessage(message, source))
-            return;
-        // RW-End
 
         ignoreActionBlocker = CheckIgnoreSpeechBlocker(source, ignoreActionBlocker);
 
@@ -517,11 +511,6 @@ public sealed partial class ChatSystem : SharedChatSystem
         // in-game IC messages.
         if (player?.AttachedEntity is not { Valid: true } entity || source != entity)
             return;
-
-        // RW start
-        if (TryHandleGulagChatMessage(source, player))
-            return;
-        // RW end
 
         // RW-Start
         if (_chatProtection.CheckOOCMessage(message, player))
@@ -1375,18 +1364,6 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         return !_chatManager.MessageCharacterLimit(player, message);
     }
-
-    // RW start
-    private bool TryHandleGulagChatMessage(EntityUid source, ICommonSession? player)
-    {
-        if (player == null)
-            return false;
-
-        var ev = new GulagChatMessageAttemptEvent();
-        RaiseLocalEvent(source, ev);
-        return ev.Cancelled;
-    }
-    // RW end
 
     // ReSharper disable once InconsistentNaming
     private string SanitizeInGameICMessage(EntityUid source, string message, out string? emoteStr, bool capitalize = true, bool punctuate = false, bool capitalizeTheWordI = true)

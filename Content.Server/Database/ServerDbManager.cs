@@ -117,16 +117,6 @@ namespace Content.Server.Database
             DateTimeOffset editedAt);
 
         /// <summary>
-        /// RW add: Updates a temporary server ban's expiration only if it has not changed since it was read.
-        /// </summary>
-        Task<bool> TryEditServerBanExpiration(
-            int id,
-            DateTimeOffset expectedExpiration,
-            DateTimeOffset expiration,
-            Guid editedBy,
-            DateTimeOffset editedAt);
-
-        /// <summary>
         /// Update ban exemption information for a player.
         /// </summary>
         /// <remarks>
@@ -632,19 +622,6 @@ namespace Content.Server.Database
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.EditBan(id, reason, severity, expiration, editedBy, editedAt));
         }
-
-        // RW start: Updates a temporary server ban's expiration only if it has not changed since it was read.
-        public Task<bool> TryEditServerBanExpiration(
-            int id,
-            DateTimeOffset expectedExpiration,
-            DateTimeOffset expiration,
-            Guid editedBy,
-            DateTimeOffset editedAt)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.TryEditServerBanExpiration(id, expectedExpiration, expiration, editedBy, editedAt));
-        }
-        // RW end
 
         public Task UpdateBanExemption(NetUserId userId, ServerBanExemptFlags flags)
         {

@@ -229,15 +229,12 @@ namespace Content.Server.Connection
             }
 
             var bans = await _db.GetBansAsync(addr, userId, hwId, modernHwid, includeUnbanned: false);
-            // RW start
-            var permanentBans = bans.Where(ban => ban.ExpirationTime == null).ToList();
-            if (permanentBans.Count > 0)
+            if (bans.Count > 0)
             {
-                var firstBan = permanentBans[0];
+                var firstBan = bans[0];
                 var message = firstBan.FormatBanMessage(_cfg, _loc);
-                return (ConnectionDenyReason.Ban, message, permanentBans);
+                return (ConnectionDenyReason.Ban, message, bans);
             }
-            // RW end
 
             // RW
             if (await _db.HasClientRecord(userId.UserId))

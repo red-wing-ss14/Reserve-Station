@@ -57,7 +57,6 @@ admin-smite-ghostkick-name = Кик втихаря
 admin-smite-nyanify-name = НЯфикация
 admin-smite-kill-sign-name = Знак смерти
 admin-smite-omni-accent-name = Омни-акцент
-admin-smite-good-boy-name = хороший мальчик
 
 ## Smite descriptions
 

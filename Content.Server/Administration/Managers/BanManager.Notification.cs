@@ -51,7 +51,7 @@ public sealed partial class BanManager
             return;
         }
 
-        await HandleMatchingConnectedPlayers(ban, "ban notification"); // RW
+        KickMatchingConnectedPlayers(ban, "ban notification");
     }
 
     private bool CheckBanRateLimit()

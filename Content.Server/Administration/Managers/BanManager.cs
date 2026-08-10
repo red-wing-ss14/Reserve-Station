@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Content.Server._RW.Gulag;
 using Content.Server._RW.ServerProtection.Administration;
 using Content.Server.Chat.Managers;
 using Content.Server.Database;
@@ -179,7 +178,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             _adminActionProtection.ReportBanAction(banInfo.BanningAdmin.Value, adminName, targetName);
         // RW-End
 
-        await HandleMatchingConnectedPlayers(banDef, "newly placed ban"); // RW
+        KickMatchingConnectedPlayers(banDef, "newly placed ban");
     }
 
     private NoteSeverity GetSeverityForServerBan(CreateBanInfo banInfo, CVarDef<string> defaultCVar)
@@ -196,49 +195,15 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
 
     private void KickMatchingConnectedPlayers(BanDef def, string source)
     {
-        _taskManager.RunOnMainThread(async () => await HandleMatchingConnectedPlayers(def, source));
-    }
-
-    // RW start
-    public async Task HandleServerBanChangedAsync(int banId)
-    {
-        var ban = await _db.GetBanAsync(banId);
-        if (ban is null)
-            return;
-
-        var gulag = _systems.GetEntitySystem<GulagSystem>();
-        if (ban.Unban is not null ||
-            ban.ExpirationTime is { } expiration && expiration <= DateTimeOffset.UtcNow)
-        {
-            await gulag.RefreshTemporaryBanAsync(banId);
-            return;
-        }
-
-        await HandleMatchingConnectedPlayers(ban, "edited ban");
-    }
-
-    private async Task HandleMatchingConnectedPlayers(BanDef def, string source)
-    {
-        var gulag = _systems.GetEntitySystem<GulagSystem>();
-
         foreach (var player in _playerManager.Sessions)
         {
-            if (!BanMatchesPlayer(player, def))
-                continue;
-
-            if (def.ExpirationTime == null)
+            if (BanMatchesPlayer(player, def))
             {
                 KickForBanDef(player, def);
                 _sawmill.Info($"Kicked player {player.Name} ({player.UserId}) through {source}");
             }
-            else
-            {
-                await gulag.HandleTemporaryBanAsync(player);
-                _sawmill.Info($"Sent player {player.Name} ({player.UserId}) to the gulag through {source}");
-            }
         }
     }
-    // RW end
 
     private bool BanMatchesPlayer(ICommonSession player, BanDef ban)
     {
