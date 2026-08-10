@@ -1,21 +1,12 @@
 ﻿{
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from TG Station | Reshaded by PuroSlavKing (Github) | InteQ-icons sprited by PuroSlavKing (Github)",
+    "copyright": "Taken from TG Station | Reshaded by PuroSlavKing (Github)",
     "size": {
         "x": 8,
         "y": 8
     },
     "states": [
-        {
-            "name": "InteQ"
-        },
-        {
-            "name": "InteQ-Leader"
-        },
-        {
-            "name": "SalvageSpecialist"
-        },
         {
             "name": "Earth"
         },
