@@ -73,13 +73,6 @@ public sealed partial class LavalandSystem
         Log.Debug($"Spawning {list.Count} Grid Ruins on {ToPrettyString(lavaland)} planet.");
         foreach (var ruin in list)
         {
-            // RW start
-            if (ruin.ID == "InteQSizo" && _playerManager.PlayerCount < InteQSizoMinPlayers)
-            {
-                Log.Info($"Skipping InteQSizo ruin because player count {_playerManager.PlayerCount} is below {InteQSizoMinPlayers}.");
-                continue;
-            }
-            // RW end
             LoadGridRuin(ruin, lavaland, preloader, ref usedSpace, ref coords);
         }
     }

@@ -12,12 +12,4 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> LavalandEnabled =
         CVarDef.Create("lavaland.enabled", true, CVar.SERVERONLY);
-
-    // RW start
-    /// <summary>
-    ///     Minimum player count required to spawn the InteQSizo ruin on Lavaland.
-    /// </summary>
-    public static readonly CVarDef<int> InteQSizoMinPlayers =
-        CVarDef.Create("lavaland.inteq_sizo_min_players", 20, CVar.SERVERONLY);
-    // RW end
 }
