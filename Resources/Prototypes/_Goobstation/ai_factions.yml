@@ -1,10 +1,6 @@
 - type: npcFaction
   id: DevilFaction
   hostile:
-  # RW-Start
-  - InteQ
-  - InteQHostile
-  # RW-End
   - NanoTrasen
   - Syndicate
   - Zombie
@@ -16,10 +12,6 @@
 - type: npcFaction
   id: Assistant
   hostile:
-  # RW-Start
-  - InteQ
-  - InteQHostile
-  # RW-End
   - NanoTrasen
   - Dragon
   - SimpleHostile

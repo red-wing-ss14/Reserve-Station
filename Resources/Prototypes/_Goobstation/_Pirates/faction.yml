@@ -3,10 +3,6 @@
 - type: npcFaction
   id: PirateFaction
   hostile:
-  # RW-Start-Factions
-  - InteQ
-  - InteQHostile
-  # RW-End-Factions
   - NanoTrasen
   - Syndicate
   - SimpleHostile
