@@ -248,10 +248,10 @@
             max: 213.0
             scale: 1.6
           damage:
-            Airloss: -3
-            Brute: -3 # Goob
-            Burn: -3 # Goob
-            Toxin: -2
+            Airloss: -9 # Goob - Cryobuff
+            Brute: -9 # Goob - Cryobuff
+            Burn: -9 # Goob - Cryobuff
+            Toxin: -6 # Goob - Cryobuff
         - !type:GenericStatusEffect # Mono edit
           conditions:
           - !type:MetabolizerTypeCondition

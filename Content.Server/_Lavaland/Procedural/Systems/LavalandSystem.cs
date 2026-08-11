@@ -9,6 +9,7 @@ using Content.Server.Parallax;
 using Content.Server.Procedural;
 using Content.Server.Shuttles.Systems;
 using Content.Shared.Light.EntitySystems;
+using Content.Shared._Lavaland.Procedural.Components;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Maps;
