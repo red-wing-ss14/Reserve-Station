@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Server._Lavaland.Procedural.Components;
+
 using Robust.Server.Player;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Decals;
