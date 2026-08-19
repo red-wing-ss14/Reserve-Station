@@ -10,7 +10,6 @@ using Content.Server.Audio;
 using Content.Server.Chat.Systems;
 using Content.Server.DoAfter;
 using Content.Server.Explosion.EntitySystems;
-using Content.Server.Kitchen.Components;
 using Content.Server.Lightning;
 using Content.Server.Station.Systems;
 using Content.Shared.Administration.Logs;
@@ -31,6 +30,7 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Timing;
 using Robust.Shared.Player;
+using Content.Goobstation.Shared.MisandryBox.Smites;
 
 namespace Content.Goobstation.Server.Supermatter.Systems;
 
@@ -50,6 +50,9 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLog = default!;
+    [Dependency] private readonly ThunderstrikeSystem _thunderstrikeSystem = default!;
+
+    private const string LTGSM = "/Textures/_Goobstation/MisandryBox/LTGSM.png";
 
     private DelamType _delamType = DelamType.Explosion;
 
@@ -631,8 +634,14 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
         if (!HasComp<ProjectileComponent>(target))
         {
             _adminLog.Add(LogType.Supermatter, LogImpact.Medium, $"Supermatter {ToPrettyString(uid)} has consumed {ToPrettyString(target)}");
-            EntityManager.SpawnEntity("Ash", Transform(target).Coordinates);
-            _audio.PlayPvs(sm.DustSound, uid);
+
+            if (HasComp<ActorComponent>(target))
+                _thunderstrikeSystem.Smite(target, true, null, LTGSM); // funny :3
+            else
+            {
+                EntityManager.SpawnEntity("Ash", Transform(target).Coordinates);
+                _audio.PlayPvs(sm.DustSound, uid);
+            }
         }
 
         EntityManager.QueueDeleteEntity(target);
