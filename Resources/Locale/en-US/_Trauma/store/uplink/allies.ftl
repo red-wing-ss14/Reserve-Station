@@ -9,8 +9,6 @@ uplink-reinforcement-radio-nukie-spider-desc = Calls in a specially trained arac
 
 uplink-reinforcement-radio-cyborg-assault-name-trauma = Assault Cyborg Teleporter
 
-uplink-reinforcement-radio-cyborg-saboteur-name = Saboteur Cyborg Teleporter
-uplink-reinforcement-radio-cyborg-saboteur-desc = Calls in a lightly armored cyborg specializing in sabotage and assassinations.
 
 uplink-reinforcement-radio-cyborg-medical-name = Medical Cyborg Teleporter
 uplink-reinforcement-radio-cyborg-medical-desc = Calls in a lightly armored cyborg specializing in anything medical related.
