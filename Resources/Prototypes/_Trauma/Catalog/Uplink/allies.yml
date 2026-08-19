@@ -62,25 +62,6 @@
   - UplinkAllies
 
 - type: listing
-  id: UplinkReinforcementRadioSyndicateCyborgSaboteur
-  name: uplink-reinforcement-radio-cyborg-saboteur-name
-  description: uplink-reinforcement-radio-cyborg-saboteur-desc
-  productEntity: ReinforcementRadioSyndicateCyborgSaboteur
-  icon: { sprite: _Trauma/Mobs/Silicon/synd_engi.rsi, state: icon }
-  cost:
-    Telecrystal: 300
-  categories:
-  - UplinkAllies
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
-    blacklist:
-      tags:
-      - ContravendUplink
-
-- type: listing
   id: UplinkReinforcementRadioSyndicateCyborgMedical
   name: uplink-reinforcement-radio-cyborg-medical-name
   description: uplink-reinforcement-radio-cyborg-medical-desc

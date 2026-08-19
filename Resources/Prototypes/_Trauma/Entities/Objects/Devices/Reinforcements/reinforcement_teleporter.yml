@@ -57,23 +57,6 @@
 
 - type: entity
   parent: ReinforcementRadio
-  id: ReinforcementRadioSyndicateCyborgSaboteur
-  name: syndicate saboteur cyborg reinforcement radio
-  description: Calls in a saboteur borg with light weaponry and disruptive gear.
-  components:
-  - type: GhostRole
-    name: ghost-role-information-syndicate-cyborg-saboteur-name
-    description: ghost-role-information-syndicate-cyborg-description
-    rules: ghost-role-information-silicon-rules
-    mindRoles:
-    - MindRoleGhostRoleSilicon
-    raffle:
-      settings: default
-  - type: GhostRoleMobSpawner
-    prototype: PlayerBorgSyndicateSaboteurBattery
-
-- type: entity
-  parent: ReinforcementRadio
   id: ReinforcementRadioSyndicateCyborgMedical
   name: syndicate medical cyborg reinforcement radio
   description: Calls in a medical borg with good support capabilities and disruptive gear.
