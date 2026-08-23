@@ -37,7 +37,7 @@ public sealed class BoostyTierManager : IBoostyTierManager
 
     public BoostyPlayerTier? GetPlayerTier(ICommonSession session)
     {
-        _sawmill ??= _log.GetSawmill("amour.boosty");
+        _sawmill ??= _log.GetSawmill("redwing.boosty");
         EnsureInitialized();
 
         var userId = session.UserId;
@@ -123,7 +123,7 @@ public sealed class BoostyTierManager : IBoostyTierManager
 
     public async Task PreloadPlayerTierAsync(ICommonSession session)
     {
-        _sawmill ??= _log.GetSawmill("amour.boosty");
+        _sawmill ??= _log.GetSawmill("redwing.boosty");
         EnsureInitialized();
 
         var userId = session.UserId;

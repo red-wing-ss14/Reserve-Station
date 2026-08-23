@@ -55,7 +55,7 @@ public sealed partial class BoostyTierLoadoutEffect : LoadoutEffect
         var tierInfo = tierManager.GetPlayerTier(session);
 
         // Debug logging
-        var sawmill = Logger.GetSawmill("amour.boosty.loadout");
+        var sawmill = Logger.GetSawmill("redwing.boosty.loadout");
         sawmill.Debug($"Validating loadout for {session.Name}: TierInfo={tierInfo != null}, IsActive={tierInfo?.IsActive}, TierLevel={tierInfo?.TierLevel}, TierName={tierInfo?.TierName}, Required={MinTierLevel}");
 
         if (tierInfo == null || !tierInfo.IsActive)
