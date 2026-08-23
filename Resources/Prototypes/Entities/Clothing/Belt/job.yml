@@ -242,6 +242,9 @@
     sprite: Clothing/Belt/emt.rsi
   - type: Clothing
     sprite: Clothing/Belt/emt.rsi
+  - type: Storage
+    grid:
+    - 0,0,9,1
 
 - type: entity
   parent: ClothingBeltStorageBase
