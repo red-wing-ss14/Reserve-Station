@@ -9,19 +9,19 @@ public sealed class RwCCVars
     ///     Number of gulag ore points required to reduce a temporary ban by one second.
     /// </summary>
     public static readonly CVarDef<double> GulagPointsToTimeRatio =
-        CVarDef.Create("amour.gulag.points_to_time", 1d, CVar.SERVERONLY);
+        CVarDef.Create("redwing.gulag.points_to_time", 1d, CVar.SERVERONLY);
 
     /// <summary>
     ///     Automatically toggles OOC depending on current online player count.
     /// </summary>
     public static readonly CVarDef<bool> OocAutoToggleEnabled =
-        CVarDef.Create("amour.ooc_auto_toggle_enabled", true, CVar.SERVER | CVar.REPLICATED | CVar.NOTIFY);
+        CVarDef.Create("redwing.ooc_auto_toggle_enabled", true, CVar.SERVER | CVar.REPLICATED | CVar.NOTIFY);
 
     /// <summary>
     ///     OOC is enabled while online is at or below this value, and disabled above it.
     /// </summary>
     public static readonly CVarDef<int> OocAutoTogglePlayerThreshold =
-        CVarDef.Create("amour.ooc_auto_toggle_player_threshold", 7, CVar.SERVERONLY);
+        CVarDef.Create("redwing.ooc_auto_toggle_player_threshold", 7, CVar.SERVERONLY);
 
     /// <summary>
     ///     URL of the Discord bot API for receiving OOC messages from Discord.
@@ -45,11 +45,11 @@ public sealed class RwCCVars
     ///     Discord bot token for embedded OOC bridge bot.
     /// </summary>
     public static readonly CVarDef<string> DiscordOocBotToken =
-        CVarDef.Create("amour.discord_ooc_bot_token", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+        CVarDef.Create("redwing.discord_ooc_bot_token", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
 
     /// <summary>
     ///     Discord channel ID for OOC bridge.
     /// </summary>
     public static readonly CVarDef<ulong> DiscordOocChannelId =
-        CVarDef.Create("amour.discord_ooc_channel_id", 0UL, CVar.SERVERONLY);
+        CVarDef.Create("redwing.discord_ooc_channel_id", 0UL, CVar.SERVERONLY);
 }
