@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Server._Lavaland.Procedural.Components;
+
 using Robust.Server.Player;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Decals;
@@ -9,6 +9,7 @@ using Content.Server.Parallax;
 using Content.Server.Procedural;
 using Content.Server.Shuttles.Systems;
 using Content.Shared.Light.EntitySystems;
+using Content.Shared._Lavaland.Procedural.Components;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Maps;

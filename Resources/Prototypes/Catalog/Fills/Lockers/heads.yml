@@ -187,6 +187,7 @@
     - id: MachinePowerTransmissionLaserFlatpack
     - id: RCDRechargingCE
     - id: InducerEngineeringWhiteBattery # RW
+    - id: MaterialSiloFlatpack # Goob
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -246,6 +247,9 @@
     - id: RubberStampCMO
     # Goobstation Start
     - id: ChemistryHotplateFlatPack
+    - id: CloningpodFlatpack
+    - id: MedicalScannerFlatpack
+    - id: ComputerCloningConsoleFlatpack
     - id: BiomassReclaimerFlatpack
     - id: Multitool
     - id: MedTekCartridge
@@ -253,6 +257,7 @@
     - id: BoxSyringePax
     - id: ClothingBeltMilitaryWebbingCMOFilled
     - id: SurgerykitFilled # RW-Edit: ClothingBackpackDuffelSurgeryFilled now Surgerykit
+    - id: MaterialSiloFlatpack
     # Shitmed
     - id: MedicalBiofabricatorFlatpack
     # Virology
@@ -310,6 +315,7 @@
     - id: HandTeleporter
     - id: ComputerCargoRequestScienceFlatpack # Goobstation
     - id: RubberStampRd
+    - id: MaterialSiloFlatpack # Goob
     # - id: EncryptionKeyBinary # goobstation - readd the cool binary channel access. fuck you. # Goobstation - WYCI + malf ai major
     - id: AnomalyLocator # GoobStation - adding anomaly locator to the RD locker to reduce the amount of anoms that crit
     - id: CigarCase
@@ -384,6 +390,7 @@
     - id: DrinkHosFlask
     - id: ClothingBeltSheathHeadOfSecurityFilled # Goobstation - security revamp
     - id: ClothingBeltArmyHandCombat #RW edit
+    - id: MaterialSiloFlatpack # Goob
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable

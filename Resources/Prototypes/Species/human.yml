@@ -38,6 +38,8 @@
   name: body-normal
 # RW port: WD Slim body types END
   sprites:
+    TailBehind: MobHumanoidAnyMarking # floof
+    TailOversuit: MobHumanoidAnyMarking # floof
     Special: MobHumanoidAnyMarking
     Head: MobHumanHead
     Face: MobHumanoidAnyMarking
