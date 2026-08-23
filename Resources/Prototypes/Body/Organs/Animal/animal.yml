@@ -6,11 +6,11 @@
   abstract: true
   components:
   - type: Organ
-    intCap: 13
-    integrity: 13
+    intCap: 65
+    integrity: 65
     integrityThresholds:
-      Normal: 13
-      Damaged: 6
+      Normal: 65
+      Damaged: 30
       Destroyed: 0
 #  - type: Edible # RW-Edit: Removed
   - type: Sprite
@@ -55,11 +55,11 @@
     - state: lung-r
   - type: Organ
     slotId: lungs # Shitmed
-    intCap: 17 # animal lungs are less tuff than human's one
-    integrity: 17
+    intCap: 85 # animal lungs are less tuff than human's one
+    integrity: 85
     integrityThresholds:
-      Normal: 17
-      Damaged: 8
+      Normal: 85
+      Damaged: 40
       Destroyed: 0
   - type: Lung
   - type: Metabolizer
@@ -100,11 +100,11 @@
     state: stomach
   - type: Organ
     slotId: stomach # Shitmed
-    intCap: 28
-    integrity: 28
+    intCap: 140
+    integrity: 140
     integrityThresholds:
-      Normal: 28
-      Damaged: 16
+      Normal: 140
+      Damaged: 80
       Destroyed: 0
   - type: SolutionContainerManager
     solutions:
@@ -160,11 +160,11 @@
     state: liver
   - type: Organ
     slotId: liver # Shitmed
-    intCap: 17
-    integrity: 17
+    intCap: 85
+    integrity: 85
     integrityThresholds:
-      Normal: 17
-      Damaged: 8
+      Normal: 85
+      Damaged: 40
       Destroyed: 0
   - type: Metabolizer
     maxPoisonsProcessable: 1
@@ -192,11 +192,11 @@
     state: heart-on
   - type: Organ
     slotId: heart # Shitmed
-    intCap: 14
-    integrity: 14
+    intCap: 70
+    integrity: 70
     integrityThresholds:
-      Normal: 14
-      Damaged: 6
+      Normal: 70
+      Damaged: 30
       Destroyed: 0
   - type: Metabolizer
     maxPoisonsProcessable: 2
@@ -229,11 +229,11 @@
     - state: kidney-r
   - type: Organ
     slotId: kidneys # Shitmed
-    intCap: 17
-    integrity: 17
+    intCap: 85
+    integrity: 85
     integrityThresholds:
-      Normal: 17
-      Damaged: 8
+      Normal: 85
+      Damaged: 40
       Destroyed: 0
   - type: Metabolizer
     maxPoisonsProcessable: 5

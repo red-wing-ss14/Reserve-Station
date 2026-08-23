@@ -20,6 +20,9 @@
   id: ClothingBeltMedicalEMTBrigmedicFilled
   suffix: Brigmedic, Filled
   components:
+  - type: Storage
+    grid:
+    - 0,0,11,1
   - type: StorageFill
     contents:
       - id: MedicatedSuture
